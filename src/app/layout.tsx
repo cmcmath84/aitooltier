@@ -19,7 +19,9 @@ export const metadata: Metadata = {
   openGraph: {
     siteName: "AIToolTier",
     type: "website",
+    url: "https://aitooltier.com",
   },
+  metadataBase: new URL("https://aitooltier.com"),
 };
 
 export default function RootLayout({
