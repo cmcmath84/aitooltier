@@ -75,7 +75,7 @@ export default async function ToolReviewPage({
               <ToolLogo slug={tool.slug} name={tool.name} size="lg" />
               <TierBadge score={tool.scores.overall} size="lg" />
               <div>
-                <h1 className="text-3xl font-black text-foreground">
+                <h1 className="text-2xl font-black text-foreground sm:text-3xl">
                   {tool.name}
                 </h1>
                 <p className="text-sm text-muted-foreground">

@@ -106,11 +106,11 @@ export default async function ComparisonPage({
         <table className="w-full text-sm">
           <thead className="bg-muted">
             <tr>
-              <th className="px-4 py-3 text-left font-semibold">Category</th>
-              <th className="px-4 py-3 text-center font-semibold">
+              <th className="px-2 py-2 text-left font-semibold sm:px-4 sm:py-3">Category</th>
+              <th className="px-2 py-2 text-center font-semibold sm:px-4 sm:py-3">
                 {toolA.name}
               </th>
-              <th className="px-4 py-3 text-center font-semibold">
+              <th className="px-2 py-2 text-center font-semibold sm:px-4 sm:py-3">
                 {toolB.name}
               </th>
             </tr>
@@ -126,10 +126,10 @@ export default async function ComparisonPage({
               ] as const
             ).map(([label, key]) => (
               <tr key={key} className="border-t border-border">
-                <td className="px-4 py-3 font-medium text-foreground">
+                <td className="px-2 py-2 font-medium text-foreground sm:px-4 sm:py-3">
                   {label}
                 </td>
-                <td className="px-4 py-3 text-center">
+                <td className="px-2 py-2 text-center sm:px-4 sm:py-3">
                   <span
                     className={
                       toolA.scores[key] > toolB.scores[key]
@@ -140,7 +140,7 @@ export default async function ComparisonPage({
                     {toolA.scores[key].toFixed(1)}
                   </span>
                 </td>
-                <td className="px-4 py-3 text-center">
+                <td className="px-2 py-2 text-center sm:px-4 sm:py-3">
                   <span
                     className={
                       toolB.scores[key] > toolA.scores[key]
@@ -166,31 +166,31 @@ export default async function ComparisonPage({
           <table className="w-full text-sm">
             <thead className="bg-muted">
               <tr>
-                <th className="px-4 py-3 text-left font-semibold">Feature</th>
-                <th className="px-4 py-3 text-center font-semibold">
+                <th className="px-2 py-2 text-left font-semibold sm:px-4 sm:py-3">Feature</th>
+                <th className="px-2 py-2 text-center font-semibold sm:px-4 sm:py-3">
                   {toolA.name}
                 </th>
-                <th className="px-4 py-3 text-center font-semibold">
+                <th className="px-2 py-2 text-center font-semibold sm:px-4 sm:py-3">
                   {toolB.name}
                 </th>
               </tr>
             </thead>
             <tbody>
               <tr className="border-t border-border">
-                <td className="px-4 py-3 font-medium">Free Tier</td>
-                <td className="px-4 py-3 text-center">
+                <td className="px-2 py-2 font-medium sm:px-4 sm:py-3">Free Tier</td>
+                <td className="px-2 py-2 text-center sm:px-4 sm:py-3">
                   {toolA.hasFreeTier ? "Yes" : "No"}
                 </td>
-                <td className="px-4 py-3 text-center">
+                <td className="px-2 py-2 text-center sm:px-4 sm:py-3">
                   {toolB.hasFreeTier ? "Yes" : "No"}
                 </td>
               </tr>
               <tr className="border-t border-border">
-                <td className="px-4 py-3 font-medium">Starting Price</td>
-                <td className="px-4 py-3 text-center">
+                <td className="px-2 py-2 font-medium sm:px-4 sm:py-3">Starting Price</td>
+                <td className="px-2 py-2 text-center sm:px-4 sm:py-3">
                   {toolA.pricing[0]?.price}
                 </td>
-                <td className="px-4 py-3 text-center">
+                <td className="px-2 py-2 text-center sm:px-4 sm:py-3">
                   {toolB.pricing[0]?.price}
                 </td>
               </tr>

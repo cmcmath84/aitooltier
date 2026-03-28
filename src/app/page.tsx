@@ -58,7 +58,7 @@ export default function Home() {
             <span className="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             Updated daily with real data
           </div>
-          <h1 className="text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
+          <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
             AI Tools, <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-amber-400 to-emerald-400">Ranked by Tier</span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-400">

@@ -79,7 +79,7 @@ export default function Header() {
 
         {/* Mobile menu button */}
         <button
-          className="md:hidden"
+          className="flex h-11 w-11 items-center justify-center rounded-lg md:hidden"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-label="Toggle menu"
         >
