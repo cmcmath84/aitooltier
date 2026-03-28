@@ -1,14 +1,35 @@
 import Link from "next/link";
 import { categories } from "@/data/categories";
 import { tools } from "@/data/tools";
+import { getTierForScore } from "@/lib/tiers";
 import TierList from "@/components/ui/TierList";
 import ToolCard from "@/components/tools/ToolCard";
 import CategoryIcon from "@/components/ui/CategoryIcon";
 
+const featuredCategories = [
+  "ai-chatbots",
+  "ai-code-assistants",
+  "ai-image-generators",
+  "ai-llms",
+  "ai-voice-audio",
+];
+
 export default function Home() {
-  const topTools = [...tools]
-    .sort((a, b) => b.scores.overall - a.scores.overall)
-    .slice(0, 15);
+  // Pick the top A-tier tool + 1 B-tier tool from each featured category
+  const featuredTools = featuredCategories.flatMap((catSlug) => {
+    const catTools = tools
+      .filter((t) => t.category === catSlug)
+      .sort((a, b) => b.scores.overall - a.scores.overall);
+
+    const aTier = catTools.filter(
+      (t) => getTierForScore(t.scores.overall).rank === "A"
+    );
+    const bTier = catTools.filter(
+      (t) => getTierForScore(t.scores.overall).rank === "B"
+    );
+
+    return [...aTier.slice(0, 1), ...bTier.slice(0, 1)];
+  });
 
   const latestTools = [...tools]
     .sort(
@@ -77,15 +98,15 @@ export default function Home() {
                 The Tier List
               </h2>
               <p className="mt-1 text-muted-foreground">
-                Top-ranked tools across all categories.
+                Top picks across 5 categories.
               </p>
             </div>
             <span className="text-xs text-muted-foreground">
-              Showing top {topTools.length} of {tools.length}
+              {tools.length} tools ranked total
             </span>
           </div>
           <div className="mt-6">
-            <TierList tools={topTools} />
+            <TierList tools={featuredTools} />
           </div>
           <div className="mt-4 text-center">
             <Link
