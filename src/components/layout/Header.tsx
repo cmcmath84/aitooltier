@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { categories } from "@/data/categories";
 import CategoryIcon from "@/components/ui/CategoryIcon";
+import SearchBar from "@/components/ui/SearchBar";
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -71,6 +72,11 @@ export default function Header() {
           </Link>
         </div>
 
+        {/* Search */}
+        <div className="hidden md:block">
+          <SearchBar />
+        </div>
+
         {/* Mobile menu button */}
         <button
           className="md:hidden"
@@ -104,6 +110,9 @@ export default function Header() {
       {/* Mobile menu */}
       {mobileMenuOpen && (
         <div className="border-t border-border bg-white px-4 py-3 md:hidden">
+          <div className="mb-3">
+            <SearchBar />
+          </div>
           <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             Categories
           </div>
