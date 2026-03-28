@@ -6,6 +6,10 @@ import ToolCard from "@/components/tools/ToolCard";
 import CategoryIcon from "@/components/ui/CategoryIcon";
 
 export default function Home() {
+  const topTools = [...tools]
+    .sort((a, b) => b.scores.overall - a.scores.overall)
+    .slice(0, 15);
+
   const latestTools = [...tools]
     .sort(
       (a, b) =>
@@ -73,15 +77,26 @@ export default function Home() {
                 The Tier List
               </h2>
               <p className="mt-1 text-muted-foreground">
-                All reviewed tools, ranked by overall score.
+                Top-ranked tools across all categories.
               </p>
             </div>
             <span className="text-xs text-muted-foreground">
-              {tools.length} tools ranked
+              Showing top {topTools.length} of {tools.length}
             </span>
           </div>
           <div className="mt-6">
-            <TierList tools={tools} />
+            <TierList tools={topTools} />
+          </div>
+          <div className="mt-4 text-center">
+            <Link
+              href="/compare"
+              className="inline-flex items-center gap-1 text-sm font-medium text-primary transition hover:text-primary-hover"
+            >
+              View all {tools.length} tools
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
           </div>
         </section>
       )}
