@@ -5,6 +5,7 @@ import { tools, getToolBySlug, getToolsByCategory } from "@/data/tools";
 import { getCategoryBySlug } from "@/data/categories";
 import { getAffiliateUrl } from "@/lib/affiliates";
 import { getTierForScore } from "@/lib/tiers";
+import { toolPageJsonLd, safeJsonLd } from "@/lib/structured-data";
 import ScoreBadge from "@/components/ui/ScoreBadge";
 import TierBadge from "@/components/ui/TierBadge";
 import ToolLogo from "@/components/ui/ToolLogo";
@@ -45,8 +46,17 @@ export default async function ToolReviewPage({
   const visitUrl = getAffiliateUrl(tool.slug, tool.url);
   const tier = getTierForScore(tool.scores.overall);
 
+  const jsonLdItems = toolPageJsonLd(tool, category || undefined);
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+      {jsonLdItems.map((item, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: safeJsonLd(item) }}
+        />
+      ))}
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground">

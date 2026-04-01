@@ -15,6 +15,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.3,
     },
+    {
+      url: `${baseUrl}/all-tools`,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    },
   ];
 
   // Tool review pages

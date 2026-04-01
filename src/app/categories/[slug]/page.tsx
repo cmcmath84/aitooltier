@@ -2,6 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { categories, getCategoryBySlug } from "@/data/categories";
 import { getToolsByCategory } from "@/data/tools";
+import { categoryPageJsonLd, safeJsonLd } from "@/lib/structured-data";
 import ComparisonTable from "@/components/ui/ComparisonTable";
 import TierList from "@/components/ui/TierList";
 import ToolCard from "@/components/tools/ToolCard";
@@ -36,8 +37,17 @@ export default async function CategoryPage({
 
   const categoryTools = getToolsByCategory(slug);
 
+  const jsonLdItems = categoryPageJsonLd(category, categoryTools);
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+      {jsonLdItems.map((item, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: safeJsonLd(item) }}
+        />
+      ))}
       {/* Header */}
       <div className="mb-8">
         <div className="mb-3">

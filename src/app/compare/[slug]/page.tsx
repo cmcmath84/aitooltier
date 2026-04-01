@@ -6,6 +6,7 @@ import ScoreBadge from "@/components/ui/ScoreBadge";
 import TierBadge from "@/components/ui/TierBadge";
 import { getTierForScore } from "@/lib/tiers";
 import { getAffiliateUrl } from "@/lib/affiliates";
+import { comparePageJsonLd, safeJsonLd } from "@/lib/structured-data";
 
 // Generate all possible VS combinations
 export async function generateStaticParams() {
@@ -46,11 +47,17 @@ export default async function ComparisonPage({
 
   if (!toolA || !toolB) notFound();
 
+  const jsonLd = comparePageJsonLd(toolA, toolB);
+
   const winner =
     toolA.scores.overall >= toolB.scores.overall ? toolA : toolB;
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
+      />
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-muted-foreground">
         <Link href="/" className="hover:text-foreground">

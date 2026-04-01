@@ -69,6 +69,14 @@ export default function Footer() {
                   Compare Tools
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/all-tools"
+                  className="text-sm text-muted-foreground transition hover:text-foreground"
+                >
+                  All Tools Directory
+                </Link>
+              </li>
             </ul>
           </div>
 

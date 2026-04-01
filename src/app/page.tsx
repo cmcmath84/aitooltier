@@ -2,6 +2,7 @@ import Link from "next/link";
 import { categories } from "@/data/categories";
 import { tools } from "@/data/tools";
 import { getTierForScore } from "@/lib/tiers";
+import { homepageJsonLd, safeJsonLd } from "@/lib/structured-data";
 import TierList from "@/components/ui/TierList";
 import ToolCard from "@/components/tools/ToolCard";
 import CategoryIcon from "@/components/ui/CategoryIcon";
@@ -44,8 +45,17 @@ export default function Home() {
     )
     .slice(0, 6);
 
+  const jsonLdItems = homepageJsonLd(tools.length);
+
   return (
     <div>
+      {jsonLdItems.map((item, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: safeJsonLd(item) }}
+        />
+      ))}
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 px-4 py-16 sm:py-24">
         {/* Decorative tier strips */}
