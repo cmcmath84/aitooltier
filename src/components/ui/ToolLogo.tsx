@@ -44,6 +44,21 @@ const logoMap: Record<string, string> = {
   tabnine: "/logos/tabnine.png",
   "microsoft-copilot": "/logos/microsoft.png",
   poe: "/logos/poe.png",
+  deepseek: "/logos/deepseek.png",
+  grok: "/logos/grok.png",
+  "claude-code": "/logos/claude-code.png",
+  "kling-ai": "/logos/kling.png",
+  flux: "/logos/flux.png",
+  lovable: "/logos/lovable.png",
+  veo: "/logos/veo.png",
+  "power-bi": "/logos/powerbi.png",
+  gamma: "/logos/gamma.png",
+  deepl: "/logos/deepl.png",
+  fireflies: "/logos/fireflies.png",
+  notebooklm: "/logos/notebooklm.png",
+  aiva: "/logos/aiva.png",
+  devin: "/logos/devin.png",
+  luma: "/logos/luma.png",
 };
 
 interface ToolLogoProps {

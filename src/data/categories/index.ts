@@ -92,6 +92,13 @@ export const categories: Category[] = [
       "AI tools for data analysis, visualization, and business intelligence.",
     icon: "📊",
   },
+  {
+    slug: "ai-translation",
+    name: "AI Translation",
+    description:
+      "AI-powered translation tools for documents, websites, and real-time communication.",
+    icon: "🌐",
+  },
 ];
 
 export function getCategoryBySlug(slug: string): Category | undefined {

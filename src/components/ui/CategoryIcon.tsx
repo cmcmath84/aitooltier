@@ -12,6 +12,7 @@ import {
   Search,
   Music,
   BarChart3,
+  Languages,
   type LucideIcon,
 } from "lucide-react";
 
@@ -100,6 +101,12 @@ const iconMap: Record<string, CategoryIconConfig> = {
     bg: "bg-cyan-100",
     text: "text-cyan-600",
     ring: "ring-cyan-200",
+  },
+  "ai-translation": {
+    icon: Languages,
+    bg: "bg-lime-100",
+    text: "text-lime-600",
+    ring: "ring-lime-200",
   },
 };
 
