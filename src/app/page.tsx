@@ -31,6 +31,11 @@ export default function Home() {
     return [...aTier.slice(0, 1), ...bTier.slice(0, 1)];
   });
 
+  const lastUpdated = tools.reduce((latest, t) =>
+    t.lastReviewedDate > latest ? t.lastReviewedDate : latest,
+    tools[0].lastReviewedDate
+  );
+
   const latestTools = [...tools]
     .sort(
       (a, b) =>
@@ -101,8 +106,9 @@ export default function Home() {
                 Top picks across 5 categories.
               </p>
             </div>
-            <span className="text-xs text-muted-foreground">
-              {tools.length} tools ranked total
+            <span className="text-right text-xs text-muted-foreground">
+              {tools.length} tools ranked<br />
+              Last updated: {new Date(lastUpdated).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
             </span>
           </div>
           <div className="mt-6">
