@@ -13,6 +13,12 @@ import {
   Music,
   BarChart3,
   Languages,
+  ShieldCheck,
+  Presentation,
+  Globe,
+  Camera,
+  Workflow,
+  Phone,
   type LucideIcon,
 } from "lucide-react";
 
@@ -107,6 +113,42 @@ const iconMap: Record<string, CategoryIconConfig> = {
     bg: "bg-lime-100",
     text: "text-lime-600",
     ring: "ring-lime-200",
+  },
+  "ai-detection-tools": {
+    icon: ShieldCheck,
+    bg: "bg-red-100",
+    text: "text-red-600",
+    ring: "ring-red-200",
+  },
+  "ai-presentation-tools": {
+    icon: Presentation,
+    bg: "bg-blue-100",
+    text: "text-blue-600",
+    ring: "ring-blue-200",
+  },
+  "ai-website-builders": {
+    icon: Globe,
+    bg: "bg-green-100",
+    text: "text-green-600",
+    ring: "ring-green-200",
+  },
+  "ai-photo-editing": {
+    icon: Camera,
+    bg: "bg-stone-100",
+    text: "text-stone-600",
+    ring: "ring-stone-200",
+  },
+  "ai-automation-workflow": {
+    icon: Workflow,
+    bg: "bg-violet-100",
+    text: "text-violet-600",
+    ring: "ring-violet-200",
+  },
+  "ai-voice-agents": {
+    icon: Phone,
+    bg: "bg-emerald-100",
+    text: "text-emerald-600",
+    ring: "ring-emerald-200",
   },
 };
 
