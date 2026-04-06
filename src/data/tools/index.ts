@@ -27,6 +27,7 @@ import { writesonic } from "./writesonic";
 import { quillbot } from "./quillbot";
 import { wordtune } from "./wordtune";
 import { sudowrite } from "./sudowrite";
+import { tailor } from "./tailor";
 
 // AI Video Generators
 import { runway } from "./runway";
@@ -146,6 +147,7 @@ export const tools: ToolReview[] = [
   quillbot,
   wordtune,
   sudowrite,
+  tailor,
   // Video
   runway,
   pika,
