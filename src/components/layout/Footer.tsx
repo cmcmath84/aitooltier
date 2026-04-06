@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { categories } from "@/data/categories";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
 
 export default function Footer() {
   return (
@@ -77,6 +78,22 @@ export default function Footer() {
                   All Tools Directory
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/methodology"
+                  className="text-sm text-muted-foreground transition hover:text-foreground"
+                >
+                  Our Methodology
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/trending"
+                  className="text-sm text-muted-foreground transition hover:text-foreground"
+                >
+                  Trending Tools
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -103,7 +120,14 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 border-t border-border pt-6 text-center text-sm text-muted-foreground">
+        {/* Newsletter */}
+        <div className="mt-10 border-t border-border pt-8">
+          <div className="mx-auto max-w-md">
+            <NewsletterSignup />
+          </div>
+        </div>
+
+        <div className="mt-8 border-t border-border pt-6 text-center text-sm text-muted-foreground">
           &copy; {new Date().getFullYear()} AIToolTier. All rights reserved.
         </div>
       </div>

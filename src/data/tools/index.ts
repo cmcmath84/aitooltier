@@ -8,6 +8,8 @@ import { leonardoAi } from "./leonardo-ai";
 import { adobeFirefly } from "./adobe-firefly";
 import { ideogram } from "./ideogram";
 import { flux } from "./flux";
+import { kreaAi } from "./krea-ai";
+import { nightcafe } from "./nightcafe";
 
 // AI LLMs & Models
 import { claude } from "./claude";
@@ -21,6 +23,10 @@ import { grok } from "./grok";
 import { jasper } from "./jasper";
 import { copyAi } from "./copy-ai";
 import { grammarly } from "./grammarly";
+import { writesonic } from "./writesonic";
+import { quillbot } from "./quillbot";
+import { wordtune } from "./wordtune";
+import { sudowrite } from "./sudowrite";
 
 // AI Video Generators
 import { runway } from "./runway";
@@ -30,6 +36,10 @@ import { heygen } from "./heygen";
 import { klingAi } from "./kling-ai";
 import { veo } from "./veo";
 import { luma } from "./luma";
+import { captionsAi } from "./captions-ai";
+import { opusClip } from "./opus-clip";
+import { invideoAi } from "./invideo-ai";
+import { pictory } from "./pictory";
 
 // AI Code Assistants
 import { githubCopilot } from "./github-copilot";
@@ -39,6 +49,7 @@ import { tabnine } from "./tabnine";
 import { claudeCode } from "./claude-code";
 import { lovable } from "./lovable";
 import { devin } from "./devin";
+import { replit } from "./replit";
 
 // AI Chatbots & Assistants
 import { chatgpt } from "./chatgpt";
@@ -51,11 +62,20 @@ import { notebookLm } from "./notebooklm";
 import { elevenlabs } from "./elevenlabs";
 import { murfAi } from "./murf-ai";
 import { descript } from "./descript";
+import { speechify } from "./speechify";
+
+// AI Voice Agents
+import { blandAi } from "./bland-ai";
+import { vapiAi } from "./vapi-ai";
+
+// AI Automation & Workflow
+import { n8n } from "./n8n";
 
 // AI Music Generators
 import { suno } from "./suno";
 import { udio } from "./udio";
 import { aiva } from "./aiva";
+import { soundraw } from "./soundraw";
 
 // AI Business Productivity
 import { notionAi } from "./notion-ai";
@@ -71,6 +91,18 @@ import { juliusAi } from "./julius-ai";
 import { tableauAi } from "./tableau-ai";
 import { powerBi } from "./power-bi";
 
+// AI Presentation Tools
+import { napkinAi } from "./napkin-ai";
+import { beautifulAi } from "./beautiful-ai";
+
+// AI Photo Editing
+import { topazAi } from "./topaz-ai";
+import { magnificAi } from "./magnific-ai";
+import { photoroom } from "./photoroom";
+
+// AI Website Builders
+import { boltNew } from "./bolt-new";
+
 // AI Design Tools
 import { canvaAi } from "./canva-ai";
 import { figmaAi } from "./figma-ai";
@@ -81,6 +113,9 @@ import { gamma } from "./gamma";
 import { surferSeo } from "./surfer-seo";
 import { ahrefs } from "./ahrefs";
 import { semrush } from "./semrush";
+
+// AI Detection
+import { gptZero } from "./gptzero";
 
 // AI Translation
 import { deepl } from "./deepl";
@@ -94,6 +129,8 @@ export const tools: ToolReview[] = [
   adobeFirefly,
   ideogram,
   flux,
+  kreaAi,
+  nightcafe,
   // LLMs
   claude,
   gemini,
@@ -105,6 +142,10 @@ export const tools: ToolReview[] = [
   jasper,
   copyAi,
   grammarly,
+  writesonic,
+  quillbot,
+  wordtune,
+  sudowrite,
   // Video
   runway,
   pika,
@@ -113,6 +154,10 @@ export const tools: ToolReview[] = [
   klingAi,
   veo,
   luma,
+  captionsAi,
+  opusClip,
+  invideoAi,
+  pictory,
   // Code
   githubCopilot,
   cursor,
@@ -121,20 +166,28 @@ export const tools: ToolReview[] = [
   claudeCode,
   lovable,
   devin,
+  replit,
   // Chatbots
   chatgpt,
   perplexity,
   microsoftCopilot,
   poe,
   notebookLm,
-  // Voice
+  // Voice & Audio
   elevenlabs,
   murfAi,
   descript,
+  speechify,
+  // Voice Agents
+  blandAi,
+  vapiAi,
+  // Automation & Workflow
+  n8n,
   // Music
   suno,
   udio,
   aiva,
+  soundraw,
   // Business Productivity
   notionAi,
   otterAi,
@@ -146,6 +199,15 @@ export const tools: ToolReview[] = [
   juliusAi,
   tableauAi,
   powerBi,
+  // Presentation Tools
+  napkinAi,
+  beautifulAi,
+  // Photo Editing
+  topazAi,
+  magnificAi,
+  photoroom,
+  // Website Builders
+  boltNew,
   // Design
   canvaAi,
   figmaAi,
@@ -155,6 +217,8 @@ export const tools: ToolReview[] = [
   surferSeo,
   ahrefs,
   semrush,
+  // Detection
+  gptZero,
   // Translation
   deepl,
 ];

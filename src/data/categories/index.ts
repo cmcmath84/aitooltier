@@ -99,6 +99,48 @@ export const categories: Category[] = [
       "AI-powered translation tools for documents, websites, and real-time communication.",
     icon: "🌐",
   },
+  {
+    slug: "ai-detection-tools",
+    name: "AI Detection Tools",
+    description:
+      "AI content detectors and plagiarism checkers. Identify AI-generated text with accuracy scores and reports.",
+    icon: "🔎",
+  },
+  {
+    slug: "ai-presentation-tools",
+    name: "AI Presentation Tools",
+    description:
+      "Create slides, decks, and visual presentations with AI. Turn ideas into polished presentations in minutes.",
+    icon: "📽️",
+  },
+  {
+    slug: "ai-website-builders",
+    name: "AI Website Builders",
+    description:
+      "Build websites and web apps with AI. From landing pages to full-stack applications, no coding required.",
+    icon: "🌍",
+  },
+  {
+    slug: "ai-photo-editing",
+    name: "AI Photo Editing",
+    description:
+      "AI-powered photo enhancement, upscaling, background removal, and editing tools.",
+    icon: "📸",
+  },
+  {
+    slug: "ai-automation-workflow",
+    name: "AI Automation & Workflow",
+    description:
+      "Automate tasks and build workflows with AI. Connect apps, trigger actions, and eliminate repetitive work.",
+    icon: "🔄",
+  },
+  {
+    slug: "ai-voice-agents",
+    name: "AI Voice & Phone Agents",
+    description:
+      "AI-powered phone agents, receptionists, and voice bots that handle calls and appointments automatically.",
+    icon: "📞",
+  },
 ];
 
 export function getCategoryBySlug(slug: string): Category | undefined {
