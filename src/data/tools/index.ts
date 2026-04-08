@@ -18,6 +18,7 @@ import { llama } from "./llama";
 import { mistral } from "./mistral";
 import { deepseek } from "./deepseek";
 import { grok } from "./grok";
+import { gemma } from "./gemma";
 
 // AI Writing Tools
 import { jasper } from "./jasper";
@@ -77,6 +78,7 @@ import { suno } from "./suno";
 import { udio } from "./udio";
 import { aiva } from "./aiva";
 import { soundraw } from "./soundraw";
+import { lyria } from "./lyria";
 
 // AI Business Productivity
 import { notionAi } from "./notion-ai";
@@ -103,6 +105,7 @@ import { photoroom } from "./photoroom";
 
 // AI Website Builders
 import { boltNew } from "./bolt-new";
+import { v0 } from "./v0";
 
 // AI Design Tools
 import { canvaAi } from "./canva-ai";
@@ -139,6 +142,7 @@ export const tools: ToolReview[] = [
   mistral,
   deepseek,
   grok,
+  gemma,
   // Writing
   jasper,
   copyAi,
@@ -190,6 +194,7 @@ export const tools: ToolReview[] = [
   udio,
   aiva,
   soundraw,
+  lyria,
   // Business Productivity
   notionAi,
   otterAi,
@@ -210,6 +215,7 @@ export const tools: ToolReview[] = [
   photoroom,
   // Website Builders
   boltNew,
+  v0,
   // Design
   canvaAi,
   figmaAi,
