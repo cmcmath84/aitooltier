@@ -19,6 +19,7 @@ import { mistral } from "./mistral";
 import { deepseek } from "./deepseek";
 import { grok } from "./grok";
 import { gemma } from "./gemma";
+import { museSpark } from "./muse-spark";
 
 // AI Writing Tools
 import { jasper } from "./jasper";
@@ -143,6 +144,7 @@ export const tools: ToolReview[] = [
   deepseek,
   grok,
   gemma,
+  museSpark,
   // Writing
   jasper,
   copyAi,

@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const gemini: ToolReview = {
   slug: "gemini",
   name: "Gemini (Google)",
-  tagline: "Google's LLM with deep Google Workspace integration and a massive 1M+ token context window",
+  tagline: "Google's LLM with deep Google Workspace integration, 2M token context window, and native code execution",
   category: "ai-llms",
   url: "https://gemini.google.com",
 
@@ -26,7 +26,7 @@ export const gemini: ToolReview = {
       plan: "Google AI Pro",
       price: "$19.99",
       period: "month",
-      features: ["Gemini 3.1 Ultra", "1M token context", "2TB Google storage", "Workspace integration", "Lyria 3 access"],
+      features: ["Gemini 3.1 Ultra", "2M token context", "Code Execution sandbox", "2TB Google storage", "Workspace integration", "Lyria 3 access"],
     },
     {
       plan: "Google AI Ultra",
@@ -38,12 +38,12 @@ export const gemini: ToolReview = {
       plan: "API",
       price: "$0.075-5",
       period: "per 1M tokens",
-      features: ["All models", "1M+ context", "Grounding with Google Search", "Mandatory spend caps (April 2026)"],
+      features: ["All models", "2M context", "Flash-Lite at $0.25/M input", "Grounding with Google Search", "Code Execution", "Mandatory spend caps (April 2026)"],
     },
   ],
 
   pros: [
-    "1 million+ token context window is the largest available -- can process entire books",
+    "2 million token context window is the largest available -- can process entire books and full codebases in one prompt",
     "Best Google Workspace integration (Gmail, Docs, Drive, Calendar)",
     "Free tier is more generous than Claude's",
     "Gemini Advanced includes 2TB Google One storage -- real added value",
@@ -76,16 +76,16 @@ export const gemini: ToolReview = {
   notFor: "Anyone who needs the best raw output quality. Claude and GPT-4 both write better. Also not for anyone spooked by Google's history of abandoning products.",
   verdict: "Gemini's strength is the ecosystem play. The 1M context window is genuinely useful for long documents, and the Google Workspace integration is something neither OpenAI nor Anthropic can match. But purely as an LLM, the output quality is a step behind Claude and GPT-4. Pick Gemini if you're deep in Google's ecosystem. Otherwise, the other two are better standalone.",
 
-  lastReviewedDate: "2026-04-08",
+  lastReviewedDate: "2026-04-13",
   dataSources: [
-    { name: "Google Gemini official site", dateAccessed: "2026-04-08" },
-    { name: "Google AI for Developers", dateAccessed: "2026-04-08" },
-    { name: "LMSYS Chatbot Arena rankings", dateAccessed: "2026-04-08" },
-    { name: "Reddit r/Bard", dateAccessed: "2026-04-08" },
-    { name: "Hands-on testing", dateAccessed: "2026-04-08" },
+    { name: "Google Gemini official site", dateAccessed: "2026-04-13" },
+    { name: "Google AI for Developers", dateAccessed: "2026-04-13" },
+    { name: "LMSYS Chatbot Arena rankings", dateAccessed: "2026-04-13" },
+    { name: "Reddit r/Bard", dateAccessed: "2026-04-13" },
+    { name: "SEO HQ Gemini 3.1 Ultra coverage", dateAccessed: "2026-04-13" },
   ],
   affiliateUrl: "https://gemini.google.com",
   status: "active",
-  metaTitle: "Gemini Review 2026: Gemini 3.1 Ultra, Google AI Pro and Ultra Plans",
-  metaDescription: "Google Gemini review. Gemini 3.1 Ultra, 1M+ context, Google AI Pro $19.99 and Ultra $249.99 plans. Best Workspace integration. Scores, pricing. April 2026.",
+  metaTitle: "Gemini Review 2026: Gemini 3.1 Ultra, 2M Context, Code Execution",
+  metaDescription: "Google Gemini review. Gemini 3.1 Ultra with 2M context window, Code Execution sandbox, Flash-Lite. Google AI Pro $19.99, Ultra $249.99. Scores, pricing. April 2026.",
 };
