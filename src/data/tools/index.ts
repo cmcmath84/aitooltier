@@ -62,6 +62,7 @@ import { lovable } from "./lovable";
 import { devin } from "./devin";
 import { replit } from "./replit";
 import { codex } from "./codex";
+import { antigravity } from "./antigravity";
 
 // AI Chatbots & Assistants
 import { chatgpt } from "./chatgpt";
@@ -203,6 +204,7 @@ export const tools: ToolReview[] = [
   devin,
   replit,
   codex,
+  antigravity,
   // Chatbots
   chatgpt,
   perplexity,

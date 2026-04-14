@@ -19,12 +19,22 @@ const popularSlugs = [
   "deepseek-vs-github-copilot",
   "midjourney-vs-dall-e",
   "claude-code-vs-replit",
-  "grok-vs-suno",
-  "canva-ai-vs-gamma",
-  "dall-e-vs-runway",
   "cursor-vs-windsurf",
-  "poe-vs-elevenlabs",
+  "canva-ai-vs-gamma",
+  "codex-vs-claude-code",
+  "antigravity-vs-cursor",
   "gemini-vs-chatgpt",
+  "codex-vs-antigravity",
+];
+
+// LLMs vs Local/Open-Weight Models — cross-category comparisons
+const llmVsLocalSlugs = [
+  "claude-vs-llama",
+  "chatgpt-vs-deepseek",
+  "gemini-vs-mistral",
+  "grok-vs-deepseek",
+  "claude-vs-qwen",
+  "gemini-vs-gemma",
 ];
 
 function CompareCard({
@@ -99,6 +109,16 @@ export default function ComparePage() {
     })
     .filter(Boolean) as { toolA: (typeof tools)[0]; toolB: (typeof tools)[0] }[];
 
+  // Build LLM vs Local comparisons
+  const llmVsLocal = llmVsLocalSlugs
+    .map((slug) => {
+      const [a, b] = slug.split("-vs-");
+      const toolA = tools.find((t) => t.slug === a);
+      const toolB = tools.find((t) => t.slug === b);
+      return toolA && toolB ? { toolA, toolB } : null;
+    })
+    .filter(Boolean) as { toolA: (typeof tools)[0]; toolB: (typeof tools)[0] }[];
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold text-foreground">Compare AI Tools</h1>
@@ -117,6 +137,30 @@ export default function ComparePage() {
           </h2>
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {popular.map(({ toolA, toolB }) => (
+              <CompareCard
+                key={`${toolA.slug}-${toolB.slug}`}
+                toolA={toolA}
+                toolB={toolB}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* LLMs vs Local/Open-Weight Models */}
+      {llmVsLocal.length > 0 && (
+        <div className="mt-10">
+          <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-foreground">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-sm">
+              &#9878;
+            </span>
+            Cloud LLMs vs Open-Weight Models
+          </h2>
+          <p className="mb-4 text-sm text-muted-foreground">
+            How do proprietary cloud models compare to self-hostable open-weight alternatives?
+          </p>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {llmVsLocal.map(({ toolA, toolB }) => (
               <CompareCard
                 key={`${toolA.slug}-${toolB.slug}`}
                 toolA={toolA}
