@@ -62,6 +62,16 @@ export const museSpark: ToolReview = {
   ],
   affiliateUrl: "https://ai.meta.com",
   status: "active",
+  benchmarks: {
+    modelName: "Muse Spark",
+    scores: [
+      { name: "MMLU", score: 89.0, maxScore: 100, unit: "%" },
+      { name: "GPQA Diamond", score: 86.0, maxScore: 100, unit: "%" },
+      { name: "HumanEval", score: 91.0, maxScore: 100, unit: "%" },
+      { name: "HLE", score: 58.0, maxScore: 100, unit: "%" },
+    ],
+    lastUpdated: "2026-04-13",
+  },
   metaTitle: "Muse Spark Review 2026: Meta's Free Frontier AI Model",
   metaDescription: "Meta Muse Spark review. Free frontier AI with Contemplating mode, natively multimodal, 260K context. No API yet. How does it compare? Scores, pricing. April 2026.",
 };

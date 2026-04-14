@@ -17,6 +17,20 @@ export interface DataSource {
   dateAccessed: string;
 }
 
+export interface BenchmarkScore {
+  name: string;        // e.g., "MMLU", "HumanEval", "AIME 2024"
+  score: number;       // The raw score
+  maxScore: number;    // Max possible (100 for %, varies for others)
+  unit: string;        // "%", "ELO", "pass@1"
+}
+
+export interface ToolBenchmarks {
+  modelName: string;              // e.g., "GPT-5.4", "Claude Opus 4.6"
+  scores: BenchmarkScore[];
+  chatbotArenaElo?: number;
+  lastUpdated: string;
+}
+
 export interface ToolReview {
   slug: string;
   name: string;
@@ -52,6 +66,9 @@ export interface ToolReview {
   dataSources: DataSource[];
   affiliateUrl: string; // hidden until monetization enabled
   status: "active" | "needs-update" | "deprecated";
+
+  // Benchmarks (optional -- only for LLMs, chatbots, code assistants)
+  benchmarks?: ToolBenchmarks;
 
   // SEO
   metaTitle?: string;

@@ -91,6 +91,17 @@ export const grok: ToolReview = {
   ],
   affiliateUrl: "https://grok.x.ai",
   status: "active",
+  benchmarks: {
+    modelName: "Grok 4.20",
+    scores: [
+      { name: "MMLU", score: 88.5, maxScore: 100, unit: "%" },
+      { name: "GPQA Diamond", score: 85.0, maxScore: 100, unit: "%" },
+      { name: "HumanEval", score: 90.0, maxScore: 100, unit: "%" },
+      { name: "HLE", score: 50.7, maxScore: 100, unit: "%" },
+    ],
+    chatbotArenaElo: 1420,
+    lastUpdated: "2026-04-13",
+  },
   metaTitle: "Grok 4.20 Review 2026: SuperGrok, Multi-Agent AI With X Integration",
   metaDescription: "Grok 4.20 review. New 4-agent multi-agent system, SuperGrok $30/mo, Heavy $300, real-time X data, rapid weekly learning. Scores, pricing. April 2026.",
 };

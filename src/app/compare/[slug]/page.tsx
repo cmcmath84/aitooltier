@@ -4,8 +4,10 @@ import { notFound } from "next/navigation";
 import { tools, getToolBySlug } from "@/data/tools";
 import ScoreBadge from "@/components/ui/ScoreBadge";
 import TierBadge from "@/components/ui/TierBadge";
+import BenchmarkComparison from "@/components/ui/BenchmarkComparison";
 import { getTierForScore } from "@/lib/tiers";
 import { getAffiliateUrl } from "@/lib/affiliates";
+import { generateRecommendations, generateVerdict } from "@/lib/benchmarks";
 import { comparePageJsonLd, safeJsonLd } from "@/lib/structured-data";
 
 // Generate all possible VS combinations
@@ -29,9 +31,10 @@ export async function generateMetadata({
   const toolA = getToolBySlug(slugA);
   const toolB = getToolBySlug(slugB);
   if (!toolA || !toolB) return { title: "Comparison Not Found" };
+  const hasBenchmarks = toolA.benchmarks || toolB.benchmarks;
   return {
     title: `${toolA.name} vs ${toolB.name} (2026): Which Is Better?`,
-    description: `Detailed comparison of ${toolA.name} and ${toolB.name}. Scores, pricing, pros and cons, and our recommendation.`,
+    description: `Detailed comparison of ${toolA.name} and ${toolB.name}. Scores, ${hasBenchmarks ? "benchmarks, " : ""}pricing, pros and cons, and our recommendation.`,
   };
 }
 
@@ -206,29 +209,75 @@ export default async function ComparisonPage({
         </div>
       </div>
 
-      {/* Choose if */}
-      <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
-        {[toolA, toolB].map((tool) => (
-          <div
-            key={tool.slug}
-            className="rounded-lg border border-border bg-card p-5"
-          >
-            <h3 className="font-semibold text-foreground">
-              Choose {tool.name} if...
-            </h3>
-            <p className="mt-2 text-sm text-muted-foreground">
-              {tool.bestFor}
-            </p>
-            <a
-              href={getAffiliateUrl(tool.slug, tool.url)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-4 inline-flex items-center rounded-md bg-primary px-4 py-2 text-xs font-medium text-white transition hover:bg-primary-hover"
-            >
-              Visit {tool.name}
-            </a>
-          </div>
-        ))}
+      {/* Benchmark Head-to-Head */}
+      <div className="mt-8">
+        <BenchmarkComparison toolA={toolA} toolB={toolB} />
+      </div>
+
+      {/* Choose if — enhanced with auto-generated recommendations */}
+      <div className="mt-8">
+        <h2 className="mb-4 text-xl font-bold text-foreground">
+          Which Should You Pick?
+        </h2>
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+          {(() => {
+            const recs = generateRecommendations(toolA, toolB);
+            return [
+              { tool: toolA, reasons: recs.pickA },
+              { tool: toolB, reasons: recs.pickB },
+            ].map(({ tool, reasons }) => {
+              const tier = getTierForScore(tool.scores.overall);
+              return (
+                <div
+                  key={tool.slug}
+                  className={`rounded-lg border p-5 ${
+                    tool.slug === winner.slug
+                      ? `${tier.border} ${tier.bg}`
+                      : "border-border bg-card"
+                  }`}
+                >
+                  <h3 className="font-semibold text-foreground">
+                    Pick {tool.name} if...
+                  </h3>
+                  {reasons.length > 0 && (
+                    <ul className="mt-3 space-y-1.5">
+                      {reasons.map((r, i) => (
+                        <li
+                          key={i}
+                          className="flex items-start gap-2 text-sm text-muted-foreground"
+                        >
+                          <span className="mt-0.5 text-primary">&#10003;</span>
+                          {r}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                  <p className="mt-3 text-sm text-muted-foreground">
+                    {tool.bestFor}
+                  </p>
+                  <a
+                    href={getAffiliateUrl(tool.slug, tool.url)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4 inline-flex items-center rounded-md bg-primary px-4 py-2 text-xs font-medium text-white transition hover:bg-primary-hover"
+                  >
+                    Visit {tool.name}
+                  </a>
+                </div>
+              );
+            });
+          })()}
+        </div>
+      </div>
+
+      {/* Verdict */}
+      <div className="mt-8 rounded-lg border border-primary/20 bg-blue-50 p-6">
+        <h2 className="mb-2 text-lg font-semibold text-foreground">
+          Our Verdict
+        </h2>
+        <p className="text-muted-foreground">
+          {generateVerdict(toolA, toolB)}
+        </p>
       </div>
     </div>
   );

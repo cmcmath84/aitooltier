@@ -10,6 +10,7 @@ import ScoreBadge from "@/components/ui/ScoreBadge";
 import TierBadge from "@/components/ui/TierBadge";
 import ToolLogo from "@/components/ui/ToolLogo";
 import ProsCons from "@/components/ui/ProsCons";
+import BenchmarkTable from "@/components/ui/BenchmarkTable";
 import ToolCard from "@/components/tools/ToolCard";
 
 export async function generateStaticParams() {
@@ -130,6 +131,16 @@ export default async function ToolReviewPage({
           />
         </div>
       </div>
+
+      {/* Benchmark Scores */}
+      {tool.benchmarks && (
+        <div className="mt-8">
+          <h2 className="mb-4 text-lg font-semibold text-foreground">
+            Benchmark Scores
+          </h2>
+          <BenchmarkTable benchmarks={tool.benchmarks} />
+        </div>
+      )}
 
       {/* Visit button */}
       <div className="mt-6">

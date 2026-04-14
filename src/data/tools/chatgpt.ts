@@ -55,6 +55,19 @@ export const chatgpt: ToolReview = {
   ],
   affiliateUrl: "https://chat.openai.com",
   status: "active",
+  benchmarks: {
+    modelName: "GPT-5.4",
+    scores: [
+      { name: "MMLU", score: 91.0, maxScore: 100, unit: "%" },
+      { name: "GPQA Diamond", score: 92.8, maxScore: 100, unit: "%" },
+      { name: "AIME 2024", score: 83.3, maxScore: 100, unit: "%" },
+      { name: "HumanEval", score: 95.0, maxScore: 100, unit: "%" },
+      { name: "SWE-bench Verified", score: 72.0, maxScore: 100, unit: "%" },
+      { name: "ARC-AGI", score: 73.3, maxScore: 100, unit: "%" },
+    ],
+    chatbotArenaElo: 1480,
+    lastUpdated: "2026-04-13",
+  },
   metaTitle: "ChatGPT Review 2026: GPT-5.4, ChatGPT Go, and All Plans",
   metaDescription: "ChatGPT review. GPT-5.4 with 1M context, new $8/mo Go plan, Plus, Pro, Business. Still the best all-in-one AI chatbot? Scores, pricing, known issues. April 2026.",
 };

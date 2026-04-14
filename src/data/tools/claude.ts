@@ -91,6 +91,19 @@ export const claude: ToolReview = {
   ],
   affiliateUrl: "https://claude.ai",
   status: "active",
+  benchmarks: {
+    modelName: "Claude Opus 4.6",
+    scores: [
+      { name: "MMLU", score: 91.3, maxScore: 100, unit: "%" },
+      { name: "GPQA Diamond", score: 91.3, maxScore: 100, unit: "%" },
+      { name: "AIME 2024", score: 99.8, maxScore: 100, unit: "%" },
+      { name: "HumanEval", score: 94.0, maxScore: 100, unit: "%" },
+      { name: "SWE-bench Verified", score: 80.8, maxScore: 100, unit: "%" },
+      { name: "ARC-AGI", score: 75.2, maxScore: 100, unit: "%" },
+    ],
+    chatbotArenaElo: 1504,
+    lastUpdated: "2026-04-13",
+  },
   metaTitle: "Claude Review 2026: Mythos 5, Opus 4.6, and Max Plans",
   metaDescription: "Claude review. Mythos 5 (10T params) for security/coding, Opus 4.6, new Max $100/$200 tiers. Best writing quality. Scores, pricing, comparisons. April 2026.",
 };

@@ -86,6 +86,18 @@ export const gemini: ToolReview = {
   ],
   affiliateUrl: "https://gemini.google.com",
   status: "active",
+  benchmarks: {
+    modelName: "Gemini 3.1 Ultra",
+    scores: [
+      { name: "MMLU", score: 90.5, maxScore: 100, unit: "%" },
+      { name: "GPQA Diamond", score: 94.3, maxScore: 100, unit: "%" },
+      { name: "HumanEval", score: 93.5, maxScore: 100, unit: "%" },
+      { name: "SWE-bench Verified", score: 80.6, maxScore: 100, unit: "%" },
+      { name: "ARC-AGI", score: 77.1, maxScore: 100, unit: "%" },
+    ],
+    chatbotArenaElo: 1500,
+    lastUpdated: "2026-04-13",
+  },
   metaTitle: "Gemini Review 2026: Gemini 3.1 Ultra, 2M Context, Code Execution",
   metaDescription: "Google Gemini review. Gemini 3.1 Ultra with 2M context window, Code Execution sandbox, Flash-Lite. Google AI Pro $19.99, Ultra $249.99. Scores, pricing. April 2026.",
 };

@@ -73,6 +73,18 @@ export const deepseek: ToolReview = {
   ],
   affiliateUrl: "https://www.deepseek.com",
   status: "active",
+  benchmarks: {
+    modelName: "DeepSeek V3.2",
+    scores: [
+      { name: "MMLU", score: 90.8, maxScore: 100, unit: "%" },
+      { name: "MMLU-Pro", score: 85.0, maxScore: 100, unit: "%" },
+      { name: "GPQA Diamond", score: 79.9, maxScore: 100, unit: "%" },
+      { name: "HumanEval", score: 91.5, maxScore: 100, unit: "%" },
+      { name: "SWE-bench Verified", score: 67.8, maxScore: 100, unit: "%" },
+    ],
+    chatbotArenaElo: 1380,
+    lastUpdated: "2026-04-13",
+  },
   metaTitle: "DeepSeek Review 2026: Near-Frontier AI at a Fraction of the Cost",
   metaDescription: "DeepSeek review. Open-source LLM with strong reasoning, dirt-cheap API pricing, 130M+ users. But censorship and reliability are real concerns. Scores, pricing. March 2026.",
 };

@@ -68,6 +68,15 @@ export const mistral: ToolReview = {
   ],
   affiliateUrl: "https://mistral.ai",
   status: "active",
+  benchmarks: {
+    modelName: "Mistral Large",
+    scores: [
+      { name: "MMLU", score: 86.0, maxScore: 100, unit: "%" },
+      { name: "HumanEval", score: 92.0, maxScore: 100, unit: "%" },
+      { name: "MATH", score: 69.0, maxScore: 100, unit: "%" },
+    ],
+    lastUpdated: "2026-04-13",
+  },
   metaTitle: "Mistral AI Review 2026: Best Budget LLM for Developers?",
   metaDescription: "Mistral AI review. Cheap API, great multilingual support, open models -- but rough consumer product. Full scores and pricing. March 2026.",
 };

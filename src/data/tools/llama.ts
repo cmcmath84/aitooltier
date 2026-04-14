@@ -63,6 +63,16 @@ export const llama: ToolReview = {
   ],
   affiliateUrl: "https://llama.meta.com",
   status: "active",
+  benchmarks: {
+    modelName: "Llama 3.1 405B",
+    scores: [
+      { name: "MMLU", score: 88.6, maxScore: 100, unit: "%" },
+      { name: "GPQA Diamond", score: 51.1, maxScore: 100, unit: "%" },
+      { name: "HumanEval", score: 89.0, maxScore: 100, unit: "%" },
+      { name: "MATH", score: 73.8, maxScore: 100, unit: "%" },
+    ],
+    lastUpdated: "2026-04-13",
+  },
   metaTitle: "Llama 3 Review 2026: Best Open-Source LLM You Can Run Locally",
   metaDescription: "Meta Llama 3 review. Free, open-source, private -- but you need the hardware and skills to run it. Scores, setup info, pros and cons. March 2026.",
 };

@@ -63,6 +63,16 @@ export const gemma: ToolReview = {
   ],
   affiliateUrl: "https://deepmind.google/models/gemma/gemma-4/",
   status: "active",
+  benchmarks: {
+    modelName: "Gemma 4 31B",
+    scores: [
+      { name: "MMLU", score: 83.0, maxScore: 100, unit: "%" },
+      { name: "GPQA Diamond", score: 84.3, maxScore: 100, unit: "%" },
+      { name: "AIME 2024", score: 89.2, maxScore: 100, unit: "%" },
+      { name: "HumanEval", score: 85.0, maxScore: 100, unit: "%" },
+    ],
+    lastUpdated: "2026-04-13",
+  },
   metaTitle: "Gemma 4 Review 2026: Google's Open-Weights Multimodal LLM",
   metaDescription: "Gemma 4 review. Google DeepMind's open-weights LLM, Apache 2.0, 256K context, 140+ languages, four model sizes. Scores, pricing, comparison. April 2026.",
 };
