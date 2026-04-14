@@ -31,6 +31,25 @@
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 30%, #f8fafc 100%);
+  background-attachment: fixed;
   color: var(--foreground);
+}
+
+.section-alt {
+  background-color: #f1f5f9;
+}
+
+.glow-s { box-shadow: 0 0 20px rgba(239, 68, 68, 0.4), 0 0 6px rgba(239, 68, 68, 0.2); }
+.glow-a { box-shadow: 0 0 20px rgba(249, 115, 22, 0.4), 0 0 6px rgba(249, 115, 22, 0.2); }
+.glow-b { box-shadow: 0 0 20px rgba(234, 179, 8, 0.35), 0 0 6px rgba(234, 179, 8, 0.2); }
+.glow-c { box-shadow: 0 0 20px rgba(16, 185, 129, 0.35), 0 0 6px rgba(16, 185, 129, 0.2); }
+.glow-d { box-shadow: 0 0 20px rgba(59, 130, 246, 0.35), 0 0 6px rgba(59, 130, 246, 0.2); }
+.glow-f { box-shadow: 0 0 15px rgba(107, 114, 128, 0.25); }
+
+@keyframes grow-bar {
+  from { width: 0%; }
+}
+.animate-bar {
+  animation: grow-bar 0.8s ease-out forwards;
 }

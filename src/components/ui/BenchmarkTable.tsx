@@ -69,7 +69,7 @@ export default function BenchmarkTable({ benchmarks }: BenchmarkTableProps) {
                   <td className="hidden px-4 py-3 md:table-cell">
                     <div className="h-2 w-full rounded-full bg-muted">
                       <div
-                        className="h-2 rounded-full bg-primary transition-all"
+                        className="h-2 rounded-full bg-primary animate-bar"
                         style={{ width: `${pct}%` }}
                       />
                     </div>

@@ -1,11 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
-import { categories } from "@/data/categories";
 import { tools } from "@/data/tools";
 import { getTierForScore } from "@/lib/tiers";
-import CategoryIcon from "@/components/ui/CategoryIcon";
 import ToolLogo from "@/components/ui/ToolLogo";
-import TierBadge from "@/components/ui/TierBadge";
+import CompareSearch from "@/components/ui/CompareSearch";
 
 export const metadata: Metadata = {
   title: "Compare AI Tools | Head-to-Head with Scores and Benchmarks",
@@ -101,14 +99,6 @@ export default function ComparePage() {
     })
     .filter(Boolean) as { toolA: (typeof tools)[0]; toolB: (typeof tools)[0] }[];
 
-  // Group tools by category for comparison suggestions
-  const toolsByCategory = categories
-    .map((cat) => ({
-      category: cat,
-      tools: tools.filter((t) => t.category === cat.slug),
-    }))
-    .filter((group) => group.tools.length >= 2);
-
   return (
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold text-foreground">Compare AI Tools</h1>
@@ -137,30 +127,15 @@ export default function ComparePage() {
         </div>
       )}
 
-      {/* By Category */}
-      {toolsByCategory.length > 0 && (
-        <div className="mt-12 space-y-10">
-          {toolsByCategory.map((group) => (
-            <div key={group.category.slug}>
-              <h2 className="mb-4 flex items-center gap-3 text-xl font-bold text-foreground">
-                <CategoryIcon slug={group.category.slug} size="sm" />
-                {group.category.name}
-              </h2>
-              <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {group.tools.map((toolA, i) =>
-                  group.tools.slice(i + 1).map((toolB) => (
-                    <CompareCard
-                      key={`${toolA.slug}-${toolB.slug}`}
-                      toolA={toolA}
-                      toolB={toolB}
-                    />
-                  ))
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      )}
+      {/* Searchable comparison grid */}
+      <CompareSearch
+        tools={tools.map((t) => ({
+          slug: t.slug,
+          name: t.name,
+          category: t.category,
+          scores: { overall: t.scores.overall },
+        }))}
+      />
     </div>
   );
 }

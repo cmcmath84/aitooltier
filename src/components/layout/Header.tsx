@@ -12,7 +12,7 @@ export default function Header() {
   const [categoriesOpen, setCategoriesOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-white">
+    <header className="sticky top-0 z-50 border-b border-slate-700/50 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900">
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center">
@@ -33,16 +33,16 @@ export default function Header() {
             onMouseEnter={() => setCategoriesOpen(true)}
             onMouseLeave={() => setCategoriesOpen(false)}
           >
-            <button className="text-sm font-medium text-muted-foreground transition hover:text-foreground">
+            <button className="text-sm font-medium text-slate-300 transition hover:text-white">
               Categories
             </button>
             {categoriesOpen && (
-              <div className="absolute left-0 top-full z-50 mt-1 w-72 rounded-lg border border-border bg-white p-2 shadow-lg">
+              <div className="absolute left-0 top-full z-50 mt-1 w-72 rounded-lg border border-slate-700 bg-slate-800 p-2 shadow-lg">
                 {categories.map((cat) => (
                   <Link
                     key={cat.slug}
                     href={`/categories/${cat.slug}`}
-                    className="flex items-center gap-3 rounded-md px-3 py-2 text-sm text-muted-foreground transition hover:bg-muted hover:text-foreground"
+                    className="flex items-center gap-3 rounded-md px-3 py-2 text-sm text-slate-300 transition hover:bg-slate-700 hover:text-white"
                     onClick={() => setCategoriesOpen(false)}
                   >
                     <CategoryIcon slug={cat.slug} size="sm" />
@@ -54,19 +54,19 @@ export default function Header() {
           </div>
           <Link
             href="/compare"
-            className="text-sm font-medium text-muted-foreground transition hover:text-foreground"
+            className="text-sm font-medium text-slate-300 transition hover:text-white"
           >
             Compare
           </Link>
           <Link
             href="/how-we-review"
-            className="text-sm font-medium text-muted-foreground transition hover:text-foreground"
+            className="text-sm font-medium text-slate-300 transition hover:text-white"
           >
             How We Review
           </Link>
           <Link
             href="/about"
-            className="text-sm font-medium text-muted-foreground transition hover:text-foreground"
+            className="text-sm font-medium text-slate-300 transition hover:text-white"
           >
             About
           </Link>
@@ -84,7 +84,7 @@ export default function Header() {
           aria-label="Toggle menu"
         >
           <svg
-            className="h-6 w-6 text-foreground"
+            className="h-6 w-6 text-white"
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.5"
@@ -109,42 +109,42 @@ export default function Header() {
 
       {/* Mobile menu */}
       {mobileMenuOpen && (
-        <div className="border-t border-border bg-white px-4 py-3 md:hidden">
+        <div className="border-t border-slate-700/50 bg-slate-900 px-4 py-3 md:hidden">
           <div className="mb-3">
             <SearchBar />
           </div>
-          <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          <div className="mb-2 text-xs font-semibold uppercase tracking-wider text-slate-500">
             Categories
           </div>
           {categories.map((cat) => (
             <Link
               key={cat.slug}
               href={`/categories/${cat.slug}`}
-              className="flex items-center gap-3 py-2 text-sm text-muted-foreground"
+              className="flex items-center gap-3 py-2 text-sm text-slate-300"
               onClick={() => setMobileMenuOpen(false)}
             >
               <CategoryIcon slug={cat.slug} size="sm" />
               <span>{cat.name}</span>
             </Link>
           ))}
-          <div className="mt-3 border-t border-border pt-3">
+          <div className="mt-3 border-t border-slate-700/50 pt-3">
             <Link
               href="/compare"
-              className="block py-2 text-sm font-medium text-muted-foreground"
+              className="block py-2 text-sm font-medium text-slate-300"
               onClick={() => setMobileMenuOpen(false)}
             >
               Compare
             </Link>
             <Link
               href="/how-we-review"
-              className="block py-2 text-sm font-medium text-muted-foreground"
+              className="block py-2 text-sm font-medium text-slate-300"
               onClick={() => setMobileMenuOpen(false)}
             >
               How We Review
             </Link>
             <Link
               href="/about"
-              className="block py-2 text-sm font-medium text-muted-foreground"
+              className="block py-2 text-sm font-medium text-slate-300"
               onClick={() => setMobileMenuOpen(false)}
             >
               About
