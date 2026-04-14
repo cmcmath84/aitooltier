@@ -214,6 +214,53 @@ export default async function ToolReviewPage({
         </div>
       </div>
 
+      {/* System Requirements (local LLMs only) */}
+      {tool.systemRequirements && tool.systemRequirements.length > 0 && (
+        <div className="mt-8">
+          <h2 className="mb-4 text-lg font-semibold text-foreground">
+            System Requirements
+          </h2>
+          <p className="mb-3 text-sm text-muted-foreground">
+            Hardware needed to self-host. Min = smallest viable setup (usually
+            heavy quantization). Max = full-precision / production-grade.
+          </p>
+          <div className="overflow-x-auto rounded-lg border border-border">
+            <table className="w-full text-sm">
+              <thead className="bg-muted/50 text-left text-xs uppercase tracking-wide text-muted-foreground">
+                <tr>
+                  <th className="px-4 py-2 font-semibold">Model variant</th>
+                  <th className="px-4 py-2 font-semibold">Min</th>
+                  <th className="px-4 py-2 font-semibold">Max</th>
+                </tr>
+              </thead>
+              <tbody>
+                {tool.systemRequirements.map((req, i) => (
+                  <tr
+                    key={i}
+                    className="border-t border-border align-top odd:bg-background even:bg-muted/20"
+                  >
+                    <td className="px-4 py-3 font-medium text-foreground">
+                      {req.variant}
+                      {req.notes && (
+                        <span className="mt-1 block text-xs font-normal text-muted-foreground">
+                          {req.notes}
+                        </span>
+                      )}
+                    </td>
+                    <td className="px-4 py-3 text-muted-foreground">
+                      {req.min}
+                    </td>
+                    <td className="px-4 py-3 text-muted-foreground">
+                      {req.max}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      )}
+
       {/* Known Issues */}
       {tool.knownIssues.length > 0 && (
         <div className="mt-8">

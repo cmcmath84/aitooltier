@@ -88,6 +88,20 @@ export const falcon: ToolReview = {
     ],
     lastUpdated: "2026-04-13",
   },
+  systemRequirements: [
+    {
+      variant: "Falcon 3 7B / 10B (dense)",
+      min: "4 GB VRAM (Q4)",
+      max: "16 GB VRAM FP16",
+    },
+    {
+      variant: "Falcon 3 Mamba 7B (state-space hybrid)",
+      min: "4 GB VRAM (Q4)",
+      max: "16 GB VRAM FP16",
+      notes: "Mamba architecture gives cheap long-context inference",
+    },
+  ],
+
   metaTitle: "Falcon 3 Review 2026: TII's Apache-2.0 Open-Weights LLM Family",
   metaDescription: "Falcon 3 review. UAE's Technology Innovation Institute open-weights LLM. Apache 2.0, efficient 7B/10B sizes, Mamba variant. Strong Arabic. Benchmarks, hardware requirements. April 2026.",
 };

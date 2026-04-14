@@ -31,6 +31,14 @@ export interface ToolBenchmarks {
   lastUpdated: string;
 }
 
+// Hardware requirements for self-hosting local/open-weight LLMs
+export interface ModelVariantRequirements {
+  variant: string;   // e.g., "Llama 4 Scout 109B MoE"
+  min: string;       // minimum viable hardware to run
+  max: string;       // full-precision / production hardware
+  notes?: string;    // e.g., license carve-outs, architecture notes
+}
+
 export interface ToolReview {
   slug: string;
   name: string;
@@ -72,6 +80,9 @@ export interface ToolReview {
 
   // Benchmarks (optional -- only for LLMs, chatbots, code assistants)
   benchmarks?: ToolBenchmarks;
+
+  // System requirements (optional -- only for self-hostable local LLMs)
+  systemRequirements?: ModelVariantRequirements[];
 
   // SEO
   metaTitle?: string;

@@ -88,6 +88,26 @@ export const glm: ToolReview = {
     ],
     lastUpdated: "2026-04-13",
   },
+  systemRequirements: [
+    {
+      variant: "GLM-4.6 (355B MoE flagship)",
+      min: "128 GB RAM + 24 GB GPU (Q3 offload)",
+      max: "4× H100 FP8",
+      notes: "MIT license -- zero commercial restrictions",
+    },
+    {
+      variant: "GLM-4.6V (multimodal)",
+      min: "128 GB RAM + 28 GB GPU (Q3 + vision tower)",
+      max: "4× H100 FP8",
+      notes: "Vision tower adds ~4 GB on top of base footprint",
+    },
+    {
+      variant: "GLM-4-9B (small)",
+      min: "6 GB VRAM (Q4)",
+      max: "24 GB VRAM FP16",
+    },
+  ],
+
   metaTitle: "GLM-4.6 / Z.ai Review 2026: MIT-Licensed Open-Weights LLM from Zhipu AI",
   metaDescription: "GLM-4.6 review. Zhipu AI's 355B MoE open-weights LLM, true MIT license, SOTA on agentic tool-use. GLM-4.6V multimodal flagship. Benchmarks, pricing, hardware. April 2026.",
 };

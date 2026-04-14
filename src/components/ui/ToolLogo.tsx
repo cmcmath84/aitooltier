@@ -1,64 +1,141 @@
 import Image from "next/image";
 
 const logoMap: Record<string, string> = {
+  // Image
   midjourney: "/logos/midjourney.png",
-  "dall-e": "/logos/openai.png",
+  dalle: "/logos/openai.png",
   "stable-diffusion": "/logos/stability.png",
   "leonardo-ai": "/logos/leonardo.png",
   "adobe-firefly": "/logos/adobe.png",
   ideogram: "/logos/ideogram.png",
+  flux: "/logos/flux.png",
+  "krea-ai": "/logos/krea.png",
+  nightcafe: "/logos/nightcafe.png",
+
+  // LLMs / chatbots
   claude: "/logos/anthropic.png",
-  "gpt-4": "/logos/openai.png",
+  chatgpt: "/logos/openai.png",
   gemini: "/logos/gemini.png",
+  grok: "/logos/grok.png",
+  "microsoft-copilot": "/logos/microsoft.png",
+  perplexity: "/logos/perplexity.png",
+  poe: "/logos/poe.png",
+  notebooklm: "/logos/notebooklm.png",
+  "muse-spark": "/logos/meta.png",
+
+  // Local / open-weight LLMs
   llama: "/logos/meta.png",
   mistral: "/logos/mistral.png",
+  deepseek: "/logos/deepseek.png",
+  gemma: "/logos/gemini.png",
+  qwen: "/logos/qwen.png",
+  glm: "/logos/glm.png",
+  kimi: "/logos/kimi.png",
+  nemotron: "/logos/nvidia.png",
+  minimax: "/logos/minimax.png",
+  falcon: "/logos/falcon.png",
+
+  // Writing
   jasper: "/logos/jasper.png",
   "copy-ai": "/logos/copyai.png",
   grammarly: "/logos/grammarly.png",
+  quillbot: "/logos/quillbot.png",
+  wordtune: "/logos/wordtune.png",
+  sudowrite: "/logos/sudowrite.png",
+  writesonic: "/logos/writesonic.png",
+  tailor: "/logos/tailor.png",
+
+  // Video
   runway: "/logos/runway.png",
   pika: "/logos/pika.png",
-  "github-copilot": "/logos/github.png",
-  cursor: "/logos/cursor.png",
-  chatgpt: "/logos/openai.png",
-  perplexity: "/logos/perplexity.png",
-  elevenlabs: "/logos/elevenlabs.png",
-  "canva-ai": "/logos/canva.png",
-  "surfer-seo": "/logos/surfer.png",
-  suno: "/logos/suno.png",
-  udio: "/logos/udio.png",
-  "notion-ai": "/logos/notion.png",
-  "otter-ai": "/logos/otter.png",
-  "hubspot-ai": "/logos/hubspot.png",
-  synthesia: "/logos/synthesia.png",
-  "julius-ai": "/logos/julius.png",
-  "tableau-ai": "/logos/tableau.png",
   sora: "/logos/sora.png",
   heygen: "/logos/heygen.png",
-  "murf-ai": "/logos/murf.png",
-  descript: "/logos/descript.png",
-  "figma-ai": "/logos/figma.png",
-  looka: "/logos/looka.png",
-  ahrefs: "/logos/ahrefs.png",
-  semrush: "/logos/semrush.png",
+  "kling-ai": "/logos/kling.png",
+  veo: "/logos/veo.png",
+  luma: "/logos/luma.png",
+  "opus-clip": "/logos/opus-clip.png",
+  "invideo-ai": "/logos/invideo.png",
+  pictory: "/logos/pictory.png",
+  "captions-ai": "/logos/captions.png",
+
+  // Code assistants
+  "github-copilot": "/logos/github.png",
+  cursor: "/logos/cursor.png",
   windsurf: "/logos/windsurf.png",
   tabnine: "/logos/tabnine.png",
-  "microsoft-copilot": "/logos/microsoft.png",
-  poe: "/logos/poe.png",
-  deepseek: "/logos/deepseek.png",
-  grok: "/logos/grok.png",
   "claude-code": "/logos/claude-code.png",
-  "kling-ai": "/logos/kling.png",
-  flux: "/logos/flux.png",
   lovable: "/logos/lovable.png",
-  veo: "/logos/veo.png",
-  "power-bi": "/logos/powerbi.png",
-  gamma: "/logos/gamma.png",
-  deepl: "/logos/deepl.png",
-  fireflies: "/logos/fireflies.png",
-  notebooklm: "/logos/notebooklm.png",
-  aiva: "/logos/aiva.png",
   devin: "/logos/devin.png",
-  luma: "/logos/luma.png",
+  replit: "/logos/replit.png",
+  codex: "/logos/openai.png",
+  antigravity: "/logos/antigravity.png",
+
+  // Voice & audio
+  elevenlabs: "/logos/elevenlabs.png",
+  "murf-ai": "/logos/murf.png",
+  descript: "/logos/descript.png",
+  speechify: "/logos/speechify.png",
+
+  // Design
+  "canva-ai": "/logos/canva.png",
+  "figma-ai": "/logos/figma.png",
+  looka: "/logos/looka.png",
+  gamma: "/logos/gamma.png",
+
+  // SEO
+  "surfer-seo": "/logos/surfer.png",
+  ahrefs: "/logos/ahrefs.png",
+  semrush: "/logos/semrush.png",
+
+  // Music
+  suno: "/logos/suno.png",
+  udio: "/logos/udio.png",
+  aiva: "/logos/aiva.png",
+  soundraw: "/logos/soundraw.png",
+  lyria: "/logos/gemini.png",
+
+  // Business / productivity
+  "notion-ai": "/logos/notion.png",
+  "otter-ai": "/logos/otter.png",
+  fireflies: "/logos/fireflies.png",
+
+  // Marketing
+  "hubspot-ai": "/logos/hubspot.png",
+  synthesia: "/logos/synthesia.png",
+
+  // Data / analytics
+  "julius-ai": "/logos/julius.png",
+  "tableau-ai": "/logos/tableau.png",
+  "power-bi": "/logos/powerbi.png",
+
+  // Translation / detection
+  deepl: "/logos/deepl.png",
+  gptzero: "/logos/gptzero.png",
+
+  // Presentations
+  "napkin-ai": "/logos/napkin.png",
+  "beautiful-ai": "/logos/beautiful.png",
+
+  // Website builders
+  "bolt-new": "/logos/bolt.png",
+  v0: "/logos/v0.png",
+
+  // Photo editing
+  "topaz-ai": "/logos/topaz.png",
+  "magnific-ai": "/logos/magnific.png",
+  photoroom: "/logos/photoroom.png",
+
+  // Automation / agents
+  n8n: "/logos/n8n.png",
+  "bland-ai": "/logos/bland.png",
+  "vapi-ai": "/logos/vapi.png",
+  openclaw: "/logos/openclaw.png",
+  "hermes-agent": "/logos/hermes.png",
+  "manus-ai": "/logos/manus.png",
+  "perplexity-computer": "/logos/perplexity.png",
+  paperclip: "/logos/paperclip.png",
+  crewai: "/logos/crewai.png",
+  langgraph: "/logos/langgraph.png",
 };
 
 interface ToolLogoProps {

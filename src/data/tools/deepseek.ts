@@ -95,6 +95,15 @@ export const deepseek: ToolReview = {
     chatbotArenaElo: 1380,
     lastUpdated: "2026-04-13",
   },
+  systemRequirements: [
+    {
+      variant: "DeepSeek V3.2 (671B total, 37B active MoE)",
+      min: "192 GB RAM + 1× RTX 3090/4090 (IQ2_XXS offload, ~2 tok/s)",
+      max: "8× H100 FP8 or 4× H200 (full 671B, production)",
+      notes: "MIT license -- commercial use OK",
+    },
+  ],
+
   metaTitle: "DeepSeek Review 2026: Near-Frontier AI at a Fraction of the Cost",
   metaDescription: "DeepSeek review. Open-source LLM with strong reasoning, dirt-cheap API pricing, 130M+ users. But censorship and reliability are real concerns. Scores, pricing. March 2026.",
 };

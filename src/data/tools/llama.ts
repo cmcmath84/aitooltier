@@ -89,6 +89,25 @@ export const llama: ToolReview = {
     chatbotArenaElo: 1417,
     lastUpdated: "2026-04-13",
   },
+  systemRequirements: [
+    {
+      variant: "Llama 4 Scout (109B MoE, 17B active, 10M context)",
+      min: "2× RTX 4090 48 GB total (Q4 quantization)",
+      max: "2× A100 80 GB FP16",
+      notes: "Full 10M context is practically unreachable on consumer hardware due to KV-cache size",
+    },
+    {
+      variant: "Llama 4 Maverick (400B MoE, multimodal)",
+      min: "128 GB unified RAM Mac Studio M3 Ultra (Q3)",
+      max: "4× H100 80 GB or 2× H200 FP8",
+    },
+    {
+      variant: "Llama 3.3 70B (dense, still popular)",
+      min: "1× RTX 3090/4090 24 GB (Q4)",
+      max: "1× H100 80 GB FP16",
+    },
+  ],
+
   metaTitle: "Llama 4 Review 2026: Meta's Open-Weights Flagship (Scout, Maverick, Behemoth)",
   metaDescription: "Llama 4 review. Scout (10M context), Maverick (400B MoE multimodal), Behemoth in preview. Benchmarks, pricing, hardware requirements. April 2026.",
 };

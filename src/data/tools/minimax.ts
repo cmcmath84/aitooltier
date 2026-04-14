@@ -91,6 +91,20 @@ export const minimax: ToolReview = {
     ],
     lastUpdated: "2026-04-13",
   },
+  systemRequirements: [
+    {
+      variant: "MiniMax M2 / M2.5 (230B total, ~10B active MoE)",
+      min: "96 GB unified RAM Q3 (Mac M3 Ultra)",
+      max: "4× A100 80 GB FP8",
+      notes: "Sparse MoE activates only ~10B params during inference -- fast tok/s on moderate hardware",
+    },
+    {
+      variant: "MiniMax M1 (hybrid-attention reasoning predecessor)",
+      min: "96 GB unified RAM Q3",
+      max: "4× A100 80 GB FP8",
+    },
+  ],
+
   metaTitle: "MiniMax M2 / M2.5 Review 2026: 80.2% SWE-Bench Open-Weights LLM",
   metaDescription: "MiniMax M2.5 review. 230B/10B active MoE, MIT license, 80.2% SWE-Bench Verified -- matches Claude Opus 4.6 at 10-20× lower cost. Benchmarks, pricing, hardware. April 2026.",
 };

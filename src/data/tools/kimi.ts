@@ -93,6 +93,15 @@ export const kimi: ToolReview = {
     chatbotArenaElo: 1309,
     lastUpdated: "2026-04-13",
   },
+  systemRequirements: [
+    {
+      variant: "Kimi K2.5 (1T total, 32B active MoE)",
+      min: "256 GB unified RAM Mac Studio M3 Ultra (Q2, ~3 tok/s)",
+      max: "8× H200 141 GB FP8 or 16× H100 (production-grade)",
+      notes: "Practically a hosted-only model for most users -- self-hosting requires enterprise hardware",
+    },
+  ],
+
   metaTitle: "Kimi K2.5 Review 2026: Moonshot's 1T Open-Weights Flagship Tested",
   metaDescription: "Kimi K2.5 review. 1T MoE, 32B active, 256K context, Modified MIT license. Rivals Claude Opus 4.5 on agentic coding. Benchmarks, pricing, hardware requirements. April 2026.",
 };

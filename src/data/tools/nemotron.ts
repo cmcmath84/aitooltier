@@ -89,6 +89,25 @@ export const nemotron: ToolReview = {
     ],
     lastUpdated: "2026-04-13",
   },
+  systemRequirements: [
+    {
+      variant: "Nemotron 3 Super (31.6B total, 3.6B active Mamba-MoE)",
+      min: "8 GB VRAM Q4 (RTX 3070)",
+      max: "1× A100 40 GB FP16",
+      notes: "Mamba hybrid gives unusually low memory per token at long context",
+    },
+    {
+      variant: "Nemotron 3 Ultra (253B reasoning)",
+      min: "128 GB RAM + 24 GB GPU (Q3)",
+      max: "4× H100 FP8",
+    },
+    {
+      variant: "Llama-Nemotron 70B",
+      min: "24 GB VRAM Q4 (RTX 3090/4090)",
+      max: "1× H100 80 GB FP16",
+    },
+  ],
+
   metaTitle: "Nvidia Nemotron Review 2026: Hybrid Mamba-Transformer Open-Weights LLM",
   metaDescription: "Nvidia Nemotron review. Hybrid Mamba-MoE architecture, 31.6B/3.6B active Super, 253B Ultra. Efficient long-context reasoning on Nvidia hardware. Benchmarks, hardware. April 2026.",
 };

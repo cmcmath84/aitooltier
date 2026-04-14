@@ -82,6 +82,24 @@ export const gemma: ToolReview = {
     ],
     lastUpdated: "2026-04-13",
   },
+  systemRequirements: [
+    {
+      variant: "Gemma 4 E2B / E4B (edge-class)",
+      min: "2-3 GB VRAM Q4 (runs on phones and laptops)",
+      max: "8-12 GB VRAM FP16",
+    },
+    {
+      variant: "Gemma 4 26B MoE",
+      min: "8 GB VRAM (Q4)",
+      max: "32 GB VRAM FP16",
+    },
+    {
+      variant: "Gemma 4 31B Dense (flagship)",
+      min: "12 GB VRAM Q4 (RTX 4070)",
+      max: "1× A100 40 GB FP16",
+    },
+  ],
+
   metaTitle: "Gemma 4 Review 2026: Google's Open-Weights Multimodal LLM",
   metaDescription: "Gemma 4 review. Google DeepMind's open-weights LLM, Apache 2.0, 256K context, 140+ languages, four model sizes. Scores, pricing, comparison. April 2026.",
 };

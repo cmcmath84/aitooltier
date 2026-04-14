@@ -91,6 +91,29 @@ export const qwen: ToolReview = {
     ],
     lastUpdated: "2026-04-13",
   },
+  systemRequirements: [
+    {
+      variant: "Qwen3-Coder-Next 80B-A3B (sparse MoE)",
+      min: "8 GB VRAM Q4 (RTX 3060)",
+      max: "1× A100 80 GB FP16",
+    },
+    {
+      variant: "Qwen3.5 (397B MoE flagship)",
+      min: "128 GB RAM + 24 GB GPU (Q3)",
+      max: "4× H100 FP8",
+    },
+    {
+      variant: "Qwen3-VL (vision flagship)",
+      min: "24 GB VRAM (Q4)",
+      max: "1× H100 FP16",
+    },
+    {
+      variant: "Qwen3-Max",
+      min: "API-only -- weights not released",
+      max: "API-only -- weights not released",
+    },
+  ],
+
   metaTitle: "Qwen Review 2026: Alibaba's Apache 2.0 Open-Weights LLM Family",
   metaDescription: "Qwen review. Qwen3.5-397B, Qwen3-Coder-Next, Qwen3-VL, Qwen3-Max. Apache 2.0, 256K+ context, top-3 open-source on LMArena. Benchmarks, pricing, hardware. April 2026.",
 };

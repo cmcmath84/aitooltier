@@ -87,6 +87,29 @@ export const mistral: ToolReview = {
     ],
     lastUpdated: "2026-04-13",
   },
+  systemRequirements: [
+    {
+      variant: "Mistral Small 3 / Devstral 2 (24B dense, Apache 2.0)",
+      min: "10 GB VRAM (Q4)",
+      max: "1× A100 40 GB FP16",
+    },
+    {
+      variant: "Mistral 14B / 8B / 3B (Apache 2.0)",
+      min: "6 / 4 / 2 GB VRAM (Q4)",
+      max: "24 / 16 / 8 GB VRAM FP16",
+    },
+    {
+      variant: "Mixtral 8x22B (legacy)",
+      min: "64 GB RAM + 24 GB GPU (Q3)",
+      max: "2× A100 80 GB FP16",
+    },
+    {
+      variant: "Mistral Large 3 (flagship)",
+      min: "Not self-hostable under free terms -- MRL license",
+      max: "Requires paid commercial license to self-host",
+    },
+  ],
+
   metaTitle: "Mistral AI Review 2026: Best Budget LLM for Developers?",
   metaDescription: "Mistral AI review. Cheap API, great multilingual support, open models -- but rough consumer product. Full scores and pricing. March 2026.",
 };
