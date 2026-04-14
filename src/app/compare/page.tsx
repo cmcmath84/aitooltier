@@ -2,15 +2,105 @@ import { Metadata } from "next";
 import Link from "next/link";
 import { categories } from "@/data/categories";
 import { tools } from "@/data/tools";
+import { getTierForScore } from "@/lib/tiers";
 import CategoryIcon from "@/components/ui/CategoryIcon";
+import ToolLogo from "@/components/ui/ToolLogo";
+import TierBadge from "@/components/ui/TierBadge";
 
 export const metadata: Metadata = {
-  title: "Compare AI Tools",
+  title: "Compare AI Tools | Head-to-Head with Scores and Benchmarks",
   description:
-    "Side-by-side comparisons of the best AI tools. Scores, pricing, features, and honest analysis.",
+    "Side-by-side comparisons of the best AI tools. Scores, benchmarks, pricing, features, and honest analysis.",
 };
 
+// Popular comparisons — manually curated from GSC data
+const popularSlugs = [
+  "claude-vs-grok",
+  "chatgpt-vs-claude",
+  "github-copilot-vs-chatgpt",
+  "deepseek-vs-github-copilot",
+  "midjourney-vs-dall-e",
+  "claude-code-vs-replit",
+  "grok-vs-suno",
+  "canva-ai-vs-gamma",
+  "dall-e-vs-runway",
+  "cursor-vs-windsurf",
+  "poe-vs-elevenlabs",
+  "gemini-vs-chatgpt",
+];
+
+function CompareCard({
+  toolA,
+  toolB,
+}: {
+  toolA: (typeof tools)[0];
+  toolB: (typeof tools)[0];
+}) {
+  const tierA = getTierForScore(toolA.scores.overall);
+  const tierB = getTierForScore(toolB.scores.overall);
+  const aWins = toolA.scores.overall > toolB.scores.overall;
+  const bWins = toolB.scores.overall > toolA.scores.overall;
+
+  return (
+    <Link
+      href={`/compare/${toolA.slug}-vs-${toolB.slug}`}
+      className="group flex items-center gap-3 rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5"
+    >
+      {/* Tool A */}
+      <div className="flex flex-1 items-center gap-2 min-w-0">
+        <ToolLogo slug={toolA.slug} name={toolA.name} size="sm" />
+        <div className="min-w-0">
+          <p className="truncate text-sm font-semibold text-foreground">
+            {toolA.name}
+          </p>
+          <span
+            className={`text-xs font-bold ${
+              aWins ? tierA.labelText.replace("text-white", "text-primary") : "text-muted-foreground"
+            }`}
+          >
+            {toolA.scores.overall.toFixed(1)}
+          </span>
+        </div>
+      </div>
+
+      {/* VS badge */}
+      <div className="flex shrink-0 items-center justify-center">
+        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-xs font-black text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary transition">
+          VS
+        </span>
+      </div>
+
+      {/* Tool B */}
+      <div className="flex flex-1 items-center justify-end gap-2 min-w-0">
+        <div className="min-w-0 text-right">
+          <p className="truncate text-sm font-semibold text-foreground">
+            {toolB.name}
+          </p>
+          <span
+            className={`text-xs font-bold ${
+              bWins ? tierB.labelText.replace("text-white", "text-primary") : "text-muted-foreground"
+            }`}
+          >
+            {toolB.scores.overall.toFixed(1)}
+          </span>
+        </div>
+        <ToolLogo slug={toolB.slug} name={toolB.name} size="sm" />
+      </div>
+    </Link>
+  );
+}
+
 export default function ComparePage() {
+  // Build popular comparisons
+  const popular = popularSlugs
+    .map((slug) => {
+      const [a, b] = slug.split("-vs-");
+      const toolA = tools.find((t) => t.slug === a);
+      const toolB = tools.find((t) => t.slug === b);
+      return toolA && toolB ? { toolA, toolB } : null;
+    })
+    .filter(Boolean) as { toolA: (typeof tools)[0]; toolB: (typeof tools)[0] }[];
+
   // Group tools by category for comparison suggestions
   const toolsByCategory = categories
     .map((cat) => ({
@@ -23,11 +113,33 @@ export default function ComparePage() {
     <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
       <h1 className="text-3xl font-bold text-foreground">Compare AI Tools</h1>
       <p className="mt-2 text-lg text-muted-foreground">
-        Head-to-head comparisons to help you pick the right tool.
+        Head-to-head comparisons with scores, benchmarks, and honest recommendations.
       </p>
 
-      {toolsByCategory.length > 0 ? (
-        <div className="mt-8 space-y-8">
+      {/* Popular Comparisons */}
+      {popular.length > 0 && (
+        <div className="mt-8">
+          <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-foreground">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-100 text-sm">
+              &#9733;
+            </span>
+            Popular Comparisons
+          </h2>
+          <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {popular.map(({ toolA, toolB }) => (
+              <CompareCard
+                key={`${toolA.slug}-${toolB.slug}`}
+                toolA={toolA}
+                toolB={toolB}
+              />
+            ))}
+          </div>
+        </div>
+      )}
+
+      {/* By Category */}
+      {toolsByCategory.length > 0 && (
+        <div className="mt-12 space-y-10">
           {toolsByCategory.map((group) => (
             <div key={group.category.slug}>
               <h2 className="mb-4 flex items-center gap-3 text-xl font-bold text-foreground">
@@ -35,36 +147,18 @@ export default function ComparePage() {
                 {group.category.name}
               </h2>
               <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {/* Generate VS pairs */}
                 {group.tools.map((toolA, i) =>
                   group.tools.slice(i + 1).map((toolB) => (
-                    <Link
+                    <CompareCard
                       key={`${toolA.slug}-${toolB.slug}`}
-                      href={`/compare/${toolA.slug}-vs-${toolB.slug}`}
-                      className="flex items-center justify-between rounded-lg border border-border bg-card p-4 transition hover:border-primary/30 hover:shadow-sm"
-                    >
-                      <span className="font-medium text-foreground">
-                        {toolA.name}
-                      </span>
-                      <span className="mx-2 text-sm font-bold text-muted-foreground">
-                        vs
-                      </span>
-                      <span className="font-medium text-foreground">
-                        {toolB.name}
-                      </span>
-                    </Link>
+                      toolA={toolA}
+                      toolB={toolB}
+                    />
                   ))
                 )}
               </div>
             </div>
           ))}
-        </div>
-      ) : (
-        <div className="mt-8 rounded-lg border border-border bg-muted/50 p-8 text-center">
-          <p className="text-muted-foreground">
-            Comparisons are coming soon. We need at least two reviewed tools per
-            category to generate comparisons.
-          </p>
         </div>
       )}
     </div>
