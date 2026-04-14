@@ -72,6 +72,7 @@ export const tabnine: ToolReview = {
   ],
   affiliateUrl: "https://www.tabnine.com",
   status: "active",
+  poweredBy: "Tabnine's own models (local + cloud)",
   metaTitle: "Tabnine Review 2026: Private AI Code Completion -- Still Worth It?",
   metaDescription: "Tabnine review. Local AI code completion with enterprise on-premise deployment. But has the competition left it behind? Honest scores, pricing. March 2026.",
 };

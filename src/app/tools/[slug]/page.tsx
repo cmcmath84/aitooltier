@@ -95,11 +95,16 @@ export default async function ToolReviewPage({
               </div>
             </div>
             <p className="mt-2 text-muted-foreground">{tool.tagline}</p>
-            <div className="mt-2 flex items-center gap-3 text-sm text-muted-foreground">
+            <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
               <span>Last updated: {tool.lastReviewedDate}</span>
               {tool.hasFreeTier && (
                 <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-800">
                   Free tier available
+                </span>
+              )}
+              {tool.poweredBy && (
+                <span className="rounded-full bg-purple-100 px-2 py-0.5 text-xs font-medium text-purple-800">
+                  Powered by {tool.poweredBy}
                 </span>
               )}
             </div>

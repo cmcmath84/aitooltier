@@ -72,6 +72,7 @@ export const windsurf: ToolReview = {
   ],
   affiliateUrl: "https://windsurf.com",
   status: "active",
+  poweredBy: "Claude / GPT / Gemini (user selects)",
   metaTitle: "Windsurf Review 2026: Codeium's AI Editor vs Cursor -- Which Is Better?",
   metaDescription: "Windsurf (Codeium) review. AI code editor with Cascade agentic mode, strong autocomplete, $15/mo Pro plan. How does it compare to Cursor? March 2026.",
 };

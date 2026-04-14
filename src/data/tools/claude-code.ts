@@ -79,6 +79,7 @@ export const claudeCode: ToolReview = {
   ],
   affiliateUrl: "https://docs.anthropic.com/en/docs/claude-code",
   status: "active",
+  poweredBy: "Claude Opus 4.6",
   metaTitle: "Claude Code Review 2026: Terminal-Based Agentic Coding That Actually Works",
   metaDescription: "Claude Code review. Agentic coding assistant that reads entire repos, runs tests, multi-file refactoring. CLI-only but powerful. Scores, pricing. March 2026.",
 };

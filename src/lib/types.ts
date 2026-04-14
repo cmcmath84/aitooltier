@@ -67,6 +67,9 @@ export interface ToolReview {
   affiliateUrl: string; // hidden until monetization enabled
   status: "active" | "needs-update" | "deprecated";
 
+  // Powered by (optional -- for tools that run on a specific LLM)
+  poweredBy?: string; // e.g., "Claude Opus 4.6", "GPT-5.4 / Claude (user selects)"
+
   // Benchmarks (optional -- only for LLMs, chatbots, code assistants)
   benchmarks?: ToolBenchmarks;
 

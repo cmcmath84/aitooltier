@@ -73,6 +73,7 @@ export const cursor: ToolReview = {
   ],
   affiliateUrl: "https://cursor.com",
   status: "active",
+  poweredBy: "Claude Opus 4.6 / GPT-5.4 / Gemini (user selects)",
   metaTitle: "Cursor Review 2026: AI Code Editor That Understands Your Whole Codebase",
   metaDescription: "Cursor review. Best multi-file AI coding, codebase-aware chat, built on VS Code. But is it worth switching editors? Scores, pricing. March 2026.",
 };

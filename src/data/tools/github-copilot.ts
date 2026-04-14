@@ -68,6 +68,7 @@ export const githubCopilot: ToolReview = {
   ],
   affiliateUrl: "https://github.com/features/copilot",
   status: "active",
+  poweredBy: "GPT-5.4",
   metaTitle: "GitHub Copilot Review 2026: Still the Best AI Code Assistant?",
   metaDescription: "GitHub Copilot review. Best inline completions, great editor integration, but limited codebase awareness. Scores, pricing, known issues. March 2026.",
 };

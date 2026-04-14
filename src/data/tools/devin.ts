@@ -68,6 +68,7 @@ export const devin: ToolReview = {
   ],
   affiliateUrl: "https://devin.ai",
   status: "active",
+  poweredBy: "Multiple models (proprietary orchestration)",
   metaTitle: "Devin Review 2026: Autonomous AI Coding Agent at $20/mo",
   metaDescription: "Devin review. Most autonomous AI developer -- researches, codes, tests independently. Now $20/mo. But when does autonomy help vs. hurt? Scores, pricing. March 2026.",
 };

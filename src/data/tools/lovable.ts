@@ -79,6 +79,7 @@ export const lovable: ToolReview = {
   ],
   affiliateUrl: "https://lovable.dev",
   status: "active",
+  poweredBy: "Claude (Anthropic)",
   metaTitle: "Lovable Review 2026: AI App Builder That Turns Text Into Working Web Apps",
   metaDescription: "Lovable review. Build full-stack web apps from natural language, 8M users, one-click deploy. But generated code has limits. Scores, pricing. March 2026.",
 };

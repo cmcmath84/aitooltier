@@ -79,6 +79,7 @@ export const replit: ToolReview = {
   ],
   affiliateUrl: "https://replit.com",
   status: "active",
+  poweredBy: "Replit's own models + Claude",
   metaTitle: "Replit Review 2026: AI Coding Agent With a Billing Problem",
   metaDescription: "Honest Replit review. Powerful AI agent for building apps, but unpredictable credit costs and reliability concerns. Full scores, pricing, issues. April 2026.",
 };

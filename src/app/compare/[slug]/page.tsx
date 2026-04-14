@@ -106,6 +106,11 @@ export default async function ComparisonPage({
                 <TierBadge score={tool.scores.overall} size="xl" showScore />
               </div>
               <p className="mt-3 text-sm text-muted-foreground">{tool.tagline}</p>
+              {tool.poweredBy && (
+                <p className="mt-1 text-xs font-medium text-purple-600">
+                  Powered by {tool.poweredBy}
+                </p>
+              )}
             </div>
           );
         })}
