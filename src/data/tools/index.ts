@@ -53,6 +53,7 @@ import { claudeCode } from "./claude-code";
 import { lovable } from "./lovable";
 import { devin } from "./devin";
 import { replit } from "./replit";
+import { codex } from "./codex";
 
 // AI Chatbots & Assistants
 import { chatgpt } from "./chatgpt";
@@ -175,6 +176,7 @@ export const tools: ToolReview[] = [
   lovable,
   devin,
   replit,
+  codex,
   // Chatbots
   chatgpt,
   perplexity,
