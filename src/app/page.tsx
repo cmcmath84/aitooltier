@@ -16,7 +16,6 @@ const featuredCategories = [
 ];
 
 export default function Home() {
-  // Pick the top A-tier tool + 1 B-tier tool from each featured category
   const featuredTools = featuredCategories.flatMap((catSlug) => {
     const catTools = tools
       .filter((t) => t.category === catSlug)
@@ -47,6 +46,8 @@ export default function Home() {
 
   const jsonLdItems = homepageJsonLd(tools.length);
 
+  const totalComparisons = (tools.length * (tools.length - 1)) / 2;
+
   return (
     <div>
       {jsonLdItems.map((item, i) => (
@@ -56,33 +57,58 @@ export default function Home() {
           dangerouslySetInnerHTML={{ __html: safeJsonLd(item) }}
         />
       ))}
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-gray-900 to-gray-800 px-4 py-16 sm:py-24">
-        {/* Decorative tier strips */}
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-[0.04]">
-          <div className="flex flex-col gap-4 text-white">
-            {["S", "A", "B", "C", "D"].map((t) => (
-              <div key={t} className="text-[12rem] font-black leading-none">
-                {t}
-              </div>
-            ))}
-          </div>
-        </div>
+
+      {/* ============ HERO ============ */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-slate-900 px-4 py-20 sm:py-28">
+        {/* Animated gradient orbs */}
+        <div className="gradient-orb animate-float" style={{ width: 500, height: 500, top: -100, left: -100, background: 'radial-gradient(circle, rgba(239,68,68,0.5), transparent)' }} />
+        <div className="gradient-orb animate-float-slow" style={{ width: 400, height: 400, top: 50, right: -50, background: 'radial-gradient(circle, rgba(59,130,246,0.5), transparent)' }} />
+        <div className="gradient-orb animate-float-delay" style={{ width: 300, height: 300, bottom: -50, left: '40%', background: 'radial-gradient(circle, rgba(16,185,129,0.4), transparent)' }} />
+
+        {/* Grid pattern overlay */}
+        <div className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
+
         <div className="relative mx-auto max-w-4xl text-center">
-          <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-gray-300">
+          {/* Status badge */}
+          <div className="fade-in-up mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-gray-300 backdrop-blur-sm">
             <span className="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
             Updated daily with real data
           </div>
-          <h1 className="text-3xl font-black tracking-tight text-white sm:text-5xl lg:text-6xl">
-            AI Tools, <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-amber-400 to-emerald-400">Ranked by Tier</span>
+
+          {/* Title with gradient shimmer */}
+          <h1 className="fade-in-up-d1 text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
+            AI Tools,{" "}
+            <span className="text-shimmer text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-amber-400 via-yellow-300 to-emerald-400">
+              Ranked by Tier
+            </span>
           </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-lg text-gray-400">
+
+          <p className="fade-in-up-d2 mx-auto mt-6 max-w-2xl text-lg text-gray-400 sm:text-xl">
             Every tool tested, scored, and placed in its tier. We report the
             bugs, show the data, and tell you what actually works.
           </p>
 
+          {/* CTA buttons */}
+          <div className="fade-in-up-d3 mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <Link
+              href="/compare"
+              className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition hover:bg-primary-hover hover:shadow-primary/40 hover:-translate-y-0.5"
+            >
+              Compare Tools
+              <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+            <Link
+              href="/all-tools"
+              className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-gray-300 backdrop-blur-sm transition hover:bg-white/10 hover:-translate-y-0.5"
+            >
+              View All {tools.length} Tools
+            </Link>
+          </div>
+
           {/* Mini tier legend */}
-          <div className="mt-8 flex items-center justify-center gap-2 sm:gap-3">
+          <div className="fade-in-up-d4 mt-12 flex items-center justify-center gap-2 sm:gap-4">
             {[
               { rank: "S", color: "from-red-500 to-rose-600", label: "9+" },
               { rank: "A", color: "from-orange-500 to-amber-500", label: "8-9" },
@@ -91,9 +117,9 @@ export default function Home() {
               { rank: "D", color: "from-blue-500 to-indigo-500", label: "5-6" },
               { rank: "F", color: "from-gray-500 to-gray-600", label: "<5" },
             ].map((t) => (
-              <div key={t.rank} className="flex flex-col items-center gap-1">
+              <div key={t.rank} className="group flex flex-col items-center gap-1.5 transition-transform hover:scale-110">
                 <div
-                  className={`flex h-9 w-9 items-center justify-center rounded-lg bg-gradient-to-br ${t.color} text-sm font-black text-white shadow-lg sm:h-10 sm:w-10 sm:text-base`}
+                  className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${t.color} text-sm font-black text-white shadow-lg transition-shadow group-hover:shadow-xl sm:h-12 sm:w-12 sm:text-base`}
                 >
                   {t.rank}
                 </div>
@@ -104,16 +130,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Tier List */}
+      {/* ============ STATS BAR ============ */}
+      <section className="relative -mt-6 z-10 mx-auto max-w-4xl px-4">
+        <div className="fade-in-up-d5 flex items-center justify-around rounded-2xl border border-border bg-white px-6 py-5 shadow-xl shadow-black/5">
+          {[
+            { value: tools.length.toString(), label: "Tools Ranked" },
+            { value: categories.length.toString(), label: "Categories" },
+            { value: totalComparisons.toLocaleString() + "+", label: "Comparisons" },
+            { value: "Daily", label: "Updates" },
+          ].map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div className="text-2xl font-black text-foreground sm:text-3xl">
+                {stat.value}
+              </div>
+              <div className="mt-0.5 text-xs text-muted-foreground sm:text-sm">
+                {stat.label}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ============ TIER LIST ============ */}
       {tools.length > 0 && (
-        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between">
             <div>
-              <h2 className="text-2xl font-black text-foreground">
+              <h2 className="text-2xl font-black text-foreground sm:text-3xl">
                 The Tier List
               </h2>
               <p className="mt-1 text-muted-foreground">
-                Top picks across 5 categories.
+                Top picks across {featuredCategories.length} categories.
               </p>
             </div>
             <span className="text-right text-xs text-muted-foreground">
@@ -124,10 +171,10 @@ export default function Home() {
           <div className="mt-6">
             <TierList tools={featuredTools} />
           </div>
-          <div className="mt-4 text-center">
+          <div className="mt-6 text-center">
             <Link
-              href="/compare"
-              className="inline-flex items-center gap-1 text-sm font-medium text-primary transition hover:text-primary-hover"
+              href="/all-tools"
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5"
             >
               View all {tools.length} tools
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -138,42 +185,61 @@ export default function Home() {
         </section>
       )}
 
-      {/* Category Grid */}
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-foreground">
-          Browse by Category
-        </h2>
-        <p className="mt-1 text-muted-foreground">
-          Find tools for exactly what you need.
-        </p>
-        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
-          {categories.map((cat) => (
-            <Link
-              key={cat.slug}
-              href={`/categories/${cat.slug}`}
-              className="group flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-4 transition-all hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5"
-            >
-              <CategoryIcon slug={cat.slug} size="md" />
-              <div>
-                <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
-                  {cat.name}
-                </span>
-              </div>
-            </Link>
-          ))}
+      {/* ============ CATEGORIES ============ */}
+      <section className="section-alt px-4 py-16">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="text-2xl font-black text-foreground sm:text-3xl">
+            Browse by Category
+          </h2>
+          <p className="mt-1 text-muted-foreground">
+            Find tools for exactly what you need.
+          </p>
+          <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
+            {categories.map((cat, i) => {
+              const toolCount = tools.filter((t) => t.category === cat.slug).length;
+              return (
+                <Link
+                  key={cat.slug}
+                  href={`/categories/${cat.slug}`}
+                  className="card-shine group flex items-center gap-3 rounded-xl border border-border bg-white px-4 py-4 transition-all hover:border-primary/30 hover:shadow-lg hover:-translate-y-1"
+                  style={{ animationDelay: `${i * 0.03}s` }}
+                >
+                  <CategoryIcon slug={cat.slug} size="md" />
+                  <div className="min-w-0">
+                    <span className="text-sm font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {cat.name}
+                    </span>
+                    <span className="block text-xs text-muted-foreground">
+                      {toolCount} tool{toolCount !== 1 ? "s" : ""}
+                    </span>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
         </div>
       </section>
 
-      {/* Latest Reviews */}
+      {/* ============ LATEST REVIEWS ============ */}
       {latestTools.length > 0 && (
-        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold text-foreground">
-            Latest Reviews
-          </h2>
-          <p className="mt-1 text-muted-foreground">
-            Recently reviewed and updated.
-          </p>
-          <div className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+          <div className="flex items-end justify-between">
+            <div>
+              <h2 className="text-2xl font-black text-foreground sm:text-3xl">
+                Latest Reviews
+              </h2>
+              <p className="mt-1 text-muted-foreground">
+                Recently reviewed and updated.
+              </p>
+            </div>
+            <Link
+              href="/trending"
+              className="text-sm font-medium text-primary transition hover:text-primary-hover"
+            >
+              See trending &rarr;
+            </Link>
+          </div>
+          <div className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {latestTools.map((tool) => (
               <ToolCard key={tool.slug} tool={tool} />
             ))}
@@ -181,24 +247,49 @@ export default function Home() {
         </section>
       )}
 
-      {/* Trust / How We Review CTA */}
-      <section className="bg-muted px-4 py-16">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl font-bold text-foreground">
+      {/* ============ TRUST CTA ============ */}
+      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 px-4 py-20">
+        {/* Decorative gradient */}
+        <div className="gradient-orb animate-float-slow" style={{ width: 400, height: 400, top: -100, right: -100, background: 'radial-gradient(circle, rgba(37,99,235,0.4), transparent)' }} />
+
+        <div className="relative mx-auto max-w-3xl text-center">
+          <h2 className="text-2xl font-black text-white sm:text-3xl">
             Reviews You Can Actually Trust
           </h2>
-          <p className="mt-3 text-muted-foreground">
+          <p className="mt-4 text-gray-400 sm:text-lg">
             Every review on AIToolTier is based on hands-on testing,
             cross-referenced user reviews from G2, Reddit, and Capterra, and
             real pricing data. We report known bugs and issues. We don&apos;t do
             paid placements.
           </p>
-          <Link
-            href="/how-we-review"
-            className="mt-6 inline-flex items-center rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-white transition hover:bg-primary-hover"
-          >
-            See How We Review
-          </Link>
+          <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
+            <Link
+              href="/how-we-review"
+              className="inline-flex items-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition hover:bg-primary-hover hover:shadow-primary/40 hover:-translate-y-0.5"
+            >
+              See How We Review
+            </Link>
+            <Link
+              href="/methodology"
+              className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-gray-300 backdrop-blur-sm transition hover:bg-white/10 hover:-translate-y-0.5"
+            >
+              Our Methodology
+            </Link>
+          </div>
+
+          {/* Trust indicators */}
+          <div className="mt-12 flex items-center justify-center gap-8 text-gray-500">
+            {[
+              { icon: "&#10003;", text: "No paid placements" },
+              { icon: "&#10003;", text: "Real bug reports" },
+              { icon: "&#10003;", text: "Updated daily" },
+            ].map((item) => (
+              <div key={item.text} className="flex items-center gap-2 text-sm">
+                <span className="text-emerald-400" dangerouslySetInnerHTML={{ __html: item.icon }} />
+                <span>{item.text}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </div>

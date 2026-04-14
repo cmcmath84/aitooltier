@@ -33,23 +33,32 @@ export default function Header() {
             onMouseEnter={() => setCategoriesOpen(true)}
             onMouseLeave={() => setCategoriesOpen(false)}
           >
-            <button className="text-sm font-medium text-slate-300 transition hover:text-white">
+            <button className="flex items-center gap-1 text-sm font-medium text-slate-300 transition hover:text-white">
               Categories
+              <svg className={`h-3.5 w-3.5 transition-transform ${categoriesOpen ? "rotate-180" : ""}`} fill="none" viewBox="0 0 24 24" strokeWidth="2.5" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+              </svg>
             </button>
             {categoriesOpen && (
-              <div className="absolute left-0 top-full z-50 mt-1 w-72 rounded-lg border border-slate-700 bg-slate-800 p-2 shadow-lg">
-                {categories.map((cat) => (
-                  <Link
-                    key={cat.slug}
-                    href={`/categories/${cat.slug}`}
-                    className="flex items-center gap-3 rounded-md px-3 py-2 text-sm text-slate-300 transition hover:bg-slate-700 hover:text-white"
-                    onClick={() => setCategoriesOpen(false)}
-                  >
-                    <CategoryIcon slug={cat.slug} size="sm" />
-                    <span>{cat.name}</span>
-                  </Link>
-                ))}
-              </div>
+              <>
+                {/* Invisible bridge so mouse doesn't lose hover crossing the gap */}
+                <div className="absolute left-0 top-full h-3 w-full" />
+                <div className="absolute -left-4 top-[calc(100%+0.75rem)] z-50 w-[640px] rounded-xl border border-slate-700 bg-slate-800 p-3 shadow-2xl">
+                  <div className="grid grid-cols-3 gap-1">
+                    {categories.map((cat) => (
+                      <Link
+                        key={cat.slug}
+                        href={`/categories/${cat.slug}`}
+                        className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 text-sm text-slate-300 transition hover:bg-slate-700 hover:text-white"
+                        onClick={() => setCategoriesOpen(false)}
+                      >
+                        <CategoryIcon slug={cat.slug} size="sm" />
+                        <span className="truncate">{cat.name}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </>
             )}
           </div>
           <Link

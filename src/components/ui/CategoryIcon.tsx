@@ -19,6 +19,9 @@ import {
   Camera,
   Workflow,
   Phone,
+  Bot,
+  Network,
+  HardDrive,
   type LucideIcon,
 } from "lucide-react";
 
@@ -134,9 +137,9 @@ const iconMap: Record<string, CategoryIconConfig> = {
   },
   "ai-photo-editing": {
     icon: Camera,
-    bg: "bg-stone-100",
-    text: "text-stone-600",
-    ring: "ring-stone-200",
+    bg: "bg-rose-100",
+    text: "text-rose-600",
+    ring: "ring-rose-200",
   },
   "ai-automation-workflow": {
     icon: Workflow,
@@ -149,6 +152,24 @@ const iconMap: Record<string, CategoryIconConfig> = {
     bg: "bg-emerald-100",
     text: "text-emerald-600",
     ring: "ring-emerald-200",
+  },
+  "ai-personal-agents": {
+    icon: Bot,
+    bg: "bg-cyan-100",
+    text: "text-cyan-600",
+    ring: "ring-cyan-200",
+  },
+  "ai-agent-orchestration": {
+    icon: Network,
+    bg: "bg-orange-100",
+    text: "text-orange-600",
+    ring: "ring-orange-200",
+  },
+  "ai-local-models": {
+    icon: HardDrive,
+    bg: "bg-indigo-100",
+    text: "text-indigo-600",
+    ring: "ring-indigo-200",
   },
 };
 

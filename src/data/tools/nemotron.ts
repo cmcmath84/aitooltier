@@ -1,0 +1,94 @@
+import { ToolReview } from "@/lib/types";
+
+export const nemotron: ToolReview = {
+  slug: "nemotron",
+  name: "Nemotron (Nvidia)",
+  tagline: "Nvidia's open-weights family -- hybrid Mamba-Transformer MoE architecture, optimized for efficient reasoning on Nvidia hardware",
+  category: "ai-local-models",
+  url: "https://www.nvidia.com/en-us/ai-data-science/foundation-models/nemotron/",
+
+  scores: {
+    easeOfUse: 6.5,
+    outputQuality: 8,
+    value: 8,
+    features: 8.5,
+    overall: 7.8,
+  },
+
+  hasFreeTier: true,
+  pricing: [
+    {
+      plan: "Self-hosted (Free)",
+      price: "$0",
+      features: ["NVIDIA Open Model License", "Commercial use permitted", "Weights on Hugging Face and NGC"],
+    },
+    {
+      plan: "API (build.nvidia.com)",
+      price: "varies",
+      period: "per 1M tokens",
+      features: ["Free tier for experimentation", "NIM microservices for production", "Pricing via Nvidia Cloud partners"],
+    },
+    {
+      plan: "Self-hosted (Hardware)",
+      price: "$0",
+      features: [
+        "Nemotron 3 Super (31.6B total, 3.6B active Mamba-MoE) -- Min: 8 GB VRAM Q4 RTX 3070 | Mid: 16 GB RTX 4080 Q6 | Max: 1× A100 40GB FP16",
+        "Nemotron 3 Ultra (253B reasoning) -- Min: 128 GB RAM + 24 GB GPU Q3 | Mid: 2× A100 80GB Q4 | Max: 4× H100 FP8",
+        "Llama-Nemotron 70B -- Min: 24 GB VRAM Q4 RTX 3090/4090 | Mid: 48 GB Q6 2× 4090 | Max: 1× H100 80GB FP16",
+        "Mamba hybrid architecture gives unusually low memory per token at long context",
+      ],
+    },
+  ],
+
+  pros: [
+    "Hybrid Mamba-Transformer architecture dramatically reduces memory per token at long context",
+    "Nemotron 3 Super activates only 3.6B params -- runs on 8 GB VRAM with top-tier reasoning quality",
+    "Nvidia-optimized inference: first-class TensorRT-LLM, vLLM, and NIM deployment",
+    "Llama-Nemotron 70B scores MMLU 88.4% -- within a point of GPT-4o on a model you can run locally",
+    "Permissive Nvidia Open Model License allows commercial deployment",
+  ],
+  cons: [
+    "Mamba inference ecosystem is still catching up -- Ollama and llama.cpp support is partial",
+    "Not the absolute frontier on benchmarks -- DeepSeek, Qwen, Kimi outscore on most leaderboards",
+    "Smaller community than Llama/Qwen -- fewer fine-tunes available",
+    "Release cadence is slow compared to Chinese labs",
+  ],
+  knownIssues: [
+    {
+      description: "Mamba-hybrid layers require custom CUDA kernels -- non-Nvidia hardware (Apple Silicon, AMD ROCm) has limited support",
+      source: "Hugging Face discussions, GitHub issues",
+      date: "2026-02",
+    },
+    {
+      description: "Early Nemotron 3 Super quantizations below Q4 showed degraded reasoning quality vs. dense Llama at same bit-width",
+      source: "Reddit r/LocalLLaMA",
+      date: "2026-03",
+    },
+  ],
+  bestFor: "Teams running on Nvidia hardware (TensorRT-LLM, NIM) who need efficient long-context reasoning. Nemotron 3 Super is a standout for its 8 GB VRAM footprint with strong reasoning.",
+  notFor: "Apple Silicon / AMD GPU users -- Mamba hybrid kernels are Nvidia-first. Also not ideal if you want maximum community support (use Llama or Qwen).",
+  verdict: "Nemotron is Nvidia's bet that architecture innovation (hybrid Mamba-Transformer MoE) beats pure scale. The bet largely pays off: Nemotron 3 Super runs on a gaming GPU while posting reasoning scores that rival much larger dense models. If you're deployed on Nvidia hardware and need efficient long-context inference, Nemotron is the natural pick. If you're not on Nvidia or need absolute frontier quality, Qwen3 or DeepSeek are stronger options.",
+
+  lastReviewedDate: "2026-04-13",
+  dataSources: [
+    { name: "Nvidia Nemotron 3 release", dateAccessed: "2026-04-13" },
+    { name: "Artificial Analysis Nemotron Ultra 253B", dateAccessed: "2026-04-13" },
+    { name: "Hugging Face nvidia collection", dateAccessed: "2026-04-13" },
+    { name: "Reddit r/LocalLLaMA Nemotron 3 discussion", dateAccessed: "2026-04-13" },
+  ],
+  affiliateUrl: "https://www.nvidia.com/en-us/ai-data-science/foundation-models/nemotron/",
+  status: "active",
+  benchmarks: {
+    modelName: "Nemotron 3 Ultra (253B)",
+    scores: [
+      { name: "MMLU-Pro", score: 79.8, maxScore: 100, unit: "%" },
+      { name: "GPQA Diamond", score: 70.5, maxScore: 100, unit: "%" },
+      { name: "AIME 2025", score: 84.5, maxScore: 100, unit: "%" },
+      { name: "HumanEval", score: 89.6, maxScore: 100, unit: "%" },
+      { name: "MMLU (Llama-Nemotron 70B)", score: 88.4, maxScore: 100, unit: "%" },
+    ],
+    lastUpdated: "2026-04-13",
+  },
+  metaTitle: "Nvidia Nemotron Review 2026: Hybrid Mamba-Transformer Open-Weights LLM",
+  metaDescription: "Nvidia Nemotron review. Hybrid Mamba-MoE architecture, 31.6B/3.6B active Super, 253B Ultra. Efficient long-context reasoning on Nvidia hardware. Benchmarks, hardware. April 2026.",
+};

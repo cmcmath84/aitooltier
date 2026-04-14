@@ -14,12 +14,20 @@ import { nightcafe } from "./nightcafe";
 // AI LLMs & Models
 import { claude } from "./claude";
 import { gemini } from "./gemini";
+import { grok } from "./grok";
+import { museSpark } from "./muse-spark";
+
+// Local & Open-Weight LLMs
 import { llama } from "./llama";
 import { mistral } from "./mistral";
 import { deepseek } from "./deepseek";
-import { grok } from "./grok";
 import { gemma } from "./gemma";
-import { museSpark } from "./muse-spark";
+import { qwen } from "./qwen";
+import { glm } from "./glm";
+import { kimi } from "./kimi";
+import { nemotron } from "./nemotron";
+import { minimax } from "./minimax";
+import { falcon } from "./falcon";
 
 // AI Writing Tools
 import { jasper } from "./jasper";
@@ -126,6 +134,17 @@ import { gptZero } from "./gptzero";
 // AI Translation
 import { deepl } from "./deepl";
 
+// AI Personal Agents
+import { openclaw } from "./openclaw";
+import { hermesAgent } from "./hermes-agent";
+import { manusAi } from "./manus-ai";
+import { perplexityComputer } from "./perplexity-computer";
+
+// AI Agent Orchestration
+import { paperclip } from "./paperclip";
+import { crewai } from "./crewai";
+import { langgraph } from "./langgraph";
+
 export const tools: ToolReview[] = [
   // Image Generators
   midjourney,
@@ -140,12 +159,19 @@ export const tools: ToolReview[] = [
   // LLMs
   claude,
   gemini,
+  grok,
+  museSpark,
+  // Local & Open-Weight LLMs
   llama,
   mistral,
   deepseek,
-  grok,
   gemma,
-  museSpark,
+  qwen,
+  glm,
+  kimi,
+  nemotron,
+  minimax,
+  falcon,
   // Writing
   jasper,
   copyAi,
@@ -233,6 +259,15 @@ export const tools: ToolReview[] = [
   gptZero,
   // Translation
   deepl,
+  // Personal Agents
+  openclaw,
+  hermesAgent,
+  manusAi,
+  perplexityComputer,
+  // Agent Orchestration
+  paperclip,
+  crewai,
+  langgraph,
 ];
 
 export function getToolBySlug(slug: string): ToolReview | undefined {

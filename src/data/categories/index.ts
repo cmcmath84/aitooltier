@@ -141,6 +141,33 @@ export const categories: Category[] = [
       "AI-powered phone agents, receptionists, and voice bots that handle calls and appointments automatically.",
     icon: "📞",
   },
+  {
+    slug: "ai-local-models",
+    name: "Local & Open-Weight LLMs",
+    description:
+      "Open-weight and self-hostable large language models. Chinese and American labs compared — Qwen, DeepSeek, GLM, Kimi, Llama, Gemma, Mistral, Nemotron, MiniMax, Falcon. Benchmarks, pricing, and hardware requirements (min/mid/max) for running each model locally.",
+    icon: "💾",
+    metaTitle: "Best Local & Open-Weight LLMs 2026: Qwen, DeepSeek, Llama, GLM Compared",
+    metaDescription: "Tier-ranked open-weight LLMs for 2026. DeepSeek V3.2, Qwen3, Kimi K2.5, GLM-4.6, Llama 4, Gemma 4, Mistral, Nemotron, MiniMax, Falcon. Hardware requirements, benchmarks, pricing.",
+  },
+  {
+    slug: "ai-personal-agents",
+    name: "AI Personal Agents",
+    description:
+      "Persistent personal AI agents that you talk to over messaging (Telegram, Discord, Signal, WhatsApp) or Max-tier browsers. They remember context across sessions, use tools on your behalf, and run tasks unattended. Self-hosted (OpenClaw, Hermes) or hosted (Manus AI, Perplexity Computer).",
+    icon: "🤖",
+    metaTitle: "AI Personal Agents 2026: OpenClaw, Hermes, Manus, Perplexity Computer Compared",
+    metaDescription: "Tier-ranked personal AI agents for 2026. OpenClaw, Hermes Agent, Manus AI, Perplexity Computer. Scores, pricing, security, self-hosted vs hosted trade-offs.",
+  },
+  {
+    slug: "ai-agent-orchestration",
+    name: "AI Agent Orchestration",
+    description:
+      "Frameworks and runtimes for coordinating multiple AI agents. Build multi-agent systems, run an 'AI company' with budgets and governance, or design stateful human-in-the-loop workflows. Covers Paperclip, CrewAI, and LangGraph.",
+    icon: "🕸️",
+    metaTitle: "AI Agent Orchestration 2026: Paperclip, CrewAI, LangGraph Compared",
+    metaDescription: "Tier-ranked AI agent orchestration frameworks for 2026. Paperclip, CrewAI, LangGraph. Multi-agent systems, budgets, governance, stateful workflows. Real trade-offs.",
+  },
 ];
 
 export function getCategoryBySlug(slug: string): Category | undefined {
