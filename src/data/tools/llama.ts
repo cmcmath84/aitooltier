@@ -28,15 +28,6 @@ export const llama: ToolReview = {
       period: "per 1M input tokens",
       features: ["Scout: $3 in / $7.50 out", "Maverick: $8 in / $20 out", "No hardware needed"],
     },
-    {
-      plan: "Self-hosted (Hardware)",
-      price: "$0",
-      features: [
-        "Scout 109B MoE -- Min: 2× RTX 4090 48GB (Q4) | Mid: 1× H100 80GB | Max: 2× A100 80GB FP16",
-        "Maverick 400B MoE -- Min: 128 GB Mac M3 Ultra (Q3) | Mid: 2× H100 80GB | Max: 4× H100 or 2× H200 FP8",
-        "Llama 3.3 70B dense still popular -- Min: 1× RTX 3090/4090 24GB (Q4) | Mid: 2× RTX 4090 | Max: 1× H100 80GB FP16",
-      ],
-    },
   ],
 
   pros: [

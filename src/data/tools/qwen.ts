@@ -28,16 +28,6 @@ export const qwen: ToolReview = {
       period: "per 1M input tokens",
       features: ["Qwen3-Coder-Next 80B-A3B: $0.12 in / $0.60 out", "Qwen3.5-397B: $0.40 in / $2.40 out", "Qwen3-Max (API only): $0.78 in / $6.00 out"],
     },
-    {
-      plan: "Self-hosted (Hardware)",
-      price: "$0",
-      features: [
-        "Qwen3-Coder-Next 80B-A3B (sparse MoE) -- Min: 8 GB VRAM Q4 RTX 3060 | Mid: 24 GB RTX 4090 Q6 | Max: 1× A100 80GB FP16",
-        "Qwen3.5-397B MoE -- Min: 128 GB RAM + 24 GB GPU Q3 | Mid: 2× A100 80GB Q4 | Max: 4× H100 FP8",
-        "Qwen3-VL (vision flagship) -- Min: 24 GB VRAM Q4 | Mid: 48 GB Q6 | Max: 1× H100 FP16",
-        "Qwen3-Max is API-only -- weights NOT released",
-      ],
-    },
   ],
 
   pros: [

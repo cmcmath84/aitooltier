@@ -28,16 +28,6 @@ export const kimi: ToolReview = {
       period: "per 1M input tokens",
       features: ["K2.5-Reasoning: $0.60 in / $3.00 out", "256K context", "Blended cost ~$1.07/M"],
     },
-    {
-      plan: "Self-hosted (Hardware)",
-      price: "$0",
-      features: [
-        "Kimi K2.5 (1T total, 32B active MoE) -- Min: 256 GB unified RAM Mac Studio M3 Ultra Q2 (~3 tok/s)",
-        "Mid: 512 GB RAM or 4× H100 80GB Q4_K_M",
-        "Max: 8× H200 141GB FP8 or 16× H100 (production-grade)",
-        "Practically a hosted-only model for most users -- self-hosting requires enterprise hardware",
-      ],
-    },
   ],
 
   pros: [

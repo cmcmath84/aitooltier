@@ -28,16 +28,6 @@ export const nemotron: ToolReview = {
       period: "per 1M tokens",
       features: ["Free tier for experimentation", "NIM microservices for production", "Pricing via Nvidia Cloud partners"],
     },
-    {
-      plan: "Self-hosted (Hardware)",
-      price: "$0",
-      features: [
-        "Nemotron 3 Super (31.6B total, 3.6B active Mamba-MoE) -- Min: 8 GB VRAM Q4 RTX 3070 | Mid: 16 GB RTX 4080 Q6 | Max: 1× A100 40GB FP16",
-        "Nemotron 3 Ultra (253B reasoning) -- Min: 128 GB RAM + 24 GB GPU Q3 | Mid: 2× A100 80GB Q4 | Max: 4× H100 FP8",
-        "Llama-Nemotron 70B -- Min: 24 GB VRAM Q4 RTX 3090/4090 | Mid: 48 GB Q6 2× 4090 | Max: 1× H100 80GB FP16",
-        "Mamba hybrid architecture gives unusually low memory per token at long context",
-      ],
-    },
   ],
 
   pros: [

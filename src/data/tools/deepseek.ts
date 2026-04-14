@@ -34,16 +34,6 @@ export const deepseek: ToolReview = {
       period: "month",
       features: ["Higher rate limits", "Priority access", "Advanced features"],
     },
-    {
-      plan: "Self-hosted (Hardware)",
-      price: "$0",
-      features: [
-        "Min: 192 GB RAM + 1× RTX 3090/4090 (IQ2_XXS offload, ~2 tok/s)",
-        "Mid: 2× H100 80GB or 384 GB RAM (Q4_K_M, usable speed)",
-        "Max: 8× H100 FP8 or 4× H200 (full 671B, production)",
-        "MIT license -- commercial use OK",
-      ],
-    },
   ],
 
   pros: [

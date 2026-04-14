@@ -34,16 +34,6 @@ export const mistral: ToolReview = {
       period: "per 1M tokens",
       features: ["Flagship sparse MoE", "256K context", "MRL license (paid for commercial self-hosting)"],
     },
-    {
-      plan: "Self-hosted (Hardware)",
-      price: "$0",
-      features: [
-        "Mistral Small 3 / Devstral 2 (24B dense, Apache) -- Min: 10 GB VRAM Q4 | Mid: 16 GB Q6 | Max: 1× A100 40GB FP16",
-        "Mistral 14B / 8B / 3B (Apache) -- Min: 6 / 4 / 2 GB VRAM Q4 | Max: 24 / 16 / 8 GB FP16",
-        "Mixtral 8x22B (legacy) -- Min: 64 GB RAM + 24 GB GPU Q3 | Mid: 1× H100 | Max: 2× A100 80GB FP16",
-        "Mistral Large 3 flagship -- MRL license; self-host only with paid commercial license",
-      ],
-    },
   ],
 
   pros: [

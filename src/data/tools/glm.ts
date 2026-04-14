@@ -28,15 +28,6 @@ export const glm: ToolReview = {
       period: "per 1M input tokens",
       features: ["GLM-4.6: $0.60 in / $2.20 out", "GLM-4.6V (vision): tiered", "200K context"],
     },
-    {
-      plan: "Self-hosted (Hardware)",
-      price: "$0",
-      features: [
-        "GLM-4.6 355B MoE -- Min: 128 GB RAM + 24 GB GPU Q3 offload | Mid: 2× A100 80GB Q4 | Max: 4× H100 FP8",
-        "GLM-4.6V multimodal -- similar footprint, plus vision tower adds ~4 GB",
-        "Smaller GLM-4-9B sizes exist -- Min: 6 GB VRAM Q4 | Max: 24 GB FP16",
-      ],
-    },
   ],
 
   pros: [

@@ -28,15 +28,6 @@ export const falcon: ToolReview = {
       period: "per 1M tokens",
       features: ["Hosted via HF Inference Endpoints", "Together.ai partial support", "Small community of API hosts"],
     },
-    {
-      plan: "Self-hosted (Hardware)",
-      price: "$0",
-      features: [
-        "Falcon 3 7B / 10B (dense) -- Min: 4 GB VRAM Q4 | Mid: 8 GB VRAM | Max: 16 GB FP16",
-        "Falcon 3 Mamba 7B (state-space hybrid) -- Min: 4 GB VRAM Q4 | Max: 16 GB FP16 | Mamba gives cheap long context",
-        "Older Falcon 180B is obsolete -- do not use",
-      ],
-    },
   ],
 
   pros: [

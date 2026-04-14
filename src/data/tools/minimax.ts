@@ -28,15 +28,6 @@ export const minimax: ToolReview = {
       period: "per 1M input tokens",
       features: ["M2: $0.30 in / $1.20 out", "192K+ context", "Native agentic + tool-use"],
     },
-    {
-      plan: "Self-hosted (Hardware)",
-      price: "$0",
-      features: [
-        "MiniMax M2 / M2.5 (230B total, ~10B active MoE) -- Min: 96 GB unified RAM Q3 (Mac M3 Ultra) | Mid: 2× A100 80GB or 1× H100 Q4 | Max: 4× A100 80GB FP8",
-        "M1 (hybrid-attention reasoning predecessor) -- similar footprint",
-        "Sparse MoE activates only ~10B params during inference -- fast tokens-per-second on moderate hardware",
-      ],
-    },
   ],
 
   pros: [

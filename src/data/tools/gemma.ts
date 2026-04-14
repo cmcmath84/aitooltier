@@ -20,15 +20,6 @@ export const gemma: ToolReview = {
     { plan: "Self-hosted", price: "$0", features: ["Apache 2.0 license", "Free download from Hugging Face/Kaggle/Ollama", "Run on your own hardware"] },
     { plan: "API (OpenRouter, Gemma 4 31B)", price: "$0.14-0.40", period: "per 1M tokens", features: ["Hosted inference", "$0.14 input / $0.40 output", "No infrastructure setup"] },
     { plan: "Google AI Studio", price: "$0", features: ["Free tier for testing", "Web playground access"] },
-    {
-      plan: "Self-hosted (Hardware)",
-      price: "$0",
-      features: [
-        "Gemma 4 E2B / E4B -- Min: 2-3 GB VRAM Q4 (runs on phones/laptops) | Max: 8-12 GB FP16",
-        "Gemma 4 26B MoE -- Min: 8 GB VRAM Q4 | Mid: 16 GB Q6 | Max: 32 GB FP16",
-        "Gemma 4 31B Dense (flagship) -- Min: 12 GB VRAM Q4 RTX 4070 | Mid: 24 GB Q6 RTX 4090 | Max: 1× A100 40GB FP16",
-      ],
-    },
   ],
 
   pros: [
