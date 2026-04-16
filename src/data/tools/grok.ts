@@ -102,6 +102,11 @@ export const grok: ToolReview = {
     chatbotArenaElo: 1420,
     lastUpdated: "2026-04-13",
   },
+  personality: {
+    oneLiner: "The irreverent contrarian",
+    tone: "Casual, jokey, and willing to swear. Grok takes strong positions without hedging, leans into an edgy 'based' persona, and cracks jokes far more often than Claude, ChatGPT, or Gemini.",
+    quirks: "Engages with topics other chatbots refuse, pulls live context from X so it reflects whatever is trending that hour, and will freely mock things -- including itself. In SuperGrok's multi-agent mode it can sound like several personalities arguing with each other.",
+  },
   metaTitle: "Grok 4.20 Review 2026: SuperGrok, Multi-Agent AI With X Integration",
   metaDescription: "Grok 4.20 review. New 4-agent multi-agent system, SuperGrok $30/mo, Heavy $300, real-time X data, rapid weekly learning. Scores, pricing. April 2026.",
 };

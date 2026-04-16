@@ -98,6 +98,11 @@ export const gemini: ToolReview = {
     chatbotArenaElo: 1500,
     lastUpdated: "2026-04-13",
   },
+  personality: {
+    oneLiner: "The Google research assistant",
+    tone: "Neutral, thorough, and slightly corporate. Gemini leans academic, cites sources readily in Deep Research mode, and keeps its tone even across topics -- rarely funny, rarely snarky.",
+    quirks: "Tightly integrated with Google products -- pulls from Search and Workspace by default, which is useful for grounded answers but means you hear Google's worldview. Can feel evasive or overly safe on opinionated or politically charged questions.",
+  },
   metaTitle: "Gemini Review 2026: Gemini 3.1 Ultra, 2M Context, Code Execution",
   metaDescription: "Google Gemini review. Gemini 3.1 Ultra with 2M context window, Code Execution sandbox, Flash-Lite. Google AI Pro $19.99, Ultra $249.99. Scores, pricing. April 2026.",
 };

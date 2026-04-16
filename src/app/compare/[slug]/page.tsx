@@ -35,6 +35,13 @@ export async function generateMetadata({
   const scoreA = toolA.scores.overall.toFixed(1);
   const scoreB = toolB.scores.overall.toFixed(1);
   const winner = toolA.scores.overall >= toolB.scores.overall ? toolA : toolB;
+  const bothHavePersonality = !!(toolA.personality && toolB.personality);
+  if (bothHavePersonality) {
+    return {
+      title: `${toolA.name} vs ${toolB.name} (2026): Personality, Scores & Verdict`,
+      description: `${toolA.name} vs ${toolB.name} personality: ${toolA.personality!.oneLiner} vs ${toolB.personality!.oneLiner}. Compare tone, quirks, scores, pricing, and our 2026 verdict.`,
+    };
+  }
   return {
     title: `${toolA.name} vs ${toolB.name} (2026): Scores, Pricing & Verdict`,
     description: `${toolA.name} scores ${scoreA}/10 vs ${toolB.name} at ${scoreB}/10. Compare pricing, pros, cons${hasBenchmarks ? ", benchmarks," : ","} and why ${winner.name} wins head-to-head in 2026.`,
@@ -174,6 +181,39 @@ export default async function ComparisonPage({
           </tbody>
         </table>
       </div>
+
+      {/* Personality comparison (conversational tools only) */}
+      {toolA.personality && toolB.personality && (
+        <div className="mt-8">
+          <h2 className="mb-4 text-xl font-bold text-foreground">
+            Personality &amp; Tone
+          </h2>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {[toolA, toolB].map((tool) => (
+              <div
+                key={tool.slug}
+                className="rounded-lg border border-border bg-card p-5"
+              >
+                <h3 className="text-base font-semibold text-foreground">
+                  {tool.name}: {tool.personality!.oneLiner}
+                </h3>
+                <div className="mt-3 space-y-2 text-sm text-muted-foreground">
+                  <p>
+                    <span className="font-medium text-foreground">Tone: </span>
+                    {tool.personality!.tone}
+                  </p>
+                  <p>
+                    <span className="font-medium text-foreground">
+                      Quirks:{" "}
+                    </span>
+                    {tool.personality!.quirks}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      )}
 
       {/* Pricing comparison */}
       <div className="mt-8">

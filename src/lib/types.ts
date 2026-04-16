@@ -84,6 +84,13 @@ export interface ToolReview {
   // System requirements (optional -- only for self-hostable local LLMs)
   systemRequirements?: ModelVariantRequirements[];
 
+  // Personality & tone (optional -- for conversational tools: LLMs, chatbots)
+  personality?: {
+    oneLiner: string;  // short tagline, e.g. "The thoughtful consultant"
+    tone: string;      // 1-2 sentences on how it sounds
+    quirks: string;    // 1-2 sentences on notable behaviors
+  };
+
   // SEO
   metaTitle?: string;
   metaDescription?: string;

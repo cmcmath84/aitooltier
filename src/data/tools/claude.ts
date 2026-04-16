@@ -104,6 +104,11 @@ export const claude: ToolReview = {
     chatbotArenaElo: 1504,
     lastUpdated: "2026-04-13",
   },
+  personality: {
+    oneLiner: "The thoughtful consultant",
+    tone: "Measured, careful, and slightly formal. Claude explains tradeoffs rather than handing back one-liner answers, asks clarifying questions when a request is ambiguous, and hedges openly when it is not confident.",
+    quirks: "More willing than most models to refuse edgy or ambiguous requests, pushes back on premises it disagrees with, and will flag when you are probably asking the wrong question instead of just answering the one you typed.",
+  },
   metaTitle: "Claude Review 2026: Mythos 5, Opus 4.6, and Max Plans",
   metaDescription: "Claude review. Mythos 5 (10T params) for security/coding, Opus 4.6, new Max $100/$200 tiers. Best writing quality. Scores, pricing, comparisons. April 2026.",
 };

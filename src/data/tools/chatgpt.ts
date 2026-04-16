@@ -68,6 +68,11 @@ export const chatgpt: ToolReview = {
     chatbotArenaElo: 1480,
     lastUpdated: "2026-04-13",
   },
+  personality: {
+    oneLiner: "The eager generalist",
+    tone: "Friendly, upbeat, and helpful. ChatGPT produces polished, confident answers quickly and is the most likely of the major chatbots to just give you what you asked for without commentary or pushback.",
+    quirks: "Leans formulaic -- lots of bulleted lists, headings, and 'certainly!' openers unless you explicitly ask for a different style. Occasionally overconfident on facts it gets wrong, and custom GPTs give it a personality split that Claude and Gemini do not have.",
+  },
   metaTitle: "ChatGPT Review 2026: GPT-5.4, ChatGPT Go, and All Plans",
   metaDescription: "ChatGPT review. GPT-5.4 with 1M context, new $8/mo Go plan, Plus, Pro, Business. Still the best all-in-one AI chatbot? Scores, pricing, known issues. April 2026.",
 };

@@ -172,6 +172,30 @@ export default async function ToolReviewPage({
         </a>
       </div>
 
+      {/* Personality & Tone (conversational tools only) */}
+      {tool.personality && (
+        <div className="mt-8">
+          <h2 className="mb-4 text-lg font-semibold text-foreground">
+            Personality &amp; Tone
+          </h2>
+          <div className="rounded-lg border border-border bg-card p-5">
+            <p className="text-base font-semibold text-foreground">
+              {tool.personality.oneLiner}
+            </p>
+            <div className="mt-3 space-y-2 text-sm text-muted-foreground">
+              <p>
+                <span className="font-medium text-foreground">Tone: </span>
+                {tool.personality.tone}
+              </p>
+              <p>
+                <span className="font-medium text-foreground">Quirks: </span>
+                {tool.personality.quirks}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
       {/* Pros / Cons */}
       <div className="mt-8">
         <h2 className="mb-4 text-lg font-semibold text-foreground">
