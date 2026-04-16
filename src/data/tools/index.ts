@@ -10,6 +10,7 @@ import { ideogram } from "./ideogram";
 import { flux } from "./flux";
 import { kreaAi } from "./krea-ai";
 import { nightcafe } from "./nightcafe";
+import { nanoBanana } from "./nano-banana";
 
 // AI LLMs & Models
 import { claude } from "./claude";
@@ -51,6 +52,7 @@ import { captionsAi } from "./captions-ai";
 import { opusClip } from "./opus-clip";
 import { invideoAi } from "./invideo-ai";
 import { pictory } from "./pictory";
+import { seedance } from "./seedance";
 
 // AI Code Assistants
 import { githubCopilot } from "./github-copilot";
@@ -70,6 +72,7 @@ import { perplexity } from "./perplexity";
 import { microsoftCopilot } from "./microsoft-copilot";
 import { poe } from "./poe";
 import { notebookLm } from "./notebooklm";
+import { alexaPlus } from "./alexa-plus";
 
 // AI Voice & Audio
 import { elevenlabs } from "./elevenlabs";
@@ -157,6 +160,7 @@ export const tools: ToolReview[] = [
   flux,
   kreaAi,
   nightcafe,
+  nanoBanana,
   // LLMs
   claude,
   gemini,
@@ -194,6 +198,7 @@ export const tools: ToolReview[] = [
   opusClip,
   invideoAi,
   pictory,
+  seedance,
   // Code
   githubCopilot,
   cursor,
@@ -211,6 +216,7 @@ export const tools: ToolReview[] = [
   microsoftCopilot,
   poe,
   notebookLm,
+  alexaPlus,
   // Voice & Audio
   elevenlabs,
   murfAi,
