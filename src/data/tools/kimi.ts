@@ -92,6 +92,11 @@ export const kimi: ToolReview = {
     },
   ],
 
+  personality: {
+    oneLiner: "The long-context note-taker",
+    tone: "Careful and document-focused. Kimi K2.5 shines when you dump a long document in -- replies read as summary-and-citation rather than open chat, leaning on the source material rather than the model's opinions.",
+    quirks: "Context handling is the whole pitch. Without a document to anchor to, replies feel plainer than Qwen or DeepSeek. Native Chinese quality is very strong; English is decent but not class-leading.",
+  },
   metaTitle: "Kimi K2.5 Review 2026: Moonshot's 1T Open-Weights Flagship Tested",
   metaDescription: "Kimi K2.5 review. 1T MoE, 32B active, 256K context, Modified MIT license. Rivals Claude Opus 4.5 on agentic coding. Benchmarks, pricing, hardware requirements. April 2026.",
 };

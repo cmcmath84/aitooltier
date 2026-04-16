@@ -104,6 +104,11 @@ export const qwen: ToolReview = {
     },
   ],
 
+  personality: {
+    oneLiner: "The multilingual Alibaba all-rounder",
+    tone: "Helpful, verbose, and notably strong in Chinese and other non-English languages. Qwen is chattier than Mistral or DeepSeek and tends toward structured, multi-section replies.",
+    quirks: "Best-in-class at Chinese -- occasionally switches to Mandarin mid-response for technical or cultural topics even when prompted in English. Political refusal patterns mirror other Chinese models on China-specific topics.",
+  },
   metaTitle: "Qwen Review 2026: Alibaba's Apache 2.0 Open-Weights LLM Family",
   metaDescription: "Qwen review. Qwen3.5-397B, Qwen3-Coder-Next, Qwen3-VL, Qwen3-Max. Apache 2.0, 256K+ context, top-3 open-source on LMArena. Benchmarks, pricing, hardware. April 2026.",
 };

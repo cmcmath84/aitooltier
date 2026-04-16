@@ -94,6 +94,11 @@ export const deepseek: ToolReview = {
     },
   ],
 
+  personality: {
+    oneLiner: "The open-source reasoning specialist",
+    tone: "Direct and technical. DeepSeek's chat models give compact, math- and code-first answers and are noticeably less chatty than Claude or ChatGPT. When asked to reason, they expose a lot of visible thinking.",
+    quirks: "Refusal patterns differ from Western models -- more permissive on many technical and gray-area prompts, more cautious on China-specific political questions. Community-tuned variants exist with different system prompts and guardrails.",
+  },
   metaTitle: "DeepSeek Review 2026: Near-Frontier AI at a Fraction of the Cost",
   metaDescription: "DeepSeek review. Open-source LLM with strong reasoning, dirt-cheap API pricing, 130M+ users. But censorship and reliability are real concerns. Scores, pricing. March 2026.",
 };

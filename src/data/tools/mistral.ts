@@ -100,6 +100,11 @@ export const mistral: ToolReview = {
     },
   ],
 
+  personality: {
+    oneLiner: "The European pragmatist",
+    tone: "Efficient, terse, and slightly blunt. Mistral answers in fewer words than Claude or ChatGPT, especially on factual questions, and rarely hedges or softens its take.",
+    quirks: "Trained with less Anglocentric data than Llama, so it handles French, German, and Spanish notably better than US-origin models. Refusal rates are lower than ChatGPT or Gemini on most gray-area prompts.",
+  },
   metaTitle: "Mistral AI Review 2026: Best Budget LLM for Developers?",
   metaDescription: "Mistral AI review. Cheap API, great multilingual support, open models -- but rough consumer product. Full scores and pricing. March 2026.",
 };

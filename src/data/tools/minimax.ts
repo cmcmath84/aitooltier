@@ -96,6 +96,11 @@ export const minimax: ToolReview = {
     },
   ],
 
+  personality: {
+    oneLiner: "The Chinese multimodal generalist",
+    tone: "Expressive and media-rich. MiniMax's chat models lean into long, formatted responses and handle voice and image prompts more naturally than most pure-text peers.",
+    quirks: "Strong multimodal story; text-only quality is good but not class-leading versus DeepSeek or Qwen. Like other Chinese models, careful on domestic political topics.",
+  },
   metaTitle: "MiniMax M2 / M2.5 Review 2026: 80.2% SWE-Bench Open-Weights LLM",
   metaDescription: "MiniMax M2.5 review. 230B/10B active MoE, MIT license, 80.2% SWE-Bench Verified -- matches Claude Opus 4.6 at 10-20× lower cost. Benchmarks, pricing, hardware. April 2026.",
 };

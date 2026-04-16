@@ -93,6 +93,11 @@ export const falcon: ToolReview = {
     },
   ],
 
+  personality: {
+    oneLiner: "The TII research release",
+    tone: "Workmanlike and neutral. Falcon reads more like an academic reference than a chatbot -- answers are straight, structured, and unremarkable in voice.",
+    quirks: "Built as a research artifact from UAE's TII, not a consumer product. Less instruction-tuning polish than Llama 4 or Qwen and a smaller community of fine-tunes, so the base model is effectively what you use.",
+  },
   metaTitle: "Falcon 3 Review 2026: TII's Apache-2.0 Open-Weights LLM Family",
   metaDescription: "Falcon 3 review. UAE's Technology Innovation Institute open-weights LLM. Apache 2.0, efficient 7B/10B sizes, Mamba variant. Strong Arabic. Benchmarks, hardware requirements. April 2026.",
 };

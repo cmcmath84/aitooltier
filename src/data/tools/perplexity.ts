@@ -48,6 +48,11 @@ export const perplexity: ToolReview = {
   ],
   affiliateUrl: "https://perplexity.ai",
   status: "active",
+  personality: {
+    oneLiner: "The citation-first researcher",
+    tone: "Clean, web-grounded, and clinical. Perplexity treats every answer like a research brief -- short intro, bullet findings, inline citations -- rather than a conversation.",
+    quirks: "Hedges less than Claude because it is citing sources rather than stating opinions. Pro Search and Deep Research modes sound almost academic; casual chat feels stiff compared to ChatGPT.",
+  },
   metaTitle: "Perplexity AI Review 2026: The AI Search Engine That Cites Its Sources",
   metaDescription: "Perplexity AI review. Best AI for research with real citations. Is it better than ChatGPT for finding answers? Scores, pricing. March 2026.",
 };

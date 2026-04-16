@@ -99,6 +99,11 @@ export const llama: ToolReview = {
     },
   ],
 
+  personality: {
+    oneLiner: "The open-weight workhorse",
+    tone: "Plain, helpful, and neutral. Meta's instruction-tuned Llama 4 reads like a sanitized ChatGPT -- useful for general tasks but without a strong persona of its own.",
+    quirks: "The 'real' personality depends on the checkpoint you run. Base Llama 4 is bland by design; the interesting behaviors come from community fine-tunes (Nous, Hermes, Dolphin, etc.) that give it different voices and refusal patterns.",
+  },
   metaTitle: "Llama 4 Review 2026: Meta's Open-Weights Flagship (Scout, Maverick, Behemoth)",
   metaDescription: "Llama 4 review. Scout (10M context), Maverick (400B MoE multimodal), Behemoth in preview. Benchmarks, pricing, hardware requirements. April 2026.",
 };

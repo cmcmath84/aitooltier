@@ -61,6 +61,11 @@ export const notebookLm: ToolReview = {
   ],
   affiliateUrl: "https://notebooklm.google.com",
   status: "active",
+  personality: {
+    oneLiner: "The source-bound study partner",
+    tone: "Careful and citation-only. NotebookLM only answers from the documents you upload -- if the source does not say it, NotebookLM will not make it up, and it will tell you when the corpus is silent.",
+    quirks: "Refuses to speculate beyond your notebook, which makes it the least 'personality'-driven chatbot on this list. The Audio Overview feature is genuinely different though -- two synthetic podcast hosts summarize your docs with real banter.",
+  },
   metaTitle: "NotebookLM Review 2026: Google's Free AI Research Tool With Audio Overviews",
   metaDescription: "NotebookLM review. Free AI tool that queries your documents and generates podcast summaries. No hallucinations from outside sources. Scores, features. March 2026.",
 };

@@ -99,6 +99,11 @@ export const glm: ToolReview = {
     },
   ],
 
+  personality: {
+    oneLiner: "The Z.ai research model",
+    tone: "Academic and structured. GLM-4.6's instruction-tuned chat tends toward outlined, bullet-heavy responses and leans on established phrasing rather than casual voice.",
+    quirks: "Strong on multilingual and tool use, weaker at playful conversation. Smaller community fine-tuning ecosystem than Llama or Qwen, so fewer 'flavored' checkpoints to pick from -- most deployments run the base instruction-tune.",
+  },
   metaTitle: "GLM-4.6 / Z.ai Review 2026: MIT-Licensed Open-Weights LLM from Zhipu AI",
   metaDescription: "GLM-4.6 review. Zhipu AI's 355B MoE open-weights LLM, true MIT license, SOTA on agentic tool-use. GLM-4.6V multimodal flagship. Benchmarks, pricing, hardware. April 2026.",
 };

@@ -98,6 +98,11 @@ export const nemotron: ToolReview = {
     },
   ],
 
+  personality: {
+    oneLiner: "Nvidia's enterprise-tuned model",
+    tone: "Polished, safe, and aimed at business use. Nemotron responses feel engineered -- consistent length, clear structure, little snark -- like it was optimized for predictability rather than personality.",
+    quirks: "Heavy RLHF for workplace-friendly outputs. Great for enterprise deployment; less interesting for open-ended chat. Runs best on Nvidia stacks, which is the whole point -- you pay (or don't) for that optimization.",
+  },
   metaTitle: "Nvidia Nemotron Review 2026: Hybrid Mamba-Transformer Open-Weights LLM",
   metaDescription: "Nvidia Nemotron review. Hybrid Mamba-MoE architecture, 31.6B/3.6B active Super, 253B Ultra. Efficient long-context reasoning on Nvidia hardware. Benchmarks, hardware. April 2026.",
 };

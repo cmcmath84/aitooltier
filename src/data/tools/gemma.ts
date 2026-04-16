@@ -91,6 +91,11 @@ export const gemma: ToolReview = {
     },
   ],
 
+  personality: {
+    oneLiner: "The compact Google cousin",
+    tone: "Similar corporate-Google tone as Gemini but smaller and less polished. Gemma's chat replies are short, cautious, and structured -- closer to a careful intern than a peer.",
+    quirks: "Inherits a Gemini-like safety bias, so refusals appear on prompts Mistral or DeepSeek would answer. Best used as a cheap local fallback or on-device model, not as a personality play.",
+  },
   metaTitle: "Gemma 4 Review 2026: Google's Open-Weights Multimodal LLM",
   metaDescription: "Gemma 4 review. Google DeepMind's open-weights LLM, Apache 2.0, 256K context, 140+ languages, four model sizes. Scores, pricing, comparison. April 2026.",
 };

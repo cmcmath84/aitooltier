@@ -72,6 +72,11 @@ export const poe: ToolReview = {
   ],
   affiliateUrl: "https://poe.com",
   status: "active",
+  personality: {
+    oneLiner: "The multi-model switchboard",
+    tone: "Whichever personality you picked. Poe is a router, not a model -- the voice depends on which bot you are chatting with (Claude, GPT, Gemini, Llama, or community-built bots).",
+    quirks: "Usefulness comes from mid-conversation model-switching and side-by-side chats. Community bots add wildly different personalities, including less-filtered fine-tunes. The platform itself is neutral UX, not a persona.",
+  },
   metaTitle: "Poe Review 2026: One Sub for GPT-4, Claude, Gemini -- Worth It?",
   metaDescription: "Poe review. Multi-model AI chatbot with GPT-4, Claude, Gemini access for $20/mo. But are the limits too tight? Honest scores, pricing. March 2026.",
 };

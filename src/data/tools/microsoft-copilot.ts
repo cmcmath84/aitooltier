@@ -72,6 +72,11 @@ export const microsoftCopilot: ToolReview = {
   ],
   affiliateUrl: "https://copilot.microsoft.com",
   status: "active",
+  personality: {
+    oneLiner: "The work-safe assistant",
+    tone: "Friendly-professional and cautious. Copilot keeps the ChatGPT-style voice but dials down personality for workplace contexts, with more hedging and disclaimers on anything sensitive.",
+    quirks: "Tightly integrated with Microsoft 365 -- will pull context from your Outlook, Word, and Teams when enabled. Stricter refusals than consumer ChatGPT on the same prompts, especially inside the enterprise tenant.",
+  },
   metaTitle: "Microsoft Copilot Review 2026: Free GPT-4, But Is It Actually Good?",
   metaDescription: "Microsoft Copilot review. Free GPT-4 with Bing search, DALL-E 3 images, Office integration. But how does it compare to ChatGPT? Scores, pricing. March 2026.",
 };
