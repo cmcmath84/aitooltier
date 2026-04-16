@@ -32,9 +32,12 @@ export async function generateMetadata({
   const toolB = getToolBySlug(slugB);
   if (!toolA || !toolB) return { title: "Comparison Not Found" };
   const hasBenchmarks = toolA.benchmarks || toolB.benchmarks;
+  const scoreA = toolA.scores.overall.toFixed(1);
+  const scoreB = toolB.scores.overall.toFixed(1);
+  const winner = toolA.scores.overall >= toolB.scores.overall ? toolA : toolB;
   return {
-    title: `${toolA.name} vs ${toolB.name} (2026): Which Is Better?`,
-    description: `Detailed comparison of ${toolA.name} and ${toolB.name}. Scores, ${hasBenchmarks ? "benchmarks, " : ""}pricing, pros and cons, and our recommendation.`,
+    title: `${toolA.name} vs ${toolB.name} (2026): Scores, Pricing & Verdict`,
+    description: `${toolA.name} scores ${scoreA}/10 vs ${toolB.name} at ${scoreB}/10. Compare pricing, pros, cons${hasBenchmarks ? ", benchmarks," : ","} and why ${winner.name} wins head-to-head in 2026.`,
   };
 }
 
