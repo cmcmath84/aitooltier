@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate": "node scripts/validate-tools.mjs",
+    "preship": "npx tsc --noEmit && node scripts/validate-tools.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.7.0",
