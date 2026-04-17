@@ -32,6 +32,13 @@ import { kimi } from "./kimi";
 import { nemotron } from "./nemotron";
 import { minimax } from "./minimax";
 import { falcon } from "./falcon";
+import { gptOss } from "./gpt-oss";
+import { granite } from "./granite";
+import { arceeTrinity } from "./arcee-trinity";
+import { olmo } from "./olmo";
+import { jamba } from "./jamba";
+import { stepfun } from "./stepfun";
+import { commandA } from "./command-a";
 
 // AI Writing Tools
 import { jasper } from "./jasper";
@@ -189,6 +196,13 @@ export const tools: ToolReview[] = [
   nemotron,
   minimax,
   falcon,
+  gptOss,
+  granite,
+  arceeTrinity,
+  olmo,
+  jamba,
+  stepfun,
+  commandA,
   // Writing
   jasper,
   copyAi,

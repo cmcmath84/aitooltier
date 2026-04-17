@@ -50,6 +50,11 @@ export const deepseek: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "DeepSeek V4 IMMINENT: Per Reuters (citing The Information) on 2026-04-03, V4 launches in 'next few weeks' running on Huawei Ascend chips. Expected late April / early May 2026. Rumored to be a unified hybrid reasoning + non-reasoning model (~1T params, 1M context) that subsumes both V3 and R2 -- DeepSeek is reportedly skipping a separate R2 release entirely",
+      source: "Reuters, The Information, Gizchina",
+      date: "2026-04",
+    },
+    {
       description: "Refuses to engage with questions about Tiananmen Square, Taiwan sovereignty, and other politically sensitive topics per Chinese regulations",
       source: "Reddit r/LocalLLaMA",
       date: "2026-01",
@@ -64,12 +69,13 @@ export const deepseek: ToolReview = {
   notFor: "Anyone working on content that touches geopolitical topics, or teams that need guaranteed uptime and enterprise SLAs. Also not ideal if your primary use case is creative English writing.",
   verdict: "DeepSeek is the real deal when it comes to bang-for-your-buck AI. The reasoning capabilities are legitimately impressive, and the open-source angle gives it a flexibility that closed models can't match. The censorship limitations are a dealbreaker for some use cases, and the writing quality trails behind Claude and GPT-4. But for coding, math, and analytical tasks? It's hard to argue with near-frontier performance at a fraction of the cost.",
 
-  lastReviewedDate: "2026-03-31",
+  lastReviewedDate: "2026-04-17",
   dataSources: [
-    { name: "DeepSeek official site", dateAccessed: "2026-03-31" },
-    { name: "Reddit r/LocalLLaMA", dateAccessed: "2026-03-31" },
-    { name: "Artificial Analysis benchmarks", dateAccessed: "2026-03-31" },
-    { name: "Hands-on testing", dateAccessed: "2026-03-31" },
+    { name: "DeepSeek official site", url: "https://www.deepseek.com", dateAccessed: "2026-04-17" },
+    { name: "Reuters / The Information: DeepSeek V4 imminent April 2026", url: "https://evolink.ai/blog/deepseek-v4-release-window-prep", dateAccessed: "2026-04-17" },
+    { name: "Gizchina: DeepSeek V4 expected late April massive param scale", url: "https://www.gizchina.com/ai/deepseek-v4-expected-to-launch-in-late-april-with-massive-parameter-scale", dateAccessed: "2026-04-17" },
+    { name: "Reddit r/LocalLLaMA", dateAccessed: "2026-04-17" },
+    { name: "Artificial Analysis benchmarks", dateAccessed: "2026-04-17" },
   ],
   affiliateUrl: "https://www.deepseek.com",
   status: "active",

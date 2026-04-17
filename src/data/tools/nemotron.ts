@@ -45,6 +45,11 @@ export const nemotron: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "NEMOTRON COALITION: Announced at GTC March 2026, Nvidia leads an open-frontier coalition with Black Forest Labs, Cursor, LangChain, Mistral, Perplexity, Reflection AI, Sarvam, and Thinking Machines. Nemotron 4 (the first coalition model) has no public release date yet. Nemotron 3 Super/Ultra expected first half of 2026; Nemotron 3 Nano already shipped",
+      source: "Nvidia press release, Nemotron Coalition announcement",
+      date: "2026-03",
+    },
+    {
       description: "Mamba-hybrid layers require custom CUDA kernels -- non-Nvidia hardware (Apple Silicon, AMD ROCm) has limited support",
       source: "Hugging Face discussions, GitHub issues",
       date: "2026-02",
@@ -59,12 +64,14 @@ export const nemotron: ToolReview = {
   notFor: "Apple Silicon / AMD GPU users -- Mamba hybrid kernels are Nvidia-first. Also not ideal if you want maximum community support (use Llama or Qwen).",
   verdict: "Nemotron is Nvidia's bet that architecture innovation (hybrid Mamba-Transformer MoE) beats pure scale. The bet largely pays off: Nemotron 3 Super runs on a gaming GPU while posting reasoning scores that rival much larger dense models. If you're deployed on Nvidia hardware and need efficient long-context inference, Nemotron is the natural pick. If you're not on Nvidia or need absolute frontier quality, Qwen3 or DeepSeek are stronger options.",
 
-  lastReviewedDate: "2026-04-13",
+  lastReviewedDate: "2026-04-17",
   dataSources: [
-    { name: "Nvidia Nemotron 3 release", dateAccessed: "2026-04-13" },
-    { name: "Artificial Analysis Nemotron Ultra 253B", dateAccessed: "2026-04-13" },
-    { name: "Hugging Face nvidia collection", dateAccessed: "2026-04-13" },
-    { name: "Reddit r/LocalLLaMA Nemotron 3 discussion", dateAccessed: "2026-04-13" },
+    { name: "Nvidia press release: Nemotron Coalition", url: "https://nvidianews.nvidia.com/news/nvidia-launches-nemotron-coalition-of-leading-global-ai-labs-to-advance-open-frontier-models", dateAccessed: "2026-04-17" },
+    { name: "Nvidia press release: Nemotron 3 family of open models", url: "https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models", dateAccessed: "2026-04-17" },
+    { name: "Nvidia blog: Nemotron 3 Super agentic AI", url: "https://blogs.nvidia.com/blog/nemotron-3-super-agentic-ai/", dateAccessed: "2026-04-17" },
+    { name: "Artificial Analysis Nemotron Ultra 253B", dateAccessed: "2026-04-17" },
+    { name: "Hugging Face nvidia collection", dateAccessed: "2026-04-17" },
+    { name: "Reddit r/LocalLLaMA Nemotron 3 discussion", dateAccessed: "2026-04-17" },
   ],
   affiliateUrl: "https://www.nvidia.com/en-us/ai-data-science/foundation-models/nemotron/",
   status: "active",
