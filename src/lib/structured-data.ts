@@ -154,6 +154,83 @@ export function comparePageJsonLd(
   };
 }
 
+export function pricingPageJsonLd(tool: ToolReview) {
+  const parsePrice = (price: string): number | null => {
+    if (!price) return null;
+    if (price === "Free" || price === "$0") return 0;
+    const match = price.match(/\$?\s*([0-9]+(?:\.[0-9]+)?)/);
+    return match ? parseFloat(match[1]) : null;
+  };
+
+  const numericPrices = tool.pricing
+    .map((p) => parsePrice(p.price))
+    .filter((p): p is number => p !== null);
+  const paidPrices = numericPrices.filter((p) => p > 0);
+  const lowPrice = paidPrices.length > 0 ? Math.min(...paidPrices) : 0;
+  const highPrice = numericPrices.length > 0 ? Math.max(...numericPrices) : 0;
+
+  const product = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: `${tool.name} Pricing`,
+    description: `${tool.name} pricing tiers, plans, and costs for 2026. ${tool.tagline}`,
+    url: `${BASE_URL}/pricing/${tool.slug}`,
+    image: `${BASE_URL}/logo.png`,
+    brand: { "@type": "Brand", name: tool.name },
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "USD",
+      lowPrice: lowPrice.toFixed(2),
+      highPrice: highPrice.toFixed(2),
+      offerCount: tool.pricing.length,
+      availability: "https://schema.org/InStock",
+      url: tool.url,
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: tool.scores.overall,
+      bestRating: 10,
+      worstRating: 0,
+      ratingCount: 4,
+      reviewCount: 1,
+    },
+    review: {
+      "@type": "Review",
+      author: { "@type": "Organization", name: "AIToolTier", url: BASE_URL },
+      datePublished: tool.lastReviewedDate,
+      reviewBody: tool.verdict,
+      reviewRating: {
+        "@type": "Rating",
+        ratingValue: tool.scores.overall,
+        bestRating: 10,
+        worstRating: 0,
+      },
+    },
+  };
+
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: tool.name,
+        item: `${BASE_URL}/tools/${tool.slug}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Pricing",
+        item: `${BASE_URL}/pricing/${tool.slug}`,
+      },
+    ],
+  };
+
+  return [product, breadcrumb];
+}
+
 export function homepageJsonLd(toolCount: number) {
   const website = {
     "@context": "https://schema.org",

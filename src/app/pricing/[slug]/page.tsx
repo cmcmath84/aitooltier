@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { tools, getToolBySlug, getToolsByCategory } from "@/data/tools";
 import { getCategoryBySlug } from "@/data/categories";
 import { getAffiliateUrl } from "@/lib/affiliates";
-import { safeJsonLd } from "@/lib/structured-data";
+import { safeJsonLd, pricingPageJsonLd } from "@/lib/structured-data";
 import TierBadge from "@/components/ui/TierBadge";
 import ToolLogo from "@/components/ui/ToolLogo";
 
@@ -46,27 +46,17 @@ export default async function PricingPage({
     .sort((a, b) => b.scores.overall - a.scores.overall)
     .slice(0, 5);
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: tool.name,
-    description: tool.tagline,
-    url: tool.url,
-    offers: tool.pricing.map((plan) => ({
-      "@type": "Offer",
-      name: plan.plan,
-      price: plan.price === "$0" || plan.price === "Free" ? "0" : plan.price.replace("$", ""),
-      priceCurrency: "USD",
-      ...(plan.period ? { billingDuration: plan.period } : {}),
-    })),
-  };
+  const jsonLdBlocks = pricingPageJsonLd(tool);
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
-      />
+      {jsonLdBlocks.map((block, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: safeJsonLd(block) }}
+        />
+      ))}
 
       {/* Breadcrumb */}
       <nav className="mb-6 text-sm text-muted-foreground">
