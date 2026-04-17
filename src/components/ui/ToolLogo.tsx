@@ -4,6 +4,9 @@ const logoMap: Record<string, string> = {
   // Image
   midjourney: "/logos/midjourney.png",
   dalle: "/logos/openai.png",
+  "dall-e": "/logos/openai.png",
+  "nano-banana": "/logos/gemini.png",
+  "mai-image-2": "/logos/microsoft.png",
   "stable-diffusion": "/logos/stability.png",
   "leonardo-ai": "/logos/leonardo.png",
   "adobe-firefly": "/logos/adobe.png",
@@ -14,7 +17,9 @@ const logoMap: Record<string, string> = {
 
   // LLMs / chatbots
   claude: "/logos/anthropic.png",
+  "claude-mythos": "/logos/anthropic.png",
   chatgpt: "/logos/openai.png",
+  "gpt-rosalind": "/logos/openai.png",
   gemini: "/logos/gemini.png",
   grok: "/logos/grok.png",
   "microsoft-copilot": "/logos/microsoft.png",
@@ -22,6 +27,7 @@ const logoMap: Record<string, string> = {
   poe: "/logos/poe.png",
   notebooklm: "/logos/notebooklm.png",
   "muse-spark": "/logos/meta.png",
+  "alexa-plus": "/logos/amazon.png",
 
   // Local / open-weight LLMs
   llama: "/logos/meta.png",
@@ -34,6 +40,13 @@ const logoMap: Record<string, string> = {
   nemotron: "/logos/nvidia.png",
   minimax: "/logos/minimax.png",
   falcon: "/logos/falcon.png",
+  "gpt-oss": "/logos/openai.png",
+  granite: "/logos/ibm.png",
+  "arcee-trinity": "/logos/arcee.png",
+  olmo: "/logos/allenai.png",
+  jamba: "/logos/ai21.png",
+  stepfun: "/logos/stepfun.png",
+  "command-a": "/logos/cohere.png",
 
   // Writing
   jasper: "/logos/jasper.png",
@@ -49,6 +62,7 @@ const logoMap: Record<string, string> = {
   runway: "/logos/runway.png",
   pika: "/logos/pika.png",
   sora: "/logos/sora.png",
+  seedance: "/logos/bytedance.png",
   heygen: "/logos/heygen.png",
   "kling-ai": "/logos/kling.png",
   veo: "/logos/veo.png",
@@ -75,6 +89,10 @@ const logoMap: Record<string, string> = {
   "murf-ai": "/logos/murf.png",
   descript: "/logos/descript.png",
   speechify: "/logos/speechify.png",
+  "mai-voice-1": "/logos/microsoft.png",
+
+  // Design
+  "claude-design": "/logos/anthropic.png",
 
   // Design
   "canva-ai": "/logos/canva.png",
@@ -98,6 +116,7 @@ const logoMap: Record<string, string> = {
   "notion-ai": "/logos/notion.png",
   "otter-ai": "/logos/otter.png",
   fireflies: "/logos/fireflies.png",
+  "mai-transcribe-1": "/logos/microsoft.png",
 
   // Marketing
   "hubspot-ai": "/logos/hubspot.png",
@@ -133,9 +152,12 @@ const logoMap: Record<string, string> = {
   "hermes-agent": "/logos/hermes.png",
   "manus-ai": "/logos/manus.png",
   "perplexity-computer": "/logos/perplexity.png",
+  "perplexity-comet": "/logos/perplexity.png",
+  "emergent-wingman": "/logos/emergent.png",
   paperclip: "/logos/paperclip.png",
   crewai: "/logos/crewai.png",
   langgraph: "/logos/langgraph.png",
+  "microsoft-agent-framework": "/logos/microsoft.png",
 };
 
 interface ToolLogoProps {
