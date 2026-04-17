@@ -50,6 +50,26 @@ export const hubspotAi: ToolReview = {
         "SEO tools",
       ],
     },
+    {
+      plan: "Breeze Customer Agent (outcome-based, effective 2026-04-14)",
+      price: "$0.50",
+      period: "per resolved conversation",
+      features: [
+        "Pay only when Breeze actually resolves a customer support ticket",
+        "Replaced prior per-conversation flat rate of $1.00",
+        "Part of HubSpot's 2026 pivot to outcome-based AI pricing",
+      ],
+    },
+    {
+      plan: "Breeze Prospecting Agent (outcome-based)",
+      price: "$1",
+      period: "per qualified lead",
+      features: [
+        "Pay only when Breeze produces a qualified lead matching your ICP",
+        "Replaced prior monthly per-contact model",
+        "Effective 2026-04-14",
+      ],
+    },
   ],
 
   pros: [
@@ -85,11 +105,12 @@ export const hubspotAi: ToolReview = {
   verdict:
     "HubSpot's AI features are genuinely useful if you're already paying for the Professional tier. The lead scoring and reporting AI are the real standouts. But the massive price jump to access most features, combined with mediocre content generation quality, makes this a tough sell unless HubSpot is already your marketing hub. The AI is a nice addition to HubSpot -- it's not a reason to buy HubSpot.",
 
-  lastReviewedDate: "2026-03-27",
+  lastReviewedDate: "2026-04-17",
   dataSources: [
-    { name: "HubSpot official site", dateAccessed: "2026-03-27" },
-    { name: "G2 Reviews", dateAccessed: "2026-03-27" },
-    { name: "Reddit r/hubspot", dateAccessed: "2026-03-27" },
+    { name: "HubSpot official site", url: "https://hubspot.com", dateAccessed: "2026-04-17" },
+    { name: "MarTech: HubSpot moves to outcome-based Breeze pricing", url: "https://martech.org/hubspot-moves-to-outcome-based-pricing-for-some-breeze-ai-agents/", dateAccessed: "2026-04-17" },
+    { name: "G2 Reviews", dateAccessed: "2026-04-17" },
+    { name: "Reddit r/hubspot", dateAccessed: "2026-04-17" },
   ],
   affiliateUrl: "https://hubspot.com",
   status: "active",

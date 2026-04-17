@@ -84,9 +84,9 @@ export const seedance: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "Disney sent a cease-and-desist over character generation capabilities reproducing copyrighted characters. Model has since been fine-tuned to refuse specific franchise and character names, but workarounds still circulate",
-      source: "TechCrunch",
-      date: "2026-02",
+      description: "GLOBAL ROLLOUT PAUSED: ByteDance paused Seedance 2.0's international rollout on 2026-03-15 after the Disney cease-and-desist (2026-02) and a formal US Senate letter (Senators Blackburn + Welch, 2026-03-17) demanding an outright shutdown over copyright-infringement claims. China + existing CapCut-integrated markets (Indonesia, Philippines, Thailand, Vietnam, Malaysia, Brazil, Mexico) still have access. Standalone Dreamina Western-market rollout is now indefinite",
+      source: "TechCrunch, Senator Blackburn press release",
+      date: "2026-03",
     },
     {
       description: "English-voice audio dubbing occasionally has an artificial cadence or mispronounced words that Veo 3.1's native English audio does not exhibit",

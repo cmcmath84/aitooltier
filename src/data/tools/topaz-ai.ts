@@ -30,10 +30,16 @@ export const topazAi: ToolReview = {
       features: ["Video upscaling to 4K/8K", "Frame interpolation", "Stabilization", "Multiple AI models"],
     },
     {
-      plan: "Studio (Bundle)",
-      price: "$399",
+      plan: "Gigapixel (standalone)",
+      price: "$99",
       period: "year",
-      features: ["Photo AI + Video AI + Gigapixel", "All tools included", "Priority cloud rendering"],
+      features: ["Single-purpose upscaler", "Batch processing", "Local GPU processing"],
+    },
+    {
+      plan: "Studio (Bundle)",
+      price: "$499",
+      period: "year",
+      features: ["Photo AI + Video AI + Gigapixel", "All tools included", "Priority cloud rendering", "Bundle price confirmed on topazlabs.com 2026-04-17"],
     },
   ],
 
@@ -70,7 +76,7 @@ export const topazAi: ToolReview = {
   notFor: "Hobbyists who can't justify $200+/year for photo enhancement, or anyone without a dedicated GPU. Free alternatives like Upscayl handle basic upscaling fine.",
   verdict: "Topaz still produces the best AI-enhanced images and video on the market -- that hasn't changed. What has changed is the pricing model. The shift from a one-time $299 purchase to a $199-399/year subscription alienated a huge chunk of their user base, and the persistent bug issues don't help. If you're a working professional who bills clients, the cost is easy to justify. Everyone else should think hard about whether the quality bump over free alternatives is worth the annual fee.",
 
-  lastReviewedDate: "2026-04-02",
+  lastReviewedDate: "2026-04-17",
   dataSources: [
     { name: "Topaz Labs official site", dateAccessed: "2026-04-02" },
     { name: "DPReview Forums", dateAccessed: "2026-04-02" },

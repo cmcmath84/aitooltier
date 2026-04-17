@@ -14,6 +14,7 @@ import { nanoBanana } from "./nano-banana";
 
 // AI LLMs & Models
 import { claude } from "./claude";
+import { claudeMythos } from "./claude-mythos";
 import { gemini } from "./gemini";
 import { grok } from "./grok";
 import { museSpark } from "./muse-spark";
@@ -143,6 +144,7 @@ import { openclaw } from "./openclaw";
 import { hermesAgent } from "./hermes-agent";
 import { manusAi } from "./manus-ai";
 import { perplexityComputer } from "./perplexity-computer";
+import { emergentWingman } from "./emergent-wingman";
 
 // AI Agent Orchestration
 import { paperclip } from "./paperclip";
@@ -163,6 +165,7 @@ export const tools: ToolReview[] = [
   nanoBanana,
   // LLMs
   claude,
+  claudeMythos,
   gemini,
   grok,
   museSpark,
@@ -272,6 +275,7 @@ export const tools: ToolReview[] = [
   hermesAgent,
   manusAi,
   perplexityComputer,
+  emergentWingman,
   // Agent Orchestration
   paperclip,
   crewai,

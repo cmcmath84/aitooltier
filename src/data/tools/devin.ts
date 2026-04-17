@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const devin: ToolReview = {
   slug: "devin",
   name: "Devin",
-  tagline: "The most autonomous AI coding agent -- it researches, plans, writes code, and tests it without hand-holding",
+  tagline: "The most autonomous AI coding agent -- Devin 2.2 (Feb 24 2026) adds desktop/GUI testing (Figma, browser automation), Devin Review (pull-request analysis catching ~30% more issues), and ~3x faster startup (~15s vs ~45s). Now embedded in Windsurf 2.0",
   category: "ai-code-assistants",
   url: "https://devin.ai",
 
@@ -32,10 +32,10 @@ export const devin: ToolReview = {
   ],
 
   pros: [
-    "Genuine autonomy -- you can describe a task and walk away while it researches dependencies, writes code, and runs tests",
-    "The January 2026 price drop to $20/mo made it accessible to individual developers, not just funded startups",
-    "Handles well-defined, scoped tasks impressively -- bug fixes, boilerplate setup, and straightforward features",
-    "Full development environment with browser, terminal, and editor means it can debug its own code",
+    "Genuine autonomy -- you can describe a task and walk away while it researches dependencies, writes code, and runs tests. Devin 2.2 (Feb 24 2026) improved long-session context retention so it holds plans coherently across multi-hour work",
+    "Desktop / GUI testing via computer-use (Devin 2.2) -- Devin can drive Figma, Photoshop, or browser-based SaaS tools, which unlocks classes of tasks (QA automation, designer-handoff) that inline IDE agents can't touch",
+    "Devin Review (Devin 2.2) automatically analyzes pull requests and reportedly catches ~30% more issues than human review alone -- used internally at Cognition before public release, now available as a standalone mode",
+    "Now embedded in Windsurf 2.0 as the cloud-agent layer (2026-04-15) -- if you want Devin's background autonomy alongside an inline IDE experience, Windsurf 2.0 is the integrated path",
   ],
   cons: [
     "Complex architecture decisions are where it struggles -- it'll build something that works but isn't how a senior dev would structure it",
@@ -59,16 +59,17 @@ export const devin: ToolReview = {
   notFor: "Developers who want fast inline suggestions while coding -- Cursor or Copilot are better for that. Also not ready for unsupervised work on critical production systems.",
   verdict: "Devin is the most ambitious AI coding tool available, and at $20/mo it's finally priced for experimentation. When it works, it's like having a junior developer who never sleeps. When it doesn't, it's like watching that junior dev spend three hours on something you could've done in twenty minutes. The key is task selection -- give it clear, bounded work and it impresses. Give it vague requirements and you'll burn credits watching it spin. It's a glimpse of the future, but today it's a supplemental tool, not a replacement for an IDE-integrated copilot.",
 
-  lastReviewedDate: "2026-03-31",
+  lastReviewedDate: "2026-04-17",
   dataSources: [
-    { name: "Devin official site", dateAccessed: "2026-03-31" },
-    { name: "Reddit r/programming", dateAccessed: "2026-03-31" },
-    { name: "GitHub Issues", dateAccessed: "2026-03-31" },
-    { name: "YouTube developer reviews", dateAccessed: "2026-03-31" },
+    { name: "Cognition: Introducing Devin 2.2", url: "https://cognition.ai/blog/introducing-devin-2-2", dateAccessed: "2026-04-17" },
+    { name: "Cognition: Devin in Windsurf 2.0", url: "https://cognition.ai/blog/devin-in-windsurf", dateAccessed: "2026-04-17" },
+    { name: "Devin official site", url: "https://devin.ai", dateAccessed: "2026-04-17" },
+    { name: "Reddit r/programming", dateAccessed: "2026-04-17" },
+    { name: "GitHub Issues", dateAccessed: "2026-04-17" },
   ],
   affiliateUrl: "https://devin.ai",
   status: "active",
-  poweredBy: "Multiple models (proprietary orchestration)",
-  metaTitle: "Devin Review 2026: Autonomous AI Coding Agent at $20/mo",
-  metaDescription: "Devin review. Most autonomous AI developer -- researches, codes, tests independently. Now $20/mo. But when does autonomy help vs. hurt? Scores, pricing. March 2026.",
+  poweredBy: "Cognition proprietary orchestration over Claude / GPT / Gemini + Devin's own tuned components",
+  metaTitle: "Devin 2.2 Review 2026: Autonomous AI Coding Agent + Desktop Testing + Devin Review",
+  metaDescription: "Devin 2.2 review (Feb 24 2026). Autonomous AI developer adds desktop/GUI testing, Devin Review (catches 30% more issues), 3x faster startup. Embedded in Windsurf 2.0. April 2026.",
 };
