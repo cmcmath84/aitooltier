@@ -11,6 +11,7 @@ import { flux } from "./flux";
 import { kreaAi } from "./krea-ai";
 import { nightcafe } from "./nightcafe";
 import { nanoBanana } from "./nano-banana";
+import { maiImage2 } from "./mai-image-2";
 
 // AI LLMs & Models
 import { claude } from "./claude";
@@ -18,6 +19,7 @@ import { claudeMythos } from "./claude-mythos";
 import { gemini } from "./gemini";
 import { grok } from "./grok";
 import { museSpark } from "./muse-spark";
+import { gptRosalind } from "./gpt-rosalind";
 
 // Local & Open-Weight LLMs
 import { llama } from "./llama";
@@ -80,6 +82,7 @@ import { elevenlabs } from "./elevenlabs";
 import { murfAi } from "./murf-ai";
 import { descript } from "./descript";
 import { speechify } from "./speechify";
+import { maiVoice1 } from "./mai-voice-1";
 
 // AI Voice Agents
 import { blandAi } from "./bland-ai";
@@ -99,6 +102,7 @@ import { lyria } from "./lyria";
 import { notionAi } from "./notion-ai";
 import { otterAi } from "./otter-ai";
 import { fireflies } from "./fireflies";
+import { maiTranscribe1 } from "./mai-transcribe-1";
 
 // AI Marketing Tools
 import { hubspotAi } from "./hubspot-ai";
@@ -127,6 +131,7 @@ import { canvaAi } from "./canva-ai";
 import { figmaAi } from "./figma-ai";
 import { looka } from "./looka";
 import { gamma } from "./gamma";
+import { claudeDesign } from "./claude-design";
 
 // AI SEO Tools
 import { surferSeo } from "./surfer-seo";
@@ -145,11 +150,13 @@ import { hermesAgent } from "./hermes-agent";
 import { manusAi } from "./manus-ai";
 import { perplexityComputer } from "./perplexity-computer";
 import { emergentWingman } from "./emergent-wingman";
+import { perplexityComet } from "./perplexity-comet";
 
 // AI Agent Orchestration
 import { paperclip } from "./paperclip";
 import { crewai } from "./crewai";
 import { langgraph } from "./langgraph";
+import { microsoftAgentFramework } from "./microsoft-agent-framework";
 
 export const tools: ToolReview[] = [
   // Image Generators
@@ -163,12 +170,14 @@ export const tools: ToolReview[] = [
   kreaAi,
   nightcafe,
   nanoBanana,
+  maiImage2,
   // LLMs
   claude,
   claudeMythos,
   gemini,
   grok,
   museSpark,
+  gptRosalind,
   // Local & Open-Weight LLMs
   llama,
   mistral,
@@ -225,6 +234,7 @@ export const tools: ToolReview[] = [
   murfAi,
   descript,
   speechify,
+  maiVoice1,
   // Voice Agents
   blandAi,
   vapiAi,
@@ -240,6 +250,7 @@ export const tools: ToolReview[] = [
   notionAi,
   otterAi,
   fireflies,
+  maiTranscribe1,
   // Marketing
   hubspotAi,
   synthesia,
@@ -262,6 +273,7 @@ export const tools: ToolReview[] = [
   figmaAi,
   looka,
   gamma,
+  claudeDesign,
   // SEO
   surferSeo,
   ahrefs,
@@ -276,10 +288,12 @@ export const tools: ToolReview[] = [
   manusAi,
   perplexityComputer,
   emergentWingman,
+  perplexityComet,
   // Agent Orchestration
   paperclip,
   crewai,
   langgraph,
+  microsoftAgentFramework,
 ];
 
 export function getToolBySlug(slug: string): ToolReview | undefined {

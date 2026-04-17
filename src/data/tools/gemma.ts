@@ -29,6 +29,7 @@ export const gemma: ToolReview = {
     "140+ language support -- one of the strongest multilingual open models available",
     "Four sizes (E2B, E4B, 26B MoE, 31B Dense) cover edge devices to data centers",
     "31B Dense scores 89% on AIME 2026 and 84% on GPQA Diamond -- competitive with frontier closed models",
+    "31B Dense currently ranks #3 among open models on the LMArena text leaderboard (26B MoE ranks #6) -- genuinely competitive with the top Chinese and Meta open-weight families",
     "26B MoE activates only 3.8B params during inference for fast tokens-per-second",
   ],
   cons: [
@@ -68,7 +69,7 @@ export const gemma: ToolReview = {
     scores: [
       { name: "MMLU", score: 83.0, maxScore: 100, unit: "%" },
       { name: "GPQA Diamond", score: 84.3, maxScore: 100, unit: "%" },
-      { name: "AIME 2024", score: 89.2, maxScore: 100, unit: "%" },
+      { name: "AIME 2026", score: 89.2, maxScore: 100, unit: "%" },
       { name: "HumanEval", score: 85.0, maxScore: 100, unit: "%" },
     ],
     lastUpdated: "2026-04-13",
