@@ -21,7 +21,7 @@ export const alexaPlus: ToolReview = {
       plan: "Prime Included",
       price: "$0",
       features: [
-        "Included with Amazon Prime ($139/year)",
+        "Included with Amazon Prime ($149/year or $14.99/month as of 2026)",
         "Works on all existing Alexa devices (Echo, Fire TV, third-party)",
         "Multi-turn agent tasks, memory, cross-app chaining",
       ],
@@ -40,7 +40,7 @@ export const alexaPlus: ToolReview = {
 
   pros: [
     "Actually useful on-device now -- multi-turn conversations on Echo that don't reset every query, Fire TV navigation that works, and task chaining across apps (book a reservation while setting a timer)",
-    "Free for Prime members -- if you already pay $139/year for Prime, you're getting a major AI assistant rollout at no additional cost, which is structurally hard to beat on value",
+    "Free for Prime members -- if you already pay $149/year for Prime, you're getting a major AI assistant rollout at no additional cost, which is structurally hard to beat on value",
     "Install base is unmatched -- hundreds of millions of existing Alexa devices auto-upgraded to Alexa+ on rollout, so the ecosystem is there from day one without anyone needing to buy new hardware",
     "Smart home and device control is still the best in class -- this is the use case where voice-first actually makes sense, and Alexa+ keeps the lead over Google Assistant and Siri",
   ],

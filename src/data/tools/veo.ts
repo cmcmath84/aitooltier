@@ -39,12 +39,13 @@ export const veo: ToolReview = {
     },
     {
       plan: "Google AI Ultra",
-      price: "$249",
+      price: "$249.99",
       period: "month",
       features: [
         "Effectively unlimited Veo 3.1 generations",
-        "Nano Banana 2 image generation included",
-        "Priority compute",
+        "Gemini 3.1 Pro with maximum limits, Nano Banana 2 included",
+        "Project Mariner (10 parallel agentic browser tasks)",
+        "30 TB storage, YouTube Premium",
       ],
     },
     {

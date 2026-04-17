@@ -38,21 +38,23 @@ export const nanoBanana: ToolReview = {
     },
     {
       plan: "Google AI Ultra",
-      price: "$249",
+      price: "$249.99",
       period: "month",
       features: [
-        "Gemini Pro tier, effectively unlimited Nano Banana 2",
+        "Gemini 3.1 Pro with maximum limits",
         "Veo 3.1 video generation included",
-        "Priority compute",
+        "Project Mariner (10 parallel agentic browser tasks)",
+        "30 TB cloud storage, YouTube Premium",
       ],
     },
     {
       plan: "API (Gemini 3.1 Flash Image)",
-      price: "$0.039",
-      period: "per image",
+      price: "$0.067",
+      period: "per 1K image",
       features: [
-        "Direct model access via Gemini API",
-        "Batch generation support",
+        "Standard: $0.045 (512px) / $0.067 (1K) / $0.101 (2K) / $0.151 (4K)",
+        "Batch: $0.022 (512px) / $0.034 (1K) / $0.050 (2K) / $0.076 (4K)",
+        "$0.25/1M input tokens, $60/1M image output tokens",
         "Commercial use rights",
       ],
     },
@@ -68,7 +70,7 @@ export const nanoBanana: ToolReview = {
     "Confusing branding -- 'Nano Banana' is the nickname, 'Gemini 3.1 Flash Image' is the actual model name, and the Gemini app interface is inconsistent about which one it surfaces to users",
     "Rate limits on the free tier are tight -- iterative prompt design will push you into a paid tier faster than you might expect for a model positioned as 'free'",
     "Loses to Midjourney on purely artistic or stylized generation -- Nano Banana 2 feels clean and literal where Midjourney feels interpretive and atmospheric",
-    "API pricing at $0.039/image is higher than FLUX.2 [klein] or hosted Stable Diffusion at scale -- the per-image cost adds up fast for high-volume production",
+    "API pricing at $0.067/image at 1K resolution (or $0.151 at 4K) is meaningfully higher than FLUX.2 [klein] or hosted Stable Diffusion at scale -- the per-image cost adds up fast for high-volume production",
   ],
   knownIssues: [
     {
