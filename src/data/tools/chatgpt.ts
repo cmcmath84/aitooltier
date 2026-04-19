@@ -17,11 +17,12 @@ export const chatgpt: ToolReview = {
 
   hasFreeTier: true,
   pricing: [
-    { plan: "Free", price: "$0", features: ["Limited GPT-5.2", "Web browsing", "Basic image gen"] },
+    { plan: "Free", price: "$0", features: ["Limited GPT-5.2", "Web browsing", "Basic image gen", "Default model after GPT-4o retirement (2026-02-13)"] },
     { plan: "Go", price: "$8", period: "month", features: ["GPT-5.2 Instant", "Image generation", "File uploads"] },
-    { plan: "Plus", price: "$20", period: "month", features: ["GPT-5.4 Standard", "DALL-E 3", "Advanced Data Analysis", "Custom GPTs", "1M token context"] },
-    { plan: "Pro", price: "$200", period: "month", features: ["GPT-5.4 Pro", "GPT-5.4 Thinking mode", "Unlimited usage", "Priority access"] },
-    { plan: "Business", price: "$20", period: "seat/month (annual)", features: ["GPT-5.4", "Admin controls", "Data privacy", "Custom GPTs"] },
+    { plan: "Plus", price: "$20", period: "month", features: ["GPT-5.4 Standard", "Custom GPTs", "1M token context", "Image gen via gpt-image-1.5"] },
+    { plan: "Pro ($100, new 2026-04-09)", price: "$100", period: "month", features: ["5x Plus usage (10x Codex during launch promo through 2026-05-31)", "GPT-5.4 Thinking", "Targets Claude Max price point", "Best for longer high-effort Codex sessions"] },
+    { plan: "Pro (Ultra $200)", price: "$200", period: "month", features: ["GPT-5.4 Pro + Thinking", "Unlimited usage", "Priority access", "Power users and agent workloads"] },
+    { plan: "Business", price: "$20", period: "seat/month (annual, price CUT from $25 on 2026-04-02)", features: ["GPT-5.4", "Admin controls", "Data privacy", "Custom GPTs"] },
   ],
 
   pros: [
@@ -38,6 +39,10 @@ export const chatgpt: ToolReview = {
     "Multi-step agent workflows still occasionally hallucinate or get stuck",
   ],
   knownIssues: [
+    { description: "GPT-4o, GPT-4.1, GPT-4.1-mini, and o4-mini were retired on 2026-02-13 (ChatGPT) / 2026-02-16 (API). Business/Enterprise/Edu Custom GPTs had grace period through 2026-04-03. If you have older prompts or agents hardcoded to 'gpt-4o', they are broken -- migrate to GPT-5.2 or GPT-5.4", source: "OpenAI deprecations, TechCrunch backlash coverage", date: "2026-02" },
+    { description: "New $100/mo Pro tier launched 2026-04-09 (between Plus $20 and Pro Ultra $200). OpenAI positioned it explicitly as a response to Claude Max pricing. Existing $200 Pro is retained for unlimited usage; the $100 tier offers 5x Plus quotas and 10x Codex during the launch promo through 2026-05-31", source: "OpenAI community post, TechCrunch, The Next Web", date: "2026-04" },
+    { description: "Legacy Deep Research mode was removed from ChatGPT on 2026-03-26 -- replaced by the newer agentic Deep Research. Users who preferred the old behavior (more predictable, less agentic) have no direct replacement", source: "OpenAI help changelog", date: "2026-03" },
+    { description: "ChatGPT Business annual was cut from $25 to $20 per seat on 2026-04-02 -- a rare downward pricing move. Existing customers on the $25 tier should check whether their renewal reflects the new rate", source: "OpenAI pricing page", date: "2026-04" },
     { description: "Memory feature sometimes surfaces irrelevant stored memories or forgets things it should remember", source: "Reddit r/ChatGPT", date: "2026-03" },
     { description: "Custom GPTs occasionally break when OpenAI updates models", source: "OpenAI Community Forum", date: "2026-02" },
     { description: "GPT-5.4 Thinking mode latency can be 30+ seconds for complex queries -- frustrating for back-and-forth use", source: "Reddit r/ChatGPT", date: "2026-04" },
@@ -46,12 +51,14 @@ export const chatgpt: ToolReview = {
   notFor: "Power users who need the absolute best writing quality (Claude) or total privacy (local Llama). Also not for anyone opposed to OpenAI's data practices.",
   verdict: "ChatGPT is the Toyota Camry of AI chatbots. It's not the flashiest or the absolute best at any one thing, but it does everything well, it's reliable, and the ecosystem around it is massive. For most people, this is the only AI chatbot they need.",
 
-  lastReviewedDate: "2026-04-08",
+  lastReviewedDate: "2026-04-18",
   dataSources: [
-    { name: "OpenAI official site", dateAccessed: "2026-04-08" },
-    { name: "OpenAI GPT-5.4 announcement", dateAccessed: "2026-04-08" },
-    { name: "Reddit r/ChatGPT", dateAccessed: "2026-04-08" },
-    { name: "Hands-on daily use", dateAccessed: "2026-04-08" },
+    { name: "OpenAI official site", dateAccessed: "2026-04-18" },
+    { name: "OpenAI: Introducing new $100/month Pro tier (2026-04-09)", url: "https://community.openai.com/t/introducing-new-100-month-pro-tier/1378752", dateAccessed: "2026-04-18" },
+    { name: "TechCrunch: ChatGPT offers $100/month Pro plan", url: "https://techcrunch.com/2026/04/09/chatgpt-pro-plan-100-month-codex/", dateAccessed: "2026-04-18" },
+    { name: "OpenAI: Retiring GPT-4o and older models", url: "https://openai.com/index/retiring-gpt-4o-and-older-models/", dateAccessed: "2026-04-18" },
+    { name: "Reddit r/ChatGPT", dateAccessed: "2026-04-18" },
+    { name: "Hands-on daily use", dateAccessed: "2026-04-18" },
   ],
   affiliateUrl: "https://chat.openai.com",
   status: "active",
@@ -73,6 +80,6 @@ export const chatgpt: ToolReview = {
     tone: "Friendly, upbeat, and helpful. ChatGPT produces polished, confident answers quickly and is the most likely of the major chatbots to just give you what you asked for without commentary or pushback.",
     quirks: "Leans formulaic -- lots of bulleted lists, headings, and 'certainly!' openers unless you explicitly ask for a different style. Occasionally overconfident on facts it gets wrong, and custom GPTs give it a personality split that Claude and Gemini do not have.",
   },
-  metaTitle: "ChatGPT Review 2026: GPT-5.4, ChatGPT Go, and All Plans",
-  metaDescription: "ChatGPT review. GPT-5.4 with 1M context, new $8/mo Go plan, Plus, Pro, Business. Still the best all-in-one AI chatbot? Scores, pricing, known issues. April 2026.",
+  metaTitle: "ChatGPT Review 2026: New $100 Pro Tier, GPT-5.4, GPT-4o Retired",
+  metaDescription: "ChatGPT review. New $100/mo Pro tier (Apr 9 2026), GPT-4o retired Feb 13, Business cut to $20. GPT-5.4 with 1M context. Scores, pricing, known issues. April 2026.",
 };

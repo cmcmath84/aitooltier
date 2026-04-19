@@ -50,6 +50,11 @@ export const figmaAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "Figma's April 2026 release introduced AI agent support -- AI agents can now write directly to Figma files via Figma's MCP server. 'Skills' framework lets agents follow design-system intent. Figma Weave workflows available on Community. Make kits/attachments support richer context (PRDs, code, videos). Video playback in FigJam/Slides/Buzz. Timed with Anthropic's Claude Design launch (Apr 17) and Figma stock dropping ~5-7% on the competitive news",
+      source: "Figma release notes, DEV Community",
+      date: "2026-04",
+    },
+    {
       description: "AI-generated components sometimes use inconsistent spacing that doesn't match the file's existing design system",
       source: "Figma Community Forum",
       date: "2026-03",
@@ -64,11 +69,12 @@ export const figmaAi: ToolReview = {
   notFor: "Anyone expecting AI to generate production-ready designs from a text prompt -- it's not there yet.",
   verdict: "Figma AI is a collection of helpful shortcuts rather than a design revolution. The layer renaming, auto-layout suggestions, and content generation features genuinely save time on busywork. But the generative design features -- creating layouts from prompts -- produce generic results that no serious designer would ship. Think of it as a productivity add-on to an already great tool, not an AI design assistant. The real value is in the small time-savers, not the headline features.",
 
-  lastReviewedDate: "2026-03-27",
+  lastReviewedDate: "2026-04-18",
   dataSources: [
-    { name: "Figma official site", dateAccessed: "2026-03-27" },
-    { name: "Figma Community Forum", dateAccessed: "2026-03-27" },
-    { name: "Reddit r/FigmaDesign", dateAccessed: "2026-03-27" },
+    { name: "Figma release notes", url: "https://www.figma.com/release-notes/", dateAccessed: "2026-04-18" },
+    { name: "DEV: Figma April 2026 AI step forward", url: "https://dev.to/spookuspookus/figma-made-a-huge-step-forward-in-ai-design-april-2026-1cin", dateAccessed: "2026-04-18" },
+    { name: "Figma Community Forum", dateAccessed: "2026-04-18" },
+    { name: "Reddit r/FigmaDesign", dateAccessed: "2026-04-18" },
   ],
   affiliateUrl: "https://www.figma.com",
   status: "active",

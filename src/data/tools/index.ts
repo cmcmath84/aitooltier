@@ -75,6 +75,7 @@ import { devin } from "./devin";
 import { replit } from "./replit";
 import { codex } from "./codex";
 import { antigravity } from "./antigravity";
+import { codestral } from "./codestral";
 
 // AI Chatbots & Assistants
 import { chatgpt } from "./chatgpt";
@@ -90,6 +91,8 @@ import { murfAi } from "./murf-ai";
 import { descript } from "./descript";
 import { speechify } from "./speechify";
 import { maiVoice1 } from "./mai-voice-1";
+import { grokVoice } from "./grok-voice";
+import { cohereTranscribe } from "./cohere-transcribe";
 
 // AI Voice Agents
 import { blandAi } from "./bland-ai";
@@ -236,6 +239,7 @@ export const tools: ToolReview[] = [
   replit,
   codex,
   antigravity,
+  codestral,
   // Chatbots
   chatgpt,
   perplexity,
@@ -249,6 +253,8 @@ export const tools: ToolReview[] = [
   descript,
   speechify,
   maiVoice1,
+  grokVoice,
+  cohereTranscribe,
   // Voice Agents
   blandAi,
   vapiAi,

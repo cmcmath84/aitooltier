@@ -65,6 +65,18 @@ export const suno: ToolReview = {
   knownIssues: [
     {
       description:
+        "Suno v5.5 shipped 2026-03-27 with three major personalization features: Voices (voice capture/cloning with anti-impersonation verification), Custom Models (train on 6+ of your own songs), and My Taste (passive preference learning). Marks a shift from generic to identity-driven music generation",
+      source: "Suno blog (suno.com/blog/v5-5), Music Business Worldwide",
+      date: "2026-03",
+    },
+    {
+      description:
+        "Warner Music licensing deal (announced Dec 2025) is triggering a major policy shift in 2026: free-tier downloads removed, current pre-Warner models scheduled for deprecation later in 2026 when new licensed-only models ship. Universal Music Group and Sony talks reportedly at impasse as of 2026-04-09 -- ongoing litigation pressure. Plan for download/model changes in H2 2026",
+      source: "Digital Music News",
+      date: "2026-04",
+    },
+    {
+      description:
         "Songs occasionally cut off abruptly before the outro finishes, wasting credits",
       source: "Reddit r/SunoAI",
       date: "2026-03",
@@ -83,11 +95,12 @@ export const suno: ToolReview = {
   verdict:
     "Suno is the fastest way to go from an idea to a full song, and for casual use it's genuinely fun. But the lack of editing control and the inconsistent vocal quality mean it's better suited for content creators and hobbyists than anyone trying to produce polished tracks. The free tier is worth trying -- just don't expect studio quality.",
 
-  lastReviewedDate: "2026-03-27",
+  lastReviewedDate: "2026-04-18",
   dataSources: [
-    { name: "Suno official site", dateAccessed: "2026-03-27" },
-    { name: "Reddit r/SunoAI", dateAccessed: "2026-03-27" },
-    { name: "YouTube creator reviews", dateAccessed: "2026-03-27" },
+    { name: "Suno blog: v5.5", url: "https://suno.com/blog/v5-5", dateAccessed: "2026-04-18" },
+    { name: "Music Business Worldwide: Suno v5.5", url: "https://www.musicbusinessworldwide.com/suno-launches-v5-5-ai-model-with-voice-capture-and-personalization-features/", dateAccessed: "2026-04-18" },
+    { name: "Digital Music News: Suno-UMG impasse", url: "https://www.digitalmusicnews.com/2026/04/09/suno-universal-music-lawsuit-settlement-impasse/", dateAccessed: "2026-04-18" },
+    { name: "Reddit r/SunoAI", dateAccessed: "2026-04-18" },
   ],
   affiliateUrl: "https://suno.com",
   status: "active",

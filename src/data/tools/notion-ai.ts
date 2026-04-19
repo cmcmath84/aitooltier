@@ -67,6 +67,12 @@ export const notionAi: ToolReview = {
   knownIssues: [
     {
       description:
+        "Notion's April 2026 release (2026-04-14) introduced Agent integrations -- Notion Agent can now connect Calendar, Mail, and Slack to read and summarize across systems. Custom Agents with Skills framework (free through 2026-05-03). AI Meeting Notes now live in Command Search with custom formatting. n8n integration for building custom agents against Notion data",
+      source: "Notion releases (2026-04-14), Fazm Blog",
+      date: "2026-04",
+    },
+    {
+      description:
         "AI Q&A occasionally cites the wrong source page, leading users to incorrect information",
       source: "Reddit r/Notion",
       date: "2026-02",
@@ -85,11 +91,12 @@ export const notionAi: ToolReview = {
   verdict:
     "Notion AI is convenient, not exceptional. If Notion is already your team's brain, the AI features add genuine value for summarization and workspace search. But the writing output is mediocre, the per-member pricing adds up fast, and you can get better AI writing from dedicated tools. It's a nice-to-have, not a must-have.",
 
-  lastReviewedDate: "2026-03-27",
+  lastReviewedDate: "2026-04-18",
   dataSources: [
-    { name: "Notion official site", dateAccessed: "2026-03-27" },
-    { name: "Reddit r/Notion", dateAccessed: "2026-03-27" },
-    { name: "G2 Reviews", dateAccessed: "2026-03-27" },
+    { name: "Notion releases 2026-04-14", url: "https://www.notion.com/releases/2026-04-14", dateAccessed: "2026-04-18" },
+    { name: "Fazm Blog: Notion AI April 2026", url: "https://fazm.ai/blog/notion-ai-releases-april-2026-complete-list-of-every-ai-feature-shipped", dateAccessed: "2026-04-18" },
+    { name: "Reddit r/Notion", dateAccessed: "2026-04-18" },
+    { name: "G2 Reviews", dateAccessed: "2026-04-18" },
   ],
   affiliateUrl: "https://notion.so",
   status: "active",

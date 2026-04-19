@@ -62,6 +62,16 @@ export const claude: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "Claude Haiku 3 (claude-3-haiku-20240307) retires 2026-04-19 -- if any API code still targets the 2024 Haiku snapshot, migrate to Haiku 4.5 immediately. Anthropic gave 60 days' notice on 2026-02-19",
+      source: "Anthropic model deprecations page",
+      date: "2026-04",
+    },
+    {
+      description: "Claude Sonnet 4 and Opus 4 retirement was announced 2026-04-14 with ~60-day notice -- target retirement around 2026-06-14. If your product relies on those specific snapshots, schedule migration work to Sonnet 4.6 / Opus 4.7 before then",
+      source: "Anthropic model deprecations page",
+      date: "2026-04",
+    },
+    {
       description: "Free tier rate limits feel aggressive -- heavy users get throttled within a few conversations",
       source: "Reddit r/ClaudeAI",
       date: "2026-03",
@@ -72,7 +82,7 @@ export const claude: ToolReview = {
       date: "2026-02",
     },
     {
-      description: "Claude Mythos Preview is Anthropic's most capable model but is gated to ~50 pilot orgs via Project Glasswing for cybersecurity use. It is NOT in consumer Pro/Max tiers -- those get Opus 4.7, which Anthropic concedes trails Mythos on cyber tasks",
+      description: "Claude Mythos Preview is Anthropic's most capable model but is gated to ~40 pilot orgs via Project Glasswing for cybersecurity use (AWS, Apple, Cisco, CrowdStrike, Google, JPMorgan, Linux Foundation, Microsoft, Nvidia, Palo Alto Networks among them). It is NOT in consumer Pro/Max tiers -- those get Opus 4.7, which Anthropic concedes trails Mythos on cyber tasks. Anthropic has stated Mythos Preview will NOT be made generally available in the near term",
       source: "Axios, Anthropic Mythos Preview announcement",
       date: "2026-04",
     },
@@ -86,7 +96,7 @@ export const claude: ToolReview = {
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
   verdict: "Claude is the LLM you pick when quality matters more than features. Opus 4.7 (April 16, 2026) widened the quality lead on writing and made real step-change gains in software engineering and long-context reasoning, while keeping the $5/$25 per 1M token pricing. The new xhigh reasoning level is the biggest practical change for coding agents -- you can finally dial in real reasoning effort short of max without the latency cost. The 1M context window, 3.75MP vision, and MCP support make it the most capable generally-available model from any vendor today. If you're choosing one to pay $20/mo for, it still comes down to: do you want better outputs (Claude) or more features (ChatGPT)?",
 
-  lastReviewedDate: "2026-04-16",
+  lastReviewedDate: "2026-04-18",
   dataSources: [
     { name: "Anthropic: Introducing Claude Opus 4.7", url: "https://www.anthropic.com/news/claude-opus-4-7", dateAccessed: "2026-04-16" },
     { name: "CNBC: Anthropic rolls out Claude Opus 4.7", url: "https://www.cnbc.com/2026/04/16/anthropic-claude-opus-4-7-model-mythos.html", dateAccessed: "2026-04-16" },

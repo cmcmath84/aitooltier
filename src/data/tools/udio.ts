@@ -64,6 +64,12 @@ export const udio: ToolReview = {
   knownIssues: [
     {
       description:
+        "Udio signed a Kobalt licensing deal on 2026-04-10 -- now has licensing agreements with UMG, WMG, Merlin, and Kobalt. Next-gen platform announced with stem separation, no raw downloads, and a royalty-pool model for licensed-song training. Summer 2026 public release planned. Positioned as the 'artist-friendly' music-AI alternative to Suno's contested rollout",
+      source: "Music Ally, CBC News",
+      date: "2026-04",
+    },
+    {
+      description:
         "Extend feature occasionally produces a jarring transition where the tempo shifts unexpectedly",
       source: "Reddit r/udio",
       date: "2026-02",
@@ -82,11 +88,11 @@ export const udio: ToolReview = {
   verdict:
     "Udio trades ease of use for better output quality, and if you care about how your AI-generated music actually sounds, that's a trade worth making. The inpainting feature is a genuine differentiator. But the slower generation times and aggressive credit usage mean you'll hit the limits of the free and Standard plans faster than you'd expect.",
 
-  lastReviewedDate: "2026-03-27",
+  lastReviewedDate: "2026-04-18",
   dataSources: [
-    { name: "Udio official site", dateAccessed: "2026-03-27" },
-    { name: "Reddit r/udio", dateAccessed: "2026-03-27" },
-    { name: "Udio Discord community", dateAccessed: "2026-03-27" },
+    { name: "Music Ally: Udio Kobalt deal 2026-04-10", url: "https://musically.com/2026/04/10/udio-signs-its-latest-ai-music-licensing-deal-with-kobalt/", dateAccessed: "2026-04-18" },
+    { name: "CBC: Warner/Udio AI music", url: "https://www.cbc.ca/news/entertainment/warner-udio-ai-music-9.6986740", dateAccessed: "2026-04-18" },
+    { name: "Reddit r/udio", dateAccessed: "2026-04-18" },
   ],
   affiliateUrl: "https://udio.com",
   status: "active",

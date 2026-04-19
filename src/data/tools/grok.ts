@@ -62,6 +62,16 @@ export const grok: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "xAI joined SpaceX on 2026-02-02 -- SpaceX acquired xAI. Procurement, billing, and compliance workflows now route through SpaceX's vendor pipeline. For regulated industries (healthcare, finance, US government) this may require re-qualifying xAI as a vendor even if Grok itself was previously approved",
+      source: "xAI announcement (x.ai/news/xai-joins-spacex), SpaceX updates",
+      date: "2026-02",
+    },
+    {
+      description: "Grok Speech (STT + TTS) APIs launched 2026-04-17 as separate products from the chatbot -- see /tools/grok-voice on this site. Built on the same stack Grok Voice uses. Not included in Premium/SuperGrok consumer tiers; billed separately at $0.10/hr STT batch and $4.20/1M char TTS",
+      source: "xAI Grok STT/TTS announcement",
+      date: "2026-04",
+    },
+    {
       description: "Real-time X data can surface misinformation from viral posts without adequate fact-checking",
       source: "Reddit r/artificial",
       date: "2026-02",
@@ -86,7 +96,7 @@ export const grok: ToolReview = {
   notFor: "Enterprise users who need reliable, consistent outputs. Also not the best pick if you don't use X -- the real-time data advantage disappears and you're left with a solid-but-not-best-in-class LLM.",
   verdict: "Grok has come a long way from being dismissed as Elon's pet project. The Grok 3 models are legitimately competitive, and the real-time X integration is a unique differentiator that no other chatbot can match. But the value proposition gets muddier when you strip away the X angle -- at $30/mo for SuperGrok, you're paying a premium for personality and Twitter data. If those matter to you, Grok is great. If not, Claude or ChatGPT give you more for less.",
 
-  lastReviewedDate: "2026-04-17",
+  lastReviewedDate: "2026-04-18",
   dataSources: [
     { name: "xAI official site", url: "https://grok.x.ai", dateAccessed: "2026-04-17" },
     { name: "xAI Grok 4.20 announcement", dateAccessed: "2026-04-17" },

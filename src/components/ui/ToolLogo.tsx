@@ -83,6 +83,7 @@ const logoMap: Record<string, string> = {
   replit: "/logos/replit.png",
   codex: "/logos/openai.png",
   antigravity: "/logos/antigravity.png",
+  codestral: "/logos/mistral.png",
 
   // Voice & audio
   elevenlabs: "/logos/elevenlabs.png",
@@ -90,6 +91,8 @@ const logoMap: Record<string, string> = {
   descript: "/logos/descript.png",
   speechify: "/logos/speechify.png",
   "mai-voice-1": "/logos/microsoft.png",
+  "grok-voice": "/logos/grok.png",
+  "cohere-transcribe": "/logos/cohere.png",
 
   // Design
   "claude-design": "/logos/anthropic.png",

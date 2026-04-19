@@ -76,6 +76,18 @@ export const heygen: ToolReview = {
   knownIssues: [
     {
       description:
+        "Avatar V launched in HeyGen's April 2026 product update -- introduces a 15-second recording to studio-quality avatar conversion, with more lifelike motion and multi-angle stability than prior generations. 'Generative Credits' were renamed to 'Premium Credits' and the audio-dubbing feature became unlimited on paid plans",
+      source: "HeyGen blog (heygen.com/blog/category/product-updates)",
+      date: "2026-04",
+    },
+    {
+      description:
+        "Plan restructure in early 2026: Team plan ($39/seat) deprecated, replaced by Business ($149/mo + $20/seat) tier. Pricing in this tool file may be slightly out of date -- verify heygen.com/pricing for current Team/Business breakdown before relying on the numbers above",
+      source: "HeyGen pricing page",
+      date: "2026-02",
+    },
+    {
+      description:
         "Instant Avatar clones sometimes produce audio artifacts or unnatural pauses in certain languages",
       source: "Reddit r/heygen",
       date: "2026-03",
@@ -94,11 +106,12 @@ export const heygen: ToolReview = {
   verdict:
     "HeyGen edges out Synthesia on lip-sync quality and the Instant Avatar feature is a genuine differentiator for personal branding. The video translation is also a strong unique feature. But the credit-based pricing is frustrating -- you'll burn through your monthly allotment faster than expected, and the Business plan is expensive for what you get. Best for teams doing high-volume personalized video outreach where the per-video time savings justify the cost.",
 
-  lastReviewedDate: "2026-03-27",
+  lastReviewedDate: "2026-04-18",
   dataSources: [
-    { name: "HeyGen official site", dateAccessed: "2026-03-27" },
-    { name: "G2 Reviews", dateAccessed: "2026-03-27" },
-    { name: "Reddit r/heygen", dateAccessed: "2026-03-27" },
+    { name: "HeyGen blog (Avatar V, Premium Credits)", url: "https://www.heygen.com/blog/category/product-updates", dateAccessed: "2026-04-18" },
+    { name: "HeyGen pricing page", url: "https://www.heygen.com/pricing", dateAccessed: "2026-04-18" },
+    { name: "G2 Reviews", dateAccessed: "2026-04-18" },
+    { name: "Reddit r/heygen", dateAccessed: "2026-04-18" },
   ],
   affiliateUrl: "https://heygen.com",
   status: "active",

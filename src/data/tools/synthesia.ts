@@ -76,6 +76,12 @@ export const synthesia: ToolReview = {
   knownIssues: [
     {
       description:
+        "Synthesia 3.0 launched 2026-04-16 as a major platform redesign. New AI Playground brings Veo 3.1 and Sora into Synthesia (universal generative-video access from one place). Express-2 engine adds natural gestures and expressions. Customizable avatars with generated outfits/settings. 240+ avatars in 160+ languages",
+      source: "Synthesia blog, Synthesia news",
+      date: "2026-04",
+    },
+    {
+      description:
         "Custom avatars sometimes exhibit noticeable lip-sync drift on longer scripts (5+ minutes)",
       source: "Synthesia Community Forum",
       date: "2026-03",
@@ -94,11 +100,12 @@ export const synthesia: ToolReview = {
   verdict:
     "Synthesia is the best tool for a very specific job: creating lots of talking-head videos quickly, especially in multiple languages. For corporate training and internal comms, it's a no-brainer. But the uncanny valley problem is real, and for anything customer-facing, the AI-generated look can actually hurt your brand more than help it. Know what you're using it for before you commit.",
 
-  lastReviewedDate: "2026-03-27",
+  lastReviewedDate: "2026-04-18",
   dataSources: [
-    { name: "Synthesia official site", dateAccessed: "2026-03-27" },
-    { name: "G2 Reviews", dateAccessed: "2026-03-27" },
-    { name: "Trustpilot", dateAccessed: "2026-03-27" },
+    { name: "Synthesia: Synthesia 3.0 next era of video", url: "https://www.synthesia.io/post/synthesia-3-0-the-next-era-of-video", dateAccessed: "2026-04-18" },
+    { name: "Synthesia: Avatars that take action", url: "https://www.synthesia.io/post/synthesia-new-avatars-dont-just-talk-they-take-action", dateAccessed: "2026-04-18" },
+    { name: "G2 Reviews", dateAccessed: "2026-04-18" },
+    { name: "Trustpilot", dateAccessed: "2026-04-18" },
   ],
   affiliateUrl: "https://synthesia.io",
   status: "active",

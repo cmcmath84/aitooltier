@@ -24,9 +24,9 @@ export const windsurf: ToolReview = {
     },
     {
       plan: "Pro",
-      price: "$15",
-      period: "month",
-      features: ["Unlimited Cascade flows", "GPT-4o and Claude access", "Priority completions"],
+      price: "$20",
+      period: "month (raised from $15 in March 2026)",
+      features: ["Cascade flows with daily/weekly quotas (replaced legacy monthly allocation)", "Claude Opus 4.7, GPT-5.4, Gemini access", "Priority completions"],
     },
     {
       plan: "Team",
@@ -59,6 +59,11 @@ export const windsurf: ToolReview = {
     "Community / third-party skill ecosystem is smaller than Cursor's, and the product is changing fast enough that third-party tutorials age quickly",
   ],
   knownIssues: [
+    {
+      description: "Windsurf Pro was raised from $15/mo to $20/mo in March 2026, and the entire credit system shifted from a monthly allocation to daily/weekly quotas. If your old monthly budget assumed evenly-distributable credits, the new quota cadence may surprise you in burst-usage weeks",
+      source: "Windsurf pricing page",
+      date: "2026-03",
+    },
     {
       description: "Windsurf 2.0 Agent Command Center is new as of 2026-04-15 -- expect early rough edges in multi-agent handoff and background-agent commit tracking over the next few weeks",
       source: "TestingCatalog, Cognition blog",

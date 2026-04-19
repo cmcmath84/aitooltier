@@ -50,6 +50,11 @@ export const pika: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "Pika shipped PikaStream 1.0 on 2026-04-02 -- real-time video chat for AI agents, enabling face-to-face conversations with 24 FPS video at 1.5-second latency. Different positioning from Runway (AI-agent interface vs. cinematic clip quality). First product in a new category: persistent video-agent presence rather than clip generation",
+      source: "Pika blog (pika.me/blog/introducing-real-time-video-chat)",
+      date: "2026-04",
+    },
+    {
       description: "Lip sync feature produces uncanny results on real human faces",
       source: "Reddit r/pika",
       date: "2026-03",
@@ -59,12 +64,12 @@ export const pika: ToolReview = {
   notFor: "Professional filmmakers or anyone who needs the highest possible video quality. Use Runway for that.",
   verdict: "Pika is the best entry point to AI video generation. It's easier to use, cheaper, and more generous with free credits than Runway. The quality gap is real -- Runway Gen-3 looks noticeably better -- but for social media content and experimentation, Pika is more than good enough. Start here, upgrade to Runway when you need to.",
 
-  lastReviewedDate: "2026-03-26",
+  lastReviewedDate: "2026-04-18",
   dataSources: [
-    { name: "Pika official site", dateAccessed: "2026-03-26" },
-    { name: "Product Hunt", dateAccessed: "2026-03-26" },
-    { name: "Reddit r/pika", dateAccessed: "2026-03-26" },
-    { name: "Hands-on testing", dateAccessed: "2026-03-26" },
+    { name: "Pika blog: PikaStream 1.0", url: "https://www.pika.me/blog/introducing-real-time-video-chat", dateAccessed: "2026-04-18" },
+    { name: "Pika official site", dateAccessed: "2026-04-18" },
+    { name: "Product Hunt", dateAccessed: "2026-04-18" },
+    { name: "Reddit r/pika", dateAccessed: "2026-04-18" },
   ],
   affiliateUrl: "https://pika.art",
   status: "active",

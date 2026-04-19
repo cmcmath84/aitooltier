@@ -50,6 +50,21 @@ export const githubCopilot: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "GitHub Copilot will use Copilot Free/Pro/Pro+ user inputs, outputs, code snippets, and context to train its AI models UNLESS users opt out. Effective 2026-04-24. Business and Enterprise plans are excluded from training by default. Individual developers on Free/Pro/Pro+ must explicitly opt out in settings before 2026-04-24 if they want to prevent training on their code. Big differentiator vs. Cursor and Claude Code, both of which do NOT train on user code by default",
+      source: "GitHub docs (docs.github.com/copilot/get-started/plans), The Register",
+      date: "2026-04",
+    },
+    {
+      description: "New 'premium requests' currency system rolled out in early 2026 -- Pro plan now gets 300 premium requests/mo, Business 1,500, Enterprise 1,000. Beyond those quotas, requests pay-as-you-go. Check the new plan details page before assuming legacy 'unlimited chat' behavior still applies",
+      source: "GitHub Copilot plans page",
+      date: "2026-03",
+    },
+    {
+      description: "Agent mode reached GA on VS Code and JetBrains in March 2026 -- Copilot can now run multi-step agentic workflows rather than just reply to chat messages. Still behind Cursor Composer 2 and Claude Code on autonomous multi-file work but closes the gap meaningfully",
+      source: "GitHub Copilot blog",
+      date: "2026-03",
+    },
+    {
       description: "Copilot chat occasionally loses context mid-conversation in larger projects, giving irrelevant suggestions",
       source: "GitHub Community Discussions",
       date: "2026-03",
@@ -59,16 +74,17 @@ export const githubCopilot: ToolReview = {
   notFor: "Developers who need deep codebase understanding and multi-file refactoring. Cursor does that better. Also not for anyone uncomfortable with potential code licensing issues.",
   verdict: "Copilot is still the default AI code assistant for good reason. The inline completions are the best available, and it works seamlessly in the editors most developers already use. At $10/mo it's an easy expense to justify. But if you want something that truly understands your entire codebase and can do complex refactors, look at Cursor.",
 
-  lastReviewedDate: "2026-03-26",
+  lastReviewedDate: "2026-04-18",
   dataSources: [
-    { name: "GitHub Copilot official site", dateAccessed: "2026-03-26" },
-    { name: "G2 Reviews", dateAccessed: "2026-03-26" },
-    { name: "Reddit r/programming", dateAccessed: "2026-03-26" },
-    { name: "Daily use testing", dateAccessed: "2026-03-26" },
+    { name: "GitHub Copilot plans", url: "https://github.com/features/copilot/plans", dateAccessed: "2026-04-18" },
+    { name: "GitHub: Copilot Pro/Business training policy", url: "https://docs.github.com/en/copilot/get-started/plans", dateAccessed: "2026-04-18" },
+    { name: "G2 Reviews", dateAccessed: "2026-04-18" },
+    { name: "Reddit r/programming", dateAccessed: "2026-04-18" },
+    { name: "Daily use testing", dateAccessed: "2026-04-18" },
   ],
   affiliateUrl: "https://github.com/features/copilot",
   status: "active",
   poweredBy: "GPT-5.4",
-  metaTitle: "GitHub Copilot Review 2026: Still the Best AI Code Assistant?",
-  metaDescription: "GitHub Copilot review. Best inline completions, great editor integration, but limited codebase awareness. Scores, pricing, known issues. March 2026.",
+  metaTitle: "GitHub Copilot Review 2026: Agent Mode GA, Training-Data Policy Shift",
+  metaDescription: "GitHub Copilot review. Training-data opt-in default (Apr 24 2026), Agent mode GA, new premium requests system. Pro $10, Business $19. April 2026.",
 };
