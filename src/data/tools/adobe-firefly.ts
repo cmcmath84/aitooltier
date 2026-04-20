@@ -66,8 +66,13 @@ export const adobeFirefly: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "Firefly AI Assistant (Adobe's agentic Creative Cloud copilot, successor to Project Moonlight) was announced 2026-04-15 on Adobe's blog. Orchestrates multi-step workflows across Photoshop, Premiere, Lightroom, Express, Illustrator, and Firefly from a single chat interface. Public beta opens 'in coming weeks' -- live demos at Adobe Summit 2026-04-19 through 2026-04-22 (Summit is underway now). Worth a re-review when beta opens to the public",
+      description: "Firefly AI Assistant (Adobe's agentic Creative Cloud copilot, successor to Project Moonlight) was announced 2026-04-15. Orchestrates multi-step workflows across Photoshop, Premiere, Lightroom, Express, Illustrator, and Firefly from a single chat interface. Public beta opens 'in coming weeks' -- live demos at Adobe Summit 2026-04-19 through 2026-04-22. Worth a re-review when beta opens to the public",
       source: "Adobe blog announcement, TechCrunch",
+      date: "2026-04",
+    },
+    {
+      description: "Adobe Summit Day 1 keynote (2026-04-20) shipped five agentic-AI product announcements beyond Firefly AI Assistant: (1) Adobe CX Enterprise -- end-to-end agentic AI for customer-lifecycle management; (2) CX Enterprise Coworker -- agentic AI coworker orchestrating CX workflows; (3) Brand Intelligence + GenStudio expansion -- agentic content supply chain; (4) Brand Visibility Solution -- tooling to help brands stay accurate and cited in AI search / chatbot answers (direct response to GEO/AEO search); (5) expanded partner ecosystem across tech + agencies + SIs. These are CX / enterprise-marketing products, not creative-suite features -- included here as context because Firefly is now part of a much broader agentic stack",
+      source: "Adobe newsroom, diginomica, TechRadar Pro live coverage",
       date: "2026-04",
     },
     {
@@ -85,7 +90,7 @@ export const adobeFirefly: ToolReview = {
   notFor: "Anyone looking for the best standalone AI image generator. The quality doesn't justify the price on its own -- the value is in the Adobe integration.",
   verdict: "Firefly's real strength isn't as a standalone generator -- it's as a feature inside Photoshop. Generative Fill is a game-changer for photo editing. But if you're comparing it to Midjourney or DALL-E purely on image generation quality, it falls short. Worth it if you already pay for Creative Cloud. Hard to justify otherwise.",
 
-  lastReviewedDate: "2026-04-19",
+  lastReviewedDate: "2026-04-20",
   dataSources: [
     { name: "Adobe: 2026 Creative Cloud pricing + plan changes", url: "https://helpx.adobe.com/account/individual/subscriptions-and-plans/plan-types-and-eligibility/changes-to-individual-plan.html", dateAccessed: "2026-04-17" },
     { name: "Adobe Firefly official site", url: "https://firefly.adobe.com", dateAccessed: "2026-04-17" },

@@ -67,12 +67,17 @@ export const claudeMythos: ToolReview = {
       source: "Anthropic Glasswing page",
       date: "2026-04",
     },
+    {
+      description: "Axios reported 2026-04-19 that the NSA is among the ~40 orgs with Mythos access, despite the Pentagon's formal supply-chain risk designation of Anthropic. Dario Amodei reportedly met with W.H. Chief of Staff Susie Wiles and Treasury Secretary Scott Bessent on 2026-04-17. Material context if you are evaluating Mythos / Glasswing in a federal or defense-adjacent procurement -- the political posture inside the US government is not uniform",
+      source: "Axios, TechCrunch, Engadget",
+      date: "2026-04",
+    },
   ],
   bestFor: "Partner organizations in Project Glasswing doing cybersecurity research, defensive red-teaming, threat intelligence, or large-scale vulnerability triage. If your use case is legitimate cybersecurity and you have enterprise Anthropic contact, ask about Glasswing admission.",
   notFor: "Everyone else. For general coding, writing, analysis, agent work, or consumer use: use Claude Opus 4.7 (see /tools/claude). It is Anthropic's most capable generally-available model, and for >95% of real-world tasks it's functionally equivalent.",
   verdict: "Claude Mythos Preview is the first frontier Claude model Anthropic deliberately kept out of the public API. Announced alongside Project Glasswing on April 7, 2026, it's a cybersecurity-specialized model that posts uncommonly high scores on expert CTF tasks and long-horizon agentic security work -- high enough that Anthropic judged broad release too risky. For the ~50 pilot organizations with access (including Apple, Google, Microsoft, Nvidia, JPMorgan), Mythos is a real capability leap on security-domain tasks. For everyone else, it's a signal about where frontier release policy is heading: expect more 'gated preview' drops that never reach broad GA. If you're not in Glasswing, use Opus 4.7 and don't lose sleep over it -- the general-purpose quality gap is small outside the cyber niche.",
 
-  lastReviewedDate: "2026-04-17",
+  lastReviewedDate: "2026-04-20",
   dataSources: [
     { name: "Anthropic: Project Glasswing", url: "https://www.anthropic.com/glasswing", dateAccessed: "2026-04-17" },
     { name: "Anthropic Red: Mythos Preview", url: "https://red.anthropic.com/2026/mythos-preview/", dateAccessed: "2026-04-17" },
@@ -80,6 +85,8 @@ export const claudeMythos: ToolReview = {
     { name: "Axios: Anthropic releases Opus 4.7, concedes it trails unreleased Mythos", url: "https://www.axios.com/2026/04/16/anthropic-claude-opus-model-mythos", dateAccessed: "2026-04-17" },
     { name: "Schneier on Security: On Mythos Preview and Project Glasswing", url: "https://www.schneier.com/blog/archives/2026/04/on-anthropics-mythos-preview-and-project-glasswing.html", dateAccessed: "2026-04-17" },
     { name: "CNBC: Anthropic Opus 4.7 less risky than Mythos", url: "https://www.cnbc.com/2026/04/16/anthropic-claude-opus-4-7-model-mythos.html", dateAccessed: "2026-04-17" },
+    { name: "Axios: NSA uses Mythos despite Pentagon feud (2026-04-19)", url: "https://www.axios.com/2026/04/19/nsa-anthropic-mythos-pentagon", dateAccessed: "2026-04-20" },
+    { name: "TechCrunch: NSA spies reportedly using Anthropic Mythos", url: "https://techcrunch.com/2026/04/20/nsa-spies-are-reportedly-using-anthropics-mythos-despite-pentagon-feud/", dateAccessed: "2026-04-20" },
   ],
   affiliateUrl: "https://red.anthropic.com/2026/mythos-preview/",
   status: "active",
