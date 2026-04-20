@@ -45,6 +45,11 @@ export const nemotron: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "Nemotron 3 now has dedicated sub-families for voice, retrieval, and safety beyond the original reasoning family. Published sub-lineup: (1) Nemotron Speech -- open-source ASR models, claimed 10x faster than class competitors at comparable WER; (2) Nemotron RAG -- multimodal embedding + reranker VLMs for enterprise retrieval; (3) Nemotron Safety -- Llama Nemotron Content Safety + Nemotron PII detector; (4) Nemotron 3 VoiceChat -- full-duplex voice agent in early access post-GTC 2026; (5) Nemotron 3 Content Safety guardrail. All released under the permissive Nvidia Open Model License",
+      source: "Nvidia developer blog -- agents for reasoning, multimodal RAG, voice, and safety",
+      date: "2026-04",
+    },
+    {
       description: "NEMOTRON COALITION: Announced at GTC March 2026, Nvidia leads an open-frontier coalition with Black Forest Labs, Cursor, LangChain, Mistral, Perplexity, Reflection AI, Sarvam, and Thinking Machines. Nemotron 4 (the first coalition model) has no public release date yet. Nemotron 3 Super/Ultra expected first half of 2026; Nemotron 3 Nano already shipped",
       source: "Nvidia press release, Nemotron Coalition announcement",
       date: "2026-03",
@@ -64,7 +69,7 @@ export const nemotron: ToolReview = {
   notFor: "Apple Silicon / AMD GPU users -- Mamba hybrid kernels are Nvidia-first. Also not ideal if you want maximum community support (use Llama or Qwen).",
   verdict: "Nemotron is Nvidia's bet that architecture innovation (hybrid Mamba-Transformer MoE) beats pure scale. The bet largely pays off: Nemotron 3 Super runs on a gaming GPU while posting reasoning scores that rival much larger dense models. If you're deployed on Nvidia hardware and need efficient long-context inference, Nemotron is the natural pick. If you're not on Nvidia or need absolute frontier quality, Qwen3 or DeepSeek are stronger options.",
 
-  lastReviewedDate: "2026-04-17",
+  lastReviewedDate: "2026-04-19",
   dataSources: [
     { name: "Nvidia press release: Nemotron Coalition", url: "https://nvidianews.nvidia.com/news/nvidia-launches-nemotron-coalition-of-leading-global-ai-labs-to-advance-open-frontier-models", dateAccessed: "2026-04-17" },
     { name: "Nvidia press release: Nemotron 3 family of open models", url: "https://nvidianews.nvidia.com/news/nvidia-debuts-nemotron-3-family-of-open-models", dateAccessed: "2026-04-17" },

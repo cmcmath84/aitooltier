@@ -62,12 +62,12 @@ export const claude: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "Claude Haiku 3 (claude-3-haiku-20240307) retires 2026-04-19 -- if any API code still targets the 2024 Haiku snapshot, migrate to Haiku 4.5 immediately. Anthropic gave 60 days' notice on 2026-02-19",
+      description: "Claude Haiku 3 (claude-3-haiku-20240307) retires 2026-04-20 per Anthropic's deprecations page (60-day notice given 2026-02-19). If any API code still targets the 2024 Haiku snapshot, migrate to claude-haiku-4-5-20251001 immediately -- requests to retired models fail outright",
       source: "Anthropic model deprecations page",
       date: "2026-04",
     },
     {
-      description: "Claude Sonnet 4 and Opus 4 retirement was announced 2026-04-14 with ~60-day notice -- target retirement around 2026-06-14. If your product relies on those specific snapshots, schedule migration work to Sonnet 4.6 / Opus 4.7 before then",
+      description: "Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) retire 2026-06-15 per Anthropic's deprecations page. Announced 2026-04-14. If your product relies on those specific snapshots, schedule migration work to Sonnet 4.6 (`claude-sonnet-4-6`) or Opus 4.7 (`claude-opus-4-7`) before then",
       source: "Anthropic model deprecations page",
       date: "2026-04",
     },

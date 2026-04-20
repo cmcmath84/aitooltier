@@ -56,6 +56,11 @@ export const claudeCode: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "2026-04-18 added the `/usage` command -- shows a usage-driver breakdown for the current session, flags cache-miss patterns, and makes it easier to catch runaway token consumption before it ends up on the bill. If your Claude Code sessions surprise you with cost, this is now the first diagnostic to run",
+      source: "Anthropic Claude Code release notes",
+      date: "2026-04",
+    },
+    {
       description: "Large file edits occasionally produce malformed output, requiring manual cleanup of partial replacements",
       source: "GitHub Issues",
       date: "2026-03",
@@ -70,7 +75,7 @@ export const claudeCode: ToolReview = {
   notFor: "Beginners who want a visual coding assistant, or anyone who needs predictable monthly costs. If you're looking for autocomplete-style help, Copilot or Cursor are better fits.",
   verdict: "Claude Code is the most capable agentic coding tool available right now. The ability to read entire codebases, execute code, run tests, and iterate on results puts it in a different category than autocomplete-style assistants. The output quality on complex tasks is outstanding. But it's firmly a power-user tool -- the CLI-only interface, unpredictable costs, and learning curve mean it's not for everyone. If you're a developer who thinks in terms of terminal workflows and you're working on non-trivial projects, Claude Code is worth every penny. Just keep an eye on your API bill.",
 
-  lastReviewedDate: "2026-03-31",
+  lastReviewedDate: "2026-04-19",
   dataSources: [
     { name: "Anthropic documentation", dateAccessed: "2026-03-31" },
     { name: "Reddit r/ClaudeAI", dateAccessed: "2026-03-31" },

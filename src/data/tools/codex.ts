@@ -57,8 +57,8 @@ export const codex: ToolReview = {
       date: "2026-04",
     },
     {
-      description: "2026-04-16 update added Mac-app control via computer-use -- Codex can now open macOS applications, click and type with its own cursor, and run background tasks while you use your machine. Shipped alongside GPT-Rosalind. Expands Codex from cloud-only to hybrid cloud + local-machine agentic workflows. Windows / Linux support still pending",
-      source: "VentureBeat, OpenAI release notes",
+      description: "2026-04-16 Codex 'super app' update is substantially bigger than the initial Mac-app control headline suggested. Full feature set per OpenAI: (1) macOS computer-use agent that opens apps, clicks, and types with its own cursor in background while you use your machine, (2) image generation via gpt-image-1.5 INSIDE Codex, (3) persistent memory + user preferences across sessions, (4) in-app browser built on the Atlas browser stack, (5) 90+ new plugins combining skills, app integrations, and MCP servers. OpenAI also disclosed 3M weekly Codex users with 70% month-over-month growth. Windows / Linux computer-use support still pending. Not available in EEA, UK, or Switzerland",
+      source: "BigGo Finance, gHacks, Blockchain News, OpenAI release notes",
       date: "2026-04",
     },
   ],
@@ -66,7 +66,7 @@ export const codex: ToolReview = {
   notFor: "Developers who need fine-grained control mid-task (use Claude Code or Cursor instead). Also not ideal for complex architectural refactors where the AI needs human guidance throughout the process.",
   verdict: "Codex is OpenAI's answer to Claude Code and Devin, and it has one killer advantage: it's bundled with ChatGPT Plus. If you're already paying $20/mo for ChatGPT, you get a cloud coding agent for free. The parallel task execution is genuinely unique -- no other coding agent lets you fire off 5 tasks and check back later. But the rough edges are real: you can't steer it mid-task, complex refactors fall flat, and the usage limits feel tight. For straightforward coding tasks and code review, it's excellent. For anything nuanced, Claude Code's interactive approach is still better.",
 
-  lastReviewedDate: "2026-04-17",
+  lastReviewedDate: "2026-04-19",
   dataSources: [
     { name: "OpenAI official Codex page", url: "https://openai.com/index/introducing-codex/", dateAccessed: "2026-04-17" },
     { name: "developers.openai.com/codex/pricing", dateAccessed: "2026-04-17" },

@@ -28,6 +28,7 @@ export const museSpark: ToolReview = {
     "Runs on 10x less compute than comparable frontier models according to Meta's benchmarks",
     "260K token context window -- competitive with most frontier models",
     "Scores 52 on Artificial Analysis Intelligence Index and 58% on Humanity's Last Exam in Contemplating mode",
+    "HealthBench Hard 42.8 -- a real differentiator. Far ahead of Claude Opus 4.6 (14.8), Gemini 3.1 Pro (20.6), and GPT-5.4 (40.1). Meta trained Muse Spark with 1,000+ licensed physicians in the loop, which shows up in medical-reasoning evaluations",
     "Distribution advantage: will reach billions of users across Facebook, Instagram, and WhatsApp",
   ],
   cons: [
@@ -53,7 +54,7 @@ export const museSpark: ToolReview = {
   notFor: "Developers who need API access for production apps (not available yet). Also not ideal for enterprise users who need data privacy guarantees given Meta's data handling practices.",
   verdict: "Muse Spark is Meta's strongest statement yet that frontier AI should be free. The model is genuinely competitive with GPT-5.4 and Claude on benchmarks, and Contemplating mode's multi-agent reasoning is a real differentiator. The catch? No API, no customization, and you're locked into Meta's ecosystem. For casual users who just want a great free chatbot, this is arguably the best deal in AI right now. For developers or enterprise users, you'll be waiting.",
 
-  lastReviewedDate: "2026-04-13",
+  lastReviewedDate: "2026-04-19",
   dataSources: [
     { name: "Meta AI official blog", dateAccessed: "2026-04-13" },
     { name: "TechCrunch coverage", dateAccessed: "2026-04-13" },
@@ -69,8 +70,9 @@ export const museSpark: ToolReview = {
       { name: "GPQA Diamond", score: 86.0, maxScore: 100, unit: "%" },
       { name: "HumanEval", score: 91.0, maxScore: 100, unit: "%" },
       { name: "HLE", score: 58.0, maxScore: 100, unit: "%" },
+      { name: "HealthBench Hard", score: 42.8, maxScore: 100, unit: "%" },
     ],
-    lastUpdated: "2026-04-13",
+    lastUpdated: "2026-04-19",
   },
   metaTitle: "Muse Spark Review 2026: Meta's Free Frontier AI Model",
   metaDescription: "Meta Muse Spark review. Free frontier AI with Contemplating mode, natively multimodal, 260K context. No API yet. How does it compare? Scores, pricing. April 2026.",

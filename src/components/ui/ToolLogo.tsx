@@ -20,6 +20,8 @@ const logoMap: Record<string, string> = {
   "claude-mythos": "/logos/anthropic.png",
   chatgpt: "/logos/openai.png",
   "gpt-rosalind": "/logos/openai.png",
+  "gpt-cyber": "/logos/openai.png",
+  "character-ai": "/logos/character-ai.png",
   gemini: "/logos/gemini.png",
   grok: "/logos/grok.png",
   "microsoft-copilot": "/logos/microsoft.png",

@@ -57,6 +57,11 @@ export const qwen: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "Qwen3.6-35B-A3B open-weights release on 2026-04-16 is the real story of April. Sparse MoE with 35B total / 3B active, vision-language multimodal, Apache 2.0, 262K native context (extensible to ~1M). Benchmarks are best-in-class for open weights: SWE-bench Verified 73.4% (vs Gemma 4-31B 52%), AIME 2026 92.7, GPQA Diamond 86.0, MMMU 81.7 (beats Claude Sonnet 4.5 at 79.6), Terminal-Bench 2.0 51.5%. Simon Willison's pelican-drawing test favored Qwen3.6-35B-A3B over Claude Opus 4.7 -- a high-signal community endorsement",
+      source: "Hugging Face Qwen3.6-35B-A3B, Alibaba Cloud announcement, Simon Willison, MarkTechPost, buildfastwithai review",
+      date: "2026-04",
+    },
+    {
       description: "Qwen3-Max (API flagship) is not released as open weights -- confusing for users expecting Alibaba's best model to be self-hostable",
       source: "Reddit r/LocalLLaMA",
       date: "2026-02",
@@ -71,7 +76,7 @@ export const qwen: ToolReview = {
   notFor: "Teams that need the Qwen3-Max flagship self-hostable (it's API-only), or use cases that touch Chinese-government-sensitive topics.",
   verdict: "Qwen is the most complete open-weights family in 2026. Alibaba ships Apache-2.0 weights across text, coding, vision, and reasoning -- every modality has a top-tier entry. Qwen3-Coder-Next is a standout: 3B active params but competitive with Claude Sonnet on coding. The catch is that Qwen3-Max, the absolute flagship, stays closed. If you can live with the PRC content filters and want the best open-weights ecosystem, Qwen is the S-tier pick.",
 
-  lastReviewedDate: "2026-04-17",
+  lastReviewedDate: "2026-04-19",
   dataSources: [
     { name: "Qwen blog: Qwen 3.6-Plus towards real-world agents", url: "https://qwen.ai/blog?id=qwen3.6", dateAccessed: "2026-04-17" },
     { name: "Alibaba Cloud: Qwen 3.6-Plus for agentic AI", url: "https://www.alibabacloud.com/blog/alibaba-unveils-qwen3-6-plus-to-accelerate-agentic-ai-deployment-for-enterprises-and-alibaba%E2%80%99s-ai-applications_603000", dateAccessed: "2026-04-17" },
@@ -113,6 +118,12 @@ export const qwen: ToolReview = {
       variant: "Qwen3-Max",
       min: "API-only -- weights not released",
       max: "API-only -- weights not released",
+    },
+    {
+      variant: "Qwen3.6-35B-A3B (sparse MoE, vision-language, Apr 16 2026)",
+      min: "8 GB VRAM Q4 (RTX 3060 tier; ~3B active params keep inference cheap)",
+      max: "1x A100 80 GB FP16 or 2x RTX 4090 for 262K+ context",
+      notes: "Apache 2.0 open weights. SWE-bench 73.4% -- current best for open-weights coding.",
     },
   ],
 

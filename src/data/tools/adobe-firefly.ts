@@ -66,6 +66,11 @@ export const adobeFirefly: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "Firefly AI Assistant (Adobe's agentic Creative Cloud copilot, successor to Project Moonlight) was announced 2026-04-15 on Adobe's blog. Orchestrates multi-step workflows across Photoshop, Premiere, Lightroom, Express, Illustrator, and Firefly from a single chat interface. Public beta opens 'in coming weeks' -- live demos at Adobe Summit 2026-04-19 through 2026-04-22 (Summit is underway now). Worth a re-review when beta opens to the public",
+      source: "Adobe blog announcement, TechCrunch",
+      date: "2026-04",
+    },
+    {
       description: "Generative Fill sometimes produces visible seams and color mismatches at edit boundaries",
       source: "Adobe Community Forums",
       date: "2026-03",
@@ -80,7 +85,7 @@ export const adobeFirefly: ToolReview = {
   notFor: "Anyone looking for the best standalone AI image generator. The quality doesn't justify the price on its own -- the value is in the Adobe integration.",
   verdict: "Firefly's real strength isn't as a standalone generator -- it's as a feature inside Photoshop. Generative Fill is a game-changer for photo editing. But if you're comparing it to Midjourney or DALL-E purely on image generation quality, it falls short. Worth it if you already pay for Creative Cloud. Hard to justify otherwise.",
 
-  lastReviewedDate: "2026-04-17",
+  lastReviewedDate: "2026-04-19",
   dataSources: [
     { name: "Adobe: 2026 Creative Cloud pricing + plan changes", url: "https://helpx.adobe.com/account/individual/subscriptions-and-plans/plan-types-and-eligibility/changes-to-individual-plan.html", dateAccessed: "2026-04-17" },
     { name: "Adobe Firefly official site", url: "https://firefly.adobe.com", dateAccessed: "2026-04-17" },

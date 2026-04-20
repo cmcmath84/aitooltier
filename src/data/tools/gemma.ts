@@ -40,6 +40,11 @@ export const gemma: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "2026-04-18 BF16 stability refresh -- Google re-released Gemma 4 multimodal checkpoints in BF16 format focused on truthfulness, JSON / tool-call formatting, long-context extraction reliability, and loop resistance. Not a new model version; a quality refresh that fixes specific failure modes developers were hitting in production. If you pulled weights before 2026-04-18, consider re-downloading for the new checkpoints",
+      source: "Google DeepMind Gemma page, Hugging Face",
+      date: "2026-04",
+    },
+    {
       description: "Gemma 4 launched April 2, 2026 with improved licensing -- earlier Gemma versions had restrictive use clauses that confused developers",
       source: "The Register, Hugging Face",
       date: "2026-04",
@@ -54,7 +59,7 @@ export const gemma: ToolReview = {
   notFor: "Non-technical users who just want to chat with an AI -- there's no consumer-facing app. Use Gemini if you want a polished chat experience.",
   verdict: "Gemma 4 is Google's answer to the open-weights race against Meta's Llama and the wave of strong Chinese open models. The Apache 2.0 license is a big deal -- it removes the legal friction that made earlier Gemma adoption awkward. The 31B Dense model is genuinely competitive with frontier closed models on benchmarks while costing $0.14/M input via API. If you're building a product on open-weights LLMs and you need multimodal + multilingual + permissive licensing, Gemma 4 is now a top choice.",
 
-  lastReviewedDate: "2026-04-08",
+  lastReviewedDate: "2026-04-19",
   dataSources: [
     { name: "Google DeepMind Gemma 4 page", dateAccessed: "2026-04-08" },
     { name: "Google blog: Gemma 4 launch", dateAccessed: "2026-04-08" },

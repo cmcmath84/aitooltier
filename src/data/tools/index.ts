@@ -20,6 +20,7 @@ import { gemini } from "./gemini";
 import { grok } from "./grok";
 import { museSpark } from "./muse-spark";
 import { gptRosalind } from "./gpt-rosalind";
+import { gptCyber } from "./gpt-cyber";
 
 // Local & Open-Weight LLMs
 import { llama } from "./llama";
@@ -84,6 +85,7 @@ import { microsoftCopilot } from "./microsoft-copilot";
 import { poe } from "./poe";
 import { notebookLm } from "./notebooklm";
 import { alexaPlus } from "./alexa-plus";
+import { characterAi } from "./character-ai";
 
 // AI Voice & Audio
 import { elevenlabs } from "./elevenlabs";
@@ -188,6 +190,7 @@ export const tools: ToolReview[] = [
   grok,
   museSpark,
   gptRosalind,
+  gptCyber,
   // Local & Open-Weight LLMs
   llama,
   mistral,
@@ -247,6 +250,7 @@ export const tools: ToolReview[] = [
   poe,
   notebookLm,
   alexaPlus,
+  characterAi,
   // Voice & Audio
   elevenlabs,
   murfAi,

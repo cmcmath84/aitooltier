@@ -87,8 +87,8 @@ export const grok: ToolReview = {
       date: "2026-04",
     },
     {
-      description: "Grok 4.3 Beta dropped 2026-04-17 as a SuperGrok Heavy exclusive ($300/mo tier). Consumer Premium and Premium+ users do not get access yet. If the SuperGrok Heavy feature list on this page says 'Grok 4 Heavy exclusive access,' note that in April 2026 that means Grok 4.3 Beta specifically",
-      source: "BuildFastWithAI, xAI release notes",
+      description: "Grok 4.3 Beta dropped 2026-04-17 as a SuperGrok Heavy exclusive ($300/mo tier). Elon Musk clarified on 2026-04-18 that the live checkpoint is ~0.5T params; the full 1T version is ~5 days from finishing training. New capabilities in 4.3 Beta: native PDF/PowerPoint/spreadsheet output, video input, and Grok Computer (xAI's autonomous PC-agent) rolling into wider beta. Consumer Premium/Premium+ users do not get access to 4.3 yet -- they stay on 4.20. If the SuperGrok Heavy plan above says 'Grok 4 Heavy exclusive access', in April 2026 that means Grok 4.3 Beta specifically",
+      source: "PiunikaWeb, BuildFastWithAI, xAI release notes, Musk posts on X (2026-04-18)",
       date: "2026-04",
     },
   ],
