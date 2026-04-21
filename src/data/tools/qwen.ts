@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const qwen: ToolReview = {
   slug: "qwen",
   name: "Qwen (Alibaba)",
-  tagline: "Alibaba's open-weights + API family -- Qwen 3.6-Plus (Mar 30 2026, 1M context + always-on CoT + agentic tool-use), Qwen3.5 Small (2B runs on iPhone, 9B matches 120B-class models), plus Qwen3.5-Omni native multimodal. Apache 2.0 on the open sizes",
+  tagline: "Alibaba's open-weights + API family -- Qwen 3.6-Max-Preview (Apr 20 2026 CLOSED-weights #1 on SWE-bench Pro/Terminal-Bench 2.0/SciCode), Qwen3.6-35B-A3B (Apr 16 open-weights coding champion), plus Qwen 3.6-Plus API flagship. Apache 2.0 on most sizes, but the best model is now proprietary",
   category: "ai-local-models",
   url: "https://qwen.ai",
 
@@ -39,6 +39,18 @@ export const qwen: ToolReview = {
         "API-only (weights not released)",
       ],
     },
+    {
+      plan: "API (Qwen 3.6-Max-Preview, Apr 20 2026 -- CLOSED WEIGHTS)",
+      price: "TBD",
+      period: "per 1M tokens",
+      features: [
+        "#1 on SWE-bench Pro, Terminal-Bench 2.0, SciCode, QwenClawBench, QwenWebBench",
+        "256K context window (text-only at launch, no vision)",
+        "OpenAI- and Anthropic-API-compatible endpoints",
+        "Alibaba's FIRST flagship shipped without open weights -- proprietary only",
+        "Available via Qwen Studio + Alibaba Cloud Model Studio",
+      ],
+    },
   ],
 
   pros: [
@@ -57,14 +69,24 @@ export const qwen: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "Qwen3.6-35B-A3B open-weights release on 2026-04-16 is the real story of April. Sparse MoE with 35B total / 3B active, vision-language multimodal, Apache 2.0, 262K native context (extensible to ~1M). Benchmarks are best-in-class for open weights: SWE-bench Verified 73.4% (vs Gemma 4-31B 52%), AIME 2026 92.7, GPQA Diamond 86.0, MMMU 81.7 (beats Claude Sonnet 4.5 at 79.6), Terminal-Bench 2.0 51.5%. Simon Willison's pelican-drawing test favored Qwen3.6-35B-A3B over Claude Opus 4.7 -- a high-signal community endorsement",
+      description: "Qwen 3.6-Max-Preview launched 2026-04-20 as Alibaba's first flagship shipped WITHOUT open weights -- #1 across SWE-bench Pro, Terminal-Bench 2.0, SciCode, QwenClawBench, and QwenWebBench. 256K context, text-only (no vision at launch), APIs compatible with OpenAI + Anthropic SDKs for easy swap-in. Signals Alibaba's pivot toward closed flagships while keeping mid-size models open. If you picked Qwen for the 'best open weights' story, the best model is no longer open",
+      source: "Decrypt, CNTechPost",
+      date: "2026-04",
+    },
+    {
+      description: "CRITICAL (2026-04-15): Qwen Code free OAuth tier discontinued. Alibaba throttled from 1,000 -> 100 free requests/day before fully cutting it. To keep using Qwen Code you now need an Alibaba Cloud Coding Plan (~$50/mo), BYOK via OpenRouter / Fireworks / Cerebras, or local inference on your own hardware via Ollama/vLLM. The 'free open-source AI' framing no longer applies to hosted access -- only to self-hosted deployment",
+      source: "Decrypt, GitHub QwenLM/qwen-code issues #3316",
+      date: "2026-04",
+    },
+    {
+      description: "Qwen3.6-35B-A3B open-weights release on 2026-04-16 is the open-model story of April. Sparse MoE with 35B total / 3B active, vision-language multimodal, Apache 2.0, 262K native context (extensible to ~1M). Benchmarks are best-in-class for open weights: SWE-bench Verified 73.4% (vs Gemma 4-31B 52%), AIME 2026 92.7, GPQA Diamond 86.0, MMMU 81.7 (beats Claude Sonnet 4.5 at 79.6), Terminal-Bench 2.0 51.5%. Simon Willison's pelican-drawing test favored Qwen3.6-35B-A3B over Claude Opus 4.7 -- a high-signal community endorsement",
       source: "Hugging Face Qwen3.6-35B-A3B, Alibaba Cloud announcement, Simon Willison, MarkTechPost, buildfastwithai review",
       date: "2026-04",
     },
     {
-      description: "Qwen3-Max (API flagship) is not released as open weights -- confusing for users expecting Alibaba's best model to be self-hostable",
-      source: "Reddit r/LocalLLaMA",
-      date: "2026-02",
+      description: "Qwen3-Max and now Qwen 3.6-Max-Preview are both API-only -- the pattern suggests Alibaba has quietly adopted closed-weights for flagships while keeping sub-flagship sizes Apache 2.0. Confusing for users expecting Alibaba's best model to be self-hostable",
+      source: "Reddit r/LocalLLaMA, Decrypt",
+      date: "2026-04",
     },
     {
       description: "Refuses discussion of Tiananmen, Taiwan sovereignty, Xi Jinping -- same PRC content filters as DeepSeek",
@@ -76,14 +98,15 @@ export const qwen: ToolReview = {
   notFor: "Teams that need the Qwen3-Max flagship self-hostable (it's API-only), or use cases that touch Chinese-government-sensitive topics.",
   verdict: "Qwen is the most complete open-weights family in 2026. Alibaba ships Apache-2.0 weights across text, coding, vision, and reasoning -- every modality has a top-tier entry. Qwen3-Coder-Next is a standout: 3B active params but competitive with Claude Sonnet on coding. The catch is that Qwen3-Max, the absolute flagship, stays closed. If you can live with the PRC content filters and want the best open-weights ecosystem, Qwen is the S-tier pick.",
 
-  lastReviewedDate: "2026-04-19",
+  lastReviewedDate: "2026-04-21",
   dataSources: [
+    { name: "Decrypt: Qwen 3.6-Max-Preview launch", url: "https://decrypt.co/364948/alibaba-qwen-3-6-max-preview-most-powerful-model", dateAccessed: "2026-04-21" },
+    { name: "CNTechPost: Qwen3.6-Max-Preview release notes", url: "https://cntechpost.com/2026/04/20/alibaba-releases-qwen3-6-max-preview-stronger-instruction-following-capabilities/", dateAccessed: "2026-04-21" },
+    { name: "Decrypt: Qwen Code free tier shutdown", url: "https://decrypt.co/364501/alibaba-shuts-down-free-tier-qwen-code", dateAccessed: "2026-04-21" },
     { name: "Qwen blog: Qwen 3.6-Plus towards real-world agents", url: "https://qwen.ai/blog?id=qwen3.6", dateAccessed: "2026-04-17" },
     { name: "Alibaba Cloud: Qwen 3.6-Plus for agentic AI", url: "https://www.alibabacloud.com/blog/alibaba-unveils-qwen3-6-plus-to-accelerate-agentic-ai-deployment-for-enterprises-and-alibaba%E2%80%99s-ai-applications_603000", dateAccessed: "2026-04-17" },
-    { name: "Marktechpost: Qwen3.5-Omni native multimodal", url: "https://www.marktechpost.com/2026/03/30/alibaba-qwen-team-releases-qwen3-5-omni-a-native-multimodal-model-for-text-audio-video-and-realtime-interaction/", dateAccessed: "2026-04-17" },
     { name: "Hugging Face Qwen collection", dateAccessed: "2026-04-17" },
     { name: "OpenRouter pricing", dateAccessed: "2026-04-17" },
-    { name: "Artificial Analysis", dateAccessed: "2026-04-17" },
   ],
   affiliateUrl: "https://qwen.ai",
   status: "active",
@@ -132,6 +155,6 @@ export const qwen: ToolReview = {
     tone: "Helpful, verbose, and notably strong in Chinese and other non-English languages. Qwen is chattier than Mistral or DeepSeek and tends toward structured, multi-section replies.",
     quirks: "Best-in-class at Chinese -- occasionally switches to Mandarin mid-response for technical or cultural topics even when prompted in English. Political refusal patterns mirror other Chinese models on China-specific topics.",
   },
-  metaTitle: "Qwen Review 2026: Qwen 3.6-Plus, Qwen3.5-Omni, Apache 2.0 Open Weights",
-  metaDescription: "Qwen review. Qwen 3.6-Plus (1M context + always-on CoT + agentic), Qwen3.5-Omni (native multimodal), Qwen3.5 Small (2B on iPhone, 9B matches 120B). Apache 2.0. April 2026.",
+  metaTitle: "Qwen Review 2026: Qwen 3.6-Max-Preview (Closed), 3.6-35B-A3B (Open)",
+  metaDescription: "Qwen review. Qwen 3.6-Max-Preview (Apr 20 2026, #1 SWE-bench Pro, closed weights), Qwen3.6-35B-A3B (Apr 16 open-weights coding champion). Free tier killed 2026-04-15.",
 };

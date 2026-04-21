@@ -77,6 +77,7 @@ import { replit } from "./replit";
 import { codex } from "./codex";
 import { antigravity } from "./antigravity";
 import { codestral } from "./codestral";
+import { robloxAssistant } from "./roblox-assistant";
 
 // AI Chatbots & Assistants
 import { chatgpt } from "./chatgpt";
@@ -109,6 +110,7 @@ import { udio } from "./udio";
 import { aiva } from "./aiva";
 import { soundraw } from "./soundraw";
 import { lyria } from "./lyria";
+import { elevenmusic } from "./elevenmusic";
 
 // AI Business Productivity
 import { notionAi } from "./notion-ai";
@@ -169,6 +171,8 @@ import { paperclip } from "./paperclip";
 import { crewai } from "./crewai";
 import { langgraph } from "./langgraph";
 import { microsoftAgentFramework } from "./microsoft-agent-framework";
+import { agentforceVibes } from "./agentforce-vibes";
+import { augmentIntent } from "./augment-intent";
 
 export const tools: ToolReview[] = [
   // Image Generators
@@ -243,6 +247,7 @@ export const tools: ToolReview[] = [
   codex,
   antigravity,
   codestral,
+  robloxAssistant,
   // Chatbots
   chatgpt,
   perplexity,
@@ -270,6 +275,7 @@ export const tools: ToolReview[] = [
   aiva,
   soundraw,
   lyria,
+  elevenmusic,
   // Business Productivity
   notionAi,
   otterAi,
@@ -318,6 +324,8 @@ export const tools: ToolReview[] = [
   crewai,
   langgraph,
   microsoftAgentFramework,
+  agentforceVibes,
+  augmentIntent,
 ];
 
 export function getToolBySlug(slug: string): ToolReview | undefined {

@@ -86,6 +86,7 @@ const logoMap: Record<string, string> = {
   codex: "/logos/openai.png",
   antigravity: "/logos/antigravity.png",
   codestral: "/logos/mistral.png",
+  "roblox-assistant": "/logos/roblox.png",
 
   // Voice & audio
   elevenlabs: "/logos/elevenlabs.png",
@@ -116,6 +117,7 @@ const logoMap: Record<string, string> = {
   aiva: "/logos/aiva.png",
   soundraw: "/logos/soundraw.png",
   lyria: "/logos/gemini.png",
+  elevenmusic: "/logos/elevenlabs.png",
 
   // Business / productivity
   "notion-ai": "/logos/notion.png",
@@ -163,6 +165,8 @@ const logoMap: Record<string, string> = {
   crewai: "/logos/crewai.png",
   langgraph: "/logos/langgraph.png",
   "microsoft-agent-framework": "/logos/microsoft.png",
+  "agentforce-vibes": "/logos/salesforce.png",
+  "augment-intent": "/logos/augment.png",
 };
 
 interface ToolLogoProps {

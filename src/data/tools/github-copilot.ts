@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const githubCopilot: ToolReview = {
   slug: "github-copilot",
   name: "GitHub Copilot",
-  tagline: "AI code assistant that lives in your editor -- autocomplete on steroids",
+  tagline: "AI code assistant that lives in your editor -- autocomplete on steroids. As of 2026-04-20 new signups for Pro/Pro+/Student are PAUSED and Claude Opus was removed from Pro (Opus 4.7 remains on Pro+ only)",
   category: "ai-code-assistants",
   url: "https://github.com/features/copilot",
 
@@ -20,19 +20,25 @@ export const githubCopilot: ToolReview = {
     {
       plan: "Free",
       price: "$0",
-      features: ["2,000 completions/mo", "50 chat messages/mo", "VS Code + JetBrains"],
+      features: ["2,000 completions/mo", "50 chat messages/mo", "VS Code + JetBrains", "Still open to new signups (2026-04-20)"],
     },
     {
       plan: "Pro",
       price: "$10",
       period: "month",
-      features: ["Unlimited completions", "Unlimited chat", "CLI access"],
+      features: ["NEW SIGNUPS PAUSED 2026-04-20", "Claude Opus REMOVED (Opus 4.7 now Pro+ only)", "Tightened usage limits"],
+    },
+    {
+      plan: "Pro+",
+      price: "$39",
+      period: "month",
+      features: ["NEW SIGNUPS PAUSED 2026-04-20", "5x+ the usage limits of Pro", "Claude Opus 4.7 access", "Full frontier-model picker"],
     },
     {
       plan: "Business",
       price: "$19",
       period: "month",
-      features: ["Organization management", "Policy controls", "Audit logs"],
+      features: ["Organization management", "Policy controls", "Audit logs", "Not affected by 2026-04-20 signup pause"],
     },
   ],
 
@@ -49,6 +55,16 @@ export const githubCopilot: ToolReview = {
     "Multi-file refactoring understanding is limited compared to Cursor",
   ],
   knownIssues: [
+    {
+      description: "CRITICAL (2026-04-20): GitHub paused NEW signups for Copilot Pro, Pro+, and Student plans. Copilot Free remains open. Existing subscribers keep access but face tightened usage caps -- VP Joe Binder cited agent workloads consuming more compute than subscription economics support. Refund window for dissatisfied subscribers: 2026-04-20 through 2026-05-20 via GitHub Support. If you were planning to buy Pro or Pro+, you currently cannot. Cursor, Claude Code, and Windsurf are the obvious alternatives during the pause",
+      source: "GitHub Changelog (github.blog/changelog/2026-04-20), The Register, AfterDawn",
+      date: "2026-04",
+    },
+    {
+      description: "Claude Opus models were pulled from the Pro tier on 2026-04-20. Opus 4.7 remains on Pro+ only; Opus 4.5 and 4.6 are being removed from Pro+ as well. If you specifically subscribed to Pro for Opus access, your tier has materially changed -- the $10 Pro plan now routes to GPT-5.4 + Gemini 3.1 + smaller open models by default",
+      source: "GitHub Changelog 2026-04-20, AfterDawn",
+      date: "2026-04",
+    },
     {
       description: "GitHub Copilot will use Copilot Free/Pro/Pro+ user inputs, outputs, code snippets, and context to train its AI models UNLESS users opt out. Effective 2026-04-24. Business and Enterprise plans are excluded from training by default. Individual developers on Free/Pro/Pro+ must explicitly opt out in settings before 2026-04-24 if they want to prevent training on their code. Big differentiator vs. Cursor and Claude Code, both of which do NOT train on user code by default",
       source: "GitHub docs (docs.github.com/copilot/get-started/plans), The Register",
@@ -70,21 +86,21 @@ export const githubCopilot: ToolReview = {
       date: "2026-03",
     },
   ],
-  bestFor: "Any developer who wants productivity gains without changing their workflow. It works in your existing editor and the inline suggestions are the best in the business.",
-  notFor: "Developers who need deep codebase understanding and multi-file refactoring. Cursor does that better. Also not for anyone uncomfortable with potential code licensing issues.",
-  verdict: "Copilot is still the default AI code assistant for good reason. The inline completions are the best available, and it works seamlessly in the editors most developers already use. At $10/mo it's an easy expense to justify. But if you want something that truly understands your entire codebase and can do complex refactors, look at Cursor.",
+  bestFor: "Existing Copilot subscribers on Business/Enterprise or grandfathered Pro/Pro+ seats. Also new Free-tier users -- the entry point is still open and inline completions are still best-in-class.",
+  notFor: "Anyone trying to sign up for Pro, Pro+, or Student right now -- signups are paused (2026-04-20 onward). Also not for developers who specifically wanted Claude Opus on the $10 Pro plan; Opus was just pulled to Pro+ only. Cursor or Claude Code are the obvious alternatives during the pause.",
+  verdict: "GitHub Copilot hit a wall on 2026-04-20: new Pro/Pro+/Student signups paused, Claude Opus pulled from Pro, and usage caps tightened across the board. Microsoft is openly admitting that agent workloads consume more compute than the current subscription tiers can sustain, and the product is being retuned in real time. For existing subscribers the inline completions remain best-in-class, but the value proposition has gotten worse overnight. If you're shopping for an AI code assistant in the next 30 days, Cursor (Pro+ $60) and Claude Code are the practical choices until Microsoft either reopens signups or reprices. Watch the refund window (through 2026-05-20) if you're on the fence about staying.",
 
-  lastReviewedDate: "2026-04-18",
+  lastReviewedDate: "2026-04-21",
   dataSources: [
-    { name: "GitHub Copilot plans", url: "https://github.com/features/copilot/plans", dateAccessed: "2026-04-18" },
-    { name: "GitHub: Copilot Pro/Business training policy", url: "https://docs.github.com/en/copilot/get-started/plans", dateAccessed: "2026-04-18" },
-    { name: "G2 Reviews", dateAccessed: "2026-04-18" },
-    { name: "Reddit r/programming", dateAccessed: "2026-04-18" },
-    { name: "Daily use testing", dateAccessed: "2026-04-18" },
+    { name: "GitHub Changelog 2026-04-20: Copilot plan changes for individuals", url: "https://github.blog/changelog/2026-04-20-changes-to-github-copilot-plans-for-individuals/", dateAccessed: "2026-04-21" },
+    { name: "The Register: GitHub grounds Copilot account creation", url: "https://www.theregister.com/2026/04/20/microsofts_github_grounds_copilot_account/", dateAccessed: "2026-04-21" },
+    { name: "AfterDawn: Usage limits + Opus removal", url: "https://www.afterdawn.com/news/article.cfm/2026/04/20/github-copilot-tightens-its-usage-limits-removes-access-to-claude-opus", dateAccessed: "2026-04-21" },
+    { name: "GitHub Copilot plans", url: "https://github.com/features/copilot/plans", dateAccessed: "2026-04-21" },
+    { name: "GitHub: Copilot Pro/Business training policy", url: "https://docs.github.com/en/copilot/get-started/plans", dateAccessed: "2026-04-21" },
   ],
   affiliateUrl: "https://github.com/features/copilot",
   status: "active",
-  poweredBy: "GPT-5.4",
-  metaTitle: "GitHub Copilot Review 2026: Agent Mode GA, Training-Data Policy Shift",
-  metaDescription: "GitHub Copilot review. Training-data opt-in default (Apr 24 2026), Agent mode GA, new premium requests system. Pro $10, Business $19. April 2026.",
+  poweredBy: "GPT-5.4 (Pro) / Claude Opus 4.7 + GPT-5.4 (Pro+)",
+  metaTitle: "GitHub Copilot Review 2026: Signups PAUSED + Opus Removed From Pro",
+  metaDescription: "GitHub Copilot review. Pro/Pro+/Student signups paused 2026-04-20, Claude Opus removed from Pro, tightened usage caps. Refund window through May 20. Alternatives: Cursor, Claude Code.",
 };

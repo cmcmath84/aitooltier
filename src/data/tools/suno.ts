@@ -65,14 +65,20 @@ export const suno: ToolReview = {
   knownIssues: [
     {
       description:
+        "ElevenLabs launched ElevenMusic on iOS 2026-04-02 as a direct Suno/Udio competitor -- 7 free songs/day, Pro $9.99/mo or $95.90/yr, commercially licensed from day one, with ElevenLabs' voice-cloning stack as the differentiator. This is the first credible challenger to Suno's free-tier economics in 2026",
+      source: "TechCrunch, Music Business Worldwide",
+      date: "2026-04",
+    },
+    {
+      description:
         "Suno v5.5 shipped 2026-03-27 with three major personalization features: Voices (voice capture/cloning with anti-impersonation verification), Custom Models (train on 6+ of your own songs), and My Taste (passive preference learning). Marks a shift from generic to identity-driven music generation",
       source: "Suno blog (suno.com/blog/v5-5), Music Business Worldwide",
       date: "2026-03",
     },
     {
       description:
-        "Warner Music licensing deal (announced Dec 2025) is triggering a major policy shift in 2026: free-tier downloads removed, current pre-Warner models scheduled for deprecation later in 2026 when new licensed-only models ship. Universal Music Group and Sony talks reportedly at impasse as of 2026-04-09 -- ongoing litigation pressure. Plan for download/model changes in H2 2026",
-      source: "Digital Music News",
+        "Warner Music licensing deal (announced Dec 2025) is triggering a major policy shift in 2026: free-tier downloads removed, current pre-Warner models scheduled for deprecation later in 2026 when new licensed-only models ship. Universal Music Group and Sony talks reportedly at impasse as of 2026-04-09 -- ongoing litigation pressure. Udio took the opposite path -- settled with Universal + Warner + Merlin accepting no-download restriction. Plan for download/model changes in H2 2026",
+      source: "Digital Music News, WinBuzzer",
       date: "2026-04",
     },
     {
@@ -95,7 +101,7 @@ export const suno: ToolReview = {
   verdict:
     "Suno is the fastest way to go from an idea to a full song, and for casual use it's genuinely fun. But the lack of editing control and the inconsistent vocal quality mean it's better suited for content creators and hobbyists than anyone trying to produce polished tracks. The free tier is worth trying -- just don't expect studio quality.",
 
-  lastReviewedDate: "2026-04-18",
+  lastReviewedDate: "2026-04-21",
   dataSources: [
     { name: "Suno blog: v5.5", url: "https://suno.com/blog/v5-5", dateAccessed: "2026-04-18" },
     { name: "Music Business Worldwide: Suno v5.5", url: "https://www.musicbusinessworldwide.com/suno-launches-v5-5-ai-model-with-voice-capture-and-personalization-features/", dateAccessed: "2026-04-18" },

@@ -50,6 +50,16 @@ export const microsoftCopilot: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "Microsoft 365 pricing update hits all purchasing channels on 2026-07-01 -- confirmed in the 2026-04-16 Partner Center announcement referencing the December 2025 blog post. Copilot Business bundles are specifically called out as lockable at current pricing pre-7/1. If you plan to deploy M365 Copilot to a mid-size org, renewing or purchasing before 2026-06-30 locks current rates; anything after ticks into the new pricing schedule. Microsoft 365 E7 SKU also launches 2026-05-01 bundling E5 + Entra Suite + Copilot + Agent 365 with 10-15% CSP promotional discounts through 2026-12-31",
+      source: "Microsoft Partner Center 2026-04-16 announcement, Microsoft 365 blog (2025-12-04)",
+      date: "2026-04",
+    },
+    {
+      description: "Copilot Chat access in Word/Excel/PowerPoint/OneNote is being restricted for large enterprise tenants (reportedly 2000+ seats) without a paid M365 Copilot license as of mid-April 2026. Smaller tenants see throttling during peak hours. Free Copilot in Edge and copilot.microsoft.com still open. If you've been relying on free Chat inside Office, check whether your tenant is affected before building workflows on it",
+      source: "Microsoft Learn partner announcements, Primend blog",
+      date: "2026-04",
+    },
+    {
       description: "Copilot in Edge sidebar sometimes provides outdated information from cached Bing results instead of live data",
       source: "Reddit r/MicrosoftCopilot",
       date: "2026-03",
@@ -64,11 +74,12 @@ export const microsoftCopilot: ToolReview = {
   notFor: "Anyone who wants the best conversational AI experience -- ChatGPT and Claude both feel more natural to talk to.",
   verdict: "Microsoft Copilot's biggest selling point is that it's free and it's everywhere in Windows and Edge. The GPT-4 access with Bing search grounding is genuinely useful for quick research. But as a conversational AI, it feels like talking to a corporate chatbot -- overly cautious, context-limited, and bland. The paid tiers are where it gets complicated: Copilot Pro competes directly with ChatGPT Plus and doesn't win, while Copilot for Microsoft 365 is powerful but requires an existing M365 subscription. It's a solid free option, but not the best at anything.",
 
-  lastReviewedDate: "2026-03-27",
+  lastReviewedDate: "2026-04-21",
   dataSources: [
-    { name: "Microsoft Copilot official site", dateAccessed: "2026-03-27" },
+    { name: "Microsoft Partner Center April 2026 announcements", url: "https://learn.microsoft.com/en-us/partner-center/announcements/2026-april", dateAccessed: "2026-04-21" },
+    { name: "Microsoft 365 blog: pricing + packaging update (Dec 2025)", url: "https://www.microsoft.com/microsoft-365/blog/2025/12/04/advancing-microsoft-365-new-capabilities-and-pricing-update/", dateAccessed: "2026-04-21" },
+    { name: "Microsoft Copilot official site", dateAccessed: "2026-04-21" },
     { name: "Reddit r/MicrosoftCopilot", dateAccessed: "2026-03-27" },
-    { name: "Microsoft Tech Community", dateAccessed: "2026-03-27" },
   ],
   affiliateUrl: "https://copilot.microsoft.com",
   status: "active",
@@ -77,6 +88,6 @@ export const microsoftCopilot: ToolReview = {
     tone: "Friendly-professional and cautious. Copilot keeps the ChatGPT-style voice but dials down personality for workplace contexts, with more hedging and disclaimers on anything sensitive.",
     quirks: "Tightly integrated with Microsoft 365 -- will pull context from your Outlook, Word, and Teams when enabled. Stricter refusals than consumer ChatGPT on the same prompts, especially inside the enterprise tenant.",
   },
-  metaTitle: "Microsoft Copilot Review 2026: Free GPT-4, But Is It Actually Good?",
-  metaDescription: "Microsoft Copilot review. Free GPT-4 with Bing search, DALL-E 3 images, Office integration. But how does it compare to ChatGPT? Scores, pricing. March 2026.",
+  metaTitle: "Microsoft Copilot Review 2026: July 1 Price Update + Office Chat Limits",
+  metaDescription: "Microsoft Copilot review. M365 pricing update 2026-07-01 (lock current rates before 6/30), M365 E7 SKU 5/1, enterprise Office Chat restrictions. Free tier still useful.",
 };

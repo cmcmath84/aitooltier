@@ -34,6 +34,12 @@ export const klingAi: ToolReview = {
       period: "month",
       features: ["3000 credits/mo", "4K output", "Kling 3.0 access", "Priority generation"],
     },
+    {
+      plan: "Ultra",
+      price: "$180",
+      period: "month",
+      features: ["Raised from $128 to $180 in Jan 2026 (+41%)", "Highest concurrent-job cap", "Priority render queue", "Used for heavy pro workflows"],
+    },
   ],
 
   pros: [
@@ -50,6 +56,16 @@ export const klingAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "Ultra tier jumped from $128/mo to $180/mo in January 2026 -- a 41% price hike in under six months. Standard and Pro tiers held, but if you're a power user the economics of Ultra have shifted materially; Veo 3.1 Lite + Seedance 2.0 + Runway Gen-3 are the obvious post-Sora alternatives to price-check against",
+      source: "Costbench, BestVideoGenerationAI pricing trackers",
+      date: "2026-01",
+    },
+    {
+      description: "Kuaishou's Terms of Service grant the company rights to use user-generated content for training future Kling models. Not unique to Kling (Runway, Pika, Suno have similar clauses) but worth knowing before uploading client work. The US / China jurisdictional angle adds an extra compliance consideration for enterprise buyers vs Veo or Runway",
+      source: "Kling AI Terms of Service, comparison reviews",
+      date: "2026-04",
+    },
+    {
       description: "Content moderation can be overly aggressive, rejecting prompts that seem innocuous to Western users",
       source: "Reddit r/aivideo",
       date: "2026-02",
@@ -64,13 +80,13 @@ export const klingAi: ToolReview = {
   notFor: "Professional video producers who need consistent, high-end quality across different styles. If you're doing client work where every frame matters, Veo or Runway are safer bets.",
   verdict: "Kling AI has carved out a smart niche as the 'good enough for most people' AI video tool. The free tier is legitimately generous, and the output quality has improved dramatically with each model version. It won't win any awards for photorealism against Veo or Sora, but for the price -- especially free -- it's hard to complain. The inconsistency across styles and the watermark situation are the main pain points. If you're a creator on a budget who needs video content regularly, Kling is an easy recommendation.",
 
-  lastReviewedDate: "2026-04-16",
+  lastReviewedDate: "2026-04-21",
   dataSources: [
-    { name: "Kling AI official site", url: "https://klingai.com", dateAccessed: "2026-04-16" },
+    { name: "Kling AI official site", url: "https://klingai.com", dateAccessed: "2026-04-21" },
+    { name: "Costbench: Kling pricing tracker", url: "https://costbench.com/software/ai-video-generators/kling/", dateAccessed: "2026-04-21" },
+    { name: "BestVideoGenerationAI: Kling pricing 2026", url: "https://bestvideogenerationai.com/blog/kling-ai-pricing", dateAccessed: "2026-04-21" },
     { name: "Kuaishou IR: Kling 3.0 launch", url: "https://ir.kuaishou.com/news-releases/news-release-details/kling-ai-launches-30-model-ushering-era-where-everyone-can-be", dateAccessed: "2026-04-16" },
-    { name: "GlobeNewswire: Kling 3.0 announcement", url: "https://www.globenewswire.com/news-release/2026/02/05/3232837/0/en/Kling-AI-Launches-3-0-Model-Ushering-in-an-Era-Where-Everyone-Can-Be-a-Director.html", dateAccessed: "2026-04-16" },
     { name: "Reddit r/aivideo", dateAccessed: "2026-04-16" },
-    { name: "Hands-on testing", dateAccessed: "2026-04-16" },
   ],
   affiliateUrl: "https://klingai.com",
   status: "active",
