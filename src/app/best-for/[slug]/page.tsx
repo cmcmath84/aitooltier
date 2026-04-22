@@ -3,12 +3,18 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tools, getToolsByCategory } from "@/data/tools";
 import { useCases, getUseCaseBySlug } from "@/data/use-cases";
+import { getCategoryBySlug } from "@/data/categories";
+import { tasks } from "@/data/tasks";
+import { leaderboardSlug } from "@/lib/leaderboards";
+import { BENCHMARK_PAGES } from "@/lib/benchmarks";
 import { getTierForScore } from "@/lib/tiers";
 import { getAffiliateUrl } from "@/lib/affiliates";
 import { safeJsonLd } from "@/lib/structured-data";
 import TierBadge from "@/components/ui/TierBadge";
 import ToolLogo from "@/components/ui/ToolLogo";
 import ScoreBadge from "@/components/ui/ScoreBadge";
+
+const BASE_URL = "https://aitooltier.com";
 
 export async function generateStaticParams() {
   return useCases.map((uc) => ({ slug: uc.slug }));
@@ -22,9 +28,23 @@ export async function generateMetadata({
   const { slug } = await params;
   const useCase = getUseCaseBySlug(slug);
   if (!useCase) return { title: "Not Found" };
+  const canonical = `${BASE_URL}/best-for/${useCase.slug}`;
   return {
     title: useCase.metaTitle,
     description: useCase.metaDescription,
+    alternates: { canonical },
+    openGraph: {
+      title: useCase.metaTitle,
+      description: useCase.metaDescription,
+      url: canonical,
+      type: "article",
+      siteName: "AIToolTier",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: useCase.metaTitle,
+      description: useCase.metaDescription,
+    },
   };
 }
 
@@ -58,6 +78,43 @@ export default async function UseCasePage({
 
   const topPick = allTools[0];
 
+  // Related surfaces across categories this use case pulls from.
+  const relatedCategories = useCase.categories
+    .map((s) => getCategoryBySlug(s))
+    .filter((c): c is NonNullable<typeof c> => !!c);
+
+  const relatedTasks = tasks
+    .filter((t) =>
+      t.primaryCategories.some((pc) => useCase.categories.includes(pc)),
+    )
+    .slice(0, 4);
+
+  // Coding/LLM use cases benefit from direct benchmark links.
+  const relatedBenchmarks = BENCHMARK_PAGES.filter((b) => {
+    const isCodingPage =
+      useCase.categories.includes("ai-code-assistants") ||
+      useCase.categories.includes("ai-llms");
+    return isCodingPage && (b.category === "Coding" || b.category === "Reasoning");
+  }).slice(0, 3);
+
+  const siblingUseCases = useCases
+    .filter((u) => u.slug !== useCase.slug)
+    .slice(0, 6);
+
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: useCase.title,
+        item: `${BASE_URL}/best-for/${useCase.slug}`,
+      },
+    ],
+  };
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
@@ -72,11 +129,49 @@ export default async function UseCasePage({
     })),
   };
 
+  // FAQPage schema for better rich-results eligibility.
+  const faqJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: `What is the best AI for ${useCase.title.replace(/^Best AI (for|Image Generators|Video Generators)\s*/i, "").toLowerCase() || useCase.title.toLowerCase()}?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: topPick
+            ? `${topPick.name} is AIToolTier's top pick with a ${topPick.scores.overall.toFixed(1)}/10 overall score. ${topPick.verdict.slice(0, 260)}`
+            : "Rankings coming soon.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: `Is there a free AI for ${useCase.title.toLowerCase()}?`,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: (() => {
+            const free = allTools.filter((t) => t.hasFreeTier).slice(0, 3);
+            if (free.length === 0) return "Most tools in this category are paid. Check the full ranking for trial availability.";
+            return `Yes. Free or freemium options include ${free.map((t) => t.name).join(", ")}. See the ranking below for details on each tier.`;
+          })(),
+        },
+      },
+    ],
+  };
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: safeJsonLd(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(breadcrumb) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: safeJsonLd(faqJsonLd) }}
       />
 
       {/* Breadcrumb */}
@@ -268,6 +363,95 @@ export default async function UseCasePage({
           </table>
         </div>
       </div>
+
+      {/* Explore more rankings */}
+      <div className="mt-12 rounded-xl border border-border bg-muted/30 p-6">
+        <h2 className="mb-1 text-lg font-bold text-foreground">
+          Explore more {useCase.title.replace(/^Best AI (for|Image Generators|Video Generators)\s*/i, "").toLowerCase() || useCase.title} rankings
+        </h2>
+        <p className="mb-4 text-sm text-muted-foreground">
+          Deeper leaderboards, benchmarks, and task-specific tier lists for the
+          categories behind this use case.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {relatedCategories.map((cat) => (
+            <Link
+              key={cat.slug}
+              href={`/leaderboard/${leaderboardSlug(cat.slug)}`}
+              className="rounded-lg border border-border bg-card p-3 transition hover:border-foreground/20"
+            >
+              <div className="text-sm font-medium text-foreground">
+                {cat.name} tier list
+              </div>
+              <div className="text-xs text-muted-foreground">
+                Full S-F ranking for every tool in this category
+              </div>
+            </Link>
+          ))}
+          {relatedBenchmarks.map((b) => (
+            <Link
+              key={b.slug}
+              href={`/benchmarks/${b.slug}`}
+              className="rounded-lg border border-border bg-card p-3 transition hover:border-foreground/20"
+            >
+              <div className="text-sm font-medium text-foreground">
+                {b.name} leaderboard
+              </div>
+              <div className="line-clamp-2 text-xs text-muted-foreground">
+                {b.tagline}
+              </div>
+            </Link>
+          ))}
+          {relatedTasks.map((task) => (
+            <Link
+              key={task.slug}
+              href={`/for-task/${task.slug}`}
+              className="rounded-lg border border-border bg-card p-3 transition hover:border-foreground/20"
+            >
+              <div className="text-sm font-medium text-foreground">
+                {task.name}
+              </div>
+              <div className="line-clamp-2 text-xs text-muted-foreground">
+                {task.description}
+              </div>
+            </Link>
+          ))}
+          {relatedCategories.map((cat) => (
+            <Link
+              key={`cat-${cat.slug}`}
+              href={`/categories/${cat.slug}`}
+              className="rounded-lg border border-border bg-card p-3 transition hover:border-foreground/20"
+            >
+              <div className="text-sm font-medium text-foreground">
+                All {cat.name}
+              </div>
+              <div className="line-clamp-2 text-xs text-muted-foreground">
+                {cat.description}
+              </div>
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Sibling use cases */}
+      {siblingUseCases.length > 0 && (
+        <div className="mt-10">
+          <h2 className="mb-4 text-lg font-bold text-foreground">
+            Other &ldquo;best AI for&rdquo; lists
+          </h2>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {siblingUseCases.map((uc) => (
+              <Link
+                key={uc.slug}
+                href={`/best-for/${uc.slug}`}
+                className="rounded-lg border border-border bg-card p-3 text-sm font-medium text-foreground transition hover:border-foreground/20"
+              >
+                {uc.title}
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 }
