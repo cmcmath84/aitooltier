@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/benchmarks`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${baseUrl}/leaderboard`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/for-task`, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${baseUrl}/submit`, changeFrequency: "monthly", priority: 0.4 },
   );
 
   // Task pages (AI-tools-by-task taxonomy)
