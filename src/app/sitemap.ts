@@ -4,6 +4,7 @@ import { categories } from "@/data/categories";
 import { useCases } from "@/data/use-cases";
 import { professions } from "@/data/professions";
 import { BENCHMARK_PAGES } from "@/lib/benchmarks";
+import { leaderboardSlug } from "@/lib/leaderboards";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://aitooltier.com";
@@ -20,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/methodology`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${baseUrl}/trending`, changeFrequency: "daily", priority: 0.7 },
     { url: `${baseUrl}/benchmarks`, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${baseUrl}/leaderboard`, changeFrequency: "weekly", priority: 0.8 },
   );
 
   // Benchmark detail pages
@@ -28,6 +30,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/benchmarks/${b.slug}`,
       changeFrequency: "weekly",
       priority: 0.7,
+    });
+  }
+
+  // Leaderboard pages (one per category)
+  for (const cat of categories) {
+    entries.push({
+      url: `${baseUrl}/leaderboard/${leaderboardSlug(cat.slug)}`,
+      changeFrequency: "weekly",
+      priority: 0.8,
     });
   }
 
