@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <footer className="mt-auto border-t border-border bg-muted">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
           {/* Brand */}
           <div>
             <Image
@@ -42,7 +42,62 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Pages */}
+          {/* Browse */}
+          <div>
+            <h3 className="text-sm font-semibold text-foreground">Browse</h3>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <Link
+                  href="/leaderboard"
+                  className="text-sm text-muted-foreground transition hover:text-foreground"
+                >
+                  Leaderboards
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/for-task"
+                  className="text-sm text-muted-foreground transition hover:text-foreground"
+                >
+                  Tools by Task
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/benchmarks"
+                  className="text-sm text-muted-foreground transition hover:text-foreground"
+                >
+                  Benchmarks
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/compare"
+                  className="text-sm text-muted-foreground transition hover:text-foreground"
+                >
+                  Compare Tools
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/all-tools"
+                  className="text-sm text-muted-foreground transition hover:text-foreground"
+                >
+                  All Tools Directory
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/trending"
+                  className="text-sm text-muted-foreground transition hover:text-foreground"
+                >
+                  Trending Tools
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Site */}
           <div>
             <h3 className="text-sm font-semibold text-foreground">Site</h3>
             <ul className="mt-3 space-y-2">
@@ -64,22 +119,6 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/compare"
-                  className="text-sm text-muted-foreground transition hover:text-foreground"
-                >
-                  Compare Tools
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/all-tools"
-                  className="text-sm text-muted-foreground transition hover:text-foreground"
-                >
-                  All Tools Directory
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/methodology"
                   className="text-sm text-muted-foreground transition hover:text-foreground"
                 >
@@ -88,10 +127,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/trending"
+                  href="/submit"
                   className="text-sm text-muted-foreground transition hover:text-foreground"
                 >
-                  Trending Tools
+                  Submit a Tool
                 </Link>
               </li>
             </ul>

@@ -62,6 +62,18 @@ export default function Header() {
             )}
           </div>
           <Link
+            href="/leaderboard"
+            className="text-sm font-medium text-slate-300 transition hover:text-white"
+          >
+            Rankings
+          </Link>
+          <Link
+            href="/for-task"
+            className="text-sm font-medium text-slate-300 transition hover:text-white"
+          >
+            By Task
+          </Link>
+          <Link
             href="/compare"
             className="text-sm font-medium text-slate-300 transition hover:text-white"
           >
@@ -72,12 +84,6 @@ export default function Header() {
             className="text-sm font-medium text-slate-300 transition hover:text-white"
           >
             How We Review
-          </Link>
-          <Link
-            href="/about"
-            className="text-sm font-medium text-slate-300 transition hover:text-white"
-          >
-            About
           </Link>
         </div>
 
@@ -138,6 +144,27 @@ export default function Header() {
           ))}
           <div className="mt-3 border-t border-slate-700/50 pt-3">
             <Link
+              href="/leaderboard"
+              className="block py-2 text-sm font-medium text-slate-300"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Rankings
+            </Link>
+            <Link
+              href="/for-task"
+              className="block py-2 text-sm font-medium text-slate-300"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              By Task
+            </Link>
+            <Link
+              href="/benchmarks"
+              className="block py-2 text-sm font-medium text-slate-300"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Benchmarks
+            </Link>
+            <Link
               href="/compare"
               className="block py-2 text-sm font-medium text-slate-300"
               onClick={() => setMobileMenuOpen(false)}
@@ -150,6 +177,13 @@ export default function Header() {
               onClick={() => setMobileMenuOpen(false)}
             >
               How We Review
+            </Link>
+            <Link
+              href="/submit"
+              className="block py-2 text-sm font-medium text-slate-300"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Submit a Tool
             </Link>
             <Link
               href="/about"
