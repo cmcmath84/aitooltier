@@ -5,6 +5,7 @@ import { useCases } from "@/data/use-cases";
 import { professions } from "@/data/professions";
 import { BENCHMARK_PAGES } from "@/lib/benchmarks";
 import { leaderboardSlug } from "@/lib/leaderboards";
+import { tasks } from "@/data/tasks";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://aitooltier.com";
@@ -22,7 +23,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/trending`, changeFrequency: "daily", priority: 0.7 },
     { url: `${baseUrl}/benchmarks`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${baseUrl}/leaderboard`, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${baseUrl}/for-task`, changeFrequency: "weekly", priority: 0.8 },
   );
+
+  // Task pages (AI-tools-by-task taxonomy)
+  for (const t of tasks) {
+    entries.push({
+      url: `${baseUrl}/for-task/${t.slug}`,
+      changeFrequency: "weekly",
+      priority: 0.8,
+    });
+  }
 
   // Benchmark detail pages
   for (const b of BENCHMARK_PAGES) {
