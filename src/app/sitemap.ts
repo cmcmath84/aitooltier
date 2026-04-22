@@ -12,6 +12,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const entries: MetadataRoute.Sitemap = [];
 
+  const toDate = (iso: string) => {
+    const d = new Date(iso);
+    return isNaN(d.getTime()) ? undefined : d;
+  };
+
   // Static pages
   entries.push(
     { url: baseUrl, changeFrequency: "weekly", priority: 1.0 },
@@ -25,7 +30,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/leaderboard`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/for-task`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/submit`, changeFrequency: "monthly", priority: 0.4 },
+    { url: `${baseUrl}/is-it-down`, changeFrequency: "daily", priority: 0.7 },
   );
+
+  // Is-it-down status-check pages (one per active tool)
+  for (const tool of tools) {
+    if (tool.status === "deprecated") continue;
+    entries.push({
+      url: `${baseUrl}/is-it-down/${tool.slug}`,
+      lastModified: toDate(tool.lastReviewedDate),
+      changeFrequency: "daily",
+      priority: 0.6,
+    });
+  }
 
   // Task pages (AI-tools-by-task taxonomy)
   for (const t of tasks) {
@@ -53,11 +70,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     });
   }
-
-  const toDate = (iso: string) => {
-    const d = new Date(iso);
-    return isNaN(d.getTime()) ? undefined : d;
-  };
 
   // Tool review pages
   for (const tool of tools) {
