@@ -6,12 +6,17 @@ import { getCategoryBySlug } from "@/data/categories";
 import { getAffiliateUrl } from "@/lib/affiliates";
 import { getTierForScore } from "@/lib/tiers";
 import { toolPageJsonLd, safeJsonLd } from "@/lib/structured-data";
+import { BENCHMARK_PAGES } from "@/lib/benchmarks";
+import { leaderboardSlug } from "@/lib/leaderboards";
+import { tasks } from "@/data/tasks";
 import ScoreBadge from "@/components/ui/ScoreBadge";
 import TierBadge from "@/components/ui/TierBadge";
 import ToolLogo from "@/components/ui/ToolLogo";
 import ProsCons from "@/components/ui/ProsCons";
 import BenchmarkTable from "@/components/ui/BenchmarkTable";
 import ToolCard from "@/components/tools/ToolCard";
+
+const BASE_URL = "https://aitooltier.com";
 
 export async function generateStaticParams() {
   return tools.map((tool) => ({ slug: tool.slug }));
@@ -25,9 +30,25 @@ export async function generateMetadata({
   const { slug } = await params;
   const tool = getToolBySlug(slug);
   if (!tool) return { title: "Tool Not Found" };
+  const canonical = `${BASE_URL}/tools/${tool.slug}`;
+  const title = tool.metaTitle || `${tool.name} Review`;
+  const description = tool.metaDescription || tool.tagline;
   return {
-    title: tool.metaTitle || `${tool.name} Review`,
-    description: tool.metaDescription || tool.tagline,
+    title,
+    description,
+    alternates: { canonical },
+    openGraph: {
+      title,
+      description,
+      url: canonical,
+      type: "article",
+      siteName: "AIToolTier",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
 
@@ -46,6 +67,19 @@ export default async function ToolReviewPage({
   );
   const visitUrl = getAffiliateUrl(tool.slug, tool.url);
   const tier = getTierForScore(tool.scores.overall);
+
+  // Tasks whose primary categories include this tool's category. Used to
+  // expose the new /for-task/ hub from the tool page so Google crawls both.
+  const relatedTasks = tasks
+    .filter((t) => t.primaryCategories.includes(tool.category))
+    .slice(0, 3);
+
+  // Benchmarks this tool has scores on, matched by alias.
+  const relatedBenchmarks = tool.benchmarks
+    ? BENCHMARK_PAGES.filter((b) =>
+        tool.benchmarks!.scores.some((s) => b.aliases.includes(s.name)),
+      ).slice(0, 4)
+    : [];
 
   const jsonLdItems = toolPageJsonLd(tool, category || undefined);
 
@@ -336,6 +370,93 @@ export default async function ToolReviewPage({
             </li>
           ))}
         </ul>
+      </div>
+
+      {/* Explore more rankings */}
+      <div className="mt-12 rounded-xl border border-border bg-muted/30 p-6">
+        <h2 className="mb-1 text-lg font-bold text-foreground">
+          Explore more {tool.name} rankings
+        </h2>
+        <p className="mb-4 text-sm text-muted-foreground">
+          Deeper leaderboards, benchmarks, task-specific tier lists, and
+          status/pricing pages for {tool.name}.
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2">
+          {category && (
+            <Link
+              href={`/leaderboard/${leaderboardSlug(category.slug)}`}
+              className="rounded-lg border border-border bg-card p-3 transition hover:border-foreground/20"
+            >
+              <div className="text-sm font-medium text-foreground">
+                Full {category.name} tier list
+              </div>
+              <div className="text-xs text-muted-foreground">
+                Where {tool.name} ranks vs every competitor in its category
+              </div>
+            </Link>
+          )}
+          {relatedBenchmarks.map((b) => (
+            <Link
+              key={b.slug}
+              href={`/benchmarks/${b.slug}`}
+              className="rounded-lg border border-border bg-card p-3 transition hover:border-foreground/20"
+            >
+              <div className="text-sm font-medium text-foreground">
+                {b.name} leaderboard
+              </div>
+              <div className="line-clamp-2 text-xs text-muted-foreground">
+                {b.tagline}
+              </div>
+            </Link>
+          ))}
+          {relatedTasks.map((task) => (
+            <Link
+              key={task.slug}
+              href={`/for-task/${task.slug}`}
+              className="rounded-lg border border-border bg-card p-3 transition hover:border-foreground/20"
+            >
+              <div className="text-sm font-medium text-foreground">
+                Best AI tools to {task.name.toLowerCase()}
+              </div>
+              <div className="line-clamp-2 text-xs text-muted-foreground">
+                {task.description}
+              </div>
+            </Link>
+          ))}
+          <Link
+            href={`/is-it-down/${tool.slug}`}
+            className="rounded-lg border border-border bg-card p-3 transition hover:border-foreground/20"
+          >
+            <div className="text-sm font-medium text-foreground">
+              Is {tool.name} down?
+            </div>
+            <div className="text-xs text-muted-foreground">
+              Outage check plus rolling log of known issues
+            </div>
+          </Link>
+          <Link
+            href={`/pricing/${tool.slug}`}
+            className="rounded-lg border border-border bg-card p-3 transition hover:border-foreground/20"
+          >
+            <div className="text-sm font-medium text-foreground">
+              {tool.name} pricing
+            </div>
+            <div className="text-xs text-muted-foreground">
+              Every tier and what&apos;s included
+            </div>
+          </Link>
+          <Link
+            href={`/alternatives/${tool.slug}`}
+            className="rounded-lg border border-border bg-card p-3 transition hover:border-foreground/20"
+          >
+            <div className="text-sm font-medium text-foreground">
+              {tool.name} alternatives
+            </div>
+            <div className="text-xs text-muted-foreground">
+              Comparable tools at every tier
+            </div>
+          </Link>
+        </div>
       </div>
 
       {/* Related Tools */}
