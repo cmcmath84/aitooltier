@@ -56,6 +56,11 @@ export const claudeCode: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "Claude Opus 4.7 (default backing model) brings three Claude-Code-relevant features documented on Anthropic's What's New page: (1) new `xhigh` effort level recommended specifically for coding + agentic work, (2) task budgets (beta header `task-budgets-2026-03-13`) -- give Claude an advisory token budget across the full agentic loop and the model self-paces against a running countdown, (3) high-resolution image support up to 2576px / 3.75MP with 1:1 pixel-coordinate mapping, big upgrade for screenshot-driven debugging. Breaking changes for direct API users: extended thinking budgets removed (use adaptive thinking), sampling parameters (temperature/top_p/top_k) removed, thinking content omitted from response by default (set display=summarized to restore)",
+      source: "Anthropic: What's new in Claude Opus 4.7 (platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-7)",
+      date: "2026-04",
+    },
+    {
       description: "2026-04-18 added the `/usage` command -- shows a usage-driver breakdown for the current session, flags cache-miss patterns, and makes it easier to catch runaway token consumption before it ends up on the bill. If your Claude Code sessions surprise you with cost, this is now the first diagnostic to run",
       source: "Anthropic Claude Code release notes",
       date: "2026-04",
@@ -75,16 +80,16 @@ export const claudeCode: ToolReview = {
   notFor: "Beginners who want a visual coding assistant, or anyone who needs predictable monthly costs. If you're looking for autocomplete-style help, Copilot or Cursor are better fits.",
   verdict: "Claude Code is the most capable agentic coding tool available right now. The ability to read entire codebases, execute code, run tests, and iterate on results puts it in a different category than autocomplete-style assistants. The output quality on complex tasks is outstanding. But it's firmly a power-user tool -- the CLI-only interface, unpredictable costs, and learning curve mean it's not for everyone. If you're a developer who thinks in terms of terminal workflows and you're working on non-trivial projects, Claude Code is worth every penny. Just keep an eye on your API bill.",
 
-  lastReviewedDate: "2026-04-19",
+  lastReviewedDate: "2026-04-22",
   dataSources: [
-    { name: "Anthropic documentation", dateAccessed: "2026-03-31" },
-    { name: "Reddit r/ClaudeAI", dateAccessed: "2026-03-31" },
+    { name: "Anthropic: What's new in Claude Opus 4.7", url: "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-7", dateAccessed: "2026-04-22" },
+    { name: "Anthropic documentation", dateAccessed: "2026-04-22" },
+    { name: "Reddit r/ClaudeAI", dateAccessed: "2026-04-22" },
     { name: "GitHub community discussions", dateAccessed: "2026-03-31" },
-    { name: "Daily use testing", dateAccessed: "2026-03-31" },
   ],
   affiliateUrl: "https://docs.anthropic.com/en/docs/claude-code",
   status: "active",
-  poweredBy: "Claude Opus 4.6",
+  poweredBy: "Claude Opus 4.7 (xhigh effort recommended for agentic coding)",
   metaTitle: "Claude Code Review 2026: Terminal-Based Agentic Coding That Actually Works",
   metaDescription: "Claude Code review. Agentic coding assistant that reads entire repos, runs tests, multi-file refactoring. CLI-only but powerful. Scores, pricing. March 2026.",
 };
