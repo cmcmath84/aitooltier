@@ -3,6 +3,7 @@ import { tools } from "@/data/tools";
 import { categories } from "@/data/categories";
 import { useCases } from "@/data/use-cases";
 import { professions } from "@/data/professions";
+import { BENCHMARK_PAGES } from "@/lib/benchmarks";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://aitooltier.com";
@@ -18,7 +19,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/all-tools`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${baseUrl}/methodology`, changeFrequency: "monthly", priority: 0.5 },
     { url: `${baseUrl}/trending`, changeFrequency: "daily", priority: 0.7 },
+    { url: `${baseUrl}/benchmarks`, changeFrequency: "weekly", priority: 0.7 },
   );
+
+  // Benchmark detail pages
+  for (const b of BENCHMARK_PAGES) {
+    entries.push({
+      url: `${baseUrl}/benchmarks/${b.slug}`,
+      changeFrequency: "weekly",
+      priority: 0.7,
+    });
+  }
 
   const toDate = (iso: string) => {
     const d = new Date(iso);
