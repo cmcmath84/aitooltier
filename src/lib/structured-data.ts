@@ -40,18 +40,21 @@ export function toolPageJsonLd(tool: ToolReview, category?: Category) {
     ],
   };
 
-  const lowestPrice = tool.pricing.find((p) => p.price !== "$0" && p.price !== "Free");
   const freeOffer = tool.hasFreeTier
     ? { "@type": "Offer", price: "0", priceCurrency: "USD" }
     : undefined;
+
+  const rating5 = Math.round((tool.scores.overall / 2) * 10) / 10;
 
   const softwareApp = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: tool.name,
     description: tool.tagline,
-    url: tool.url,
+    url: `${BASE_URL}/tools/${tool.slug}`,
     applicationCategory: category?.name || "AI Tool",
+    operatingSystem: "Web",
+    dateModified: tool.lastReviewedDate,
     ...(freeOffer ? { offers: freeOffer } : {}),
     review: {
       "@type": "Review",
@@ -62,20 +65,13 @@ export function toolPageJsonLd(tool: ToolReview, category?: Category) {
       },
       datePublished: tool.lastReviewedDate,
       reviewBody: tool.verdict,
+      name: `${tool.name} Review: ${getTierForScore(tool.scores.overall).label} Rank`,
       reviewRating: {
         "@type": "Rating",
-        ratingValue: tool.scores.overall,
-        bestRating: 10,
-        worstRating: 0,
+        ratingValue: rating5,
+        bestRating: 5,
+        worstRating: 1,
       },
-    },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: tool.scores.overall,
-      bestRating: 10,
-      worstRating: 0,
-      ratingCount: 4,
-      reviewCount: 1,
     },
   };
 
@@ -169,6 +165,8 @@ export function pricingPageJsonLd(tool: ToolReview) {
   const lowPrice = paidPrices.length > 0 ? Math.min(...paidPrices) : 0;
   const highPrice = numericPrices.length > 0 ? Math.max(...numericPrices) : 0;
 
+  const rating5 = Math.round((tool.scores.overall / 2) * 10) / 10;
+
   const product = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -186,24 +184,17 @@ export function pricingPageJsonLd(tool: ToolReview) {
       availability: "https://schema.org/InStock",
       url: tool.url,
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: tool.scores.overall,
-      bestRating: 10,
-      worstRating: 0,
-      ratingCount: 4,
-      reviewCount: 1,
-    },
     review: {
       "@type": "Review",
       author: { "@type": "Organization", name: "AIToolTier", url: BASE_URL },
       datePublished: tool.lastReviewedDate,
       reviewBody: tool.verdict,
+      name: `${tool.name} Pricing Analysis`,
       reviewRating: {
         "@type": "Rating",
-        ratingValue: tool.scores.overall,
-        bestRating: 10,
-        worstRating: 0,
+        ratingValue: rating5,
+        bestRating: 5,
+        worstRating: 1,
       },
     },
   };

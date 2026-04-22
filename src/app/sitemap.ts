@@ -20,19 +20,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/trending`, changeFrequency: "daily", priority: 0.7 },
   );
 
+  const toDate = (iso: string) => {
+    const d = new Date(iso);
+    return isNaN(d.getTime()) ? undefined : d;
+  };
+
   // Tool review pages
   for (const tool of tools) {
-    entries.push({ url: `${baseUrl}/tools/${tool.slug}`, changeFrequency: "monthly", priority: 0.9 });
+    entries.push({
+      url: `${baseUrl}/tools/${tool.slug}`,
+      lastModified: toDate(tool.lastReviewedDate),
+      changeFrequency: "weekly",
+      priority: 0.9,
+    });
   }
 
   // Alternatives pages
   for (const tool of tools) {
-    entries.push({ url: `${baseUrl}/alternatives/${tool.slug}`, changeFrequency: "monthly", priority: 0.7 });
+    entries.push({
+      url: `${baseUrl}/alternatives/${tool.slug}`,
+      lastModified: toDate(tool.lastReviewedDate),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
   }
 
   // Pricing pages
   for (const tool of tools) {
-    entries.push({ url: `${baseUrl}/pricing/${tool.slug}`, changeFrequency: "monthly", priority: 0.7 });
+    entries.push({
+      url: `${baseUrl}/pricing/${tool.slug}`,
+      lastModified: toDate(tool.lastReviewedDate),
+      changeFrequency: "monthly",
+      priority: 0.7,
+    });
   }
 
   // Category pages
@@ -53,8 +73,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Comparison pages — all VS combos
   for (let i = 0; i < tools.length; i++) {
     for (let j = i + 1; j < tools.length; j++) {
+      const a = tools[i];
+      const b = tools[j];
+      const newer =
+        (toDate(a.lastReviewedDate)?.getTime() || 0) >
+        (toDate(b.lastReviewedDate)?.getTime() || 0)
+          ? a.lastReviewedDate
+          : b.lastReviewedDate;
       entries.push({
-        url: `${baseUrl}/compare/${tools[i].slug}-vs-${tools[j].slug}`,
+        url: `${baseUrl}/compare/${a.slug}-vs-${b.slug}`,
+        lastModified: toDate(newer),
         changeFrequency: "monthly",
         priority: 0.6,
       });
