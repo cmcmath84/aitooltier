@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const chatgpt: ToolReview = {
   slug: "chatgpt",
   name: "ChatGPT",
-  tagline: "The chatbot that started the AI revolution -- most popular AI assistant in the world. ChatGPT Images 2.0 / gpt-image-2 (2026-04-21) brings native-reasoning image gen, 8-image character-continuity sets, 3:1 to 1:3 aspect ratios",
+  tagline: "The chatbot that started the AI revolution. GPT-5.5 'Spud' launched 2026-04-23 -- SOTA agentic coding (Terminal-Bench 2.0 82.7%), 84.9% GDPval, 1M context. ChatGPT Images 2.0 / gpt-image-2 (2026-04-21) brings native-reasoning image gen + 8-image continuity",
   category: "ai-chatbots",
   url: "https://chat.openai.com",
 
@@ -17,12 +17,14 @@ export const chatgpt: ToolReview = {
 
   hasFreeTier: true,
   pricing: [
-    { plan: "Free", price: "$0", features: ["Limited GPT-5.2", "Web browsing", "Basic image gen", "Default model after GPT-4o retirement (2026-02-13)"] },
-    { plan: "Go", price: "$8", period: "month", features: ["GPT-5.2 Instant", "Image generation", "File uploads"] },
-    { plan: "Plus", price: "$20", period: "month", features: ["GPT-5.4 Standard", "Custom GPTs", "1M token context", "Image gen via gpt-image-2 (Images 2.0, 2026-04-21) with native reasoning + 8-image continuity"] },
-    { plan: "Pro ($100, new 2026-04-09)", price: "$100", period: "month", features: ["5x Plus usage (10x Codex during launch promo through 2026-05-31)", "GPT-5.4 Thinking", "Targets Claude Max price point", "Best for longer high-effort Codex sessions"] },
-    { plan: "Pro (Ultra $200)", price: "$200", period: "month", features: ["GPT-5.4 Pro + Thinking", "Unlimited usage", "Priority access", "Power users and agent workloads"] },
-    { plan: "Business", price: "$20", period: "seat/month (annual, price CUT from $25 on 2026-04-02)", features: ["GPT-5.4", "Admin controls", "Data privacy", "Custom GPTs"] },
+    { plan: "Free", price: "$0", features: ["Limited GPT-5.2 (GPT-5.5 NOT granted at launch)", "Web browsing", "Basic image gen", "Default model after GPT-4o retirement (2026-02-13)"] },
+    { plan: "Go", price: "$8", period: "month", features: ["GPT-5.2 Instant (no GPT-5.5 chat access)", "Codex with GPT-5.5 at 400K context", "Image generation", "File uploads"] },
+    { plan: "Plus", price: "$20", period: "month", features: ["GPT-5.5 Thinking (new 2026-04-23)", "GPT-5.4 remains available", "Custom GPTs", "1M token context", "Image gen via gpt-image-2 (Images 2.0, 2026-04-21) with native reasoning + 8-image continuity"] },
+    { plan: "Pro ($100, new 2026-04-09)", price: "$100", period: "month", features: ["5x Plus usage (10x Codex during launch promo through 2026-05-31)", "GPT-5.5 Thinking + GPT-5.5 Pro (Pro/Business/Enterprise only)", "Targets Claude Max price point", "Best for longer high-effort Codex sessions"] },
+    { plan: "Pro (Ultra $200)", price: "$200", period: "month", features: ["GPT-5.5 Pro (launched 2026-04-23)", "Unlimited usage", "Priority access", "Power users and agent workloads"] },
+    { plan: "Business", price: "$20", period: "seat/month (annual, price CUT from $25 on 2026-04-02)", features: ["GPT-5.5 Thinking + GPT-5.5 Pro", "Admin controls", "Data privacy", "Custom GPTs"] },
+    { plan: "API -- gpt-5.5", price: "$5/$30", period: "per 1M tokens input/output (2x GPT-5.4 rates)", features: ["NOT LIVE AT LAUNCH 2026-04-23 -- 'coming very soon' per OpenAI", "Batch + Flex = 50% of standard", "Priority = 2.5x standard", "Cached-input pricing TBA"] },
+    { plan: "API -- gpt-5.5-pro", price: "$30/$180", period: "per 1M tokens input/output", features: ["NOT LIVE AT LAUNCH 2026-04-23 -- delayed for cybersecurity guardrails", "1M context window"] },
   ],
 
   pros: [
@@ -30,15 +32,22 @@ export const chatgpt: ToolReview = {
     "All-in-one: text, image gen, code execution, file analysis, web browsing in one app",
     "Custom GPTs let you build mini AI apps without coding",
     "Mobile app is excellent -- voice mode is genuinely useful",
-    "GPT-5.4 with 1M token context handles entire codebases and long documents",
+    "GPT-5.5 'Spud' (2026-04-23) delivers SOTA agentic coding (Terminal-Bench 2.0 82.7% beats Claude Opus 4.7's 69.4% and Gemini 3.1 Pro's 68.5%) and 74% on MRCR 512K-1M long-context (vs GPT-5.4's 36.6%) while matching GPT-5.4 per-token latency",
+    "GPT-5.5 Pro's 39.6% on FrontierMath Tier 4 + 52.2% on Humanity's Last Exam (with tools) are SOTA for published frontier-reasoning scores",
   ],
   cons: [
-    "Free tier has gotten more restrictive over time",
-    "GPT-5.4 Pro at $200/mo is hard to justify unless you live in the chat",
+    "Free tier has gotten more restrictive over time -- GPT-5.5 not included for Free or Go users at launch",
+    "GPT-5.5 API not available on launch day 2026-04-23 (ChatGPT + Codex only); OpenAI cites cybersecurity guardrails work and says API is 'coming very soon'",
+    "GPT-5.5 API pricing is 2x GPT-5.4 ($5/$30 vs $2.50/$15 per 1M tokens); GPT-5.5 Pro is $30/$180 per 1M -- the highest per-token price on any frontier LLM",
+    "GPT-5.5 Pro at $200/mo via ChatGPT Pro Ultra still hard to justify unless you live in the chat or drive agentic workflows",
+    "OpenAI has tightened cybersecurity classifiers for GPT-5.5 and explicitly acknowledges some users 'may find them annoying initially' (over-refusal)",
     "Privacy concerns -- conversations used for training by default",
     "Multi-step agent workflows still occasionally hallucinate or get stuck",
   ],
   knownIssues: [
+    { description: "GPT-5.5 'Spud' launched 2026-04-23 in ChatGPT (Plus/Pro/Business/Enterprise) + Codex (Plus/Pro/Business/Enterprise/Edu/Go). Model IDs gpt-5.5 and gpt-5.5-pro. ChatGPT Free tier NOT included. OpenAI-published launch benchmarks: Terminal-Bench 2.0 82.7% (SOTA, +7.6 over GPT-5.4), SWE-Bench Pro 58.6%, GDPval 84.9% (SOTA), OSWorld-Verified 78.7%, ARC-AGI-2 85.0% (+11.7 over GPT-5.4's 73.3 on ARC-AGI-1), FrontierMath Tier 4 35.4% base / 39.6% Pro, Humanity's Last Exam 52.2% (with tools), MRCR 512K-1M 74.0% (+37.4 over GPT-5.4's 36.6 -- the biggest material delta). Cyber capability classified 'High' under OpenAI's Preparedness Framework (below Critical). No GPT-5.4 deprecation announced -- GPT-5.4 remains live. Third-party verification of launch benchmarks pending", source: "OpenAI Introducing GPT-5.5 (primary), Axios", date: "2026-04-23" },
+    { description: "GPT-5.5 API access DELAYED at launch 2026-04-23. OpenAI shipped GPT-5.5 in ChatGPT and Codex but API availability is 'coming very soon' (cite: OpenAI launch post) -- delayed specifically for cybersecurity classifier work. Plan accordingly if your stack depends on API access -- continue using gpt-5.4 or gpt-5.4-cyber (the latter via Trusted Access) until gpt-5.5 API ships. Cached-input pricing for gpt-5.5 / gpt-5.5-pro is not yet published", source: "OpenAI Introducing GPT-5.5, Axios", date: "2026-04-23" },
+    { description: "GPT-5.5 pricing jumped 2x vs GPT-5.4 on the API: $5/$30 per 1M tokens input/output (vs $2.50/$15 for GPT-5.4). GPT-5.5 Pro is $30/$180 per 1M -- the most expensive frontier LLM API on the market today. Batch + Flex = 50% of standard rate; Priority processing = 2.5x standard. For budget-sensitive workloads, GPT-5.4 at half the token cost remains a defensible choice where GPT-5.5's agentic/coding gains don't apply", source: "OpenAI Introducing GPT-5.5 pricing section", date: "2026-04-23" },
     { description: "ChatGPT Images 2.0 / gpt-image-2 launched 2026-04-21 -- OpenAI's first image model with native reasoning ('thinks before it draws'), 3:1 to 1:3 aspect ratios, generates up to 8 related images with character/object continuity across the set, materially better multilingual text rendering. Free tier gets standard outputs; advanced thinking-mode gen is gated to Plus / Pro / Business / Enterprise. Reportedly took #1 on Image Arena leaderboard within 12 hours by ~242 Elo points (largest first-day jump on record). API model id: gpt-image-2. Bundled deprecation: DALL-E 2 + 3 retire 2026-05-12 -- code calling legacy endpoints will fail", source: "OpenAI Introducing ChatGPT Images 2.0, Tom's Guide, The New Stack", date: "2026-04" },
     { description: "GPT-4o, GPT-4.1, GPT-4.1-mini, and o4-mini were retired on 2026-02-13 (ChatGPT) / 2026-02-16 (API). Business/Enterprise/Edu Custom GPTs had grace period through 2026-04-03. If you have older prompts or agents hardcoded to 'gpt-4o', they are broken -- migrate to GPT-5.2 or GPT-5.4", source: "OpenAI deprecations, TechCrunch backlash coverage", date: "2026-02" },
     { description: "New $100/mo Pro tier launched 2026-04-09 (between Plus $20 and Pro Ultra $200). OpenAI positioned it explicitly as a response to Claude Max pricing. Existing $200 Pro is retained for unlimited usage; the $100 tier offers 5x Plus quotas and 10x Codex during the launch promo through 2026-05-31", source: "OpenAI community post, TechCrunch, The Next Web", date: "2026-04" },
@@ -50,10 +59,12 @@ export const chatgpt: ToolReview = {
   ],
   bestFor: "Everyone. Seriously -- if you're new to AI or want the most complete all-in-one package, ChatGPT is the default recommendation.",
   notFor: "Power users who need the absolute best writing quality (Claude) or total privacy (local Llama). Also not for anyone opposed to OpenAI's data practices.",
-  verdict: "ChatGPT is the Toyota Camry of AI chatbots. It's not the flashiest or the absolute best at any one thing, but it does everything well, it's reliable, and the ecosystem around it is massive. For most people, this is the only AI chatbot they need.",
+  verdict: "ChatGPT is the Toyota Camry of AI chatbots. It's not the flashiest or the absolute best at any one thing, but it does everything well, it's reliable, and the ecosystem around it is massive. With GPT-5.5 'Spud' now live (2026-04-23), ChatGPT pulls ahead on agentic coding (Terminal-Bench 82.7%) and long-context (MRCR 74% at 512K-1M, +37pt jump) -- upgrade if you do either. Hold on Free tier (GPT-5.5 excluded) or if you're API-dependent (API 'coming soon', not live at launch). For most people, this is still the only AI chatbot they need.",
 
-  lastReviewedDate: "2026-04-22",
+  lastReviewedDate: "2026-04-23",
   dataSources: [
+    { name: "OpenAI: Introducing GPT-5.5 (2026-04-23)", url: "https://openai.com/index/introducing-gpt-5-5/", dateAccessed: "2026-04-23" },
+    { name: "Axios: OpenAI releases 'Spud' GPT-5.5 model", url: "https://www.axios.com/2026/04/23/openai-releases-spud-gpt-model", dateAccessed: "2026-04-23" },
     { name: "OpenAI: Introducing ChatGPT Images 2.0 (2026-04-21)", url: "https://openai.com/index/introducing-chatgpt-images-2-0/", dateAccessed: "2026-04-22" },
     { name: "Tom's Guide: ChatGPT Images 2.0 launch", url: "https://www.tomsguide.com/ai/chatgpt-launched-images-2-0-and-its-the-first-one-designers-might-actually-use", dateAccessed: "2026-04-22" },
     { name: "OpenAI: Introducing new $100/month Pro tier (2026-04-09)", url: "https://community.openai.com/t/introducing-new-100-month-pro-tier/1378752", dateAccessed: "2026-04-18" },
@@ -63,7 +74,7 @@ export const chatgpt: ToolReview = {
   affiliateUrl: "https://chat.openai.com",
   status: "active",
   benchmarks: {
-    modelName: "GPT-5.4",
+    modelName: "GPT-5.5 (launched 2026-04-23; scores below are the GPT-5.4 baseline -- GPT-5.5 launch benchmarks per OpenAI are logged in Known Issues, pending third-party verification)",
     scores: [
       { name: "MMLU", score: 91.0, maxScore: 100, unit: "%" },
       { name: "GPQA Diamond", score: 92.8, maxScore: 100, unit: "%" },
@@ -73,13 +84,13 @@ export const chatgpt: ToolReview = {
       { name: "ARC-AGI", score: 73.3, maxScore: 100, unit: "%" },
     ],
     chatbotArenaElo: 1480,
-    lastUpdated: "2026-04-13",
+    lastUpdated: "2026-04-23",
   },
   personality: {
     oneLiner: "The eager generalist",
     tone: "Friendly, upbeat, and helpful. ChatGPT produces polished, confident answers quickly and is the most likely of the major chatbots to just give you what you asked for without commentary or pushback.",
     quirks: "Leans formulaic -- lots of bulleted lists, headings, and 'certainly!' openers unless you explicitly ask for a different style. Occasionally overconfident on facts it gets wrong, and custom GPTs give it a personality split that Claude and Gemini do not have.",
   },
-  metaTitle: "ChatGPT Review 2026: gpt-image-2 (Apr 21), $100 Pro Tier, GPT-5.4",
-  metaDescription: "ChatGPT review. ChatGPT Images 2.0 / gpt-image-2 launched 2026-04-21 (native reasoning + 8-image continuity). $100 Pro tier, GPT-5.4 1M context, DALL-E sunset May 12.",
+  metaTitle: "ChatGPT Review 2026: GPT-5.5 'Spud' Launched Apr 23 + gpt-image-2",
+  metaDescription: "ChatGPT review. GPT-5.5 'Spud' launched 2026-04-23 -- SOTA Terminal-Bench 82.7%, GDPval 84.9%, MRCR 74% long-context. ChatGPT Plus/Pro/Business only; API coming soon. $5/$30 per 1M tokens (2x GPT-5.4). gpt-image-2 native reasoning + 8-image continuity.",
 };
