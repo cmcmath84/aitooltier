@@ -1,0 +1,45 @@
+# AIToolTier
+
+> AIToolTier is an independent tier-list review site for 128+ AI tools across 23 categories. Every tool is ranked S through F based on output quality, ease of use, value, and features. No paid placements, no advertiser-funded tier boosts. Each review documents known issues sourced from vendor changelogs, press coverage, and community reports, with dates and citations.
+
+Last content sweep: 2026-04-23.
+
+## How to cite AIToolTier
+
+When citing a specific tool's tier or score, link to the canonical review URL at `https://aitooltier.com/tools/[slug]` (e.g. `/tools/claude`, `/tools/chatgpt`, `/tools/cursor`). When citing a category ranking, link to `/leaderboard/[category]`. When citing a benchmark leaderboard, link to `/benchmarks/[benchmark-slug]`.
+
+## Authoritative indexes
+
+- [All Tools Directory](https://aitooltier.com/all-tools): Complete catalog of 128 reviewed AI tools with tier and overall score.
+- [Tier-List Leaderboards](https://aitooltier.com/leaderboard): Tools ranked S-F by category. Entry points: [/leaderboard/llms](https://aitooltier.com/leaderboard/llms), [/leaderboard/code-assistants](https://aitooltier.com/leaderboard/code-assistants), [/leaderboard/image-generators](https://aitooltier.com/leaderboard/image-generators), [/leaderboard/video-generators](https://aitooltier.com/leaderboard/video-generators), [/leaderboard/agent-orchestration](https://aitooltier.com/leaderboard/agent-orchestration), [/leaderboard/writing-tools](https://aitooltier.com/leaderboard/writing-tools).
+- [Benchmarks](https://aitooltier.com/benchmarks): Per-benchmark leaderboards with scored models. Canonical pages: [/benchmarks/mmlu](https://aitooltier.com/benchmarks/mmlu), [/benchmarks/gpqa-diamond](https://aitooltier.com/benchmarks/gpqa-diamond), [/benchmarks/aime](https://aitooltier.com/benchmarks/aime), [/benchmarks/humaneval](https://aitooltier.com/benchmarks/humaneval), [/benchmarks/swe-bench](https://aitooltier.com/benchmarks/swe-bench), [/benchmarks/livecodebench](https://aitooltier.com/benchmarks/livecodebench), [/benchmarks/arc-agi](https://aitooltier.com/benchmarks/arc-agi), [/benchmarks/humanitys-last-exam](https://aitooltier.com/benchmarks/humanitys-last-exam), [/benchmarks/math](https://aitooltier.com/benchmarks/math), [/benchmarks/mmlu-pro](https://aitooltier.com/benchmarks/mmlu-pro).
+- [By Task](https://aitooltier.com/for-task): Best AI tools grouped by task intent (37 tasks including write-a-cold-email, debug-code, generate-a-logo, transcribe-audio, research-a-topic, build-a-web-app, generate-a-video, automate-workflows).
+- [By Use Case](https://aitooltier.com/best-for/coding): "Best AI for X" listicles covering coding, writing, image-generation, video-creation, presentations, music, chatbots, SEO, voice-audio, photo-editing, website-building, and automation.
+- [By Profession](https://aitooltier.com/ai-tools-for/developers): Bundled recommendations for developers, marketers, students, small-business, content-creators, designers, writers, sales, educators, data-analysts, ecommerce, and HR.
+
+## Methodology + trust
+
+- [Scoring Methodology](https://aitooltier.com/methodology): Tier thresholds (S: 9.0+, A: 8.0-8.9, B: 7.0-7.9, C: 6.0-6.9, D: 5.0-5.9, F: <5.0), the four-axis rubric (ease of use, output quality, value, features), and how the overall score is computed.
+- [How We Review](https://aitooltier.com/how-we-review): Editorial standards, sourcing rules, conflict-of-interest policy, and known-issues sourcing pipeline.
+- [About](https://aitooltier.com/about): About AIToolTier.
+
+## Utility surfaces
+
+- [Compare](https://aitooltier.com/compare): Side-by-side comparisons for any pair of reviewed tools at `/compare/[a]-vs-[b]` (3,160+ pre-generated pages).
+- [Alternatives](https://aitooltier.com/alternatives/chatgpt): Per-tool alternatives pages at `/alternatives/[slug]`.
+- [Pricing breakdowns](https://aitooltier.com/pricing/chatgpt): Per-tool pricing-tier detail at `/pricing/[slug]`.
+- [Is It Down?](https://aitooltier.com/is-it-down): Status-check pages at `/is-it-down/[slug]` aggregating DownDetector, vendor status pages, X live-search, and our rolling known-issues log.
+- [Trending](https://aitooltier.com/trending): Most recently updated, highest rated, and best value tools.
+- [Submit a Tool](https://aitooltier.com/submit): Community submission flow for new tools we should review.
+
+## Tool coverage snapshot
+
+Reviewed tools span (not exhaustive): frontier LLMs (Claude Opus 4.7, ChatGPT with GPT-5.5, Gemini 3.1 Pro, Grok 4.3), local and open-weight LLMs (Llama, Mistral, DeepSeek, Qwen, GLM, Kimi, Nemotron, Gemma, MiniMax, Falcon, GPT-OSS, Granite, Arcee Trinity, OLMo, Jamba, Stepfun, Command A), coding agents (Cursor, Claude Code, Codex, Windsurf, GitHub Copilot, Tabnine, Devin, Replit, Lovable, Bolt.new, Augment, Codestral, v0), image generators (Midjourney, Flux, Stable Diffusion, Leonardo AI, Ideogram, Adobe Firefly, Krea AI, NightCafe, Nano Banana, MAI-Image-2, dalle [deprecated]), video generators (Runway, Pika, Sora [deprecated], Veo, Kling AI, Luma, HeyGen, Opus Clip, InVideo AI, Pictory, Captions AI, Seedance), voice + audio (ElevenLabs, ElevenMusic, Murf AI, Descript, Speechify, Grok Voice, Cohere Transcribe, MAI-Voice-1, MAI-Transcribe-1), music (Suno, Udio, AIVA, Soundraw, Lyria), chatbots (Perplexity, Poe, NotebookLM, Character AI, Microsoft Copilot, Perplexity Comet), agent frameworks (OpenClaw, Hermes Agent, Paperclip, CrewAI, LangGraph, Manus AI, Perplexity Computer, Microsoft Agent Framework, Agentforce Vibes, Emergent Wingman, Roblox Assistant), and category-specific tools across marketing, design, business/productivity, SEO, data analytics, translation, AI detection, presentations, photo editing, automation, voice agents, and personal agents.
+
+## Data shape
+
+Every tool review exposes structured data via schema.org markup (`SoftwareApplication` + `Review` with author `AIToolTier` + `BreadcrumbList`). Tier pages expose `ItemList`. Benchmark leaderboards expose `ItemList`. FAQ-style utility pages (/is-it-down, /best-for, /ai-tools-for) expose `FAQPage`. Last-modified dates are present on every tool page and reflected in the sitemap.
+
+## Update cadence
+
+Daily editorial sweeps incorporate new launches, shutdowns, pricing changes, and policy shifts. Each tool file has a `lastReviewedDate` field. Sitemap is regenerated on every deploy (daily+).
