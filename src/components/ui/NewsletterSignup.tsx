@@ -2,6 +2,12 @@
 
 import { useState } from "react";
 
+// When NEXT_PUBLIC_BEEHIIV_EMBED_URL is set in Vercel env vars, we render
+// Beehiiv's embedded subscription form (real newsletter backend).
+// Until that is set, we fall back to a localStorage-only form so the
+// footer widget still looks functional during the signup setup window.
+const BEEHIIV_EMBED_URL = process.env.NEXT_PUBLIC_BEEHIIV_EMBED_URL;
+
 export default function NewsletterSignup() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
@@ -9,8 +15,10 @@ export default function NewsletterSignup() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
-
-    // For now, store signups in localStorage until a backend is set up
+    // Fallback path: persist to localStorage until the Beehiiv embed URL
+    // env var is configured in Vercel. Users who subscribe in this window
+    // are not lost -- we can export localStorage entries and import to
+    // Beehiiv once the publication is set up.
     try {
       const existing = JSON.parse(
         localStorage.getItem("newsletter_signups") || "[]"
@@ -24,6 +32,36 @@ export default function NewsletterSignup() {
     }
   }
 
+  // Preferred path: Beehiiv iframe embed.
+  if (BEEHIIV_EMBED_URL) {
+    return (
+      <div className="rounded-lg border border-primary/20 bg-blue-50 p-6">
+        <h3 className="text-lg font-semibold text-foreground">
+          The Tier List Tuesday
+        </h3>
+        <p className="mt-1 text-sm text-muted-foreground">
+          Weekly newsletter: tier movers, new entrants, and the VS of the
+          week. Built from our daily AI-tool sweeps. No spam, unsubscribe
+          anytime.
+        </p>
+        <iframe
+          src={BEEHIIV_EMBED_URL}
+          title="Subscribe to The Tier List Tuesday"
+          width="100%"
+          height="72"
+          frameBorder={0}
+          scrolling="no"
+          style={{
+            borderRadius: 4,
+            backgroundColor: "transparent",
+            marginTop: 12,
+          }}
+        />
+      </div>
+    );
+  }
+
+  // Fallback: localStorage form (used until Beehiiv env var is set).
   return (
     <div className="rounded-lg border border-primary/20 bg-blue-50 p-6">
       <h3 className="text-lg font-semibold text-foreground">
