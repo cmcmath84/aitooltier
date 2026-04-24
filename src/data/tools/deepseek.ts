@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const deepseek: ToolReview = {
   slug: "deepseek",
   name: "DeepSeek",
-  tagline: "Near-frontier reasoning for pennies on the dollar -- the open-source LLM that made Silicon Valley nervous",
+  tagline: "DeepSeek V4 shipped 2026-04-24: V4-Pro (1.6T/49B active MoE) + V4-Flash (284B/13B active), 1M native context, Hybrid Attention Architecture, open-source on HF. Trails only Gemini 3.1 Pro on world knowledge",
   category: "ai-local-models",
   url: "https://www.deepseek.com",
 
@@ -20,19 +20,24 @@ export const deepseek: ToolReview = {
     {
       plan: "Free",
       price: "$0",
-      features: ["Web chat access", "DeepSeek-V3 model", "Basic usage limits"],
+      features: ["Web chat access at chat.deepseek.com", "V4-Flash by default (as of 2026-04-24 launch)", "Basic usage limits"],
     },
     {
-      plan: "API",
-      price: "$0.14",
-      period: "month",
-      features: ["Per million input tokens (V3)", "$0.28/M output tokens", "Pay-as-you-go"],
+      plan: "API -- V4-Flash",
+      price: "$0.14/$0.28",
+      period: "per 1M tokens input/output",
+      features: ["284B total / 13B active MoE", "1M native context", "Cheapest frontier-class API on market", "Pay-as-you-go, no minimum"],
     },
     {
-      plan: "DeepSeek Pro",
-      price: "$9.99",
-      period: "month",
-      features: ["Higher rate limits", "Priority access", "Advanced features"],
+      plan: "API -- V4-Pro",
+      price: "$1.74/$3.48",
+      period: "per 1M tokens input/output",
+      features: ["1.6T total / 49B active MoE", "1M native context", "Trails only Gemini 3.1 Pro on world knowledge benchmarks", "Still dramatically cheaper than GPT-5.5 ($5/$30) or Claude Opus 4.7 ($5/$25)"],
+    },
+    {
+      plan: "Self-hosted (open-source)",
+      price: "$0 + GPU costs",
+      features: ["MIT license, open weights on HuggingFace", "V4-Flash is feasible on consumer hardware with quantization", "V4-Pro needs multi-GPU production infrastructure"],
     },
   ],
 
@@ -55,9 +60,9 @@ export const deepseek: ToolReview = {
       date: "2026-Q1",
     },
     {
-      description: "DeepSeek V4 IMMINENT: Per Reuters (citing The Information) on 2026-04-03, V4 launches in 'next few weeks' running on Huawei Ascend chips. Expected late April / early May 2026. Rumored to be a unified hybrid reasoning + non-reasoning model (~1T params, 1M context) that subsumes both V3 and R2 -- DeepSeek is reportedly skipping a separate R2 release entirely",
-      source: "Reuters, The Information, Gizchina",
-      date: "2026-04",
+      description: "DeepSeek V4 SHIPPED 2026-04-24. Two-model family released simultaneously: V4-Pro (1.6T total / 49B active MoE) and V4-Flash (284B / 13B active MoE). Both default to 1M context natively, use DeepSeek's new Hybrid Attention Architecture, and are open-sourced on HuggingFace under MIT license. V4-Pro trails only Gemini 3.1 Pro on world-knowledge benchmarks per early third-party runs. API pricing: Flash $0.14/$0.28, Pro $1.74/$3.48 per 1M tokens -- still 3-10x cheaper than Western frontier models. Tier-1 coverage: Bloomberg, CNBC, TechCrunch, Simon Willison blog. This closes out the 'V4 imminent' watchlist item that was open since 2026-04-03 Reuters pre-report",
+      source: "DeepSeek API docs, Bloomberg, CNBC, TechCrunch, Simon Willison",
+      date: "2026-04-24",
     },
     {
       description: "Refuses to engage with questions about Tiananmen Square, Taiwan sovereignty, and other politically sensitive topics per Chinese regulations",
@@ -74,18 +79,20 @@ export const deepseek: ToolReview = {
   notFor: "Anyone working on content that touches geopolitical topics, or teams that need guaranteed uptime and enterprise SLAs. Also not ideal if your primary use case is creative English writing.",
   verdict: "DeepSeek is the real deal when it comes to bang-for-your-buck AI. The reasoning capabilities are legitimately impressive, and the open-source angle gives it a flexibility that closed models can't match. The censorship limitations are a dealbreaker for some use cases, and the writing quality trails behind Claude and GPT-4. But for coding, math, and analytical tasks? It's hard to argue with near-frontier performance at a fraction of the cost.",
 
-  lastReviewedDate: "2026-04-18",
+  lastReviewedDate: "2026-04-24",
   dataSources: [
-    { name: "DeepSeek official site", url: "https://www.deepseek.com", dateAccessed: "2026-04-17" },
-    { name: "Reuters / The Information: DeepSeek V4 imminent April 2026", url: "https://evolink.ai/blog/deepseek-v4-release-window-prep", dateAccessed: "2026-04-17" },
-    { name: "Gizchina: DeepSeek V4 expected late April massive param scale", url: "https://www.gizchina.com/ai/deepseek-v4-expected-to-launch-in-late-april-with-massive-parameter-scale", dateAccessed: "2026-04-17" },
-    { name: "Reddit r/LocalLLaMA", dateAccessed: "2026-04-17" },
-    { name: "Artificial Analysis benchmarks", dateAccessed: "2026-04-17" },
+    { name: "DeepSeek V4 API launch announcement (2026-04-24)", url: "https://api-docs.deepseek.com/news/news260424", dateAccessed: "2026-04-24" },
+    { name: "Bloomberg: DeepSeek unveils newest flagship (2026-04-24)", url: "https://www.bloomberg.com/news/articles/2026-04-24/deepseek-unveils-newest-flagship-a-year-after-ai-breakthrough", dateAccessed: "2026-04-24" },
+    { name: "CNBC: DeepSeek V4 LLM preview (2026-04-24)", url: "https://www.cnbc.com/2026/04/24/deepseek-v4-llm-preview-open-source-ai-competition-china.html", dateAccessed: "2026-04-24" },
+    { name: "TechCrunch: DeepSeek V4 closes gap with frontier (2026-04-24)", url: "https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/", dateAccessed: "2026-04-24" },
+    { name: "Simon Willison: DeepSeek V4", url: "https://simonwillison.net/2026/Apr/24/deepseek-v4/", dateAccessed: "2026-04-24" },
+    { name: "DeepSeek official site", url: "https://www.deepseek.com", dateAccessed: "2026-04-24" },
+    { name: "Artificial Analysis benchmarks", dateAccessed: "2026-04-24" },
   ],
   affiliateUrl: "https://www.deepseek.com",
   status: "active",
   benchmarks: {
-    modelName: "DeepSeek V3.2",
+    modelName: "DeepSeek V4-Pro (launched 2026-04-24; scores below are the V3.2 baseline pending third-party V4 verification, which typically lands 3-7 days post-launch)",
     scores: [
       { name: "MMLU", score: 90.8, maxScore: 100, unit: "%" },
       { name: "MMLU-Pro", score: 85.0, maxScore: 100, unit: "%" },
@@ -94,11 +101,23 @@ export const deepseek: ToolReview = {
       { name: "SWE-bench Verified", score: 67.8, maxScore: 100, unit: "%" },
     ],
     chatbotArenaElo: 1380,
-    lastUpdated: "2026-04-13",
+    lastUpdated: "2026-04-24",
   },
   systemRequirements: [
     {
-      variant: "DeepSeek V3.2 (671B total, 37B active MoE)",
+      variant: "DeepSeek V4-Flash (284B total, 13B active MoE)",
+      min: "96 GB RAM + 1× RTX 3090/4090 (Q4 quantization, ~3-5 tok/s)",
+      max: "2× H100 FP8 or 1× H200 (FP8 production, fast)",
+      notes: "MIT license, open weights on HuggingFace. Flash is the accessible entry point -- feasible on enthusiast / workstation hardware",
+    },
+    {
+      variant: "DeepSeek V4-Pro (1.6T total, 49B active MoE)",
+      min: "512 GB RAM + 4× RTX 4090 (severe quantization, experimental)",
+      max: "16× H100 FP8 or 8× H200 (full 1.6T production)",
+      notes: "MIT license, open weights. Pro is production multi-GPU territory -- not feasible for individuals",
+    },
+    {
+      variant: "DeepSeek V3.2 (671B total, 37B active MoE) -- prior version, still available",
       min: "192 GB RAM + 1× RTX 3090/4090 (IQ2_XXS offload, ~2 tok/s)",
       max: "8× H100 FP8 or 4× H200 (full 671B, production)",
       notes: "MIT license -- commercial use OK",
@@ -110,6 +129,6 @@ export const deepseek: ToolReview = {
     tone: "Direct and technical. DeepSeek's chat models give compact, math- and code-first answers and are noticeably less chatty than Claude or ChatGPT. When asked to reason, they expose a lot of visible thinking.",
     quirks: "Refusal patterns differ from Western models -- more permissive on many technical and gray-area prompts, more cautious on China-specific political questions. Community-tuned variants exist with different system prompts and guardrails.",
   },
-  metaTitle: "DeepSeek Review 2026: Near-Frontier AI at a Fraction of the Cost",
-  metaDescription: "DeepSeek review. Open-source LLM with strong reasoning, dirt-cheap API pricing, 130M+ users. But censorship and reliability are real concerns. Scores, pricing. March 2026.",
+  metaTitle: "DeepSeek V4 Review 2026: V4-Pro + V4-Flash (Apr 24 Launch), Open Source",
+  metaDescription: "DeepSeek V4 shipped April 24, 2026. V4-Pro (1.6T/49B MoE) + V4-Flash (284B/13B) both open-source with 1M context. $0.14-$3.48 per 1M tokens. Trails only Gemini 3.1 Pro on world knowledge.",
 };

@@ -62,7 +62,7 @@ export const claude: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "Claude Haiku 3 (claude-3-haiku-20240307) retires 2026-04-20 per Anthropic's deprecations page (60-day notice given 2026-02-19). If any API code still targets the 2024 Haiku snapshot, migrate to claude-haiku-4-5-20251001 immediately -- requests to retired models fail outright",
+      description: "Claude Haiku 3 (claude-3-haiku-20240307) RETIRED 2026-04-20 -- deprecated -> retired flip confirmed on Anthropic's deprecations page (verified 2026-04-24). If your API code still targets the 2024 Haiku snapshot, requests are now failing -- migrate to claude-haiku-4-5-20251001",
       source: "Anthropic model deprecations page",
       date: "2026-04",
     },

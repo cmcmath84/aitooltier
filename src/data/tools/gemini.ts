@@ -57,9 +57,9 @@ export const gemini: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "Gemini 2.5 family retirement dates confirmed (ai.google.dev deprecations page, 2026-04-21 check): Gemini 2.5 Pro + 2.5 Flash shut down 2026-06-17, replaced by gemini-3.1-pro-preview + gemini-3-flash-preview. Gemini 2.5 Flash-Lite shuts down 2026-07-22. Production code still calling 2.5 model names will fail after those dates -- migrate to 3.x preview endpoints now. Note: Google calls these 'earliest possible' retirement dates, so they may slip later but not earlier",
-      source: "ai.google.dev/gemini-api/docs/deprecations",
-      date: "2026-04",
+      description: "Gemini 2.5 family retirement dates EXTENDED (ai.google.dev deprecations page, checked 2026-04-24): Gemini 2.5 Pro, 2.5 Flash, AND 2.5 Flash-Lite now all retire 2026-10-16 (pushed out from original 2026-06-17 / 2026-07-22 dates). Gives ~6 more months to migrate to gemini-3.1-pro + gemini-3-flash. Production code still calling 2.5 model names continues to work through Oct 16, but do not ship new code on retiring endpoints",
+      source: "ai.google.dev/gemini-api/docs/deprecations (verified 2026-04-24)",
+      date: "2026-04-24",
     },
     {
       description: "Gemini 3.1 Flash TTS launched 2026-04-15 as a preview on Gemini API, AI Studio, Vertex AI, and Google Vids. 70+ languages, audio tags for vocal style/pace/delivery embedded in the text prompt, Elo 1,211 on Artificial Analysis TTS leaderboard. Positions Google as a direct competitor to ElevenLabs v3 on the TTS stack",
@@ -86,7 +86,7 @@ export const gemini: ToolReview = {
   notFor: "Anyone who needs the best raw output quality. Claude and GPT-4 both write better. Also not for anyone spooked by Google's history of abandoning products.",
   verdict: "Gemini's strength is the ecosystem play. The 1M context window is genuinely useful for long documents, and the Google Workspace integration is something neither OpenAI nor Anthropic can match. But purely as an LLM, the output quality is a step behind Claude and GPT-4. Pick Gemini if you're deep in Google's ecosystem. Otherwise, the other two are better standalone.",
 
-  lastReviewedDate: "2026-04-21",
+  lastReviewedDate: "2026-04-24",
   dataSources: [
     { name: "Google AI for Developers: deprecations", url: "https://ai.google.dev/gemini-api/docs/deprecations", dateAccessed: "2026-04-21" },
     { name: "Google Blog: Gemini 3.1 Flash TTS", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/", dateAccessed: "2026-04-21" },
@@ -113,6 +113,6 @@ export const gemini: ToolReview = {
     tone: "Neutral, thorough, and slightly corporate. Gemini leans academic, cites sources readily in Deep Research mode, and keeps its tone even across topics -- rarely funny, rarely snarky.",
     quirks: "Tightly integrated with Google products -- pulls from Search and Workspace by default, which is useful for grounded answers but means you hear Google's worldview. Can feel evasive or overly safe on opinionated or politically charged questions.",
   },
-  metaTitle: "Gemini Review 2026: 3.1 Ultra, 2.5 Retirement Jun 17, Flash TTS",
-  metaDescription: "Google Gemini review. Gemini 3.1 Ultra (2M context), Gemini 3.1 Flash TTS (Apr 15 2026, 70+ langs). Gemini 2.5 Pro/Flash retire 2026-06-17, Flash-Lite 2026-07-22.",
+  metaTitle: "Gemini Review 2026: 3.1 Ultra, 2.5 Retirement Oct 16, Flash TTS",
+  metaDescription: "Google Gemini review. Gemini 3.1 Ultra (2M context), Gemini 3.1 Flash TTS (Apr 15 2026, 70+ langs). Gemini 2.5 Pro/Flash/Flash-Lite all retire 2026-10-16 (extended from June/July).",
 };
