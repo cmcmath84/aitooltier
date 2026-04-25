@@ -40,6 +40,8 @@ import { olmo } from "./olmo";
 import { jamba } from "./jamba";
 import { stepfun } from "./stepfun";
 import { commandA } from "./command-a";
+import { hunyuan3 } from "./hunyuan-3";
+import { mimo } from "./mimo";
 
 // AI Writing Tools
 import { jasper } from "./jasper";
@@ -213,6 +215,8 @@ export const tools: ToolReview[] = [
   jamba,
   stepfun,
   commandA,
+  hunyuan3,
+  mimo,
   // Writing
   jasper,
   copyAi,

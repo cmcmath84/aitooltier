@@ -62,9 +62,9 @@ export const cursor: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "Cursor is in talks to raise $2B+ at a $50B valuation per TechCrunch (2026-04-17). If the round closes at those terms, it roughly doubles Cursor's prior valuation and cements Anysphere as the highest-value AI IDE company. Near-term implication: expect feature velocity to stay high and price discipline on Pro/Pro+ to hold through Q2 2026",
-      source: "TechCrunch, The Next Web",
-      date: "2026-04",
+      description: "OWNERSHIP-CHANGE WATCH (2026-04-21): SpaceX disclosed it has the option to acquire Anysphere (Cursor's parent) for $60B later in 2026, OR pay $10B in lieu for joint compute work via Colossus (~1M H100-equivalent). Cursor cited being 'bottlenecked by compute' as the reason. Closing window pegged to SpaceX's June 2026 IPO. Not a closed deal -- it's an option -- but a meaningful tool-risk signal for buyers planning multi-year Cursor commitments. Earlier in April Cursor was also in talks to raise $2B+ at a $50B valuation; whether the SpaceX option supersedes or coexists with that round is unclear",
+      source: "CNBC, TechCrunch, Bloomberg, Engadget",
+      date: "2026-04-21",
     },
     {
       description: "Cursor reportedly training its next Composer model (Composer 2.5) on thousands of xAI-supplied GPUs per Business Insider (2026-04-17). First major compute deal between a top AI coding company and xAI's post-SpaceX-acquisition infrastructure. Implication: Composer 2.5 should land in Q2-Q3 2026 with meaningfully better quality than today's Composer 2",
@@ -96,8 +96,10 @@ export const cursor: ToolReview = {
   notFor: "Developers happy with their current editor setup who just want basic autocomplete -- Copilot is still less disruptive for that. Also not for anyone skeptical of Cursor's own coding model; if you want pure frontier-model access for every task, paying Claude or OpenAI directly and using Claude Code is cleaner.",
   verdict: "Cursor 3 + Composer 2 (April 2026) is the release where Cursor stops being an AI-augmented editor and becomes an agent-first dev environment. Composer 2's speed at $0.50/$2.50 per 1M tokens is the real story -- it makes tight iteration loops feel instant in a way frontier models can't, even if the quality is slightly below Opus 4.6. The multi-workspace + cross-platform handoff design assumes you want your agents everywhere; if you don't, it's overkill. The honest read: for developers willing to go all-in on agentic workflows, Cursor 3 is the 2026 default. For everyone else, Claude Code + Copilot is a simpler, less committing stack.",
 
-  lastReviewedDate: "2026-04-18",
+  lastReviewedDate: "2026-04-25",
   dataSources: [
+    { name: "CNBC: SpaceX says it can buy Cursor later this year for $60B (2026-04-21)", url: "https://www.cnbc.com/2026/04/21/spacex-says-it-can-buy-cursor-later-this-year-for-60-billion-or-pay-10-billion-for-our-work-together.html", dateAccessed: "2026-04-25" },
+    { name: "TechCrunch: SpaceX is working with Cursor and has an option to buy", url: "https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/", dateAccessed: "2026-04-25" },
     { name: "Cursor blog: Meet the new Cursor (Cursor 3)", url: "https://cursor.com/blog/cursor-3", dateAccessed: "2026-04-16" },
     { name: "Cursor blog: Introducing Composer 2", url: "https://cursor.com/blog/composer-2", dateAccessed: "2026-04-16" },
     { name: "G2 Reviews", dateAccessed: "2026-04-16" },

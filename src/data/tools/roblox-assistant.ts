@@ -41,13 +41,13 @@ export const robloxAssistant: ToolReview = {
     "Planning Mode (2026-04-16) turns Assistant from a code completer into a full agent -- it analyzes your game's code and data model, asks clarifying questions, produces an editable plan, and then executes across multiple scripts. Closest thing in the games space to what Devin does for web dev",
     "Agentic loop is genuinely real: Assistant uses playtesting tools to read output logs, capture screenshots, drive keyboard + mouse inputs, and identify bugs -- then auto-fixes. This is the piece most AI-coding-assistants cannot do because they don't have the runtime",
     "Mesh Generation produces fully textured 3D objects from natural-language prompts ('create a campfire'), with editable lighting properties. Replaces placeholder-asset workflows for prototyping",
-    "Procedural Model Generation (coming soon) understands spatial relationships -- change the number of shelves in a bookcase or staircase height dynamically. Real reusable building-block generation for game worlds",
+    "Procedural Models shipped as a Studio Beta on 2026-04-16 -- parametrized 3D models built via code or AI prompts. Understands spatial relationships, so the number of shelves in a bookcase or staircase height can be changed dynamically. Real reusable building-block generation for game worlds, no longer 'coming soon'",
     "Integrated into Roblox Studio directly, which means the 70M+ daily creators already have it in their tool -- no separate install, no API key, no integration work",
   ],
   cons: [
     "Locked to Roblox Studio -- not usable outside the Roblox ecosystem. This is a game-dev-specific tool, not a generic 3D asset generator",
     "Output quality on Mesh Generation trails dedicated 3D tools (Tencent HY-World 2.0, Meshy, Rodin) on geometry fidelity; it's production-ready for prototyping and UGC, not AAA",
-    "Procedural Model Generation was 'coming soon' as of 2026-04-16 announcement -- not all features are in the stable Studio build yet",
+    "Procedural Models is in Studio Beta (2026-04-16 announcement, beta still active 2026-04-25) -- expect rough edges versus stable, and quotas may shift before GA",
     "Deep Roblox platform lock-in -- any workflow you build assumes staying in the Roblox ecosystem. Roblox takes a large revenue cut on published experiences",
   ],
   knownIssues: [
@@ -59,8 +59,8 @@ export const robloxAssistant: ToolReview = {
     },
     {
       description:
-        "Mesh Generation is the standout creative feature -- generate textured 3D meshes from a prompt, then tweak properties. Procedural Models (editable code-driven 3D) described as 'coming soon' at launch. If you need the procedural piece specifically, check Roblox's release notes before committing",
-      source: "TechCrunch, Roblox DevForum Planning Mode announcement",
+        "Procedural Models shipped as Studio Beta on 2026-04-16 alongside the Planning Mode + Mesh Generation announcement (DevForum thread devforum.roblox.com/t/studio-beta-introducing-procedural-models). Build parametrized 3D models with code or AI prompts; tweak parameters (shelf count, staircase height) without re-generating. Mesh Generation remains the prompt-to-textured-mesh path; together they cover both reusable building blocks and one-off creative assets",
+      source: "Roblox DevForum: Studio Beta -- Introducing Procedural Models, TechCrunch",
       date: "2026-04",
     },
     {
@@ -77,10 +77,11 @@ export const robloxAssistant: ToolReview = {
   verdict:
     "Roblox Assistant's Planning Mode is the most interesting agentic-coding release outside of pure dev tooling in April 2026. The agent loop is real -- it plans, implements, runs, captures screenshots, reads logs, and iterates -- and it's sitting inside the default tool 70M+ daily creators already use. For Roblox creators this is a free productivity cliff; for everyone else it's a preview of what game-engine-integrated AI agents will look like across Unity, Unreal, and Godot over the next 12-24 months.",
 
-  lastReviewedDate: "2026-04-21",
+  lastReviewedDate: "2026-04-25",
   dataSources: [
-    { name: "Roblox Newsroom: Studio going agentic", url: "https://about.roblox.com/newsroom/2026/04/roblox-studio-going-agentic", dateAccessed: "2026-04-21" },
-    { name: "TechCrunch: Roblox Assistant agentic tools", url: "https://techcrunch.com/2026/04/16/robloxs-ai-assistant-gets-new-agentic-tools-to-plan-build-and-test-games/", dateAccessed: "2026-04-21" },
+    { name: "Roblox Newsroom: Studio going agentic", url: "https://about.roblox.com/newsroom/2026/04/roblox-studio-going-agentic", dateAccessed: "2026-04-25" },
+    { name: "TechCrunch: Roblox Assistant agentic tools", url: "https://techcrunch.com/2026/04/16/robloxs-ai-assistant-gets-new-agentic-tools-to-plan-build-and-test-games/", dateAccessed: "2026-04-25" },
+    { name: "Roblox DevForum: Studio Beta -- Procedural Models", url: "https://devforum.roblox.com/t/studio-beta-introducing-procedural-models-build-parametrized-3d-models-with-code-or-ai/4592056", dateAccessed: "2026-04-25" },
     { name: "Roblox DevForum: Planning Mode announcement", url: "https://devforum.roblox.com/t/announcing-planning-mode-for-roblox-assistant/4580715", dateAccessed: "2026-04-21" },
   ],
   affiliateUrl: "https://create.roblox.com/docs/studio/ai-assistant",

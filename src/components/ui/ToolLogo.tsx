@@ -49,6 +49,8 @@ const logoMap: Record<string, string> = {
   jamba: "/logos/ai21.png",
   stepfun: "/logos/stepfun.png",
   "command-a": "/logos/cohere.png",
+  "hunyuan-3": "/logos/tencent.png",
+  mimo: "/logos/xiaomi.png",
 
   // Writing
   jasper: "/logos/jasper.png",

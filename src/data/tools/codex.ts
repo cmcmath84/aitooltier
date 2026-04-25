@@ -42,6 +42,11 @@ export const codex: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "GPT-5.2-Codex shipped 2026-04-23 as a coding-specialized variant separate from the consumer GPT-5.5 launch. Available to all paid ChatGPT users across Codex web/CLI/IDE surfaces today; API access in coming weeks. Posts SOTA on SWE-Bench Pro and Terminal-Bench 2.0. Improvements: long-horizon agentic coding via context compaction, large refactors and migrations, Windows env perf, and cybersecurity. Direct upgrade over GPT-5.3-Codex for serious agentic work -- if you're on Plus or Pro, your Codex defaults are already on the new model",
+      source: "OpenAI: Introducing GPT-5.2-Codex (openai.com/index/introducing-gpt-5-2-codex/), OpenAI Codex changelog",
+      date: "2026-04-23",
+    },
+    {
       description: "Codex Chronicle launched 2026-04-20/21 as an opt-in research preview for ChatGPT Pro on macOS only (NOT available in EU/UK/Switzerland). Captures screen content + builds persistent memories so Codex understands what you're working on without manual context-restating. Privacy details: screenshots stored locally in $TMPDIR/chronicle/screen_recording/ auto-deleted after 6 hours; generated memories live unencrypted as markdown at ~/.codex/memories_extensions/chronicle/; OpenAI servers don't retain processed screenshots and don't train on them. OpenAI explicitly flags 'increased prompt-injection attack surface from screen content' -- pause Chronicle before meetings or sensitive material. Currently consumes rate limits aggressively. Closest comparison is Microsoft Recall but with stronger local-storage guarantees",
       source: "OpenAI Chronicle docs (developers.openai.com/codex/memories/chronicle), Help Net Security, 9to5Mac",
       date: "2026-04",
@@ -71,8 +76,10 @@ export const codex: ToolReview = {
   notFor: "Developers who need fine-grained control mid-task (use Claude Code or Cursor instead). Also not ideal for complex architectural refactors where the AI needs human guidance throughout the process.",
   verdict: "Codex is OpenAI's answer to Claude Code and Devin, and it has one killer advantage: it's bundled with ChatGPT Plus. If you're already paying $20/mo for ChatGPT, you get a cloud coding agent for free. The parallel task execution is genuinely unique -- no other coding agent lets you fire off 5 tasks and check back later. But the rough edges are real: you can't steer it mid-task, complex refactors fall flat, and the usage limits feel tight. For straightforward coding tasks and code review, it's excellent. For anything nuanced, Claude Code's interactive approach is still better.",
 
-  lastReviewedDate: "2026-04-22",
+  lastReviewedDate: "2026-04-25",
   dataSources: [
+    { name: "OpenAI: Introducing GPT-5.2-Codex (2026-04-23)", url: "https://openai.com/index/introducing-gpt-5-2-codex/", dateAccessed: "2026-04-25" },
+    { name: "OpenAI Codex changelog", url: "https://developers.openai.com/codex/changelog", dateAccessed: "2026-04-25" },
     { name: "OpenAI Chronicle docs (Apr 2026)", url: "https://developers.openai.com/codex/memories/chronicle", dateAccessed: "2026-04-22" },
     { name: "Help Net Security: Chronicle screen-context memories", url: "https://www.helpnetsecurity.com/2026/04/21/openai-chronicle-codex-screen-context-memories/", dateAccessed: "2026-04-22" },
     { name: "OpenAI official Codex page", url: "https://openai.com/index/introducing-codex/", dateAccessed: "2026-04-17" },
@@ -82,15 +89,15 @@ export const codex: ToolReview = {
   ],
   affiliateUrl: "https://openai.com/index/introducing-codex/",
   status: "active",
-  poweredBy: "GPT-5.3-Codex / GPT-5.4",
+  poweredBy: "GPT-5.2-Codex (default 2026-04-23) / GPT-5.5 / GPT-5.4",
   benchmarks: {
-    modelName: "GPT-5.3-Codex",
+    modelName: "GPT-5.2-Codex (launched 2026-04-23 -- SOTA on SWE-Bench Pro and Terminal-Bench 2.0; first-party scores below pending detailed third-party verification)",
     scores: [
       { name: "SWE-bench Verified", score: 72.0, maxScore: 100, unit: "%" },
       { name: "HumanEval", score: 95.0, maxScore: 100, unit: "%" },
     ],
-    lastUpdated: "2026-04-13",
+    lastUpdated: "2026-04-25",
   },
-  metaTitle: "OpenAI Codex Review 2026: Chronicle Screen Memory + Cloud Coding Agent",
-  metaDescription: "OpenAI Codex review. Chronicle screen-context memory (Pro/macOS only, Apr 2026), parallel cloud tasks, code review, GitHub PR integration. Free with ChatGPT Plus.",
+  metaTitle: "OpenAI Codex Review 2026: GPT-5.2-Codex + Chronicle Screen Memory",
+  metaDescription: "OpenAI Codex review. GPT-5.2-Codex (Apr 23 2026, SOTA on SWE-Bench Pro + Terminal-Bench 2.0), Chronicle screen-context memory, parallel cloud tasks. Free with ChatGPT Plus.",
 };
