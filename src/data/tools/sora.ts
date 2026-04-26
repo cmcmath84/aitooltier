@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const sora: ToolReview = {
   slug: "sora",
   name: "Sora (Discontinued)",
-  tagline: "OpenAI's text-to-video model -- DISCONTINUED March 24, 2026. Web/app shuts down April 26, 2026. API sunsets September 24, 2026. See alternatives: Veo 3.1, Kling 3.0, Seedance 2.0",
+  tagline: "OpenAI's text-to-video model -- consumer web + iOS + Android SHUT DOWN as of 2026-04-26 (sora.com + sora.chatgpt.com return 403). API remains operational for existing API customers until 2026-09-24. See alternatives: Veo 3.1, Kling 3.0, Seedance 2.0, Runway Gen-4.5",
   category: "ai-video-generators",
   url: "https://sora.com",
 
@@ -18,14 +18,14 @@ export const sora: ToolReview = {
   hasFreeTier: false,
   pricing: [
     {
-      plan: "DISCONTINUED",
+      plan: "DISCONTINUED (consumer)",
       price: "N/A",
       features: [
         "OpenAI announced shutdown on 2026-03-24",
-        "Sora web and app experiences end 2026-04-26",
-        "Sora API sunsets 2026-09-24",
-        "Sora 1 no longer available in the US since 2026-03-13",
-        "No new signups accepted",
+        "Sora web and app SHUT DOWN 2026-04-26 (today) -- sora.com + sora.chatgpt.com confirmed returning HTTP 403",
+        "Sora API still operational until 2026-09-24 for existing API customers (no new signups)",
+        "Sora 1 was unavailable in the US since 2026-03-13",
+        "Generated-video exports were available until 2026-04-26 at sora.chatgpt.com/exports/me",
       ],
     },
     {
@@ -48,19 +48,19 @@ export const sora: ToolReview = {
     "Integrated into ChatGPT while it lasted -- users didn't need a separate platform or account to try it",
   ],
   cons: [
-    "DISCONTINUED -- OpenAI shut Sora down effective April 26, 2026 after approximately 6 months of public availability. Users must export data before the sunset date",
+    "DISCONTINUED -- OpenAI shut down the consumer Sora web + iOS + Android experiences on 2026-04-26 after approximately six months of public availability. Both sora.com and sora.chatgpt.com now return HTTP 403. The API survives until 2026-09-24 for existing API customers only, no new signups accepted",
     "No free tier ever existed -- $20/month ChatGPT Plus minimum, and the 50-video limit was tight for casual use, which contributed to low adoption",
     "The $200/month ChatGPT Pro requirement for full features (longer clips, no watermark) priced out the hobbyist market that Kling and Pika captured instead",
     "Per TechCrunch and WSJ reporting: Sora was a 'money pit that nobody was using.' Peak worldwide users were around 1 million, then collapsed to fewer than 500,000. Daily compute burn was roughly 1 million USD per day. Video generation's chip-level compute cost drove the decision, freeing capacity for higher-priority OpenAI work. Disney's planned 1 billion USD partnership terminated alongside the product",
   ],
   knownIssues: [
     {
-      description: "TOMORROW (T-1, as of 2026-04-25). The Sora consumer web + app shut down hard-dates to 2026-04-26 -- if you still have generated videos in your account, export them today via sora.chatgpt.com/exports/me. No delay or extension announced. The API continues until 2026-09-24 for existing API customers, but no new signups are accepted",
-      source: "OpenAI Help Center: Sora discontinuation (rechecked 2026-04-25)",
-      date: "2026-04-25",
+      description: "T-0 CONFIRMED 2026-04-26: the Sora consumer experience is dead as of today. sora.com and sora.chatgpt.com both return HTTP 403, the iOS and Android apps were pulled, and OpenAI's help center confirms 'sora.com, the iOS app, and the Android app are discontinued April 26, 2026.' No 11th-hour delay or extension. The user-facing product is gone -- only the API remains, and only for existing API customers until 2026-09-24. Anyone Googling 'sora alternatives' or 'sora replacement' today should be redirected to Veo 3.1 (free via Google Vids), Kling 3.0 (free 66 credits/day), or Runway Gen-4.5 (current AA leaderboard #1 at 1247 Elo)",
+      source: "OpenAI Help Center: Sora discontinuation, The Decoder, direct curl on sora.com/sora.chatgpt.com (HTTP 403, verified 2026-04-26)",
+      date: "2026-04-26",
     },
     {
-      description: "Sora is being shut down. OpenAI announced the discontinuation on 2026-03-24. Web and app experiences end 2026-04-26, API sunsets 2026-09-24. Users should export their generated videos before then. OpenAI cited unsustainable compute costs, low adoption, and a strategic pivot to enterprise AI",
+      description: "OpenAI announced the discontinuation on 2026-03-24, gave users one month to export their videos via sora.chatgpt.com/exports/me, and held the line on the date despite pushback. The export window closed alongside the consumer shutdown today. OpenAI cited unsustainable compute costs (~$1M/day), low adoption (<500K MAU at end of life from a peak ~1M), and a strategic pivot to enterprise AI",
       source: "OpenAI Help Center, CNN, TechCrunch, Variety",
       date: "2026-03",
     },
@@ -75,14 +75,15 @@ export const sora: ToolReview = {
       date: "2026-03",
     },
   ],
-  bestFor: "Historical context. Anyone researching the AI-video space needs to understand why Sora failed -- it's a case study in how consumer-pricing + compute economics can kill a product even when the underlying tech is impressive. If you're looking for a working video generator today, skip Sora and go to Veo 3.1 (best quality, now free via Google Vids), Kling 3.0 (best value, free 66 credits/day), or Seedance 2.0 (best workflow if you already use CapCut).",
-  notFor: "Anyone trying to use Sora as a working tool in April 2026 or later. The product is sunsetting within days of this review's publication. Export your data if you have existing work. For any new AI video project, pick one of the alternatives above.",
-  verdict: "Sora is a cautionary tale rather than a product recommendation as of April 2026. OpenAI sunset the consumer video app on March 24, 2026 after a roughly six-month public run. The WSJ's investigation produced the specific numbers: peak of about 1 million worldwide users that collapsed to fewer than 500,000, while the product burned through roughly $1 million per day in compute -- video generation was consuming finite AI chip capacity that OpenAI chose to redirect to higher-priority work. The underlying video tech was genuinely strong -- physical realism and multi-shot coherence were state of the art when Sora launched -- but the $20-and-up pricing with tight limits never found a viable consumer market, and Disney's $1 billion partnership terminated alongside the product (Disney learned less than an hour before the public announcement). If you were exploring Sora, use this as your pointer to the actual working 2026 video tools: Veo 3.1 for quality (free tier now), Kling 3.0 for budget-conscious creators, Seedance 2.0 for short-form social workflows inside CapCut.",
+  bestFor: "Historical context only -- the consumer product is shut down as of 2026-04-26. Anyone researching the AI-video space needs to understand why Sora failed: it's a case study in how consumer-pricing + compute economics can kill a product even when the underlying tech is impressive. For a working video generator today, go to Veo 3.1 (best quality, free via Google Vids), Kling 3.0 (best value, free 66 credits/day), Seedance 2.0 (best workflow inside CapCut), or Runway Gen-4.5 (current AA leaderboard #1).",
+  notFor: "Any new project. The consumer experience is gone (HTTP 403 confirmed 2026-04-26) and the API will follow on 2026-09-24. For any new AI video project pick one of the alternatives above.",
+  verdict: "Sora is now a cautionary tale rather than a product recommendation. OpenAI announced the consumer shutdown on 2026-03-24 and held the line: as of 2026-04-26, sora.com and sora.chatgpt.com both return HTTP 403 and the iOS + Android apps are pulled. The API survives until 2026-09-24 for existing API customers only. The WSJ's investigation produced the numbers that drove the decision -- peak ~1 million worldwide users that collapsed to fewer than 500,000, while the product burned through roughly $1 million per day in compute. Video generation was consuming finite AI chip capacity that OpenAI chose to redirect to higher-priority work. The underlying video tech was genuinely strong -- physical realism and multi-shot coherence were state of the art when Sora launched -- but the $20-and-up pricing with tight limits never found a viable consumer market, and Disney's $1 billion partnership terminated alongside the product (Disney learned less than an hour before the public announcement). If you were a Sora user, this is your pointer to the actual working 2026 video tools: Veo 3.1 for quality (free tier now), Kling 3.0 for budget-conscious creators, Seedance 2.0 for short-form social workflows inside CapCut, Runway Gen-4.5 for cinematic work.",
 
-  lastReviewedDate: "2026-04-25",
+  lastReviewedDate: "2026-04-26",
   dataSources: [
-    { name: "OpenAI Help Center: Sora discontinuation (T-1 confirmed 2026-04-25)", url: "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation", dateAccessed: "2026-04-25" },
-    { name: "The Decoder: Two-stage Sora shutdown", url: "https://the-decoder.com/openai-sets-two-stage-sora-shutdown-with-app-closing-april-2026-and-api-following-in-september/", dateAccessed: "2026-04-25" },
+    { name: "OpenAI Help Center: Sora discontinuation (T-0 confirmed 2026-04-26)", url: "https://help.openai.com/en/articles/20001152-what-to-know-about-the-sora-discontinuation", dateAccessed: "2026-04-26" },
+    { name: "The Decoder: Two-stage Sora shutdown", url: "https://the-decoder.com/openai-sets-two-stage-sora-shutdown-with-app-closing-april-2026-and-api-following-in-september/", dateAccessed: "2026-04-26" },
+    { name: "Direct curl confirmation -- sora.com + sora.chatgpt.com both return HTTP 403 on 2026-04-26", dateAccessed: "2026-04-26" },
     { name: "OpenAI Help Center: Sora 1 Sunset FAQ", url: "https://help.openai.com/en/articles/20001071-sora-1-sunset-faq", dateAccessed: "2026-04-16" },
     { name: "TechCrunch: Why OpenAI really shut down Sora", url: "https://techcrunch.com/2026/03/29/why-openai-really-shut-down-sora/", dateAccessed: "2026-04-16" },
     { name: "CNN Business: OpenAI is shutting down its Sora video app", url: "https://edition.cnn.com/2026/03/24/tech/openai-sora-video-app-shutting-down", dateAccessed: "2026-04-16" },
@@ -91,6 +92,6 @@ export const sora: ToolReview = {
   ],
   affiliateUrl: "https://sora.com",
   status: "deprecated",
-  metaTitle: "Sora Shutdown (April 2026): Why OpenAI Killed It + Best Alternatives",
-  metaDescription: "Sora is shutting down April 26, 2026. OpenAI announced the discontinuation on March 24 due to compute costs + low adoption. What happened + best alternatives (Veo 3.1, Kling 3.0, Seedance 2.0).",
+  metaTitle: "Sora Shut Down 2026-04-26: Why OpenAI Killed It + Best Alternatives",
+  metaDescription: "Sora consumer app SHUT DOWN April 26 2026 (HTTP 403). OpenAI killed it after compute costs hit $1M/day and MAU collapsed. API survives until Sept 24 2026. Best alternatives: Veo 3.1, Kling 3.0, Runway Gen-4.5.",
 };
