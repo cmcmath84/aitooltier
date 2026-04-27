@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const qwen: ToolReview = {
   slug: "qwen",
   name: "Qwen (Alibaba)",
-  tagline: "Alibaba's open-weights + API family -- Qwen 3.6-Max-Preview (Apr 20 2026 CLOSED-weights #1 on SWE-bench Pro/Terminal-Bench 2.0/SciCode), Qwen3.6-35B-A3B (Apr 16 open-weights coding champion), plus Qwen 3.6-Plus API flagship. Apache 2.0 on most sizes, but the best model is now proprietary",
+  tagline: "Alibaba's open-weights + API family -- Qwen3.6-27B dense (Apr 22 2026 Apache 2.0, beats the 397B MoE flagship on coding from a single consumer GPU), Qwen 3.6-Max-Preview (Apr 20 2026 closed-weights #1 on SWE-bench Pro/Terminal-Bench 2.0/SciCode), Qwen3.6-35B-A3B (Apr 16 open-weights MoE), plus Qwen 3.6-Plus API flagship",
   category: "ai-local-models",
   url: "https://qwen.ai",
 
@@ -51,6 +51,17 @@ export const qwen: ToolReview = {
         "Available via Qwen Studio + Alibaba Cloud Model Studio",
       ],
     },
+    {
+      plan: "Self-hosted (Qwen3.6-27B dense, Apr 22 2026)",
+      price: "$0",
+      features: [
+        "Apache 2.0 open weights -- no commercial restrictions",
+        "DENSE 27B (not MoE) -- all params active, simpler to deploy than sparse-MoE flagships",
+        "Multimodal: text + image + video, 262K native context (extensible to ~1M)",
+        "Runs on a single consumer-tier GPU (RTX 4090 or equivalent at FP16; smaller VRAM at quant)",
+        "BEATS Qwen3.5-397B-A17B MoE flagship on coding while being ~15x smaller in active params",
+      ],
+    },
   ],
 
   pros: [
@@ -69,7 +80,12 @@ export const qwen: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "Qwen 3.6-Max-Preview launched 2026-04-20 as Alibaba's first flagship shipped WITHOUT open weights -- #1 across SWE-bench Pro, Terminal-Bench 2.0, SciCode, QwenClawBench, and QwenWebBench. 256K context, text-only (no vision at launch), APIs compatible with OpenAI + Anthropic SDKs for easy swap-in. Signals Alibaba's pivot toward closed flagships while keeping mid-size models open. If you picked Qwen for the 'best open weights' story, the best model is no longer open",
+      description: "Qwen3.6-27B dropped 2026-04-22 (~48h after Max-Preview) as the new open-weights coding champion. DENSE 27B, NOT MoE -- all params active, simpler to deploy. Apache 2.0 open weights with no commercial restrictions. Multimodal: text + image + video. 262K native context (extensible to ~1M). Verified benchmarks: SWE-bench Verified 77.2%, SWE-bench Pro 53.5%, Terminal-Bench 2.0 59.3% (matches Claude Opus 4.5 exactly), MMLU-Pro 86.2%, GPQA Diamond 87.8%, AIME 2026 94.1%, MMMU-Pro 75.8%. Notably BEATS the Qwen3.5-397B-A17B MoE flagship on coding from a single consumer GPU -- this displaces the 35B-A3B as the open-weights centerpiece for most users. Quants from unsloth + mlx-community shipped same week",
+      source: "qwen.ai/blog?id=qwen3.6-27b, HuggingFace Qwen/Qwen3.6-27B, implicator.ai analysis",
+      date: "2026-04-22",
+    },
+    {
+      description: "Qwen 3.6-Max-Preview launched 2026-04-20 as Alibaba's first flagship shipped WITHOUT open weights -- #1 across SWE-bench Pro, Terminal-Bench 2.0, SciCode, QwenClawBench, and QwenWebBench. 256K context, text-only (no vision at launch), APIs compatible with OpenAI + Anthropic SDKs for easy swap-in. Signals Alibaba's pivot toward closed flagships while keeping mid-size models open. If you picked Qwen for the 'best open weights' story, the best model is no longer open -- but the 3.6-27B Apache 2.0 dense released 48 hours later mostly closes that complaint for non-frontier coding workloads",
       source: "Decrypt, CNTechPost",
       date: "2026-04",
     },
@@ -98,8 +114,11 @@ export const qwen: ToolReview = {
   notFor: "Teams that need the Qwen3-Max flagship self-hostable (it's API-only), or use cases that touch Chinese-government-sensitive topics.",
   verdict: "Qwen is the most complete open-weights family in 2026. Alibaba ships Apache-2.0 weights across text, coding, vision, and reasoning -- every modality has a top-tier entry. Qwen3-Coder-Next is a standout: 3B active params but competitive with Claude Sonnet on coding. The catch is that Qwen3-Max, the absolute flagship, stays closed. If you can live with the PRC content filters and want the best open-weights ecosystem, Qwen is the S-tier pick.",
 
-  lastReviewedDate: "2026-04-21",
+  lastReviewedDate: "2026-04-27",
   dataSources: [
+    { name: "Qwen blog: Qwen3.6-27B dense Apache 2.0 (2026-04-22)", url: "https://qwen.ai/blog?id=qwen3.6-27b", dateAccessed: "2026-04-27" },
+    { name: "HuggingFace Qwen/Qwen3.6-27B", url: "https://huggingface.co/Qwen/Qwen3.6-27B", dateAccessed: "2026-04-27" },
+    { name: "Implicator.ai: Qwen3.6-27B beats 397B MoE on coding", url: "https://www.implicator.ai/alibaba-ships-qwen3-6-27b-an-open-weight-coding-model-that-beats-its-397b-moe/", dateAccessed: "2026-04-27" },
     { name: "Decrypt: Qwen 3.6-Max-Preview launch", url: "https://decrypt.co/364948/alibaba-qwen-3-6-max-preview-most-powerful-model", dateAccessed: "2026-04-21" },
     { name: "CNTechPost: Qwen3.6-Max-Preview release notes", url: "https://cntechpost.com/2026/04/20/alibaba-releases-qwen3-6-max-preview-stronger-instruction-following-capabilities/", dateAccessed: "2026-04-21" },
     { name: "Decrypt: Qwen Code free tier shutdown", url: "https://decrypt.co/364501/alibaba-shuts-down-free-tier-qwen-code", dateAccessed: "2026-04-21" },
@@ -155,6 +174,6 @@ export const qwen: ToolReview = {
     tone: "Helpful, verbose, and notably strong in Chinese and other non-English languages. Qwen is chattier than Mistral or DeepSeek and tends toward structured, multi-section replies.",
     quirks: "Best-in-class at Chinese -- occasionally switches to Mandarin mid-response for technical or cultural topics even when prompted in English. Political refusal patterns mirror other Chinese models on China-specific topics.",
   },
-  metaTitle: "Qwen Review 2026: Qwen 3.6-Max-Preview (Closed), 3.6-35B-A3B (Open)",
-  metaDescription: "Qwen review. Qwen 3.6-Max-Preview (Apr 20 2026, #1 SWE-bench Pro, closed weights), Qwen3.6-35B-A3B (Apr 16 open-weights coding champion). Free tier killed 2026-04-15.",
+  metaTitle: "Qwen Review 2026: Qwen3.6-27B Dense Apache 2.0 + Max-Preview Closed",
+  metaDescription: "Qwen review. Qwen3.6-27B (Apr 22 2026 dense Apache 2.0, beats 397B MoE on coding, single consumer GPU) + Qwen 3.6-Max-Preview (Apr 20 closed-weights #1 SWE-bench Pro) + Qwen 3.6-Plus API. Free tier killed 4/15.",
 };
