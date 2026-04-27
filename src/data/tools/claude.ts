@@ -91,13 +91,26 @@ export const claude: ToolReview = {
       source: "Anthropic release notes",
       date: "2026-04",
     },
+    {
+      description: "Project Deal published 2026-04-25 (anthropic.com/features/project-deal, with TechCrunch + PYMNTS + Legal IT Insider analysis): Anthropic ran a one-week internal marketplace where Claude agents bought, sold, and negotiated on behalf of SF-office employees with no human-in-the-loop. 186 deals closed at ~$4K total volume. Headline finding for Claude API buyers: participants assigned Opus 4.5 got measurably better economic outcomes than those on Haiku 4.5 -- and Haiku-assigned users didn't notice they were losing. Practical takeaway: in agentic workflows where Claude transacts on a user's behalf, model-tier selection has measurable downstream economic cost, not just latency or quality. Treat this as a public signal that Anthropic is moving toward productized agent-as-representative use cases",
+      source: "anthropic.com/features/project-deal, TechCrunch, PYMNTS",
+      date: "2026-04-25",
+    },
+    {
+      description: "Anthropic published an explicit ad-free commitment ('Claude is a space to think', 2026-02-04) -- but the differentiation matters now because OpenAI began rolling ads to ChatGPT Free + Go tiers in Feb 2026 (Plus/Pro/Business/Enterprise still ad-free) and Google AI Overviews already carry ad placements. Anthropic's verbatim language: no sponsored links adjacent to conversations, no advertiser-influenced responses, no third-party product placements. Claude's monetization stays enterprise + subscription only. Practically relevant for B2B / regulated / trust-sensitive deployments (legal, healthcare, finance, research) where ad-incentive contamination in outputs is a deal-breaker",
+      source: "anthropic.com/news/claude-is-a-space-to-think (2026-02-04), openai.com/index/testing-ads-in-chatgpt, Axios",
+      date: "2026-02-04",
+    },
   ],
   bestFor: "Writers, analysts, developers, and anyone who values quality of output over quantity of features. If you care about how good the actual text is, Claude is the best.",
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
   verdict: "Claude is the LLM you pick when quality matters more than features. Opus 4.7 (April 16, 2026) widened the quality lead on writing and made real step-change gains in software engineering and long-context reasoning, while keeping the $5/$25 per 1M token pricing. The new xhigh reasoning level is the biggest practical change for coding agents -- you can finally dial in real reasoning effort short of max without the latency cost. The 1M context window, 3.75MP vision, and MCP support make it the most capable generally-available model from any vendor today. If you're choosing one to pay $20/mo for, it still comes down to: do you want better outputs (Claude) or more features (ChatGPT)?",
 
-  lastReviewedDate: "2026-04-18",
+  lastReviewedDate: "2026-04-27",
   dataSources: [
+    { name: "Anthropic: Project Deal (2026-04-25)", url: "https://www.anthropic.com/features/project-deal", dateAccessed: "2026-04-27" },
+    { name: "TechCrunch: Anthropic created a test marketplace for agent-on-agent commerce", url: "https://techcrunch.com/2026/04/25/anthropic-created-a-test-marketplace-for-agent-on-agent-commerce/", dateAccessed: "2026-04-27" },
+    { name: "Anthropic: Claude is a space to think (ad-free policy, 2026-02-04)", url: "https://www.anthropic.com/news/claude-is-a-space-to-think", dateAccessed: "2026-04-27" },
     { name: "Anthropic: Introducing Claude Opus 4.7", url: "https://www.anthropic.com/news/claude-opus-4-7", dateAccessed: "2026-04-16" },
     { name: "CNBC: Anthropic rolls out Claude Opus 4.7", url: "https://www.cnbc.com/2026/04/16/anthropic-claude-opus-4-7-model-mythos.html", dateAccessed: "2026-04-16" },
     { name: "Axios: Opus 4.7 trails unreleased Mythos", url: "https://www.axios.com/2026/04/16/anthropic-claude-opus-model-mythos", dateAccessed: "2026-04-16" },
