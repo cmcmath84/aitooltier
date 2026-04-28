@@ -29,10 +29,10 @@ export const deepseek: ToolReview = {
       features: ["284B total / 13B active MoE", "1M native context", "Cheapest frontier-class API on market", "Pay-as-you-go, no minimum"],
     },
     {
-      plan: "API -- V4-Pro",
-      price: "$1.74/$3.48",
-      period: "per 1M tokens input/output",
-      features: ["1.6T total / 49B active MoE", "1M native context", "Trails only Gemini 3.1 Pro on world knowledge benchmarks", "Still dramatically cheaper than GPT-5.5 ($5/$30) or Claude Opus 4.7 ($5/$25)"],
+      plan: "API -- V4-Pro (75% PROMO active through 2026-05-31)",
+      price: "$0.435/$0.87",
+      period: "per 1M tokens input/output (promotional)",
+      features: ["1.6T total / 49B active MoE", "1M native context", "Trails only Gemini 3.1 Pro on world knowledge benchmarks", "PROMO PRICING active through 2026-05-31 15:59 UTC -- 75% off list ($1.74/$3.48). Cache-hit input drops to $0.003625/M during promo", "Post-promo pricing reverts to $1.74/$3.48 per 1M -- still 3-10x cheaper than GPT-5.5 or Claude Opus 4.7"],
     },
     {
       plan: "Self-hosted (open-source)",
@@ -65,6 +65,11 @@ export const deepseek: ToolReview = {
       date: "2026-04-24",
     },
     {
+      description: "PROMO: DeepSeek V4-Pro is 75% off through 2026-05-31 15:59 UTC per the official pricing page (api-docs.deepseek.com/quick_start/pricing). Effective rates during promo: $0.435 input / $0.87 output per 1M tokens (vs $1.74 / $3.48 list); cache-hit input drops to $0.003625/M. After 2026-05-31 reverts to standard pricing. Bloomberg framed the move as a 'Chinese price war' against frontier-model rates from OpenAI / Anthropic / Google. Worth locking in agentic-coding workloads now if you're cost-sensitive",
+      source: "DeepSeek pricing docs (api-docs.deepseek.com/quick_start/pricing), Bloomberg",
+      date: "2026-04-27",
+    },
+    {
       description: "Third-party verification (T+3 days post-launch): Artificial Analysis Intelligence Index pegs V4-Pro at 52 (#2 open-weight, behind Kimi K2.6) and V4-Flash at 47. Vals AI: V4 is #1 open-weight on Vibe Code Bench 'and it's not close', plus #1 open-weight on SWE-bench. SWE-bench Verified 80.6% (effectively tied with Claude Opus 4.6's 80.8%). Codeforces 3206 surpasses GPT-5.4 (3168) -- highest competitive-programming score at release. GDPval-AA agentic 1554 leads all open-weight models. BUT LMSYS Chatbot Arena Elo around 1220 places V4-Pro alongside GPT-4o and Claude 4 Sonnet, not at the Opus-class frontier (1280+). Simon Willison's pelican-SVG community test produced visibly weak output from V4-Pro (one wing, oversized body) and concluded V4-Pro is 3-6 months behind US frontier labs at a fraction of the cost. Practical verdict: best-in-class open-weight for code/agents/math, mid-pack for general chat quality, weakest for creative/visual generation. Hallucination rate 94%/96% (Pro/Flash) per AA-Omniscience -- caveat for fact-sensitive workloads",
       source: "Artificial Analysis, Vals AI, Simon Willison, LMSYS Chatbot Arena, Codeforces",
       date: "2026-04-27",
@@ -84,7 +89,7 @@ export const deepseek: ToolReview = {
   notFor: "Anyone working on content that touches geopolitical topics, or teams that need guaranteed uptime and enterprise SLAs. Also not ideal if your primary use case is creative English writing.",
   verdict: "DeepSeek is the real deal when it comes to bang-for-your-buck AI. The reasoning capabilities are legitimately impressive, and the open-source angle gives it a flexibility that closed models can't match. The censorship limitations are a dealbreaker for some use cases, and the writing quality trails behind Claude and GPT-4. But for coding, math, and analytical tasks? It's hard to argue with near-frontier performance at a fraction of the cost.",
 
-  lastReviewedDate: "2026-04-27",
+  lastReviewedDate: "2026-04-28",
   dataSources: [
     { name: "DeepSeek V4 API launch announcement (2026-04-24)", url: "https://api-docs.deepseek.com/news/news260424", dateAccessed: "2026-04-24" },
     { name: "Bloomberg: DeepSeek unveils newest flagship (2026-04-24)", url: "https://www.bloomberg.com/news/articles/2026-04-24/deepseek-unveils-newest-flagship-a-year-after-ai-breakthrough", dateAccessed: "2026-04-24" },
@@ -93,6 +98,7 @@ export const deepseek: ToolReview = {
     { name: "Simon Willison: DeepSeek V4", url: "https://simonwillison.net/2026/Apr/24/deepseek-v4/", dateAccessed: "2026-04-24" },
     { name: "Artificial Analysis: DeepSeek V4 Pro + Flash leading open weights", url: "https://artificialanalysis.ai/articles/deepseek-is-back-among-the-leading-open-weights-models-with-v4-pro-and-v4-flash", dateAccessed: "2026-04-27" },
     { name: "Vals AI: DeepSeek V4-Pro model card", url: "https://www.vals.ai/models/deepseek_deepseek-v4-pro", dateAccessed: "2026-04-27" },
+    { name: "DeepSeek pricing docs (75% V4-Pro promo through 2026-05-31)", url: "https://api-docs.deepseek.com/quick_start/pricing", dateAccessed: "2026-04-28" },
     { name: "DeepSeek official site", url: "https://www.deepseek.com", dateAccessed: "2026-04-24" },
     { name: "Artificial Analysis benchmarks", dateAccessed: "2026-04-24" },
   ],

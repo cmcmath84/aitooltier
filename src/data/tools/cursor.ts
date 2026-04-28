@@ -72,6 +72,16 @@ export const cursor: ToolReview = {
       date: "2026-04",
     },
     {
+      description: "Cursor SDK shipped 2026-04-28 in public beta -- `npm install @cursor/sdk` exposes the same agents that power the Cursor desktop, CLI, and web apps as TypeScript primitives. Run agents locally or on Cursor's cloud infrastructure. Token-based consumption pricing -- no separate seat or tier requirement, billed against your existing plan. Practical impact: Cursor is no longer just an IDE -- you can embed Cursor's agents inside your own products, CI pipelines, or internal tools. Sample projects in a public repo for forking",
+      source: "Cursor changelog: cursor.com/changelog/sdk-release",
+      date: "2026-04-28",
+    },
+    {
+      description: "Cursor 3.2 (2026-04-24) added three agent-window upgrades: (1) `/multitask` runs async subagents in parallel instead of queuing requests, (2) Worktrees in the Agents window let you run isolated tasks in the background across different branches, (3) Multi-root Workspaces -- a single agent session can target a reusable workspace made of multiple folders, enabling cross-repository changes without retargeting the agent each time. If you're on 3.1 without an update, you're missing the parallel-multitask + cross-repo workflow polish",
+      source: "Cursor changelog: cursor.com/changelog",
+      date: "2026-04-24",
+    },
+    {
       description: "Cursor 3.1 (2026-04-13 rollout) added voice dictation and parallel agent improvements on top of the Cursor 3 base -- if you're on 3.0 without an update, you're missing voice + parallel-agent polish",
       source: "Cursor changelog",
       date: "2026-04",
@@ -96,8 +106,10 @@ export const cursor: ToolReview = {
   notFor: "Developers happy with their current editor setup who just want basic autocomplete -- Copilot is still less disruptive for that. Also not for anyone skeptical of Cursor's own coding model; if you want pure frontier-model access for every task, paying Claude or OpenAI directly and using Claude Code is cleaner.",
   verdict: "Cursor 3 + Composer 2 (April 2026) is the release where Cursor stops being an AI-augmented editor and becomes an agent-first dev environment. Composer 2's speed at $0.50/$2.50 per 1M tokens is the real story -- it makes tight iteration loops feel instant in a way frontier models can't, even if the quality is slightly below Opus 4.6. The multi-workspace + cross-platform handoff design assumes you want your agents everywhere; if you don't, it's overkill. The honest read: for developers willing to go all-in on agentic workflows, Cursor 3 is the 2026 default. For everyone else, Claude Code + Copilot is a simpler, less committing stack.",
 
-  lastReviewedDate: "2026-04-25",
+  lastReviewedDate: "2026-04-28",
   dataSources: [
+    { name: "Cursor changelog: SDK release (2026-04-28)", url: "https://cursor.com/changelog/sdk-release", dateAccessed: "2026-04-28" },
+    { name: "Cursor changelog: 3.2 multitask + worktrees + multi-root workspaces", url: "https://cursor.com/changelog", dateAccessed: "2026-04-28" },
     { name: "CNBC: SpaceX says it can buy Cursor later this year for $60B (2026-04-21)", url: "https://www.cnbc.com/2026/04/21/spacex-says-it-can-buy-cursor-later-this-year-for-60-billion-or-pay-10-billion-for-our-work-together.html", dateAccessed: "2026-04-25" },
     { name: "TechCrunch: SpaceX is working with Cursor and has an option to buy", url: "https://techcrunch.com/2026/04/21/spacex-is-working-with-cursor-and-has-an-option-to-buy-the-startup-for-60-billion/", dateAccessed: "2026-04-25" },
     { name: "Cursor blog: Meet the new Cursor (Cursor 3)", url: "https://cursor.com/blog/cursor-3", dateAccessed: "2026-04-16" },
