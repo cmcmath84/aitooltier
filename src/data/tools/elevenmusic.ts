@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const elevenmusic: ToolReview = {
   slug: "elevenmusic",
   name: "ElevenMusic",
-  tagline: "ElevenLabs' iOS music app -- commercially licensed from day one, voice-cloning stack built in, free tier 7 songs/day. Launched 2026-04-02 as the first credible challenger to Suno's mobile dominance",
+  tagline: "ElevenLabs' AI music platform -- commercially licensed from day one, voice-cloning stack built in. Web platform launched 2026-04-29 alongside iOS (originally iOS-only at 2026-04-02 launch). $11M paid to creators via the ElevenLabs voice library, 4,000+ independent artists creating on the platform, and Eleven Album Vol. 2 curated release with Danger Twins, Justin Love, and partner Jonas Group Entertainment",
   category: "ai-music-generators",
   url: "https://elevenlabs.io/music",
 
@@ -24,7 +24,7 @@ export const elevenmusic: ToolReview = {
         "7 songs/day",
         "Full style/mood library",
         "Non-commercial personal use",
-        "iOS only at launch",
+        "iOS + web (web GA 2026-04-29)",
       ],
     },
     {
@@ -57,7 +57,7 @@ export const elevenmusic: ToolReview = {
     "Mobile-first UX is a clean fit for on-the-go content creators -- much snappier than Suno's web interface on a phone",
   ],
   cons: [
-    "iOS only at launch -- Android and web are not available, which rules out most desktop-centric workflows",
+    "Android still missing as of 2026-04-29 -- iOS + web only, which rules out the largest mobile platform globally",
     "Output quality trails Suno v5.5 on complex arrangements -- ElevenLabs' model is newer and still catching up on vocal-instrument layering",
     "The voice-cloning angle requires consent tooling for anything published commercially; this adds workflow friction vs. stock voices",
     "500 tracks/mo on Pro is lower than Suno Premier (2,000/mo) -- heavy producers will hit the ceiling",
@@ -65,7 +65,13 @@ export const elevenmusic: ToolReview = {
   knownIssues: [
     {
       description:
-        "Launched 2026-04-02 on iOS only. Android + web roadmap not yet announced. If you're producing on desktop (most music workflow is), you can't use it; that also means comparison against Suno/Udio is currently apples-to-oranges since those are web-first",
+        "ElevenMusic web platform GA shipped 2026-04-29 (~4 weeks after the 2026-04-02 iOS launch). ElevenLabs disclosed launch metrics: $11M paid to creators via the voice library to date, 4,000+ independent and emerging artists creating on the platform, and Eleven Album Vol. 2 -- a curated label-style release featuring Danger Twins, Justin Love, and other artists. First named industry partner: Kevin Jonas Sr. (Founder & Chairman, Jonas Group Entertainment), who is quoted as a launch collaborator. Web GA closes the desktop-workflow gap that previously made apples-to-apples comparisons against Suno + Udio impossible. Android remains the only major-platform gap",
+      source: "ElevenLabs blog (elevenlabs.io/blog/introducing-elevenmusic, 2026-04-29)",
+      date: "2026-04-29",
+    },
+    {
+      description:
+        "Original iOS launch 2026-04-02. Pricing tiers (Free 7 songs/day, Pro $9.99/mo, Pro Annual $95.90/yr) carried over to web at GA without changes",
       source: "TechCrunch, Music Business Worldwide",
       date: "2026-04",
     },
@@ -83,21 +89,22 @@ export const elevenmusic: ToolReview = {
     },
   ],
   bestFor:
-    "Mobile content creators who value commercial safety over raw track volume, and anyone who wants to put their own voice on an AI-generated track without juggling multiple tools. Also the obvious pick for creators nervous about the Suno-UMG situation.",
+    "Content creators (now desktop AND mobile) who value commercial safety over raw track volume, and anyone who wants to put their own voice on an AI-generated track without juggling multiple tools. The web GA on 2026-04-29 makes it the obvious pick for creators nervous about the Suno-UMG situation who couldn't use the iOS-only version before.",
   notFor:
-    "Desktop producers, anyone needing Android access, and heavy users who need 1,000+ tracks/mo (Suno Premier still wins on raw output). Also not for users prioritizing cutting-edge vocal fidelity -- Suno v5.5 still leads on that.",
+    "Android users (still the biggest platform gap) and heavy users who need 1,000+ tracks/mo (Suno Premier still wins on raw output). Also not for users prioritizing cutting-edge vocal fidelity -- Suno v5.5 still leads on that.",
   verdict:
-    "ElevenMusic is the first serious Suno challenger since Udio, and the commercial-safety angle is the real story. Most creators don't need the 'trained on licensed audio' differentiator today, but the moment a major label moves against an AI-music platform (Suno is the obvious target given UMG impasse), ElevenMusic becomes the low-risk default. For a $9.99/mo Pro tier, it's cheap insurance even if you also keep a Suno account. The iOS-only constraint is temporary; Android + web will ship within quarters based on ElevenLabs' release cadence.",
+    "ElevenMusic is the first serious Suno challenger since Udio, and the commercial-safety angle is the real story. With web GA shipped 2026-04-29, the desktop-workflow gap is closed -- this is now a head-to-head vs. Suno on Suno's home turf, with the licensed-audio differentiator and the voice-cloning angle as the moats. Most creators don't need 'trained on licensed audio' today, but the moment a major label moves against an AI-music platform (Suno is the obvious target given UMG impasse), ElevenMusic becomes the low-risk default. For a $9.99/mo Pro tier, it's cheap insurance even if you also keep a Suno account. Android remains the only major missing platform.",
 
-  lastReviewedDate: "2026-04-21",
+  lastReviewedDate: "2026-04-29",
   dataSources: [
+    { name: "ElevenLabs blog: Introducing ElevenMusic (2026-04-29 web GA)", url: "https://elevenlabs.io/blog/introducing-elevenmusic", dateAccessed: "2026-04-29" },
     { name: "TechCrunch: ElevenLabs releases AI music app", url: "https://techcrunch.com/2026/04/02/elevenlabs-releases-a-new-ai-powered-music-generation-app/", dateAccessed: "2026-04-21" },
     { name: "Music Business Worldwide: ElevenMusic launch", url: "https://www.musicbusinessworldwide.com/elevenlabs-launches-elevenmusic-ios-app-taking-on-suno-and-udio-on-mobile/", dateAccessed: "2026-04-21" },
-    { name: "ElevenLabs official site", url: "https://elevenlabs.io", dateAccessed: "2026-04-21" },
+    { name: "ElevenLabs official site", url: "https://elevenlabs.io", dateAccessed: "2026-04-29" },
   ],
   affiliateUrl: "https://elevenlabs.io/music",
   status: "active",
-  metaTitle: "ElevenMusic Review 2026: ElevenLabs' Suno Competitor on iOS",
+  metaTitle: "ElevenMusic Review 2026: Web GA April 29 + ElevenLabs' Suno Competitor",
   metaDescription:
-    "ElevenMusic review. ElevenLabs' iOS music app (2026-04-02). Commercially licensed, voice cloning built in. 7 songs/day free, $9.99/mo Pro. vs Suno + Udio.",
+    "ElevenMusic review. Web platform GA 2026-04-29 (iOS shipped 2026-04-02). Commercially licensed, voice cloning built in. 7 songs/day free, $9.99/mo Pro. $11M creator payouts, 4K+ artists. vs Suno + Udio.",
 };

@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const magnificAi: ToolReview = {
   slug: "magnific-ai",
   name: "Magnific AI",
-  tagline: "AI image upscaler that hallucinates new detail into low-res images -- not just enlarging, but reimagining",
+  tagline: "AI image upscaler that hallucinates new detail into low-res images -- not just enlarging, but reimagining. Parent company Freepik rebranded to Magnific on 2026-04-28 ($230M ARR, 1M+ paid subs), unifying image, video, upscaling, audio, and collaboration into a single creative platform",
   category: "ai-photo-editing",
   url: "https://magnific.ai",
 
@@ -52,6 +52,11 @@ export const magnificAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "Freepik rebranded to Magnific on 2026-04-28, consolidating image generation, video, upscaling, audio, and collaboration into a single AI creative platform. New launch metrics: $230M ARR, 1M+ paid subscribers, 250+ enterprise clients, 40+ AI models accessible inside the unified workspace. Existing Magnific upscaler pricing tiers (Pro $39, Premium $99, Business $299) are unchanged at announcement; expect plan restructuring as the unified platform rolls out. Domain: magnific.com is now the canonical URL alongside magnific.ai",
+      source: "PRNewswire (Freepik becomes Magnific), Fortune, tech.eu",
+      date: "2026-04-28",
+    },
+    {
       description: "Unused tokens expire monthly with no rollover -- users report feeling pressured to use credits they don't need",
       source: "Product Hunt Reviews",
       date: "2026-01",
@@ -71,15 +76,16 @@ export const magnificAi: ToolReview = {
   notFor: "Photographers looking for clean, faithful upscaling of real photos. Topaz gives you more accurate results for less money. Also not worth it if you only upscale a few images a month.",
   verdict: "Magnific does something no other tool does as well: it invents plausible detail when upscaling, making low-res AI art look stunning at high resolution. The quality ceiling is high. But at $39-299/month with expiring tokens and no free tier, you're paying a premium for a narrow use case. If you're an AI artist producing work regularly, it's worth it. For everyone else, the price-to-use ratio is hard to justify.",
 
-  lastReviewedDate: "2026-04-02",
+  lastReviewedDate: "2026-04-29",
   dataSources: [
-    { name: "Magnific AI official site", dateAccessed: "2026-04-02" },
+    { name: "PRNewswire: Freepik becomes Magnific (2026-04-28)", url: "https://www.prnewswire.com/news-releases/freepik-becomes-magnific-hits-230m-arr-and-introduces-the-no-collar-creative-economy-302755376.html", dateAccessed: "2026-04-29" },
+    { name: "Magnific AI official site", dateAccessed: "2026-04-29" },
     { name: "Product Hunt Reviews", dateAccessed: "2026-04-02" },
     { name: "Reddit r/StableDiffusion", dateAccessed: "2026-04-02" },
     { name: "Trustpilot", dateAccessed: "2026-04-02" },
   ],
   affiliateUrl: "https://magnific.ai",
   status: "active",
-  metaTitle: "Magnific AI Review 2026: Best AI Upscaler for Art (But Pricey)",
-  metaDescription: "Honest Magnific AI review. Stunning AI upscaling with detail hallucination, but $39+/mo with no free tier. Full scores, pricing, known issues. April 2026.",
+  metaTitle: "Magnific AI Review 2026: Freepik Rebrand + Best AI Upscaler",
+  metaDescription: "Magnific AI review post Freepik rebrand (2026-04-28, $230M ARR). Best AI upscaler with detail hallucination. $39+/mo, no free tier. Now part of unified image+video+audio platform. April 2026.",
 };

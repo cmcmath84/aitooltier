@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const adobeFirefly: ToolReview = {
   slug: "adobe-firefly",
   name: "Adobe Firefly",
-  tagline: "Adobe's AI image generator -- commercially safe and baked into Creative Cloud",
+  tagline: "Adobe's AI image generator -- commercially safe and baked into Creative Cloud. Firefly AI Assistant public beta is now LIVE globally (2026-04-27) for Creative Cloud Pro and paid Firefly plans, orchestrating multi-step workflows across Photoshop, Lightroom, Premiere, and Illustrator from a single chat",
   category: "ai-image-generators",
   url: "https://firefly.adobe.com",
 
@@ -66,9 +66,9 @@ export const adobeFirefly: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "Firefly AI Assistant (Adobe's agentic Creative Cloud copilot, successor to Project Moonlight) was announced 2026-04-15. Orchestrates multi-step workflows across Photoshop, Premiere, Lightroom, Express, Illustrator, and Firefly from a single chat interface. Public beta opens 'in coming weeks' -- live demos at Adobe Summit 2026-04-19 through 2026-04-22. Worth a re-review when beta opens to the public",
-      source: "Adobe blog announcement, TechCrunch",
-      date: "2026-04",
+      description: "Firefly AI Assistant public beta SHIPPED 2026-04-27 -- available globally inside Adobe Firefly to Creative Cloud Pro / Firefly Pro / Pro Plus / Premium subscribers. The agent orchestrates multi-step workflows across Photoshop, Lightroom, Premiere, Firefly, Illustrator, and 60+ pro-grade tools from a single chat interface. Eligible users get complimentary daily generative credits during the beta. This is the first Adobe agent to span the full Creative Cloud surface area -- meaningful step beyond Generative Fill in Photoshop only. Standard pricing post-beta not disclosed yet",
+      source: "Adobe blog (blog.adobe.com/en/publish/2026/04/27/firefly-ai-assistant-public-beta), 9to5mac, Digital Trends",
+      date: "2026-04-27",
     },
     {
       description: "Adobe Summit Day 1 keynote (2026-04-20) shipped five agentic-AI product announcements beyond Firefly AI Assistant: (1) Adobe CX Enterprise -- end-to-end agentic AI for customer-lifecycle management; (2) CX Enterprise Coworker -- agentic AI coworker orchestrating CX workflows; (3) Brand Intelligence + GenStudio expansion -- agentic content supply chain; (4) Brand Visibility Solution -- tooling to help brands stay accurate and cited in AI search / chatbot answers (direct response to GEO/AEO search); (5) expanded partner ecosystem across tech + agencies + SIs. These are CX / enterprise-marketing products, not creative-suite features -- included here as context because Firefly is now part of a much broader agentic stack",
@@ -90,16 +90,17 @@ export const adobeFirefly: ToolReview = {
   notFor: "Anyone looking for the best standalone AI image generator. The quality doesn't justify the price on its own -- the value is in the Adobe integration.",
   verdict: "Firefly's real strength isn't as a standalone generator -- it's as a feature inside Photoshop. Generative Fill is a game-changer for photo editing. But if you're comparing it to Midjourney or DALL-E purely on image generation quality, it falls short. Worth it if you already pay for Creative Cloud. Hard to justify otherwise.",
 
-  lastReviewedDate: "2026-04-20",
+  lastReviewedDate: "2026-04-29",
   dataSources: [
+    { name: "Adobe: Firefly AI Assistant public beta (2026-04-27)", url: "https://blog.adobe.com/en/publish/2026/04/27/firefly-ai-assistant-public-beta", dateAccessed: "2026-04-29" },
     { name: "Adobe: 2026 Creative Cloud pricing + plan changes", url: "https://helpx.adobe.com/account/individual/subscriptions-and-plans/plan-types-and-eligibility/changes-to-individual-plan.html", dateAccessed: "2026-04-17" },
-    { name: "Adobe Firefly official site", url: "https://firefly.adobe.com", dateAccessed: "2026-04-17" },
+    { name: "Adobe Firefly official site", url: "https://firefly.adobe.com", dateAccessed: "2026-04-29" },
     { name: "G2 Reviews", dateAccessed: "2026-04-17" },
     { name: "Adobe Community Forums", dateAccessed: "2026-04-17" },
     { name: "Hands-on testing", dateAccessed: "2026-04-17" },
   ],
   affiliateUrl: "https://firefly.adobe.com",
   status: "active",
-  metaTitle: "Adobe Firefly Review 2026: Multi-Model Picker + Creative Cloud Pricing Hike",
-  metaDescription: "Adobe Firefly review. 2026 multi-model picker (GPT Image, Imagen, Veo, Flux inside Firefly). CC Pro $69.99/mo, Photography $21.99, Premium $10.99. Scores + pricing changes.",
+  metaTitle: "Adobe Firefly Review 2026: AI Assistant Beta LIVE + Multi-Model Picker",
+  metaDescription: "Adobe Firefly review. Firefly AI Assistant public beta LIVE 2026-04-27 across Photoshop, Lightroom, Premiere. Multi-model picker (GPT Image, Imagen, Veo, Flux). CC Pro $69.99/mo, Photography $21.99, Premium $10.99.",
 };
