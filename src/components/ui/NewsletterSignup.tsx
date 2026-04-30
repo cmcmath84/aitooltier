@@ -2,29 +2,38 @@
 
 import { useState } from "react";
 
-// When NEXT_PUBLIC_BEEHIIV_EMBED_URL is set in Vercel env vars, we render
-// Beehiiv's embedded subscription form (real newsletter backend).
-// Until that is set, we fall back to a localStorage-only form so the
-// footer widget still looks functional during the signup setup window.
-const BEEHIIV_EMBED_URL = process.env.NEXT_PUBLIC_BEEHIIV_EMBED_URL;
+// Beehiiv publication slug -- aitooltier.beehiiv.com (confirmed live 2026-04-29).
+// Pub ID for future API integration: pub_d5960df1-02f5-4f09-a68e-d130c6ba1b01
+// Tonight's flow: brand-styled form on aitooltier.com -> open Beehiiv
+// hosted subscribe page in new tab with email prefilled. Beehiiv handles
+// double opt-in + Cloudflare bot protection on their side.
+// TODO (post API-key unlock): swap to authenticated POST to
+// https://api.beehiiv.com/v2/publications/pub_d5960df1.../subscriptions
+// via a Next.js Route Handler that keeps BEEHIIV_API_KEY server-side.
+const BEEHIIV_HOSTED_SUBSCRIBE_URL = "https://aitooltier.beehiiv.com";
 
 export default function NewsletterSignup() {
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
-  async function handleSubmit(e: React.FormEvent) {
+  function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!email) return;
-    // Fallback path: persist to localStorage until the Beehiiv embed URL
-    // env var is configured in Vercel. Users who subscribe in this window
-    // are not lost -- we can export localStorage entries and import to
-    // Beehiiv once the publication is set up.
+
     try {
+      // Failsafe capture: also persist locally so we have a record
+      // even if the user closes the Beehiiv tab without confirming.
       const existing = JSON.parse(
         localStorage.getItem("newsletter_signups") || "[]"
       );
       existing.push({ email, date: new Date().toISOString() });
       localStorage.setItem("newsletter_signups", JSON.stringify(existing));
+
+      // Hand off to Beehiiv hosted page with email prefilled.
+      // Opens in new tab so the user doesn't lose their place on aitooltier.com.
+      const subscribeUrl = `${BEEHIIV_HOSTED_SUBSCRIBE_URL}?email=${encodeURIComponent(email)}`;
+      window.open(subscribeUrl, "_blank", "noopener,noreferrer");
+
       setStatus("success");
       setEmail("");
     } catch {
@@ -32,48 +41,19 @@ export default function NewsletterSignup() {
     }
   }
 
-  // Preferred path: Beehiiv iframe embed.
-  if (BEEHIIV_EMBED_URL) {
-    return (
-      <div className="rounded-lg border border-primary/20 bg-blue-50 p-6">
-        <h3 className="text-lg font-semibold text-foreground">
-          The Tier List Tuesday
-        </h3>
-        <p className="mt-1 text-sm text-muted-foreground">
-          Weekly newsletter: tier movers, new entrants, and the VS of the
-          week. Built from our daily AI-tool sweeps. No spam, unsubscribe
-          anytime.
-        </p>
-        <iframe
-          src={BEEHIIV_EMBED_URL}
-          title="Subscribe to The Tier List Tuesday"
-          width="100%"
-          height="72"
-          frameBorder={0}
-          scrolling="no"
-          style={{
-            borderRadius: 4,
-            backgroundColor: "transparent",
-            marginTop: 12,
-          }}
-        />
-      </div>
-    );
-  }
-
-  // Fallback: localStorage form (used until Beehiiv env var is set).
   return (
     <div className="rounded-lg border border-primary/20 bg-blue-50 p-6">
       <h3 className="text-lg font-semibold text-foreground">
-        Stay in the loop
+        The Tier List Tuesday
       </h3>
       <p className="mt-1 text-sm text-muted-foreground">
-        Get notified when we add new tools, update scores, or spot pricing
-        changes. No spam, unsubscribe anytime.
+        Weekly newsletter: tier movers, new entrants, and the VS of the week.
+        Built from our daily AI-tool sweeps. No spam, unsubscribe anytime.
       </p>
       {status === "success" ? (
         <p className="mt-3 text-sm font-medium text-emerald-700">
-          You&apos;re on the list. We&apos;ll be in touch.
+          Almost there -- confirm in the tab that just opened, then check your
+          inbox.
         </p>
       ) : (
         <form onSubmit={handleSubmit} className="mt-3 flex gap-2">
