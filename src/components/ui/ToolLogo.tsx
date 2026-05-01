@@ -174,13 +174,15 @@ const logoMap: Record<string, string> = {
 interface ToolLogoProps {
   slug: string;
   name: string;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl" | "2xl";
 }
 
 const sizes = {
   sm: 24,
   md: 32,
   lg: 40,
+  xl: 80,
+  "2xl": 112,
 };
 
 export default function ToolLogo({ slug, name, size = "md" }: ToolLogoProps) {

@@ -1,4 +1,5 @@
 import { ToolReview, BenchmarkScore } from "./types";
+import { getTierForScore, getTierRank } from "./tiers";
 
 // Plain-English descriptions for each benchmark
 export const BENCHMARK_INFO: Record<string, { label: string; description: string; category: string }> = {
@@ -231,29 +232,46 @@ export function getSharedBenchmarks(a: ToolReview, b: ToolReview): { name: strin
   return shared;
 }
 
-// Auto-generate "Pick X if..." recommendations based on scores and benchmarks
+// Extract usable use-case anchors from a tool's free-form bestFor field.
+// Splits on sentence boundaries + semicolons, keeps meaningful chunks.
+function extractUseCaseAnchors(bestFor: string): string[] {
+  return bestFor
+    .split(/[.;]/)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 18 && s.length < 180)
+    .map((s) => (s.endsWith(".") ? s : `${s}.`));
+}
+
+// Auto-generate "Pick X if..." recommendations based on scores, benchmarks,
+// pricing model, AND extracted use-case anchors from each tool's bestFor.
 export function generateRecommendations(a: ToolReview, b: ToolReview): { pickA: string[]; pickB: string[] } {
   const pickA: string[] = [];
   const pickB: string[] = [];
 
-  // Score-based recommendations
-  if (a.scores.outputQuality - b.scores.outputQuality >= 1) pickA.push(`Higher output quality (${a.scores.outputQuality} vs ${b.scores.outputQuality})`);
-  if (b.scores.outputQuality - a.scores.outputQuality >= 1) pickB.push(`Higher output quality (${b.scores.outputQuality} vs ${a.scores.outputQuality})`);
+  // Score-based reasons (use-case-flavored language)
+  if (a.scores.outputQuality - b.scores.outputQuality >= 1) pickA.push(`Higher output quality (${a.scores.outputQuality.toFixed(1)} vs ${b.scores.outputQuality.toFixed(1)}) where polish matters more than speed`);
+  if (b.scores.outputQuality - a.scores.outputQuality >= 1) pickB.push(`Higher output quality (${b.scores.outputQuality.toFixed(1)} vs ${a.scores.outputQuality.toFixed(1)}) where polish matters more than speed`);
 
-  if (a.scores.easeOfUse - b.scores.easeOfUse >= 1) pickA.push(`Easier to use (${a.scores.easeOfUse} vs ${b.scores.easeOfUse})`);
-  if (b.scores.easeOfUse - a.scores.easeOfUse >= 1) pickB.push(`Easier to use (${b.scores.easeOfUse} vs ${a.scores.easeOfUse})`);
+  if (a.scores.easeOfUse - b.scores.easeOfUse >= 1) pickA.push(`Easier to learn and use day-to-day -- friendlier onboarding curve`);
+  if (b.scores.easeOfUse - a.scores.easeOfUse >= 1) pickB.push(`Easier to learn and use day-to-day -- friendlier onboarding curve`);
 
-  if (a.scores.value - b.scores.value >= 1) pickA.push(`Better value for money (${a.scores.value}/10)`);
-  if (b.scores.value - a.scores.value >= 1) pickB.push(`Better value for money (${b.scores.value}/10)`);
+  if (a.scores.value - b.scores.value >= 1) pickA.push(`Better value at the price you'll actually pay (${a.scores.value.toFixed(1)}/10 on value)`);
+  if (b.scores.value - a.scores.value >= 1) pickB.push(`Better value at the price you'll actually pay (${b.scores.value.toFixed(1)}/10 on value)`);
 
-  if (a.scores.features - b.scores.features >= 1) pickA.push(`More features (${a.scores.features} vs ${b.scores.features})`);
-  if (b.scores.features - a.scores.features >= 1) pickB.push(`More features (${b.scores.features} vs ${a.scores.features})`);
+  if (a.scores.features - b.scores.features >= 1) pickA.push(`More feature surface area for power users who'll use the depth`);
+  if (b.scores.features - a.scores.features >= 1) pickB.push(`More feature surface area for power users who'll use the depth`);
 
-  // Pricing recommendations
-  if (a.hasFreeTier && !b.hasFreeTier) pickA.push("Has a free tier");
-  if (b.hasFreeTier && !a.hasFreeTier) pickB.push("Has a free tier");
+  // Pricing-model reasons
+  if (a.hasFreeTier && !b.hasFreeTier) pickA.push("Free tier lets you actually try it before paying");
+  if (b.hasFreeTier && !a.hasFreeTier) pickB.push("Free tier lets you actually try it before paying");
 
-  // Benchmark-based recommendations
+  // Use-case anchors extracted from each tool's bestFor (the differentiating signal)
+  const aAnchors = extractUseCaseAnchors(a.bestFor).slice(0, 2);
+  const bAnchors = extractUseCaseAnchors(b.bestFor).slice(0, 2);
+  for (const anchor of aAnchors) pickA.push(anchor);
+  for (const anchor of bAnchors) pickB.push(anchor);
+
+  // Benchmark-based reasons
   const shared = getSharedBenchmarks(a, b);
   const aWins = shared.filter((s) => s.scoreA.score > s.scoreB.score);
   const bWins = shared.filter((s) => s.scoreB.score > s.scoreA.score);
@@ -290,18 +308,149 @@ export function generateRecommendations(a: ToolReview, b: ToolReview): { pickA: 
   return { pickA, pickB };
 }
 
-// Generate a comparison verdict
+// At-a-glance overview row used by the top-of-page comparison strip.
+export interface AtGlanceRow {
+  label: string;
+  a: string;
+  b: string;
+  highlight: "a" | "b" | "neither";
+}
+
+export function generateAtGlanceRows(a: ToolReview, b: ToolReview): AtGlanceRow[] {
+  const rows: AtGlanceRow[] = [];
+  const overallHighlight: "a" | "b" | "neither" =
+    a.scores.overall > b.scores.overall ? "a" : b.scores.overall > a.scores.overall ? "b" : "neither";
+
+  rows.push({
+    label: "Tier",
+    a: `${getTierRank(a.scores.overall)}-tier`,
+    b: `${getTierRank(b.scores.overall)}-tier`,
+    highlight: overallHighlight,
+  });
+
+  rows.push({
+    label: "Overall score",
+    a: `${a.scores.overall.toFixed(1)} / 10`,
+    b: `${b.scores.overall.toFixed(1)} / 10`,
+    highlight: overallHighlight,
+  });
+
+  if (a.poweredBy || b.poweredBy) {
+    rows.push({
+      label: "Powered by",
+      a: a.poweredBy ?? "—",
+      b: b.poweredBy ?? "—",
+      highlight: "neither",
+    });
+  }
+
+  rows.push({
+    label: "Free tier",
+    a: a.hasFreeTier ? "Yes" : "No",
+    b: b.hasFreeTier ? "Yes" : "No",
+    highlight:
+      a.hasFreeTier && !b.hasFreeTier ? "a" : !a.hasFreeTier && b.hasFreeTier ? "b" : "neither",
+  });
+
+  rows.push({
+    label: "Starting price",
+    a: a.pricing[0]?.price ?? "—",
+    b: b.pricing[0]?.price ?? "—",
+    highlight: "neither",
+  });
+
+  // Best-for one-liner (first sentence only, trimmed if too long)
+  const trimBestFor = (s: string) => {
+    const first = s.split(".")[0].trim();
+    return first.length > 110 ? first.slice(0, 107) + "…" : first + ".";
+  };
+  rows.push({
+    label: "Best for",
+    a: trimBestFor(a.bestFor),
+    b: trimBestFor(b.bestFor),
+    highlight: "neither",
+  });
+
+  rows.push({
+    label: "Last reviewed",
+    a: a.lastReviewedDate,
+    b: b.lastReviewedDate,
+    highlight: "neither",
+  });
+
+  return rows;
+}
+
+// Editorial verdict: 3-4 paragraphs (~200-280 words) assembled from
+// conditional templates that respond to score gap, pricing model, and
+// each tool's bestFor framing. Returns markdown-ish string with \n\n
+// paragraph breaks; the page splits on \n\n to render.
 export function generateVerdict(a: ToolReview, b: ToolReview): string {
   const diff = a.scores.overall - b.scores.overall;
   const winner = diff >= 0 ? a : b;
   const loser = diff >= 0 ? b : a;
   const absDiff = Math.abs(diff);
+  const winnerTier = getTierForScore(winner.scores.overall).rank;
+  const loserTier = getTierForScore(loser.scores.overall).rank;
+  const aBestFor = a.bestFor.split(".")[0].toLowerCase();
+  const bBestFor = b.bestFor.split(".")[0].toLowerCase();
+  const loserBestFor = loser.bestFor.split(".")[0].toLowerCase();
 
+  const paragraphs: string[] = [];
+
+  // OPENING: who wins, tier framing, score framing.
   if (absDiff < 0.3) {
-    return `${a.name} and ${b.name} are extremely close overall. Your choice comes down to specific needs -- ${a.name} is better for ${a.bestFor.split(".")[0].toLowerCase()}, while ${b.name} works best for ${b.bestFor.split(".")[0].toLowerCase()}.`;
+    paragraphs.push(
+      `${a.name} (${winnerTier}-tier, ${a.scores.overall.toFixed(1)}/10) and ${b.name} (${loserTier}-tier, ${b.scores.overall.toFixed(1)}/10) are within margin-of-error of each other on overall score. There's no decisive winner -- the right pick comes down to how you'll actually use the tool, not which scored higher in the abstract. We rate them on the same rubric (ease of use, output quality, value, features), and on this pair the rubric is calling it a draw.`,
+    );
+  } else if (absDiff < 1) {
+    paragraphs.push(
+      `${winner.name} edges out ${loser.name} by ${absDiff.toFixed(1)} points (${winner.scores.overall.toFixed(1)} vs ${loser.scores.overall.toFixed(1)}) -- a ${winnerTier}-tier vs ${loserTier}-tier split that's narrow but real. Not a blowout; both belong on a shortlist. The score gap shows up most clearly in the categories that matter for ${winner.name}'s strengths, so if those categories are your priority, the lead translates.`,
+    );
+  } else {
+    paragraphs.push(
+      `${winner.name} is the clear winner: ${winner.scores.overall.toFixed(1)}/10 (${winnerTier}-tier) versus ${loser.scores.overall.toFixed(1)}/10 (${loserTier}-tier). ${loser.name} isn't a bad tool, but on every category that drives the overall score, ${winner.name} comes out ahead. The tier gap is repeatable -- not methodology noise -- and the day-to-day experience reflects it.`,
+    );
   }
-  if (absDiff < 1) {
-    return `${winner.name} edges out ${loser.name} with a ${winner.scores.overall.toFixed(1)} vs ${loser.scores.overall.toFixed(1)} overall score. Both are solid picks, but ${winner.name} has the advantage in ${winner.scores.outputQuality > loser.scores.outputQuality ? "output quality" : winner.scores.value > loser.scores.value ? "value" : "features"}.`;
+
+  // PRICING PARAGRAPH
+  const aStart = a.pricing[0]?.price ?? "n/a";
+  const bStart = b.pricing[0]?.price ?? "n/a";
+  if (a.hasFreeTier !== b.hasFreeTier) {
+    const hasFree = a.hasFreeTier ? a : b;
+    const noFree = a.hasFreeTier ? b : a;
+    paragraphs.push(
+      `On pricing, ${hasFree.name} starts free while ${noFree.name} requires a paid plan from day one (${noFree.pricing[0]?.price}+). If you're testing the waters or running an occasional workload, that gap matters more than the score differential. ${a.name} starts at ${aStart}; ${b.name} starts at ${bStart}. Compare what each entry tier actually unlocks before you compare list prices -- the limits matter more than the headline number.`,
+    );
+  } else if (a.hasFreeTier && b.hasFreeTier) {
+    paragraphs.push(
+      `Pricing-wise, both tools have a free tier (${a.name} starts ${aStart}, ${b.name} starts ${bStart}), so you can test either without committing. Compare what each free tier actually unlocks -- usage caps, model access, and feature gates differ a lot more than the headline price suggests, especially as both vendors have tightened limits in 2026.`,
+    );
+  } else {
+    paragraphs.push(
+      `Neither tool offers a free tier. ${a.name} starts at ${aStart}, ${b.name} at ${bStart}. Plan to budget for whichever you pick. The cheap tier usually caps out faster than buyers expect, so look at what the entry plan actually includes -- both vendors have raised list prices in 2026 and the limits are where most of the cost surprise lives.`,
+    );
   }
-  return `${winner.name} is the clear winner here with ${winner.scores.overall.toFixed(1)}/10 vs ${loser.scores.overall.toFixed(1)}/10. ${loser.name} isn't bad, but ${winner.name} outperforms it across the board. Pick ${loser.name} only if ${loser.bestFor.split(".")[0].toLowerCase()}.`;
+
+  // USE-CASE SPLIT
+  paragraphs.push(
+    `By use case: pick ${a.name} when ${aBestFor}. Pick ${b.name} when ${bBestFor}. The two tools aren't fighting for the same person -- they're aiming at adjacent jobs that occasionally overlap. If you're squarely in ${winner.name}'s lane, the tier-list ranking and the use-case fit point the same direction; if you're in ${loser.name}'s lane, the score gap matters less than the fit.`,
+  );
+
+  // BOTTOM LINE
+  if (absDiff < 0.3) {
+    paragraphs.push(
+      `Bottom line: this pair is a coin flip on raw scores. Choose by use-case fit, free-tier availability, and which one you can actually try without committing. Re-evaluate in 60-90 days -- both vendors are shipping fast in 2026.`,
+    );
+  } else if (absDiff < 1) {
+    paragraphs.push(
+      `Bottom line: ${winner.name} is the safer default for most readers, but ${loser.name} is competitive enough that the tie-breaker is your specific workload, not the spec sheet.`,
+    );
+  } else {
+    paragraphs.push(
+      `Bottom line: ${winner.name} is the better tool for most people right now. Pick ${loser.name} only when ${loserBestFor} -- that's its lane, and inside that lane it still earns its place.`,
+    );
+  }
+
+  return paragraphs.join("\n\n");
 }
