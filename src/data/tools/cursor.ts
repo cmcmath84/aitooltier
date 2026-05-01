@@ -62,6 +62,11 @@ export const cursor: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-04-30 + 2026-05-01): Cursor Security Review shipped in beta on Teams + Enterprise plans. Two security agents: Security Reviewer scans every PR for security vulnerabilities, auth regressions, and privacy/data-handling risks; Vulnerability Scanner runs scheduled scans of the codebase for known vulnerabilities and outdated dependencies. MCP-customizable -- plug in your existing SAST / SCA / secrets scanners. Draws from your existing usage pool (no separate billing line). On 2026-05-01 Team Marketplace updates landed: admins can configure plugin distribution as Default Off (users opt in), Default On (auto-installed but opt-out), or Required (cannot be uninstalled), all without needing a repo connection first. Pairs with the SDK + 3.2 multitask shipment to make Cursor a cleaner enterprise-IT proposition",
+      source: "Cursor changelog (cursor.com/changelog) -- 2026-04-30 + 2026-05-01 entries",
+      date: "2026-05-01",
+    },
+    {
       description: "OWNERSHIP-CHANGE WATCH (2026-04-21): SpaceX disclosed it has the option to acquire Anysphere (Cursor's parent) for $60B later in 2026, OR pay $10B in lieu for joint compute work via Colossus (~1M H100-equivalent). Cursor cited being 'bottlenecked by compute' as the reason. Closing window pegged to SpaceX's June 2026 IPO. Not a closed deal -- it's an option -- but a meaningful tool-risk signal for buyers planning multi-year Cursor commitments. Earlier in April Cursor was also in talks to raise $2B+ at a $50B valuation; whether the SpaceX option supersedes or coexists with that round is unclear",
       source: "CNBC, TechCrunch, Bloomberg, Engadget",
       date: "2026-04-21",

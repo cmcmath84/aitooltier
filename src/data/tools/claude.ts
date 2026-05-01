@@ -62,6 +62,11 @@ export const claude: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-04-28): Anthropic launched Claude for Creative Work with 9 first-party connectors -- Ableton (Live + Push), Adobe Creative Cloud (Photoshop / Premiere / Express via 'Adobe for creativity'), Affinity by Canva, Autodesk Fusion, Blender, Resolume Arena, Resolume Wire, SketchUp, and Splice. The Blender connector is built on MCP and is explicitly accessible to other LLMs -- not Claude-only. Educational pilots also announced with RISD, Ringling, and Goldsmiths. Tier requirements not specified at launch. This is Anthropic's biggest creative-pro market push to date and pairs naturally with the Opus 4.7 launch on 4/16 (vision quality required for visual workflows)",
+      source: "Anthropic news (anthropic.com/news/claude-for-creative-work), 9to5mac, Adobe blog",
+      date: "2026-04-28",
+    },
+    {
       description: "POLICY (2026-04-04, enforced 2026-04-10): Anthropic excluded third-party agent harnesses (OpenClaw cited specifically) from Claude Pro and Max flat-rate plans. Routing Pro/Max via OpenClaw, Claude-on-Cline, or similar frameworks now triggers separate pay-as-you-go 'extra usage' billing rather than the flat plan rate. ~135K OpenClaw instances were impacted at the time of the change. Anthropic temporarily banned OpenClaw's creator from the platform on 2026-04-10 and stated subscriptions 'weren't built to handle the usage patterns' of harnesses that 'run continuous reasoning loops, automatically repeat or retry tasks, and tie into a lot of other third-party tools.' If you run agentic workloads on Claude, expect the API path to be the only viable model going forward",
       source: "TechCrunch (techcrunch.com/2026/04/10/anthropic-temporarily-banned-openclaws-creator-from-accessing-claude/), The Next Web, PYMNTS",
       date: "2026-04-10",

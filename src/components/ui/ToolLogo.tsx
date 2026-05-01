@@ -167,6 +167,7 @@ const logoMap: Record<string, string> = {
   crewai: "/logos/crewai.png",
   langgraph: "/logos/langgraph.png",
   "microsoft-agent-framework": "/logos/microsoft.png",
+  "microsoft-agent-365": "/logos/microsoft.png",
   "agentforce-vibes": "/logos/salesforce.png",
   "augment-intent": "/logos/augment.png",
 };

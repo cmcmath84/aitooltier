@@ -56,6 +56,11 @@ export const lovable: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "SECURITY (April 2026): Lovable disclosed a Broken Object-Level Authorization (BOLA) vulnerability that exposed source code + AI chat history of public projects created between 2026-02-03 and 2026-04-20 to any other Lovable user. Private projects and Lovable Cloud were unaffected. A security researcher reported the issue on 2026-04-20; Lovable shipped a patch within 2 hours. Background: HackerOne reports filed starting 2026-02-22 were incorrectly closed without escalation due to outdated internal documentation, contributing to a ~57-day delay until public disclosure. If you used Lovable Free or Starter to build a project in that window and exported / deployed it, audit the project for any data that was incidentally exposed",
+      source: "Lovable blog (lovable.dev/blog/our-response-to-the-april-2026-incident), The Register, The Next Web",
+      date: "2026-04-22",
+    },
+    {
       description: "Complex state management often breaks during iterative edits -- the AI loses track of component relationships",
       source: "Reddit r/webdev",
       date: "2026-03",
@@ -70,7 +75,7 @@ export const lovable: ToolReview = {
   notFor: "Experienced developers building production applications with complex business logic. If you need custom backends, specific architectures, or clean maintainable code, you'll outgrow Lovable quickly.",
   verdict: "Lovable is genuinely magical for its target audience. Watching an app materialize from a text description is still impressive, and the 8M user base proves there's massive demand for this. But there's a ceiling, and you'll hit it faster than the marketing suggests. Simple CRUD apps and landing pages? Fantastic. Anything with complex state, custom business logic, or specific architectural needs? The generated code becomes a liability. Use it for prototypes and MVPs, but plan to rewrite if the project takes off.",
 
-  lastReviewedDate: "2026-03-31",
+  lastReviewedDate: "2026-05-01",
   dataSources: [
     { name: "Lovable official site", dateAccessed: "2026-03-31" },
     { name: "Reddit r/webdev", dateAccessed: "2026-03-31" },

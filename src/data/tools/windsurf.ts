@@ -60,6 +60,11 @@ export const windsurf: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "SECURITY (2026-04-15): CVE-2026-30615 -- a prompt-injection vulnerability in Windsurf 1.9544.26 allows remote attackers to execute arbitrary commands on a victim system. Severity 8.0 (HIGH) per CISA-ADP scoring; NIST has not yet enriched the entry. Update past 1.9544.26 to a newer build. Caveat: NVD publicly notes 'this CVE record is not being prioritized for NVD enrichment efforts due to resource or other concerns,' so the canonical severity score comes from CISA-ADP rather than NIST -- but the underlying vulnerability is real and the recommendation to update is unchanged",
+      source: "NVD (nvd.nist.gov/vuln/detail/CVE-2026-30615), CISA-ADP",
+      date: "2026-04-15",
+    },
+    {
       description: "Windsurf Pro was raised from $15/mo to $20/mo in March 2026, and the entire credit system shifted from a monthly allocation to daily/weekly quotas. If your old monthly budget assumed evenly-distributable credits, the new quota cadence may surprise you in burst-usage weeks",
       source: "Windsurf pricing page",
       date: "2026-03",
@@ -84,7 +89,7 @@ export const windsurf: ToolReview = {
   notFor: "Developers who just want great autocomplete and inline chat with BYO-API-key flexibility -- Cursor 3 has the deeper model catalog and Pro+ tier. Also not for teams with strict data-residency needs that preclude Cognition's cloud agents.",
   verdict: "Windsurf 2.0 is the Cognition-era reboot of the product, and it's a legitimate direct competitor to Cursor 3 rather than a cheaper alternative. The Agent Command Center + embedded Devin cloud agent is a bet that developers want a unified IDE for both supervised (you in the loop) and autonomous (agent in background) work. If that bet plays out, Windsurf becomes the full-stack answer Cursor 3 is chasing from the opposite direction. If it doesn't, the fragmentation risk (two agent surfaces competing for your attention) could slow it down. The honest read: for agent-heavy workflows, Windsurf 2.0 is now a first-tier choice alongside Cursor 3. For autocomplete-and-chat minimalists, Cursor 3 or Copilot remains simpler.",
 
-  lastReviewedDate: "2026-04-17",
+  lastReviewedDate: "2026-05-01",
   dataSources: [
     { name: "Cognition: Introducing Devin in Windsurf", url: "https://cognition.ai/blog/devin-in-windsurf", dateAccessed: "2026-04-17" },
     { name: "TestingCatalog: Windsurf 2.0 adds Devin and Agent Command Center", url: "https://www.testingcatalog.com/windsurf-2-0-adds-devin-and-agent-command-center/", dateAccessed: "2026-04-17" },

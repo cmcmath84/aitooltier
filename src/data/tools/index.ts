@@ -173,6 +173,7 @@ import { paperclip } from "./paperclip";
 import { crewai } from "./crewai";
 import { langgraph } from "./langgraph";
 import { microsoftAgentFramework } from "./microsoft-agent-framework";
+import { microsoftAgent365 } from "./microsoft-agent-365";
 import { agentforceVibes } from "./agentforce-vibes";
 import { augmentIntent } from "./augment-intent";
 
@@ -328,6 +329,7 @@ export const tools: ToolReview[] = [
   crewai,
   langgraph,
   microsoftAgentFramework,
+  microsoftAgent365,
   agentforceVibes,
   augmentIntent,
 ];
