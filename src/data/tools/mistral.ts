@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const mistral: ToolReview = {
   slug: "mistral",
   name: "Mistral AI",
-  tagline: "European AI lab with open and commercial models -- Mistral Small 4 (Mar 2026, 119B MoE Apache 2.0 unified model), Medium 3 (Apr 9 2026), and Voxtral TTS (open-source speech, Mar 2026)",
+  tagline: "European AI lab with open and commercial models -- Mistral Medium 3.5 SHIPPED 2026-04-29 (128B dense, 256k context, 77.6% SWE-Bench Verified) plus Vibe Remote Agents + Le Chat Work Mode. Earlier 2026 line: Small 4 (Mar 2026 119B MoE Apache 2.0 unified), Medium 3 (Apr 9 2026), Voxtral TTS (Mar 2026 open-source speech)",
   category: "ai-local-models",
   url: "https://mistral.ai",
 
@@ -37,13 +37,23 @@ export const mistral: ToolReview = {
       ],
     },
     {
-      plan: "API (Mistral Medium 3)",
+      plan: "API (Mistral Medium 3.5)",
+      price: "$1.5 / $7.5",
+      period: "per 1M tokens (input/output)",
+      features: [
+        "Public preview SHIPPED 2026-04-29 -- Mistral's first 'flagship merged' model",
+        "128B dense, 256k context, 77.6% SWE-Bench Verified",
+        "Underlies new Vibe Remote Agents + Le Chat Work Mode",
+      ],
+    },
+    {
+      plan: "API (Mistral Medium 3 -- predecessor)",
       price: "$1",
       period: "per 1M tokens",
       features: [
         "Launched April 9, 2026",
         "EU AI Act compliance metadata",
-        "Balanced price/performance",
+        "Balanced price/performance, superseded by 3.5 for new workloads",
       ],
     },
     {
@@ -68,10 +78,11 @@ export const mistral: ToolReview = {
   ],
 
   pros: [
-    "Mistral Small 4 (March 2026) unifies the previously-split Small/Magistral/Pixtral/Devstral lines into one 119B MoE Apache-2.0 model -- easier to deploy, same quality across the board",
-    "Voxtral TTS (March 2026) fills the one gap in Mistral's lineup -- a competent open-source speech model that actually runs on consumer hardware, a real alternative to ElevenLabs for developers who care about self-hosting",
-    "Mistral Medium 3 (April 9 2026) ships with EU AI Act compliance metadata baked in -- the first frontier model to do this, which matters increasingly for European enterprise buyers",
-    "Extremely competitive API pricing -- Small 4 at $0.20/1M tokens and Medium 3 at $1/1M tokens remain the best price/performance in the category",
+    "Mistral Medium 3.5 (April 29 2026) is Mistral's first 'flagship merged' model -- 128B dense, 256k context, 77.6% on SWE-Bench Verified, in public preview at $1.5/$7.5 per million tokens. Closes most of the coding-benchmark gap to Claude Opus / GPT-5.5 at materially lower API cost",
+    "Vibe Remote Agents (also 4/29) lets you launch cloud-based coding sessions that run asynchronously and in parallel via CLI or Le Chat -- file diffs, tool calls, and the ability to teleport a local session to the cloud while preserving history and approval state. Unique in the category as of today",
+    "Le Chat Work Mode (4/29) is the first agentic mode shipped at the consumer-chat tier -- multi-step task completion, cross-tool workflows, research synthesis, inbox triage, with explicit approval gates for sensitive operations",
+    "Mistral Small 4 (March 2026) unifies the previously-split Small/Magistral/Pixtral/Devstral lines into one 119B MoE Apache-2.0 model. Voxtral TTS (March 2026) fills the speech gap with a competent open-source 4B-param model that runs on consumer hardware",
+    "Extremely competitive API pricing remains the moat -- Small 4 at $0.20/1M tokens, Medium 3.5 at $1.5/$7.5 per million tokens, against frontier-class quality",
   ],
   cons: [
     "Le Chat web interface is bare-bones compared to ChatGPT or Claude",
@@ -80,6 +91,11 @@ export const mistral: ToolReview = {
     "Documentation could be better, especially for newer models",
   ],
   knownIssues: [
+    {
+      description: "Mistral Medium 3.5 SHIPPED 2026-04-29 in public preview, accompanied by two net-new agentic offerings: Vibe Remote Agents (cloud-based coding sessions, async + parallel, CLI or Le Chat entry) and Le Chat Work Mode (agentic chat for multi-step tasks across tools). The model is 128B dense, 256k context, and posts 77.6% on SWE-Bench Verified. Pricing is $1.5/$7.5 per million tokens (input/output). 'Flagship merged' framing means Medium 3.5 supersedes Medium 3 for new workloads -- existing Medium 3 deployments continue to work",
+      source: "Mistral AI blog (mistral.ai/news/vibe-remote-agents-mistral-medium-3-5)",
+      date: "2026-04-29",
+    },
     {
       description: "Le Chat occasionally slower than competitors during European business hours",
       source: "Reddit r/MistralAI",
@@ -95,9 +111,10 @@ export const mistral: ToolReview = {
   notFor: "Non-technical users looking for a polished chat experience. ChatGPT and Claude are much better as consumer products.",
   verdict: "Mistral is the scrappy underdog that keeps surprising people. Their models are impressively efficient -- you get near-GPT-4 quality at a fraction of the API cost. But the consumer experience (Le Chat) is rough. This is primarily a developer's tool. If you're building AI applications on a budget, Mistral should be on your shortlist.",
 
-  lastReviewedDate: "2026-04-16",
+  lastReviewedDate: "2026-04-30",
   dataSources: [
-    { name: "Mistral AI official site", url: "https://mistral.ai", dateAccessed: "2026-04-16" },
+    { name: "Mistral AI: Vibe Remote Agents + Mistral Medium 3.5 (2026-04-29)", url: "https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5", dateAccessed: "2026-04-30" },
+    { name: "Mistral AI official site", url: "https://mistral.ai", dateAccessed: "2026-04-30" },
     { name: "TechCrunch: Mistral releases Voxtral TTS", url: "https://techcrunch.com/2026/03/26/mistral-releases-a-new-open-source-model-for-speech-generation/", dateAccessed: "2026-04-16" },
     { name: "SiliconANGLE: hardware-efficient language models", url: "https://siliconangle.com/2026/03/17/openai-mistral-ai-release-new-hardware-efficient-language-models/", dateAccessed: "2026-04-16" },
     { name: "LMSYS Chatbot Arena rankings", dateAccessed: "2026-04-16" },
@@ -106,13 +123,14 @@ export const mistral: ToolReview = {
   affiliateUrl: "https://mistral.ai",
   status: "active",
   benchmarks: {
-    modelName: "Mistral Large 3 / Small 4",
+    modelName: "Mistral Medium 3.5 (vendor-published; third-party verification pending)",
     scores: [
       { name: "MMLU", score: 86.0, maxScore: 100, unit: "%" },
       { name: "HumanEval", score: 92.0, maxScore: 100, unit: "%" },
       { name: "MATH", score: 69.0, maxScore: 100, unit: "%" },
+      { name: "SWE-Bench Verified", score: 77.6, maxScore: 100, unit: "%" },
     ],
-    lastUpdated: "2026-04-16",
+    lastUpdated: "2026-04-29",
   },
   systemRequirements: [
     {
@@ -142,6 +160,6 @@ export const mistral: ToolReview = {
     tone: "Efficient, terse, and slightly blunt. Mistral answers in fewer words than Claude or ChatGPT, especially on factual questions, and rarely hedges or softens its take.",
     quirks: "Trained with less Anglocentric data than Llama, so it handles French, German, and Spanish notably better than US-origin models. Refusal rates are lower than ChatGPT or Gemini on most gray-area prompts.",
   },
-  metaTitle: "Mistral AI Review 2026: Small 4, Medium 3, Voxtral TTS, Large 3",
-  metaDescription: "Mistral review. Small 4 (March 2026 unified 119B MoE), Medium 3 (April 9 EU-compliant), Voxtral TTS (open-source speech). Cheap API. Scores + pricing. April 2026.",
+  metaTitle: "Mistral AI Review 2026: Medium 3.5 + Vibe Remote Agents + Le Chat Work Mode",
+  metaDescription: "Mistral review. Medium 3.5 (Apr 29 2026, 128B dense, 256k, SWE-Bench 77.6%) + Vibe Remote Agents + Le Chat Work Mode. Plus Small 4, Medium 3, Voxtral TTS. Cheap API at $1.5/$7.5 per 1M.",
 };

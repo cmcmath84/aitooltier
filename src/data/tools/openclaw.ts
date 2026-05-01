@@ -54,6 +54,11 @@ export const openclaw: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "ANTHROPIC LOCKOUT (2026-04-04, enforced 2026-04-10): Anthropic excluded OpenClaw and other third-party agent harnesses from Claude Pro / Max flat-rate plans. Running OpenClaw against your existing Pro or Max subscription now bills as separate pay-as-you-go 'extra usage' rather than counting against the flat plan. Anthropic temporarily banned OpenClaw's creator from the platform on 2026-04-10 (cited 'subscriptions weren't built to handle the usage patterns' of harnesses that run continuous reasoning loops and tool chains). For OpenClaw users specifically: budget for direct API token costs going forward, NOT a flat $20-200/mo Claude subscription. The pay-as-you-go path still works -- but the economics are materially different. DeepSeek + OpenAI API are cheaper substitutes for non-Claude-dependent skills",
+      source: "TechCrunch (techcrunch.com/2026/04/10/anthropic-temporarily-banned-openclaws-creator-from-accessing-claude/), The Next Web, PYMNTS",
+      date: "2026-04-10",
+    },
+    {
       description: "SECURITY CRISIS -- 9 CVEs disclosed over 4 days in March 2026, including one rated CVSS 9.9 (critical). Security researchers found 135,000+ OpenClaw instances publicly exposed on the internet across 82 countries, many with default credentials or unpatched versions. Mass developer migration to Hermes Agent reported across r/LocalLLaMA and Hacker News. If you are running OpenClaw, verify you are on the latest patch release and behind a firewall before doing anything else",
       source: "The New Stack, OpenClaw security advisories, Hacker News",
       date: "2026-03",
@@ -73,7 +78,7 @@ export const openclaw: ToolReview = {
   notFor: "Non-technical users, anyone running untested versions, anyone exposing instances to the public internet. As of April 2026, Hermes Agent is the safer default for most users -- similar concept with a smaller security surface and an active security-response track record. Pair OpenClaw with Paperclip if you need multi-agent orchestration.",
   verdict: "OpenClaw was the viral entry that defined the messaging-first personal agent category, and its UX ideas are broadly correct. But the March 2026 CVE disclosures -- 9 vulnerabilities including a CVSS 9.9 critical, with 135,000+ instances found exposed on public IPs -- revealed that the project's rapid growth outran its security engineering. Developer migration to Hermes Agent has been visible on r/LocalLLaMA and Hacker News throughout March and April. OpenClaw is not dead and the project is responding, but the honest read is: if you haven't already built deep operational trust in your OpenClaw deployment, Hermes Agent is the better default in April 2026. Revisit OpenClaw after two more release cycles when the security posture has hardened and the install-base has churned through the exposed instances.",
 
-  lastReviewedDate: "2026-04-17",
+  lastReviewedDate: "2026-04-30",
   dataSources: [
     { name: "openclaw.ai official site", url: "https://openclaw.ai/", dateAccessed: "2026-04-17" },
     { name: "GitHub openclaw/openclaw", url: "https://github.com/openclaw/openclaw", dateAccessed: "2026-04-17" },
@@ -83,6 +88,6 @@ export const openclaw: ToolReview = {
   ],
   affiliateUrl: "https://openclaw.ai/",
   status: "active",
-  metaTitle: "OpenClaw Review April 2026: Post-CVE Security Crisis, Hermes Agent Migration",
-  metaDescription: "OpenClaw review. Open-source personal AI agent -- but March 2026 disclosed 9 CVEs + 135k exposed instances, triggered mass migration to Hermes Agent. Verify hardening before running.",
+  metaTitle: "OpenClaw Review April 2026: Anthropic Lockout + Post-CVE Security Crisis",
+  metaDescription: "OpenClaw review. Anthropic excluded OpenClaw from Claude Pro/Max flat-rate 2026-04-04 -- agent users now pay-as-you-go API only. Plus March 2026 CVE crisis (9 CVEs, 135k exposed). Hermes Agent migration ongoing.",
 };

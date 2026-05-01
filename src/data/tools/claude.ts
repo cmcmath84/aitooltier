@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const claude: ToolReview = {
   slug: "claude",
   name: "Claude (Anthropic)",
-  tagline: "Anthropic's flagship LLM -- Opus 4.7 (launched April 16, 2026) with 1M-token context, high-res vision, new xhigh reasoning level, and the most natural conversational style",
+  tagline: "Anthropic's flagship LLM -- Opus 4.7 (launched April 16, 2026) with 1M-token context, high-res vision, new xhigh reasoning level, and the most natural conversational style. Note: 2026-04-04 policy excluded third-party agent harnesses (OpenClaw etc.) from Pro/Max flat-rate, and 2026-04-16 Enterprise pricing dropped bundled tokens",
   category: "ai-llms",
   url: "https://claude.ai",
 
@@ -61,6 +61,16 @@ export const claude: ToolReview = {
     "Can be overly cautious and refuse requests that are perfectly fine",
   ],
   knownIssues: [
+    {
+      description: "POLICY (2026-04-04, enforced 2026-04-10): Anthropic excluded third-party agent harnesses (OpenClaw cited specifically) from Claude Pro and Max flat-rate plans. Routing Pro/Max via OpenClaw, Claude-on-Cline, or similar frameworks now triggers separate pay-as-you-go 'extra usage' billing rather than the flat plan rate. ~135K OpenClaw instances were impacted at the time of the change. Anthropic temporarily banned OpenClaw's creator from the platform on 2026-04-10 and stated subscriptions 'weren't built to handle the usage patterns' of harnesses that 'run continuous reasoning loops, automatically repeat or retry tasks, and tie into a lot of other third-party tools.' If you run agentic workloads on Claude, expect the API path to be the only viable model going forward",
+      source: "TechCrunch (techcrunch.com/2026/04/10/anthropic-temporarily-banned-openclaws-creator-from-accessing-claude/), The Next Web, PYMNTS",
+      date: "2026-04-10",
+    },
+    {
+      description: "ENTERPRISE PRICING (2026-04-16): Anthropic dropped Claude Enterprise's bundled-token model. Plan moved from ~$200/seat with discounted token allotment to $20/seat base + standard API rates with no token allotment and no usage cap. Customary 10-15% enterprise API discounts also pulled. Heavy users see 2-3x bill increases. Rolling out to enterprises with 150+ seats first. Material for any team evaluating Claude as their primary AI provider at scale -- confirm finance modeling against the new structure before committing seat counts",
+      source: "The Register (theregister.com/2026/04/16/anthropic_ejects_bundled_tokens_enterprise/), The Information, PYMNTS",
+      date: "2026-04-16",
+    },
     {
       description: "Claude Haiku 3 (claude-3-haiku-20240307) RETIRED 2026-04-20 -- deprecated -> retired flip confirmed on Anthropic's deprecations page (verified 2026-04-24). If your API code still targets the 2024 Haiku snapshot, requests are now failing -- migrate to claude-haiku-4-5-20251001",
       source: "Anthropic model deprecations page",

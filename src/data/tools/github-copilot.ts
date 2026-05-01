@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const githubCopilot: ToolReview = {
   slug: "github-copilot",
   name: "GitHub Copilot",
-  tagline: "AI code assistant that lives in your editor -- autocomplete on steroids. As of 2026-04-20 new signups for Pro/Pro+/Student are PAUSED and Claude Opus was removed from Pro (Opus 4.7 remains on Pro+ only)",
+  tagline: "AI code assistant that lives in your editor -- autocomplete on steroids. As of 2026-04-20 new signups for Pro/Pro+/Student are PAUSED. As of 2026-04-27 GitHub announced ALL plans transition to usage-based billing (AI Credits + token metering) effective 2026-06-01 -- code completions remain free, agent/chat usage now meters against monthly credit allotments matching the plan price",
   category: "ai-code-assistants",
   url: "https://github.com/features/copilot",
 
@@ -26,19 +26,25 @@ export const githubCopilot: ToolReview = {
       plan: "Pro",
       price: "$10",
       period: "month",
-      features: ["NEW SIGNUPS PAUSED 2026-04-20", "Claude Opus REMOVED (Opus 4.7 now Pro+ only)", "Tightened usage limits"],
+      features: ["NEW SIGNUPS PAUSED 2026-04-20", "Claude Opus REMOVED (Opus 4.7 now Pro+ only)", "Effective 2026-06-01: $10 in monthly AI Credits replaces premium-request quota"],
     },
     {
       plan: "Pro+",
       price: "$39",
       period: "month",
-      features: ["NEW SIGNUPS PAUSED 2026-04-20", "5x+ the usage limits of Pro", "Claude Opus 4.7 access", "Full frontier-model picker"],
+      features: ["NEW SIGNUPS PAUSED 2026-04-20", "Claude Opus 4.7 access", "Full frontier-model picker", "Effective 2026-06-01: $39 in monthly AI Credits"],
     },
     {
       plan: "Business",
       price: "$19",
-      period: "month",
-      features: ["Organization management", "Policy controls", "Audit logs", "Not affected by 2026-04-20 signup pause"],
+      period: "user/month",
+      features: ["Organization management", "Policy controls", "Audit logs", "Effective 2026-06-01: $19 in monthly AI Credits per user"],
+    },
+    {
+      plan: "Enterprise",
+      price: "$39",
+      period: "user/month",
+      features: ["Org-wide governance + SSO", "Effective 2026-06-01: $39 in monthly AI Credits per user", "Standard token metering above the allotment"],
     },
   ],
 
@@ -55,6 +61,11 @@ export const githubCopilot: ToolReview = {
     "Multi-file refactoring understanding is limited compared to Cursor",
   ],
   knownIssues: [
+    {
+      description: "PRICING REFORM ANNOUNCED 2026-04-27 (effective 2026-06-01): All Copilot paid plans transition off the 'premium requests' metering system to a usage-based AI Credits model. Each tier's monthly price now ALSO becomes its monthly credit allotment ($10 Pro = $10 in credits; $39 Pro+ = $39 in credits; $19 Business = $19/user; $39 Enterprise = $39/user). Above the allotment, requests pay-as-you-go at standard token API rates (input + output + cached). Code completions and Next Edit suggestions remain free across all plans and DO NOT consume credits. Annual subscribers stay on the existing premium-request model until their current plan expires, then drop to Free with a one-time prorated credit transfer covering remaining value. This is a direct response to agent-workload economics that VP Joe Binder cited as the reason for the 4/20 signup pause",
+      source: "GitHub Blog: 'GitHub Copilot is moving to usage-based billing' (github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/)",
+      date: "2026-04-27",
+    },
     {
       description: "CRITICAL (2026-04-20): GitHub paused NEW signups for Copilot Pro, Pro+, and Student plans. Copilot Free remains open. Existing subscribers keep access but face tightened usage caps -- VP Joe Binder cited agent workloads consuming more compute than subscription economics support. Refund window for dissatisfied subscribers: 2026-04-20 through 2026-05-20 via GitHub Support. If you were planning to buy Pro or Pro+, you currently cannot. Cursor, Claude Code, and Windsurf are the obvious alternatives during the pause",
       source: "GitHub Changelog (github.blog/changelog/2026-04-20), The Register, AfterDawn",
@@ -90,8 +101,9 @@ export const githubCopilot: ToolReview = {
   notFor: "Anyone trying to sign up for Pro, Pro+, or Student right now -- signups are paused (2026-04-20 onward). Also not for developers who specifically wanted Claude Opus on the $10 Pro plan; Opus was just pulled to Pro+ only. Cursor or Claude Code are the obvious alternatives during the pause.",
   verdict: "GitHub Copilot hit a wall on 2026-04-20: new Pro/Pro+/Student signups paused, Claude Opus pulled from Pro, and usage caps tightened across the board. Microsoft is openly admitting that agent workloads consume more compute than the current subscription tiers can sustain, and the product is being retuned in real time. For existing subscribers the inline completions remain best-in-class, but the value proposition has gotten worse overnight. If you're shopping for an AI code assistant in the next 30 days, Cursor (Pro+ $60) and Claude Code are the practical choices until Microsoft either reopens signups or reprices. Watch the refund window (through 2026-05-20) if you're on the fence about staying.",
 
-  lastReviewedDate: "2026-04-25",
+  lastReviewedDate: "2026-04-30",
   dataSources: [
+    { name: "GitHub Blog: Copilot moving to usage-based billing (2026-04-27, effective 2026-06-01)", url: "https://github.blog/news-insights/company-news/github-copilot-is-moving-to-usage-based-billing/", dateAccessed: "2026-04-30" },
     { name: "GitHub Changelog 2026-04-20: Copilot plan changes for individuals", url: "https://github.blog/changelog/2026-04-20-changes-to-github-copilot-plans-for-individuals/", dateAccessed: "2026-04-21" },
     { name: "The Register: GitHub grounds Copilot account creation", url: "https://www.theregister.com/2026/04/20/microsofts_github_grounds_copilot_account/", dateAccessed: "2026-04-21" },
     { name: "AfterDawn: Usage limits + Opus removal", url: "https://www.afterdawn.com/news/article.cfm/2026/04/20/github-copilot-tightens-its-usage-limits-removes-access-to-claude-opus", dateAccessed: "2026-04-21" },
@@ -102,6 +114,6 @@ export const githubCopilot: ToolReview = {
   affiliateUrl: "https://github.com/features/copilot",
   status: "active",
   poweredBy: "GPT-5.4 (Pro) / Claude Opus 4.7 + GPT-5.4 (Pro+)",
-  metaTitle: "GitHub Copilot Review 2026: Signups PAUSED + Opus Removed From Pro",
-  metaDescription: "GitHub Copilot review. Pro/Pro+/Student signups paused 2026-04-20, Claude Opus removed from Pro, tightened usage caps. Refund window through May 20. Alternatives: Cursor, Claude Code.",
+  metaTitle: "GitHub Copilot Review 2026: Usage-Based Billing June 1 + Signups Paused",
+  metaDescription: "GitHub Copilot review. Usage-based billing effective 2026-06-01: $10 Pro / $39 Pro+ / $19 Business / $39 Enterprise become monthly AI Credit allotments. Code completions stay free. Pro signups still paused 4/20.",
 };
