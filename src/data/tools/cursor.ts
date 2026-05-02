@@ -62,6 +62,11 @@ export const cursor: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "SECURITY (disclosed 2026-04-27, reported privately 2026-02-01): LayerX Security published 'CursorJacking' -- any Cursor extension can read OpenAI / Anthropic / Google API keys + session tokens directly from the unencrypted SQLite store at ~/Library/Application Support/Cursor/User/globalStorage/state.vscdb. CVSS 8.2 (HIGH). No CVE assigned. Anysphere / Cursor declined to patch, position is that defining the trust boundary on installed extensions is a user responsibility. No vendor remediation expected. Practical mitigation: only install extensions from sources you trust as much as you trust the API keys themselves; rotate API keys periodically; monitor key usage for anomalies. If you've installed any unknown / cracked / from-the-wild extensions, treat your active API keys as potentially compromised and rotate now",
+      source: "LayerX Security disclosure (layerxsecurity.com/blog/cursorjacking-every-cursor-user-is-vulnerable-to-api-key-theft-by-rogue-extensions), Infosecurity Magazine, The CybrDef",
+      date: "2026-04-27",
+    },
+    {
       description: "PRODUCT (2026-04-30 + 2026-05-01): Cursor Security Review shipped in beta on Teams + Enterprise plans. Two security agents: Security Reviewer scans every PR for security vulnerabilities, auth regressions, and privacy/data-handling risks; Vulnerability Scanner runs scheduled scans of the codebase for known vulnerabilities and outdated dependencies. MCP-customizable -- plug in your existing SAST / SCA / secrets scanners. Draws from your existing usage pool (no separate billing line). On 2026-05-01 Team Marketplace updates landed: admins can configure plugin distribution as Default Off (users opt in), Default On (auto-installed but opt-out), or Required (cannot be uninstalled), all without needing a repo connection first. Pairs with the SDK + 3.2 multitask shipment to make Cursor a cleaner enterprise-IT proposition",
       source: "Cursor changelog (cursor.com/changelog) -- 2026-04-30 + 2026-05-01 entries",
       date: "2026-05-01",
@@ -111,8 +116,9 @@ export const cursor: ToolReview = {
   notFor: "Developers happy with their current editor setup who just want basic autocomplete -- Copilot is still less disruptive for that. Also not for anyone skeptical of Cursor's own coding model; if you want pure frontier-model access for every task, paying Claude or OpenAI directly and using Claude Code is cleaner.",
   verdict: "Cursor 3 + Composer 2 (April 2026) is the release where Cursor stops being an AI-augmented editor and becomes an agent-first dev environment. Composer 2's speed at $0.50/$2.50 per 1M tokens is the real story -- it makes tight iteration loops feel instant in a way frontier models can't, even if the quality is slightly below Opus 4.6. The multi-workspace + cross-platform handoff design assumes you want your agents everywhere; if you don't, it's overkill. The honest read: for developers willing to go all-in on agentic workflows, Cursor 3 is the 2026 default. For everyone else, Claude Code + Copilot is a simpler, less committing stack.",
 
-  lastReviewedDate: "2026-04-28",
+  lastReviewedDate: "2026-05-02",
   dataSources: [
+    { name: "LayerX Security: CursorJacking disclosure (2026-04-27)", url: "https://layerxsecurity.com/blog/cursorjacking-every-cursor-user-is-vulnerable-to-api-key-theft-by-rogue-extensions/", dateAccessed: "2026-05-02" },
     { name: "Cursor changelog: SDK release (2026-04-28)", url: "https://cursor.com/changelog/sdk-release", dateAccessed: "2026-04-28" },
     { name: "Cursor changelog: 3.2 multitask + worktrees + multi-root workspaces", url: "https://cursor.com/changelog", dateAccessed: "2026-04-28" },
     { name: "CNBC: SpaceX says it can buy Cursor later this year for $60B (2026-04-21)", url: "https://www.cnbc.com/2026/04/21/spacex-says-it-can-buy-cursor-later-this-year-for-60-billion-or-pay-10-billion-for-our-work-together.html", dateAccessed: "2026-04-25" },
