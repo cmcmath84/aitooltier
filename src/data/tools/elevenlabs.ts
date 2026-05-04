@@ -20,13 +20,13 @@ export const elevenlabs: ToolReview = {
     { plan: "Free", price: "$0", features: ["10,000 characters/mo", "3 custom voices", "Eleven v3 access", "Personal use only"] },
     { plan: "Starter", price: "$5", period: "month", features: ["30,000 chars/mo", "10 custom voices", "Commercial license", "Pricing cut ~50% in Feb 2026"] },
     { plan: "Creator", price: "$22", period: "month", features: ["100,000 chars/mo", "30 custom voices", "Professional Voice Cloning", "Eleven v3 expressive speech"] },
-    { plan: "11.ai (Alpha)", price: "Included", features: ["MCP-based voice-first personal assistant", "Persistent context across tasks", "Currently in alpha rollout, March 2026"] },
+    { plan: "11.ai (Alpha)", price: "Included", features: ["MCP-based voice-first personal assistant", "Persistent context across tasks", "Launched June 2025 as alpha proof-of-concept; access still gated, ongoing maturation through 2026"] },
     { plan: "Enterprise (IBM watsonx)", price: "Custom", features: ["Agentic voice for enterprise via IBM partnership (March 25 2026)", "Regulated-industry voice cloning", "Volume pricing"] },
   ],
 
   pros: [
     "Voice quality is still the best available -- Eleven v3 (2026) adds expressive speech with laughter, sighs, emotional inflection that no competitor matches",
-    "11.ai alpha (March 2026) is the first serious MCP-based voice-first personal assistant -- persistent context across tasks, talk-not-type agent workflows",
+    "11.ai (alpha launched June 2025, still gated through 2026) is the first serious MCP-based voice-first personal assistant -- persistent context across tasks, talk-not-type agent workflows",
     "Voice cloning from just a few minutes of audio remains shockingly accurate, now with stronger consent/verification after 2025 deepfake incidents",
     "~50% pricing cut in February 2026 (post-$500M raise at $11B valuation) makes the Starter and Creator tiers significantly more affordable than in 2025",
   ],

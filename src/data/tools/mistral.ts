@@ -92,6 +92,11 @@ export const mistral: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "ENTERPRISE PRODUCT (2026-04-28 public preview): Mistral Workflows -- a Temporal-powered durable orchestration engine for AI workloads. Built on the same Temporal core that backs Netflix / Stripe / Salesforce, with Mistral-added streaming, payload handling, multi-tenancy, and observability. Python SDK v3.0, Helm-deployable workers, customer-perimeter data residency. Human-in-the-loop approvals via simple Python (wait_for_input()), full execution tracking in Studio, deploys cloud / on-prem / hybrid. Distinct from Vibe Remote Agents (the consumer-facing async coding sessions); Workflows is the enterprise infra layer that makes them and other AI workloads durable at scale. Live customers cited at preview: ASML, ABANCA, CMA-CGM, France Travail, La Banque Postale, Moeve. Pricing during preview not disclosed",
+      source: "Mistral AI blog (mistral.ai/news/workflows)",
+      date: "2026-04-28",
+    },
+    {
       description: "Mistral Medium 3.5 SHIPPED 2026-04-29 in public preview, accompanied by two net-new agentic offerings: Vibe Remote Agents (cloud-based coding sessions, async + parallel, CLI or Le Chat entry) and Le Chat Work Mode (agentic chat for multi-step tasks across tools). The model is 128B dense, 256k context, and posts 77.6% on SWE-Bench Verified. Pricing is $1.5/$7.5 per million tokens (input/output). 'Flagship merged' framing means Medium 3.5 supersedes Medium 3 for new workloads -- existing Medium 3 deployments continue to work",
       source: "Mistral AI blog (mistral.ai/news/vibe-remote-agents-mistral-medium-3-5)",
       date: "2026-04-29",
@@ -111,8 +116,9 @@ export const mistral: ToolReview = {
   notFor: "Non-technical users looking for a polished chat experience. ChatGPT and Claude are much better as consumer products.",
   verdict: "Mistral is the scrappy underdog that keeps surprising people. Their models are impressively efficient -- you get near-GPT-4 quality at a fraction of the API cost. But the consumer experience (Le Chat) is rough. This is primarily a developer's tool. If you're building AI applications on a budget, Mistral should be on your shortlist.",
 
-  lastReviewedDate: "2026-04-30",
+  lastReviewedDate: "2026-05-04",
   dataSources: [
+    { name: "Mistral AI: Workflows public preview (2026-04-28)", url: "https://mistral.ai/news/workflows", dateAccessed: "2026-05-04" },
     { name: "Mistral AI: Vibe Remote Agents + Mistral Medium 3.5 (2026-04-29)", url: "https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5", dateAccessed: "2026-04-30" },
     { name: "Mistral AI official site", url: "https://mistral.ai", dateAccessed: "2026-04-30" },
     { name: "TechCrunch: Mistral releases Voxtral TTS", url: "https://techcrunch.com/2026/03/26/mistral-releases-a-new-open-source-model-for-speech-generation/", dateAccessed: "2026-04-16" },

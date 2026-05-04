@@ -7,6 +7,7 @@ import { getAffiliateUrl } from "@/lib/affiliates";
 import { safeJsonLd, pricingPageJsonLd } from "@/lib/structured-data";
 import TierBadge from "@/components/ui/TierBadge";
 import ToolLogo from "@/components/ui/ToolLogo";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
 
 export async function generateStaticParams() {
   return tools.map((tool) => ({ slug: tool.slug }));
@@ -178,6 +179,11 @@ export default async function PricingPage({
           </div>
         </div>
         <p className="mt-3 text-sm text-muted-foreground">{tool.verdict}</p>
+      </div>
+
+      {/* Newsletter capture -- /pricing is high-intent commercial surface; sub here */}
+      <div className="mt-8">
+        <NewsletterSignup />
       </div>
 
       {/* Competitor pricing comparison */}

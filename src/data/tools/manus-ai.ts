@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const manusAi: ToolReview = {
   slug: "manus-ai",
   name: "Manus AI",
-  tagline: "Hosted autonomous AI agent you talk to through Telegram, WhatsApp, and Slack -- the 'no DevOps' alternative to OpenClaw and Hermes",
+  tagline: "Hosted autonomous AI agent you talk to through Telegram, WhatsApp, and Slack -- the 'no DevOps' alternative to OpenClaw and Hermes. Manus Cloud Computer (2026-04-30) adds 24/7 persistent VMs so agents keep running between sessions",
   category: "ai-personal-agents",
   url: "https://manus.im/",
 
@@ -65,6 +65,11 @@ export const manusAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-04-30): Manus shipped Cloud Computer -- 24/7 persistent virtual machines (Ubuntu, SSH + web terminal access) for autonomous agents. Unlike the prior temporary sandbox, file system + running processes + databases + scheduled jobs persist across sessions, enabling overnight work, long-running scrapes, and bot hosting that survives between chat turns. Manus auto-routes tasks to Cloud Computer when continuous uptime is needed; no manual provisioning. Tier-based pricing (Basic / Standard / Advanced) -- exact monthly costs not disclosed on launch blog. This is a meaningful capability upgrade against OpenClaw and Hermes (which both require user-provisioned infra to achieve the same persistence) and narrows the 'less powerful but easier' framing in our verdict",
+      source: "Manus AI blog (manus.im/blog/manus-cloud-computer)",
+      date: "2026-04-30",
+    },
+    {
       description: "Occasional rate-limiting on free tier during peak hours, tasks silently queue rather than error, which can look like a stall",
       source: "Reddit r/aiToolForBusiness",
       date: "2026-03",
@@ -79,9 +84,10 @@ export const manusAi: ToolReview = {
   notFor: "Anyone who wants to own their agent's data and skills end-to-end, or who needs to swap LLM providers freely. If self-hosting is an option, OpenClaw or Hermes will give you more capability for less ongoing cost.",
   verdict: "Manus AI is the hosted counterweight to the open-source wave. It's less powerful than OpenClaw or Hermes on raw capability, but dramatically easier to adopt -- and for 80% of would-be agent users, 'easier to adopt' is the feature they actually need. The Pro tier at $20/month is fair if you'd otherwise spend a weekend on setup and $10/month on a VPS. Just go in knowing you're picking convenience and paying for it in lock-in and control.",
 
-  lastReviewedDate: "2026-04-13",
+  lastReviewedDate: "2026-05-04",
   dataSources: [
-    { name: "Manus AI official site", url: "https://manus.im/", dateAccessed: "2026-04-13" },
+    { name: "Manus AI: Manus Cloud Computer launch (2026-04-30)", url: "https://manus.im/blog/manus-cloud-computer", dateAccessed: "2026-05-04" },
+    { name: "Manus AI official site", url: "https://manus.im/", dateAccessed: "2026-05-04" },
     { name: "Reddit r/aiToolForBusiness: OpenClaw alternatives", url: "https://www.reddit.com/r/aiToolForBusiness/comments/1rd8pww/50_openclaw_alternatives_for_business/", dateAccessed: "2026-04-13" },
   ],
   affiliateUrl: "https://manus.im/",
