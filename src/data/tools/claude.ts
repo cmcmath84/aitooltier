@@ -62,6 +62,11 @@ export const claude: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "SECURITY (CVE-2026-41686, NVD-published 2026-05-04, GHSA-p7fg-763f-g4gf): Anthropic TypeScript SDK (`@anthropic-ai/sdk`) `BetaLocalFilesystemMemoryTool` writes memory files with mode 0o666 (world-readable) and directories with mode 0o777 (world-readable + writable). On shared hosts a local attacker can read persisted agent state; in containers with permissive umasks (typical Docker base images) an attacker with container access can poison memory to steer subsequent model behavior. Affects versions 0.79.0 through 0.91.0. **Fix: upgrade to >= 0.91.1**. CVSS 4.8 (moderate). CWE-732 Incorrect Permission Assignment. Reported by lucasfutures, disclosed 2026-04-24",
+      source: "GitHub Security Advisory (github.com/anthropics/anthropic-sdk-typescript/security/advisories/GHSA-p7fg-763f-g4gf), NVD CVE-2026-41686",
+      date: "2026-05-04",
+    },
+    {
       description: "PRODUCT (2026-04-28): Anthropic launched Claude for Creative Work with 9 first-party connectors -- Ableton (Live + Push), Adobe Creative Cloud (Photoshop / Premiere / Express via 'Adobe for creativity'), Affinity by Canva, Autodesk Fusion, Blender, Resolume Arena, Resolume Wire, SketchUp, and Splice. The Blender connector is built on MCP and is explicitly accessible to other LLMs -- not Claude-only. Educational pilots also announced with RISD, Ringling, and Goldsmiths. Tier requirements not specified at launch. This is Anthropic's biggest creative-pro market push to date and pairs naturally with the Opus 4.7 launch on 4/16 (vision quality required for visual workflows)",
       source: "Anthropic news (anthropic.com/news/claude-for-creative-work), 9to5mac, Adobe blog",
       date: "2026-04-28",
@@ -121,8 +126,9 @@ export const claude: ToolReview = {
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
   verdict: "Claude is the LLM you pick when quality matters more than features. Opus 4.7 (April 16, 2026) widened the quality lead on writing and made real step-change gains in software engineering and long-context reasoning, while keeping the $5/$25 per 1M token pricing. The new xhigh reasoning level is the biggest practical change for coding agents -- you can finally dial in real reasoning effort short of max without the latency cost. The 1M context window, 3.75MP vision, and MCP support make it the most capable generally-available model from any vendor today. If you're choosing one to pay $20/mo for, it still comes down to: do you want better outputs (Claude) or more features (ChatGPT)?",
 
-  lastReviewedDate: "2026-04-27",
+  lastReviewedDate: "2026-05-05",
   dataSources: [
+    { name: "GitHub Security Advisory: GHSA-p7fg-763f-g4gf (CVE-2026-41686, 2026-05-04)", url: "https://github.com/anthropics/anthropic-sdk-typescript/security/advisories/GHSA-p7fg-763f-g4gf", dateAccessed: "2026-05-05" },
     { name: "Anthropic: Project Deal (2026-04-25)", url: "https://www.anthropic.com/features/project-deal", dateAccessed: "2026-04-27" },
     { name: "TechCrunch: Anthropic created a test marketplace for agent-on-agent commerce", url: "https://techcrunch.com/2026/04/25/anthropic-created-a-test-marketplace-for-agent-on-agent-commerce/", dateAccessed: "2026-04-27" },
     { name: "Anthropic: Claude is a space to think (ad-free policy, 2026-02-04)", url: "https://www.anthropic.com/news/claude-is-a-space-to-think", dateAccessed: "2026-04-27" },

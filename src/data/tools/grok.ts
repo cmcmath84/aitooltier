@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const grok: ToolReview = {
   slug: "grok",
   name: "Grok",
-  tagline: "xAI's irreverent chatbot with a direct line to X/Twitter -- real-time data meets unfiltered personality",
+  tagline: "xAI's irreverent chatbot with a direct line to X/Twitter -- real-time data meets unfiltered personality. Grok 4.3 production launched 2026-05-02 with Custom Voices cloning + Imagine Agent Mode + ~40% API price cut to $1.25/$2.50 per 1M tokens",
   category: "ai-llms",
   url: "https://grok.x.ai",
 
@@ -44,7 +44,13 @@ export const grok: ToolReview = {
       plan: "SuperGrok Heavy",
       price: "$300",
       period: "month",
-      features: ["Grok 4.3 Beta exclusive access (as of 2026-04-17)", "Grok 4 Heavy model", "Highest priority", "Multi-agent at scale"],
+      features: ["Grok 4 Heavy model", "Highest priority", "Multi-agent at scale", "Note: Grok 4.3 beta-gating ended 2026-05-02"],
+    },
+    {
+      plan: "API (Grok 4.3)",
+      price: "$1.25 / $2.50",
+      period: "per 1M tokens (input/output)",
+      features: ["Production launch 2026-05-02 (~40% input / ~60% output price cut vs 4.20)", "1M context window", "Reasoning tokens billed at output rate", "Native video input + PDF/PPT/spreadsheet output", "Custom Voices voice cloning free on console (80+ presets, 28 languages)", "Imagine Agent Mode (creative workflow agent, beta)"],
     },
   ],
 
@@ -87,7 +93,12 @@ export const grok: ToolReview = {
       date: "2026-04",
     },
     {
-      description: "Grok 4.3 Beta dropped 2026-04-17 as a SuperGrok Heavy exclusive ($300/mo tier). Elon Musk clarified on 2026-04-18 that the live checkpoint is ~0.5T params; the full 1T version is ~5 days from finishing training. New capabilities in 4.3 Beta: native PDF/PowerPoint/spreadsheet output, video input, and Grok Computer (xAI's autonomous PC-agent) rolling into wider beta. Consumer Premium/Premium+ users do not get access to 4.3 yet -- they stay on 4.20. If the SuperGrok Heavy plan above says 'Grok 4 Heavy exclusive access', in April 2026 that means Grok 4.3 Beta specifically",
+      description: "PRODUCTION LAUNCH (2026-05-02): Grok 4.3 went broadly available beyond the SuperGrok Heavy beta. New consumer + API features: **Custom Voices voice cloning suite** (clone voice from ~1 minute of speech in <2 minutes, two-stage passphrase + speaker-embedding consent gate, 80+ preset voices, 28 languages, free on console); **Imagine Agent Mode** (creative production workflow agent, beta); native video input + reasoning-by-default; native PDF / PowerPoint / spreadsheet output. **API pricing: $1.25 input / $2.50 output per 1M tokens** -- ~40% input cut + ~60% output cut vs Grok 4.20. 1M context window. Reasoning tokens billed at output rate. xAI's pattern is silent ship via grok.com model selector + console UI rather than vendor blog post -- vendor-primary verification through grok.com itself plus 4+ tier-1 press sources (VentureBeat, Winbuzzer, The Decoder, Phemex)",
+      source: "VentureBeat (venturebeat.com/technology/xai-launches-grok-4-3-at-an-aggressively-low-price-and-a-new-fast-powerful-voice-cloning-suite), Winbuzzer 2026-05-03, The Decoder, grok.com console",
+      date: "2026-05-02",
+    },
+    {
+      description: "Grok 4.3 Beta dropped 2026-04-17 as a SuperGrok Heavy exclusive ($300/mo tier). Elon Musk clarified on 2026-04-18 that the live checkpoint is ~0.5T params; the full 1T version is ~5 days from finishing training. Beta gating ENDED 2026-05-02 with broader rollout (see entry above)",
       source: "PiunikaWeb, BuildFastWithAI, xAI release notes, Musk posts on X (2026-04-18)",
       date: "2026-04",
     },
@@ -96,8 +107,10 @@ export const grok: ToolReview = {
   notFor: "Enterprise users who need reliable, consistent outputs. Also not the best pick if you don't use X -- the real-time data advantage disappears and you're left with a solid-but-not-best-in-class LLM.",
   verdict: "Grok has come a long way from being dismissed as Elon's pet project. The Grok 3 models are legitimately competitive, and the real-time X integration is a unique differentiator that no other chatbot can match. But the value proposition gets muddier when you strip away the X angle -- at $30/mo for SuperGrok, you're paying a premium for personality and Twitter data. If those matter to you, Grok is great. If not, Claude or ChatGPT give you more for less.",
 
-  lastReviewedDate: "2026-04-18",
+  lastReviewedDate: "2026-05-05",
   dataSources: [
+    { name: "VentureBeat: xAI launches Grok 4.3 with voice cloning (2026-05-02)", url: "https://venturebeat.com/technology/xai-launches-grok-4-3-at-an-aggressively-low-price-and-a-new-fast-powerful-voice-cloning-suite", dateAccessed: "2026-05-05" },
+    { name: "Winbuzzer: xAI Grok 4.3 + Custom Voices (2026-05-03)", url: "https://winbuzzer.com/2026/05/03/xai-grok-4-3-custom-voices-voice-cloning-launch-xcxwbn/", dateAccessed: "2026-05-05" },
     { name: "xAI official site", url: "https://grok.x.ai", dateAccessed: "2026-04-17" },
     { name: "xAI Grok 4.20 announcement", dateAccessed: "2026-04-17" },
     { name: "IBTimes: Grok 4.20 Beta 2 April 2026", url: "https://www.ibtimes.com.au/grok-420-beta-2-powers-xai-advances-model-tops-benchmarks-saves-lives-april-2026-1866556", dateAccessed: "2026-04-17" },
