@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const claudeCode: ToolReview = {
   slug: "claude-code",
   name: "Claude Code",
-  tagline: "Anthropic's terminal-based coding agent that reads your whole repo and makes real changes -- not just suggestions",
+  tagline: "Anthropic's terminal-based coding agent that reads your whole repo and makes real changes -- not just suggestions. v2.1.131 (2026-05-06 Code with Claude conf) shipped Code Review GA + Remote Agents + CI Auto-Fix + Routines, plus 2x rate-limit increase from the SpaceX compute deal",
   category: "ai-code-assistants",
   url: "https://docs.anthropic.com/en/docs/claude-code",
 
@@ -56,6 +56,11 @@ export const claudeCode: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT BATCH (2026-05-06 Code with Claude SF keynote, versions 2.1.129 + 2.1.131): (1) **Code Review GA** -- 'used by every team at Anthropic'; substantive review comments rose 16% -> 54% of PRs; PRs >1000 lines: 84% generated findings, avg 7.5 issues per PR. Vendor-primary blog post at claude.com/blog/code-review. (2) **Remote Agents** -- launch and monitor Claude Code sessions from your phone; control your laptop remotely. SHIPPED. (3) **CI Auto-Fix** -- automatic fixes generated against PRs in CI. SHIPPED. (4) **Routines** -- saved Claude Code config (prompt + repos + connectors) running on Anthropic cloud as async automations; 'wake up to PRs ready to merge'. SHIPPED (expanded from earlier April rollout). (5) **Security Reviews** public beta for Enterprise (per April 30 post). PLUS rate-limit doubling from concurrent SpaceX compute deal -- Pro / Max / Team / seat-based Enterprise see 2x Claude Code 5-hour limits and removed peak-hours reduction (Pro / Max). Customers cited on stage: Shopify, Mercado Libre (~23k engineers targeting '90% autonomous coding by Q3'). Plus speakers from GitHub, Netflix, Datadog, Vercel",
+      source: "Anthropic Code Review blog (claude.com/blog/code-review), Claude Code release notes 2.1.129 + 2.1.131 (docs.claude.com/en/release-notes/overview.md), Simon Willison live blog (simonwillison.net/2026/May/6/code-w-claude-2026/), InfoQ, TheNewStack, VentureBeat",
+      date: "2026-05-06",
+    },
+    {
       description: "PRICING SCARE (2026-04-21 -> 2026-04-22, RESOLVED): Anthropic briefly removed Claude Code from the $20 Pro plan on logged-out pricing pages on 2026-04-21. Head of growth Amol Avasare framed it as a 2% A/B test on new prosumer signups; existing Pro/Max subscribers were never affected. Reversed within 24 hours after backlash -- as of 2026-04-22 the Claude Code checkbox is restored on claude.com/pricing. Anthropic statement: 'a mistake that the logged-out landing page and docs were updated for this test.' Pricing risk on agentic-coding tools is real even when today's price holds; if you're cost-sensitive on Pro, watch the pricing page periodically",
       source: "The Register (2026-04-22), Simon Willison",
       date: "2026-04-22",
@@ -85,8 +90,11 @@ export const claudeCode: ToolReview = {
   notFor: "Beginners who want a visual coding assistant, or anyone who needs predictable monthly costs. If you're looking for autocomplete-style help, Copilot or Cursor are better fits.",
   verdict: "Claude Code is the most capable agentic coding tool available right now. The ability to read entire codebases, execute code, run tests, and iterate on results puts it in a different category than autocomplete-style assistants. The output quality on complex tasks is outstanding. But it's firmly a power-user tool -- the CLI-only interface, unpredictable costs, and learning curve mean it's not for everyone. If you're a developer who thinks in terms of terminal workflows and you're working on non-trivial projects, Claude Code is worth every penny. Just keep an eye on your API bill.",
 
-  lastReviewedDate: "2026-04-25",
+  lastReviewedDate: "2026-05-06",
   dataSources: [
+    { name: "Anthropic: Claude Code Review (2026-05-06 keynote)", url: "https://claude.com/blog/code-review", dateAccessed: "2026-05-06" },
+    { name: "Claude Code release notes 2.1.131", url: "https://docs.claude.com/en/release-notes/overview.md", dateAccessed: "2026-05-06" },
+    { name: "Simon Willison: Code with Claude 2026 live blog", url: "https://simonwillison.net/2026/May/6/code-w-claude-2026/", dateAccessed: "2026-05-06" },
     { name: "The Register: Anthropic tests Claude Code Pro removal (2026-04-22)", url: "https://www.theregister.com/2026/04/22/anthropic_removes_claude_code_pro/", dateAccessed: "2026-04-25" },
     { name: "Simon Willison: Is Claude Code going to cost $100/month? Probably not", url: "https://simonwillison.net/2026/Apr/22/claude-code-confusion/", dateAccessed: "2026-04-25" },
     { name: "Anthropic: What's new in Claude Opus 4.7", url: "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-7", dateAccessed: "2026-04-22" },

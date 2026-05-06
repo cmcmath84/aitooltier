@@ -15,6 +15,7 @@ import ToolLogo from "@/components/ui/ToolLogo";
 import ProsCons from "@/components/ui/ProsCons";
 import BenchmarkTable from "@/components/ui/BenchmarkTable";
 import ToolCard from "@/components/tools/ToolCard";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
 
 const BASE_URL = "https://aitooltier.com";
 
@@ -457,6 +458,11 @@ export default async function ToolReviewPage({
             </div>
           </Link>
         </div>
+      </div>
+
+      {/* Newsletter capture -- /tools is the primary review surface; high-intent visitors */}
+      <div className="mt-10">
+        <NewsletterSignup />
       </div>
 
       {/* Related Tools */}

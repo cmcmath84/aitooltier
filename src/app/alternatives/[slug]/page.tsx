@@ -8,6 +8,7 @@ import { getAffiliateUrl } from "@/lib/affiliates";
 import { safeJsonLd } from "@/lib/structured-data";
 import TierBadge from "@/components/ui/TierBadge";
 import ToolLogo from "@/components/ui/ToolLogo";
+import NewsletterSignup from "@/components/ui/NewsletterSignup";
 
 export async function generateStaticParams() {
   return tools.map((tool) => ({ slug: tool.slug }));
@@ -255,6 +256,11 @@ export default async function AlternativesPage({
           </div>
         </div>
       )}
+
+      {/* Newsletter capture -- /alternatives is intent-rich; visitors actively comparing */}
+      <div className="mt-8">
+        <NewsletterSignup />
+      </div>
 
       {/* CTA */}
       <div className="mt-8 rounded-lg border border-primary/20 bg-blue-50 p-6 text-center">
