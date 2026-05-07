@@ -62,6 +62,11 @@ export const githubCopilot: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "MODEL LINEUP SHRINK (2026-05-07, TODAY): GitHub Copilot retires Claude Sonnet 4 from its model lineup, mirroring the upstream Anthropic API retirement scheduled for 2026-06-15. If your Copilot org/team had pinned Sonnet 4, it is now unselectable -- migrate to Sonnet 4.6 (1x multiplier, same as Sonnet 4) or Opus 4.7 (15x multiplier, dramatically higher cost). Adds to the 2026-06-01 GPT-5.2 + GPT-5.2-Codex deprecation already documented",
+      source: "GitHub Changelog (github.blog/changelog), Anthropic deprecations page",
+      date: "2026-05-07",
+    },
+    {
       description: "MULTI-CHANGE BATCH heading into 2026-06-01 billing cutover (vendor-primary verified 2026-05-04): (1) GPT-5.2 + GPT-5.2-Codex DEPRECATION announced 2026-05-01 -- both retired across all Copilot experiences (Chat, inline edits, ask + agent modes, code completions) on 2026-06-01, except GPT-5.2-Codex remains in Copilot Code Review temporarily. Migrate to GPT-5.5 (7.5x multiplier) or GPT-5.4 (1x). (2) Business self-serve signup PAUSED 2026-04-22 -- joining Pro/Pro+/Student paused since 4/20. New Business orgs get Free or Team only; existing Business customers unaffected. (3) Copilot Code Review begins consuming GitHub Actions minutes on 2026-06-01 alongside the existing premium-request charge -- code reviews now bill TWICE (review request + Actions runtime). Budget impact for teams running review on every PR. (4) Verified multiplier table (paid plans, docs.github.com/en/copilot/concepts/billing/copilot-requests as of 2026-05-04): Claude Opus 4.7 = 15x; Claude Opus 4.6 = 3x (fast-mode preview = 30x); Sonnet 4/4.5/4.6 = 1x; Haiku 4.5 = 0.33x; Gemini 3.1 Pro = 1x; Gemini 3 Flash = 0.33x; GPT-5.5 = 7.5x; GPT-5.4 = 1x; GPT-5.4 mini = 0.33x; GPT-5.4 nano = 0.25x; GPT-5.3-Codex = 1x. Aggregator-circulated 'Opus 4.7 = 27x' and 'Gemini 3.1 Pro = 6x' figures are WRONG vs vendor primary",
       source: "GitHub Blog (github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex), (github.blog/changelog/2026-04-22-pausing-new-self-serve-signups-for-github-copilot-business), (github.blog/changelog/2026-04-27-github-copilot-code-review-will-start-consuming-github-actions-minutes-on-june-1-2026), docs.github.com Copilot multiplier table",
       date: "2026-05-04",
@@ -106,7 +111,7 @@ export const githubCopilot: ToolReview = {
   notFor: "Anyone trying to sign up for Pro, Pro+, or Student right now -- signups are paused (2026-04-20 onward). Also not for developers who specifically wanted Claude Opus on the $10 Pro plan; Opus was just pulled to Pro+ only. Cursor or Claude Code are the obvious alternatives during the pause.",
   verdict: "GitHub Copilot hit a wall on 2026-04-20: new Pro/Pro+/Student signups paused, Claude Opus pulled from Pro, and usage caps tightened across the board. Microsoft is openly admitting that agent workloads consume more compute than the current subscription tiers can sustain, and the product is being retuned in real time. For existing subscribers the inline completions remain best-in-class, but the value proposition has gotten worse overnight. If you're shopping for an AI code assistant in the next 30 days, Cursor (Pro+ $60) and Claude Code are the practical choices until Microsoft either reopens signups or reprices. Watch the refund window (through 2026-05-20) if you're on the fence about staying.",
 
-  lastReviewedDate: "2026-05-04",
+  lastReviewedDate: "2026-05-07",
   dataSources: [
     { name: "GitHub Changelog: GPT-5.2 + GPT-5.2-Codex deprecation (2026-05-01, retiring 2026-06-01)", url: "https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex/", dateAccessed: "2026-05-04" },
     { name: "GitHub Changelog: Business self-serve signup pause (2026-04-22)", url: "https://github.blog/changelog/2026-04-22-pausing-new-self-serve-signups-for-github-copilot-business/", dateAccessed: "2026-05-04" },
