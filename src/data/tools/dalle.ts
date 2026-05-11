@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const dalle: ToolReview = {
   slug: "dall-e",
   name: "DALL-E (Discontinued)",
-  tagline: "OpenAI's DALL-E 2 and DALL-E 3 -- DEPRECATED, API shuts down in 4 days (May 12, 2026). DALL-E 3 already removed from ChatGPT in December 2025. Migrate now to gpt-image-1.5 / gpt-image-1-mini (request shape differs -- not a drop-in swap). Tier-list alternatives: Nano Banana 2, Midjourney, FLUX.2 [klein], Ideogram",
+  tagline: "OpenAI's DALL-E 2 and DALL-E 3 -- DEPRECATED, API shuts down THIS TUESDAY (May 12, 2026 -- in 2 days). DALL-E 3 already removed from ChatGPT in December 2025. Migrate NOW to gpt-image-1.5 / gpt-image-1-mini (request shape differs -- not a drop-in swap). Tier-list alternatives: Nano Banana 2, Midjourney, FLUX.2 [klein], Ideogram",
   category: "ai-image-generators",
   url: "https://openai.com/dall-e-3",
 
@@ -69,7 +69,7 @@ export const dalle: ToolReview = {
   notFor: "Any new project in April 2026 or later. The product sunsets within weeks. Existing API users should treat this as a forced-migration deadline.",
   verdict: "DALL-E's deprecation marks the end of the first wave of standalone AI image APIs. OpenAI quietly removed DALL-E 3 from ChatGPT in December 2025, folded image generation into GPT-5.x native multimodal as 'GPT Image', and is now ending both DALL-E 2 and DALL-E 3 APIs on May 12, 2026. For developers with live DALL-E integrations, this is a forced migration moment: the cleanest in-ecosystem path is OpenAI's own gpt-image-1 endpoint, but Nano Banana 2 (Google) and FLUX.2 [klein] (Black Forest Labs) are legitimately better on specific axes -- text-in-image and open-weight self-hosting respectively. For most consumer use, the in-ChatGPT GPT Image surface is already how OpenAI wants you to generate images.",
 
-  lastReviewedDate: "2026-05-08",
+  lastReviewedDate: "2026-05-10",
   dataSources: [
     { name: "OpenAI Community: DALL-E deprecation reminder", url: "https://community.openai.com/t/deprecation-reminder-dall-e-will-be-shut-down-on-may-12-2026/1378754", dateAccessed: "2026-04-17" },
     { name: "OpenAI API deprecations page", url: "https://developers.openai.com/api/docs/deprecations", dateAccessed: "2026-04-17" },
