@@ -62,6 +62,11 @@ export const claude: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-05-13, TODAY): Anthropic launched 'Claude for Small Business' -- a packaged offering inside Claude Cowork that bundles 15 ready-to-run agentic workflows + 15 repeatable skills across finance, operations, sales, marketing, HR, and customer service. First-party integrations: Intuit QuickBooks, PayPal, HubSpot, Canva, Docusign, Google Workspace, Microsoft 365. Mechanics: toggle Claude for Small Business inside Claude Cowork, connect existing tools, pick a job -- Claude does the work, human approves before anything sends/posts/pays. Anthropic also launched the 'Claude SMB Tour' -- 10-city free AI fluency training kicking off 2026-05-14 in Chicago, then Tulsa / Dallas / Newark / Baton Rouge / Birmingham / SLC / Baltimore / San Jose / Indianapolis; attendees get a one-month Claude Max subscription. PRICING NOT DISCLOSED in the launch post -- no per-seat number, no flat fee, no tier delta vs. Teams ($25-30/seat) or Enterprise published. Target framing: '44% of U.S. GDP / nearly half the private-sector workforce' has lagged AI adoption. First Anthropic SKU explicitly aimed at SMB segment.",
+      source: "Anthropic news (anthropic.com/news/claude-for-small-business), TechCrunch coverage",
+      date: "2026-05-13",
+    },
+    {
       description: "PRODUCT + CAPACITY (2026-05-06 Code with Claude SF keynote): Anthropic announced a SpaceX compute partnership at Colossus 1 (300+ MW, 220,000+ NVIDIA GPUs, online 'within the month'). Concurrent product changes shipped TODAY: (a) DOUBLED Claude Code 5-hour rate limits for Pro / Max / Team / seat-based Enterprise plans, (b) REMOVED peak-hours reduction for Pro and Max (peak-hours throttling no longer applies), (c) RAISED API rate limits for Opus models (Opus 4.7 + Opus 4.6 throughput improved). Plus Claude Managed Agents shipped: 'Dreaming' (research preview -- agents review past sessions for self-improvement patterns), 'Outcomes' (public beta -- rubric-graded task success, lifted up to 10 points in tests), and 'Multiagent Orchestration' (public beta -- lead-agent delegates to subagents, e.g. Haiku lead with Opus subagents). Practical impact: existing Pro / Max users see materially more headroom on Claude Code overnight. NOTE: Sonnet 4.8 / Jupiter / Cardinal / KAIROS / Cowork / Undercover Mode -- speculated from the 2026-03-31 source-map leak -- did NOT ship at this keynote. Models page still lists Opus 4.7 / Sonnet 4.6 / Haiku 4.5 as the current trio",
       source: "Anthropic news (anthropic.com/news/higher-limits-spacex), Anthropic Managed Agents (claude.com/blog/new-in-claude-managed-agents), Simon Willison live blog, TheNewStack",
       date: "2026-05-06",
@@ -131,8 +136,9 @@ export const claude: ToolReview = {
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
   verdict: "Claude is the LLM you pick when quality matters more than features. Opus 4.7 (April 16, 2026) widened the quality lead on writing and made real step-change gains in software engineering and long-context reasoning, while keeping the $5/$25 per 1M token pricing. The new xhigh reasoning level is the biggest practical change for coding agents -- you can finally dial in real reasoning effort short of max without the latency cost. The 1M context window, 3.75MP vision, and MCP support make it the most capable generally-available model from any vendor today. If you're choosing one to pay $20/mo for, it still comes down to: do you want better outputs (Claude) or more features (ChatGPT)?",
 
-  lastReviewedDate: "2026-05-06",
+  lastReviewedDate: "2026-05-13",
   dataSources: [
+    { name: "Anthropic: Claude for Small Business (2026-05-13)", url: "https://www.anthropic.com/news/claude-for-small-business", dateAccessed: "2026-05-13" },
     { name: "GitHub Security Advisory: GHSA-p7fg-763f-g4gf (CVE-2026-41686, 2026-05-04)", url: "https://github.com/anthropics/anthropic-sdk-typescript/security/advisories/GHSA-p7fg-763f-g4gf", dateAccessed: "2026-05-05" },
     { name: "Anthropic: Project Deal (2026-04-25)", url: "https://www.anthropic.com/features/project-deal", dateAccessed: "2026-04-27" },
     { name: "TechCrunch: Anthropic created a test marketplace for agent-on-agent commerce", url: "https://techcrunch.com/2026/04/25/anthropic-created-a-test-marketplace-for-agent-on-agent-commerce/", dateAccessed: "2026-04-27" },

@@ -53,6 +53,11 @@ export const kimi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "WATCHLIST (verified 2026-05-13, Day 4 of ship window): Kimi K3 has NOT shipped. moonshotai HuggingFace org shows K2.6 as the latest model (last update 2 days ago); no Kimi-K3 repository exists. kimi.com/blog latest post remains 'Kimi K2.6 -- Advancing Open-Source Coding' (2026-04-20). Manifold market priced ~74% probability of K3 ship before end of May 2026; today is Day 4 of that window with no observable on-platform signal. If K3 lands before 2026-05-31 it likely beats Manifold's implied timeline; if it slips past 5/31 the market resolves NO. Watch: kimi.com/blog, huggingface.co/moonshotai, GitHub MoonshotAI/Kimi-K* releases.",
+      source: "kimi.com/blog (no new post since K2.6), huggingface.co/moonshotai (no K3 repo)",
+      date: "2026-05-13",
+    },
+    {
       description: "Kimi K2.6 (GA 2026-04-20) supersedes K2.5 -- 1T total / 32B active MoE, 256K context, adds native video input (mp4/mov/avi/webm). Scores 54 on Artificial Analysis Intelligence Index v4.0, ranked #1 open-weights and #4 overall (three points behind Claude Opus 4.7 / Gemini 3.1 Pro / OpenAI flagships at 57). SWE-Bench Pro 58.6%. Modified MIT license unchanged. Moonshot direct API: $0.60 in / $2.50 out per 1M tokens. OpenRouter blended: ~$0.95 in / $4.00 out. If you were on K2.5, the upgrade is non-breaking on the API side -- Moonshot routes the K2.6 model under the same endpoint family",
       source: "Moonshot Kimi blog (kimi.com/blog/kimi-k2-6), HuggingFace moonshotai/Kimi-K2.6, Artificial Analysis, OpenRouter, SiliconANGLE",
       date: "2026-04-20",
@@ -72,7 +77,7 @@ export const kimi: ToolReview = {
   notFor: "Solo developers or hobbyists who want to run models locally -- the 1T parameter size makes that impractical. Use Qwen3-Coder-Next or DeepSeek instead for self-hosting.",
   verdict: "Kimi K2.5 is the best open-weights model in the world right now for agentic coding. It legitimately rivals Claude Opus 4.5 and Gemini 3.1 Pro on practical coding tasks while being nominally 'open.' The catch is that the 1T parameter size makes it hosted-only for 99% of users. If you're picking between hosted APIs and you want maximum quality with open-weights safety, Kimi K2.5 is the S-tier pick. If you need a model that actually runs on your hardware, look at Qwen3-Coder-Next or DeepSeek V3.2 instead.",
 
-  lastReviewedDate: "2026-04-27",
+  lastReviewedDate: "2026-05-13",
   dataSources: [
     { name: "Moonshot Kimi K2.6 blog (GA 2026-04-20)", url: "https://www.kimi.com/blog/kimi-k2-6", dateAccessed: "2026-04-27" },
     { name: "HuggingFace moonshotai/Kimi-K2.6", url: "https://huggingface.co/moonshotai/Kimi-K2.6", dateAccessed: "2026-04-27" },

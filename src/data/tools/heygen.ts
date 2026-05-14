@@ -76,9 +76,9 @@ export const heygen: ToolReview = {
   knownIssues: [
     {
       description:
-        "Avatar V launched in HeyGen's April 2026 product update -- introduces a 15-second recording to studio-quality avatar conversion, with more lifelike motion and multi-angle stability than prior generations. 'Generative Credits' were renamed to 'Premium Credits' and the audio-dubbing feature became unlimited on paid plans",
-      source: "HeyGen blog (heygen.com/blog/category/product-updates)",
-      date: "2026-04",
+        "PRODUCT (2026-05-04): HeyGen formally launched 'Avatar V' with a dedicated announcement post ('Announcing Avatar V: The most realistic AI avatar model in the world'). Mechanics: one 15-second reference recording generates studio-quality video that maintains face / voice / presence across angles, looks, and runtime; identity consistency solved at the model level (not as a post-processing patch); supports long-form video stability without identity drift; multi-look generation separates performance from appearance ('record once, choose from there'); integrates with Seedance 2.0 for cinematic effects. Authored by Holly Xiao (Head of Marketing) on heygen.com/blog/announcing-avatar-v. PRICING NOT DISCLOSED at launch. Prior April product update had previewed Avatar V; this is the formal GA announcement. 'Generative Credits' rename to 'Premium Credits' and unlimited audio-dubbing on paid plans remain from the same April cycle.",
+      source: "HeyGen blog: Announcing Avatar V (heygen.com/blog/announcing-avatar-v)",
+      date: "2026-05-04",
     },
     {
       description:
@@ -106,8 +106,9 @@ export const heygen: ToolReview = {
   verdict:
     "HeyGen edges out Synthesia on lip-sync quality and the Instant Avatar feature is a genuine differentiator for personal branding. The video translation is also a strong unique feature. But the credit-based pricing is frustrating -- you'll burn through your monthly allotment faster than expected, and the Business plan is expensive for what you get. Best for teams doing high-volume personalized video outreach where the per-video time savings justify the cost.",
 
-  lastReviewedDate: "2026-04-18",
+  lastReviewedDate: "2026-05-13",
   dataSources: [
+    { name: "HeyGen: Announcing Avatar V (2026-05-04)", url: "https://www.heygen.com/blog/announcing-avatar-v", dateAccessed: "2026-05-13" },
     { name: "HeyGen blog (Avatar V, Premium Credits)", url: "https://www.heygen.com/blog/category/product-updates", dateAccessed: "2026-04-18" },
     { name: "HeyGen pricing page", url: "https://www.heygen.com/pricing", dateAccessed: "2026-04-18" },
     { name: "G2 Reviews", dateAccessed: "2026-04-18" },

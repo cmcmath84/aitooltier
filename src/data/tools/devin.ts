@@ -45,6 +45,11 @@ export const devin: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-05-13): Cognition shipped Android Emulator support for Devin -- Devin can now spin up an Android Virtual Device (AVD) inside its sandbox and use it for autonomous mobile app development end-to-end (build, deploy to emulator, exercise UI, screenshot, iterate). Closes the gap with Cursor 3 + Antigravity for mobile-flow testing without leaving the agent's sandbox. Concurrent: Devin's Review API is now available (in addition to the existing Playbook / schedule / knowledge-management APIs), and the UI added session-grouping + streaming-thoughts preview.",
+      source: "Cognition blog (cognition.ai/blog)",
+      date: "2026-05-13",
+    },
+    {
       description: "Devin sometimes installs outdated package versions or uses deprecated APIs when the training data doesn't reflect recent library changes",
       source: "GitHub Issues",
       date: "2026-02",
@@ -59,8 +64,9 @@ export const devin: ToolReview = {
   notFor: "Developers who want fast inline suggestions while coding -- Cursor or Copilot are better for that. Also not ready for unsupervised work on critical production systems.",
   verdict: "Devin is the most ambitious AI coding tool available, and at $20/mo it's finally priced for experimentation. When it works, it's like having a junior developer who never sleeps. When it doesn't, it's like watching that junior dev spend three hours on something you could've done in twenty minutes. The key is task selection -- give it clear, bounded work and it impresses. Give it vague requirements and you'll burn credits watching it spin. It's a glimpse of the future, but today it's a supplemental tool, not a replacement for an IDE-integrated copilot.",
 
-  lastReviewedDate: "2026-04-17",
+  lastReviewedDate: "2026-05-13",
   dataSources: [
+    { name: "Cognition blog: Devin updates (2026-05-13)", url: "https://cognition.ai/blog", dateAccessed: "2026-05-13" },
     { name: "Cognition: Introducing Devin 2.2", url: "https://cognition.ai/blog/introducing-devin-2-2", dateAccessed: "2026-04-17" },
     { name: "Cognition: Devin in Windsurf 2.0", url: "https://cognition.ai/blog/devin-in-windsurf", dateAccessed: "2026-04-17" },
     { name: "Devin official site", url: "https://devin.ai", dateAccessed: "2026-04-17" },

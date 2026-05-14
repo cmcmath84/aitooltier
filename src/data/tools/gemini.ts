@@ -57,7 +57,12 @@ export const gemini: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "GEMINI 3.1 FLASH-LITE GA (2026-05-07, TODAY): Generally available on the Gemini Enterprise Agent Platform. Fastest + most cost-efficient Gemini 3 series model. **2.5x faster Time-to-First-Answer-Token vs Gemini 2.5 Flash; +45% output speed**. Pricing per third-party reference: $0.25/M input, $1.50/M output (vendor blog itself omits direct pricing -- check ai.google.dev/pricing for canonical). Customer signals at GA: Gladly reports ~60% lower cost vs thinking-tier models; OffDeal cites sub-second p95 for classifiers. **This is a pre-Google-I/O staging signal** -- I/O 2026 keynote is 2026-05-19 (T-12 from this entry). Expect more pre-keynote drops over the next two weeks",
+      description: "PRE-I/O STAGING (re-verified 2026-05-13, T-6 to Google I/O 2026-05-19 keynote): No new Gemini model or product launches between 2026-05-08 and 2026-05-13. Most-recent ship remains Gemini 3.1 Flash-Lite GA (2026-05-07). I/O watchlist (LEAKS, not yet shipped): (a) 'Omni' video model -- UI string 'Powered by Omni' leaked in Gemini video tab 2026-05-04, actual generated clips leaked 5/11 from a Pro user account (seaside spaghetti scene, trig-proof chalkboard demo) -- expect I/O reveal 5/19, would bundle video + image vs OpenAI's now-killed-Sora standalone approach. (b) COSMO -- on-device proactive assistant accidentally published to Play Store 2026-05-01 under Google's main account for a 47-min window (~1.13 GB, local Gemini Nano), two modes: 'Nano Only' (offline) + 'Hybrid' (with PI backend); 20K+ Play Store searches during the leak window before takedown -- expect I/O reveal. (c) Gemini 3.2 -- already spotted in iOS Gemini app + AI Studio model selector 5/5, Polymarket 94.5% on 3.2 release 5/19; Gemini 3.5 jump remains low-confidence. Pre-stage to update entry post-keynote with shipped names + benchmarks.",
+      source: "TestingCatalog (Omni leak), 9to5Google (COSMO leak), Polymarket (Gemini 3.2 market)",
+      date: "2026-05-13",
+    },
+    {
+      description: "GEMINI 3.1 FLASH-LITE GA (2026-05-07): Generally available on the Gemini Enterprise Agent Platform. Fastest + most cost-efficient Gemini 3 series model. **2.5x faster Time-to-First-Answer-Token vs Gemini 2.5 Flash; +45% output speed**. Pricing per third-party reference: $0.25/M input, $1.50/M output (vendor blog itself omits direct pricing -- check ai.google.dev/pricing for canonical). Customer signals at GA: Gladly reports ~60% lower cost vs thinking-tier models; OffDeal cites sub-second p95 for classifiers.",
       source: "Google Cloud blog (cloud.google.com/blog/products/ai-machine-learning/gemini-3-1-flash-lite-is-now-generally-available), blog.google",
       date: "2026-05-07",
     },
@@ -91,7 +96,7 @@ export const gemini: ToolReview = {
   notFor: "Anyone who needs the best raw output quality. Claude and GPT-4 both write better. Also not for anyone spooked by Google's history of abandoning products.",
   verdict: "Gemini's strength is the ecosystem play. The 1M context window is genuinely useful for long documents, and the Google Workspace integration is something neither OpenAI nor Anthropic can match. But purely as an LLM, the output quality is a step behind Claude and GPT-4. Pick Gemini if you're deep in Google's ecosystem. Otherwise, the other two are better standalone.",
 
-  lastReviewedDate: "2026-05-07",
+  lastReviewedDate: "2026-05-13",
   dataSources: [
     { name: "Google AI for Developers: deprecations", url: "https://ai.google.dev/gemini-api/docs/deprecations", dateAccessed: "2026-04-21" },
     { name: "Google Blog: Gemini 3.1 Flash TTS", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/", dateAccessed: "2026-04-21" },

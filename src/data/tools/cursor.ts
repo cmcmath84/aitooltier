@@ -62,6 +62,16 @@ export const cursor: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-05-13, TODAY): Cursor shipped 'Development Environments for Cloud Agents' -- configured runtime setups so cloud agents can take engineering tasks start to finish with cloned repos, installed deps, internal-toolchain credentials, and build-system access. Key capabilities: (a) multi-repo environments (one agent works across interdependent codebases), (b) Dockerfile-based config with build secrets and improved layer caching (70% faster builds), (c) Cursor-generated Dockerfiles via agent-led setup (private beta for Enterprise -- agent inspects repo, asks clarifying questions, validates), (d) governance controls: version history with rollback, audit log of all changes, granular permissions (secrets + network egress scoped per environment). Positions Cursor's cloud agents as a viable Devin / Cognition substitute for teams that want the agent inside their existing Cursor seat instead of buying a separate Cognition contract.",
+      source: "Cursor blog (cursor.com/blog/cloud-agent-development-environments), Cursor changelog 2026-05-13",
+      date: "2026-05-13",
+    },
+    {
+      description: "PRODUCT (2026-05-11): Cursor in Microsoft Teams -- @Cursor mentions inside Teams channels delegate a coding task to the Cursor cloud agent, which auto-selects the relevant repo + model, reads thread context, and opens a PR. First first-party Cursor integration outside the editor itself; positions Cursor against GitHub Copilot's Teams-native presence. Concurrently shipped: Bugbot effort levels (Default / High / Custom tiers for code-review depth -- High pass tradeoffs more deeply, Custom lets you set the budget per repo).",
+      source: "Cursor changelog (cursor.com/changelog/microsoft-teams), Cursor changelog (cursor.com/changelog)",
+      date: "2026-05-11",
+    },
+    {
       description: "SECURITY (disclosed 2026-04-27, reported privately 2026-02-01): LayerX Security published 'CursorJacking' -- any Cursor extension can read OpenAI / Anthropic / Google API keys + session tokens directly from the unencrypted SQLite store at ~/Library/Application Support/Cursor/User/globalStorage/state.vscdb. CVSS 8.2 (HIGH). No CVE assigned. Anysphere / Cursor declined to patch, position is that defining the trust boundary on installed extensions is a user responsibility. No vendor remediation expected. Practical mitigation: only install extensions from sources you trust as much as you trust the API keys themselves; rotate API keys periodically; monitor key usage for anomalies. If you've installed any unknown / cracked / from-the-wild extensions, treat your active API keys as potentially compromised and rotate now",
       source: "LayerX Security disclosure (layerxsecurity.com/blog/cursorjacking-every-cursor-user-is-vulnerable-to-api-key-theft-by-rogue-extensions), Infosecurity Magazine, The CybrDef",
       date: "2026-04-27",
@@ -116,8 +126,10 @@ export const cursor: ToolReview = {
   notFor: "Developers happy with their current editor setup who just want basic autocomplete -- Copilot is still less disruptive for that. Also not for anyone skeptical of Cursor's own coding model; if you want pure frontier-model access for every task, paying Claude or OpenAI directly and using Claude Code is cleaner.",
   verdict: "Cursor 3 + Composer 2 (April 2026) is the release where Cursor stops being an AI-augmented editor and becomes an agent-first dev environment. Composer 2's speed at $0.50/$2.50 per 1M tokens is the real story -- it makes tight iteration loops feel instant in a way frontier models can't, even if the quality is slightly below Opus 4.6. The multi-workspace + cross-platform handoff design assumes you want your agents everywhere; if you don't, it's overkill. The honest read: for developers willing to go all-in on agentic workflows, Cursor 3 is the 2026 default. For everyone else, Claude Code + Copilot is a simpler, less committing stack.",
 
-  lastReviewedDate: "2026-05-02",
+  lastReviewedDate: "2026-05-13",
   dataSources: [
+    { name: "Cursor: Development Environments for Cloud Agents (2026-05-13)", url: "https://cursor.com/blog/cloud-agent-development-environments", dateAccessed: "2026-05-13" },
+    { name: "Cursor changelog: Microsoft Teams (2026-05-11)", url: "https://cursor.com/changelog/microsoft-teams", dateAccessed: "2026-05-13" },
     { name: "LayerX Security: CursorJacking disclosure (2026-04-27)", url: "https://layerxsecurity.com/blog/cursorjacking-every-cursor-user-is-vulnerable-to-api-key-theft-by-rogue-extensions/", dateAccessed: "2026-05-02" },
     { name: "Cursor changelog: SDK release (2026-04-28)", url: "https://cursor.com/changelog/sdk-release", dateAccessed: "2026-04-28" },
     { name: "Cursor changelog: 3.2 multitask + worktrees + multi-root workspaces", url: "https://cursor.com/changelog", dateAccessed: "2026-04-28" },

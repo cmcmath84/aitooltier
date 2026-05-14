@@ -54,6 +54,11 @@ export const paperclip: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-05-13, TODAY): Paperclip v2026.513.0 shipped. Highlights from the GitHub release notes: (a) Source-scoped recovery actions -- stalled or missing-disposition recovery now creates first-class recovery actions on the source issue itself (rather than discarding state into a side queue), (b) Blocked Inbox attention view -- a new Blocked Inbox tab surfaces blocked work alongside active assignments so an agent can triage without the org chart, (c) Local plugin development workflow -- `paperclipai plugin init` scaffolding now ships with a CLI-first authoring loop (faster dev cycle for community plugins). Maintainer continues weekly cadence -- v2026.512.0 had been the prior release with planning mode + claude-sonnet-4-6/4-5 routing additions.",
+      source: "GitHub releases (github.com/paperclipai/paperclip/releases/tag/v2026.513.0)",
+      date: "2026-05-13",
+    },
+    {
       description: "Embedded Postgres occasionally corrupts on unclean shutdown, recommended to move to external Postgres before production use",
       source: "GitHub Issues",
       date: "2026-04",
@@ -68,8 +73,9 @@ export const paperclip: ToolReview = {
   notFor: "Anyone who only needs one agent. Also not the right pick if you want a drag-and-drop workflow builder -- Paperclip is opinionated about the 'company' model and will feel rigid if you wanted something like Zapier for AI.",
   verdict: "Paperclip is the most interesting open-source launch of Q1 2026, full stop. 53k stars in three weeks isn't an accident -- it's solving a problem the category has ignored, which is what happens when you have fifteen agents, ten tabs, and no audit trail. The design choices are correct: BYO agent, hard budgets, immutable tickets, governance gates. If you have one agent, skip this and come back later. If you have three, install it this weekend. If you have ten, you already needed this six months ago.",
 
-  lastReviewedDate: "2026-04-13",
+  lastReviewedDate: "2026-05-13",
   dataSources: [
+    { name: "Paperclip v2026.513.0 release (2026-05-13)", url: "https://github.com/paperclipai/paperclip/releases", dateAccessed: "2026-05-13" },
     { name: "Paperclip official site", url: "https://paperclip.ing/", dateAccessed: "2026-04-13" },
     { name: "GitHub paperclipai/paperclip", url: "https://github.com/paperclipai/paperclip", dateAccessed: "2026-04-13" },
     { name: "Towards AI: open-source OS for multi-agent companies", url: "https://pub.towardsai.net/paperclip-the-open-source-operating-system-for-zero-human-companies-2c16f3f22182", dateAccessed: "2026-04-13" },
