@@ -68,6 +68,11 @@ export const grok: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-05-14, TODAY): xAI launched **Grok Build CLI** in early beta -- an agentic terminal-native CLI for coding, app development, and workflow automation. Spawns up to **8 concurrent agents** in parallel. Powered by Grok 4.3 beta with a 16-agent Heavy architecture and **2M token context window**. Vendor-primary launch posts at x.ai/news/grok-build-cli and x.ai/cli, plus Musk's public invitation to wider beta testers on X. **Access gate**: launched first to SuperGrok Heavy tier ($299/mo, intro offer $99/mo for 6 months) -- not yet available to standard Premium / SuperGrok subscribers. Positions Grok as a direct competitor to Claude Code, Codex CLI, and Cursor CLI for terminal-first agentic coding workflows. The 8-agent parallelism + 2M context is the differentiating feature -- single longest context window of any production coding CLI as of today",
+      source: "xAI news (x.ai/news/grok-build-cli), xAI product page (x.ai/cli), Musk on X",
+      date: "2026-05-14",
+    },
+    {
       description: "xAI joined SpaceX on 2026-02-02 -- SpaceX acquired xAI. Procurement, billing, and compliance workflows now route through SpaceX's vendor pipeline. For regulated industries (healthcare, finance, US government) this may require re-qualifying xAI as a vendor even if Grok itself was previously approved",
       source: "xAI announcement (x.ai/news/xai-joins-spacex), SpaceX updates",
       date: "2026-02",
@@ -107,7 +112,7 @@ export const grok: ToolReview = {
   notFor: "Enterprise users who need reliable, consistent outputs. Also not the best pick if you don't use X -- the real-time data advantage disappears and you're left with a solid-but-not-best-in-class LLM.",
   verdict: "Grok has come a long way from being dismissed as Elon's pet project. The Grok 3 models are legitimately competitive, and the real-time X integration is a unique differentiator that no other chatbot can match. But the value proposition gets muddier when you strip away the X angle -- at $30/mo for SuperGrok, you're paying a premium for personality and Twitter data. If those matter to you, Grok is great. If not, Claude or ChatGPT give you more for less.",
 
-  lastReviewedDate: "2026-05-05",
+  lastReviewedDate: "2026-05-14",
   dataSources: [
     { name: "VentureBeat: xAI launches Grok 4.3 with voice cloning (2026-05-02)", url: "https://venturebeat.com/technology/xai-launches-grok-4-3-at-an-aggressively-low-price-and-a-new-fast-powerful-voice-cloning-suite", dateAccessed: "2026-05-05" },
     { name: "Winbuzzer: xAI Grok 4.3 + Custom Voices (2026-05-03)", url: "https://winbuzzer.com/2026/05/03/xai-grok-4-3-custom-voices-voice-cloning-launch-xcxwbn/", dateAccessed: "2026-05-05" },
