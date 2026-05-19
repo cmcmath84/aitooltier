@@ -80,6 +80,11 @@ export const qwen: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "INTERPRETABILITY RELEASE (2026-05-01): Alibaba released **Qwen-Scope** -- an open-source suite of **sparse autoencoder (SAE) weights** for the Qwen3 and Qwen3.5 model families, plus inference + visualization tooling. SAEs decompose internal model activations into interpretable feature directions (Anthropic / Google DeepMind have been the highest-profile labs publishing this style of interpretability work; Alibaba is the first major Chinese lab to ship SAE weights openly). Practical implication: researchers and red-teamers can now probe Qwen3.5 internals (feature attribution, concept steering, refusal-circuit analysis) without training their own SAEs -- a multi-month / multi-GPU effort. Adds to Qwen's open-weights story even as the Qwen 3.6 flagship line goes closed-weights. Materially raises the floor for safety / alignment research on Chinese open-weight families.",
+      source: "Qwen blog (qwen.ai/blog?id=qwen-scope)",
+      date: "2026-05-01",
+    },
+    {
       description: "Qwen3.6-27B dropped 2026-04-22 (~48h after Max-Preview) as the new open-weights coding champion. DENSE 27B, NOT MoE -- all params active, simpler to deploy. Apache 2.0 open weights with no commercial restrictions. Multimodal: text + image + video. 262K native context (extensible to ~1M). Verified benchmarks: SWE-bench Verified 77.2%, SWE-bench Pro 53.5%, Terminal-Bench 2.0 59.3% (matches Claude Opus 4.5 exactly), MMLU-Pro 86.2%, GPQA Diamond 87.8%, AIME 2026 94.1%, MMMU-Pro 75.8%. Notably BEATS the Qwen3.5-397B-A17B MoE flagship on coding from a single consumer GPU -- this displaces the 35B-A3B as the open-weights centerpiece for most users. Quants from unsloth + mlx-community shipped same week",
       source: "qwen.ai/blog?id=qwen3.6-27b, HuggingFace Qwen/Qwen3.6-27B, implicator.ai analysis",
       date: "2026-04-22",
@@ -114,7 +119,7 @@ export const qwen: ToolReview = {
   notFor: "Teams that need the Qwen3-Max flagship self-hostable (it's API-only), or use cases that touch Chinese-government-sensitive topics.",
   verdict: "Qwen is the most complete open-weights family in 2026. Alibaba ships Apache-2.0 weights across text, coding, vision, and reasoning -- every modality has a top-tier entry. Qwen3-Coder-Next is a standout: 3B active params but competitive with Claude Sonnet on coding. The catch is that Qwen3-Max, the absolute flagship, stays closed. If you can live with the PRC content filters and want the best open-weights ecosystem, Qwen is the S-tier pick.",
 
-  lastReviewedDate: "2026-04-27",
+  lastReviewedDate: "2026-05-19",
   dataSources: [
     { name: "Qwen blog: Qwen3.6-27B dense Apache 2.0 (2026-04-22)", url: "https://qwen.ai/blog?id=qwen3.6-27b", dateAccessed: "2026-04-27" },
     { name: "HuggingFace Qwen/Qwen3.6-27B", url: "https://huggingface.co/Qwen/Qwen3.6-27B", dateAccessed: "2026-04-27" },

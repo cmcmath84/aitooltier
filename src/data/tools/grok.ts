@@ -68,7 +68,12 @@ export const grok: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "PRODUCT (2026-05-14, TODAY): xAI launched **Grok Build CLI** in early beta -- an agentic terminal-native CLI for coding, app development, and workflow automation. Spawns up to **8 concurrent agents** in parallel. Powered by Grok 4.3 beta with a 16-agent Heavy architecture and **2M token context window**. Vendor-primary launch posts at x.ai/news/grok-build-cli and x.ai/cli, plus Musk's public invitation to wider beta testers on X. **Access gate**: launched first to SuperGrok Heavy tier ($299/mo, intro offer $99/mo for 6 months) -- not yet available to standard Premium / SuperGrok subscribers. Positions Grok as a direct competitor to Claude Code, Codex CLI, and Cursor CLI for terminal-first agentic coding workflows. The 8-agent parallelism + 2M context is the differentiating feature -- single longest context window of any production coding CLI as of today",
+      description: "MODEL LINEUP CONSOLIDATION (2026-05-15, went live 12:00 PT -- 4 days ago): xAI auto-redirected **8 deprecated model slugs** to grok-4.3 (or grok-imagine-image-quality for the image model). Affected slugs: grok-4-1-fast-reasoning, grok-4-1-fast-non-reasoning, grok-4-fast-reasoning, grok-4-fast-non-reasoning, grok-4-0709, grok-code-fast-1, grok-3, grok-imagine-image-pro. All requests now silently bill at grok-4.3 rates ($1.25 input / $2.50 output per 1M tokens). Anyone with these slugs pinned in production or referenced inside a Copilot/Cursor/Codex multi-model selector now pays the new rate without any code change. Migration path: explicitly switch to grok-4.3 in your model selector and audit token-spend after 5/15 since the new rate may differ from what each deprecated slug was previously billed at. The grok-code-fast-1 slug retirement is the same event that took the model off GitHub Copilot's Chat/inline/agent surfaces on 5/15",
+      source: "xAI docs (docs.x.ai/developers/migration/may-15-retirement)",
+      date: "2026-05-15",
+    },
+    {
+      description: "PRODUCT (2026-05-14): xAI launched **Grok Build CLI** in early beta -- an agentic terminal-native CLI for coding, app development, and workflow automation. Spawns up to **8 concurrent agents** in parallel. Powered by Grok 4.3 beta with a 16-agent Heavy architecture and **2M token context window**. Vendor-primary launch posts at x.ai/news/grok-build-cli and x.ai/cli, plus Musk's public invitation to wider beta testers on X. **Access gate**: launched first to SuperGrok Heavy tier ($299/mo, intro offer $99/mo for 6 months) -- not yet available to standard Premium / SuperGrok subscribers. Positions Grok as a direct competitor to Claude Code, Codex CLI, and Cursor CLI for terminal-first agentic coding workflows. The 8-agent parallelism + 2M context is the differentiating feature -- single longest context window of any production coding CLI as of today",
       source: "xAI news (x.ai/news/grok-build-cli), xAI product page (x.ai/cli), Musk on X",
       date: "2026-05-14",
     },
@@ -112,8 +117,9 @@ export const grok: ToolReview = {
   notFor: "Enterprise users who need reliable, consistent outputs. Also not the best pick if you don't use X -- the real-time data advantage disappears and you're left with a solid-but-not-best-in-class LLM.",
   verdict: "Grok has come a long way from being dismissed as Elon's pet project. The Grok 3 models are legitimately competitive, and the real-time X integration is a unique differentiator that no other chatbot can match. But the value proposition gets muddier when you strip away the X angle -- at $30/mo for SuperGrok, you're paying a premium for personality and Twitter data. If those matter to you, Grok is great. If not, Claude or ChatGPT give you more for less.",
 
-  lastReviewedDate: "2026-05-14",
+  lastReviewedDate: "2026-05-19",
   dataSources: [
+    { name: "xAI May 15 model retirement docs", url: "https://docs.x.ai/developers/migration/may-15-retirement", dateAccessed: "2026-05-19" },
     { name: "VentureBeat: xAI launches Grok 4.3 with voice cloning (2026-05-02)", url: "https://venturebeat.com/technology/xai-launches-grok-4-3-at-an-aggressively-low-price-and-a-new-fast-powerful-voice-cloning-suite", dateAccessed: "2026-05-05" },
     { name: "Winbuzzer: xAI Grok 4.3 + Custom Voices (2026-05-03)", url: "https://winbuzzer.com/2026/05/03/xai-grok-4-3-custom-voices-voice-cloning-launch-xcxwbn/", dateAccessed: "2026-05-05" },
     { name: "xAI official site", url: "https://grok.x.ai", dateAccessed: "2026-04-17" },

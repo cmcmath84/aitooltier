@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const n8n: ToolReview = {
   slug: "n8n",
   name: "n8n",
-  tagline: "Open-source workflow automation with AI nodes, self-hostable and way cheaper than Zapier for complex flows",
+  tagline: "Open-source workflow automation with AI nodes, self-hostable and way cheaper than Zapier for complex flows. **Microsoft Agent 365 Trigger node shipped 2026-05-05** -- agents built in n8n now show up as @-mentionable members inside Teams / Outlook / Word",
   category: "ai-automation-workflow",
   url: "https://n8n.io",
 
@@ -76,6 +76,11 @@ export const n8n: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-05-05): n8n shipped the **Microsoft Agent 365 Trigger node** -- agents built in n8n now show up as @-mentionable members inside Microsoft Teams channels, Outlook, and Word. End-user @-mentions an agent in a Teams thread; n8n routes the prompt through whatever workflow you've wired (LLM call, tool use, DB lookup, multi-step) and posts the response back in-thread as the agent identity. Pairs with Microsoft Agent 365's 5/1 GA -- n8n is one of the first independent automation platforms to ship a first-party Agent 365 surface, giving teams a self-hostable / open-source path to native M365 agentic deployment vs Microsoft's own Copilot Studio. Material for any n8n shop already on Microsoft 365 -- you get Agent 365 native presence without buying Microsoft's $15/user/mo Agent 365 SKU for every seat.",
+      source: "n8n blog (blog.n8n.io/deploy-n8n-agents-that-show-up-as-members-of-the-team-inside-microsoft-apps/), n8n docs (docs.n8n.io/integrations/builtin/cluster-nodes/root-nodes/n8n-nodes-langchain.microsoftagent365trigger/)",
+      date: "2026-05-05",
+    },
+    {
       description:
         "Critical security vulnerabilities (CVE-2026-27577, CVSS 9.4) discovered in workflow expression evaluation -- patch immediately if self-hosting",
       source: "Hacker News, CISA advisory",
@@ -101,7 +106,7 @@ export const n8n: ToolReview = {
   verdict:
     "n8n is the best value in workflow automation, full stop. The self-hosted version is free with no execution limits, and even the cloud plans are cheaper than Zapier for complex workflows. The trade-off is complexity -- it takes longer to learn and self-hosting means you're responsible for security patches (which matter, given the recent CVEs). But if you're building AI-powered automations and don't want to pay per step, n8n is the clear choice.",
 
-  lastReviewedDate: "2026-04-02",
+  lastReviewedDate: "2026-05-19",
   dataSources: [
     { name: "n8n official site", dateAccessed: "2026-04-02" },
     { name: "n8n Community forum", dateAccessed: "2026-04-02" },

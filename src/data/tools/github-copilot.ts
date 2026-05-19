@@ -62,7 +62,22 @@ export const githubCopilot: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "TWO MORE MODEL DEPRECATIONS (announced 2026-05-08): (1) **Grok Code Fast 1 retires 2026-05-15** -- only T-7 from announcement, accelerated 'due to the model provider deprecation' on xAI's side. Affects Copilot Chat, inline edits, ask + agent modes, code completions. Replacement: GPT-5 mini or Claude Haiku 4.5. If you have Grok Code Fast 1 pinned in any team config, it stops working in a week. (2) **GPT-4.1 retires 2026-06-01** -- joins the GPT-5.2 + GPT-5.2-Codex 6/1 batch already documented. Replacement: GPT-5.5. Adds to the broader 6/1 usage-based-billing transition cliff: by June 1, model lineup loses GPT-5.2, GPT-5.2-Codex, GPT-4.1, AND moves to AI Credits metering simultaneously",
+      description: "MODEL LINEUP REFRESH (2026-05-17 + 2026-05-18): (1) **GPT-5.3-Codex is now the base model for Copilot Business and Enterprise** (vendor-primary github.blog 2026-05-17), replacing GPT-4.1 ahead of its 6/1 retirement. 1x multiplier, included in standard premium-request quotas; meaningfully faster base-tier completions + chat. (2) **Copilot Cloud Agent added two low-multiplier models 2026-05-18**: Claude Haiku 4.5 and GPT-5.4-mini, both at 0.33x multiplier -- positioned as the 'fast, cost-efficient' default for simple cloud agent tasks. Default cloud-agent runs now route to these tiers; users can still override to Sonnet 4.6 / Opus 4.7 / GPT-5.5 for complex work, but the new default cuts per-task spend ~3x. Material change for any team using Copilot agent mode on PR cleanup / test scaffolding -- audit your spend dashboard after 5/18",
+      source: "GitHub Changelog (github.blog/changelog/2026-05-17-gpt-5-3-codex-is-now-the-base-model-for-copilot-business-and-enterprise, github.blog/changelog/2026-05-18-copilot-cloud-agent-fast-cost-efficient-models-for-simple-tasks)",
+      date: "2026-05-18",
+    },
+    {
+      description: "MODEL RETIREMENT WENT LIVE 2026-05-15: **Grok Code Fast 1 fully removed** from Copilot Chat, inline edits, ask + agent modes, and code completions (the 5/8-announced T-7 cliff landed on schedule, accelerated by xAI's own deprecation that day -- see grok.ts 8-model retirement). Anyone with grok-code-fast-1 pinned in a team config saw failures starting 5/15; replacements are GPT-5 mini or Claude Haiku 4.5. **GPT-4.1 retirement 2026-06-01 still on schedule** (T-13 from today). Joins the GPT-5.2 + GPT-5.2-Codex 6/1 batch already documented, making 6/1 a triple-deprecation cliff",
+      source: "GitHub Changelog (github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1, github.blog/changelog/2026-05-08-upcoming-deprecation-of-gpt-4-1), xAI 5/15 retirement docs",
+      date: "2026-05-15",
+    },
+    {
+      description: "TWO MODEL DEPRECATIONS ANNOUNCED 2026-05-08 (Grok Code Fast 1 was T-7, now PAST-TENSE per 5/15 entry above): (1) **Grok Code Fast 1 retired 2026-05-15** -- accelerated 'due to the model provider deprecation' on xAI's side. Affected Copilot Chat, inline edits, ask + agent modes, code completions. Replacement: GPT-5 mini or Claude Haiku 4.5. (2) **GPT-4.1 retires 2026-06-01** -- joins the GPT-5.2 + GPT-5.2-Codex 6/1 batch. Replacement: GPT-5.5. Adds to the broader 6/1 usage-based-billing transition cliff: by June 1, model lineup loses GPT-5.2, GPT-5.2-Codex, GPT-4.1, AND moves to AI Credits metering simultaneously",
+      source: "GitHub Changelog (github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1, github.blog/changelog/2026-05-08-upcoming-deprecation-of-gpt-4-1)",
+      date: "2026-05-08",
+    },
+    {
+      description: "ORIGINAL 5/8 ANNOUNCEMENT (now past-tense, see 5/15 + 5/08 entries above): (1) Grok Code Fast 1 retires 2026-05-15 -- only T-7 from announcement, accelerated 'due to the model provider deprecation' on xAI's side. Affects Copilot Chat, inline edits, ask + agent modes, code completions. Replacement: GPT-5 mini or Claude Haiku 4.5. If you have Grok Code Fast 1 pinned in any team config, it stops working in a week. (2) **GPT-4.1 retires 2026-06-01** -- joins the GPT-5.2 + GPT-5.2-Codex 6/1 batch already documented. Replacement: GPT-5.5. Adds to the broader 6/1 usage-based-billing transition cliff: by June 1, model lineup loses GPT-5.2, GPT-5.2-Codex, GPT-4.1, AND moves to AI Credits metering simultaneously",
       source: "GitHub Changelog (github.blog/changelog/2026-05-08-upcoming-deprecation-of-grok-code-fast-1, github.blog/changelog/2026-05-08-upcoming-deprecation-of-gpt-4-1)",
       date: "2026-05-08",
     },
@@ -116,7 +131,7 @@ export const githubCopilot: ToolReview = {
   notFor: "Anyone trying to sign up for Pro, Pro+, or Student right now -- signups are paused (2026-04-20 onward). Also not for developers who specifically wanted Claude Opus on the $10 Pro plan; Opus was just pulled to Pro+ only. Cursor or Claude Code are the obvious alternatives during the pause.",
   verdict: "GitHub Copilot hit a wall on 2026-04-20: new Pro/Pro+/Student signups paused, Claude Opus pulled from Pro, and usage caps tightened across the board. Microsoft is openly admitting that agent workloads consume more compute than the current subscription tiers can sustain, and the product is being retuned in real time. For existing subscribers the inline completions remain best-in-class, but the value proposition has gotten worse overnight. If you're shopping for an AI code assistant in the next 30 days, Cursor (Pro+ $60) and Claude Code are the practical choices until Microsoft either reopens signups or reprices. Watch the refund window (through 2026-05-20) if you're on the fence about staying.",
 
-  lastReviewedDate: "2026-05-08",
+  lastReviewedDate: "2026-05-19",
   dataSources: [
     { name: "GitHub Changelog: GPT-5.2 + GPT-5.2-Codex deprecation (2026-05-01, retiring 2026-06-01)", url: "https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex/", dateAccessed: "2026-05-04" },
     { name: "GitHub Changelog: Business self-serve signup pause (2026-04-22)", url: "https://github.blog/changelog/2026-04-22-pausing-new-self-serve-signups-for-github-copilot-business/", dateAccessed: "2026-05-04" },

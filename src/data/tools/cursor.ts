@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const cursor: ToolReview = {
   slug: "cursor",
   name: "Cursor",
-  tagline: "AI-native code editor, now agent-first in Cursor 3 -- multi-workspace, cross-platform agents, and Composer 2 (Cursor's own 200+ tok/s coding model)",
+  tagline: "AI-native code editor, agent-first in Cursor 3 -- multi-workspace, cross-platform agents, and Composer 2.5 (shipped 2026-05-18, Cursor's frontier coding model at $0.50/$2.50 per 1M tokens, 2x usage during launch week)",
   category: "ai-code-assistants",
   url: "https://cursor.com",
 
@@ -62,7 +62,17 @@ export const cursor: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "PRODUCT (2026-05-13, TODAY): Cursor shipped 'Development Environments for Cloud Agents' -- configured runtime setups so cloud agents can take engineering tasks start to finish with cloned repos, installed deps, internal-toolchain credentials, and build-system access. Key capabilities: (a) multi-repo environments (one agent works across interdependent codebases), (b) Dockerfile-based config with build secrets and improved layer caching (70% faster builds), (c) Cursor-generated Dockerfiles via agent-led setup (private beta for Enterprise -- agent inspects repo, asks clarifying questions, validates), (d) governance controls: version history with rollback, audit log of all changes, granular permissions (secrets + network egress scoped per environment). Positions Cursor's cloud agents as a viable Devin / Cognition substitute for teams that want the agent inside their existing Cursor seat instead of buying a separate Cognition contract.",
+      description: "PRODUCT (2026-05-18): **Cursor Composer 2.5** shipped via the Cursor changelog -- 'substantial improvement in intelligence and behavior' over Composer 2, with the **same pricing** structure ($0.50/M input + $2.50/M output for the Standard tier; Fast tier remains $1.50/$7.50 for Pro+ subscribers). **Double usage for the first launch week** -- effectively a free quality bump for all paying users through ~5/25. Vendor changelog confirmed at cursor.com/changelog; the aggregator-circulated 'Kimi K2.5 architecture' detail is not stated in the official changelog post and should be treated as unverified narrative. Practical implication: if you were holding Composer use down because Composer 2 felt unreliable on architectural tasks, retry with Composer 2.5 this week. Pair with the 5/13 cloud Dev Environments + 5/7 PR review experience for the strongest one-month feature window since Cursor 3 launched.",
+      source: "Cursor changelog (cursor.com/changelog) -- 2026-05-18 Composer 2.5",
+      date: "2026-05-18",
+    },
+    {
+      description: "PRODUCT (2026-05-07): **Cursor 3.3** shipped with a new PR review experience (Reviews / Commits / Changes tabs inside the editor) and **'Build in Parallel'** -- Cursor multitasks plan execution so the agent works through multiple independent steps simultaneously instead of serializing them. Pinnable quick-action skill pills also landed. The PR review surface is a clear shot at GitHub Copilot Code Review's territory (Copilot is also re-pricing PR review on Actions minutes 6/1, see github-copilot.ts) -- Cursor's version sits in the editor and doesn't bill separately.",
+      source: "Cursor changelog (cursor.com/changelog/05-07-26)",
+      date: "2026-05-07",
+    },
+    {
+      description: "PRODUCT (2026-05-13): Cursor shipped 'Development Environments for Cloud Agents' -- configured runtime setups so cloud agents can take engineering tasks start to finish with cloned repos, installed deps, internal-toolchain credentials, and build-system access. Key capabilities: (a) multi-repo environments (one agent works across interdependent codebases), (b) Dockerfile-based config with build secrets and improved layer caching (70% faster builds), (c) Cursor-generated Dockerfiles via agent-led setup (private beta for Enterprise -- agent inspects repo, asks clarifying questions, validates), (d) governance controls: version history with rollback, audit log of all changes, granular permissions (secrets + network egress scoped per environment). Positions Cursor's cloud agents as a viable Devin / Cognition substitute for teams that want the agent inside their existing Cursor seat instead of buying a separate Cognition contract.",
       source: "Cursor blog (cursor.com/blog/cloud-agent-development-environments), Cursor changelog 2026-05-13",
       date: "2026-05-13",
     },
@@ -87,8 +97,8 @@ export const cursor: ToolReview = {
       date: "2026-04-21",
     },
     {
-      description: "Cursor reportedly training its next Composer model (Composer 2.5) on thousands of xAI-supplied GPUs per Business Insider (2026-04-17). First major compute deal between a top AI coding company and xAI's post-SpaceX-acquisition infrastructure. Implication: Composer 2.5 should land in Q2-Q3 2026 with meaningfully better quality than today's Composer 2",
-      source: "Business Insider, Seeking Alpha, MSN",
+      description: "Cursor was reported on 2026-04-17 to be training Composer 2.5 on thousands of xAI-supplied GPUs (Business Insider). Composer 2.5 subsequently **shipped 2026-05-18** -- about a month after that report -- see the 5/18 entry above. First major compute deal between a top AI coding company and xAI's post-SpaceX-acquisition infrastructure.",
+      source: "Business Insider, Seeking Alpha, MSN, Cursor changelog 2026-05-18",
       date: "2026-04",
     },
     {
@@ -126,7 +136,7 @@ export const cursor: ToolReview = {
   notFor: "Developers happy with their current editor setup who just want basic autocomplete -- Copilot is still less disruptive for that. Also not for anyone skeptical of Cursor's own coding model; if you want pure frontier-model access for every task, paying Claude or OpenAI directly and using Claude Code is cleaner.",
   verdict: "Cursor 3 + Composer 2 (April 2026) is the release where Cursor stops being an AI-augmented editor and becomes an agent-first dev environment. Composer 2's speed at $0.50/$2.50 per 1M tokens is the real story -- it makes tight iteration loops feel instant in a way frontier models can't, even if the quality is slightly below Opus 4.6. The multi-workspace + cross-platform handoff design assumes you want your agents everywhere; if you don't, it's overkill. The honest read: for developers willing to go all-in on agentic workflows, Cursor 3 is the 2026 default. For everyone else, Claude Code + Copilot is a simpler, less committing stack.",
 
-  lastReviewedDate: "2026-05-13",
+  lastReviewedDate: "2026-05-19",
   dataSources: [
     { name: "Cursor: Development Environments for Cloud Agents (2026-05-13)", url: "https://cursor.com/blog/cloud-agent-development-environments", dateAccessed: "2026-05-13" },
     { name: "Cursor changelog: Microsoft Teams (2026-05-11)", url: "https://cursor.com/changelog/microsoft-teams", dateAccessed: "2026-05-13" },

@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const notionAi: ToolReview = {
   slug: "notion-ai",
   name: "Notion AI",
-  tagline: "AI built into the workspace you already use -- summarize, draft, and brainstorm without leaving Notion",
+  tagline: "AI built into Notion -- Custom Agents exited beta 2026-05-04/05 with admin controls (per-agent spend caps, workspace caps, auto-pause on limit) and credit billing live at $10 / 1,000 credits (~$0.17-$0.33 per agent run) as an add-on to Business/Enterprise",
   category: "ai-business-productivity",
   url: "https://notion.so",
 
@@ -66,6 +66,11 @@ export const notionAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT + PRICING (2026-05-04 / 2026-05-05): Notion **Custom Agents** exited beta with admin-grade governance controls: **per-agent spend caps**, **workspace-wide credit caps**, **auto-pause on limit** (agents stop before exceeding budget rather than soft-billing over), **creator permissions** (control who in a workspace can build agents), and a **credits dashboard** for monthly spend visibility. Same window: **credit billing went live at $10 per 1,000 credits** as a paid add-on to Business/Enterprise plans. Notion's own help docs estimate ~30-60 agent runs per 1,000 credits -- so roughly $0.17 to $0.33 per agent run depending on workload complexity. The free-Skills-framework window that ran through 2026-05-03 is now closed. Material for any team that built workflows on Custom Agents during the free trial -- those workflows now meter. Sets up the comparison to n8n's per-execution pricing + Microsoft Agent 365's $15/user/mo flat rate (5/1 GA).",
+      source: "Notion releases (notion.com/releases/2026-05-05), Notion help (notion.com/help/custom-agent-pricing)",
+      date: "2026-05-05",
+    },
+    {
       description:
         "Notion's April 2026 release (2026-04-14) introduced Agent integrations -- Notion Agent can now connect Calendar, Mail, and Slack to read and summarize across systems. Custom Agents with Skills framework (free through 2026-05-03). AI Meeting Notes now live in Command Search with custom formatting. n8n integration for building custom agents against Notion data",
       source: "Notion releases (2026-04-14), Fazm Blog",
@@ -91,7 +96,7 @@ export const notionAi: ToolReview = {
   verdict:
     "Notion AI is convenient, not exceptional. If Notion is already your team's brain, the AI features add genuine value for summarization and workspace search. But the writing output is mediocre, the per-member pricing adds up fast, and you can get better AI writing from dedicated tools. It's a nice-to-have, not a must-have.",
 
-  lastReviewedDate: "2026-04-18",
+  lastReviewedDate: "2026-05-19",
   dataSources: [
     { name: "Notion releases 2026-04-14", url: "https://www.notion.com/releases/2026-04-14", dateAccessed: "2026-04-18" },
     { name: "Fazm Blog: Notion AI April 2026", url: "https://fazm.ai/blog/notion-ai-releases-april-2026-complete-list-of-every-ai-feature-shipped", dateAccessed: "2026-04-18" },

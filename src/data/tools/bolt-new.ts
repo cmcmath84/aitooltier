@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const boltNew: ToolReview = {
   slug: "bolt-new",
   name: "Bolt.new",
-  tagline: "AI full-stack web app builder by StackBlitz -- describe what you want and it writes the code in the browser",
+  tagline: "AI full-stack web app builder by StackBlitz -- describe what you want and it writes the code in the browser. **Strategic Microsoft Azure partnership announced 2026-05-05**: Bolt is now purchasable through Microsoft vendor channels, deploys to Azure, and integrates with M365",
   category: "ai-website-builders",
   url: "https://bolt.new",
 
@@ -51,6 +51,11 @@ export const boltNew: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PARTNERSHIP (2026-05-05): StackBlitz / Bolt.new announced a **strategic Microsoft partnership** -- Bolt.new is now purchasable through Microsoft vendor channels, deploys generated apps to Azure, and integrates with Microsoft 365. Material competitive shift: positions Bolt against Cursor / Lovable / v0 for the enterprise-procured app-builder slot inside Microsoft-shop organizations. Pairs with the broader Microsoft Agent 365 / Copilot agent platform push -- Bolt becomes the consumer-friendly entry point for non-developers in M365 shops who want to scaffold internal tools without going through IT. Pricing impact: enterprise via Microsoft channels typically lands at custom Azure-billed rates rather than the $20/mo Pro retail price.",
+      source: "Bolt.new blog (bolt.new/blog/news-press-release-bolt.new-on-microsoft-azure), Bolt on X (x.com/boltdotnew)",
+      date: "2026-05-05",
+    },
+    {
       description: "Projects degrade badly past 10+ components -- AI starts hallucinating, duplicating files, and modifying code you didn't ask it to touch",
       source: "Reddit r/webdev",
       date: "2026-02",
@@ -70,7 +75,7 @@ export const boltNew: ToolReview = {
   notFor: "Anyone trying to build a production app purely with AI prompts. Once your project gets complex, you'll need to write real code. Developers are better off using Cursor or Claude Code.",
   verdict: "Bolt.new is the most impressive AI app builder demo you'll ever see -- and the most frustrating production tool you'll ever use. The first 15 minutes are magical: describe an app, watch it appear. But past a basic prototype, the AI loses context, burns tokens, and breaks things faster than it builds them. Use it to prototype ideas quickly, then port the code to a real development environment. Don't try to build your startup on it.",
 
-  lastReviewedDate: "2026-04-02",
+  lastReviewedDate: "2026-05-19",
   dataSources: [
     { name: "Bolt.new official site", dateAccessed: "2026-04-02" },
     { name: "Trustpilot reviews", dateAccessed: "2026-04-02" },

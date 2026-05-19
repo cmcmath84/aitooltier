@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const claude: ToolReview = {
   slug: "claude",
   name: "Claude (Anthropic)",
-  tagline: "Anthropic's flagship LLM -- Opus 4.7 (launched April 16, 2026) with 1M-token context, high-res vision, new xhigh reasoning level, and the most natural conversational style. Note: 2026-04-04 policy excluded third-party agent harnesses (OpenClaw etc.) from Pro/Max flat-rate, and 2026-04-16 Enterprise pricing dropped bundled tokens",
+  tagline: "Anthropic's flagship LLM -- Opus 4.7 (launched April 16, 2026) with 1M-token context, high-res vision, new xhigh reasoning level, and the most natural conversational style. PwC expanded strategic alliance announced 2026-05-14 (30K PwC professionals to be Claude-trained, Advocate Health flagship). Note: 2026-04-04 policy excluded third-party agent harnesses (OpenClaw etc.) from Pro/Max flat-rate, and 2026-04-16 Enterprise pricing dropped bundled tokens",
   category: "ai-llms",
   url: "https://claude.ai",
 
@@ -62,7 +62,12 @@ export const claude: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "PARTNERSHIP (2026-05-14, TODAY): Anthropic + Gates Foundation announced a 4-year, $200M partnership -- approximately half grant funding from the Gates Foundation, half Claude credits + Anthropic technical staff time. Program portfolio: **global health** (polio, HPV vaccines, eclampsia/preeclampsia), **education** (K-12 US + sub-Saharan Africa + India: math tutoring, college advising, curriculum design + benchmark development), **African-language data collection**, **life sciences** (vaccines + therapies), **economic mobility**. Distinct from a standard customer engagement -- philanthropic + product-development partnership with Anthropic technical staff embedded. Material because it positions Claude as the foundation's frontier-model partner of choice over OpenAI / Google / Meta. Practical implication for buyers: nothing direct, but signals Anthropic's continued investment in mission-aligned partnerships that fund model + safety improvements upstream.",
+      description: "PARTNERSHIP (2026-05-14): PwC announced an **expanded strategic alliance** to deploy Claude (Code + Cowork + full product suite) across PwC US first, scaling to PwC's global workforce. Headline metrics from Anthropic's launch post: **30,000 PwC professionals to be trained and certified on Claude**, plus a joint Center of Excellence for industry-specific solutions. Dario Amodei pull-quote: 'Insurance underwriting that took 10 weeks now takes 10 days. Security work that took hours now takes minutes.' Advocate Health is the first co-named flagship deployment (167K teammates). Material because (a) it puts a Big 4 firm fully on Claude as the reference frontier model, (b) creates a ~30K-trained labor base evangelizing Claude inside Fortune 500 audits / advisory engagements, (c) competitive pressure on OpenAI Deployment Company (5/11 spin-up) which is targeting the same enterprise-services layer. Distinct event from the same-day Gates Foundation partnership; both were posted to Anthropic newsroom on 5/14.",
+      source: "Anthropic news (anthropic.com/news/pwc-expanded-partnership)",
+      date: "2026-05-14",
+    },
+    {
+      description: "PARTNERSHIP (2026-05-14): Anthropic + Gates Foundation announced a 4-year, $200M partnership -- approximately half grant funding from the Gates Foundation, half Claude credits + Anthropic technical staff time. Program portfolio: **global health** (polio, HPV vaccines, eclampsia/preeclampsia), **education** (K-12 US + sub-Saharan Africa + India: math tutoring, college advising, curriculum design + benchmark development), **African-language data collection**, **life sciences** (vaccines + therapies), **economic mobility**. Distinct from a standard customer engagement -- philanthropic + product-development partnership with Anthropic technical staff embedded. Material because it positions Claude as the foundation's frontier-model partner of choice over OpenAI / Google / Meta. Practical implication for buyers: nothing direct, but signals Anthropic's continued investment in mission-aligned partnerships that fund model + safety improvements upstream.",
       source: "Anthropic news (anthropic.com/news/gates-foundation-partnership), Gates Foundation co-announcement (gatesfoundation.org), Reuters, PYMNTS",
       date: "2026-05-14",
     },
@@ -141,7 +146,7 @@ export const claude: ToolReview = {
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
   verdict: "Claude is the LLM you pick when quality matters more than features. Opus 4.7 (April 16, 2026) widened the quality lead on writing and made real step-change gains in software engineering and long-context reasoning, while keeping the $5/$25 per 1M token pricing. The new xhigh reasoning level is the biggest practical change for coding agents -- you can finally dial in real reasoning effort short of max without the latency cost. The 1M context window, 3.75MP vision, and MCP support make it the most capable generally-available model from any vendor today. If you're choosing one to pay $20/mo for, it still comes down to: do you want better outputs (Claude) or more features (ChatGPT)?",
 
-  lastReviewedDate: "2026-05-14",
+  lastReviewedDate: "2026-05-19",
   dataSources: [
     { name: "Anthropic: Claude for Small Business (2026-05-13)", url: "https://www.anthropic.com/news/claude-for-small-business", dateAccessed: "2026-05-13" },
     { name: "GitHub Security Advisory: GHSA-p7fg-763f-g4gf (CVE-2026-41686, 2026-05-04)", url: "https://github.com/anthropics/anthropic-sdk-typescript/security/advisories/GHSA-p7fg-763f-g4gf", dateAccessed: "2026-05-05" },

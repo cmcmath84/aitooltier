@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const runway: ToolReview = {
   slug: "runway",
   name: "Runway",
-  tagline: "Runway Gen-4.5 (shipped 2025-12-01) -- #1 on Artificial Analysis text-to-video leaderboard at 1,247 Elo. Gen-4 Turbo supports native 4K. The most capable professional AI video generator available in 2026",
+  tagline: "Runway Gen-4.5 (shipped 2025-12-01) -- #1 on Artificial Analysis text-to-video leaderboard at 1,247 Elo. **GWM-1 (General World Model family) announced May 2026** for Worlds / Avatars / Robotics, built on Gen-4.5. Gen-4.5 also gained **native audio generation + native audio editing** (May 2026). Gen-4 Turbo supports native 4K. The most capable professional AI video generator available in 2026",
   category: "ai-video-generators",
   url: "https://runwayml.com",
 
@@ -53,6 +53,11 @@ export const runway: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (May 2026): Runway announced **GWM-1** -- the General World Model family for Worlds / Avatars / Robotics, built on top of Gen-4.5. GWM-1 expands Runway from a pure video-generation tool to a broader world-model platform (3D environment synthesis, embodied-agent training, robotics simulation). Same window: **Gen-4.5 gained native audio generation + native audio editing** -- previously audio had to be added post-gen via third-party tools; now Gen-4.5 outputs synchronized audio in the same generation pass and lets you edit it without re-rendering video. Material because (a) audio-native generation closes a known gap vs Veo 3 (which has had native audio since launch), (b) GWM-1 positions Runway against world-model entrants like Genie / Cosmos for the spatial AI use case rather than just T2V leaderboard competition.",
+      source: "Runway changelog (runwayml.com/changelog)",
+      date: "2026-05",
+    },
+    {
       description: "Gen-4.5 released 2025-12-01 (replacing Gen-3 Alpha as flagship). Native 4K output via Gen-4 Turbo, substantially improved motion/physics, #1 on Artificial Analysis T2V leaderboard at 1,247 Elo. If your stack was pinned to specific Gen-3 behaviors, audit before upgrading -- some generation quirks have changed",
       source: "runwayml.com/research, CNBC, Artificial Analysis",
       date: "2025-12",
@@ -72,7 +77,7 @@ export const runway: ToolReview = {
   notFor: "Casual users or anyone on a tight budget. Credits disappear fast (especially at 4K), and the free tier barely lets you try it. For experimentation, Pika or Kling at similar price points are more forgiving.",
   verdict: "Runway remains the professional-tier pick for AI video in 2026. Gen-4.5 (shipped 2025-12-01) holds #1 on Artificial Analysis's text-to-video leaderboard at 1,247 Elo, with native 4K via Gen-4 Turbo and meaningful improvements in motion and physics over Gen-3. The creative suite -- inpainting, motion brush, video-to-video -- is still the widest in the market. Downsides are unchanged from Gen-3: credits burn fast (worse at 4K), 10-second clip cap, competition from Kling 3.0 and Veo 3.1 is tightening. If you need the best available quality or the full creative toolset, Runway. If you're budget-conscious or experimenting, Pika or Kling first.",
 
-  lastReviewedDate: "2026-04-24",
+  lastReviewedDate: "2026-05-19",
   dataSources: [
     { name: "Runway Research: Introducing Runway Gen-4.5", url: "https://runwayml.com/research/introducing-runway-gen-4.5", dateAccessed: "2026-04-24" },
     { name: "CNBC: Runway Gen-4.5 video model (2025-12-01)", url: "https://www.cnbc.com/2025/12/01/runway-gen-4-5-video-model-google-open-ai.html", dateAccessed: "2026-04-24" },

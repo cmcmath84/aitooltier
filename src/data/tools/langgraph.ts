@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const langgraph: ToolReview = {
   slug: "langgraph",
   name: "LangGraph",
-  tagline: "LangChain's graph-based framework for building stateful, controllable multi-agent and human-in-the-loop AI workflows",
+  tagline: "LangChain's graph-based framework for building stateful, controllable multi-agent and human-in-the-loop AI workflows. **LangGraph v1.2 (2026-05-12) shipped DeltaChannel beta** -- incremental delta state storage instead of full-state-per-step checkpoints, with ~41x storage reduction in LangChain's 200-turn coding-agent benchmark",
   category: "ai-agent-orchestration",
   url: "https://www.langchain.com/langgraph",
 
@@ -64,6 +64,11 @@ export const langgraph: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-05-12): **LangGraph v1.2 shipped DeltaChannel beta** -- an alternative checkpointing primitive that stores **incremental state deltas** per node execution instead of full-state snapshots. LangChain published a 200-turn coding-agent benchmark showing **~41x storage reduction** vs the default full-state checkpointer, with no observed change in graph-resume fidelity. Material because (a) long-horizon agentic graphs (multi-hour research agents, coding agents on big codebases) had previously been blocked by checkpoint storage costs at production scale, (b) LangGraph Platform users hit storage caps fastest, so this directly impacts hosted-pricing economics, (c) DeltaChannel is opt-in -- existing graphs keep their current checkpoint behavior until you explicitly switch. Beta gating expected through Q2 2026.",
+      source: "LangChain blog (langchain.com/blog/delta-channels-evolving-agent-runtime)",
+      date: "2026-05-12",
+    },
+    {
       description: "State schema changes between versions occasionally break checkpointed graphs -- migrations require careful handling in production",
       source: "GitHub Issues",
       date: "2026-03",
@@ -78,7 +83,7 @@ export const langgraph: ToolReview = {
   notFor: "Anyone whose workflow is linear (CrewAI is simpler), anyone who doesn't want LangChain in their stack, or anyone looking for a personal agent (OpenClaw/Hermes) or an orchestrator for existing agents (Paperclip).",
   verdict: "LangGraph is the serious choice for teams that have outgrown linear multi-agent frameworks and need a real state machine for their AI workflows. The graph abstraction is correct, the tracing is best-in-class, and the platform-tier deployment story is mature. The cost is complexity -- you will write more code and learn more concepts than with CrewAI, and half the time that's not worth it. But when your workflow actually is a graph with cycles and human approvals, nothing else in the category does the job as well.",
 
-  lastReviewedDate: "2026-04-13",
+  lastReviewedDate: "2026-05-19",
   dataSources: [
     { name: "LangGraph official site", url: "https://www.langchain.com/langgraph", dateAccessed: "2026-04-13" },
     { name: "GitHub langchain-ai/langgraph", url: "https://github.com/langchain-ai/langgraph", dateAccessed: "2026-04-13" },
