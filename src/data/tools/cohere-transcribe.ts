@@ -62,6 +62,11 @@ export const cohereTranscribe: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "OWNERSHIP-CHANGE WATCH (2026-04-24): Cohere announced it is 'joining forces' with Aleph Alpha. Vendor blog (cohere.com/blog/cohere-alephalpha-join-forces) frames this as a merger / strategic combination rather than a clean acquisition, backed by Schwarz Group as lead investor with EUR 500M (USD 600M) Series E structured financing. STACKIT (Schwarz Digits' sovereign cloud) will serve as the 'technical backbone of this transatlantic AI initiative', targeting regulated sectors (public sector, finance, defense, energy, manufacturing, telecom, healthcare). Effective date / closing date not specified; deal announced as planned/pending. No immediate product or pricing changes for Cohere Transcribe customers, but a future combined-entity roadmap may reshape model lineup, support guarantees, and pricing -- worth tracking before any new long-term Cohere Model Vault commitment.",
+      source: "Cohere blog: Cohere and Aleph Alpha join forces (cohere.com/blog/cohere-alephalpha-join-forces), TechCrunch, CNBC",
+      date: "2026-04-24",
+    },
+    {
       description: "No speaker diarization or word-level timestamps at launch. If your product needs multi-speaker separation (call centers, meetings) you'll need to add a diarization model on top or choose Grok STT / Deepgram / AssemblyAI",
       source: "Cohere Hugging Face blog",
       date: "2026-03",
@@ -81,7 +86,7 @@ export const cohereTranscribe: ToolReview = {
   notFor: "Call-center and meeting-transcription products that need speaker diarization and streaming out of the box -- Grok STT, Deepgram, or AssemblyAI ship those features. Also not ideal for rare-language workloads (sub-Saharan African languages, indigenous languages) where Whisper Large's 99-language coverage is still hard to beat.",
   verdict: "Cohere Transcribe is the first time an open-weights ASR model has genuinely topped the Open ASR Leaderboard in head-to-head benchmark terms, and the Apache 2.0 license makes it a real procurement unlock for enterprises that couldn't self-host Whisper at the accuracy tier they needed. The limitations (no diarization, no streaming, no TTS counterpart) mean it won't replace full ASR platforms for call-center or meeting products -- but for batch enterprise transcription (document pipelines, media indexing, compliance recording) it's now the default open-source pick. Pair with Grok TTS or ElevenLabs on the output side and you have a fully-open voice stack for the first time.",
 
-  lastReviewedDate: "2026-04-18",
+  lastReviewedDate: "2026-05-20",
   dataSources: [
     { name: "Cohere Labs: Introducing Cohere-transcribe", url: "https://huggingface.co/blog/CohereLabs/cohere-transcribe-03-2026-release", dateAccessed: "2026-04-18" },
     { name: "TechCrunch: Cohere open-source voice transcription", url: "https://techcrunch.com/2026/03/26/cohere-launches-an-open-source-voice-model-specifically-for-transcription/", dateAccessed: "2026-04-18" },

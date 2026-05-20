@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const antigravity: ToolReview = {
   slug: "antigravity",
   name: "Google Antigravity",
-  tagline: "Google's agent-first AI IDE -- deploys up to 5 autonomous coding agents in parallel on a VS Code fork",
+  tagline: "Google's agent-first AI IDE -- deploys up to 5 autonomous coding agents in parallel on a VS Code fork. Antigravity 2.0 announced at I/O 2026 (2026-05-19) and is the runtime substrate for the new Gemini Spark proactive agent",
   category: "ai-code-assistants",
   url: "https://antigravity.google",
 
@@ -41,6 +41,11 @@ export const antigravity: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "I/O 2026 SHIP (2026-05-19): ANTIGRAVITY 2.0 announced at Google I/O 2026. Vendor blog post 'Introducing Google Antigravity 2.0' published on DeepMind / Google's I/O developer recap. Concurrent ship in the Gemini API: a Managed Agents preview model `antigravity-preview-05-2026` -- the general-purpose Antigravity Agent, the first Google-hosted managed-agent endpoint. Antigravity is now also the runtime substrate for Gemini Spark (Google's new proactive 24/7 personal agent), which means Antigravity has been promoted from a standalone IDE to the underlying agent execution layer for consumer Gemini features. Specific feature deltas vs Antigravity 1.x not yet captured in this sweep -- next review should pull the full announcement post once it's published in fully indexable form.",
+      source: "deepmind.google blog 'Introducing Google Antigravity 2.0' (vendor-primary), ai.google.dev/gemini-api/docs/changelog 2026-05-19 (antigravity-preview-05-2026 Managed Agent release), gemini.google/overview/agent/spark/ (Spark runs on 'Gemini 3.5 Flash and Antigravity')",
+      date: "2026-05-19",
+    },
+    {
       description: "Free tier daily requests slashed from 250 to 20 in early 2026, and Pro tier quota refresh changed from every 5 hours to weekly for most models",
       source: "The Register, Reddit r/google_antigravity",
       date: "2026-03",
@@ -60,8 +65,11 @@ export const antigravity: ToolReview = {
   notFor: "Solo developers on a budget (the free tier is nearly useless after the cuts), anyone who values pricing transparency, or developers who prefer lightweight tools over full IDE replacements.",
   verdict: "Google Antigravity is the most ambitious AI coding tool on the market -- 5 parallel agents, built-in browser testing, multi-model support, and MCP integration. When it works, it's like having a team of junior developers. But Google's aggressive pricing changes (gutting the free tier, introducing opaque credits) have damaged trust. At $20/mo Pro it's competitive, but the credit system means your actual costs are unpredictable. If Google stabilizes the pricing, this could be the best AI IDE available. Right now, the value score drags it down.",
 
-  lastReviewedDate: "2026-04-14",
+  lastReviewedDate: "2026-05-20",
   dataSources: [
+    { name: "DeepMind Blog: Introducing Google Antigravity 2.0 (2026-05-19)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/", dateAccessed: "2026-05-20" },
+    { name: "Gemini API Changelog: antigravity-preview-05-2026 Managed Agent release (2026-05-19)", url: "https://ai.google.dev/gemini-api/docs/changelog", dateAccessed: "2026-05-20" },
+    { name: "Gemini Spark product page (Antigravity is the runtime)", url: "https://gemini.google/overview/agent/spark/", dateAccessed: "2026-05-20" },
     { name: "antigravity.google official site", dateAccessed: "2026-04-14" },
     { name: "The Register pricing protest coverage", dateAccessed: "2026-04-14" },
     { name: "Reddit r/google_antigravity", dateAccessed: "2026-04-14" },
@@ -69,7 +77,7 @@ export const antigravity: ToolReview = {
   ],
   affiliateUrl: "https://antigravity.google",
   status: "active",
-  poweredBy: "Gemini 3.1 Pro / Claude Opus 4.6 / GPT-OSS 120B (multi-model)",
-  metaTitle: "Google Antigravity Review 2026: Agent-First AI IDE With 5 Parallel Agents",
-  metaDescription: "Google Antigravity review. AI IDE with 5 parallel coding agents, multi-model support, built-in browser. Free tier gutted. Scores, pricing, known issues. April 2026.",
+  poweredBy: "Gemini 3.5 Flash / Gemini 3.1 Pro / Claude Opus 4.6 / GPT-OSS 120B (multi-model). Gemini 3.5 Flash added at I/O 2026 (2026-05-19) and is the model behind the antigravity-preview-05-2026 Managed Agent.",
+  metaTitle: "Google Antigravity Review 2026: 2.0 Shipped at I/O, Now Powers Gemini Spark",
+  metaDescription: "Google Antigravity review. Antigravity 2.0 announced at I/O 2026 (May 19). Now the runtime for Gemini Spark proactive agent + antigravity-preview-05-2026 Managed Agent in the Gemini API.",
 };

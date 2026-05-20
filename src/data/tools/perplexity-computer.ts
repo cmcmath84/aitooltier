@@ -65,6 +65,11 @@ export const perplexityComputer: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRICING / DISTRIBUTION (third-party reports, 2026-05-07): multiple third-party outlets (Releasebot, TheAIInsider, findskill.ai) report that Perplexity Computer expanded to the Pro $20/mo tier alongside a Mac app launch on 2026-05-07, removing the prior Max-only ($200/mo) gating. The pricing table on this page reflects the original Max-only structure pending vendor-primary confirmation -- perplexity.ai/hub/blog and the canonical Personal Computer page returned 403/blocked at sweep-verification time on 2026-05-20. Until Perplexity publishes a vendor blog post that loads end-to-end, treat the Pro-tier expansion as 'reported, not vendor-primary confirmed' and re-verify next sweep.",
+      source: "Releasebot, TheAIInsider, findskill.ai (third-party only; perplexity.ai/hub/blog returned 403 at verification 2026-05-20)",
+      date: "2026-05-07",
+    },
+    {
       description: "Comet browser (same agentic stack) was tricked into executing a phishing workflow within 4 minutes in controlled research -- Perplexity Computer inherits the same prompt-injection exposure, credentials held by the agent are at risk",
       source: "The Hacker News, March 2026",
       date: "2026-03",
@@ -79,7 +84,7 @@ export const perplexityComputer: ToolReview = {
   notFor: "Anyone price-sensitive (OpenClaw + Claude API is a fraction of the cost), anyone who needs data sovereignty (self-host Hermes instead), or anyone whose workflow doesn't actually need multi-model routing. Also wrong if you want a messaging-first UX -- Perplexity Computer lives in the browser, not in your Telegram.",
   verdict: "Perplexity Computer is the most capable hosted personal agent in 2026 and it's not especially close on output quality -- routing frontier models by task is a genuine architectural advantage over single-model agents. It's also the most expensive option in this category by an order of magnitude, and it lives on infrastructure you don't control with an active prompt-injection exposure on the sibling product. Buy it if your time is worth more than $200/month and the quality difference will show up in your work. Skip it and run OpenClaw or Hermes with Claude API if you're cost-sensitive or security-paranoid -- you'll give up the Model Council but save $150+/month.",
 
-  lastReviewedDate: "2026-04-13",
+  lastReviewedDate: "2026-05-20",
   dataSources: [
     { name: "Introducing Perplexity Computer", url: "https://www.perplexity.ai/hub/blog/introducing-perplexity-computer", dateAccessed: "2026-04-13" },
     { name: "Perplexity Comet product page", url: "https://www.perplexity.ai/comet", dateAccessed: "2026-04-13" },

@@ -56,6 +56,11 @@ export const lovable: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-04-27): MOBILE APPS SHIPPED on iOS and Android (App Store id6757471107, Play Store dev.lovable.build). 'The Lovable mobile app lets you build from anywhere' -- voice + text prompt capture for queuing ideas away from a desk, autonomous agent processing continues in background while you do other things, seamless switching between mobile and desktop. No pricing restriction stated at launch -- mobile is included in existing plan tiers. No specific region limits stated. Companion to the desktop experience, not a replacement; complex editing still happens at the keyboard.",
+      source: "Lovable blog: 'The Lovable mobile app is here' (lovable.dev/blog/mobile-app), Apple App Store, Google Play Store",
+      date: "2026-04-27",
+    },
+    {
       description: "SECURITY (April 2026): Lovable disclosed a Broken Object-Level Authorization (BOLA) vulnerability that exposed source code + AI chat history of public projects created between 2026-02-03 and 2026-04-20 to any other Lovable user. Private projects and Lovable Cloud were unaffected. A security researcher reported the issue on 2026-04-20; Lovable shipped a patch within 2 hours. Background: HackerOne reports filed starting 2026-02-22 were incorrectly closed without escalation due to outdated internal documentation, contributing to a ~57-day delay until public disclosure. If you used Lovable Free or Starter to build a project in that window and exported / deployed it, audit the project for any data that was incidentally exposed",
       source: "Lovable blog (lovable.dev/blog/our-response-to-the-april-2026-incident), The Register, The Next Web",
       date: "2026-04-22",
@@ -75,8 +80,9 @@ export const lovable: ToolReview = {
   notFor: "Experienced developers building production applications with complex business logic. If you need custom backends, specific architectures, or clean maintainable code, you'll outgrow Lovable quickly.",
   verdict: "Lovable is genuinely magical for its target audience. Watching an app materialize from a text description is still impressive, and the 8M user base proves there's massive demand for this. But there's a ceiling, and you'll hit it faster than the marketing suggests. Simple CRUD apps and landing pages? Fantastic. Anything with complex state, custom business logic, or specific architectural needs? The generated code becomes a liability. Use it for prototypes and MVPs, but plan to rewrite if the project takes off.",
 
-  lastReviewedDate: "2026-05-01",
+  lastReviewedDate: "2026-05-20",
   dataSources: [
+    { name: "Lovable Blog: The Lovable mobile app is here (2026-04-27)", url: "https://lovable.dev/blog/mobile-app", dateAccessed: "2026-05-20" },
     { name: "Lovable official site", dateAccessed: "2026-03-31" },
     { name: "Reddit r/webdev", dateAccessed: "2026-03-31" },
     { name: "Product Hunt reviews", dateAccessed: "2026-03-31" },
