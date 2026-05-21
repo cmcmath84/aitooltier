@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const devin: ToolReview = {
   slug: "devin",
   name: "Devin",
-  tagline: "The most autonomous AI coding agent -- Devin 2.2 (Feb 24 2026) adds desktop/GUI testing (Figma, browser automation), Devin Review (pull-request analysis catching ~30% more issues), and ~3x faster startup (~15s vs ~45s). Now embedded in Windsurf 2.0",
+  tagline: "The most autonomous AI coding agent -- Devin 2.2 base (Feb 24 2026) + recent shipments: **Auto-Triage 2026-05-18** (observes incidents, consolidates duplicate reports, generates triage PRs), **Windows VM support 2026-05-21** (build/run/test natively in Windows VMs), and 5/13 Android Emulator inside the sandbox. Devin is also embedded in Windsurf 2.0 as the cloud-agent layer + bundled in Windsurf as Devin Review since 2026-05-12",
   category: "ai-code-assistants",
   url: "https://devin.ai",
 
@@ -45,6 +45,11 @@ export const devin: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-05-18 + 2026-05-21): Cognition shipped two material Devin features in 4 days. **5/18 Auto-Triage**: Devin observes incoming bug reports / incident channels, investigates with its tool surface (logs, deploy state, recent diffs), consolidates duplicate or related reports into a single thread, and generates triage-quality PRs as a default starting point. Cuts the manual on-call triage step entirely for well-scoped bug classes. **5/21 (TODAY) Windows VM support**: Devin can now build, run, and test code natively inside Windows VMs (was Linux-only sandbox prior). Cognition framing: 'the world's most mature developer ecosystem.' Material for any Windows-stack shop (.NET, WPF, Unity Windows builds, MAUI Windows) that previously could not use Devin for end-to-end build+test runs. Closes a gap vs Cursor cloud Dev Environments (5/13 ship) which is Docker-Linux only by default.",
+      source: "Cognition blog (cognition.ai/blog) -- 2026-05-18 Auto-Triage + 2026-05-21 Windows VMs",
+      date: "2026-05-21",
+    },
+    {
       description: "PRODUCT (2026-05-13): Cognition shipped Android Emulator support for Devin -- Devin can now spin up an Android Virtual Device (AVD) inside its sandbox and use it for autonomous mobile app development end-to-end (build, deploy to emulator, exercise UI, screenshot, iterate). Closes the gap with Cursor 3 + Antigravity for mobile-flow testing without leaving the agent's sandbox. Concurrent: Devin's Review API is now available (in addition to the existing Playbook / schedule / knowledge-management APIs), and the UI added session-grouping + streaming-thoughts preview.",
       source: "Cognition blog (cognition.ai/blog)",
       date: "2026-05-13",
@@ -64,7 +69,7 @@ export const devin: ToolReview = {
   notFor: "Developers who want fast inline suggestions while coding -- Cursor or Copilot are better for that. Also not ready for unsupervised work on critical production systems.",
   verdict: "Devin is the most ambitious AI coding tool available, and at $20/mo it's finally priced for experimentation. When it works, it's like having a junior developer who never sleeps. When it doesn't, it's like watching that junior dev spend three hours on something you could've done in twenty minutes. The key is task selection -- give it clear, bounded work and it impresses. Give it vague requirements and you'll burn credits watching it spin. It's a glimpse of the future, but today it's a supplemental tool, not a replacement for an IDE-integrated copilot.",
 
-  lastReviewedDate: "2026-05-13",
+  lastReviewedDate: "2026-05-21",
   dataSources: [
     { name: "Cognition blog: Devin updates (2026-05-13)", url: "https://cognition.ai/blog", dateAccessed: "2026-05-13" },
     { name: "Cognition: Introducing Devin 2.2", url: "https://cognition.ai/blog/introducing-devin-2-2", dateAccessed: "2026-04-17" },

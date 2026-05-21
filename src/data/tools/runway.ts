@@ -53,6 +53,11 @@ export const runway: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-05-13 + 2026-05-21 TODAY): Runway shipped two material features in 8 days. **5/13 Runway Agent**: conversational AI creative partner inside the Runway app -- chat with the agent in natural language to plan, generate, edit, and iterate video projects across multiple Runway models (Gen-4.5, Aleph). All plans get access. Mirrors the agentic-app pattern Gemini Omni + ChatGPT image/video flows opened up. **5/21 (TODAY) Aleph 2.0 + Edit Studio**: upgraded Aleph video-editing model paired with a new Edit Studio surface (paid plans only). Closes the editing-vs-generation gap that **Gemini Omni's** in-conversation editing put pressure on (5/19 Google I/O reveal -- see gemini.ts entry). Runway's response is to make editing a first-class agentic surface inside Aleph rather than splitting gen+edit across separate models.",
+      source: "Runway changelog (runwayml.com/changelog) -- 2026-05-13 Agent + 2026-05-21 Aleph 2.0 + Edit Studio",
+      date: "2026-05-21",
+    },
+    {
       description: "PRODUCT (May 2026): Runway announced **GWM-1** -- the General World Model family for Worlds / Avatars / Robotics, built on top of Gen-4.5. GWM-1 expands Runway from a pure video-generation tool to a broader world-model platform (3D environment synthesis, embodied-agent training, robotics simulation). Same window: **Gen-4.5 gained native audio generation + native audio editing** -- previously audio had to be added post-gen via third-party tools; now Gen-4.5 outputs synchronized audio in the same generation pass and lets you edit it without re-rendering video. Material because (a) audio-native generation closes a known gap vs Veo 3 (which has had native audio since launch), (b) GWM-1 positions Runway against world-model entrants like Genie / Cosmos for the spatial AI use case rather than just T2V leaderboard competition.",
       source: "Runway changelog (runwayml.com/changelog)",
       date: "2026-05",
@@ -77,7 +82,7 @@ export const runway: ToolReview = {
   notFor: "Casual users or anyone on a tight budget. Credits disappear fast (especially at 4K), and the free tier barely lets you try it. For experimentation, Pika or Kling at similar price points are more forgiving.",
   verdict: "Runway remains the professional-tier pick for AI video in 2026. Gen-4.5 (shipped 2025-12-01) holds #1 on Artificial Analysis's text-to-video leaderboard at 1,247 Elo, with native 4K via Gen-4 Turbo and meaningful improvements in motion and physics over Gen-3. The creative suite -- inpainting, motion brush, video-to-video -- is still the widest in the market. Downsides are unchanged from Gen-3: credits burn fast (worse at 4K), 10-second clip cap, competition from Kling 3.0 and Veo 3.1 is tightening. If you need the best available quality or the full creative toolset, Runway. If you're budget-conscious or experimenting, Pika or Kling first.",
 
-  lastReviewedDate: "2026-05-19",
+  lastReviewedDate: "2026-05-21",
   dataSources: [
     { name: "Runway Research: Introducing Runway Gen-4.5", url: "https://runwayml.com/research/introducing-runway-gen-4.5", dateAccessed: "2026-04-24" },
     { name: "CNBC: Runway Gen-4.5 video model (2025-12-01)", url: "https://www.cnbc.com/2025/12/01/runway-gen-4-5-video-model-google-open-ai.html", dateAccessed: "2026-04-24" },

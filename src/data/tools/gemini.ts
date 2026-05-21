@@ -57,6 +57,11 @@ export const gemini: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "I/O 2026 SHIP (2026-05-19): **GEMINI OMNI** announced -- Google's natively multimodal video-generation model, first variant **Gemini Omni Flash**. Generates video from image / audio / video / text input, supports conversational editing inside the Gemini app, physics-grounded outputs, SynthID watermarking. Availability: Gemini app for AI Plus / Pro / Ultra subscribers globally; YouTube Shorts + YouTube Create app at no extra cost; Developer API 'in the coming weeks'. Direct competitive shot at OpenAI's Sora-2 (Sora 1 retired 2026-04-26) + Runway Gen-4.5 + Pika + Luma. The differentiator is in-conversation editing inside Gemini rather than a separate video-gen app. **Aggregator-circulated 'Veo 4' name is NOT this product** -- DeepMind models page still lists Veo 3.1 as current; no Veo 4 exists. Omni is the video-gen ship that Veo's lineup didn't get at I/O 2026.",
+      source: "blog.google (blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/)",
+      date: "2026-05-19",
+    },
+    {
       description: "I/O 2026 SHIP (2026-05-19): GEMINI 3.5 FLASH GA. Available immediately in Gemini app (global), AI Mode in Google Search, Google Antigravity platform, Gemini API via Google AI Studio + Android Studio, Gemini Enterprise Agent Platform, and Gemini Enterprise. Vendor-published benchmarks: Terminal-Bench 2.1 = 76.2%, GDPval-AA = 1656 Elo, MCP Atlas = 83.6%, CharXiv Reasoning (multimodal) = 84.2%, claimed 4x faster than other frontier models. Vendor framing: 'outperforming Gemini 3.1 Pro on challenging coding and agentic benchmarks' with richer interactive web UIs and graphics vs. Gemini 3. Pricing not disclosed in launch post -- check ai.google.dev/pricing for canonical.",
       source: "blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/, ai.google.dev/gemini-api/docs/changelog (2026-05-19 entry releases gemini-3.5-flash GA)",
       date: "2026-05-19",
@@ -111,7 +116,7 @@ export const gemini: ToolReview = {
   notFor: "Anyone who needs the best raw output quality. Claude and GPT-4 both write better. Also not for anyone spooked by Google's history of abandoning products.",
   verdict: "Gemini's strength is the ecosystem play. The 1M context window is genuinely useful for long documents, and the Google Workspace integration is something neither OpenAI nor Anthropic can match. But purely as an LLM, the output quality is a step behind Claude and GPT-4. Pick Gemini if you're deep in Google's ecosystem. Otherwise, the other two are better standalone.",
 
-  lastReviewedDate: "2026-05-20",
+  lastReviewedDate: "2026-05-21",
   dataSources: [
     { name: "Google Blog: Gemini 3.5 frontier intelligence with action (2026-05-19)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/", dateAccessed: "2026-05-20" },
     { name: "Gemini API Changelog: 3.5 Flash GA + Managed Agents + Antigravity preview (2026-05-19)", url: "https://ai.google.dev/gemini-api/docs/changelog", dateAccessed: "2026-05-20" },

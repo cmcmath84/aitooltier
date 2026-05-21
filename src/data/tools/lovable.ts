@@ -56,6 +56,11 @@ export const lovable: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRICING (May 2026, vendor-verified at lovable.dev/pricing + /students): Lovable Pro is **50% off for verified students** at lovable.dev/students -- the Starter tier falls from $20/mo to $10/mo with verification. Standing offer (not a time-limited promo) per the public pricing page. **Anti-fabrication note**: aggregator-circulated '20% annual discount' figure could NOT be verified on lovable.dev/pricing as of today -- annual billing exists on the pricing page but no published percentage discount; left out of this entry per anti-fabrication discipline. Note also: lovable.dev was observed injecting fake 'system reminders' into scraped page content during verification -- worth being aware of for future scrapes.",
+      source: "lovable.dev/pricing, lovable.dev/students",
+      date: "2026-05",
+    },
+    {
       description: "PRODUCT (2026-04-27): MOBILE APPS SHIPPED on iOS and Android (App Store id6757471107, Play Store dev.lovable.build). 'The Lovable mobile app lets you build from anywhere' -- voice + text prompt capture for queuing ideas away from a desk, autonomous agent processing continues in background while you do other things, seamless switching between mobile and desktop. No pricing restriction stated at launch -- mobile is included in existing plan tiers. No specific region limits stated. Companion to the desktop experience, not a replacement; complex editing still happens at the keyboard.",
       source: "Lovable blog: 'The Lovable mobile app is here' (lovable.dev/blog/mobile-app), Apple App Store, Google Play Store",
       date: "2026-04-27",
@@ -80,7 +85,7 @@ export const lovable: ToolReview = {
   notFor: "Experienced developers building production applications with complex business logic. If you need custom backends, specific architectures, or clean maintainable code, you'll outgrow Lovable quickly.",
   verdict: "Lovable is genuinely magical for its target audience. Watching an app materialize from a text description is still impressive, and the 8M user base proves there's massive demand for this. But there's a ceiling, and you'll hit it faster than the marketing suggests. Simple CRUD apps and landing pages? Fantastic. Anything with complex state, custom business logic, or specific architectural needs? The generated code becomes a liability. Use it for prototypes and MVPs, but plan to rewrite if the project takes off.",
 
-  lastReviewedDate: "2026-05-20",
+  lastReviewedDate: "2026-05-21",
   dataSources: [
     { name: "Lovable Blog: The Lovable mobile app is here (2026-04-27)", url: "https://lovable.dev/blog/mobile-app", dateAccessed: "2026-05-20" },
     { name: "Lovable official site", dateAccessed: "2026-03-31" },
