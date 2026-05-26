@@ -120,6 +120,7 @@ const logoMap: Record<string, string> = {
   soundraw: "/logos/soundraw.png",
   lyria: "/logos/gemini.png",
   elevenmusic: "/logos/elevenlabs.png",
+  "stable-audio": "/logos/stability.png",
 
   // Business / productivity
   "notion-ai": "/logos/notion.png",

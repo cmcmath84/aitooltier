@@ -22,9 +22,9 @@ export const perplexityComputer: ToolReview = {
       price: "$20",
       period: "month",
       features: [
-        "Does NOT include Perplexity Computer",
+        "Now includes Personal Computer on the Mac app (expanded from Max-only on 2026-05-07)",
         "Deep Research",
-        "Standard Comet browser features",
+        "Comet browser (Mac, Windows, iOS, Android)",
       ],
     },
     {
@@ -65,8 +65,8 @@ export const perplexityComputer: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "PRICING / DISTRIBUTION (third-party reports, 2026-05-07): multiple third-party outlets (Releasebot, TheAIInsider, findskill.ai) report that Perplexity Computer expanded to the Pro $20/mo tier alongside a Mac app launch on 2026-05-07, removing the prior Max-only ($200/mo) gating. The pricing table on this page reflects the original Max-only structure pending vendor-primary confirmation -- perplexity.ai/hub/blog and the canonical Personal Computer page returned 403/blocked at sweep-verification time on 2026-05-20. Until Perplexity publishes a vendor blog post that loads end-to-end, treat the Pro-tier expansion as 'reported, not vendor-primary confirmed' and re-verify next sweep.",
-      source: "Releasebot, TheAIInsider, findskill.ai (third-party only; perplexity.ai/hub/blog returned 403 at verification 2026-05-20)",
+      description: "PRICING / DISTRIBUTION (CONFIRMED 2026-05-26 via MacRumors): on 2026-05-07 Perplexity launched a Mac desktop app and expanded 'Personal Computer' access beyond Max to include the Pro $20/mo and Enterprise tiers (prior gating was Max-only at $200/mo). Runs on any Mac with macOS 14 Sonoma or later (a Mac mini is recommended for always-on operation); activated by pressing both Command keys; the agent gets local file + web access inside a secure sandbox with auditable, reversible actions. The Pro tier above is updated to reflect that it now includes Personal Computer on Mac. Note: Perplexity's own changelog/hub still returns 403 to automated fetch (same bot-blocking pattern as OpenAI), so tier-1 press is the verification path here rather than a vendor-page failure meaning 'no change'.",
+      source: "MacRumors (macrumors.com/2026/05/07/perplexity-mac-app-personal-computer); Perplexity changelog (vendor, 403 to automated fetch)",
       date: "2026-05-07",
     },
     {
@@ -84,8 +84,9 @@ export const perplexityComputer: ToolReview = {
   notFor: "Anyone price-sensitive (OpenClaw + Claude API is a fraction of the cost), anyone who needs data sovereignty (self-host Hermes instead), or anyone whose workflow doesn't actually need multi-model routing. Also wrong if you want a messaging-first UX -- Perplexity Computer lives in the browser, not in your Telegram.",
   verdict: "Perplexity Computer is the most capable hosted personal agent in 2026 and it's not especially close on output quality -- routing frontier models by task is a genuine architectural advantage over single-model agents. It's also the most expensive option in this category by an order of magnitude, and it lives on infrastructure you don't control with an active prompt-injection exposure on the sibling product. Buy it if your time is worth more than $200/month and the quality difference will show up in your work. Skip it and run OpenClaw or Hermes with Claude API if you're cost-sensitive or security-paranoid -- you'll give up the Model Council but save $150+/month.",
 
-  lastReviewedDate: "2026-05-20",
+  lastReviewedDate: "2026-05-26",
   dataSources: [
+    { name: "MacRumors: Perplexity Mac app + Personal Computer (2026-05-07)", url: "https://www.macrumors.com/2026/05/07/perplexity-mac-app-personal-computer/", dateAccessed: "2026-05-26" },
     { name: "Introducing Perplexity Computer", url: "https://www.perplexity.ai/hub/blog/introducing-perplexity-computer", dateAccessed: "2026-04-13" },
     { name: "Perplexity Comet product page", url: "https://www.perplexity.ai/comet", dateAccessed: "2026-04-13" },
     { name: "The Hacker News: Comet phishing exploit", url: "https://thehackernews.com/2026/03/researchers-trick-perplexitys-comet-ai.html", dateAccessed: "2026-04-13" },
@@ -96,5 +97,5 @@ export const perplexityComputer: ToolReview = {
   status: "active",
   poweredBy: "Claude Opus 4.6 (core reasoning) + Model Council",
   metaTitle: "Perplexity Computer Review 2026: $200/mo Hosted AI Agent, Tested",
-  metaDescription: "Perplexity Computer review. Premium hosted AI agent using Claude Opus 4.6, GPT-5.2, Gemini, Grok, and Veo 3.1. Worth $200/mo? Security risks, real trade-offs. April 2026.",
+  metaDescription: "Perplexity Computer review (May 2026). Hosted AI agent using Claude Opus, GPT-5, Gemini, Grok, and Veo. Personal Computer now on the Mac app + the $20 Pro tier, not just $200 Max. Security risks, real trade-offs.",
 };

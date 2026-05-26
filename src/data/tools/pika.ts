@@ -20,24 +20,30 @@ export const pika: ToolReview = {
     {
       plan: "Free",
       price: "$0",
-      features: ["250 credits/mo", "Basic generation", "Watermarked"],
+      features: ["80 video credits/mo", "Pika 2.5 access", "Watermarked"],
     },
     {
       plan: "Standard",
-      price: "$10",
-      period: "month",
-      features: ["700 credits/mo", "No watermarks", "Commercial use"],
+      price: "$8",
+      period: "month (billed yearly)",
+      features: ["700 credits/mo", "No watermarks", "Commercial use", "Pikaframes + Pikascenes"],
     },
     {
       plan: "Pro",
-      price: "$35",
-      period: "month",
-      features: ["2,000 credits/mo", "Priority processing", "4K"],
+      price: "$28",
+      period: "month (billed yearly)",
+      features: ["2,300 credits/mo", "Priority processing", "Higher resolutions"],
+    },
+    {
+      plan: "Fancy",
+      price: "$76",
+      period: "month (billed yearly)",
+      features: ["6,000 credits/mo", "Highest credit tier", "All tools incl. Pikaformance"],
     },
   ],
 
   pros: [
-    "Most generous free tier in AI video -- 250 credits lets you actually experiment",
+    "Genuinely useful free tier (80 credits/mo on Pika 2.5) lets you actually experiment before paying",
     "Super intuitive interface -- type a prompt and get a video. That simple.",
     "Generation speed is faster than Runway for comparable quality",
     "Fun creative tools: lip sync, sound effects, video extend",
@@ -50,9 +56,9 @@ export const pika: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "Pika's current featured product (per pika.art homepage as of 2026-05-02) is the Pikaformance model -- image-to-video with hyper-real expressions synced to audio (sing, speak, rap, etc.) at near real-time generation speed. This is the public surface of Pika today; older Pika 2.x text-to-video flows still work but Pikaformance is the headline feature",
-      source: "pika.art (vendor homepage)",
-      date: "2026-05-02",
+      description: "Pika's featured product (confirmed via pika.art 2026-05-26) is the Pikaformance model -- image-to-video with hyper-real expressions synced to audio (sing, speak, rap, etc.) at near real-time speed. Vendor specs: 720p output, 3 credits/second, audio up to 10s or 30s depending on tier. The general model is Pika 2.5; older text-to-video flows still work but Pikaformance is the headline feature. Plan pricing was also refreshed (Free 80 credits; Standard $8, Pro $28, Fancy $76 billed yearly)",
+      source: "pika.art + pika.art/pricing (vendor)",
+      date: "2026-05-26",
     },
     {
       description: "Lip sync feature produces uncanny results on real human faces",
@@ -64,9 +70,10 @@ export const pika: ToolReview = {
   notFor: "Professional filmmakers or anyone who needs the highest possible video quality. Use Runway for that.",
   verdict: "Pika is the best entry point to AI video generation. It's easier to use, cheaper, and more generous with free credits than Runway. The quality gap is real -- Runway Gen-3 looks noticeably better -- but for social media content and experimentation, Pika is more than good enough. Start here, upgrade to Runway when you need to.",
 
-  lastReviewedDate: "2026-05-02",
+  lastReviewedDate: "2026-05-26",
   dataSources: [
-    { name: "Pika official site (Pikaformance feature)", url: "https://pika.art", dateAccessed: "2026-05-02" },
+    { name: "Pika official site (Pikaformance feature)", url: "https://pika.art", dateAccessed: "2026-05-26" },
+    { name: "Pika pricing page", url: "https://pika.art/pricing", dateAccessed: "2026-05-26" },
     { name: "Reddit r/pika", dateAccessed: "2026-05-02" },
   ],
   affiliateUrl: "https://pika.art",

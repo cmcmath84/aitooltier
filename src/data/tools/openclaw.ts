@@ -54,6 +54,11 @@ export const openclaw: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "LOCKOUT PARTIALLY REVERSED (effective 2026-06-15): Anthropic is reinstating third-party agent harnesses -- including OpenClaw, `claude -p`, and Agent SDK apps -- onto Claude Pro/Max subscriptions, but routed through a SEPARATE metered credit pool rather than the flat interactive limits. Monthly programmatic credits: Pro $20, Max 5x $100, Max 20x $200 (per-user, non-rollover, billed at API rates; claim once then auto-refreshes). Past the credit you fall back to standard pay-as-you-go API rates. Net effect for OpenClaw users: running against a Claude subscription works again from 6/15 (the hard April lockout is over), but a continuous-loop agent will still burn the credit fast and revert to API economics. DeepSeek / OpenAI API remain cheaper substitutes for non-Claude-dependent skills",
+      source: "VentureBeat (anthropic-reinstates-openclaw...), The New Stack, XDA Developers",
+      date: "2026-05-13",
+    },
+    {
       description: "ANTHROPIC LOCKOUT (2026-04-04, enforced 2026-04-10): Anthropic excluded OpenClaw and other third-party agent harnesses from Claude Pro / Max flat-rate plans. Running OpenClaw against your existing Pro or Max subscription now bills as separate pay-as-you-go 'extra usage' rather than counting against the flat plan. Anthropic temporarily banned OpenClaw's creator from the platform on 2026-04-10 (cited 'subscriptions weren't built to handle the usage patterns' of harnesses that run continuous reasoning loops and tool chains). For OpenClaw users specifically: budget for direct API token costs going forward, NOT a flat $20-200/mo Claude subscription. The pay-as-you-go path still works -- but the economics are materially different. DeepSeek + OpenAI API are cheaper substitutes for non-Claude-dependent skills",
       source: "TechCrunch (techcrunch.com/2026/04/10/anthropic-temporarily-banned-openclaws-creator-from-accessing-claude/), The Next Web, PYMNTS",
       date: "2026-04-10",
@@ -78,8 +83,9 @@ export const openclaw: ToolReview = {
   notFor: "Non-technical users, anyone running untested versions, anyone exposing instances to the public internet. As of April 2026, Hermes Agent is the safer default for most users -- similar concept with a smaller security surface and an active security-response track record. Pair OpenClaw with Paperclip if you need multi-agent orchestration.",
   verdict: "OpenClaw was the viral entry that defined the messaging-first personal agent category, and its UX ideas are broadly correct. But the March 2026 CVE disclosures -- 9 vulnerabilities including a CVSS 9.9 critical, with 135,000+ instances found exposed on public IPs -- revealed that the project's rapid growth outran its security engineering. Developer migration to Hermes Agent has been visible on r/LocalLLaMA and Hacker News throughout March and April. OpenClaw is not dead and the project is responding, but the honest read is: if you haven't already built deep operational trust in your OpenClaw deployment, Hermes Agent is the better default in April 2026. Revisit OpenClaw after two more release cycles when the security posture has hardened and the install-base has churned through the exposed instances.",
 
-  lastReviewedDate: "2026-04-30",
+  lastReviewedDate: "2026-05-26",
   dataSources: [
+    { name: "VentureBeat: Anthropic reinstates OpenClaw + third-party agent usage (with a catch)", url: "https://venturebeat.com/technology/anthropic-reinstates-openclaw-and-third-party-agent-usage-on-claude-subscriptions-with-a-catch", dateAccessed: "2026-05-26" },
     { name: "openclaw.ai official site", url: "https://openclaw.ai/", dateAccessed: "2026-04-17" },
     { name: "GitHub openclaw/openclaw", url: "https://github.com/openclaw/openclaw", dateAccessed: "2026-04-17" },
     { name: "The New Stack: Persistent AI agents compared (post-CVE analysis)", url: "https://thenewstack.io/persistent-ai-agents-compared/", dateAccessed: "2026-04-17" },

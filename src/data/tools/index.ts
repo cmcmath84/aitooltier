@@ -113,6 +113,7 @@ import { aiva } from "./aiva";
 import { soundraw } from "./soundraw";
 import { lyria } from "./lyria";
 import { elevenmusic } from "./elevenmusic";
+import { stableAudio } from "./stable-audio";
 
 // AI Business Productivity
 import { notionAi } from "./notion-ai";
@@ -281,6 +282,7 @@ export const tools: ToolReview[] = [
   soundraw,
   lyria,
   elevenmusic,
+  stableAudio,
   // Business Productivity
   notionAi,
   otterAi,

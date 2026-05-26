@@ -29,10 +29,10 @@ export const deepseek: ToolReview = {
       features: ["284B total / 13B active MoE", "1M native context", "Cheapest frontier-class API on market", "Pay-as-you-go, no minimum"],
     },
     {
-      plan: "API -- V4-Pro (75% PROMO active through 2026-05-31)",
+      plan: "API -- V4-Pro",
       price: "$0.435/$0.87",
-      period: "per 1M tokens input/output (promotional)",
-      features: ["1.6T total / 49B active MoE", "1M native context", "Trails only Gemini 3.1 Pro on world knowledge benchmarks", "PROMO PRICING active through 2026-05-31 15:59 UTC -- 75% off list ($1.74/$3.48). Cache-hit input drops to $0.003625/M during promo", "Post-promo pricing reverts to $1.74/$3.48 per 1M -- still 3-10x cheaper than GPT-5.5 or Claude Opus 4.7"],
+      period: "per 1M tokens input/output",
+      features: ["1.6T total / 49B active MoE", "1M native context", "Trails only Gemini 3.1 Pro on world knowledge benchmarks", "The 75%-off rate is now the STANDING price: per the official pricing page DeepSeek 'will officially adjust V4-Pro pricing to 1/4 of the original' after the promo ends 2026-05-31 15:59 UTC -- so it does NOT revert to $1.74/$3.48. Cache-hit input $0.003625/M", "3-10x cheaper than GPT-5.5 or Claude Opus 4.7"],
     },
     {
       plan: "Self-hosted (open-source)",
@@ -65,9 +65,9 @@ export const deepseek: ToolReview = {
       date: "2026-04-24",
     },
     {
-      description: "PROMO: DeepSeek V4-Pro is 75% off through 2026-05-31 15:59 UTC per the official pricing page (api-docs.deepseek.com/quick_start/pricing). Effective rates during promo: $0.435 input / $0.87 output per 1M tokens (vs $1.74 / $3.48 list); cache-hit input drops to $0.003625/M. After 2026-05-31 reverts to standard pricing. Bloomberg framed the move as a 'Chinese price war' against frontier-model rates from OpenAI / Anthropic / Google. Worth locking in agentic-coding workloads now if you're cost-sensitive",
-      source: "DeepSeek pricing docs (api-docs.deepseek.com/quick_start/pricing), Bloomberg",
-      date: "2026-04-27",
+      description: "PRICE CUT NOW PERMANENT (confirmed 2026-05-26 via the official pricing page): the 75%-off V4-Pro promo does NOT revert on 2026-05-31. DeepSeek's pricing docs state V4-Pro pricing 'will be officially adjusted to 1/4 of the original price after the 75% discount promotion ends 2026/05/31 15:59 UTC' -- i.e. the discounted rate ($0.435 input / $0.87 output per 1M; cache-hit input $0.003625/M) becomes the new standing list price, down from $1.74 / $3.48. Tech press (The Next Web, Engadget) framed it as DeepSeek making the price war permanent. V4-Flash is unchanged at $0.14 / $0.28. The 'lock in now before the promo ends' framing no longer applies -- this is simply the price now",
+      source: "DeepSeek pricing docs (api-docs.deepseek.com/quick_start/pricing), The Next Web, Engadget",
+      date: "2026-05-26",
     },
     {
       description: "Third-party verification (T+3 days post-launch): Artificial Analysis Intelligence Index pegs V4-Pro at 52 (#2 open-weight, behind Kimi K2.6) and V4-Flash at 47. Vals AI: V4 is #1 open-weight on Vibe Code Bench 'and it's not close', plus #1 open-weight on SWE-bench. SWE-bench Verified 80.6% (effectively tied with Claude Opus 4.6's 80.8%). Codeforces 3206 surpasses GPT-5.4 (3168) -- highest competitive-programming score at release. GDPval-AA agentic 1554 leads all open-weight models. BUT LMSYS Chatbot Arena Elo around 1220 places V4-Pro alongside GPT-4o and Claude 4 Sonnet, not at the Opus-class frontier (1280+). Simon Willison's pelican-SVG community test produced visibly weak output from V4-Pro (one wing, oversized body) and concluded V4-Pro is 3-6 months behind US frontier labs at a fraction of the cost. Practical verdict: best-in-class open-weight for code/agents/math, mid-pack for general chat quality, weakest for creative/visual generation. Hallucination rate 94%/96% (Pro/Flash) per AA-Omniscience -- caveat for fact-sensitive workloads",
@@ -89,7 +89,7 @@ export const deepseek: ToolReview = {
   notFor: "Anyone working on content that touches geopolitical topics, or teams that need guaranteed uptime and enterprise SLAs. Also not ideal if your primary use case is creative English writing.",
   verdict: "DeepSeek is the real deal when it comes to bang-for-your-buck AI. The reasoning capabilities are legitimately impressive, and the open-source angle gives it a flexibility that closed models can't match. The censorship limitations are a dealbreaker for some use cases, and the writing quality trails behind Claude and GPT-4. But for coding, math, and analytical tasks? It's hard to argue with near-frontier performance at a fraction of the cost.",
 
-  lastReviewedDate: "2026-04-28",
+  lastReviewedDate: "2026-05-26",
   dataSources: [
     { name: "DeepSeek V4 API launch announcement (2026-04-24)", url: "https://api-docs.deepseek.com/news/news260424", dateAccessed: "2026-04-24" },
     { name: "Bloomberg: DeepSeek unveils newest flagship (2026-04-24)", url: "https://www.bloomberg.com/news/articles/2026-04-24/deepseek-unveils-newest-flagship-a-year-after-ai-breakthrough", dateAccessed: "2026-04-24" },
@@ -105,16 +105,16 @@ export const deepseek: ToolReview = {
   affiliateUrl: "https://www.deepseek.com",
   status: "active",
   benchmarks: {
-    modelName: "DeepSeek V4-Pro (launched 2026-04-24; scores below are the V3.2 baseline pending third-party V4 verification, which typically lands 3-7 days post-launch)",
+    modelName: "DeepSeek V4-Pro (SWE-bench + Arena Elo third-party verified post-launch; knowledge rows are V3.x baseline pending V4 figures)",
     scores: [
       { name: "MMLU", score: 90.8, maxScore: 100, unit: "%" },
       { name: "MMLU-Pro", score: 85.0, maxScore: 100, unit: "%" },
       { name: "GPQA Diamond", score: 79.9, maxScore: 100, unit: "%" },
       { name: "HumanEval", score: 91.5, maxScore: 100, unit: "%" },
-      { name: "SWE-bench Verified", score: 67.8, maxScore: 100, unit: "%" },
+      { name: "SWE-bench Verified", score: 80.6, maxScore: 100, unit: "%" },
     ],
-    chatbotArenaElo: 1380,
-    lastUpdated: "2026-04-24",
+    chatbotArenaElo: 1220,
+    lastUpdated: "2026-05-26",
   },
   systemRequirements: [
     {

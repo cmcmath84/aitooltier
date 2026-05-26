@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const qwen: ToolReview = {
   slug: "qwen",
   name: "Qwen (Alibaba)",
-  tagline: "Alibaba's open-weights + API family -- Qwen3.6-27B dense (Apr 22 2026 Apache 2.0, beats the 397B MoE flagship on coding from a single consumer GPU), Qwen 3.6-Max-Preview (Apr 20 2026 closed-weights #1 on SWE-bench Pro/Terminal-Bench 2.0/SciCode), Qwen3.6-35B-A3B (Apr 16 open-weights MoE), plus Qwen 3.6-Plus API flagship",
+  tagline: "Alibaba's open-weights + API family -- Qwen3.6-27B dense (Apr 22 2026 Apache 2.0, beats the 397B MoE flagship on coding from a single consumer GPU), Qwen 3.6-Max-Preview (Apr 20 2026 closed-weights #1 on SWE-bench Pro/Terminal-Bench 2.0/SciCode), Qwen3.6-35B-A3B (Apr 16 open-weights MoE), plus Qwen 3.6-Plus API flagship and the new Qwen 3.7 Max preview (May 2026, proprietary/API-only)",
   category: "ai-local-models",
   url: "https://qwen.ai",
 
@@ -80,6 +80,11 @@ export const qwen: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "NEXT FLAGSHIP -- Qwen 3.7 Max: previewed on the LMArena leaderboard around 2026-05-14 (debuted #13 globally in text, #7 in math reasoning), with full release + official API pricing rolling out after the Alibaba Cloud Summit on 2026-05-20. Like Qwen 3.6-Max it is PROPRIETARY / API-only on DashScope; Alibaba's stated pattern is to open-weight the tier below (a 'Plus' variant) while keeping the Max flagship closed. Early reviews praise its math and concise-code output; the preview shipped WITHOUT code-interpreter or web-search and was weaker on long narrative reasoning. Specific coding-benchmark figures circulating in aggregator coverage (SWE-Pro / Terminal-Bench / GPQA) are NOT yet vendor-confirmed as of this sweep -- treat as preliminary until Alibaba publishes official numbers",
+      source: "Decrypt (Qwen 3.7 Max preview review), LMArena leaderboard",
+      date: "2026-05-20",
+    },
+    {
       description: "INTERPRETABILITY RELEASE (2026-05-01): Alibaba released **Qwen-Scope** -- an open-source suite of **sparse autoencoder (SAE) weights** for the Qwen3 and Qwen3.5 model families, plus inference + visualization tooling. SAEs decompose internal model activations into interpretable feature directions (Anthropic / Google DeepMind have been the highest-profile labs publishing this style of interpretability work; Alibaba is the first major Chinese lab to ship SAE weights openly). Practical implication: researchers and red-teamers can now probe Qwen3.5 internals (feature attribution, concept steering, refusal-circuit analysis) without training their own SAEs -- a multi-month / multi-GPU effort. Adds to Qwen's open-weights story even as the Qwen 3.6 flagship line goes closed-weights. Materially raises the floor for safety / alignment research on Chinese open-weight families.",
       source: "Qwen blog (qwen.ai/blog?id=qwen-scope)",
       date: "2026-05-01",
@@ -119,8 +124,9 @@ export const qwen: ToolReview = {
   notFor: "Teams that need the Qwen3-Max flagship self-hostable (it's API-only), or use cases that touch Chinese-government-sensitive topics.",
   verdict: "Qwen is the most complete open-weights family in 2026. Alibaba ships Apache-2.0 weights across text, coding, vision, and reasoning -- every modality has a top-tier entry. Qwen3-Coder-Next is a standout: 3B active params but competitive with Claude Sonnet on coding. The catch is that Qwen3-Max, the absolute flagship, stays closed. If you can live with the PRC content filters and want the best open-weights ecosystem, Qwen is the S-tier pick.",
 
-  lastReviewedDate: "2026-05-19",
+  lastReviewedDate: "2026-05-26",
   dataSources: [
+    { name: "Decrypt: Alibaba Qwen 3.7 Max preview review (2026-05)", url: "https://decrypt.co/368499/alibaba-qwen-3-7-max-preview-review", dateAccessed: "2026-05-26" },
     { name: "Qwen blog: Qwen3.6-27B dense Apache 2.0 (2026-04-22)", url: "https://qwen.ai/blog?id=qwen3.6-27b", dateAccessed: "2026-04-27" },
     { name: "HuggingFace Qwen/Qwen3.6-27B", url: "https://huggingface.co/Qwen/Qwen3.6-27B", dateAccessed: "2026-04-27" },
     { name: "Implicator.ai: Qwen3.6-27B beats 397B MoE on coding", url: "https://www.implicator.ai/alibaba-ships-qwen3-6-27b-an-open-weight-coding-model-that-beats-its-397b-moe/", dateAccessed: "2026-04-27" },

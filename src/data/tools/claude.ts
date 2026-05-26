@@ -62,6 +62,11 @@ export const claude: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "UPCOMING (surfaced 2026-05-06 at Code with Claude; not yet GA as of this sweep): **Orbit** -- a proactive assistant layer for Claude / Claude Code / Claude Cowork that syncs Gmail, Slack, GitHub, Calendar, Drive, and Figma to deliver opt-in, time-zone-aware personalized briefings with actionable insights (aimed at developers, designers, PMs). As of late May 2026 it exists only as a settings-panel toggle in staging -- no public rollout or firm ship date. Real product (not a rumor), but PRE-LAUNCH on availability; watch for a GA announcement",
+      source: "TestingCatalog (Anthropic Orbit), InfoQ (Code with Claude 2026)",
+      date: "2026-05-06",
+    },
+    {
       description: "PARTNERSHIP (2026-05-14): PwC announced an **expanded strategic alliance** to deploy Claude (Code + Cowork + full product suite) across PwC US first, scaling to PwC's global workforce. Headline metrics from Anthropic's launch post: **30,000 PwC professionals to be trained and certified on Claude**, plus a joint Center of Excellence for industry-specific solutions. Dario Amodei pull-quote: 'Insurance underwriting that took 10 weeks now takes 10 days. Security work that took hours now takes minutes.' Advocate Health is the first co-named flagship deployment (167K teammates). Material because (a) it puts a Big 4 firm fully on Claude as the reference frontier model, (b) creates a ~30K-trained labor base evangelizing Claude inside Fortune 500 audits / advisory engagements, (c) competitive pressure on OpenAI Deployment Company (5/11 spin-up) which is targeting the same enterprise-services layer. Distinct event from the same-day Gates Foundation partnership; both were posted to Anthropic newsroom on 5/14.",
       source: "Anthropic news (anthropic.com/news/pwc-expanded-partnership)",
       date: "2026-05-14",
@@ -146,7 +151,7 @@ export const claude: ToolReview = {
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
   verdict: "Claude is the LLM you pick when quality matters more than features. Opus 4.7 (April 16, 2026) widened the quality lead on writing and made real step-change gains in software engineering and long-context reasoning, while keeping the $5/$25 per 1M token pricing. The new xhigh reasoning level is the biggest practical change for coding agents -- you can finally dial in real reasoning effort short of max without the latency cost. The 1M context window, 3.75MP vision, and MCP support make it the most capable generally-available model from any vendor today. If you're choosing one to pay $20/mo for, it still comes down to: do you want better outputs (Claude) or more features (ChatGPT)?",
 
-  lastReviewedDate: "2026-05-19",
+  lastReviewedDate: "2026-05-26",
   dataSources: [
     { name: "Anthropic: Claude for Small Business (2026-05-13)", url: "https://www.anthropic.com/news/claude-for-small-business", dateAccessed: "2026-05-13" },
     { name: "GitHub Security Advisory: GHSA-p7fg-763f-g4gf (CVE-2026-41686, 2026-05-04)", url: "https://github.com/anthropics/anthropic-sdk-typescript/security/advisories/GHSA-p7fg-763f-g4gf", dateAccessed: "2026-05-05" },
