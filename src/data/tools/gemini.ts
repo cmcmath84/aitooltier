@@ -57,6 +57,11 @@ export const gemini: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "SHUTDOWN (effective 2026-06-18): Google is **retiring Gemini CLI and the Gemini Code Assist IDE extensions** for Google AI Pro & Ultra subscribers, free-tier Gemini Code Assist for individuals, and individual Code Assist for GitHub (no new installations after this date). On June 18 these stop serving requests with no grace period -- any CI/CD or script calling `gemini` breaks. **Enterprise customers** (Gemini Code Assist Standard/Enterprise licenses, or GitHub access via Google Cloud) keep access with ongoing model updates. Replacement: **Antigravity CLI** -- Google explicitly says 'there won't be 1:1 feature parity out of the gate' but it keeps the most critical Gemini CLI features (Agent Skills, Hooks, Subagents, and Extensions, now as Antigravity plugins). If you script against Gemini CLI on a consumer plan, migrate before 6/18.",
+      source: "Google Developers Blog (developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/)",
+      date: "2026-06-18",
+    },
+    {
       description: "I/O 2026 SHIP (2026-05-19): **GEMINI OMNI** announced -- Google's natively multimodal video-generation model, first variant **Gemini Omni Flash**. Generates video from image / audio / video / text input, supports conversational editing inside the Gemini app, physics-grounded outputs, SynthID watermarking. Availability: Gemini app for AI Plus / Pro / Ultra subscribers globally; YouTube Shorts + YouTube Create app at no extra cost; Developer API 'in the coming weeks'. Direct competitive shot at OpenAI's Sora-2 (Sora 1 retired 2026-04-26) + Runway Gen-4.5 + Pika + Luma. The differentiator is in-conversation editing inside Gemini rather than a separate video-gen app. **Aggregator-circulated 'Veo 4' name is NOT this product** -- DeepMind models page still lists Veo 3.1 as current; no Veo 4 exists. Omni is the video-gen ship that Veo's lineup didn't get at I/O 2026.",
       source: "blog.google (blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni/)",
       date: "2026-05-19",
@@ -116,8 +121,9 @@ export const gemini: ToolReview = {
   notFor: "Anyone who needs the best raw output quality. Claude and GPT-4 both write better. Also not for anyone spooked by Google's history of abandoning products.",
   verdict: "Gemini's strength is the ecosystem play. The 1M context window is genuinely useful for long documents, and the Google Workspace integration is something neither OpenAI nor Anthropic can match. But purely as an LLM, the output quality is a step behind Claude and GPT-4. Pick Gemini if you're deep in Google's ecosystem. Otherwise, the other two are better standalone.",
 
-  lastReviewedDate: "2026-05-21",
+  lastReviewedDate: "2026-06-02",
   dataSources: [
+    { name: "Google Developers Blog: Transitioning Gemini CLI to Antigravity CLI (shutdown 2026-06-18)", url: "https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/", dateAccessed: "2026-06-02" },
     { name: "Google Blog: Gemini 3.5 frontier intelligence with action (2026-05-19)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/", dateAccessed: "2026-05-20" },
     { name: "Gemini API Changelog: 3.5 Flash GA + Managed Agents + Antigravity preview (2026-05-19)", url: "https://ai.google.dev/gemini-api/docs/changelog", dateAccessed: "2026-05-20" },
     { name: "Gemini Spark product page (vendor-primary)", url: "https://gemini.google/overview/agent/spark/", dateAccessed: "2026-05-20" },

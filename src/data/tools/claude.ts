@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const claude: ToolReview = {
   slug: "claude",
   name: "Claude (Anthropic)",
-  tagline: "Anthropic's flagship LLM -- Opus 4.7 (launched April 16, 2026) with 1M-token context, high-res vision, new xhigh reasoning level, and the most natural conversational style. PwC expanded strategic alliance announced 2026-05-14 (30K PwC professionals to be Claude-trained, Advocate Health flagship). Note: 2026-04-04 policy excluded third-party agent harnesses (OpenClaw etc.) from Pro/Max flat-rate, and 2026-04-16 Enterprise pricing dropped bundled tokens",
+  tagline: "Anthropic's flagship LLM -- Opus 4.8 (launched May 28, 2026) with 1M-token context, high-res vision, user-facing effort control, and a cheaper fast mode (2.5x speed, now 3x cheaper than before). Anthropic says 4.8 is a more effective agentic collaborator with sharper judgment. Standard pricing unchanged at $5/$25 per 1M. Note: 2026-04-04 policy excluded third-party agent harnesses (OpenClaw etc.) from Pro/Max flat-rate, and 2026-04-16 Enterprise pricing dropped bundled tokens",
   category: "ai-llms",
   url: "https://claude.ai",
 
@@ -26,13 +26,13 @@ export const claude: ToolReview = {
       plan: "Pro",
       price: "$20",
       period: "month",
-      features: ["5x more usage than Free", "Claude Opus 4.7 + Sonnet 4.6", "Extended thinking, xhigh reasoning level", "Priority access"],
+      features: ["5x more usage than Free", "Claude Opus 4.8 + Sonnet 4.6", "Effort control + extended thinking", "Priority access"],
     },
     {
       plan: "Max (5x)",
       price: "$100",
       period: "month",
-      features: ["5x Pro usage", "Priority queue", "Opus 4.7 with full xhigh + max reasoning"],
+      features: ["5x Pro usage", "Priority queue", "Opus 4.8 with full effort control + fast mode"],
     },
     {
       plan: "Max (20x)",
@@ -41,18 +41,19 @@ export const claude: ToolReview = {
       features: ["20x Pro usage", "Highest priority", "All generally-available models", "Best for power users and agents"],
     },
     {
-      plan: "API (Opus 4.7)",
+      plan: "API (Opus 4.8)",
       price: "$5 / $25",
       period: "per 1M tokens (input/output)",
-      features: ["Unchanged from Opus 4.6 pricing", "1M context window", "Tool use, MCP, high-res vision up to 3.75MP", "Bedrock, Vertex AI, Foundry"],
+      features: ["Unchanged from Opus 4.7 pricing", "1M context window", "Fast mode at $10 / $50 per 1M (2.5x speed, 3x cheaper than prior fast mode)", "Tool use, MCP, high-res vision; Bedrock, Vertex AI, Foundry"],
     },
   ],
 
   pros: [
-    "Best writing quality of any LLM -- Opus 4.7 outputs read like a human wrote them, not a robot, and instruction-following is substantially sharper than 4.6",
+    "Best writing quality of any LLM -- Opus 4.8 outputs read like a human wrote them, not a robot, and instruction-following stays sharpest in class",
     "1M token context window for enterprise API means it can process entire codebases, huge document sets, or long agent traces without chunking",
-    "Opus 4.7 brings a real step-change in coding (~13% lift on benchmarks, 3x more production tasks resolved per Anthropic) and the new xhigh reasoning level lets you dial in the effort/latency tradeoff",
-    "First Claude model with genuine high-res vision -- 3.75MP images (2,576px long edge, 3x prior limit) means charts, diagrams, whiteboards, and dense UIs finally work properly",
+    "Opus 4.8 is built for agentic work -- Anthropic says it is a more effective collaborator with notably improved judgment in agent scenarios and is roughly 4x less likely than 4.7 to let code flaws slip through",
+    "New user-facing effort control (claude.ai + Cowork) lets you trade depth for speed, and fast mode now runs at 2.5x speed while costing 3x less than the previous fast mode -- a real latency/cost lever short of full reasoning",
+    "High-res vision (3.75MP images, 2,576px long edge) means charts, diagrams, whiteboards, and dense UIs work properly",
   ],
   cons: [
     "Free tier is more limited than ChatGPT's -- you hit the cap faster",
@@ -61,6 +62,11 @@ export const claude: ToolReview = {
     "Can be overly cautious and refuse requests that are perfectly fine",
   ],
   knownIssues: [
+    {
+      description: "MODEL LAUNCH (2026-05-28): **Claude Opus 4.8** shipped as Anthropic's new flagship. Anthropic frames it as 'a more effective collaborator' with notably improved judgment in agent scenarios and meaningful gains across coding, agentic, and reasoning tasks (per third-party coverage, ~4x less likely than Opus 4.7 to let code flaws pass). Two practical changes for users: (1) **effort control** on claude.ai and Cowork -- higher effort makes Claude think more frequently and deeply, lower effort prioritizes speed and rate-limit efficiency; 4.8 defaults to high effort. (2) **Fast mode** for Opus 4.8 runs at 2.5x speed and is now 3x cheaper than fast mode on previous models. API pricing unchanged at $5/$25 per 1M (standard) / $10/$50 (fast). Vendor-cited benchmarks span Terminal-Bench 2.1, OSWorld-Verified, CursorBench, Legal Agent Benchmark, Online-Mind2Web (84%), and Finance Agent v2 -- specific scores are shown only in vendor charts at launch, so third-party verification is pending. New recommended API model id: claude-opus-4-8.",
+      source: "Anthropic news (anthropic.com/news/claude-opus-4-8), Axios, MacRumors",
+      date: "2026-05-28",
+    },
     {
       description: "UPCOMING (surfaced 2026-05-06 at Code with Claude; not yet GA as of this sweep): **Orbit** -- a proactive assistant layer for Claude / Claude Code / Claude Cowork that syncs Gmail, Slack, GitHub, Calendar, Drive, and Figma to deliver opt-in, time-zone-aware personalized briefings with actionable insights (aimed at developers, designers, PMs). As of late May 2026 it exists only as a settings-panel toggle in staging -- no public rollout or firm ship date. Real product (not a rumor), but PRE-LAUNCH on availability; watch for a GA announcement",
       source: "TestingCatalog (Anthropic Orbit), InfoQ (Code with Claude 2026)",
@@ -112,7 +118,7 @@ export const claude: ToolReview = {
       date: "2026-04",
     },
     {
-      description: "Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) retire 2026-06-15 per Anthropic's deprecations page. Announced 2026-04-14. If your product relies on those specific snapshots, schedule migration work to Sonnet 4.6 (`claude-sonnet-4-6`) or Opus 4.7 (`claude-opus-4-7`) before then",
+      description: "Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) retire 2026-06-15 (now ~2 weeks out) per Anthropic's deprecations page. Announced 2026-04-14. If your product relies on those specific snapshots, migrate to Sonnet 4.6 (`claude-sonnet-4-6`) or Opus 4.8 (`claude-opus-4-8`, the current recommended Opus replacement) before then. SEPARATE 2026-06-15 event: Agent SDK / `claude -p` / Claude Code GitHub Actions move to a metered credit pool at API rates (see claude-code.ts)",
       source: "Anthropic model deprecations page",
       date: "2026-04",
     },
@@ -149,10 +155,11 @@ export const claude: ToolReview = {
   ],
   bestFor: "Writers, analysts, developers, and anyone who values quality of output over quantity of features. If you care about how good the actual text is, Claude is the best.",
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
-  verdict: "Claude is the LLM you pick when quality matters more than features. Opus 4.7 (April 16, 2026) widened the quality lead on writing and made real step-change gains in software engineering and long-context reasoning, while keeping the $5/$25 per 1M token pricing. The new xhigh reasoning level is the biggest practical change for coding agents -- you can finally dial in real reasoning effort short of max without the latency cost. The 1M context window, 3.75MP vision, and MCP support make it the most capable generally-available model from any vendor today. If you're choosing one to pay $20/mo for, it still comes down to: do you want better outputs (Claude) or more features (ChatGPT)?",
+  verdict: "Claude is the LLM you pick when quality matters more than features. Opus 4.8 (May 28, 2026) keeps the writing and long-context lead while sharpening the thing that matters most in 2026 -- agentic reliability. Anthropic positions it as a more effective collaborator with better judgment in agent scenarios and roughly 4x fewer code flaws slipping through versus 4.7, and the new user-facing effort control plus a cheaper, faster fast mode (2.5x speed, 3x cheaper) give you a real latency/cost dial without dropping to a weaker model. Standard API pricing is unchanged at $5/$25 per 1M. With the 1M context window, high-res vision, and MCP support, it remains the most capable generally-available model from any vendor today. If you're choosing one to pay $20/mo for, it still comes down to: do you want better outputs and agentic reliability (Claude) or a broader feature ecosystem (ChatGPT)?",
 
-  lastReviewedDate: "2026-05-26",
+  lastReviewedDate: "2026-06-02",
   dataSources: [
+    { name: "Anthropic: Introducing Claude Opus 4.8 (2026-05-28)", url: "https://www.anthropic.com/news/claude-opus-4-8", dateAccessed: "2026-06-02" },
     { name: "Anthropic: Claude for Small Business (2026-05-13)", url: "https://www.anthropic.com/news/claude-for-small-business", dateAccessed: "2026-05-13" },
     { name: "GitHub Security Advisory: GHSA-p7fg-763f-g4gf (CVE-2026-41686, 2026-05-04)", url: "https://github.com/anthropics/anthropic-sdk-typescript/security/advisories/GHSA-p7fg-763f-g4gf", dateAccessed: "2026-05-05" },
     { name: "Anthropic: Project Deal (2026-04-25)", url: "https://www.anthropic.com/features/project-deal", dateAccessed: "2026-04-27" },
@@ -168,7 +175,7 @@ export const claude: ToolReview = {
   affiliateUrl: "https://claude.ai",
   status: "active",
   benchmarks: {
-    modelName: "Claude Opus 4.7 (4.6 baseline scores shown; 4.7 announced 13% coding lift, 3x production task completion)",
+    modelName: "Claude Opus 4.8 (launched 2026-05-28; legacy 4.6/4.7 reasoning-suite scores shown as baseline -- 4.8's launch benchmarks (Terminal-Bench 2.1, OSWorld-Verified, CursorBench, Online-Mind2Web 84%) are agentic, with specific numeric scores in vendor charts and third-party verification pending)",
     scores: [
       { name: "MMLU", score: 91.3, maxScore: 100, unit: "%" },
       { name: "GPQA Diamond", score: 91.3, maxScore: 100, unit: "%" },
@@ -185,6 +192,6 @@ export const claude: ToolReview = {
     tone: "Measured, careful, and slightly formal. Claude explains tradeoffs rather than handing back one-liner answers, asks clarifying questions when a request is ambiguous, and hedges openly when it is not confident.",
     quirks: "More willing than most models to refuse edgy or ambiguous requests, pushes back on premises it disagrees with, and will flag when you are probably asking the wrong question instead of just answering the one you typed.",
   },
-  metaTitle: "Claude Opus 4.7 Review (April 16, 2026): xhigh Reasoning, 3.75MP Vision, 1M Context",
-  metaDescription: "Claude Opus 4.7 review. Launched April 16, 2026. New xhigh reasoning, 3x higher-res vision (3.75MP), 1M context, 13% coding lift. $5/$25 per 1M tokens. Pro $20/mo.",
+  metaTitle: "Claude Opus 4.8 Review (May 28, 2026): Effort Control, Cheaper Fast Mode, 1M Context",
+  metaDescription: "Claude Opus 4.8 review. Launched May 28, 2026. New effort control, fast mode at 2.5x speed (3x cheaper), ~4x fewer code flaws vs 4.7, 1M context, high-res vision. $5/$25 per 1M tokens. Pro $20/mo.",
 };

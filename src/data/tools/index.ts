@@ -21,6 +21,7 @@ import { grok } from "./grok";
 import { museSpark } from "./muse-spark";
 import { gptRosalind } from "./gpt-rosalind";
 import { gptCyber } from "./gpt-cyber";
+import { maiThinking1 } from "./mai-thinking-1";
 
 // Local & Open-Weight LLMs
 import { llama } from "./llama";
@@ -199,6 +200,7 @@ export const tools: ToolReview[] = [
   museSpark,
   gptRosalind,
   gptCyber,
+  maiThinking1,
   // Local & Open-Weight LLMs
   llama,
   mistral,

@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const githubCopilot: ToolReview = {
   slug: "github-copilot",
   name: "GitHub Copilot",
-  tagline: "AI code assistant that lives in your editor -- autocomplete on steroids. As of 2026-04-20 new signups for Pro/Pro+/Student are PAUSED. As of 2026-04-27 GitHub announced ALL plans transition to usage-based billing (AI Credits + token metering) effective 2026-06-01 -- code completions remain free, agent/chat usage now meters against monthly credit allotments matching the plan price",
+  tagline: "AI code assistant that lives in your editor -- autocomplete on steroids. Usage-based billing went LIVE 2026-06-01: AI Credits + token metering across all plans, code completions still free. New Copilot Max tier added the same day. New signups for Student/Pro/Pro+/Max remain PAUSED. As of 2026-06-02 (Microsoft Build), Microsoft's own MAI-Code-1-Flash is rolling into the VS Code model picker",
   category: "ai-code-assistants",
   url: "https://github.com/features/copilot",
 
@@ -32,7 +32,12 @@ export const githubCopilot: ToolReview = {
       plan: "Pro+",
       price: "$39",
       period: "month",
-      features: ["NEW SIGNUPS PAUSED 2026-04-20", "Claude Opus 4.7 access", "Full frontier-model picker", "Effective 2026-06-01: $39 in monthly AI Credits"],
+      features: ["NEW SIGNUPS PAUSED 2026-04-20", "Claude Opus access (Pro+ only)", "Full frontier-model picker", "Live 2026-06-01: $39 in monthly AI Credits"],
+    },
+    {
+      plan: "Copilot Max (NEW 2026-06-01)",
+      price: "Upgrade tier",
+      features: ["Upgrade for existing Student/Pro/Pro+ subscribers", "Higher included usage + higher spending limits", "NEW SIGNUPS PAUSED (reopen in coming weeks)", "Usage-based AI Credits + token metering"],
     },
     {
       plan: "Business",
@@ -61,6 +66,16 @@ export const githubCopilot: ToolReview = {
     "Multi-file refactoring understanding is limited compared to Cursor",
   ],
   knownIssues: [
+    {
+      description: "BILLING CUTOVER WENT LIVE (2026-06-01, vendor-primary github.blog/changelog): usage-based billing is now live for all GitHub Copilot users. Each plan ships with monthly included usage; beyond it, requests meter against GitHub AI Credits / token rates. Code completions and Next Edit suggestions stay free. **New Copilot Max tier introduced the same day** -- an upgrade for existing Student/Pro/Pro+ subscribers with higher included usage + higher spending limits. **New signups remain PAUSED for Student, Pro, Pro+, AND the new Max plan** ('we'll reopen sign-ups in the coming weeks'). Copilot code review now also consumes GitHub Actions minutes as of 6/1. Net: the 4/27-announced transition is no longer 'upcoming' -- it is the current state.",
+      source: "GitHub Changelog (github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/), GitHub Blog: moving to usage-based billing",
+      date: "2026-06-01",
+    },
+    {
+      description: "MICROSOFT BUILD (2026-06-02): Microsoft's own **MAI-Code-1-Flash** -- a lightweight in-house coding model -- is rolling out to GitHub Copilot individual users in VS Code, in the model picker and under the default auto-picker. Vendor benchmarks vs Claude Haiku 4.5: SWE-Bench Pro 51.2% vs 35.2% (a 16-point lead), solves SWE-Bench Verified problems with up to 60% fewer tokens, and +28.9 on IF Bench (instruction-following). Microsoft frames it as 'better price-to-performance across coding benchmarks.' Significant because it is the first time a first-party Microsoft model is the cost-efficient default inside Copilot rather than an OpenAI or Anthropic model -- part of the broader 'seven new MAI models' Build wave that also includes MAI-Thinking-1 (reasoning), MAI-Image-2.5, MAI-Transcribe-1.5, and MAI-Voice-2.",
+      source: "Microsoft AI (microsoft.ai/news/introducingmai-code-1-flash/), Microsoft Build 2026 newsroom (news.microsoft.com/build-2026/)",
+      date: "2026-06-02",
+    },
     {
       description: "PRODUCT + MODEL CLUSTER (2026-05-14 → 2026-05-21, 6 vendor changelog entries in 8 days -- highest cadence of the year): (1) **2026-05-14 GitHub Copilot app in technical preview** -- standalone Copilot app outside the editor, paralleling the OpenAI Codex mobile / Cursor / Anthropic 'agent goes where you go' pattern. (2) **2026-05-19 Gemini 3.5 Flash GA inside Copilot** -- same day as Google's I/O 2026 reveal (no aggregator delay; vendor-to-vendor handoff). Added to the Pro+/Business/Enterprise model picker. (3) **2026-05-20 Auto model selection routes by task in VS Code** -- Copilot auto-picks among the lineup based on task type rather than user-pinned default. (4) **2026-05-20 Semantic issue search in Copilot Chat** -- chat queries the issues backlog with semantic understanding (find related, dedupe, surface stale). (5) **2026-05-20 Updates to available models in Copilot on web** -- model-picker parity refresh across surfaces. (6) **2026-05-21 Issue fields public preview** -- organization-wide rollout of issue-field customization. Net effect: 6 customer-facing changelogs in the 8-day window ahead of the 6/1 billing cliff.",
       source: "GitHub Changelog (github.blog/changelog -- 5/14 copilot-app-tech-preview, 5/19 gemini-3-5-flash-ga, 5/20 auto-model-selection-vscode, 5/20 semantic-issue-search-copilot-chat, 5/20 updates-to-available-models-on-web, 5/21 issue-fields-public-preview)",
@@ -136,8 +151,10 @@ export const githubCopilot: ToolReview = {
   notFor: "Anyone trying to sign up for Pro, Pro+, or Student right now -- signups are paused (2026-04-20 onward). Also not for developers who specifically wanted Claude Opus on the $10 Pro plan; Opus was just pulled to Pro+ only. Cursor or Claude Code are the obvious alternatives during the pause.",
   verdict: "GitHub Copilot hit a wall on 2026-04-20: new Pro/Pro+/Student signups paused, Claude Opus pulled from Pro, and usage caps tightened across the board. Microsoft is openly admitting that agent workloads consume more compute than the current subscription tiers can sustain, and the product is being retuned in real time. For existing subscribers the inline completions remain best-in-class, but the value proposition has gotten worse overnight. If you're shopping for an AI code assistant in the next 30 days, Cursor (Pro+ $60) and Claude Code are the practical choices until Microsoft either reopens signups or reprices. Watch the refund window (through 2026-05-20) if you're on the fence about staying.",
 
-  lastReviewedDate: "2026-05-21",
+  lastReviewedDate: "2026-06-02",
   dataSources: [
+    { name: "GitHub Changelog: Updates to GitHub Copilot billing and plans -- usage-based billing live (2026-06-01)", url: "https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/", dateAccessed: "2026-06-02" },
+    { name: "Microsoft AI: Introducing MAI-Code-1-Flash (2026-06-02)", url: "https://microsoft.ai/news/introducingmai-code-1-flash/", dateAccessed: "2026-06-02" },
     { name: "GitHub Changelog: GPT-5.2 + GPT-5.2-Codex deprecation (2026-05-01, retiring 2026-06-01)", url: "https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex/", dateAccessed: "2026-05-04" },
     { name: "GitHub Changelog: Business self-serve signup pause (2026-04-22)", url: "https://github.blog/changelog/2026-04-22-pausing-new-self-serve-signups-for-github-copilot-business/", dateAccessed: "2026-05-04" },
     { name: "GitHub Changelog: Code Review Actions minutes billing (2026-04-27, effective 2026-06-01)", url: "https://github.blog/changelog/2026-04-27-github-copilot-code-review-will-start-consuming-github-actions-minutes-on-june-1-2026/", dateAccessed: "2026-05-04" },
@@ -153,6 +170,6 @@ export const githubCopilot: ToolReview = {
   affiliateUrl: "https://github.com/features/copilot",
   status: "active",
   poweredBy: "GPT-5.4 (Pro) / Claude Opus 4.7 + GPT-5.4 (Pro+)",
-  metaTitle: "GitHub Copilot Review 2026: Usage-Based Billing June 1 + Signups Paused",
-  metaDescription: "GitHub Copilot review. Usage-based billing effective 2026-06-01: $10 Pro / $39 Pro+ / $19 Business / $39 Enterprise become monthly AI Credit allotments. Code completions stay free. Pro signups still paused 4/20.",
+  metaTitle: "GitHub Copilot Review 2026: Usage-Based Billing Live + New Copilot Max + MAI-Code-1-Flash",
+  metaDescription: "GitHub Copilot review. Usage-based AI Credits billing went live 2026-06-01; new Copilot Max tier added; signups still paused for Student/Pro/Pro+/Max. Microsoft's MAI-Code-1-Flash now in the VS Code picker (Build, June 2). Code completions stay free.",
 };

@@ -2,8 +2,8 @@ import { ToolReview } from "@/lib/types";
 
 export const maiTranscribe1: ToolReview = {
   slug: "mai-transcribe-1",
-  name: "Microsoft MAI-Transcribe-1",
-  tagline: "Microsoft's first in-house speech-recognition model -- launched 2026-04-02. #1 on FLEURS WER overall, #1 by FLEURS WER in 11 of the top 25 global languages. Beats Whisper-large-v3, Scribe v2, GPT-Transcribe, Gemini 3.1 Flash-Lite. $0.36/hour of audio on Azure Foundry",
+  name: "Microsoft MAI-Transcribe-1.5",
+  tagline: "Microsoft's in-house speech-recognition model -- MAI-Transcribe-1.5 launched 2026-06-02 at Build: 43 languages (up from 25), best-in-class FLEURS WER, transcribes 1hr of audio in under 15s (was 53s), and new keyword-biasing cuts WER ~30%. #3 on Artificial Analysis at 2.4% WER. Now integrated into Copilot, Teams, GitHub, and Dynamics 365 Contact Center. Original MAI-Transcribe-1 shipped 2026-04-02 at $0.36/hr",
   category: "ai-business-productivity",
   url: "https://microsoft.ai/news/state-of-the-art-speech-recognition-with-mai-transcribe-1/",
 
@@ -18,14 +18,26 @@ export const maiTranscribe1: ToolReview = {
   hasFreeTier: true,
   pricing: [
     {
-      plan: "Azure Foundry API",
+      plan: "MAI-Transcribe-1.5 (Azure Foundry, launched 2026-06-02)",
+      price: "Not disclosed",
+      period: "per hour of audio",
+      features: [
+        "43 supported languages (up from 25)",
+        "Best-in-class FLEURS WER; #3 on Artificial Analysis at 2.4% WER",
+        "Transcribes 1 hour of audio in under 15s (was 53s)",
+        "Keyword biasing: ~30% WER reduction on FLEURS for domain terms",
+        "Microsoft: 'most cost-effective transcription model of any hyperscaler'",
+      ],
+    },
+    {
+      plan: "MAI-Transcribe-1 (original, 2026-04-02)",
       price: "$0.36",
       period: "per hour of audio",
       features: [
-        "Public preview on Microsoft Foundry",
         "25 supported languages",
         "~3.8% average WER across FLEURS benchmark",
         "2.5x faster than Azure Fast transcription",
+        "Reference price point for the 1.5 generation pending vendor disclosure",
       ],
     },
     {
@@ -53,6 +65,11 @@ export const maiTranscribe1: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "VERSION BUMP (2026-06-02, Microsoft Build): MAI-Transcribe-1.5 launched in the 'seven new MAI models' wave. Vendor-published changes vs 1.0: language coverage expanded from 25 to 43; speed improved to under 15 seconds per hour of audio (from 53s); new keyword-biasing feature delivers a ~30% WER reduction on the FLEURS multilingual benchmark by applying domain terminology intelligently (context-aware, not blind keyword forcing). Microsoft claims 'best-in-class Word Error Rate across 43 languages' and #3 on the Artificial Analysis leaderboard at 2.4% WER, describing it as 'the fastest, most efficient and most cost-effective transcription model of any hyperscaler.' Now being integrated into Copilot, Teams, GitHub, and Dynamics 365 Contact Center; available through Foundry. Per-hour pricing not disclosed at launch.",
+      source: "Microsoft AI (microsoft.ai/news/mai-transcribe-1-5more-accurate-context-aware-and-built-for-production/, microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/)",
+      date: "2026-06-02",
+    },
+    {
       description: "Public preview in US only for MAI Playground. Foundry API works globally but you need an Azure subscription to evaluate",
       source: "Microsoft AI launch post",
       date: "2026-04",
@@ -65,16 +82,18 @@ export const maiTranscribe1: ToolReview = {
   ],
   bestFor: "Developers and enterprises who need best-in-class multilingual speech-to-text for high-volume use cases (meeting recording pipelines, call-center transcription, accessibility captioning at scale, multilingual audio indexing). Especially relevant for Azure shops already on Microsoft infrastructure.",
   notFor: "End-user meeting transcription -- use Otter.ai, Fireflies, or Descript for that. Also not the right answer for on-device / edge transcription -- use Whisper-tiny or a compressed local model there. MAI-Transcribe-1 is a cloud-API tier-1 accuracy play.",
-  verdict: "MAI-Transcribe-1 is the sleeper hit of Microsoft's 2026-04-02 MAI release. #1 on FLEURS WER at a $0.36/hour price point positions it as the new default backend for anyone building speech-to-text pipelines at scale -- existing meeting-app vendors (Otter, Fireflies, Descript) will likely evaluate it against their current Whisper-based stacks over Q2 2026. For developers shipping multilingual audio products, this is the cleanest upgrade path available. For consumer meeting transcription, your existing app is still the right answer -- but its backend may quietly switch to this model in the next two quarters.",
+  verdict: "MAI-Transcribe-1.5 (2026-06-02) widens the lead Microsoft opened in April. Going from 25 to 43 languages while pushing transcription speed to under 15 seconds per audio hour -- a 3.5x speedup -- and adding context-aware keyword biasing (a ~30% WER cut on domain terms) makes this a serious production backend, not just a benchmark flex. The #3 Artificial Analysis placement at 2.4% WER and the 'most cost-effective of any hyperscaler' framing position it as the default speech-to-text layer for Azure shops. It is now baked into Copilot, Teams, GitHub, and Dynamics 365 Contact Center, so most Microsoft customers get it without a separate integration. For consumer meeting transcription, Otter/Fireflies/Descript remain the right end-user products -- but their Whisper-based backends now have a faster, cheaper, more multilingual alternative to evaluate. Per-hour pricing for 1.5 is still undisclosed; that is the one open question.",
 
-  lastReviewedDate: "2026-04-17",
+  lastReviewedDate: "2026-06-02",
   dataSources: [
+    { name: "Microsoft AI: MAI-Transcribe-1.5 -- more accurate, context-aware, built for production (2026-06-02)", url: "https://microsoft.ai/news/mai-transcribe-1-5more-accurate-context-aware-and-built-for-production/", dateAccessed: "2026-06-02" },
+    { name: "Microsoft AI: Launching seven new MAI models (2026-06-02)", url: "https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/", dateAccessed: "2026-06-02" },
     { name: "Microsoft AI: State-of-the-art speech recognition with MAI-Transcribe-1", url: "https://microsoft.ai/news/state-of-the-art-speech-recognition-with-mai-transcribe-1/", dateAccessed: "2026-04-17" },
     { name: "Microsoft AI: 3 new MAI models in Foundry", url: "https://microsoft.ai/news/today-were-announcing-3-new-world-class-mai-models-available-in-foundry/", dateAccessed: "2026-04-17" },
     { name: "MAI-Transcribe-1 model card PDF", url: "https://microsoft.ai/pdf/MAI-Transcribe-1-Model-Card.pdf", dateAccessed: "2026-04-17" },
   ],
   affiliateUrl: "https://microsoft.ai/news/state-of-the-art-speech-recognition-with-mai-transcribe-1/",
   status: "active",
-  metaTitle: "MAI-Transcribe-1 Review 2026: Microsoft's #1 FLEURS WER Transcription Model",
-  metaDescription: "MAI-Transcribe-1 review. Microsoft's in-house ASR (Apr 2 2026). #1 on FLEURS WER, 25 languages, $0.36/hr. Beats Whisper-large-v3, Scribe v2, GPT-Transcribe. Azure Foundry.",
+  metaTitle: "MAI-Transcribe-1.5 Review 2026: Microsoft's 43-Language Speech-to-Text Model",
+  metaDescription: "MAI-Transcribe-1.5 review. Microsoft's ASR (Build, June 2 2026). 43 languages, best-in-class FLEURS WER, 1hr audio in under 15s, keyword biasing. #3 Artificial Analysis at 2.4% WER. Azure Foundry.",
 };

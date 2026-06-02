@@ -2,8 +2,8 @@ import { ToolReview } from "@/lib/types";
 
 export const maiImage2: ToolReview = {
   slug: "mai-image-2",
-  name: "Microsoft MAI-Image-2",
-  tagline: "Microsoft's first in-house diffusion image model -- launched 2026-04-02, debuted #3 on Arena.ai leaderboard for image model families. Public preview on Azure Foundry. Powers Copilot, Bing Image Creator, and PowerPoint. Efficient variant (MAI-Image-2-Efficient) shipped 2026-04-14",
+  name: "Microsoft MAI-Image-2.5",
+  tagline: "Microsoft's in-house image model -- MAI-Image-2.5 launched 2026-06-02 at Build (#2 image editing, #3 text-to-image on Arena, surpassing Nano Banana Pro's Arena score; +75 overall vs MAI-Image-2). Live in PowerPoint + OneDrive, on Azure Foundry, MAI Playground, and OpenRouter. Ultra-efficient MAI-Image-2.5-Flash rolling out next. Original MAI-Image-2 shipped 2026-04-02",
   category: "ai-image-generators",
   url: "https://ai.azure.com/catalog/models/MAI-Image-2",
 
@@ -18,24 +18,34 @@ export const maiImage2: ToolReview = {
   hasFreeTier: true,
   pricing: [
     {
-      plan: "Azure Foundry API",
-      price: "$5 input / $33 output",
+      plan: "MAI-Image-2.5 (Azure Foundry / OpenRouter, launched 2026-06-02)",
+      price: "$5 text / $8 image-in / $47 image-out",
       period: "per 1M tokens",
       features: [
         "Text input: $5/1M tokens",
-        "Image output: $33/1M tokens",
-        "Public preview on Azure Foundry",
-        "Global standard deployment in US regions + West Europe + Sweden Central + South India",
+        "Image input: $8/1M tokens",
+        "Image output: $47/1M tokens",
+        "#2 image editing + #3 text-to-image on Arena; surpasses Nano Banana Pro's Arena score",
       ],
     },
     {
-      plan: "MAI-Image-2-Efficient (variant, shipped 2026-04-14)",
-      price: "Reduced rates",
+      plan: "MAI-Image-2.5-Flash (rolling out next)",
+      price: "$1.75 text / $1.75 image-in / $19.50 image-out",
+      period: "per 1M tokens",
       features: [
-        "22% faster than MAI-Image-2",
-        "4x more compute-efficient",
-        "Same architecture, tuned for throughput",
-        "Same category availability",
+        "Ultra-efficient variant of MAI-Image-2.5",
+        "~2.4x cheaper image output than full 2.5",
+        "For high-volume / latency-sensitive workloads",
+        "Announced 2026-06-02, rolling out soon",
+      ],
+    },
+    {
+      plan: "MAI-Image-2 (original, 2026-04-02) + Efficient variant",
+      price: "$5 input / $33 output per 1M",
+      features: [
+        "Debuted #3 on Arena.ai image families at launch",
+        "MAI-Image-2-Efficient (2026-04-14): 22% faster, 4x more compute-efficient",
+        "Global standard deployment in US + West Europe + Sweden Central + South India",
       ],
     },
     {
@@ -63,6 +73,11 @@ export const maiImage2: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "VERSION BUMP (2026-06-02, Microsoft Build): MAI-Image-2.5 launched as part of the 'seven new MAI models' wave. Vendor-published Arena results: #2 for image editing and #3 for text-to-image, with an overall Arena score 'surpassing Nano Banana Pro' and +75 points over MAI-Image-2 (text rendering +107, cartoon/anime/fantasy +90). New capabilities: advanced visual reasoning for scene understanding, fine-grained localized edit control, and face/identity consistency preservation across edits. Now live in PowerPoint and OneDrive (presentation visuals + photo editing), on Azure Foundry, MAI Playground, and via OpenRouter. Pricing: $5/1M text, $8/1M image-in, $47/1M image-out. An ultra-efficient MAI-Image-2.5-Flash ($1.75/$1.75/$19.50) is rolling out next.",
+      source: "Microsoft AI (microsoft.ai/news/introducing-mai-image-2-5/, microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/)",
+      date: "2026-06-02",
+    },
+    {
       description: "Public preview on Azure Foundry -- availability is region-dependent. Global Standard deployment covers US + West Europe + Sweden Central + South India at launch. Other regions need to fall back to nearest available",
       source: "Microsoft Foundry catalog, Microsoft AI blog",
       date: "2026-04",
@@ -75,10 +90,12 @@ export const maiImage2: ToolReview = {
   ],
   bestFor: "Microsoft shops already on Azure or M365 Copilot who need a first-party image model without an OpenAI dependency. Also good for any high-volume programmatic image workflow (ad creative, product photography variations) where MAI-Image-2-Efficient's 4x cost efficiency materially changes the economics.",
   notFor: "Text-heavy commercial design (use Nano Banana 2). Stylized artistic work (use Midjourney). Open-weight self-hosting requirements (use FLUX.2 [klein]). Consumer creators who want a simple web UI -- the Foundry workflow is developer-facing.",
-  verdict: "MAI-Image-2 is the most surprising entry in Microsoft's 2026-04-02 MAI model release. Debuting #3 on Arena.ai on their first attempt -- against Nano Banana 2, Midjourney, and Flux -- suggests Microsoft's internal imaging research (part of the Inflection / Mustafa Suleyman-era buildout) was further along than publicly known. For Azure customers this is a real alternative to third-party APIs. For everyone else, the three standalone winners (Nano Banana 2, Midjourney, Flux) remain the answer depending on your use case -- but expect Microsoft to catch up on multi-reference and stylization features through Q2/Q3 2026.",
+  verdict: "MAI-Image-2.5 (2026-06-02) is the version bump that closes the gap. Where MAI-Image-2 debuted #3 on Arena as a surprise, 2.5 now ranks #2 for image editing and #3 for text-to-image, with an overall Arena score Microsoft says surpasses Nano Banana Pro -- and the +107-point text-rendering jump directly targets the one area where Nano Banana used to win. The new fine-grained localized editing and face/identity consistency make it genuinely competitive for commercial work, and being live in PowerPoint + OneDrive means most Microsoft 365 users already have it. For Azure customers this is now a first-tier image option, not just a no-OpenAI-dependency fallback. Midjourney still wins on stylized art and Flux on open-weight control, but the gap is much smaller than it was in April. Watch for the cheaper MAI-Image-2.5-Flash to land for high-volume use.",
 
-  lastReviewedDate: "2026-04-17",
+  lastReviewedDate: "2026-06-02",
   dataSources: [
+    { name: "Microsoft AI: Introducing MAI-Image-2.5 (2026-06-02)", url: "https://microsoft.ai/news/introducing-mai-image-2-5/", dateAccessed: "2026-06-02" },
+    { name: "Microsoft AI: Launching seven new MAI models (2026-06-02)", url: "https://microsoft.ai/news/building-a-hillclimbing-machine-launching-seven-new-mai-models/", dateAccessed: "2026-06-02" },
     { name: "Microsoft AI: 3 new MAI models in Foundry", url: "https://microsoft.ai/news/today-were-announcing-3-new-world-class-mai-models-available-in-foundry/", dateAccessed: "2026-04-17" },
     { name: "Microsoft Foundry model catalog: MAI-Image-2", url: "https://ai.azure.com/catalog/models/MAI-Image-2", dateAccessed: "2026-04-17" },
     { name: "Microsoft Community Hub: MAI-Image-2-Efficient", url: "https://techcommunity.microsoft.com/blog/azure-ai-foundry-blog/introducing-mai-image-2-efficient-faster-more-efficient-image-generation/4510918", dateAccessed: "2026-04-17" },
@@ -86,6 +103,6 @@ export const maiImage2: ToolReview = {
   ],
   affiliateUrl: "https://ai.azure.com/catalog/models/MAI-Image-2",
   status: "active",
-  metaTitle: "MAI-Image-2 Review 2026: Microsoft's First In-House Image Model",
-  metaDescription: "MAI-Image-2 review. Microsoft's diffusion image model (Apr 2 2026). #3 on Arena.ai at launch. Azure Foundry $5/$33 per 1M tokens. Powers Copilot + Bing + PowerPoint. Efficient variant Apr 14.",
+  metaTitle: "MAI-Image-2.5 Review 2026: Microsoft's Image Model Tops Nano Banana Pro on Arena",
+  metaDescription: "MAI-Image-2.5 review. Microsoft's image model (Build, June 2 2026). #2 image editing / #3 text-to-image on Arena, surpasses Nano Banana Pro. Live in PowerPoint + OneDrive. Foundry $5/$8/$47 per 1M. Flash variant coming.",
 };

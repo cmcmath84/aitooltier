@@ -24,6 +24,7 @@ const logoMap: Record<string, string> = {
   "character-ai": "/logos/character-ai.png",
   gemini: "/logos/gemini.png",
   grok: "/logos/grok.png",
+  "mai-thinking-1": "/logos/microsoft.png",
   "microsoft-copilot": "/logos/microsoft.png",
   perplexity: "/logos/perplexity.png",
   poe: "/logos/poe.png",

@@ -50,6 +50,11 @@ export const microsoftCopilot: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "MICROSOFT BUILD (2026-06-02): Microsoft introduced **Scout** -- an always-on personal agent that watches your inbox/Teams and acts proactively (widely compared to the open-source OpenClaw assistant) -- and **Autopilots**, a layer of long-running autonomous agents, both framed as the foundation of a coming unified Copilot 'super app' that merges Copilot chat, GitHub Copilot coding, and Cowork into one experience (reported target: end of summer 2026). Also at Build: a new GitHub Copilot desktop app for agent-native development, Microsoft Discovery general availability, and the broader agent-first platform push (Project Solara, Surface Axion dev box). Microsoft's own MAI models (MAI-Thinking-1, MAI-Code-1-Flash, MAI-Image-2.5, MAI-Transcribe-1.5, MAI-Voice-2) increasingly back these Copilot surfaces, reducing the OpenAI dependency. Most super-app pieces are announced/preview rather than GA today.",
+      source: "Microsoft Build 2026 newsroom (news.microsoft.com/build-2026/), TechCrunch (Scout), Fortune (Copilot super app)",
+      date: "2026-06-02",
+    },
+    {
       description: "Microsoft 365 pricing update hits all purchasing channels on 2026-07-01 -- confirmed in the 2026-04-16 Partner Center announcement referencing the December 2025 blog post. Copilot Business bundles are specifically called out as lockable at current pricing pre-7/1. If you plan to deploy M365 Copilot to a mid-size org, renewing or purchasing before 2026-06-30 locks current rates; anything after ticks into the new pricing schedule. Microsoft 365 E7 SKU also launches 2026-05-01 bundling E5 + Entra Suite + Copilot + Agent 365 with 10-15% CSP promotional discounts through 2026-12-31",
       source: "Microsoft Partner Center 2026-04-16 announcement, Microsoft 365 blog (2025-12-04)",
       date: "2026-04",
@@ -74,8 +79,9 @@ export const microsoftCopilot: ToolReview = {
   notFor: "Anyone who wants the best conversational AI experience -- ChatGPT and Claude both feel more natural to talk to.",
   verdict: "Microsoft Copilot's biggest selling point is that it's free and it's everywhere in Windows and Edge. The GPT-4 access with Bing search grounding is genuinely useful for quick research. But as a conversational AI, it feels like talking to a corporate chatbot -- overly cautious, context-limited, and bland. The paid tiers are where it gets complicated: Copilot Pro competes directly with ChatGPT Plus and doesn't win, while Copilot for Microsoft 365 is powerful but requires an existing M365 subscription. It's a solid free option, but not the best at anything.",
 
-  lastReviewedDate: "2026-04-21",
+  lastReviewedDate: "2026-06-02",
   dataSources: [
+    { name: "Microsoft Build 2026 newsroom (Scout, Autopilots, Copilot, GitHub app)", url: "https://news.microsoft.com/build-2026/", dateAccessed: "2026-06-02" },
     { name: "Microsoft Partner Center April 2026 announcements", url: "https://learn.microsoft.com/en-us/partner-center/announcements/2026-april", dateAccessed: "2026-04-21" },
     { name: "Microsoft 365 blog: pricing + packaging update (Dec 2025)", url: "https://www.microsoft.com/microsoft-365/blog/2025/12/04/advancing-microsoft-365-new-capabilities-and-pricing-update/", dateAccessed: "2026-04-21" },
     { name: "Microsoft Copilot official site", dateAccessed: "2026-04-21" },
@@ -88,6 +94,6 @@ export const microsoftCopilot: ToolReview = {
     tone: "Friendly-professional and cautious. Copilot keeps the ChatGPT-style voice but dials down personality for workplace contexts, with more hedging and disclaimers on anything sensitive.",
     quirks: "Tightly integrated with Microsoft 365 -- will pull context from your Outlook, Word, and Teams when enabled. Stricter refusals than consumer ChatGPT on the same prompts, especially inside the enterprise tenant.",
   },
-  metaTitle: "Microsoft Copilot Review 2026: July 1 Price Update + Office Chat Limits",
-  metaDescription: "Microsoft Copilot review. M365 pricing update 2026-07-01 (lock current rates before 6/30), M365 E7 SKU 5/1, enterprise Office Chat restrictions. Free tier still useful.",
+  metaTitle: "Microsoft Copilot Review 2026: Build Scout + Autopilots + Super App + July 1 Price Update",
+  metaDescription: "Microsoft Copilot review. Build 2026 (June 2): Scout always-on agent, Autopilots, and a coming Copilot 'super app'. M365 pricing update 2026-07-01 (lock rates before 6/30). Free tier still useful.",
 };
