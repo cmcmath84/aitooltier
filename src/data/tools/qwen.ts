@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const qwen: ToolReview = {
   slug: "qwen",
   name: "Qwen (Alibaba)",
-  tagline: "Alibaba's open-weights + API family -- Qwen3.6-27B dense (Apr 22 2026 Apache 2.0, beats the 397B MoE flagship on coding from a single consumer GPU), Qwen 3.6-Max-Preview (Apr 20 2026 closed-weights #1 on SWE-bench Pro/Terminal-Bench 2.0/SciCode), Qwen3.6-35B-A3B (Apr 16 open-weights MoE), plus Qwen 3.6-Plus API flagship and the new Qwen 3.7 Max preview (May 2026, proprietary/API-only)",
+  tagline: "Alibaba's open-weights + API family -- Qwen 3.7 Max flagship GA (May 20 2026: SWE-Bench Pro 60.6%, Terminal-Bench 69.7%, GPQA 92.4%, $2.50/$7.50 per 1M with 50% promo until 6/22), Qwen3.7-Plus multimodal API (Jun 2), Qwen3.6-27B dense Apache 2.0 (beats the 397B MoE on coding from one consumer GPU)",
   category: "ai-local-models",
   url: "https://qwen.ai",
 
@@ -37,6 +37,16 @@ export const qwen: ToolReview = {
         "Always-on chain-of-thought reasoning",
         "Agentic tool-use baked in (matches Claude Opus 4.5 on SWE-bench per Alibaba Cloud)",
         "API-only (weights not released)",
+      ],
+    },
+    {
+      plan: "API (Qwen 3.7 Max flagship, May 20 2026 -- CLOSED WEIGHTS)",
+      price: "$2.50 / $7.50",
+      period: "per 1M tokens input/output (50% launch promo $1.25/$3.75 until 2026-06-22)",
+      features: [
+        "Vendor benchmarks: SWE-Bench Pro 60.6%, Terminal-Bench 2.0-Terminus 69.7%, GPQA 92.4%",
+        "PROPRIETARY / API-only on DashScope + Model Studio",
+        "Qwen3.7-Plus sibling (Jun 2): multimodal image/video input at $0.40/$1.60 per 1M",
       ],
     },
     {
@@ -80,9 +90,9 @@ export const qwen: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "NEXT FLAGSHIP -- Qwen 3.7 Max: previewed on the LMArena leaderboard around 2026-05-14 (debuted #13 globally in text, #7 in math reasoning), with full release + official API pricing rolling out after the Alibaba Cloud Summit on 2026-05-20. Like Qwen 3.6-Max it is PROPRIETARY / API-only on DashScope; Alibaba's stated pattern is to open-weight the tier below (a 'Plus' variant) while keeping the Max flagship closed. Early reviews praise its math and concise-code output; the preview shipped WITHOUT code-interpreter or web-search and was weaker on long narrative reasoning. Specific coding-benchmark figures circulating in aggregator coverage (SWE-Pro / Terminal-Bench / GPQA) are NOT yet vendor-confirmed as of this sweep -- treat as preliminary until Alibaba publishes official numbers",
-      source: "Decrypt (Qwen 3.7 Max preview review), LMArena leaderboard",
-      date: "2026-05-20",
+      description: "FLAGSHIP GA + VENDOR NUMBERS CONFIRMED (verified 2026-06-09): **Qwen 3.7 Max** shipped 2026-05-20 ('Qwen3.7: The Agent Frontier' on the official Qwen blog) -- the benchmark figures that circulated in aggregators are now vendor-published: **SWE-Bench Pro 60.6%, Terminal-Bench 2.0-Terminus 69.7%, GPQA 92.4%**, plus SWE-Multilingual 78.3%, SciCode 53.5%, QwenSVG 1608. PROPRIETARY / API-only on DashScope/Model Studio. Official pricing: **$2.50/M input, $7.50/M output list -- with a 50% launch promo ($1.25/$3.75) running until 2026-06-22**. Separately, **Qwen3.7-Plus** launched ~2026-06-02 on Bailian/Model Studio: multimodal (image + video input, text output) with GUI-agent, deep reasoning, and tool invocation at $0.40/$1.60 per 1M -- press-reported agent scores (ScreenSpot Pro 79.0, AndroidWorld 81.0) await vendor tables. Both models confirmed on Alibaba's official Model Studio model list",
+      source: "Qwen blog (qwen.ai/blog?id=qwen3.7), Alibaba Cloud pricing campaign (alibabacloud.com/campaign/qwen-discount), Alibaba Model Studio model list (help.aliyun.com/zh/model-studio/models), VentureBeat (Qwen3.7-Plus)",
+      date: "2026-06-09",
     },
     {
       description: "INTERPRETABILITY RELEASE (2026-05-01): Alibaba released **Qwen-Scope** -- an open-source suite of **sparse autoencoder (SAE) weights** for the Qwen3 and Qwen3.5 model families, plus inference + visualization tooling. SAEs decompose internal model activations into interpretable feature directions (Anthropic / Google DeepMind have been the highest-profile labs publishing this style of interpretability work; Alibaba is the first major Chinese lab to ship SAE weights openly). Practical implication: researchers and red-teamers can now probe Qwen3.5 internals (feature attribution, concept steering, refusal-circuit analysis) without training their own SAEs -- a multi-month / multi-GPU effort. Adds to Qwen's open-weights story even as the Qwen 3.6 flagship line goes closed-weights. Materially raises the floor for safety / alignment research on Chinese open-weight families.",
@@ -124,8 +134,11 @@ export const qwen: ToolReview = {
   notFor: "Teams that need the Qwen3-Max flagship self-hostable (it's API-only), or use cases that touch Chinese-government-sensitive topics.",
   verdict: "Qwen is the most complete open-weights family in 2026. Alibaba ships Apache-2.0 weights across text, coding, vision, and reasoning -- every modality has a top-tier entry. Qwen3-Coder-Next is a standout: 3B active params but competitive with Claude Sonnet on coding. The catch is that Qwen3-Max, the absolute flagship, stays closed. If you can live with the PRC content filters and want the best open-weights ecosystem, Qwen is the S-tier pick.",
 
-  lastReviewedDate: "2026-05-26",
+  lastReviewedDate: "2026-06-09",
   dataSources: [
+    { name: "Qwen blog: Qwen3.7 -- The Agent Frontier (vendor benchmarks)", url: "https://qwen.ai/blog?id=qwen3.7", dateAccessed: "2026-06-09" },
+    { name: "Alibaba Cloud: Qwen 3.7 Max pricing + launch discount", url: "https://www.alibabacloud.com/campaign/qwen-discount", dateAccessed: "2026-06-09" },
+    { name: "Alibaba Model Studio model list (qwen3.7-max + qwen3.7-plus)", url: "https://help.aliyun.com/zh/model-studio/models", dateAccessed: "2026-06-09" },
     { name: "Decrypt: Alibaba Qwen 3.7 Max preview review (2026-05)", url: "https://decrypt.co/368499/alibaba-qwen-3-7-max-preview-review", dateAccessed: "2026-05-26" },
     { name: "Qwen blog: Qwen3.6-27B dense Apache 2.0 (2026-04-22)", url: "https://qwen.ai/blog?id=qwen3.6-27b", dateAccessed: "2026-04-27" },
     { name: "HuggingFace Qwen/Qwen3.6-27B", url: "https://huggingface.co/Qwen/Qwen3.6-27B", dateAccessed: "2026-04-27" },
@@ -185,6 +198,6 @@ export const qwen: ToolReview = {
     tone: "Helpful, verbose, and notably strong in Chinese and other non-English languages. Qwen is chattier than Mistral or DeepSeek and tends toward structured, multi-section replies.",
     quirks: "Best-in-class at Chinese -- occasionally switches to Mandarin mid-response for technical or cultural topics even when prompted in English. Political refusal patterns mirror other Chinese models on China-specific topics.",
   },
-  metaTitle: "Qwen Review 2026: Qwen3.6-27B Dense Apache 2.0 + Max-Preview Closed",
-  metaDescription: "Qwen review. Qwen3.6-27B (Apr 22 2026 dense Apache 2.0, beats 397B MoE on coding, single consumer GPU) + Qwen 3.6-Max-Preview (Apr 20 closed-weights #1 SWE-bench Pro) + Qwen 3.6-Plus API. Free tier killed 4/15.",
+  metaTitle: "Qwen Review 2026: Qwen 3.7 Max GA (SWE-Pro 60.6%) + 3.7-Plus Multimodal API",
+  metaDescription: "Qwen review. Qwen 3.7 Max GA May 20 2026 -- SWE-Bench Pro 60.6%, Terminal-Bench 69.7%, GPQA 92.4%, $2.50/$7.50 per 1M (50% promo to 6/22). Qwen3.7-Plus multimodal $0.40/$1.60. Qwen3.6-27B Apache 2.0 for self-hosting.",
 };

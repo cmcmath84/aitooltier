@@ -62,6 +62,11 @@ export const cursor: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "VERSION CLUSTER (v3.6 5/29 + v3.7 early June, all vendor changelog): **3.6 'Auto-review Run Mode'** (5/29) -- a classifier subagent routes Shell/MCP/Fetch tool calls between auto-execute and require-review, cutting approval fatigue without going full-YOLO (the aggregator-circulated 'Cursor 3.6 auto-review' claim is confirmed real). **v3.7 ships**: Organizations for Cursor Enterprise (6/3, per-team security/governance/budget controls), Canvas Design Mode + Context Usage Report (6/4), SDK upgrades (custom stores, custom tools, auto-review, nested subagents in TS/Python), and Design Mode improvements (6/5, multi-select + voice input). Enterprise governance + design tooling in one week -- Cursor pushing both upmarket and into the designer workflow simultaneously",
+      source: "Cursor changelog (cursor.com/changelog) -- 2026-05-29 v3.6 + 2026-06-03/04/05 v3.7 entries",
+      date: "2026-06-05",
+    },
+    {
       description: "PRODUCT (2026-05-19 + 2026-05-20): Cursor shipped two post-Composer-2.5 integration/feature drops. **5/19 Cursor in Jira**: @Cursor mentions inside Jira comments trigger cloud agent runs that auto-create PR links back to the Jira ticket. Requires Rovo-enabled Jira Commercial Cloud (Atlassian's AI tier) -- not available on Jira Server / Data Center. **5/20 Cursor Automations v2**: multi-repo support, no-repo automations (automations that orchestrate without targeting a specific repo at definition time), plus 5 new marketplace templates (Slack digest agent, product analytics agent, FAQ agent, finance agent, customer-health agent). **50% discount on agent runs for the first 7 days of each new automation**. The Jira surface adds @-mention parity with the 5/11 Microsoft Teams integration; the Automations v2 marketplace template push is Cursor's bid for the no/low-code business-agent slot that Microsoft Agent 365 + Notion Custom Agents are competing for.",
       source: "Cursor changelog (cursor.com/changelog) -- 2026-05-19 Jira + 2026-05-20 Automations v2",
       date: "2026-05-20",
@@ -141,7 +146,7 @@ export const cursor: ToolReview = {
   notFor: "Developers happy with their current editor setup who just want basic autocomplete -- Copilot is still less disruptive for that. Also not for anyone skeptical of Cursor's own coding model; if you want pure frontier-model access for every task, paying Claude or OpenAI directly and using Claude Code is cleaner.",
   verdict: "Cursor 3 + Composer 2 (April 2026) is the release where Cursor stops being an AI-augmented editor and becomes an agent-first dev environment. Composer 2's speed at $0.50/$2.50 per 1M tokens is the real story -- it makes tight iteration loops feel instant in a way frontier models can't, even if the quality is slightly below Opus 4.6. The multi-workspace + cross-platform handoff design assumes you want your agents everywhere; if you don't, it's overkill. The honest read: for developers willing to go all-in on agentic workflows, Cursor 3 is the 2026 default. For everyone else, Claude Code + Copilot is a simpler, less committing stack.",
 
-  lastReviewedDate: "2026-05-21",
+  lastReviewedDate: "2026-06-09",
   dataSources: [
     { name: "Cursor: Development Environments for Cloud Agents (2026-05-13)", url: "https://cursor.com/blog/cloud-agent-development-environments", dateAccessed: "2026-05-13" },
     { name: "Cursor changelog: Microsoft Teams (2026-05-11)", url: "https://cursor.com/changelog/microsoft-teams", dateAccessed: "2026-05-13" },

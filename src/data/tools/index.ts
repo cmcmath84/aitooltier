@@ -90,6 +90,7 @@ import { poe } from "./poe";
 import { notebookLm } from "./notebooklm";
 import { alexaPlus } from "./alexa-plus";
 import { characterAi } from "./character-ai";
+import { siriAi } from "./siri-ai";
 
 // AI Voice & Audio
 import { elevenlabs } from "./elevenlabs";
@@ -264,6 +265,7 @@ export const tools: ToolReview[] = [
   notebookLm,
   alexaPlus,
   characterAi,
+  siriAi,
   // Voice & Audio
   elevenlabs,
   murfAi,

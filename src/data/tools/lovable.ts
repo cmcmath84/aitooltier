@@ -56,6 +56,11 @@ export const lovable: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-05-27 + 2026-06-01, vendor blog): **Subagents** (5/27) -- 'Lovable is now better at multitasking': parallel research/explore/search subagents work the project simultaneously instead of one sequential agent loop (note: aggregators circulated this as a 6/1 launch; the vendor post is dated 5/27). **Automatic security features** (6/1): scan profiles, security memory, and scheduled scans now run on projects by default. Also: new projects default to TanStack Start SSR since 5/13",
+      source: "Lovable blog (lovable.dev/blog -- 'Introducing subagents' 2026-05-27, security post 2026-06-01)",
+      date: "2026-06-01",
+    },
+    {
       description: "PRICING (May 2026, vendor-verified at lovable.dev/pricing + /students): Lovable Pro is **50% off for verified students** at lovable.dev/students -- the Starter tier falls from $20/mo to $10/mo with verification. Standing offer (not a time-limited promo) per the public pricing page. **Anti-fabrication note**: aggregator-circulated '20% annual discount' figure could NOT be verified on lovable.dev/pricing as of today -- annual billing exists on the pricing page but no published percentage discount; left out of this entry per anti-fabrication discipline. Note also: lovable.dev was observed injecting fake 'system reminders' into scraped page content during verification -- worth being aware of for future scrapes.",
       source: "lovable.dev/pricing, lovable.dev/students",
       date: "2026-05",
@@ -85,7 +90,7 @@ export const lovable: ToolReview = {
   notFor: "Experienced developers building production applications with complex business logic. If you need custom backends, specific architectures, or clean maintainable code, you'll outgrow Lovable quickly.",
   verdict: "Lovable is genuinely magical for its target audience. Watching an app materialize from a text description is still impressive, and the 8M user base proves there's massive demand for this. But there's a ceiling, and you'll hit it faster than the marketing suggests. Simple CRUD apps and landing pages? Fantastic. Anything with complex state, custom business logic, or specific architectural needs? The generated code becomes a liability. Use it for prototypes and MVPs, but plan to rewrite if the project takes off.",
 
-  lastReviewedDate: "2026-05-21",
+  lastReviewedDate: "2026-06-09",
   dataSources: [
     { name: "Lovable Blog: The Lovable mobile app is here (2026-04-27)", url: "https://lovable.dev/blog/mobile-app", dateAccessed: "2026-05-20" },
     { name: "Lovable official site", dateAccessed: "2026-03-31" },

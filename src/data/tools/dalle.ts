@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const dalle: ToolReview = {
   slug: "dall-e",
   name: "DALL-E (Shut Down)",
-  tagline: "OpenAI's DALL-E 2 and DALL-E 3 -- SHUT DOWN. Both APIs were retired on 2026-05-12 (yesterday). DALL-E 3 was already removed from ChatGPT in December 2025. Existing integrations now fail; migrate to gpt-image-1.5 / gpt-image-1-mini (request shape differs -- not a drop-in swap). Tier-list alternatives: Nano Banana 2, Midjourney, FLUX.2 [klein], Ideogram",
+  tagline: "OpenAI's DALL-E 2 and DALL-E 3 -- SHUT DOWN. Both APIs were retired on 2026-05-12. DALL-E 3 was already removed from ChatGPT in December 2025. Existing integrations now fail; migrate to gpt-image-1.5 / gpt-image-1-mini (request shape differs -- not a drop-in swap). Tier-list alternatives: Nano Banana 2, Midjourney, FLUX.2 [klein], Ideogram",
   category: "ai-image-generators",
   url: "https://openai.com/dall-e-3",
 
@@ -55,7 +55,7 @@ export const dalle: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "DALL-E 2 and DALL-E 3 APIs were SHUT DOWN on 2026-05-12 (yesterday). OpenAI's deprecations page now lists both `dall-e-2` and `dall-e-3` past their retirement date. API calls to either endpoint now fail. No extension was granted. Migration target per OpenAI is gpt-image-1.5 / gpt-image-1-mini -- request shape differs (not a drop-in swap, response format and parameters changed). DALL-E 3 was already removed from the consumer ChatGPT product in December 2025 in favor of GPT Image native multimodal. This closes out the first wave of standalone AI image APIs.",
+      description: "DALL-E 2 and DALL-E 3 APIs were SHUT DOWN on 2026-05-12. OpenAI's deprecations page now lists both `dall-e-2` and `dall-e-3` past their retirement date. API calls to either endpoint now fail. No extension was granted. Migration target per OpenAI is gpt-image-1.5 / gpt-image-1-mini -- request shape differs (not a drop-in swap, response format and parameters changed). DALL-E 3 was already removed from the consumer ChatGPT product in December 2025 in favor of GPT Image native multimodal. This closes out the first wave of standalone AI image APIs.",
       source: "OpenAI API deprecations page (developers.openai.com/api/docs/deprecations)",
       date: "2026-05-12",
     },

@@ -2,8 +2,8 @@ import { ToolReview } from "@/lib/types";
 
 export const windsurf: ToolReview = {
   slug: "windsurf",
-  name: "Windsurf",
-  tagline: "Cognition's AI code editor -- Windsurf 2.0 (2026-04-15) adds Agent Command Center, Spaces, and embedded Devin cloud agents. As of 2026-05-12 **Devin Review** ships bundled in all paid Windsurf tiers (Fast + Comprehensive flavors, 2-week free trial on self-serve)",
+  name: "Devin Desktop (formerly Windsurf)",
+  tagline: "Windsurf is now **Devin Desktop** -- Cognition retired the Windsurf brand via OTA update on June 2, 2026. Same editor, plans, pricing, settings, and extensions; the bundled agent is now 'Devin Local' and Devin Cloud agent access starts on the $20 Pro plan. Agent Command Center, Spaces, and Devin Review all carry over",
   category: "ai-code-assistants",
   url: "https://windsurf.com",
 
@@ -60,6 +60,11 @@ export const windsurf: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "REBRAND (2026-06-02): **Windsurf is now Devin Desktop.** Cognition shipped the rename as an over-the-air update (build 2026.5.26) -- windsurf.com/editor now titles itself 'Devin Desktop' and the changelog has become 'Devin Docs.' Nothing breaks: plans, pricing, settings, and extensions carry over unchanged. What's new in the bundle: the local agent is branded **Devin Local**, and **Devin Cloud agent access now starts on the $20 Pro plan** (previously enterprise-only positioning). The rebrand completes the post-acquisition consolidation -- Cognition now ships one product family (Devin Cloud, Devin Desktop, Devin Review) instead of two brands. Context: Cognition announced 2026-05-27 it has raised over $1B at a $26B valuation (Lux Capital, General Catalyst, 8VC)",
+      source: "Devin blog (devin.ai/blog, 'Windsurf is now Devin Desktop', 2026-06-02), windsurf.com/editor, Cognition blog (cognition.ai/blog, 'More Devins in More Places')",
+      date: "2026-06-02",
+    },
+    {
       description: "PRODUCT (2026-05-12): Windsurf bundled **Devin Review** into all paid Windsurf IDE tiers at no extra cost -- self-serve subscribers get a 2-week free trial of Devin Review. Two flavors: 'Fast' (quick PR scan) and 'Comprehensive' (deep review with Devin reasoning). Same-day shipped: **Claude Opus 4.7 fast mode** added to the Windsurf model picker. The Devin Review integration is the most concrete payoff yet from the Cognition acquisition of Windsurf -- the IDE now embeds Cognition's flagship code-review agent without a separate Cognition contract, narrowing Cursor's PR-review edge (Cursor 3.3 5/7 PR review experience). Practical implication: any team comparing Cursor vs Windsurf for PR-review-in-editor should re-evaluate now -- the 2-week free trial gives a clean A/B on Cognition's review quality before committing.",
       source: "Windsurf blog (windsurf.com/blog/devin-review-windsurf)",
       date: "2026-05-12",
@@ -92,10 +97,12 @@ export const windsurf: ToolReview = {
   ],
   bestFor: "Developers who want agent-first coding (background + inline) inside a familiar VS Code-based editor, and who value Cognition's Devin integration as a core part of the workflow. The April 2026 redesign makes Windsurf 2.0 a direct alternative to Cursor 3 for this use case.",
   notFor: "Developers who just want great autocomplete and inline chat with BYO-API-key flexibility -- Cursor 3 has the deeper model catalog and Pro+ tier. Also not for teams with strict data-residency needs that preclude Cognition's cloud agents.",
-  verdict: "Windsurf 2.0 is the Cognition-era reboot of the product, and it's a legitimate direct competitor to Cursor 3 rather than a cheaper alternative. The Agent Command Center + embedded Devin cloud agent is a bet that developers want a unified IDE for both supervised (you in the loop) and autonomous (agent in background) work. If that bet plays out, Windsurf becomes the full-stack answer Cursor 3 is chasing from the opposite direction. If it doesn't, the fragmentation risk (two agent surfaces competing for your attention) could slow it down. The honest read: for agent-heavy workflows, Windsurf 2.0 is now a first-tier choice alongside Cursor 3. For autocomplete-and-chat minimalists, Cursor 3 or Copilot remains simpler.",
+  verdict: "The Windsurf name is gone -- as of June 2, 2026 this product is Devin Desktop, and the rebrand tells you exactly where Cognition is taking it: one Devin family where the IDE is the supervised surface and Devin Cloud is the autonomous one. Nothing about the editor itself changed in the rename (same VS Code base, plans, extensions), and Devin Cloud access landing on the $20 Pro plan makes the agent-first pitch more accessible than it was under enterprise gating. The honest read is unchanged from the Windsurf 2.0 era: for agent-heavy workflows this is a first-tier choice alongside Cursor; for autocomplete-and-chat minimalists, Cursor or Copilot remains simpler. With $1B raised at a $26B valuation, Cognition has the runway to keep pushing -- expect the Devin Desktop / Cursor rivalry to define the category through 2026.",
 
-  lastReviewedDate: "2026-05-19",
+  lastReviewedDate: "2026-06-09",
   dataSources: [
+    { name: "Devin blog: Windsurf is now Devin Desktop (2026-06-02)", url: "https://www.devin.ai/blog", dateAccessed: "2026-06-09" },
+    { name: "Cognition: More Devins in More Places ($1B raise, 2026-05-27)", url: "https://www.cognition.ai/blog", dateAccessed: "2026-06-09" },
     { name: "Cognition: Introducing Devin in Windsurf", url: "https://cognition.ai/blog/devin-in-windsurf", dateAccessed: "2026-04-17" },
     { name: "TestingCatalog: Windsurf 2.0 adds Devin and Agent Command Center", url: "https://www.testingcatalog.com/windsurf-2-0-adds-devin-and-agent-command-center/", dateAccessed: "2026-04-17" },
     { name: "KuCoin: Cognition launches Windsurf 2.0 with Agent Command Center + Devin cloud agent", url: "https://www.kucoin.com/news/flash/cognition-ai-launches-windsurf-2-0-with-agent-command-center-and-built-in-devin-cloud-agent", dateAccessed: "2026-04-17" },
@@ -105,6 +112,6 @@ export const windsurf: ToolReview = {
   affiliateUrl: "https://windsurf.com",
   status: "active",
   poweredBy: "Cognition hosted models + Claude / GPT / Gemini (user selects) + Devin cloud agent",
-  metaTitle: "Windsurf 2.0 Review 2026: Cognition's Agent-First IDE vs Cursor 3",
-  metaDescription: "Windsurf 2.0 review (launched Apr 15 2026). Cognition's agent-first IDE with Agent Command Center, Spaces, and embedded Devin cloud agent. Direct Cursor 3 competitor. Scores + pricing.",
+  metaTitle: "Windsurf Is Now Devin Desktop (June 2026): Rebrand Explained + Review",
+  metaDescription: "Windsurf became Devin Desktop on June 2, 2026 via OTA update. Same IDE, plans, and extensions -- new Devin Local agent branding, Devin Cloud on the $20 Pro plan. What changed, what didn't, and how it stacks vs Cursor.",
 };

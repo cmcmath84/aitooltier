@@ -31,6 +31,7 @@ const logoMap: Record<string, string> = {
   notebooklm: "/logos/notebooklm.png",
   "muse-spark": "/logos/meta.png",
   "alexa-plus": "/logos/amazon.png",
+  "siri-ai": "/logos/apple.png",
 
   // Local / open-weight LLMs
   llama: "/logos/meta.png",

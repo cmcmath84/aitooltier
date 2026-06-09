@@ -18,9 +18,9 @@ export const pika: ToolReview = {
   hasFreeTier: true,
   pricing: [
     {
-      plan: "Free",
+      plan: "Basic (Free)",
       price: "$0",
-      features: ["80 video credits/mo", "Pika 2.5 access", "Watermarked"],
+      features: ["80 video credits/mo", "Pika 2.5 access at 480p only", "Watermarked"],
     },
     {
       plan: "Standard",
@@ -70,7 +70,7 @@ export const pika: ToolReview = {
   notFor: "Professional filmmakers or anyone who needs the highest possible video quality. Use Runway for that.",
   verdict: "Pika is the best entry point to AI video generation. It's easier to use, cheaper, and more generous with free credits than Runway. The quality gap is real -- Runway Gen-3 looks noticeably better -- but for social media content and experimentation, Pika is more than good enough. Start here, upgrade to Runway when you need to.",
 
-  lastReviewedDate: "2026-05-26",
+  lastReviewedDate: "2026-06-09",
   dataSources: [
     { name: "Pika official site (Pikaformance feature)", url: "https://pika.art", dateAccessed: "2026-05-26" },
     { name: "Pika pricing page", url: "https://pika.art/pricing", dateAccessed: "2026-05-26" },

@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const devin: ToolReview = {
   slug: "devin",
   name: "Devin",
-  tagline: "The most autonomous AI coding agent -- Devin 2.2 base (Feb 24 2026) + recent shipments: **Auto-Triage 2026-05-18** (observes incidents, consolidates duplicate reports, generates triage PRs), **Windows VM support 2026-05-21** (build/run/test natively in Windows VMs), and 5/13 Android Emulator inside the sandbox. Devin is also embedded in Windsurf 2.0 as the cloud-agent layer + bundled in Windsurf as Devin Review since 2026-05-12",
+  tagline: "The most autonomous AI coding agent -- now a full product family: Devin Cloud, **Devin Desktop (the renamed Windsurf IDE, June 2 2026)**, and Devin Review. Cognition raised $1B+ at a $26B valuation (May 27). Recent shipments: Claude Fable 5 support day-one (6/9), Auto-Triage (5/18), Windows VMs (5/21), Android Emulator (5/13)",
   category: "ai-code-assistants",
   url: "https://devin.ai",
 
@@ -45,6 +45,11 @@ export const devin: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "COMPANY + PRODUCT (June 2026 cluster): **6/2 -- Windsurf renamed Devin Desktop** via OTA update; Cognition now ships one Devin family (Cloud / Desktop / Review) and Devin Cloud agent access starts on Desktop's $20 Pro plan (see the windsurf page for migration detail). **5/27 -- $1B+ raised at a $26B valuation** (Lux Capital, General Catalyst, 8VC lead; vendor-confirmed in Cognition's 'More Devins in More Places' post). **6/4 -- 'AI Productivity Guarantee'** announced for enterprise contracts. **6/9 -- Claude Fable 5 available in Devin on launch day.** Practical read: Cognition is consolidating brands and pushing downmarket -- the $20 entry point now buys both the IDE and cloud-agent access that used to be enterprise-gated",
+      source: "Cognition blog (cognition.ai/blog), Devin blog (devin.ai/blog)",
+      date: "2026-06-02",
+    },
+    {
       description: "PRODUCT (2026-05-18 + 2026-05-21): Cognition shipped two material Devin features in 4 days. **5/18 Auto-Triage**: Devin observes incoming bug reports / incident channels, investigates with its tool surface (logs, deploy state, recent diffs), consolidates duplicate or related reports into a single thread, and generates triage-quality PRs as a default starting point. Cuts the manual on-call triage step entirely for well-scoped bug classes. **5/21 (TODAY) Windows VM support**: Devin can now build, run, and test code natively inside Windows VMs (was Linux-only sandbox prior). Cognition framing: 'the world's most mature developer ecosystem.' Material for any Windows-stack shop (.NET, WPF, Unity Windows builds, MAUI Windows) that previously could not use Devin for end-to-end build+test runs. Closes a gap vs Cursor cloud Dev Environments (5/13 ship) which is Docker-Linux only by default.",
       source: "Cognition blog (cognition.ai/blog) -- 2026-05-18 Auto-Triage + 2026-05-21 Windows VMs",
       date: "2026-05-21",
@@ -69,8 +74,10 @@ export const devin: ToolReview = {
   notFor: "Developers who want fast inline suggestions while coding -- Cursor or Copilot are better for that. Also not ready for unsupervised work on critical production systems.",
   verdict: "Devin is the most ambitious AI coding tool available, and at $20/mo it's finally priced for experimentation. When it works, it's like having a junior developer who never sleeps. When it doesn't, it's like watching that junior dev spend three hours on something you could've done in twenty minutes. The key is task selection -- give it clear, bounded work and it impresses. Give it vague requirements and you'll burn credits watching it spin. It's a glimpse of the future, but today it's a supplemental tool, not a replacement for an IDE-integrated copilot.",
 
-  lastReviewedDate: "2026-05-21",
+  lastReviewedDate: "2026-06-09",
   dataSources: [
+    { name: "Cognition: More Devins in More Places ($1B raise, 2026-05-27)", url: "https://www.cognition.ai/blog", dateAccessed: "2026-06-09" },
+    { name: "Devin blog: Windsurf is now Devin Desktop (2026-06-02)", url: "https://www.devin.ai/blog", dateAccessed: "2026-06-09" },
     { name: "Cognition blog: Devin updates (2026-05-13)", url: "https://cognition.ai/blog", dateAccessed: "2026-05-13" },
     { name: "Cognition: Introducing Devin 2.2", url: "https://cognition.ai/blog/introducing-devin-2-2", dateAccessed: "2026-04-17" },
     { name: "Cognition: Devin in Windsurf 2.0", url: "https://cognition.ai/blog/devin-in-windsurf", dateAccessed: "2026-04-17" },
@@ -81,6 +88,6 @@ export const devin: ToolReview = {
   affiliateUrl: "https://devin.ai",
   status: "active",
   poweredBy: "Cognition proprietary orchestration over Claude / GPT / Gemini + Devin's own tuned components",
-  metaTitle: "Devin 2.2 Review 2026: Autonomous AI Coding Agent + Desktop Testing + Devin Review",
-  metaDescription: "Devin 2.2 review (Feb 24 2026). Autonomous AI developer adds desktop/GUI testing, Devin Review (catches 30% more issues), 3x faster startup. Embedded in Windsurf 2.0. April 2026.",
+  metaTitle: "Devin Review 2026: $26B Cognition, Devin Desktop (ex-Windsurf), Cloud Agent at $20/mo",
+  metaDescription: "Devin review (June 2026). Cognition raised $1B at $26B, renamed Windsurf to Devin Desktop, and put Devin Cloud on the $20 plan. Auto-Triage, Windows VMs, Claude Fable 5 day-one. Scores + pricing.",
 };

@@ -37,6 +37,7 @@ export const elevenlabs: ToolReview = {
     "Mistral Voxtral TTS (March 2026) now offers open-source 4B-param speech for free -- the gap has narrowed for self-hosting use cases",
   ],
   knownIssues: [
+    { description: "PRODUCT (2026-05-26 + 2026-05-28): **Eleven Music v2** (5/26) -- genre switching mid-track, coherent fast rap, embedded sound effects in generated tracks (see the elevenmusic page for detail). **Dubbing v2** (5/28) -- next-gen dubbing pipeline on the main platform. Also: UK Government voice-AI partnership announced 6/8. No pricing changes attached to either release", source: "ElevenLabs blog (elevenlabs.io/blog), TechCrunch (2026-05-27)", date: "2026-05-28" },
     { description: "Platform continues to face deepfake-abuse pressure -- voice cloning requires verified identity for new accounts as of 2026", source: "The Verge", date: "2026-01" },
     { description: "11.ai alpha has intermittent latency issues on longer agentic chains -- still maturing", source: "Product Hunt 11.ai threads", date: "2026-03" },
   ],
@@ -44,7 +45,7 @@ export const elevenlabs: ToolReview = {
   notFor: "Users who only need occasional text-to-speech (browser TTS is free), or open-source purists (Mistral Voxtral fills that niche now).",
   verdict: "ElevenLabs remained the clear voice-quality leader through 2026 and extended its lead with Eleven v3 expressive speech plus the 11.ai MCP-based voice assistant (alpha). The February 2026 $500M raise at $11B and subsequent ~50% pricing cut made the consumer tiers meaningfully cheaper. The IBM watsonx partnership unlocks regulated-industry enterprise voice. If you produce any serious audio content, this is still the default. The only real competitive pressure is from Mistral's Voxtral TTS on the open-source side and from Google/Meta native voice models bundled into Gemini/Llama.",
 
-  lastReviewedDate: "2026-04-16",
+  lastReviewedDate: "2026-06-09",
   dataSources: [
     { name: "ElevenLabs official site", url: "https://elevenlabs.io", dateAccessed: "2026-04-16" },
     { name: "Voice.ai: ElevenLabs debuts 11.ai", url: "https://voice.ai/hub/ai-voice-agents/11-ai/", dateAccessed: "2026-04-16" },

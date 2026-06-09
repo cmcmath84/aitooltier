@@ -65,6 +65,12 @@ export const elevenmusic: ToolReview = {
   knownIssues: [
     {
       description:
+        "VERSION BUMP (2026-05-26): **Eleven Music v2** launched -- genre switching mid-track, coherent fast rap delivery, and embedded sound effects composed into generated tracks (rather than layered after). TechCrunch highlighted the mid-track genre transitions as the differentiator vs Suno v5.5. Live on the existing platform and pricing -- no plan changes announced",
+      source: "ElevenLabs blog (elevenlabs.io/blog), TechCrunch (2026-05-27)",
+      date: "2026-05-26",
+    },
+    {
+      description:
         "ElevenMusic web platform GA shipped 2026-04-29 (~4 weeks after the 2026-04-02 iOS launch). ElevenLabs disclosed launch metrics: $11M paid to creators via the voice library to date, 4,000+ independent and emerging artists creating on the platform, and Eleven Album Vol. 2 -- a curated label-style release featuring Danger Twins, Justin Love, and other artists. First named industry partner: Kevin Jonas Sr. (Founder & Chairman, Jonas Group Entertainment), who is quoted as a launch collaborator. Web GA closes the desktop-workflow gap that previously made apples-to-apples comparisons against Suno + Udio impossible. Android remains the only major-platform gap",
       source: "ElevenLabs blog (elevenlabs.io/blog/introducing-elevenmusic, 2026-04-29)",
       date: "2026-04-29",
@@ -95,7 +101,7 @@ export const elevenmusic: ToolReview = {
   verdict:
     "ElevenMusic is the first serious Suno challenger since Udio, and the commercial-safety angle is the real story. With web GA shipped 2026-04-29, the desktop-workflow gap is closed -- this is now a head-to-head vs. Suno on Suno's home turf, with the licensed-audio differentiator and the voice-cloning angle as the moats. Most creators don't need 'trained on licensed audio' today, but the moment a major label moves against an AI-music platform (Suno is the obvious target given UMG impasse), ElevenMusic becomes the low-risk default. For a $9.99/mo Pro tier, it's cheap insurance even if you also keep a Suno account. Android remains the only major missing platform.",
 
-  lastReviewedDate: "2026-04-29",
+  lastReviewedDate: "2026-06-09",
   dataSources: [
     { name: "ElevenLabs blog: Introducing ElevenMusic (2026-04-29 web GA)", url: "https://elevenlabs.io/blog/introducing-elevenmusic", dateAccessed: "2026-04-29" },
     { name: "TechCrunch: ElevenLabs releases AI music app", url: "https://techcrunch.com/2026/04/02/elevenlabs-releases-a-new-ai-powered-music-generation-app/", dateAccessed: "2026-04-21" },

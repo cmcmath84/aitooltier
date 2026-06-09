@@ -68,6 +68,11 @@ export const grok: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "JUNE CLUSTER (2026-06, all vendor-primary on x.ai/news): **Grok Imagine 1.5 Preview** (6/3) -- image-to-video generation up to 720p, available as an API preview. **Composer 2.5** (6/1) -- xAI's 'fast, SOTA model for long-running tasks,' now selectable in the Grok Build /models menu for SuperGrok and X Premium+ subscribers (NOT related to Cursor's Composer line despite the name). **Grok Build 0.1 on the API** (5/29) -- the coding-agent model behind Grok Build became directly callable via the xAI API: 256K context, always-on reasoning, text + image input. Grok Build itself ('Introducing Grok Build,' 5/25) is in early beta for ALL SuperGrok and X Premium+ subscribers -- broader than the original Heavy-tier-only gate. Also: Grok voice now powers Vapi (6/3) and Gopuff's 'Go' shopping agent (6/9). NOTE: 'Grok 5' / 'V9-Medium mid-June' claims remain aggregator-only with zero vendor signal -- not real until x.ai posts it",
+      source: "xAI news (x.ai/news/grok-imagine-1-5, x.ai/news/composer-2-5, x.ai/news/grok-build-0-1, x.ai/news/grok-build-cli), x.ai/build/changelog",
+      date: "2026-06-03",
+    },
+    {
       description: "PRODUCT (2026-05-18): xAI shipped **Grok Skills** -- a persistent-memory Skills layer on Grok 4.3. Skills are user-defined named capabilities Grok carries across sessions on web / iOS / Android (recipe collection, code-review checklist, study-habits coach, etc.). Each Skill is a stored prompt + behavioral pattern Grok consults when invoked by name. Per-user storage; not shared across accounts. Differentiates Grok from ChatGPT Memory (passive recall) toward configurable named tools. Pairs with the 5/14 Grok Build CLI ship -- Skills are the consumer-facing persistent-state layer, Build CLI is the developer-facing one. Material in the 'agent goes where you go' competitive narrative alongside Codex on mobile (5/14) + Cursor Jira integration (5/19) + Devin Windows VMs (5/21).",
       source: "xAI news (x.ai/news), xAI release notes (docs.x.ai/developers/release-notes)",
       date: "2026-05-18",
@@ -122,7 +127,7 @@ export const grok: ToolReview = {
   notFor: "Enterprise users who need reliable, consistent outputs. Also not the best pick if you don't use X -- the real-time data advantage disappears and you're left with a solid-but-not-best-in-class LLM.",
   verdict: "Grok has come a long way from being dismissed as Elon's pet project. The Grok 3 models are legitimately competitive, and the real-time X integration is a unique differentiator that no other chatbot can match. But the value proposition gets muddier when you strip away the X angle -- at $30/mo for SuperGrok, you're paying a premium for personality and Twitter data. If those matter to you, Grok is great. If not, Claude or ChatGPT give you more for less.",
 
-  lastReviewedDate: "2026-05-21",
+  lastReviewedDate: "2026-06-09",
   dataSources: [
     { name: "xAI May 15 model retirement docs", url: "https://docs.x.ai/developers/migration/may-15-retirement", dateAccessed: "2026-05-19" },
     { name: "VentureBeat: xAI launches Grok 4.3 with voice cloning (2026-05-02)", url: "https://venturebeat.com/technology/xai-launches-grok-4-3-at-an-aggressively-low-price-and-a-new-fast-powerful-voice-cloning-suite", dateAccessed: "2026-05-05" },

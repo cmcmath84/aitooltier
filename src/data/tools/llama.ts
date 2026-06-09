@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const llama: ToolReview = {
   slug: "llama",
   name: "Llama 4 (Meta)",
-  tagline: "Meta's open-weights flagship family -- Scout (10M context), Maverick (multimodal 400B MoE), Behemoth in preview",
+  tagline: "Meta's open-weights family -- Scout (10M context), Maverick (multimodal 400B MoE). NOTE: Meta's frontier work moved to the proprietary Muse Spark line in April 2026; Llama remains downloadable and supported but is effectively in maintenance mode",
   category: "ai-local-models",
   url: "https://llama.meta.com",
 
@@ -45,6 +45,11 @@ export const llama: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "STRATEGIC SHIFT (2026-04-08): Meta's frontier development has moved OFF the Llama line. Meta Superintelligence Labs launched **Muse Spark** -- Meta's first proprietary, closed-source frontier model (see the muse-spark page) -- and tier-1 coverage frames it as the Llama successor ('Goodbye Llama,' per VentureBeat). Llama has NOT been formally discontinued: existing models stay downloadable and supported, and Bloomberg-sourced reports say open derivatives of future models are under consideration. But community consensus is Llama-4-era weights are now in maintenance mode -- 'Llama 5' claims circulating on low-quality aggregators are fabricated; no vendor announcement exists. If you're betting a product on continued frontier open-weight releases from Meta, that bet now looks shaky -- Qwen, DeepSeek, and GLM are the active open-weight frontier",
+      source: "VentureBeat (Muse Spark launch), The New Stack, understandingai.org",
+      date: "2026-04-08",
+    },
+    {
       description: "Llama 4 Maverick scored Elo 1417 on a special 'experimental chat' variant on LMArena -- the released weights feel weaker than that number implies",
       source: "Reddit r/LocalLLaMA, LMArena notes",
       date: "2026-04",
@@ -57,9 +62,9 @@ export const llama: ToolReview = {
   ],
   bestFor: "Developers and teams who need a permissively-licensed open-weights model with strong tooling, long context (Scout), or multimodal (Maverick). Safe default choice given the ecosystem.",
   notFor: "Teams chasing the absolute frontier on benchmarks -- DeepSeek V3.2 and Kimi K2.5 score higher. Also not ideal if you need true MIT/Apache licensing (use Qwen, GLM, or MiniMax instead).",
-  verdict: "Llama 4 is the safe open-weights default in 2026. It has the biggest ecosystem, the longest context (Scout's 10M), and genuine multimodality (Maverick). But the frontier has moved -- DeepSeek V3.2 and Kimi K2.5 are stronger per-dollar, and the Llama 4 Community License is less permissive than Apache 2.0 alternatives from Alibaba and Z.ai. If you're building on open weights and want maximum compatibility, Llama 4 is still the right pick. If you want best-in-class performance per dollar, look at DeepSeek or Qwen.",
+  verdict: "Llama 4 is still the compatibility king of open weights -- biggest ecosystem, longest context (Scout's 10M), genuine multimodality (Maverick). But two things changed in 2026: the open-weight frontier moved to Qwen, DeepSeek, and GLM on performance per dollar, and in April Meta itself moved on -- its frontier development now lives in the proprietary Muse Spark line, leaving Llama in de facto maintenance mode. Existing weights aren't going anywhere, and for maximum tooling compatibility Llama 4 remains a safe pick today. Just don't build a roadmap that assumes a frontier-class open Llama 5 -- there is currently no vendor signal one is coming.",
 
-  lastReviewedDate: "2026-04-13",
+  lastReviewedDate: "2026-06-09",
   dataSources: [
     { name: "Meta Llama official site", dateAccessed: "2026-04-13" },
     { name: "Meta AI blog: Llama 4", dateAccessed: "2026-04-13" },

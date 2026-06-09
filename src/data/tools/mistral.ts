@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const mistral: ToolReview = {
   slug: "mistral",
   name: "Mistral AI",
-  tagline: "European AI lab with open and commercial models -- Mistral Medium 3.5 SHIPPED 2026-04-29 (128B dense, 256k context, 77.6% SWE-Bench Verified) plus Vibe Remote Agents + Le Chat Work Mode. Earlier 2026 line: Small 4 (Mar 2026 119B MoE Apache 2.0 unified), Medium 3 (Apr 9 2026), Voxtral TTS (Mar 2026 open-source speech)",
+  tagline: "European AI lab with open and commercial models -- Le Chat is now **Vibe** (May 28 2026): one agent across Work Mode + Code Mode with a VS Code extension and CLI, powered by Mistral Medium 3.5 (128B dense, 256k context, 77.6% SWE-Bench Verified). Earlier 2026 line: Small 4 (119B MoE Apache 2.0), Medium 3, Voxtral TTS",
   category: "ai-local-models",
   url: "https://mistral.ai",
 
@@ -92,6 +92,11 @@ export const mistral: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "REBRAND (2026-05-28): **Le Chat is now 'Vibe'** -- Mistral merged its consumer chat product into a single agent brand spanning Work Mode and Code Mode, with a new VS Code extension and CLI. Mistral Medium 3.5 (public preview since 4/29, broader rollout 5/22) is the default model powering Vibe's remote coding agents. Adjacent late-May moves: Emmi AI (physics/industrial simulation, via acquisition) added to the enterprise platform and a new Search Toolkit (5/28). If you bookmarked chat.mistral.ai as 'Le Chat,' it's the same product under the new name -- pricing tiers unchanged",
+      source: "Mistral AI blog (mistral.ai/news/vibe-agent, mistral.ai/news/vibe-remote-agents-mistral-medium-3-5)",
+      date: "2026-05-28",
+    },
+    {
       description: "ENTERPRISE PRODUCT (2026-04-28 public preview): Mistral Workflows -- a Temporal-powered durable orchestration engine for AI workloads. Built on the same Temporal core that backs Netflix / Stripe / Salesforce, with Mistral-added streaming, payload handling, multi-tenancy, and observability. Python SDK v3.0, Helm-deployable workers, customer-perimeter data residency. Human-in-the-loop approvals via simple Python (wait_for_input()), full execution tracking in Studio, deploys cloud / on-prem / hybrid. Distinct from Vibe Remote Agents (the consumer-facing async coding sessions); Workflows is the enterprise infra layer that makes them and other AI workloads durable at scale. Live customers cited at preview: ASML, ABANCA, CMA-CGM, France Travail, La Banque Postale, Moeve. Pricing during preview not disclosed",
       source: "Mistral AI blog (mistral.ai/news/workflows)",
       date: "2026-04-28",
@@ -116,7 +121,7 @@ export const mistral: ToolReview = {
   notFor: "Non-technical users looking for a polished chat experience. ChatGPT and Claude are much better as consumer products.",
   verdict: "Mistral is the scrappy underdog that keeps surprising people. Their models are impressively efficient -- you get near-GPT-4 quality at a fraction of the API cost. But the consumer experience (Le Chat) is rough. This is primarily a developer's tool. If you're building AI applications on a budget, Mistral should be on your shortlist.",
 
-  lastReviewedDate: "2026-05-04",
+  lastReviewedDate: "2026-06-09",
   dataSources: [
     { name: "Mistral AI: Workflows public preview (2026-04-28)", url: "https://mistral.ai/news/workflows", dateAccessed: "2026-05-04" },
     { name: "Mistral AI: Vibe Remote Agents + Mistral Medium 3.5 (2026-04-29)", url: "https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5", dateAccessed: "2026-04-30" },
@@ -166,6 +171,6 @@ export const mistral: ToolReview = {
     tone: "Efficient, terse, and slightly blunt. Mistral answers in fewer words than Claude or ChatGPT, especially on factual questions, and rarely hedges or softens its take.",
     quirks: "Trained with less Anglocentric data than Llama, so it handles French, German, and Spanish notably better than US-origin models. Refusal rates are lower than ChatGPT or Gemini on most gray-area prompts.",
   },
-  metaTitle: "Mistral AI Review 2026: Medium 3.5 + Vibe Remote Agents + Le Chat Work Mode",
+  metaTitle: "Mistral AI Review 2026: Le Chat Becomes Vibe + Medium 3.5 Default",
   metaDescription: "Mistral review. Medium 3.5 (Apr 29 2026, 128B dense, 256k, SWE-Bench 77.6%) + Vibe Remote Agents + Le Chat Work Mode. Plus Small 4, Medium 3, Voxtral TTS. Cheap API at $1.5/$7.5 per 1M.",
 };
