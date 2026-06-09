@@ -27,6 +27,8 @@ export async function generateMetadata({
   return {
     title: `Best ${task.searchHeadline} (2026): Tier List + Reviews`,
     description: `${task.description} Ranked S through F across AIToolTier's reviewed catalog -- no paid placements.`,
+    // Surface removed from the index 2026-06-09 (footprint cut)
+    robots: { index: false, follow: true },
   };
 }
 

@@ -44,6 +44,8 @@ export async function generateMetadata({
   return {
     title: `Is ${tool.name} Down? (2026): Status Check, Known Issues, Alternatives`,
     description: `Check if ${tool.name} is down right now. Official status page, DownDetector, X outage reports, recent known issues, and working alternatives if it is down.`,
+    // Surface removed from the index 2026-06-09 (footprint cut)
+    robots: { index: false, follow: true },
   };
 }
 

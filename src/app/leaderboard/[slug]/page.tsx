@@ -30,6 +30,8 @@ export async function generateMetadata({
   return {
     title: `Best ${category.name} (2026): Tier List Leaderboard`,
     description: `${label} ranked S through F in 2026. ${category.description} AIToolTier editorial ratings, no paid placements.`,
+    // Surface removed from the index 2026-06-09 (footprint cut; duplicates /categories)
+    robots: { index: false, follow: true },
   };
 }
 

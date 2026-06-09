@@ -10,6 +10,8 @@ export const metadata: Metadata = {
   title: "Is Your AI Tool Down? (2026) -- Outage Check for Every AI Tool We Review",
   description:
     "Check if ChatGPT, Claude, Gemini, Cursor, Midjourney, or any other AI tool is down. Status page links, DownDetector, known issues, and alternatives for 128 AI tools.",
+  // Surface removed from the index 2026-06-09 (footprint cut) -- see indexable-compares.ts
+  robots: { index: false, follow: true },
 };
 
 export default function IsItDownHub() {

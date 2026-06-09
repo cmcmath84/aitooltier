@@ -14,6 +14,17 @@ import {
   generateAtGlanceRows,
 } from "@/lib/benchmarks";
 import { comparePageJsonLd, safeJsonLd } from "@/lib/structured-data";
+import { isIndexableCompare } from "@/lib/indexable-compares";
+
+const BASE_URL = "https://aitooltier.com";
+
+// Canonical compare slug follows tools[] array order (the order
+// generateStaticParams uses), so /compare/b-vs-a canonicalizes to a-vs-b.
+function canonicalCompareSlug(slugA: string, slugB: string): string {
+  const ia = tools.findIndex((t) => t.slug === slugA);
+  const ib = tools.findIndex((t) => t.slug === slugB);
+  return ia <= ib ? `${slugA}-vs-${slugB}` : `${slugB}-vs-${slugA}`;
+}
 
 // Generate all possible VS combinations
 export async function generateStaticParams() {
@@ -41,15 +52,26 @@ export async function generateMetadata({
   const scoreB = toolB.scores.overall.toFixed(1);
   const winner = toolA.scores.overall >= toolB.scores.overall ? toolA : toolB;
   const bothHavePersonality = !!(toolA.personality && toolB.personality);
+  const seo: Pick<Metadata, "alternates" | "robots"> = {
+    alternates: {
+      canonical: `${BASE_URL}/compare/${canonicalCompareSlug(slugA, slugB)}`,
+    },
+    // Non-curated pairs stay live but out of the index -- see indexable-compares.ts
+    ...(isIndexableCompare(slugA, slugB)
+      ? {}
+      : { robots: { index: false, follow: true } }),
+  };
   if (bothHavePersonality) {
     return {
       title: `${toolA.name} vs ${toolB.name} (2026): Personality, Scores & Verdict`,
       description: `${toolA.name} vs ${toolB.name} personality: ${toolA.personality!.oneLiner} vs ${toolB.personality!.oneLiner}. Compare tone, quirks, scores, pricing, and our 2026 verdict.`,
+      ...seo,
     };
   }
   return {
     title: `${toolA.name} vs ${toolB.name} (2026): Scores, Pricing & Verdict`,
     description: `${toolA.name} scores ${scoreA}/10 vs ${toolB.name} at ${scoreB}/10. Compare pricing, pros, cons${hasBenchmarks ? ", benchmarks," : ","} and why ${winner.name} wins head-to-head in 2026.`,
+    ...seo,
   };
 }
 

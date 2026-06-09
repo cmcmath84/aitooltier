@@ -34,6 +34,8 @@ export const metadata: Metadata = {
   title: "AI Tools by Task (2026): Find the Right AI for What You Need to Do",
   description:
     "Pick an AI tool by what you want to do, not by category. Write a cold email, debug code, generate a logo, transcribe audio, run a research agent -- each task links to a tier-list of the best AI tools for it.",
+  // Surface removed from the index 2026-06-09 (footprint cut)
+  robots: { index: false, follow: true },
 };
 
 export default function ForTaskHubPage() {

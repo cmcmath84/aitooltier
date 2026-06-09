@@ -31,6 +31,8 @@ export async function generateMetadata({
     title: profession.metaTitle,
     description: profession.metaDescription,
     alternates: { canonical },
+    // Surface removed from the index 2026-06-09 (footprint cut)
+    robots: { index: false, follow: true },
     openGraph: {
       title: profession.metaTitle,
       description: profession.metaDescription,

@@ -166,6 +166,35 @@ for (const [slug, logoPath] of logoMap.entries()) {
 }
 failGroup(brokenLogos, "Broken logo files (missing, non-PNG, or wrong path)");
 
+// -- 6. Indexable-compares keep-list: every slug must be a real tool slug --
+const COMPARES_FILE = join(REPO, "src/lib/indexable-compares.ts");
+if (existsSync(COMPARES_FILE)) {
+  const validSlugs = new Set(Object.values(slugs));
+  const comparesSrc = readFileSync(COMPARES_FILE, "utf8");
+  const pairMatches = [
+    ...comparesSrc.matchAll(/^\s*\["([\w-]+)",\s*"([\w-]+)"\],\s*$/gm),
+  ];
+  const badCompareSlugs = [];
+  const seenPairs = new Set();
+  const dupePairs = [];
+  for (const m of pairMatches) {
+    for (const s of [m[1], m[2]]) {
+      if (!validSlugs.has(s)) {
+        badCompareSlugs.push(`"${s}" in indexable-compares.ts is not a known tool slug`);
+      }
+    }
+    const key = [m[1], m[2]].sort().join("::");
+    if (seenPairs.has(key)) dupePairs.push(`duplicate pair: ${m[1]} / ${m[2]}`);
+    seenPairs.add(key);
+  }
+  failGroup(
+    [...new Set(badCompareSlugs)],
+    "Indexable-compares keep-list slugs that don't match any tool",
+  );
+  failGroup(dupePairs, "Indexable-compares duplicate pairs");
+  console.log(`   (keep-list: ${seenPairs.size} unique indexable compare pairs)`);
+}
+
 // -- Summary --
 console.log();
 if (hadErrors) {

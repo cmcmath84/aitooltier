@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   title: "AI Leaderboards (2026): Best AI Models, LLMs, and Tools Ranked",
   description:
     "Tier-list leaderboards for every AI category: LLMs, coding agents, image generators, video models, agents, and more. Ranked S/A/B/C/D/F across 128 reviewed tools.",
+  // Surface removed from the index 2026-06-09 (footprint cut; duplicates /categories)
+  robots: { index: false, follow: true },
 };
 
 export default function LeaderboardHubPage() {
