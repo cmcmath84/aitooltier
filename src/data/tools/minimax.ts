@@ -2,8 +2,8 @@ import { ToolReview } from "@/lib/types";
 
 export const minimax: ToolReview = {
   slug: "minimax",
-  name: "MiniMax M2.7",
-  tagline: "MiniMax's open-weights self-evolving agent flagship -- M2.7 (released 2026-03-18) scores 56.22% SWE-Pro and 57.0% Terminal Bench 2 from a 229B/10B-active MoE",
+  name: "MiniMax M3",
+  tagline: "MiniMax's coding/agent flagship -- M3 (June 1 2026): 1M-token context, MSA sparse attention (>15x decoding speedup at long context), SWE-Bench Pro 59.0%, Terminal-Bench 66.0%. Open-weight release pending (not yet on HuggingFace); M2.7 (229B MoE) remains the available open-weights model",
   category: "ai-local-models",
   url: "https://www.minimax.io",
 
@@ -52,6 +52,11 @@ export const minimax: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "MODEL LAUNCH (2026-06-01): **MiniMax M3** -- coding/agent flagship with **1M-token context** (product page guarantees minimum 512K) and MSA sparse attention delivering vendor-claimed **>9x prefilling / >15x decoding speedups** at long context (per-token compute at 1M context = 1/20th of prior gen). Vendor-published benchmarks: SWE-Bench Pro 59.0%, Terminal-Bench 2.1 66.0%, BrowseComp 83.5 (above Opus 4.7's 79.3), PostTrainBench 37.1 (#3 behind Opus 4.7 and GPT-5.5), MCP Atlas 74.2%. WEIGHTS CAVEAT: announced as open-weight with release 'over the next 10 days,' but as of 6/10 there is NO M3 repo on HuggingFace (latest = M2.7) -- label it 'open-weight, release pending,' not available. Token Plan subscriptions: Plus $20/mo (~1.7B tokens), Max $50/mo (~5.1B), Ultra $120/mo (~9.8B)",
+      source: "MiniMax blog (minimax.io/blog/minimax-m3), minimax.io/models/text/m3, HuggingFace MiniMaxAI (checked 2026-06-10)",
+      date: "2026-06-01",
+    },
+    {
       description: "MiniMax-M2.7 (released 2026-03-18) supersedes M2.5 -- 229B total params, sparse MoE positioned by MiniMax as a 'self-evolving' agent model. Verified third-party benchmarks: SWE-Bench Pro 56.22%, Terminal Bench 2 57.0%, SWE Multilingual 76.5%, Multi SWE Bench 52.7%, VIBE-Pro 55.6%, GDPval-AA Elo 1495. The old 'first open-weight to hit 80.2% SWE-Bench Verified matching Opus 4.6' framing was an M2.5-on-different-bench claim and does NOT carry forward to M2.7 directly -- SWE-Bench Pro and SWE-Bench Verified are not comparable. License labeled 'Other' on HuggingFace (not MIT like M2 / M2.5) -- verify before commercial use",
       source: "MiniMax blog (minimax.io/news/minimax-m27-en), HuggingFace MiniMaxAI/MiniMax-M2.7, MarkTechPost",
       date: "2026-03-18",
@@ -71,7 +76,7 @@ export const minimax: ToolReview = {
   notFor: "Teams that prioritize polished English writing (Mistral Large 3 or Claude are better), or anyone who needs the deepest ecosystem support (Llama is still that).",
   verdict: "MiniMax M2/M2.5 is the most cost-efficient frontier-tier open model in 2026. The 80.2% SWE-Bench Verified score is a genuine breakthrough -- matching Claude Opus 4.6 on real coding tasks at a tenth of the price. The sparse 10B-active MoE runs fast on moderate hardware. The main drawback is ecosystem: MiniMax has less Western infrastructure support than Alibaba or DeepSeek. If you're building an agentic product and want maximum value per token, M2.5 is an A-tier pick.",
 
-  lastReviewedDate: "2026-04-27",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "MiniMax: M2.7 release blog (2026-03-18)", url: "https://www.minimax.io/news/minimax-m27-en", dateAccessed: "2026-04-27" },
     { name: "HuggingFace MiniMaxAI/MiniMax-M2.7", url: "https://huggingface.co/MiniMaxAI/MiniMax-M2.7", dateAccessed: "2026-04-27" },

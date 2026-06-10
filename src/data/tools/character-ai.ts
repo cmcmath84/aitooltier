@@ -62,6 +62,11 @@ export const characterAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "MEMORY UPGRADE + MODEL CONSOLIDATION (April-May 2026): **5/21 'Smarter Memory for Smarter Chats'** (vendor blog) -- Story Memory, Facts, and Memory Usage shipped, running on PipSqueak 2 (free tier) and DeepSqueak. CONSOLIDATION: legacy chat styles were retired around **May 8** (Roar and Pawly killed immediately; Meow and others moved to a Legacy menu then retired) with chats consolidated onto PipSqueak 2 -- announced ~4/28, drew significant community backlash. **Soft Launch came BACK as a c.ai+ exclusive** (paywalled behind the standing $9.99/mo subscription -- note c.ai+ has been $9.99 since 2023; this is NOT a price change, just a newly gated style). The 'cheaper model' rationale circulating on Reddit is community speculation, not vendor-stated",
+      source: "Character.AI blog (blog.character.ai/memory/ 2026-05-21, blog.character.ai/pipsqueak2-and-more/ 2026-04-14), r/CharacterAI staff posts, PiunikaWeb",
+      date: "2026-05-21",
+    },
+    {
       description: "2026-02-18 automated moderation sweep (the 'Moderatedpocalypse') removed large numbers of user-created Characters without warning or appeal. Affected bots spanned anime IP, celebrity likenesses, mature-adjacent personas, and miscellaneous content flagged by visual-signature + keyword matching. The subreddits and X discourse around the wipe still drives branded-search demand months later",
       source: "PiunikaWeb, AI Insights, HackerNoon, Storychat",
       date: "2026-02",
@@ -86,7 +91,7 @@ export const characterAi: ToolReview = {
   notFor: "Long-time users who built custom Characters pre-2026 and lost them in the Moderatedpocalypse. Also not for anyone who values creative latitude, NSFW-adjacent roleplay, or frontier response quality. The migration destinations (Janitor AI, Chai, DreamGen) cover those use cases better in 2026.",
   verdict: "Character.AI in 2026 is a very different product from the one that hit 200M+ monthly visitors in 2023-2024. The 2026-02-18 mass-delete, layered TRAIGA restrictions, and resulting ~30%+ traffic decline leave the platform in an awkward middle: big enough to still dominate on Character catalog size, small enough to be actively losing ground every month to focused alternatives. If you're picking a Character-chat platform from scratch today, the honest answer is: try Character.AI's free tier first (network effect still counts), then immediately evaluate Janitor AI, Chai, and DreamGen based on your use case. The c.ai+ subscription is hard to justify -- it buys speed, not creative freedom.",
 
-  lastReviewedDate: "2026-04-19",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "PiunikaWeb: Character.AI moderation wave 2026-02-18", url: "https://piunikaweb.com/2026/02/18/character-ai-moderation-wave-bots-removed-2026/", dateAccessed: "2026-04-19" },
     { name: "HackerNoon: How C.AI lost millions of users", url: "https://hackernoon.com/how-characterai-lost-millions-of-its-users-a-case-study-of-negligence", dateAccessed: "2026-04-19" },

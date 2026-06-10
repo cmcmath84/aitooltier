@@ -42,6 +42,11 @@ export const codex: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "FEATURE CLUSTER (May-June 2026, all vendor changelog): **5/14 Codex in the ChatGPT mobile app** (iOS/Android) -- monitor and drive Codex sessions from your phone by connecting to a Mac running the Codex app (remote control, not standalone mobile execution). **5/21 Goal mode GA** -- out of experimental, available in Codex app + IDE extension + CLI. **5/29 Computer Use on Windows** + remote control of Windows devices. **6/1 Amazon Bedrock support** -- Codex can use supported OpenAI models through Bedrock. **6/2 Sites preview** -- create AND deploy websites/web apps to OpenAI-hosted infrastructure from inside Codex. The Sites ship is the notable one: Codex now competes directly with Lovable/Bolt/v0 on the build-and-host loop, not just the code-generation step",
+      source: "OpenAI Codex changelog (developers.openai.com/codex/changelog)",
+      date: "2026-06-02",
+    },
+    {
       description: "GPT-5.2-Codex shipped 2026-04-23 as a coding-specialized variant separate from the consumer GPT-5.5 launch. Available to all paid ChatGPT users across Codex web/CLI/IDE surfaces today; API access in coming weeks. Posts SOTA on SWE-Bench Pro and Terminal-Bench 2.0. Improvements: long-horizon agentic coding via context compaction, large refactors and migrations, Windows env perf, and cybersecurity. Direct upgrade over GPT-5.3-Codex for serious agentic work -- if you're on Plus or Pro, your Codex defaults are already on the new model",
       source: "OpenAI: Introducing GPT-5.2-Codex (openai.com/index/introducing-gpt-5-2-codex/), OpenAI Codex changelog",
       date: "2026-04-23",
@@ -76,7 +81,7 @@ export const codex: ToolReview = {
   notFor: "Developers who need fine-grained control mid-task (use Claude Code or Cursor instead). Also not ideal for complex architectural refactors where the AI needs human guidance throughout the process.",
   verdict: "Codex is OpenAI's answer to Claude Code and Devin, and it has one killer advantage: it's bundled with ChatGPT Plus. If you're already paying $20/mo for ChatGPT, you get a cloud coding agent for free. The parallel task execution is genuinely unique -- no other coding agent lets you fire off 5 tasks and check back later. But the rough edges are real: you can't steer it mid-task, complex refactors fall flat, and the usage limits feel tight. For straightforward coding tasks and code review, it's excellent. For anything nuanced, Claude Code's interactive approach is still better.",
 
-  lastReviewedDate: "2026-04-25",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "OpenAI: Introducing GPT-5.2-Codex (2026-04-23)", url: "https://openai.com/index/introducing-gpt-5-2-codex/", dateAccessed: "2026-04-25" },
     { name: "OpenAI Codex changelog", url: "https://developers.openai.com/codex/changelog", dateAccessed: "2026-04-25" },

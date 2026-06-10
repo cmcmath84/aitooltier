@@ -51,6 +51,11 @@ export const boltNew: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "MODEL SELECTION ABSTRACTED (May 2026, vendor release notes 5/2-5/15 window): Bolt replaced individual model selection with **two agents -- 'Standard' and 'Max'** -- and now 'handles model selection behind the scenes.' (Claude Sonnet 4.6 had become the default model in the April 4-10 release; that distinction is now invisible to users.) Pricing-page state verified 2026-06-10: Free 1M tokens, **Pro $25/mo starting at 10M tokens**, Teams $30/member. NOTE: an aggregator-circulated 'Pro raised to 13M tokens on 5/5' claim is CONTRADICTED by the live pricing page (10M) -- not written here as fact",
+      source: "Bolt release notes (support.bolt.new/release-notes), bolt.new/pricing (verified 2026-06-10)",
+      date: "2026-05",
+    },
+    {
       description: "PARTNERSHIP (2026-05-05): StackBlitz / Bolt.new announced a **strategic Microsoft partnership** -- Bolt.new is now purchasable through Microsoft vendor channels, deploys generated apps to Azure, and integrates with Microsoft 365. Material competitive shift: positions Bolt against Cursor / Lovable / v0 for the enterprise-procured app-builder slot inside Microsoft-shop organizations. Pairs with the broader Microsoft Agent 365 / Copilot agent platform push -- Bolt becomes the consumer-friendly entry point for non-developers in M365 shops who want to scaffold internal tools without going through IT. Pricing impact: enterprise via Microsoft channels typically lands at custom Azure-billed rates rather than the $20/mo Pro retail price.",
       source: "Bolt.new blog (bolt.new/blog/news-press-release-bolt.new-on-microsoft-azure), Bolt on X (x.com/boltdotnew)",
       date: "2026-05-05",
@@ -75,7 +80,7 @@ export const boltNew: ToolReview = {
   notFor: "Anyone trying to build a production app purely with AI prompts. Once your project gets complex, you'll need to write real code. Developers are better off using Cursor or Claude Code.",
   verdict: "Bolt.new is the most impressive AI app builder demo you'll ever see -- and the most frustrating production tool you'll ever use. The first 15 minutes are magical: describe an app, watch it appear. But past a basic prototype, the AI loses context, burns tokens, and breaks things faster than it builds them. Use it to prototype ideas quickly, then port the code to a real development environment. Don't try to build your startup on it.",
 
-  lastReviewedDate: "2026-05-19",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "Bolt.new official site", dateAccessed: "2026-04-02" },
     { name: "Trustpilot reviews", dateAccessed: "2026-04-02" },

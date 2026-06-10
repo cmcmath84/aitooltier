@@ -50,6 +50,11 @@ export const descript: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "API OPEN BETA + UNDERLORD UPGRADE (2026-05-14, vendor changelog): the **Descript API launched in open beta** -- direct file uploads, publish triggers from external workflows, programmatic project search, and live progress surfaced in Claude and ChatGPT via **MCP connection**. Underlord (the AI editor) gained **context pinning** (@-button attaches files, scenes, timestamps, or individual layers to chat), reasoning-model integration for complex tasks, persistent chat history, and automatic second-pass edit verification. Same entry: ElevenLabs Scribe v2 is now the default transcription engine, GPT Image 2 for image gen, and new media formats (MKV, AVIF, Opus, WebM, multi-channel surround). Earlier (3/17): rebuilt Color adjustment tools with filter presets and a white-balance eyedropper",
+      source: "Descript changelog (descript.canny.io/changelog -- 2026-05-14 entry)",
+      date: "2026-05-14",
+    },
+    {
       description: "Projects over 2 hours sometimes experience timeline sync issues where transcript and media drift apart",
       source: "Descript Community Forum",
       date: "2026-03",
@@ -64,7 +69,7 @@ export const descript: ToolReview = {
   notFor: "Professional video editors who need precise frame-level control and complex compositing.",
   verdict: "Descript genuinely changed how I think about editing. The text-based approach isn't a gimmick -- it's a fundamentally faster way to cut podcasts and talking-head videos. The AI features like filler word removal and Studio Sound save real time. It's not going to replace Premiere for cinematic work, but for content creators who spend most of their time cutting interviews and cleaning up audio, it's the best tool available right now.",
 
-  lastReviewedDate: "2026-03-27",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "Descript official site", dateAccessed: "2026-03-27" },
     { name: "G2 Reviews", dateAccessed: "2026-03-27" },

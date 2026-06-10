@@ -51,6 +51,11 @@ export const midjourney: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "WEB UPDATE (2026-05-27, vendor changelog 'Web Updates 5'): conversational/voice sessions gained **Image Prompts and Style References** plus sidebar settings and recent-jobs access; Image Prompts now work from the tray/sidebar; tray images persist across voice submissions; new **'Rerun as HD' button upgrades V8.1 standard-res images** in one click; folder hidden-item counts and mobile settings cleanup. NOTE: 'V8.2 imminent' claims circulate in aggregators but the vendor changelog's newest version entries remain V8.1 Updates (4/30) and V8.1 Alpha (4/14) -- no V8.2 exists yet",
+      source: "Midjourney updates (updates.midjourney.com/web-updates-5/)",
+      date: "2026-05-27",
+    },
+    {
       description: "Midjourney V8.1 Alpha opened on 2026-04-14 at alpha.midjourney.com -- default HD/2K output, roughly 3x faster than V8, meaningfully better prompt adherence. Currently alpha-only access so stability varies; worth testing alongside your V8 workflows before fully migrating",
       source: "Midjourney docs (docs.midjourney.com/hc/en-us/articles/32199405667853-Version)",
       date: "2026-04",
@@ -70,7 +75,7 @@ export const midjourney: ToolReview = {
   notFor: "Beginners who want a simple web interface, or developers who need API access on a budget.",
   verdict: "Midjourney is still the gold standard for AI image quality. The output is consistently stunning. But the Discord-first experience is a real barrier for casual users, and the lack of a free tier means you can't even test it before committing. If image quality is your top priority, it's worth the price. If you want something simpler, look at DALL-E or Leonardo AI.",
 
-  lastReviewedDate: "2026-04-21",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "Midjourney docs: Version page", url: "https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version", dateAccessed: "2026-04-21" },
     { name: "Official Midjourney pricing page", dateAccessed: "2026-04-21" },

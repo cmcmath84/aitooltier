@@ -74,6 +74,11 @@ export const claude: ToolReview = {
       date: "2026-06-09",
     },
     {
+      description: "FABLE 5 DAY-2 ROLLUP (2026-06-10): platform availability landed fast -- **GitHub Copilot GA 6/9** (github.blog changelog), **Amazon Bedrock** (us-east-1 + eu-north-1 only at launch, more regions coming), **Microsoft Foundry**, **Snowflake Cortex AI**, and **Vertex AI**; notably **NOT in Cursor yet** as of 6/10. Pricing detail: the $10/$50 rate carries a **90% prompt-caching discount**. Vendor benchmark published: **SWE-Bench Pro 80.3%** (vs GPT-5.5's 58.6% -- an 11-point lead over the next-best model); LMArena has NOT yet assigned Fable 5 an Elo, so ignore third-party 'arena score' claims for now. Early user friction: (a) **Claude Desktop spawns a ~1.8GB Hyper-V VM on every launch** even for chat-only sessions -- GitHub issue hit the Hacker News front page (259 points); (b) scattered reports of the safety classifiers flagging benign biology questions -- consistent with the documented <5% Opus 4.8 fallback, but expect occasional false positives on science topics",
+      source: "GitHub blog (github.blog/changelog/2026-06-09-claude-fable-5-is-generally-available-for-github-copilot/), AWS news blog, Azure blog, Snowflake blog, Anthropic news (SWE-Bench Pro), Hacker News",
+      date: "2026-06-10",
+    },
+    {
       description: "DISTRIBUTION (2026-06-08, ships fall 2026): Apple's iOS 27 / macOS 27 'Extensions' framework lets users select a third-party AI model -- Apple's developer materials name **Claude** and Gemini explicitly, plus 'any other provider that implements the new language model protocol' -- as the assistant behind Siri, Writing Tools, and Image Playground. Ends ChatGPT's exclusive integration position on Apple platforms. Xcode 27 also integrates Anthropic coding agents natively alongside Google's and OpenAI's. Big default-assistant distribution opening for Claude on ~2B Apple devices; nothing user-facing until the fall OS releases (public betas July).",
       source: "Apple newsroom (apple.com/newsroom, WWDC 2026 developer announcements), MacRumors, TechCrunch",
       date: "2026-06-08",
@@ -173,7 +178,7 @@ export const claude: ToolReview = {
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
   verdict: "Claude is the LLM you pick when quality matters more than features -- and with Fable 5 (June 9, 2026), the ceiling just moved. Fable 5 is the first Mythos-class model anyone can actually use: Anthropic's most capable public model, included free on paid plans through June 22 and $10/$50 per 1M via API after that, with a safety design that quietly falls back to Opus 4.8 on flagged cyber/bio/chem requests rather than degrading everything for everyone. Opus 4.8 remains the $5/$25 workhorse with effort control and a cheap fast mode, so you now get a genuine two-tier choice inside one subscription. With the 1M context window, high-res vision, and MCP support -- plus Apple naming Claude a selectable system assistant in iOS 27 this fall -- the question is no longer whether Claude is frontier, it's whether you need Fable-tier reasoning often enough to burn credits on it after June 22.",
 
-  lastReviewedDate: "2026-06-09",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "Anthropic: Introducing Claude Fable 5 and Claude Mythos 5 (2026-06-09)", url: "https://www.anthropic.com/news/claude-fable-5-mythos-5", dateAccessed: "2026-06-09" },
     { name: "TechCrunch: Anthropic releases Claude Fable 5", url: "https://techcrunch.com/2026/06/09/anthropic-released-claude-fable-5-its-most-powerful-model-publicly-days-after-warning-ai-is-getting-too-dangerous/", dateAccessed: "2026-06-09" },
@@ -194,7 +199,7 @@ export const claude: ToolReview = {
   affiliateUrl: "https://claude.ai",
   status: "active",
   benchmarks: {
-    modelName: "Claude Fable 5 (launched 2026-06-09) is now the flagship -- Anthropic positions it as its most capable public model on SWE, knowledge work, and vision, but published no standalone numeric benchmark table at launch; legacy Opus-line reasoning-suite scores shown below as baseline, third-party Fable 5 verification pending",
+    modelName: "Claude Fable 5 (launched 2026-06-09) is now the flagship -- Anthropic positions it as its most capable public model on SWE, knowledge work, and vision, but published SWE-Bench Pro 80.3% at launch (vs GPT-5.5 58.6%); no LMArena Elo yet; legacy Opus-line reasoning-suite scores shown below as baseline, third-party Fable 5 verification pending",
     scores: [
       { name: "MMLU", score: 91.3, maxScore: 100, unit: "%" },
       { name: "GPQA Diamond", score: 91.3, maxScore: 100, unit: "%" },

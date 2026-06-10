@@ -53,7 +53,12 @@ export const kimi: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "WATCHLIST (verified 2026-05-13, Day 4 of ship window): Kimi K3 has NOT shipped. moonshotai HuggingFace org shows K2.6 as the latest model (last update 2 days ago); no Kimi-K3 repository exists. kimi.com/blog latest post remains 'Kimi K2.6 -- Advancing Open-Source Coding' (2026-04-20). Manifold market priced ~74% probability of K3 ship before end of May 2026; today is Day 4 of that window with no observable on-platform signal. If K3 lands before 2026-05-31 it likely beats Manifold's implied timeline; if it slips past 5/31 the market resolves NO. Watch: kimi.com/blog, huggingface.co/moonshotai, GitHub MoonshotAI/Kimi-K* releases.",
+      description: "API DEPRECATION (2026-05-25, vendor docs verbatim: 'The kimi-k2 series models were officially discontinued on May 25, 2026'): retired model ids -- kimi-k2-0905-preview, kimi-k2-0711-preview, kimi-k2-turbo-preview, kimi-k2-thinking, kimi-k2-thinking-turbo. If your code pins any of these, requests now fail; migrate to kimi-k2.6 (or kimi-k2.5, which remains an active model alongside it). K2.6 detail confirmed on the vendor blog: open weights on HuggingFace (moonshotai/Kimi-K2.6), 256K context (262,144 default), agent swarm scaling to **300 sub-agents / 4,000 coordinated steps** (up from K2.5's 100/1,500)",
+      source: "Moonshot platform docs (platform.kimi.ai/docs/models), kimi.com/blog/kimi-k2-6, HuggingFace moonshotai/Kimi-K2.6",
+      date: "2026-05-25",
+    },
+    {
+      description: "WATCHLIST RESOLVED (as of June 2026): Kimi K3 never shipped -- the Manifold 'before end of May' window passed with zero vendor signal, and the K2-series deprecation (5/25) plus continued K2.6 investment argue against an imminent K3. Treat any K3 claims as aggregator fabrication until kimi.com/blog says otherwise. Original watch note (2026-05-13): Kimi K3 has NOT shipped. moonshotai HuggingFace org shows K2.6 as the latest model (last update 2 days ago); no Kimi-K3 repository exists. kimi.com/blog latest post remains 'Kimi K2.6 -- Advancing Open-Source Coding' (2026-04-20). Manifold market priced ~74% probability of K3 ship before end of May 2026; today is Day 4 of that window with no observable on-platform signal. If K3 lands before 2026-05-31 it likely beats Manifold's implied timeline; if it slips past 5/31 the market resolves NO. Watch: kimi.com/blog, huggingface.co/moonshotai, GitHub MoonshotAI/Kimi-K* releases.",
       source: "kimi.com/blog (no new post since K2.6), huggingface.co/moonshotai (no K3 repo)",
       date: "2026-05-13",
     },
@@ -77,7 +82,7 @@ export const kimi: ToolReview = {
   notFor: "Solo developers or hobbyists who want to run models locally -- the 1T parameter size makes that impractical. Use Qwen3-Coder-Next or DeepSeek instead for self-hosting.",
   verdict: "Kimi K2.5 is the best open-weights model in the world right now for agentic coding. It legitimately rivals Claude Opus 4.5 and Gemini 3.1 Pro on practical coding tasks while being nominally 'open.' The catch is that the 1T parameter size makes it hosted-only for 99% of users. If you're picking between hosted APIs and you want maximum quality with open-weights safety, Kimi K2.5 is the S-tier pick. If you need a model that actually runs on your hardware, look at Qwen3-Coder-Next or DeepSeek V3.2 instead.",
 
-  lastReviewedDate: "2026-05-13",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "Moonshot Kimi K2.6 blog (GA 2026-04-20)", url: "https://www.kimi.com/blog/kimi-k2-6", dateAccessed: "2026-04-27" },
     { name: "HuggingFace moonshotai/Kimi-K2.6", url: "https://huggingface.co/moonshotai/Kimi-K2.6", dateAccessed: "2026-04-27" },

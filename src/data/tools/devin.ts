@@ -45,6 +45,11 @@ export const devin: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "BENCHMARK PUBLISHED (2026-06-08): Cognition released **FrontierCode** -- a benchmark measuring 'code mergeability' (would a maintainer actually merge the generated code, not just does it pass tests). 150 tasks in nested subsets (Extended 150 / Main 100 / Diamond 50-hardest), scored on blocker-criteria pass rate + weighted rubric, 5 runs per task. Diamond results: Claude Opus 4.8 13.4%, GPT-5.5 6.3% (with 4x fewer tokens), Gemini 3.1 Pro 4.7%, Kimi K2.6 3.8% (open-source leader). Tasks are NOT public (contamination prevention); evals opening to model creators. Positions Cognition as a measurement authority for exactly the metric Devin sells on -- and the low absolute scores are a sober counterpoint to 'AI writes mergeable code today' marketing",
+      source: "Cognition blog (cognition.ai/blog/frontier-code)",
+      date: "2026-06-08",
+    },
+    {
       description: "COMPANY + PRODUCT (June 2026 cluster): **6/2 -- Windsurf renamed Devin Desktop** via OTA update; Cognition now ships one Devin family (Cloud / Desktop / Review) and Devin Cloud agent access starts on Desktop's $20 Pro plan (see the windsurf page for migration detail). **5/27 -- $1B+ raised at a $26B valuation** (Lux Capital, General Catalyst, 8VC lead; vendor-confirmed in Cognition's 'More Devins in More Places' post). **6/4 -- 'AI Productivity Guarantee'** announced for enterprise contracts. **6/9 -- Claude Fable 5 available in Devin on launch day.** Practical read: Cognition is consolidating brands and pushing downmarket -- the $20 entry point now buys both the IDE and cloud-agent access that used to be enterprise-gated",
       source: "Cognition blog (cognition.ai/blog), Devin blog (devin.ai/blog)",
       date: "2026-06-02",
@@ -74,7 +79,7 @@ export const devin: ToolReview = {
   notFor: "Developers who want fast inline suggestions while coding -- Cursor or Copilot are better for that. Also not ready for unsupervised work on critical production systems.",
   verdict: "Devin is the most ambitious AI coding tool available, and at $20/mo it's finally priced for experimentation. When it works, it's like having a junior developer who never sleeps. When it doesn't, it's like watching that junior dev spend three hours on something you could've done in twenty minutes. The key is task selection -- give it clear, bounded work and it impresses. Give it vague requirements and you'll burn credits watching it spin. It's a glimpse of the future, but today it's a supplemental tool, not a replacement for an IDE-integrated copilot.",
 
-  lastReviewedDate: "2026-06-09",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "Cognition: More Devins in More Places ($1B raise, 2026-05-27)", url: "https://www.cognition.ai/blog", dateAccessed: "2026-06-09" },
     { name: "Devin blog: Windsurf is now Devin Desktop (2026-06-02)", url: "https://www.devin.ai/blog", dateAccessed: "2026-06-09" },

@@ -38,6 +38,7 @@ const logoMap: Record<string, string> = {
   mistral: "/logos/mistral.png",
   deepseek: "/logos/deepseek.png",
   gemma: "/logos/gemini.png",
+  diffusiongemma: "/logos/gemini.png",
   qwen: "/logos/qwen.png",
   glm: "/logos/glm.png",
   kimi: "/logos/kimi.png",

@@ -62,6 +62,11 @@ export const cursor: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "BUGBOT UPDATE (2026-06-10, vendor changelog): Bugbot is now **3x faster (~90s average review), 22% cheaper, and finds ~10% more bugs** (0.56 → 0.62 bugs/review per Cursor's published numbers). MODEL-GAP NOTE: **Claude Fable 5 (launched 6/9) is NOT yet available in Cursor** as of 6/10 -- it went day-one GA in GitHub Copilot, Bedrock, Foundry, and Vertex; if you want the strongest agentic-coding model inside Cursor you're waiting on Anysphere",
+      source: "Cursor changelog (cursor.com/changelog -- 2026-06-10 Bugbot entry)",
+      date: "2026-06-10",
+    },
+    {
       description: "VERSION CLUSTER (v3.6 5/29 + v3.7 early June, all vendor changelog): **3.6 'Auto-review Run Mode'** (5/29) -- a classifier subagent routes Shell/MCP/Fetch tool calls between auto-execute and require-review, cutting approval fatigue without going full-YOLO (the aggregator-circulated 'Cursor 3.6 auto-review' claim is confirmed real). **v3.7 ships**: Organizations for Cursor Enterprise (6/3, per-team security/governance/budget controls), Canvas Design Mode + Context Usage Report (6/4), SDK upgrades (custom stores, custom tools, auto-review, nested subagents in TS/Python), and Design Mode improvements (6/5, multi-select + voice input). Enterprise governance + design tooling in one week -- Cursor pushing both upmarket and into the designer workflow simultaneously",
       source: "Cursor changelog (cursor.com/changelog) -- 2026-05-29 v3.6 + 2026-06-03/04/05 v3.7 entries",
       date: "2026-06-05",
@@ -146,7 +151,7 @@ export const cursor: ToolReview = {
   notFor: "Developers happy with their current editor setup who just want basic autocomplete -- Copilot is still less disruptive for that. Also not for anyone skeptical of Cursor's own coding model; if you want pure frontier-model access for every task, paying Claude or OpenAI directly and using Claude Code is cleaner.",
   verdict: "Cursor 3 + Composer 2 (April 2026) is the release where Cursor stops being an AI-augmented editor and becomes an agent-first dev environment. Composer 2's speed at $0.50/$2.50 per 1M tokens is the real story -- it makes tight iteration loops feel instant in a way frontier models can't, even if the quality is slightly below Opus 4.6. The multi-workspace + cross-platform handoff design assumes you want your agents everywhere; if you don't, it's overkill. The honest read: for developers willing to go all-in on agentic workflows, Cursor 3 is the 2026 default. For everyone else, Claude Code + Copilot is a simpler, less committing stack.",
 
-  lastReviewedDate: "2026-06-09",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "Cursor: Development Environments for Cloud Agents (2026-05-13)", url: "https://cursor.com/blog/cloud-agent-development-environments", dateAccessed: "2026-05-13" },
     { name: "Cursor changelog: Microsoft Teams (2026-05-11)", url: "https://cursor.com/changelog/microsoft-teams", dateAccessed: "2026-05-13" },

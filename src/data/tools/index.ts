@@ -28,6 +28,7 @@ import { llama } from "./llama";
 import { mistral } from "./mistral";
 import { deepseek } from "./deepseek";
 import { gemma } from "./gemma";
+import { diffusiongemma } from "./diffusiongemma";
 import { qwen } from "./qwen";
 import { glm } from "./glm";
 import { kimi } from "./kimi";
@@ -207,6 +208,7 @@ export const tools: ToolReview[] = [
   mistral,
   deepseek,
   gemma,
+  diffusiongemma,
   qwen,
   glm,
   kimi,

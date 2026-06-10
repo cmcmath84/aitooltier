@@ -65,6 +65,12 @@ export const suno: ToolReview = {
   knownIssues: [
     {
       description:
+        "FUNDING + LICENSED MODEL (2026-06-03): Suno raised **$400M+ Series D at a $5.4B post-money valuation**, led by Bond Capital (IVP, Forerunner, USV, Alkeon, Lightspeed, Menlo, Matrix + unnamed artists/songwriters participating) -- more than doubling the $2.45B valuation from ~6 months prior. CEO Mikey Shulman confirmed the first industry-sanctioned model is a **Warner Music Group partnership**, currently in testing, rolling out 'in the coming months' -- note this is WMG-specific (post-settlement), NOT a blanket music-industry license; Sony and UMG litigation continues with a summary-judgment hearing set for July 2026. **Suno v6 remains unreleased** -- vendor model timeline still tops out at V5.5; treat v6 release-date claims as rumor",
+      source: "Hollywood Reporter (suno-announces-400m-funding-round-5-4b-valuation), Billboard, Suno help center model timeline",
+      date: "2026-06-03",
+    },
+    {
+      description:
         "ElevenLabs launched ElevenMusic on iOS 2026-04-02 as a direct Suno/Udio competitor -- 7 free songs/day, Pro $9.99/mo or $95.90/yr, commercially licensed from day one, with ElevenLabs' voice-cloning stack as the differentiator. This is the first credible challenger to Suno's free-tier economics in 2026",
       source: "TechCrunch, Music Business Worldwide",
       date: "2026-04",
@@ -101,7 +107,7 @@ export const suno: ToolReview = {
   verdict:
     "Suno is the fastest way to go from an idea to a full song, and for casual use it's genuinely fun. But the lack of editing control and the inconsistent vocal quality mean it's better suited for content creators and hobbyists than anyone trying to produce polished tracks. The free tier is worth trying -- just don't expect studio quality.",
 
-  lastReviewedDate: "2026-04-21",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "Suno blog: v5.5", url: "https://suno.com/blog/v5-5", dateAccessed: "2026-04-18" },
     { name: "Music Business Worldwide: Suno v5.5", url: "https://www.musicbusinessworldwide.com/suno-launches-v5-5-ai-model-with-voice-capture-and-personalization-features/", dateAccessed: "2026-04-18" },

@@ -2,8 +2,8 @@ import { ToolReview } from "@/lib/types";
 
 export const stepfun: ToolReview = {
   slug: "stepfun",
-  name: "StepFun Step 3.5 Flash",
-  tagline: "StepFun's (China) agent-focused open-weight model -- Step 3.5 Flash launched 2026-02-01. 196B sparse MoE, ~11B active. Benchmarks slightly ahead of DeepSeek V3.2 at over 3x smaller total size. Step 3 (321B / 38B active, Apache 2.0) and Step3-VL-10B multimodal also in the family",
+  name: "StepFun Step 3.7 Flash",
+  tagline: "StepFun's (China) agent-focused open-weight family -- Step 3.7 Flash (May 28 2026): 198B sparse MoE vision-language model, ~11B active, 256K context, Apache 2.0, ~400 tok/s, SWE-Bench Pro 56.3. Supersedes Step 3.5 Flash (Feb 2026) as the flagship",
   category: "ai-local-models",
   url: "https://stepfun.ai/research/en/step3",
 
@@ -52,6 +52,11 @@ export const stepfun: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "VERSION BUMP (2026-05-28): **Step 3.7 Flash** released -- 198B-parameter sparse MoE vision-language model (HF auto-counter shows 201B; vendor model card says 198B), ~11B active per token, 1.8B vision encoder + 196B language backbone, **256K context**, Apache 2.0 open weights (main + FP8 + NVFP4 + GGUF variants on HuggingFace), up to ~400 tok/s, three selectable reasoning levels, agent-focused. Model-card benchmarks: SWE-Bench Pro 56.3, Terminal-Bench 2.1 59.5, Toolathlon 49.5, ClawEval-1.1 67.1, SimpleVQA-Search 79.2. API pricing: $0.20/M input (cache miss), $0.04/M (cache hit), $1.15/M output",
+      source: "HuggingFace (huggingface.co/stepfun-ai/Step-3.7-Flash model card)",
+      date: "2026-05-28",
+    },
+    {
       description: "Step 3.5 Flash was released 2026-02-01 with initial quantization issues for Q3 and below -- community Q5 quants are the practical deployment target as of April 2026. Full FP16 weights require significant multi-GPU setup (196B total params even with 11B active)",
       source: "Hugging Face discussions, Reddit r/LocalLLaMA",
       date: "2026-02",
@@ -66,7 +71,7 @@ export const stepfun: ToolReview = {
   notFor: "English-first creative writing, non-technical users, or workflows that touch politically sensitive topics (PRC content filters apply). Also not the right pick if you need the absolute best Western-community ecosystem -- Llama, Qwen, or DeepSeek will have more third-party tooling.",
   verdict: "StepFun Step 3.5 Flash (February 2026) is the notable Chinese open-weight release that doesn't come from the top-3 labs (DeepSeek, Alibaba/Qwen, Zhipu/GLM). The agent-focused tuning and MoE efficiency (196B total / 11B active beats DeepSeek V3.2 at 3x larger) give it a real niche for teams building tool-use agents on open weights. Western community adoption is still early but StepFun is growing OpenRouter presence and the Step 3.5 Flash release is a credible first step into broader ecosystem relevance. Worth adding to any Chinese-open-weight shortlist alongside DeepSeek and Qwen.",
 
-  lastReviewedDate: "2026-04-17",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "StepFun research: Step 3", url: "https://stepfun.ai/research/en/step3", dateAccessed: "2026-04-17" },
     { name: "Hugging Face: stepfun-ai/step3", url: "https://huggingface.co/stepfun-ai/step3", dateAccessed: "2026-04-17" },

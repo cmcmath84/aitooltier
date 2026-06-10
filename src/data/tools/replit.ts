@@ -51,6 +51,11 @@ export const replit: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "FEATURE CLUSTER (2026-05-29 + 2026-06-05, vendor changelog): **5/29** -- Tripo3D connector (Agent generates 3D models from text or image input, billed to credits), in-app audio generation (music, sound effects, speech), and Canvas Generate (image / vector graphic / video in-place). **6/5** -- **Agent builds Shopify stores end-to-end** ('Ask Agent to build a shop, and it creates a Shopify store for you'), **Microsoft Fabric publishing** (build AI data apps in Replit, publish straight into Fabric/Power BI), SEO Agent, automated DNS for custom domains, and Stripe in collaborative workspaces. The Shopify + Fabric pair pushes Replit hard into the non-developer commerce/business-apps market",
+      source: "Replit changelog (docs.replit.com/updates -- 2026-05-29 and 2026-06-05 entries)",
+      date: "2026-06-05",
+    },
+    {
       description: "PRODUCT (May 2026): **Replit Agent 4** shipped, organized around four pillars Replit framed as 'Design Freely / Build Together / Ship Anything / Move Faster.' Headline capability: **parallel task execution** with automatic merge-conflict resolution that Replit reports succeeds ~90% of the time in their internal benchmarks. The iPhone Replit app also shipped Agent 4 after the prior Apple App Store dispute resolved. Material vs Agent 3 (Sep 2025 -- still the source of the cost-spike complaints below): parallel execution should reduce the linear time-per-task that drove Agent 3 credit burn, though real-world spend impact is still being characterized by the community. Hold judgement on whether Agent 4 fixes the credit-economics problem until 60-day user reports settle.",
       source: "Replit blog (blog.replit.com/introducing-agent-4-built-for-creativity), Replit Agent 4 page (replit.com/agent4)",
       date: "2026-05",
@@ -75,7 +80,7 @@ export const replit: ToolReview = {
   notFor: "Professional developers who already have a local setup. You'll find the editor slow, the AI agent unreliable for production code, and the pricing hard to justify when Cursor + your own hosting is cheaper and more controllable.",
   verdict: "Replit is the most accessible way to go from zero to a working web app without touching a terminal. Agent can build surprisingly functional apps, and the cloud IDE means there's nothing to install. But the pricing model after Agent 3 is a real problem -- credit consumption is unpredictable, and bills can spike without warning. The database deletion incident is concerning for anyone considering it for serious work. Great for learning and prototyping; risky for production.",
 
-  lastReviewedDate: "2026-05-19",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "Replit official site", dateAccessed: "2026-04-02" },
     { name: "The Register", dateAccessed: "2026-04-02" },

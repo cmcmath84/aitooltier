@@ -35,6 +35,7 @@ export const canvaAi: ToolReview = {
     "Not useful for anyone who doesn't already use Canva for design",
   ],
   knownIssues: [
+    { description: "CREATE 2026 ADDENDA (verified vendor-primary 2026-06-10): Canva AI 2.0 launched as a **research preview** at Create (April 15), with general availability 'rolling out over the coming weeks' -- by June it is broadly available. Same-event items not previously captured: **Canva Offline** (essential editing offline, auto-sync on reconnect), **Print Shop** (vendor copy says both '40' and 'more than 60' new print products -- Canva's own pages disagree), **Cavalry now completely free** for any Canva account (pro motion-graphics tool), expanded connectors (Slack, Gmail, Google Drive/Calendar, Notion, Zoom, HubSpot, Microsoft, Atlassian, Linear), and an **Affinity AI Connector with Claude**. Scheduling is general agentic task scheduling (e.g. weekly content batches that run while you're offline), not just social posting", source: "Canva newsroom (canva.com/newsroom/news/canva-create-2026-ai/, canva-create-2026-launches/)", date: "2026-06" },
     { description: "Canva AI 2.0 launched at Canva Create on 2026-04-16 -- major platform shift from 'design-with-AI' to 'AI-with-design'. Built on the new Canva Design Model (Canva's own foundation model that understands design structure). Six new agentic workflows: connectors (Slack, Notion, Zoom, Gmail), web research, brand intelligence, Sheets AI, Canva Code 2.0. Generates full brand campaigns from text prompts. Rolling out via homepage discovery to first 1M users, broader rollout 'in coming weeks'", source: "Canva newsroom, TechCrunch, Fortune", date: "2026-04" },
     { description: "Image generation via Lucid Origin model is now 5x faster and ~30x cheaper per image vs. prior Canva image gen. Video (I2V) model is 7x faster and 17x cheaper. This is a major cost-efficiency unlock for Canva Pro/Teams users doing high-volume generation", source: "Canva Create keynote, 9to5Mac", date: "2026-04" },
     { description: "Magic Expand sometimes produces noticeable artifacts at the edges of expanded images", source: "Canva Community", date: "2026-03" },
@@ -43,7 +44,7 @@ export const canvaAi: ToolReview = {
   notFor: "Professional designers or anyone who needs high-quality AI image generation. Use Midjourney for images and Figma for design.",
   verdict: "Canva AI is the smart play by Canva -- take the platform 180 million people already use and sprinkle AI on top. The AI features aren't best-in-class individually, but the convenience of having them inside your existing design tool is worth a lot. If you already pay for Canva Pro, the AI features are a nice bonus. If you're evaluating it purely as an AI design tool, dedicated alternatives are better.",
 
-  lastReviewedDate: "2026-04-18",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "Canva newsroom: Canva Create 2026 AI", url: "https://www.canva.com/newsroom/news/canva-create-2026-ai/", dateAccessed: "2026-04-18" },
     { name: "TechCrunch: Canva AI agentic design", url: "https://techcrunch.com/2026/04/16/canvas-ai-assistant-can-now-call-various-tools-to-make-designs-for-you", dateAccessed: "2026-04-18" },

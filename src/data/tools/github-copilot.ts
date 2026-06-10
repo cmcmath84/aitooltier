@@ -67,6 +67,11 @@ export const githubCopilot: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "MODEL ADD (2026-06-09, vendor-primary github.blog/changelog): **Claude Fable 5 is generally available in GitHub Copilot** on launch day -- Anthropic's first public Mythos-class model lands in the Copilot model picker the same day it ships, ahead of Cursor (which still lacks it as of 6/10). For Copilot users this is currently the strongest available model on agentic coding benchmarks (vendor: SWE-Bench Pro 80.3%). Usage meters against the 6/1 credit system like other premium models",
+      source: "GitHub blog (github.blog/changelog/2026-06-09-claude-fable-5-is-generally-available-for-github-copilot/)",
+      date: "2026-06-09",
+    },
+    {
       description: "BILLING CUTOVER WENT LIVE (2026-06-01, vendor-primary github.blog/changelog): usage-based billing is now live for all GitHub Copilot users. Each plan ships with monthly included usage; beyond it, requests meter against GitHub AI Credits / token rates. Code completions and Next Edit suggestions stay free. **New Copilot Max tier introduced the same day** -- an upgrade for existing Student/Pro/Pro+ subscribers with higher included usage + higher spending limits. **New signups remain PAUSED for Student, Pro, Pro+, AND the new Max plan** ('we'll reopen sign-ups in the coming weeks'). Copilot code review now also consumes GitHub Actions minutes as of 6/1. Net: the 4/27-announced transition is no longer 'upcoming' -- it is the current state.",
       source: "GitHub Changelog (github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/), GitHub Blog: moving to usage-based billing",
       date: "2026-06-01",
@@ -151,7 +156,7 @@ export const githubCopilot: ToolReview = {
   notFor: "Anyone trying to sign up for Pro, Pro+, or Student right now -- signups are paused (2026-04-20 onward). Also not for developers who specifically wanted Claude Opus on the $10 Pro plan; Opus was just pulled to Pro+ only. Cursor or Claude Code are the obvious alternatives during the pause.",
   verdict: "GitHub Copilot hit a wall on 2026-04-20: new Pro/Pro+/Student signups paused, Claude Opus pulled from Pro, and usage caps tightened across the board. Microsoft is openly admitting that agent workloads consume more compute than the current subscription tiers can sustain, and the product is being retuned in real time. For existing subscribers the inline completions remain best-in-class, but the value proposition has gotten worse overnight. If you're shopping for an AI code assistant in the next 30 days, Cursor (Pro+ $60) and Claude Code are the practical choices until Microsoft either reopens signups or reprices. Watch the refund window (through 2026-05-20) if you're on the fence about staying.",
 
-  lastReviewedDate: "2026-06-02",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "GitHub Changelog: Updates to GitHub Copilot billing and plans -- usage-based billing live (2026-06-01)", url: "https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/", dateAccessed: "2026-06-02" },
     { name: "Microsoft AI: Introducing MAI-Code-1-Flash (2026-06-02)", url: "https://microsoft.ai/news/introducingmai-code-1-flash/", dateAccessed: "2026-06-02" },

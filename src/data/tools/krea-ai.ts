@@ -68,6 +68,11 @@ export const kreaAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "KREA 2 ERA (May-June 2026, vendor release notes): **Krea 2** -- Krea's first foundation image model built from scratch -- introduced 5/12, Pro users 5/15, **GA for everyone 5/18** (with a week of unlimited generations for subscribers). Follow-on ships: **Krea 2 API** (5/27, Fal + ComfyUI integrations), **LoRA training** (5/21 beta for Max/Business, **GA for all users 6/1** -- train custom styles on your own images), **Ideogram 4.0 available inside Krea** (6/3, 2K native resolution + best-in-class text rendering), and **Krea 2 Turbo** (6/4, high-quality images in ~2 seconds). Krea has moved from 'real-time UI on other people's models' to a vertically integrated model+platform play in under a month",
+      source: "Krea release notes (krea.ai/release-notes)",
+      date: "2026-06-04",
+    },
+    {
       description: "Real-time generation canvas occasionally lags or freezes on lower-end hardware and slower connections",
       source: "Reddit r/StableDiffusion",
       date: "2026-03",
@@ -87,7 +92,7 @@ export const kreaAi: ToolReview = {
   notFor: "Users who want maximum image quality and don't mind a slower workflow. Midjourney still produces better results for patient users.",
   verdict: "Krea AI stands out with its real-time generation canvas, which makes the creative process feel more hands-on than typing prompts into a box. The free tier is generous, the upscaler is excellent, and the overall experience is polished. It won't match Midjourney on raw output quality, but it's faster, more accessible, and more fun to use. A strong pick if you want something between 'type a prompt and wait' and full manual editing.",
 
-  lastReviewedDate: "2026-04-02",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "Krea AI official site", dateAccessed: "2026-04-02" },
     { name: "Reddit r/StableDiffusion", dateAccessed: "2026-04-02" },

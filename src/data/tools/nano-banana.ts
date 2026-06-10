@@ -74,6 +74,11 @@ export const nanoBanana: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "GA + VIDEO-TO-IMAGE (2026-05-28, vendor changelog): **gemini-3.1-flash-image (Nano Banana 2) and gemini-3-pro-image (Nano Banana Pro) hit GA** on the Gemini API. New capability: **video-to-image generation** -- pass a video file (upload or public YouTube URL) as context and generate thumbnails, posters, or infographics from it; works ONLY with gemini-3.1-flash-image, not the Pro model. MIGRATION DEADLINE: the `-preview` model versions are deprecated and **shut down 2026-06-25** -- pinned preview ids start failing then",
+      source: "Gemini API changelog (ai.google.dev/gemini-api/docs/changelog -- 2026-05-28 entry)",
+      date: "2026-05-28",
+    },
+    {
       description: "Multi-reference mode occasionally blends source images inconsistently when the references are stylistically divergent",
       source: "Reddit r/GeminiAI",
       date: "2026-03",
@@ -88,7 +93,7 @@ export const nanoBanana: ToolReview = {
   notFor: "Pure artistic or stylized image generation -- Midjourney's aesthetic wins there. Also not for anyone deeply in the open-weight camp; FLUX.2 [klein] is free to self-host and almost as good for text-free images with better control.",
   verdict: "Nano Banana 2 earned its viral branded search volume honestly -- it's the best commercial-use image model in 2026 for any workflow that requires readable text or consistent branding across multiple images. Google's decision to roll it into the default Gemini app experience (instead of shipping yet another product) is smart: it puts best-in-class image gen in front of everyone with a Gemini account with zero onboarding. The honest read: for design and marketing work in 2026, Nano Banana 2 is the default answer. For artistic exploration, stick with Midjourney.",
 
-  lastReviewedDate: "2026-04-16",
+  lastReviewedDate: "2026-06-10",
   dataSources: [
     { name: "Google Blog: Nano Banana 2", url: "https://blog.google/innovation-and-ai/technology/ai/nano-banana-2/", dateAccessed: "2026-04-16" },
     { name: "Google Cloud: Nano Banana Pro for enterprise", url: "https://cloud.google.com/blog/products/ai-machine-learning/nano-banana-pro-available-for-enterprise", dateAccessed: "2026-04-16" },
