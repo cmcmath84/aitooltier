@@ -42,7 +42,11 @@ if (mode === "--from-files") {
     }
   }
 } else if (mode === "--urls") {
-  for (const p of items) {
+  for (let p of items) {
+    // Git Bash on Windows rewrites leading-slash args to filesystem paths
+    // (MSYS path translation): /tools/x -> C:/Program Files/Git/tools/x.
+    // Strip that prefix so relative paths work from any shell.
+    p = p.replace(/^[A-Za-z]:[\\/].*?[\\/](?=(tools|pricing|alternatives|compare|categories|benchmarks)[\\/])/, "/");
     urls.add(p.startsWith("http") ? p : `https://${HOST}${p.startsWith("/") ? p : `/${p}`}`);
   }
 } else {
