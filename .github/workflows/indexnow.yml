@@ -1,0 +1,27 @@
+# Auto-ping IndexNow (Bing/DuckDuckGo/Yandex) when tool pages change.
+# Google does not use IndexNow; GSC Request Indexing remains a manual UI step.
+name: IndexNow ping
+on:
+  push:
+    branches: [master]
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Ping IndexNow for changed tool pages
+        run: |
+          BEFORE="${{ github.event.before }}"
+          # First push or force-push fallback: diff against parent of HEAD
+          if ! git cat-file -e "$BEFORE" 2>/dev/null || [ "$BEFORE" = "0000000000000000000000000000000000000000" ]; then
+            BEFORE="${{ github.sha }}^"
+          fi
+          CHANGED=$(git diff --name-only "$BEFORE" "${{ github.sha }}" -- 'src/data/tools/*.ts' | tr '\n' ' ')
+          echo "Changed tool files: $CHANGED"
+          if [ -n "$CHANGED" ]; then
+            node scripts/indexnow-ping.mjs --from-files $CHANGED
+          else
+            echo "No tool data changes in this push -- skipping."
+          fi
