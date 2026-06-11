@@ -50,6 +50,11 @@ export const gamma: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "FEATURE BATCH (2026-05-15 + 2026-05-29, vendor changelog): 5/15 -- 6-column layouts, **custom typefaces fully embedded in PowerPoint exports** (addresses the long-standing PPTX-fidelity complaint below), remix imported/pasted content, consistent styled image generation with topic-based style suggestions, chat-based image brainstorming/editing, dark mode for the theme panel. 5/29 -- **smarter Claude/ChatGPT connectors** (better instruction-following + plan checking), API delete endpoint, export improvements across PPTX/PDF/Google Slides",
+      source: "Gamma changelog (meetgamma.canny.io/changelog)",
+      date: "2026-05-29",
+    },
+    {
       description: "PowerPoint exports sometimes have layout shifts and broken formatting compared to the web version",
       source: "Reddit r/presentations",
       date: "2026-02",
@@ -64,7 +69,7 @@ export const gamma: ToolReview = {
   notFor: "Corporate teams locked into PowerPoint/Google Slides workflows, or designers who need pixel-perfect control over every element.",
   verdict: "Gamma is the best AI presentation tool right now, and it's not particularly close. The speed from prompt to polished deck is impressive, and the web-native format genuinely adds value over traditional slides. The catch is that it's a different format -- if your audience expects a .pptx file, the export quality drops noticeably. For web-shared presentations, it's excellent. For traditional slide decks, you'll still want PowerPoint.",
 
-  lastReviewedDate: "2026-03-31",
+  lastReviewedDate: "2026-06-11",
   dataSources: [
     { name: "Gamma official site", dateAccessed: "2026-03-31" },
     { name: "G2 Reviews", dateAccessed: "2026-03-31" },

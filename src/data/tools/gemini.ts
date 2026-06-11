@@ -57,6 +57,11 @@ export const gemini: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRICE CUT (2026-06-09): **Google AI Plus dropped from $7.99 to $4.99/mo** and doubled storage 200GB → 400GB (US; tier includes Gemini Omni Flash video gen, Flow, and NotebookLM). TechCrunch framed it as 'a warning shot in the AI subscription price wars' -- it undercuts ChatGPT Go ($8/mo) by nearly half. Current Google AI plan ladder: Plus $4.99 / Pro $19.99 / Ultra 5x from $99.99 / Ultra 20x $199.99",
+      source: "blog.google (Google One subscriptions post), TechCrunch (2026-06-09), Engadget",
+      date: "2026-06-09",
+    },
+    {
       description: "PARTNERSHIP WIN (2026-06-08, WWDC): Apple's rebuilt **Siri AI** runs on next-generation Apple Foundation Models that Apple says were 'custom-built in collaboration with Google and its Gemini models' -- press reports the deal at ~$1B/year for a ~1.2T-parameter custom Gemini variant. This puts Gemini-derived models behind the default assistant on qualifying iPhones, iPads, and Macs when iOS 27 / macOS 27 ship this fall. Separately, iOS 27's Extensions framework lets users select Gemini itself as the system assistant behind Siri, Writing Tools, and Image Playground -- distribution ChatGPT used to hold exclusively. Arguably Google's biggest AI distribution win to date; see the siri-ai page for the Apple-side detail",
       source: "Apple newsroom (apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/), TechCrunch, CNBC, SiliconANGLE",
       date: "2026-06-08",
@@ -126,7 +131,7 @@ export const gemini: ToolReview = {
   notFor: "Anyone who needs the best raw output quality. Claude and GPT-4 both write better. Also not for anyone spooked by Google's history of abandoning products.",
   verdict: "Gemini's strength is the ecosystem play. The 1M context window is genuinely useful for long documents, and the Google Workspace integration is something neither OpenAI nor Anthropic can match. But purely as an LLM, the output quality is a step behind Claude and GPT-4. Pick Gemini if you're deep in Google's ecosystem. Otherwise, the other two are better standalone.",
 
-  lastReviewedDate: "2026-06-09",
+  lastReviewedDate: "2026-06-11",
   dataSources: [
     { name: "Google Developers Blog: Transitioning Gemini CLI to Antigravity CLI (shutdown 2026-06-18)", url: "https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/", dateAccessed: "2026-06-02" },
     { name: "Google Blog: Gemini 3.5 frontier intelligence with action (2026-05-19)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/", dateAccessed: "2026-05-20" },

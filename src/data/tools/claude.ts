@@ -69,12 +69,17 @@ export const claude: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "FABLE 5 DAY-3 (2026-06-11): **#1 on LMArena** -- claude-fable-5 now holds the top text/overall Elo at **1510±11** (next: Opus 4.6-thinking 1504, Opus 4.7-thinking 1502; GPT-5.5-high sits at 1481). Also **#1 on the Artificial Analysis Intelligence Index at 65** (Opus 4.8 second at 61, GPT-5.5-xhigh 60) -- note AA scores the 'Adaptive Reasoning, Max Effort, Opus 4.8 Fallback' configuration. Counterpoint worth knowing: Endor Labs published a critique finding 'mid-tier results on coding tasks' (109 points on HN) -- benchmark dominance is not unanimous across third-party evals. API housekeeping from the deprecations page: `temperature`/`top_p`/`top_k` now return HTTP 400 on Opus 4.7+ models (remove them from request bodies), and **Claude Mythos Preview retires June 30, 2026** (migrate to claude-mythos-5). Still NOT in Cursor as of day 3",
+      source: "LMArena leaderboard (lmarena.ai, now redirecting to arena.ai), Artificial Analysis (artificialanalysis.ai/models), Endor Labs via HN, Anthropic deprecations page",
+      date: "2026-06-11",
+    },
+    {
       description: "MODEL LAUNCH (2026-06-09): **Claude Fable 5** -- Anthropic's most powerful generally available model, described by Anthropic as 'a Mythos-class model that we've made safe for general use.' Available via API immediately at $10/$50 per 1M tokens (2x Opus 4.8). Subscription rollout is staged: included at no extra cost on Pro/Max/Team/Enterprise **through June 22, 2026**, then requires usage credits while capacity scales. Safety mechanics: classifiers route cybersecurity, biology/chemistry, and distillation-attempt requests to Opus 4.8 instead (affects <5% of sessions on average). All Mythos-class traffic carries mandatory 30-day retention (overrides zero-data-retention agreements; not used for training). **Claude Mythos 5** -- the same model with safeguards lifted in some areas -- launched simultaneously but is restricted to Project Glasswing partners and select biology researchers; Mythos Preview users can upgrade immediately. Context: Anthropic confidentially filed its S-1 on 2026-06-01, days before this launch.",
       source: "Anthropic news (anthropic.com/news/claude-fable-5-mythos-5), TechCrunch, CNBC",
       date: "2026-06-09",
     },
     {
-      description: "FABLE 5 DAY-2 ROLLUP (2026-06-10): platform availability landed fast -- **GitHub Copilot GA 6/9** (github.blog changelog), **Amazon Bedrock** (us-east-1 + eu-north-1 only at launch, more regions coming), **Microsoft Foundry**, **Snowflake Cortex AI**, and **Vertex AI**; notably **NOT in Cursor yet** as of 6/10. Pricing detail: the $10/$50 rate carries a **90% prompt-caching discount**. Vendor benchmark published: **SWE-Bench Pro 80.3%** (vs GPT-5.5's 58.6% -- an 11-point lead over the next-best model); LMArena has NOT yet assigned Fable 5 an Elo, so ignore third-party 'arena score' claims for now. Early user friction: (a) **Claude Desktop spawns a ~1.8GB Hyper-V VM on every launch** even for chat-only sessions -- GitHub issue hit the Hacker News front page (259 points); (b) scattered reports of the safety classifiers flagging benign biology questions -- consistent with the documented <5% Opus 4.8 fallback, but expect occasional false positives on science topics",
+      description: "FABLE 5 DAY-2 ROLLUP (2026-06-10): platform availability landed fast -- **GitHub Copilot GA 6/9** (github.blog changelog), **Amazon Bedrock** (us-east-1 + eu-north-1 only at launch, more regions coming), **Microsoft Foundry**, **Snowflake Cortex AI**, and **Vertex AI**; notably **NOT in Cursor yet** as of 6/10. Pricing detail: the $10/$50 rate carries a **90% prompt-caching discount**. Vendor benchmark published: **SWE-Bench Pro 80.3%** (vs GPT-5.5's 58.6% -- an 11-point lead over the next-best model); LMArena Elo followed on 6/11 (see day-3 entry). Early user friction: (a) **Claude Desktop spawns a ~1.8GB Hyper-V VM on every launch** even for chat-only sessions -- GitHub issue hit the Hacker News front page (259 points); (b) scattered reports of the safety classifiers flagging benign biology questions -- consistent with the documented <5% Opus 4.8 fallback, but expect occasional false positives on science topics",
       source: "GitHub blog (github.blog/changelog/2026-06-09-claude-fable-5-is-generally-available-for-github-copilot/), AWS news blog, Azure blog, Snowflake blog, Anthropic news (SWE-Bench Pro), Hacker News",
       date: "2026-06-10",
     },
@@ -178,7 +183,7 @@ export const claude: ToolReview = {
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
   verdict: "Claude is the LLM you pick when quality matters more than features -- and with Fable 5 (June 9, 2026), the ceiling just moved. Fable 5 is the first Mythos-class model anyone can actually use: Anthropic's most capable public model, included free on paid plans through June 22 and $10/$50 per 1M via API after that, with a safety design that quietly falls back to Opus 4.8 on flagged cyber/bio/chem requests rather than degrading everything for everyone. Opus 4.8 remains the $5/$25 workhorse with effort control and a cheap fast mode, so you now get a genuine two-tier choice inside one subscription. With the 1M context window, high-res vision, and MCP support -- plus Apple naming Claude a selectable system assistant in iOS 27 this fall -- the question is no longer whether Claude is frontier, it's whether you need Fable-tier reasoning often enough to burn credits on it after June 22.",
 
-  lastReviewedDate: "2026-06-10",
+  lastReviewedDate: "2026-06-11",
   dataSources: [
     { name: "Anthropic: Introducing Claude Fable 5 and Claude Mythos 5 (2026-06-09)", url: "https://www.anthropic.com/news/claude-fable-5-mythos-5", dateAccessed: "2026-06-09" },
     { name: "TechCrunch: Anthropic releases Claude Fable 5", url: "https://techcrunch.com/2026/06/09/anthropic-released-claude-fable-5-its-most-powerful-model-publicly-days-after-warning-ai-is-getting-too-dangerous/", dateAccessed: "2026-06-09" },
@@ -199,7 +204,7 @@ export const claude: ToolReview = {
   affiliateUrl: "https://claude.ai",
   status: "active",
   benchmarks: {
-    modelName: "Claude Fable 5 (launched 2026-06-09) is now the flagship -- Anthropic positions it as its most capable public model on SWE, knowledge work, and vision, but published SWE-Bench Pro 80.3% at launch (vs GPT-5.5 58.6%); no LMArena Elo yet; legacy Opus-line reasoning-suite scores shown below as baseline, third-party Fable 5 verification pending",
+    modelName: "Claude Fable 5 (launched 2026-06-09) -- vendor SWE-Bench Pro 80.3% (vs GPT-5.5 58.6%); #1 LMArena Elo 1510 and #1 Artificial Analysis Index 65 as of 6/11; legacy Opus-line reasoning-suite scores shown below as baseline pending full third-party suites",
     scores: [
       { name: "MMLU", score: 91.3, maxScore: 100, unit: "%" },
       { name: "GPQA Diamond", score: 91.3, maxScore: 100, unit: "%" },
@@ -208,8 +213,8 @@ export const claude: ToolReview = {
       { name: "SWE-bench Verified", score: 80.8, maxScore: 100, unit: "%" },
       { name: "ARC-AGI", score: 75.2, maxScore: 100, unit: "%" },
     ],
-    chatbotArenaElo: 1504,
-    lastUpdated: "2026-04-16",
+    chatbotArenaElo: 1510,
+    lastUpdated: "2026-06-11",
   },
   personality: {
     oneLiner: "The thoughtful consultant",

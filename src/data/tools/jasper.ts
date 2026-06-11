@@ -50,6 +50,11 @@ export const jasper: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT UPDATES (April-May 2026, vendor blog; May post published 6/10): The May update brings a **Jasper Slack Agent**, **Claude Opus 4.8 and Gemini 3.5 Flash to Studio** (with automatic model updates for Studio Agents), Style Guide generation from 1-3 sources, Grid History run logs (Business/Pro), and SharePoint/Workfront integration improvements; Jasper also released MONET, a 105M-sample image-text dataset. The April update (published 5/5) added **AI Visibility Workflows in Grid** -- three 6-step templates (Originate / Optimize / Outrank) producing FAQs, key takeaways, and schema markup aimed at ranking in AI search answers. Frontier-model parity in Studio is the practical headline: Jasper no longer lags the model generation its competitors expose",
+      source: "Jasper blog (jasper.ai/blog/may-2026-product-update, jasper.ai/blog/april-2026-product-update)",
+      date: "2026-06-10",
+    },
+    {
       description: "Jasper Grid (announced 2025-11-04 PRNewswire, generally available Q1 2026) is a spreadsheet-style interface designed to power AI-native content pipelines -- run hundreds of generation tasks in parallel with row-level prompts, brand voice, and approvals. Repositions Jasper from 'AI templates' to 'AI content factory.' Adds onboarding complexity for solo users unfamiliar with no-code workflow systems",
       source: "Jasper: jasper.ai/grid, PRNewswire (2025-11-04 launch announcement)",
       date: "2026-04",
@@ -79,7 +84,7 @@ export const jasper: ToolReview = {
   notFor: "Solo creators, freelancers, or anyone on a budget. You can get 90% of the same results from ChatGPT for $20/mo.",
   verdict: "Jasper was revolutionary when it launched -- it was one of the first AI writing tools. But ChatGPT caught up fast, and now Jasper's main selling point is its marketing-specific templates and team features. At $49-69/mo per person, it's a tough sell unless your team is producing high volumes of marketing content and needs the workflow tools. For everyone else, save your money.",
 
-  lastReviewedDate: "2026-04-27",
+  lastReviewedDate: "2026-06-11",
   dataSources: [
     { name: "Jasper Blog: January 2026 Product Update (Optimization Agent + Autonomous Agents)", url: "https://www.jasper.ai/blog/january-2026-product-update", dateAccessed: "2026-04-27" },
     { name: "PRNewswire: Jasper introduces Grid (2025-11-04)", url: "https://www.prnewswire.com/news-releases/jasper-introduces-grid-the-interface-powering-ai-native-content-pipelines-302603705.html", dateAccessed: "2026-04-27" },

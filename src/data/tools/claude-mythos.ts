@@ -53,6 +53,11 @@ export const claudeMythos: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "RETIREMENT DATE SET (verified 2026-06-11): **Claude Mythos Preview retires June 30, 2026** per Anthropic's deprecations page -- Glasswing partners still on the Preview snapshot must migrate to claude-mythos-5 before then. With Fable 5 public and Mythos 5 live, the Preview era formally closes out at the end of the month",
+      source: "Anthropic model deprecations page (platform.claude.com/docs/en/about-claude/model-deprecations)",
+      date: "2026-06-11",
+    },
+    {
       description: "MODEL LAUNCH (2026-06-09): **Claude Mythos 5** replaces Mythos Preview as the Glasswing-track model -- same underlying model as the publicly available Claude Fable 5, with safeguards lifted in certain areas for vetted partners. Existing Mythos Preview users upgrade immediately. Anthropic simultaneously made the Mythos class public for the first time via Fable 5 ($10/$50 per 1M, plan-included through 6/22), with classifier fallback to Opus 4.8 on cybersecurity, bio/chem, and distillation-attempt requests. All Mythos-class traffic now carries mandatory 30-day retention, overriding zero-data-retention agreements (not used for training)",
       source: "Anthropic news (anthropic.com/news/claude-fable-5-mythos-5), TechCrunch, CNBC",
       date: "2026-06-09",
@@ -82,7 +87,7 @@ export const claudeMythos: ToolReview = {
   notFor: "Everyone else -- but as of June 9, 2026 'everyone else' gets Claude Fable 5 (see /tools/claude): the same Mythos-class model made safe for general use, on the API and included in paid plans through June 22.",
   verdict: "The Mythos story changed on June 9, 2026. What began in April as a deliberately withheld cybersecurity preview is now a two-track release: Mythos 5 for ~150 vetted Glasswing orgs and select biology researchers with safeguards lifted, and Claude Fable 5 for the public -- the same model with classifier-enforced fallbacks to Opus 4.8 on dangerous-capability requests. That makes this page's subject the gated track only. If you're in Glasswing, Mythos 5 is an immediate upgrade from Mythos Preview. If you're not, you no longer have to wonder what you're missing: Fable 5 IS the Mythos class, minus the <5% of sessions that touch cyber/bio/chem territory. The deeper signal stands -- Anthropic now ships its frontier in safety-differentiated tiers, and the 30-day mandatory retention on all Mythos-class traffic shows what public access to this capability level costs in privacy terms.",
 
-  lastReviewedDate: "2026-06-09",
+  lastReviewedDate: "2026-06-11",
   dataSources: [
     { name: "Anthropic: Introducing Claude Fable 5 and Claude Mythos 5 (2026-06-09)", url: "https://www.anthropic.com/news/claude-fable-5-mythos-5", dateAccessed: "2026-06-09" },
     { name: "Anthropic: Project Glasswing", url: "https://www.anthropic.com/glasswing", dateAccessed: "2026-04-17" },

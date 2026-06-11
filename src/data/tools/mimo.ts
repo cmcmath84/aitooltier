@@ -81,6 +81,11 @@ export const mimo: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "NEW PRODUCT (2026-06-11): **MiMo Code v0.1.0** -- Xiaomi's open-source terminal AI coding agent (MIT license, TypeScript, built on OpenCode tech), 4,300+ GitHub stars on launch day and a top Hacker News story (357 points). MiMo-V2.5 model built in FREE; also supports DeepSeek and Kimi models. Differentiators: persistent memory system (project memory + session checkpoints + task progress), a '/dream' weekly self-maintenance agent, Compose mode (idea → design/plan/code/test/review pipeline), voice control, and curl/npm install (`mimo` command, Windows via npm). Vendor benchmark claims (UNVERIFIED third-party): SWE-Bench Pro 62% vs Claude Code 57%, Terminal-Bench 73% vs 68%. It's a v0.1.0 -- expect churn -- but a free, open-source, frontier-backed CLI agent is direct pressure on Claude Code / Codex CLI / Grok Build pricing. Standalone review page candidate once it stabilizes past 0.x",
+      source: "GitHub (github.com/XiaomiMiMo/MiMo-Code), mimo.xiaomi.com/mimocode, Hacker News, Gizmochina",
+      date: "2026-06-11",
+    },
+    {
       description: "MiMo-V2.5 family launched 2026-04-22 with four product lines released in parallel: Pro (1T/42B MoE, 1M context, native vision+audio), Multimodal base, TTS (Base + VoiceDesign + VoiceClone), and open-source ASR. This is Xiaomi's first explicit 'voice for the agent era' positioning and the first time it has shipped frontier-class reasoning + voice in a single coordinated launch",
       source: "Xiaomi product site (mimo.xiaomi.com), Gizmochina, Artificial Analysis listing",
       date: "2026-04-22",
@@ -108,7 +113,7 @@ export const mimo: ToolReview = {
   verdict:
     "MiMo-V2.5 is Xiaomi treating voice as a first-class agentic surface, not an after-the-fact integration. Shipping Pro + Multimodal + TTS + open-source ASR together -- with native vision and audio reasoning baked into the flagship and the 1M-context surcharge removed -- is the most coordinated voice-stack launch from a Chinese frontier vendor in 2026. The benchmark story will fill in over the next few weeks; for now, treat MiMo as a serious option for voice-pipeline builds, multimodal Chinese-language workloads, and self-hosted dialect-strong ASR. For text-only English-first work, Claude / GPT / Gemini still lead and DeepSeek is still the cheapest text-first frontier alternative.",
 
-  lastReviewedDate: "2026-04-25",
+  lastReviewedDate: "2026-06-11",
   dataSources: [
     { name: "Xiaomi: MiMo-V2.5-Pro product page", url: "https://mimo.xiaomi.com/mimo-v2-5-pro", dateAccessed: "2026-04-25" },
     { name: "Gizmochina: Xiaomi introduces MiMo-V2.5 TTS and ASR full voice pipeline", url: "https://www.gizmochina.com/2026/04/24/xiaomi-introduces-mimo-v2-5-tts-and-asr-as-a-full-voice-pipeline-for-the-agent-era/", dateAccessed: "2026-04-25" },

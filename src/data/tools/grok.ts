@@ -68,6 +68,11 @@ export const grok: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "GROK BUILD PLUGIN MARKETPLACE (2026-06-11, vendor-primary): xAI launched a built-in **plugin marketplace for Grok Build** -- plugins bundle skills, slash commands, agents, hooks, MCP servers, and LSPs; installs are commit-SHA-pinned for supply-chain safety; the catalog is open to community submissions via PR. Launch partners: MongoDB, Vercel, Sentry, Chrome DevTools, Cloudflare. Mirrors the plugin/extension pattern Claude Code and Gemini-CLI-era tooling established -- Grok Build is maturing fast for a product still labeled beta",
+      source: "xAI news (x.ai/news/grok-plugin-marketplace), GitHub (github.com/xai-org/plugin-marketplace)",
+      date: "2026-06-11",
+    },
+    {
       description: "JUNE CLUSTER (2026-06, all vendor-primary on x.ai/news): **Grok Imagine 1.5 Preview** (6/3) -- image-to-video generation up to 720p, available as an API preview. **Composer 2.5** (6/1) -- xAI's 'fast, SOTA model for long-running tasks,' now selectable in the Grok Build /models menu for SuperGrok and X Premium+ subscribers (NOT related to Cursor's Composer line despite the name). **Grok Build 0.1 on the API** (5/29) -- the coding-agent model behind Grok Build became directly callable via the xAI API: 256K context, always-on reasoning, text + image input. Grok Build itself ('Introducing Grok Build,' 5/25) is in early beta for ALL SuperGrok and X Premium+ subscribers -- broader than the original Heavy-tier-only gate. Also: Grok voice now powers Vapi (6/3) and Gopuff's 'Go' shopping agent (6/9). NOTE: 'Grok 5' / 'V9-Medium mid-June' claims remain aggregator-only with zero vendor signal -- not real until x.ai posts it",
       source: "xAI news (x.ai/news/grok-imagine-1-5, x.ai/news/composer-2-5, x.ai/news/grok-build-0-1, x.ai/news/grok-build-cli), x.ai/build/changelog",
       date: "2026-06-03",
@@ -127,7 +132,7 @@ export const grok: ToolReview = {
   notFor: "Enterprise users who need reliable, consistent outputs. Also not the best pick if you don't use X -- the real-time data advantage disappears and you're left with a solid-but-not-best-in-class LLM.",
   verdict: "Grok has come a long way from being dismissed as Elon's pet project. The Grok 3 models are legitimately competitive, and the real-time X integration is a unique differentiator that no other chatbot can match. But the value proposition gets muddier when you strip away the X angle -- at $30/mo for SuperGrok, you're paying a premium for personality and Twitter data. If those matter to you, Grok is great. If not, Claude or ChatGPT give you more for less.",
 
-  lastReviewedDate: "2026-06-09",
+  lastReviewedDate: "2026-06-11",
   dataSources: [
     { name: "xAI May 15 model retirement docs", url: "https://docs.x.ai/developers/migration/may-15-retirement", dateAccessed: "2026-05-19" },
     { name: "VentureBeat: xAI launches Grok 4.3 with voice cloning (2026-05-02)", url: "https://venturebeat.com/technology/xai-launches-grok-4-3-at-an-aggressively-low-price-and-a-new-fast-powerful-voice-cloning-suite", dateAccessed: "2026-05-05" },

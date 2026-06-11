@@ -66,6 +66,11 @@ export const adobeFirefly: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "APRIL MODEL + AUDIO WAVE, MAY PHOTOSHOP FOLLOW-ON (verified vendor-primary 2026-06-11): April 2026 shipped a **new Firefly Image Model** ('significant improvements in precision, clarity, and realism for both people and animals' -- powering Photoshop 27.6's Generative Fill/Expand with natural-language instructional prompts), **Speech Generation and Soundtrack Generation public betas**, and the **Firefly Creator team licensing plan**. May 2026 (Photoshop 27.7): **on-device generative model option** (choose local vs cloud processing for generative features -- a privacy/latency lever no major rival offers in-app) and Firefly Boards hand-off for PSD files. NOTE: aggregators circulated the April items as 'May' news -- vendor pages date them April",
+      source: "Adobe Firefly what's-new (helpx.adobe.com/firefly/web/whats-new), Photoshop what's-new (27.6/27.7 entries)",
+      date: "2026-05",
+    },
+    {
       description: "Firefly AI Assistant public beta SHIPPED 2026-04-27 -- available globally inside Adobe Firefly to Creative Cloud Pro / Firefly Pro / Pro Plus / Premium subscribers. The agent orchestrates multi-step workflows across Photoshop, Lightroom, Premiere, Firefly, Illustrator, and 60+ pro-grade tools from a single chat interface. Eligible users get complimentary daily generative credits during the beta. This is the first Adobe agent to span the full Creative Cloud surface area -- meaningful step beyond Generative Fill in Photoshop only. Standard pricing post-beta not disclosed yet",
       source: "Adobe blog (blog.adobe.com/en/publish/2026/04/27/firefly-ai-assistant-public-beta), 9to5mac, Digital Trends",
       date: "2026-04-27",
@@ -90,7 +95,7 @@ export const adobeFirefly: ToolReview = {
   notFor: "Anyone looking for the best standalone AI image generator. The quality doesn't justify the price on its own -- the value is in the Adobe integration.",
   verdict: "Firefly's real strength isn't as a standalone generator -- it's as a feature inside Photoshop. Generative Fill is a game-changer for photo editing. But if you're comparing it to Midjourney or DALL-E purely on image generation quality, it falls short. Worth it if you already pay for Creative Cloud. Hard to justify otherwise.",
 
-  lastReviewedDate: "2026-04-29",
+  lastReviewedDate: "2026-06-11",
   dataSources: [
     { name: "Adobe: Firefly AI Assistant public beta (2026-04-27)", url: "https://blog.adobe.com/en/publish/2026/04/27/firefly-ai-assistant-public-beta", dateAccessed: "2026-04-29" },
     { name: "Adobe: 2026 Creative Cloud pricing + plan changes", url: "https://helpx.adobe.com/account/individual/subscriptions-and-plans/plan-types-and-eligibility/changes-to-individual-plan.html", dateAccessed: "2026-04-17" },

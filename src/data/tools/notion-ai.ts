@@ -66,6 +66,11 @@ export const notionAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "DEVELOPER PLATFORM 3.5 (2026-05-13, vendor releases page): Notion's biggest platform release of 2026 -- **Notion Workers** (hosted runtime: deploy custom code via CLI into a Notion-managed sandbox; **free during beta, pricing starts August 11, 2026** billed in Notion credits), **Database Sync beta** (sync any API source -- Zendesk, Salesforce -- into Notion databases), **bidirectional webhook triggers** (external apps can now trigger Notion workflows), Custom Agent Tools beta, a Notion CLI, an **External Agents API alpha** (Claude, Codex, and Decagon agents operating inside Notion -- waitlist), Agent SDK alpha, and a Developer Portal (app.notion.com/developers). Also notable: Notion MCP rebuilt to be 91% more token-efficient on database operations. Earlier in May: **Plan Mode** (5/7) -- agents ask clarifying questions and present a plan before bulk edits. Mark your calendar on the Workers pricing date if you build on the beta",
+      source: "Notion releases (notion.com/releases/2026-05-13), Notion help center",
+      date: "2026-05-13",
+    },
+    {
       description: "PRODUCT + PRICING (2026-05-04 / 2026-05-05): Notion **Custom Agents** exited beta with admin-grade governance controls: **per-agent spend caps**, **workspace-wide credit caps**, **auto-pause on limit** (agents stop before exceeding budget rather than soft-billing over), **creator permissions** (control who in a workspace can build agents), and a **credits dashboard** for monthly spend visibility. Same window: **credit billing went live at $10 per 1,000 credits** as a paid add-on to Business/Enterprise plans. Notion's own help docs estimate ~30-60 agent runs per 1,000 credits -- so roughly $0.17 to $0.33 per agent run depending on workload complexity. The free-Skills-framework window that ran through 2026-05-03 is now closed. Material for any team that built workflows on Custom Agents during the free trial -- those workflows now meter. Sets up the comparison to n8n's per-execution pricing + Microsoft Agent 365's $15/user/mo flat rate (5/1 GA).",
       source: "Notion releases (notion.com/releases/2026-05-05), Notion help (notion.com/help/custom-agent-pricing)",
       date: "2026-05-05",
@@ -96,7 +101,7 @@ export const notionAi: ToolReview = {
   verdict:
     "Notion AI is convenient, not exceptional. If Notion is already your team's brain, the AI features add genuine value for summarization and workspace search. But the writing output is mediocre, the per-member pricing adds up fast, and you can get better AI writing from dedicated tools. It's a nice-to-have, not a must-have.",
 
-  lastReviewedDate: "2026-05-19",
+  lastReviewedDate: "2026-06-11",
   dataSources: [
     { name: "Notion releases 2026-04-14", url: "https://www.notion.com/releases/2026-04-14", dateAccessed: "2026-04-18" },
     { name: "Fazm Blog: Notion AI April 2026", url: "https://fazm.ai/blog/notion-ai-releases-april-2026-complete-list-of-every-ai-feature-shipped", dateAccessed: "2026-04-18" },
