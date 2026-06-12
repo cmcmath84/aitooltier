@@ -86,6 +86,11 @@ export const mimo: ToolReview = {
       date: "2026-06-11",
     },
     {
+      description: "MIMO CODE DAY-2 CAVEATS (2026-06-12, press analysis): the launch benchmarks deserve skepticism -- they're self-reported, and the 'beats Claude Code' comparison pits MiMo Code + MiMo-V2.5 against Claude Code running **Sonnet 4.6**, not the flagship models. VentureBeat's hands-on found genuine strength on ultra-long 200+ step tasks. Privacy note: the 'free for a limited time' model routes your code through Xiaomi servers -- a data-residency consideration for commercial codebases. v0.1.0 remains the only release (no hotfixes yet)",
+      source: "TechTimes (2026-06-12), VentureBeat (2026-06-11), GitHub releases",
+      date: "2026-06-12",
+    },
+    {
       description: "MiMo-V2.5 family launched 2026-04-22 with four product lines released in parallel: Pro (1T/42B MoE, 1M context, native vision+audio), Multimodal base, TTS (Base + VoiceDesign + VoiceClone), and open-source ASR. This is Xiaomi's first explicit 'voice for the agent era' positioning and the first time it has shipped frontier-class reasoning + voice in a single coordinated launch",
       source: "Xiaomi product site (mimo.xiaomi.com), Gizmochina, Artificial Analysis listing",
       date: "2026-04-22",
@@ -113,7 +118,7 @@ export const mimo: ToolReview = {
   verdict:
     "MiMo-V2.5 is Xiaomi treating voice as a first-class agentic surface, not an after-the-fact integration. Shipping Pro + Multimodal + TTS + open-source ASR together -- with native vision and audio reasoning baked into the flagship and the 1M-context surcharge removed -- is the most coordinated voice-stack launch from a Chinese frontier vendor in 2026. The benchmark story will fill in over the next few weeks; for now, treat MiMo as a serious option for voice-pipeline builds, multimodal Chinese-language workloads, and self-hosted dialect-strong ASR. For text-only English-first work, Claude / GPT / Gemini still lead and DeepSeek is still the cheapest text-first frontier alternative.",
 
-  lastReviewedDate: "2026-06-11",
+  lastReviewedDate: "2026-06-12",
   dataSources: [
     { name: "Xiaomi: MiMo-V2.5-Pro product page", url: "https://mimo.xiaomi.com/mimo-v2-5-pro", dateAccessed: "2026-04-25" },
     { name: "Gizmochina: Xiaomi introduces MiMo-V2.5 TTS and ASR full voice pipeline", url: "https://www.gizmochina.com/2026/04/24/xiaomi-introduces-mimo-v2-5-tts-and-asr-as-a-full-voice-pipeline-for-the-agent-era/", dateAccessed: "2026-04-25" },

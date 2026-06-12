@@ -53,6 +53,11 @@ export const kimi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "MODEL LAUNCH (2026-06-12): **Kimi K2.7-Code** -- Moonshot's code-specialized variant dropped on HuggingFace (moonshotai/Kimi-K2.7-Code, HN front page 333 points). Specs: 1T-param MoE with 32B active (384 experts), 256K context, Modified MIT license, MoonViT 400M vision encoder, built on K2.6, ~30% fewer thinking tokens than K2.6, forces thinking mode on. API via platform.moonshot.ai (OpenAI- and Anthropic-compatible endpoints). Notably honest self-published benchmarks show it TRAILING the frontier: Kimi Code Bench v2 62.0 vs GPT-5.5's 69.0 and Opus 4.8's 67.4 -- Moonshot is positioning on open-weights value, not SOTA claims. API pricing circulating in aggregators (~$0.19 cached/$0.95 in/$4.00 out per 1M) -- verify on the vendor pricing page before relying on it",
+      source: "HuggingFace (huggingface.co/moonshotai/Kimi-K2.7-Code), Hacker News, platform.moonshot.ai",
+      date: "2026-06-12",
+    },
+    {
       description: "API DEPRECATION (2026-05-25, vendor docs verbatim: 'The kimi-k2 series models were officially discontinued on May 25, 2026'): retired model ids -- kimi-k2-0905-preview, kimi-k2-0711-preview, kimi-k2-turbo-preview, kimi-k2-thinking, kimi-k2-thinking-turbo. If your code pins any of these, requests now fail; migrate to kimi-k2.6 (or kimi-k2.5, which remains an active model alongside it). K2.6 detail confirmed on the vendor blog: open weights on HuggingFace (moonshotai/Kimi-K2.6), 256K context (262,144 default), agent swarm scaling to **300 sub-agents / 4,000 coordinated steps** (up from K2.5's 100/1,500)",
       source: "Moonshot platform docs (platform.kimi.ai/docs/models), kimi.com/blog/kimi-k2-6, HuggingFace moonshotai/Kimi-K2.6",
       date: "2026-05-25",
@@ -82,7 +87,7 @@ export const kimi: ToolReview = {
   notFor: "Solo developers or hobbyists who want to run models locally -- the 1T parameter size makes that impractical. Use Qwen3-Coder-Next or DeepSeek instead for self-hosting.",
   verdict: "Kimi K2.5 is the best open-weights model in the world right now for agentic coding. It legitimately rivals Claude Opus 4.5 and Gemini 3.1 Pro on practical coding tasks while being nominally 'open.' The catch is that the 1T parameter size makes it hosted-only for 99% of users. If you're picking between hosted APIs and you want maximum quality with open-weights safety, Kimi K2.5 is the S-tier pick. If you need a model that actually runs on your hardware, look at Qwen3-Coder-Next or DeepSeek V3.2 instead.",
 
-  lastReviewedDate: "2026-06-10",
+  lastReviewedDate: "2026-06-12",
   dataSources: [
     { name: "Moonshot Kimi K2.6 blog (GA 2026-04-20)", url: "https://www.kimi.com/blog/kimi-k2-6", dateAccessed: "2026-04-27" },
     { name: "HuggingFace moonshotai/Kimi-K2.6", url: "https://huggingface.co/moonshotai/Kimi-K2.6", dateAccessed: "2026-04-27" },
