@@ -107,7 +107,7 @@ export const githubCopilot: ToolReview = {
       date: "2026-05-08",
     },
     {
-      description: "MODEL LINEUP SHRINK (2026-05-07): GitHub Copilot retires Claude Sonnet 4 from its model lineup, mirroring the upstream Anthropic API retirement scheduled for 2026-06-15. If your Copilot org/team had pinned Sonnet 4, it is now unselectable -- migrate to Sonnet 4.6 (1x multiplier, same as Sonnet 4) or Opus 4.7 (15x multiplier, dramatically higher cost). Adds to the 2026-06-01 GPT-5.2 + GPT-5.2-Codex deprecation already documented",
+      description: "MODEL LINEUP SHRINK (2026-05-07): GitHub Copilot retires Claude Sonnet 4 from its model lineup, mirroring the upstream Anthropic API retirement that took effect 2026-06-15 (now confirmed retired on Anthropic's deprecations page). If your Copilot org/team had pinned Sonnet 4, it is now unselectable -- migrate to Sonnet 4.6 (1x multiplier, same as Sonnet 4) or Opus 4.7 (15x multiplier, dramatically higher cost). Adds to the 2026-06-01 GPT-5.2 + GPT-5.2-Codex deprecation already documented",
       source: "GitHub Changelog (github.blog/changelog), Anthropic deprecations page",
       date: "2026-05-07",
     },

@@ -144,7 +144,7 @@ export const claude: ToolReview = {
       date: "2026-04",
     },
     {
-      description: "Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) retire 2026-06-15 (now days away) per Anthropic's deprecations page. Announced 2026-04-14. If your product relies on those specific snapshots, migrate to Sonnet 4.6 (`claude-sonnet-4-6`) or Opus 4.8 (`claude-opus-4-8`, the current recommended Opus replacement) before then. SEPARATE 2026-06-15 event: Agent SDK / `claude -p` / Claude Code GitHub Actions move to a metered credit pool at API rates (see claude-code.ts). NEXT IN LINE: Claude Opus 4.1 (claude-opus-4-1-20250805) was deprecated 2026-06-05 and retires 2026-08-05 -- same migration target",
+      description: "Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) RETIRED 2026-06-15 -- deprecated -> retired flip confirmed on Anthropic's deprecations page (verified 2026-06-15; the page now lists both as 'Retired' and the history note reads 'These models were retired June 15, 2026'). Announced 2026-04-14. If your product still targets those specific snapshots, requests are now failing -- migrate to Sonnet 4.6 (`claude-sonnet-4-6`) or Opus 4.8 (`claude-opus-4-8`, the current recommended Opus replacement). SEPARATE 2026-06-15 event: Agent SDK / `claude -p` / Claude Code GitHub Actions moved to a metered credit pool at API rates (see claude-code.ts). NEXT IN LINE: Claude Opus 4.1 (claude-opus-4-1-20250805) was deprecated 2026-06-05 and retires 2026-08-05 -- same migration target",
       source: "Anthropic model deprecations page (platform.claude.com/docs/en/about-claude/model-deprecations)",
       date: "2026-06",
     },
