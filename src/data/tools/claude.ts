@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const claude: ToolReview = {
   slug: "claude",
   name: "Claude (Anthropic)",
-  tagline: "Anthropic's flagship LLM family -- Claude Fable 5 (launched June 9, 2026) is the first publicly available Mythos-class model: $10/$50 per 1M, included on Pro/Max/Team/Enterprise through June 22, hard safety fallback to Opus 4.8 on cyber/bio/chem requests (<5% of sessions). Opus 4.8 (May 28) remains the $5/$25 workhorse with 1M-token context, effort control, and cheap fast mode",
+  tagline: "Anthropic's flagship LLM family. Claude Fable 5 (launched June 9, 2026) was the first publicly available Mythos-class model -- but on June 12, 2026 a US government export-control directive ordered access suspended, and Anthropic disabled Fable 5 + Mythos 5 for ALL customers to comply (every other Claude model is unaffected). Opus 4.8 (May 28) is the available flagship: $5/$25 per 1M, 1M-token context, effort control, and a cheap fast mode",
   category: "ai-llms",
   url: "https://claude.ai",
 
@@ -69,7 +69,12 @@ export const claude: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "FABLE 5 DAY-3 (2026-06-11): **#1 on LMArena** -- claude-fable-5 now holds the top text/overall Elo at **1510±11** (next: Opus 4.6-thinking 1504, Opus 4.7-thinking 1502; GPT-5.5-high sits at 1481). Also **#1 on the Artificial Analysis Intelligence Index at 65** (Opus 4.8 second at 61, GPT-5.5-xhigh 60) -- note AA scores the 'Adaptive Reasoning, Max Effort, Opus 4.8 Fallback' configuration. Counterpoint worth knowing: Endor Labs published a critique finding 'mid-tier results on coding tasks' (109 points on HN) -- benchmark dominance is not unanimous across third-party evals. API housekeeping from the deprecations page: `temperature`/`top_p`/`top_k` now return HTTP 400 on Opus 4.7+ models (remove them from request bodies), and **Claude Mythos Preview retires June 30, 2026** (migrate to claude-mythos-5). Still NOT in Cursor as of day 3",
+      description: "ACCESS SUSPENDED BY US GOVERNMENT (2026-06-12): A US government export-control directive ordered Anthropic to **suspend all access to Claude Fable 5 and Claude Mythos 5** -- for any foreign national whether inside or outside the US, including foreign-national Anthropic employees. To comply, Anthropic **disabled Fable 5 and Mythos 5 for ALL customers** (the directive's scope made selective enforcement impractical). **Access to every other Anthropic model -- Opus 4.8, Sonnet 4.6, Haiku 4.5 -- is unaffected and remains fully available.** Stated cause: the Commerce Department acted after another company claimed it had found a way to 'jailbreak' Mythos, raising national-security concerns. Anthropic publicly disagrees that a narrow potential jailbreak should justify recalling a commercially deployed model, arguing the same standard 'would essentially halt all new model deployments for all frontier model providers,' and met with the Trump administration on 2026-06-15 to contest it. Net effect for users TODAY: Fable 5 is not selectable on claude.ai or the API; use Opus 4.8 instead. This is the first time a frontier model has been pulled from public access by US-government order -- watch for restoration terms.",
+      source: "Anthropic (anthropic.com/news/fable-mythos-access), CNBC (2026-06-12 + 2026-06-15), TechCrunch, Axios",
+      date: "2026-06-12",
+    },
+    {
+      description: "FABLE 5 DAY-3 (2026-06-11, PRE-SUSPENSION): **#1 on LMArena** -- claude-fable-5 now holds the top text/overall Elo at **1510±11** (next: Opus 4.6-thinking 1504, Opus 4.7-thinking 1502; GPT-5.5-high sits at 1481). Also **#1 on the Artificial Analysis Intelligence Index at 65** (Opus 4.8 second at 61, GPT-5.5-xhigh 60) -- note AA scores the 'Adaptive Reasoning, Max Effort, Opus 4.8 Fallback' configuration. Counterpoint worth knowing: Endor Labs published a critique finding 'mid-tier results on coding tasks' (109 points on HN) -- benchmark dominance is not unanimous across third-party evals. API housekeeping from the deprecations page: `temperature`/`top_p`/`top_k` now return HTTP 400 on Opus 4.7+ models (remove them from request bodies), and **Claude Mythos Preview retires June 30, 2026** (migrate to claude-mythos-5). Still NOT in Cursor as of day 3",
       source: "LMArena leaderboard (lmarena.ai, now redirecting to arena.ai), Artificial Analysis (artificialanalysis.ai/models), Endor Labs via HN, Anthropic deprecations page",
       date: "2026-06-11",
     },
@@ -144,7 +149,7 @@ export const claude: ToolReview = {
       date: "2026-04",
     },
     {
-      description: "Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) RETIRED 2026-06-15 -- deprecated -> retired flip confirmed on Anthropic's deprecations page (verified 2026-06-15; the page now lists both as 'Retired' and the history note reads 'These models were retired June 15, 2026'). Announced 2026-04-14. If your product still targets those specific snapshots, requests are now failing -- migrate to Sonnet 4.6 (`claude-sonnet-4-6`) or Opus 4.8 (`claude-opus-4-8`, the current recommended Opus replacement). SEPARATE 2026-06-15 event: Agent SDK / `claude -p` / Claude Code GitHub Actions moved to a metered credit pool at API rates (see claude-code.ts). NEXT IN LINE: Claude Opus 4.1 (claude-opus-4-1-20250805) was deprecated 2026-06-05 and retires 2026-08-05 -- same migration target",
+      description: "Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) RETIRED 2026-06-15 -- deprecated -> retired flip confirmed on Anthropic's deprecations page (verified 2026-06-15; the page now lists both as 'Retired' and the history note reads 'These models were retired June 15, 2026'). Announced 2026-04-14. If your product still targets those specific snapshots, requests are now failing -- migrate to Sonnet 4.6 (`claude-sonnet-4-6`) or Opus 4.8 (`claude-opus-4-8`, the current recommended Opus replacement). NOTE: the SEPARATE programmatic-billing change once slated for the same day (Agent SDK / `claude -p` / GitHub Actions onto a metered credit pool) was PAUSED before it shipped -- 'nothing changes for now' -- see claude-code.ts. NEXT IN LINE: Claude Opus 4.1 (claude-opus-4-1-20250805) was deprecated 2026-06-05 and retires 2026-08-05 -- same migration target",
       source: "Anthropic model deprecations page (platform.claude.com/docs/en/about-claude/model-deprecations)",
       date: "2026-06",
     },
@@ -181,10 +186,13 @@ export const claude: ToolReview = {
   ],
   bestFor: "Writers, analysts, developers, and anyone who values quality of output over quantity of features. If you care about how good the actual text is, Claude is the best.",
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
-  verdict: "Claude is the LLM you pick when quality matters more than features -- and with Fable 5 (June 9, 2026), the ceiling just moved. Fable 5 is the first Mythos-class model anyone can actually use: Anthropic's most capable public model, included free on paid plans through June 22 and $10/$50 per 1M via API after that, with a safety design that quietly falls back to Opus 4.8 on flagged cyber/bio/chem requests rather than degrading everything for everyone. Opus 4.8 remains the $5/$25 workhorse with effort control and a cheap fast mode, so you now get a genuine two-tier choice inside one subscription. With the 1M context window, high-res vision, and MCP support -- plus Apple naming Claude a selectable system assistant in iOS 27 this fall -- the question is no longer whether Claude is frontier, it's whether you need Fable-tier reasoning often enough to burn credits on it after June 22.",
+  verdict: "Claude is the LLM you pick when quality matters more than features. For three days in June it looked like the ceiling had moved: Fable 5 (June 9, 2026) was the first Mythos-class model anyone could actually use, topping LMArena and the Artificial Analysis Index. Then on June 12 a US government export-control directive forced Anthropic to suspend Fable 5 -- and Mythos 5 -- for all customers, and as of this review it remains unavailable. So the practical flagship today is Opus 4.8: the $5/$25 workhorse with effort control, a cheap fast mode, a 1M context window, high-res vision, and MCP support, plus Apple naming Claude a selectable system assistant in iOS 27 this fall. Opus 4.8 is still arguably the best writing-and-reasoning model you can buy. Whether Fable-tier capability returns to the public depends on a regulatory fight Anthropic is actively contesting -- worth watching, but don't plan around Fable 5 right now.",
 
-  lastReviewedDate: "2026-06-11",
+  lastReviewedDate: "2026-06-18",
   dataSources: [
+    { name: "Anthropic: Statement on the US government directive to suspend access to Fable 5 and Mythos 5 (2026-06-12)", url: "https://www.anthropic.com/news/fable-mythos-access", dateAccessed: "2026-06-18" },
+    { name: "CNBC: Anthropic disables access to Fable 5 and Mythos 5 to comply with government directive (2026-06-12)", url: "https://www.cnbc.com/2026/06/12/anthropic-disables-access-to-fable-5-and-mythos-5-to-comply-with-government-directive.html", dateAccessed: "2026-06-18" },
+    { name: "CNBC: Anthropic to meet with Trump administration over Mythos dispute (2026-06-15)", url: "https://www.cnbc.com/2026/06/15/anthropic-mythos-trump-ai.html", dateAccessed: "2026-06-18" },
     { name: "Anthropic: Introducing Claude Fable 5 and Claude Mythos 5 (2026-06-09)", url: "https://www.anthropic.com/news/claude-fable-5-mythos-5", dateAccessed: "2026-06-09" },
     { name: "TechCrunch: Anthropic releases Claude Fable 5", url: "https://techcrunch.com/2026/06/09/anthropic-released-claude-fable-5-its-most-powerful-model-publicly-days-after-warning-ai-is-getting-too-dangerous/", dateAccessed: "2026-06-09" },
     { name: "Apple newsroom: WWDC 2026 intelligence frameworks (Extensions / LanguageModel protocol)", url: "https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/", dateAccessed: "2026-06-09" },
@@ -204,7 +212,7 @@ export const claude: ToolReview = {
   affiliateUrl: "https://claude.ai",
   status: "active",
   benchmarks: {
-    modelName: "Claude Fable 5 (launched 2026-06-09) -- vendor SWE-Bench Pro 80.3% (vs GPT-5.5 58.6%); #1 LMArena Elo 1510 and #1 Artificial Analysis Index 65 as of 6/11; legacy Opus-line reasoning-suite scores shown below as baseline pending full third-party suites",
+    modelName: "Claude Fable 5 (launched 2026-06-09; access SUSPENDED 2026-06-12 by US gov order -- scores are the pre-suspension record) -- vendor SWE-Bench Pro 80.3% (vs GPT-5.5 58.6%); #1 LMArena Elo 1510 and #1 Artificial Analysis Index 65 as of 6/11; legacy Opus-line reasoning-suite scores shown below as baseline pending full third-party suites",
     scores: [
       { name: "MMLU", score: 91.3, maxScore: 100, unit: "%" },
       { name: "GPQA Diamond", score: 91.3, maxScore: 100, unit: "%" },
@@ -221,6 +229,6 @@ export const claude: ToolReview = {
     tone: "Measured, careful, and slightly formal. Claude explains tradeoffs rather than handing back one-liner answers, asks clarifying questions when a request is ambiguous, and hedges openly when it is not confident.",
     quirks: "More willing than most models to refuse edgy or ambiguous requests, pushes back on premises it disagrees with, and will flag when you are probably asking the wrong question instead of just answering the one you typed.",
   },
-  metaTitle: "Claude Fable 5 Review (June 9, 2026): First Public Mythos-Class Model, $10/$50 per 1M",
-  metaDescription: "Claude Fable 5 review. Launched June 9, 2026 -- Anthropic's most powerful public model, free on Pro/Max through June 22, then usage credits. $10/$50 per 1M API. Opus 4.8 fallback on flagged requests. Plus Opus 4.8 and iOS 27 Extensions news.",
+  metaTitle: "Claude Review 2026: Fable 5 Suspended by US Gov Order (June 12) -- Opus 4.8 Is the Flagship",
+  metaDescription: "Claude review. US government ordered Fable 5 + Mythos 5 access suspended June 12, 2026 -- Anthropic disabled both for all customers; all other Claude models unaffected. Opus 4.8 ($5/$25 per 1M, 1M context, effort control) is the available flagship.",
 };

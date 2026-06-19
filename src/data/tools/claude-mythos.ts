@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const claudeMythos: ToolReview = {
   slug: "claude-mythos",
   name: "Claude Mythos 5",
-  tagline: "Anthropic's unrestricted frontier model -- launched June 9, 2026 alongside Claude Fable 5 (the same model made safe for general use). Mythos 5 itself stays gated to ~150 Project Glasswing orgs and select biology researchers; everyone else now gets Mythos-class capability through Fable 5.",
+  tagline: "Anthropic's unrestricted frontier model -- launched June 9, 2026 alongside Claude Fable 5 (the same model made safe for general use). ACCESS SUSPENDED June 12, 2026: a US government export-control directive forced Anthropic to disable both Mythos 5 and Fable 5 for all customers; all other Claude models are unaffected. Mythos 5 had been gated to ~150 Project Glasswing orgs and select biology researchers.",
   category: "ai-llms",
   url: "https://red.anthropic.com/2026/mythos-preview/",
 
@@ -53,6 +53,11 @@ export const claudeMythos: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "ACCESS SUSPENDED BY US GOVERNMENT (2026-06-12): A US government export-control directive ordered Anthropic to **suspend all access to Claude Mythos 5 and Claude Fable 5** for any foreign national (inside or outside the US, including foreign-national Anthropic employees). To comply, Anthropic **disabled both models for all customers** -- including, per the directive's scope, Project Glasswing partners. Access to all other Anthropic models is unaffected. The Commerce Department acted after another company claimed it had 'jailbroken' Mythos, raising national-security concerns; Anthropic disagrees and met with the Trump administration on 2026-06-15 to contest the order. This is the first frontier model pulled from access by US-government directive -- a landmark moment for AI export control and the open-vs-closed debate (CNBC framed it as 'a big moment for open-source AI'). Watch for restoration or appeal terms.",
+      source: "Anthropic (anthropic.com/news/fable-mythos-access), CNBC (2026-06-12, 2026-06-15, 2026-06-16), TechCrunch, Axios",
+      date: "2026-06-12",
+    },
+    {
       description: "RETIREMENT DATE SET (verified 2026-06-11): **Claude Mythos Preview retires June 30, 2026** per Anthropic's deprecations page -- Glasswing partners still on the Preview snapshot must migrate to claude-mythos-5 before then. With Fable 5 public and Mythos 5 live, the Preview era formally closes out at the end of the month",
       source: "Anthropic model deprecations page (platform.claude.com/docs/en/about-claude/model-deprecations)",
       date: "2026-06-11",
@@ -85,10 +90,12 @@ export const claudeMythos: ToolReview = {
   ],
   bestFor: "Partner organizations in Project Glasswing doing cybersecurity research, defensive red-teaming, threat intelligence, or large-scale vulnerability triage. If your use case is legitimate cybersecurity and you have enterprise Anthropic contact, ask about Glasswing admission.",
   notFor: "Everyone else -- but as of June 9, 2026 'everyone else' gets Claude Fable 5 (see /tools/claude): the same Mythos-class model made safe for general use, on the API and included in paid plans through June 22.",
-  verdict: "The Mythos story changed on June 9, 2026. What began in April as a deliberately withheld cybersecurity preview is now a two-track release: Mythos 5 for ~150 vetted Glasswing orgs and select biology researchers with safeguards lifted, and Claude Fable 5 for the public -- the same model with classifier-enforced fallbacks to Opus 4.8 on dangerous-capability requests. That makes this page's subject the gated track only. If you're in Glasswing, Mythos 5 is an immediate upgrade from Mythos Preview. If you're not, you no longer have to wonder what you're missing: Fable 5 IS the Mythos class, minus the <5% of sessions that touch cyber/bio/chem territory. The deeper signal stands -- Anthropic now ships its frontier in safety-differentiated tiers, and the 30-day mandatory retention on all Mythos-class traffic shows what public access to this capability level costs in privacy terms.",
+  verdict: "UPDATE (June 12, 2026): the Mythos story changed again -- a US government export-control directive forced Anthropic to suspend Mythos 5 AND its public twin Fable 5 for all customers; both are unavailable as of this review while Anthropic contests the order. The pre-suspension picture, for context: the Mythos story changed on June 9, 2026. What began in April as a deliberately withheld cybersecurity preview is now a two-track release: Mythos 5 for ~150 vetted Glasswing orgs and select biology researchers with safeguards lifted, and Claude Fable 5 for the public -- the same model with classifier-enforced fallbacks to Opus 4.8 on dangerous-capability requests. That makes this page's subject the gated track only. If you're in Glasswing, Mythos 5 is an immediate upgrade from Mythos Preview. If you're not, you no longer have to wonder what you're missing: Fable 5 IS the Mythos class, minus the <5% of sessions that touch cyber/bio/chem territory. The deeper signal stands -- Anthropic now ships its frontier in safety-differentiated tiers, and the 30-day mandatory retention on all Mythos-class traffic shows what public access to this capability level costs in privacy terms.",
 
-  lastReviewedDate: "2026-06-11",
+  lastReviewedDate: "2026-06-18",
   dataSources: [
+    { name: "Anthropic: Statement on the US government directive to suspend access to Fable 5 and Mythos 5 (2026-06-12)", url: "https://www.anthropic.com/news/fable-mythos-access", dateAccessed: "2026-06-18" },
+    { name: "CNBC: Anthropic's Fable shutdown is a big moment for open-source AI (2026-06-16)", url: "https://www.cnbc.com/2026/06/16/anthropics-fable-shutdown-is-a-big-moment-for-open-source-ai.html", dateAccessed: "2026-06-18" },
     { name: "Anthropic: Introducing Claude Fable 5 and Claude Mythos 5 (2026-06-09)", url: "https://www.anthropic.com/news/claude-fable-5-mythos-5", dateAccessed: "2026-06-09" },
     { name: "Anthropic: Project Glasswing", url: "https://www.anthropic.com/glasswing", dateAccessed: "2026-04-17" },
     { name: "Anthropic Red: Mythos Preview", url: "https://red.anthropic.com/2026/mythos-preview/", dateAccessed: "2026-04-17" },
@@ -106,6 +113,6 @@ export const claudeMythos: ToolReview = {
     tone: "When Anthropic does publish Mythos outputs (in sanitized research reports), the voice is careful, technically dense, and deliberately unperformed -- much more 'senior security researcher writing an internal memo' than Claude Opus's conversational style.",
     quirks: "Mythos is tuned to produce its cybersecurity reasoning with extensive show-your-work traces. Anthropic publishes some outputs with full CoT visible as evidence of capability claims. Outside of security tasks, the model reportedly sounds much like Opus 4.6 / 4.7 -- Anthropic hasn't published a distinct general-purpose voice for Mythos.",
   },
-  metaTitle: "Claude Mythos 5 (June 2026): Anthropic's Gated Frontier Model + Fable 5 Public Twin",
-  metaDescription: "Claude Mythos 5 launched June 9, 2026 -- gated to ~150 Project Glasswing orgs, safeguards lifted. Its public twin Claude Fable 5 brings Mythos-class capability to everyone. CTF 73%, 30-day retention policy.",
+  metaTitle: "Claude Mythos 5 (June 2026): Access Suspended by US Government Export-Control Order",
+  metaDescription: "Claude Mythos 5 launched June 9, 2026, then a US government directive suspended access to it and Fable 5 on June 12 -- Anthropic disabled both for all customers. Gated red-team model; CTF 73%, 30-day retention. All other Claude models unaffected.",
 };
