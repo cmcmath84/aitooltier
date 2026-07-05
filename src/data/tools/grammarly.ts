@@ -2,8 +2,8 @@ import { ToolReview } from "@/lib/types";
 
 export const grammarly: ToolReview = {
   slug: "grammarly",
-  name: "Grammarly",
-  tagline: "AI writing assistant that catches errors everywhere you type -- now with full AI rewriting",
+  name: "Grammarly (by Superhuman)",
+  tagline: "AI writing assistant that catches errors everywhere you type -- now with full AI rewriting. The company behind it renamed itself Superhuman in November 2025 (the Grammarly product keeps its name), alongside sibling products Coda, Superhuman Mail, and the Superhuman Go proactive AI assistant",
   category: "ai-writing-tools",
   url: "https://grammarly.com",
 
@@ -35,20 +35,22 @@ export const grammarly: ToolReview = {
     "Desktop app is heavy and can slow down your system",
   ],
   knownIssues: [
+    { description: "COMPANY REBRAND (2025-11-05, catalogued late -- our miss): **Grammarly the company renamed itself Superhuman.** The Grammarly writing product keeps its name, but it now sits inside a multi-product AI productivity company: Grammarly (writing), **Coda** (collaborative workspace), **Superhuman Mail** (the email client it acquired), and **Superhuman Go** -- a new proactive AI assistant that launched with agents from partners including Google Workspace, Microsoft Outlook, and Atlassian (Go features were free for all users through 2026-02-01). Vendor framing: 'AI should amplify human capability, not replace it.' Practical read: expect the standalone Grammarly experience to keep converging with the Go assistant and the broader Superhuman suite -- if you only want the grammar net, watch for bundle upsells", source: "Superhuman/Grammarly blog (grammarly.com/blog/company/announcing-company-rebrand-to-superhuman/)", date: "2025-11" },
     { description: "Browser extension occasionally conflicts with web-based editors (Notion, Confluence), causing formatting issues", source: "Grammarly Community", date: "2026-03" },
   ],
   bestFor: "Non-native English speakers, professionals who write lots of emails, and anyone who wants a passive grammar net running in the background. It catches things you'd miss.",
   notFor: "Creative writers who have a deliberate style (Grammarly will try to 'fix' it) or anyone who just needs AI content generation (use Claude/ChatGPT).",
-  verdict: "Grammarly is less of an AI tool and more of a writing safety net that now has AI features bolted on. It's excellent at what it was built for -- catching errors and improving clarity. The AI rewriting is fine but not why you'd buy it. Think of it as spell-check on steroids, not an AI writer.",
+  verdict: "Grammarly is less of an AI tool and more of a writing safety net that now has AI features bolted on. It's excellent at what it was built for -- catching errors and improving clarity. The AI rewriting is fine but not why you'd buy it. Think of it as spell-check on steroids, not an AI writer. One structural note: the company behind it renamed itself Superhuman (November 2025) and is assembling a productivity suite around the writing product -- Coda, Superhuman Mail, and the Superhuman Go assistant -- so expect the standalone Grammarly experience to keep drifting toward that bundle.",
 
-  lastReviewedDate: "2026-03-26",
+  lastReviewedDate: "2026-07-04",
   dataSources: [
+    { name: "Superhuman: Announcing our company rebrand to Superhuman (2025-11-05)", url: "https://www.grammarly.com/blog/company/announcing-company-rebrand-to-superhuman/", dateAccessed: "2026-07-04" },
     { name: "Grammarly official site", dateAccessed: "2026-03-26" },
     { name: "G2 Reviews", dateAccessed: "2026-03-26" },
     { name: "Daily use testing", dateAccessed: "2026-03-26" },
   ],
   affiliateUrl: "https://grammarly.com",
   status: "active",
-  metaTitle: "Grammarly Review 2026: AI Writing Assistant or Just Spell Check?",
-  metaDescription: "Grammarly review. Best grammar checker available, now with AI rewriting. But is it worth paying for? Scores, pricing, honest take. March 2026.",
+  metaTitle: "Grammarly Review 2026: Now Part of Superhuman -- AI Writing Assistant or Just Spell Check?",
+  metaDescription: "Grammarly review. Best grammar checker available, now with AI rewriting -- and the company rebranded to Superhuman (Nov 2025) with Coda, Superhuman Mail + Go assistant. Is it worth paying for? Scores, pricing, honest take.",
 };

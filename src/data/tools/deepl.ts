@@ -50,7 +50,7 @@ export const deepl: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "ACQUISITION (2026-06-17): **DeepL acquired Mixhalo**, a live-event low-latency audio-streaming company, to push its Voice-to-Voice translation into live-event and in-venue settings (real-time translated audio streamed to attendees' phones). Pairs with DeepL's April Voice launch and a broader push beyond text -- also opening a San Francisco office and expanding its Amazon partnership (real-time voice). Signals DeepL is serious about owning real-time spoken translation, not just document/text.",
+      description: "ACQUISITION (2026-06-17): **DeepL acquired Mixhalo**, a live-event low-latency audio-streaming company (founded 2016 by Incubus guitarist Mike Einziger), to push its Voice-to-Voice translation into live-event and in-venue settings -- real-time translated audio streamed to attendees' phones at conferences, sports, and shows. Mixhalo was already a DeepL customer before the deal. Pairs with DeepL's April Voice launch and a broader push beyond text, including opening a San Francisco office. Signals DeepL is serious about owning real-time spoken translation, not just document/text.",
       source: "TechCrunch (techcrunch.com/2026/06/17/deepl-acquires-mixhalo-for-live-event-audio-streaming-and-translation/)",
       date: "2026-06-17",
     },

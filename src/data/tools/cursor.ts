@@ -185,7 +185,7 @@ export const cursor: ToolReview = {
   ],
   affiliateUrl: "https://cursor.com",
   status: "active",
-  poweredBy: "Composer 2 (Cursor's own) / Claude Opus 4.6 / GPT-5.4 / Gemini (user selects)",
-  metaTitle: "Cursor 3 + Composer 2 Review 2026: Agent-First AI Code Editor",
-  metaDescription: "Cursor 3 review. Agent-first rebuild with multi-workspace, cross-platform agents, and Composer 2 (200+ tok/s coding model) at $0.50/$2.50 per 1M. April 2026.",
+  poweredBy: "Composer 2.5 (Cursor's own) / Claude / GPT-5.5 / Gemini (user selects)",
+  metaTitle: "Cursor Review 2026: Agent-First Editor -- Composer 2.5, iOS Beta, New Teams Pricing",
+  metaDescription: "Cursor review. Agent-first editor with Composer 2.5 ($0.50/$2.50 per 1M), cross-platform agents, iOS public beta, and the July 2026 Teams pricing overhaul (Standard $32-40, Premium $96-120, dual usage pools).",
 };
