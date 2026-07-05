@@ -38,6 +38,11 @@ export const notebookLm: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "NEW FEATURE (2026-07-01): NotebookLM added **Short Video Overviews** -- it generates ~60-second vertical (Shorts/Reels/TikTok-style) videos from your uploaded documents, extending the two-host Audio/Video Overview format into a social-native short clip. Pairs with the June Gemini 3.5 upgrade and the longer Cinematic Video Overviews already in the product. Practical use: turn a source doc into a shareable short without a separate video tool.",
+      source: "The Verge (theverge.com/tech/959778/google-notebooklm-ai-clips)",
+      date: "2026-07-01",
+    },
+    {
       description: "MAJOR UPDATE (2026-06-08): NotebookLM became an agentic analysis surface -- **Gemini 3.5 is now the default model**, each workspace gets a **virtual machine where NotebookLM writes and RUNS code** for data analysis (powered by Antigravity, with 100+ pre-packaged 'software skills'), chat-driven source building (it suggests and gathers sources via research skills + Google Search instead of manual-upload-only), and custom output formats (.png/.svg charts, PDF/.docx/Markdown, .csv/.json, Excel, PowerPoint -- editable after generation). ROLLOUT CAVEAT: Google AI **Ultra** subscribers + Workspace AI Ultra/Expanded Access tiers FIRST, broader rollout later -- most free/Plus users don't have this yet. PRICING CONTEXT (Google AI plans, reshuffled at I/O 5/19, verified on one.google.com 6/10): AI Plus $4.99/mo, AI Pro $19.99/mo, AI Ultra 5x from $99.99/mo, AI Ultra 20x $199.99/mo -- NotebookLM capability scales with these plans; there is no NotebookLM-specific price list",
       source: "TechCrunch (2026-06-08), SiliconAngle, one.google.com/about/google-ai-plans (verified 2026-06-10), blog.google (I/O pricing)",
       date: "2026-06-08",
@@ -77,8 +82,9 @@ export const notebookLm: ToolReview = {
   notFor: "People who want a general-purpose AI chatbot -- NotebookLM deliberately won't answer questions outside your uploaded sources. Also not for teams needing shared workspaces.",
   verdict: "NotebookLM is the rare Google product that's both free and genuinely useful. The source-grounded approach means you can trust the answers more than a general chatbot, and Audio Overviews are a legitimately novel feature. The limitations are real -- the 50-source cap, no collaboration, and no general knowledge -- but for individual research and document synthesis, nothing else is this good at this price (free). It feels like Google's loss leader for Workspace AI, so enjoy it while it lasts.",
 
-  lastReviewedDate: "2026-06-10",
+  lastReviewedDate: "2026-07-04",
   dataSources: [
+    { name: "The Verge: NotebookLM Short Video Overviews (2026-07-01)", url: "https://www.theverge.com/tech/959778/google-notebooklm-ai-clips", dateAccessed: "2026-07-04" },
     { name: "blog.google: Notebooks in Gemini + NotebookLM (Apr 2026)", url: "https://blog.google/innovation-and-ai/products/gemini-app/notebooks-gemini-notebooklm/", dateAccessed: "2026-04-25" },
     { name: "Google Workspace Updates: Expanded NotebookLM for Education Plus + Teaching and Learning", url: "https://workspaceupdates.googleblog.com/2026/04/expanded-notebooklm-capabilities-for-Education-Plus-and-Teaching-and-Learning-add-on-customers.html", dateAccessed: "2026-04-25" },
     { name: "NotebookLM official site", dateAccessed: "2026-04-25" },

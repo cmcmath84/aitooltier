@@ -50,6 +50,11 @@ export const figmaAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "CONFIG 2026 (2026-06-24/25): At its annual conference Figma shipped a batch of AI + platform updates -- **code layers** (attach real code to design layers), **support for animations**, more AI features, and the in-canvas **design agent moving through beta**. Extends the May in-canvas agent and the design-to-code push, and lands as Figma defends its turf against Claude Design + Cursor-style design modes. Output-quality verdict below still stands until we re-test against the Config 2026 features.",
+      source: "TechCrunch (techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/)",
+      date: "2026-06-24",
+    },
+    {
       description: "Figma launched a native in-canvas AI design agent on 2026-05-20. Distinct from the April MCP-agent support (external agents like Claude Code / Codex writing to Figma files), this agent lives on the multiplayer canvas: generate new designs from natural-language prompts, edit existing designs by instruction, auto-produce variations, and run MULTIPLE agents simultaneously on the same canvas, backed by design-tuned models. Rolling out in Figma Design first, expanding to other Figma products later. Figma frames it as a collaborator for testing ideas / visualizing edge cases / refining concepts, not a replacement for designer judgment. We have not independently tested output quality, so the verdict below (generative results still feel generic) stands until re-evaluated against this agent",
       source: "TechCrunch (techcrunch.com/2026/05/20/figma-adds-an-ai-assistant-to-its-collaborative-canvas), Figma",
       date: "2026-05-20",
@@ -74,8 +79,9 @@ export const figmaAi: ToolReview = {
   notFor: "Anyone expecting AI to generate production-ready designs from a text prompt -- it's not there yet.",
   verdict: "Figma AI is a collection of helpful shortcuts rather than a design revolution. The layer renaming, auto-layout suggestions, and content generation features genuinely save time on busywork. But the generative design features -- creating layouts from prompts -- produce generic results that no serious designer would ship. Think of it as a productivity add-on to an already great tool, not an AI design assistant. The real value is in the small time-savers, not the headline features.",
 
-  lastReviewedDate: "2026-05-26",
+  lastReviewedDate: "2026-07-04",
   dataSources: [
+    { name: "TechCrunch: Figma adds code layers, animation support, more AI (Config 2026, 2026-06-24)", url: "https://techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/", dateAccessed: "2026-07-04" },
     { name: "TechCrunch: Figma adds an AI assistant to its collaborative canvas (2026-05-20)", url: "https://techcrunch.com/2026/05/20/figma-adds-an-ai-assistant-to-its-collaborative-canvas/", dateAccessed: "2026-05-26" },
     { name: "Figma release notes", url: "https://www.figma.com/release-notes/", dateAccessed: "2026-04-18" },
     { name: "DEV: Figma April 2026 AI step forward", url: "https://dev.to/spookuspookus/figma-made-a-huge-step-forward-in-ai-design-april-2026-1cin", dateAccessed: "2026-04-18" },

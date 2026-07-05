@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const lovable: ToolReview = {
   slug: "lovable",
   name: "Lovable",
-  tagline: "Describe the app you want in plain English and watch it build itself -- 8M users and $400M+ ARR say it works",
+  tagline: "Describe the app you want in plain English and watch it build itself -- $500M ARR (June 2026) and ~1M new projects/week say it works",
   category: "ai-code-assistants",
   url: "https://lovable.dev",
 
@@ -56,6 +56,11 @@ export const lovable: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "GROWTH MILESTONE (2026-06-09): Lovable said it hit **$500M in annualized revenue with ~1 million new projects created per week** -- a steep ramp from the ~$400M ARR figure reported earlier in 2026. It also expanded its Google Cloud partnership (6/3) and is opening a US (Boston) office. Context for buyers: this is one of the fastest-scaling AI app builders, which cuts both ways -- strong momentum and staying power, but also rapid product/pricing evolution to expect.",
+      source: "TechCrunch (techcrunch.com/2026/06/09/lovable-says-it-has-hit-500m-in-annualized-revenue-with-1-million-new-projects-a-week/)",
+      date: "2026-06-09",
+    },
+    {
       description: "PRODUCT (2026-05-27 + 2026-06-01, vendor blog): **Subagents** (5/27) -- 'Lovable is now better at multitasking': parallel research/explore/search subagents work the project simultaneously instead of one sequential agent loop (note: aggregators circulated this as a 6/1 launch; the vendor post is dated 5/27). **Automatic security features** (6/1): scan profiles, security memory, and scheduled scans now run on projects by default. Also: new projects default to TanStack Start SSR since 5/13",
       source: "Lovable blog (lovable.dev/blog -- 'Introducing subagents' 2026-05-27, security post 2026-06-01)",
       date: "2026-06-01",
@@ -90,8 +95,9 @@ export const lovable: ToolReview = {
   notFor: "Experienced developers building production applications with complex business logic. If you need custom backends, specific architectures, or clean maintainable code, you'll outgrow Lovable quickly.",
   verdict: "Lovable is genuinely magical for its target audience. Watching an app materialize from a text description is still impressive, and the 8M user base proves there's massive demand for this. But there's a ceiling, and you'll hit it faster than the marketing suggests. Simple CRUD apps and landing pages? Fantastic. Anything with complex state, custom business logic, or specific architectural needs? The generated code becomes a liability. Use it for prototypes and MVPs, but plan to rewrite if the project takes off.",
 
-  lastReviewedDate: "2026-06-09",
+  lastReviewedDate: "2026-07-04",
   dataSources: [
+    { name: "TechCrunch: Lovable hits $500M ARR with 1M new projects/week (2026-06-09)", url: "https://techcrunch.com/2026/06/09/lovable-says-it-has-hit-500m-in-annualized-revenue-with-1-million-new-projects-a-week/", dateAccessed: "2026-07-04" },
     { name: "Lovable Blog: The Lovable mobile app is here (2026-04-27)", url: "https://lovable.dev/blog/mobile-app", dateAccessed: "2026-05-20" },
     { name: "Lovable official site", dateAccessed: "2026-03-31" },
     { name: "Reddit r/webdev", dateAccessed: "2026-03-31" },

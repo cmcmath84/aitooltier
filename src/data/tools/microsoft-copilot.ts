@@ -50,6 +50,11 @@ export const microsoftCopilot: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "COWORK GA + CONSUMPTION BILLING (2026-06-16): **Microsoft Copilot Cowork is now generally available** -- the agentic system for long-running, multi-tool tasks (the piece Nadella slotted into the 'Chat, Cowork, Code' super-app vision). Critically it introduces **usage-based billing via 'Copilot Credits'**: it requires a base M365 Copilot USL, then charges by consumption -- cost is driven by the model, context retrieval, tool calls, and runtime, with PayGo priced at **$0.01 per credit** (light/medium/heavy task tiers). Frontier-program tenants got a grace period, but **usage-based billing had to be configured by 2026-07-01 or Cowork access is suspended.** This is a genuine pricing/policy shift -- Cowork is no longer flat-rate bundled; budget for metered agent runs before rolling it out org-wide.",
+      source: "Microsoft 365 blog (microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/), Microsoft Learn (usage-based billing / Copilot Credits, 2026-06-26)",
+      date: "2026-06-16",
+    },
+    {
       description: "MICROSOFT BUILD DAY 2 (2026-06-03): the Windows-side AI platform drops. **Aion 1.0 Instruct** -- Microsoft's new on-device SLM family, in preview now powering text intelligence in the Windows AI APIs + Edge, with open weights promised. **Aion 1.0 Plan** -- a 14B reasoning/tool-calling model (32K context) that will ship in-box with Windows for fully local agentic workflows ('coming months,' not GA). **Microsoft Execution Containers (MXC)** -- sandboxed agent code execution across Windows/Linux/macOS, with NVIDIA's OpenShell agent runtime coming to Windows on it. **Surface RTX Spark Dev Box** -- Arm-based compact AI workstation (~1 petaflop, 128GB unified memory, runs 120B+ models locally), waitlist-only with no price or date. **Project Solara** -- an Android-based OS for AI-first devices (reference designs only; Microsoft won't sell the hardware). Note: the 'Surface Axion' name that circulated pre-Build does not exist in any Microsoft material -- the real product is the RTX Spark Dev Box",
       source: "Windows Developer Blog (blogs.windows.com/windowsdeveloper/2026/06/02/build-2026-furthering-windows-as-the-trusted-platform-for-development/), blogs.windows.com/devices (Surface RTX Spark), The Register, The Tech Portal",
       date: "2026-06-03",
@@ -84,8 +89,9 @@ export const microsoftCopilot: ToolReview = {
   notFor: "Anyone who wants the best conversational AI experience -- ChatGPT and Claude both feel more natural to talk to.",
   verdict: "Microsoft Copilot's biggest selling point is that it's free and it's everywhere in Windows and Edge. The GPT-4 access with Bing search grounding is genuinely useful for quick research. But as a conversational AI, it feels like talking to a corporate chatbot -- overly cautious, context-limited, and bland. The paid tiers are where it gets complicated: Copilot Pro competes directly with ChatGPT Plus and doesn't win, while Copilot for Microsoft 365 is powerful but requires an existing M365 subscription. It's a solid free option, but not the best at anything.",
 
-  lastReviewedDate: "2026-06-09",
+  lastReviewedDate: "2026-07-04",
   dataSources: [
+    { name: "Microsoft 365 blog: Copilot Cowork is now GA (2026-06-16, usage-based Copilot Credits)", url: "https://www.microsoft.com/en-us/microsoft-365/blog/2026/06/16/copilot-cowork-is-now-generally-available/", dateAccessed: "2026-07-04" },
     { name: "Microsoft Build 2026 newsroom (Scout, Autopilots, Copilot, GitHub app)", url: "https://news.microsoft.com/build-2026/", dateAccessed: "2026-06-02" },
     { name: "Microsoft Partner Center April 2026 announcements", url: "https://learn.microsoft.com/en-us/partner-center/announcements/2026-april", dateAccessed: "2026-04-21" },
     { name: "Microsoft 365 blog: pricing + packaging update (Dec 2025)", url: "https://www.microsoft.com/microsoft-365/blog/2025/12/04/advancing-microsoft-365-new-capabilities-and-pricing-update/", dateAccessed: "2026-04-21" },

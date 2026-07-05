@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const gemini: ToolReview = {
   slug: "gemini",
   name: "Gemini (Google)",
-  tagline: "Google's LLM with deep Google Workspace integration, 2M token context window, and native code execution -- Gemini 3.5 Flash GA 2026-05-19 (I/O 2026), Gemini 3.5 Pro rolling out June 2026, Gemini Spark agent + Managed Agents public preview in the Gemini API",
+  tagline: "Google's LLM with deep Google Workspace integration, 2M token context window, and native code execution -- Gemini 3.5 Flash GA 2026-05-19 (I/O 2026, now with native computer use), Gemini 3.5 Pro still unshipped as of July 2026 (slipped past its June window), Gemini Spark agent + Managed Agents public preview in the Gemini API",
   category: "ai-llms",
   url: "https://gemini.google.com",
 
@@ -26,7 +26,7 @@ export const gemini: ToolReview = {
       plan: "Google AI Pro",
       price: "$19.99",
       period: "month",
-      features: ["Gemini 3.1 Ultra (Gemini 3.5 Pro rolling out June 2026)", "2M token context", "Code Execution sandbox", "2TB Google storage", "Workspace integration", "Lyria 3 access"],
+      features: ["Gemini 3.1 Ultra (Gemini 3.5 Pro expected but not yet shipped as of July 2026)", "2M token context", "Code Execution sandbox", "2TB Google storage", "Workspace integration", "Lyria 3 access"],
     },
     {
       plan: "Google AI Ultra",
@@ -56,6 +56,21 @@ export const gemini: ToolReview = {
     "The Gemini app UI feels like Google slapped AI onto an existing product",
   ],
   knownIssues: [
+    {
+      description: "NEW MEDIA MODELS (2026-06-30, vendor post): Google shipped **Nano Banana 2 Lite** (`gemini-3.1-flash-lite-image`) and **Gemini Omni Flash** (`gemini-omni-flash-preview`) to AI Studio, the Gemini API, and the Enterprise Agent Platform. Nano Banana 2 Lite is Google's 'fastest, most cost-efficient Gemini Image model' -- text-to-image in ~4 seconds at **$0.034 per 1K-resolution image** (coming to AI Mode in Search, the Gemini app, NotebookLM, and Google Photos). Gemini Omni Flash does video generation + conversational (natural-language) video editing and multimodal referencing at **$0.10 per second of video output** (10-second clips at launch, longer coming); SynthID watermarked. Both target high-volume, low-latency workflows. See the nano-banana and veo pages for detail.",
+      source: "blog.google (blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/)",
+      date: "2026-06-30",
+    },
+    {
+      description: "API SHUTDOWNS NOW IN EFFECT (dates passed as of this review): the older media model IDs announced 6/15 have retired on schedule -- **Veo 2.0 + Veo 3.0 shut down 2026-06-30** (migrate to Veo 3.1) and the **Nano Banana preview image IDs `gemini-3.1-flash-image-preview` + `gemini-3-pro-image-preview` shut down 2026-06-25** (use the GA `gemini-3.1-flash-image` / `gemini-3-pro-image`). Pinned calls to any of these legacy IDs are now failing. **Imagen 4.0 models (`imagen-4.0-generate-001`, `-ultra-`, `-fast-`) still shut down 2026-08-17** (→ `gemini-3.1-flash-image`).",
+      source: "Gemini API changelog + deprecations (ai.google.dev/gemini-api/docs/deprecations)",
+      date: "2026-06-30",
+    },
+    {
+      description: "AGENT CAPABILITY (2026-06-24): Google added **native computer use to Gemini 3.5 Flash** -- the model can see, reason, and act across desktop, mobile, and browser environments, aimed at building long-horizon enterprise automation agents. Puts Gemini 3.5 Flash into direct competition with Anthropic computer use and OpenAI's Operator/Codex computer-use tooling.",
+      source: "blog.google (blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/)",
+      date: "2026-06-24",
+    },
     {
       description: "PRICE CUT (2026-06-09): **Google AI Plus dropped from $7.99 to $4.99/mo** and doubled storage 200GB → 400GB (US; tier includes Gemini Omni Flash video gen, Flow, and NotebookLM). TechCrunch framed it as 'a warning shot in the AI subscription price wars' -- it undercuts ChatGPT Go ($8/mo) by nearly half. Current Google AI plan ladder: Plus $4.99 / Pro $19.99 / Ultra 5x from $99.99 / Ultra 20x $199.99",
       source: "blog.google (Google One subscriptions post), TechCrunch (2026-06-09), Engadget",
@@ -87,8 +102,8 @@ export const gemini: ToolReview = {
       date: "2026-05-19",
     },
     {
-      description: "I/O 2026 UPCOMING (2026-05-19): GEMINI 3.5 PRO is in internal testing with rollout 'next month' (June 2026). No specific date or pricing yet. Existing AI Pro subscribers will likely receive 3.5 Pro as the in-tier flagship replacing 3.1 Ultra for new sessions when GA hits. Vendor language consistent: 'rollout planned for next month'.",
-      source: "blog.google Gemini 3.5 announcement post (2026-05-19)",
+      description: "GEMINI 3.5 PRO -- STILL NOT SHIPPED as of 2026-07-04 (SLIPPED past its June window). At I/O (5/19) Google said 3.5 Pro was in internal testing with rollout 'next month' (June), but the Gemini API changelog runs through 6/30 with no 3.5 Pro entry and there is no blog.google GA post. Only Gemini 3.5 Flash is GA. Press now points to July 2026 -- treat that as unconfirmed/aggregator speculation, not a vendor date. When it lands, AI Pro subscribers will likely get 3.5 Pro as the in-tier flagship replacing 3.1 Ultra. Watch blog.google + ai.google.dev/gemini-api/docs/changelog.",
+      source: "blog.google Gemini 3.5 announcement post (2026-05-19); ai.google.dev/gemini-api/docs/changelog (no 3.5 Pro entry through 2026-06-30)",
       date: "2026-05-19",
     },
     {
@@ -136,8 +151,10 @@ export const gemini: ToolReview = {
   notFor: "Anyone who needs the best raw output quality. Claude and GPT-4 both write better. Also not for anyone spooked by Google's history of abandoning products.",
   verdict: "Gemini's strength is the ecosystem play. The 1M context window is genuinely useful for long documents, and the Google Workspace integration is something neither OpenAI nor Anthropic can match. But purely as an LLM, the output quality is a step behind Claude and GPT-4. Pick Gemini if you're deep in Google's ecosystem. Otherwise, the other two are better standalone.",
 
-  lastReviewedDate: "2026-06-18",
+  lastReviewedDate: "2026-07-04",
   dataSources: [
+    { name: "Google Blog: Gemini Omni Flash + Nano Banana 2 Lite (2026-06-30)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/", dateAccessed: "2026-07-04" },
+    { name: "Google Blog: Computer use in Gemini 3.5 Flash (2026-06-24)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/", dateAccessed: "2026-07-04" },
     { name: "Google Developers Blog: Transitioning Gemini CLI to Antigravity CLI (shutdown took effect 2026-06-18)", url: "https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/", dateAccessed: "2026-06-18" },
     { name: "Gemini API changelog: Veo 2.0/3.0 (6/30), Nano Banana preview (6/25), Imagen 4.0 (8/17) shutdowns", url: "https://ai.google.dev/gemini-api/docs/changelog", dateAccessed: "2026-06-18" },
     { name: "Google Blog: Gemini 3.5 frontier intelligence with action (2026-05-19)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/", dateAccessed: "2026-05-20" },
@@ -167,6 +184,6 @@ export const gemini: ToolReview = {
     tone: "Neutral, thorough, and slightly corporate. Gemini leans academic, cites sources readily in Deep Research mode, and keeps its tone even across topics -- rarely funny, rarely snarky.",
     quirks: "Tightly integrated with Google products -- pulls from Search and Workspace by default, which is useful for grounded answers but means you hear Google's worldview. Can feel evasive or overly safe on opinionated or politically charged questions.",
   },
-  metaTitle: "Gemini Review 2026: 3.5 Flash GA May 19 (I/O), 3.5 Pro Coming June, Spark Agent",
-  metaDescription: "Google Gemini review. Gemini 3.5 Flash GA 2026-05-19 (Terminal-Bench 76.2%, MCP Atlas 83.6%). 3.5 Pro rolling out June. Spark proactive agent + Managed Agents API in public preview.",
+  metaTitle: "Gemini Review 2026: 3.5 Flash GA + Computer Use, 3.5 Pro Slipped, Nano Banana 2 Lite + Omni Flash",
+  metaDescription: "Google Gemini review. Gemini 3.5 Flash GA (now with native computer use); 3.5 Pro still unshipped as of July 2026. New Nano Banana 2 Lite ($0.034/img) + Omni Flash video ($0.10/sec). Spark agent + Managed Agents API in preview.",
 };

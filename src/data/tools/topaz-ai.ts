@@ -57,6 +57,11 @@ export const topazAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "ACQUISITION (2026-06-25): **Adobe is acquiring Topaz Labs.** Adobe plans to fold Topaz's image/video enhancement tech (upscaling, denoising, sharpening) into Firefly, Photoshop, and Premiere; the deal is expected to close in H2 2026. Near-term the standalone Photo AI / Video AI / Gigapixel apps continue, but buyers weighing a multi-year subscription should factor in probable product consolidation into Adobe's Creative Cloud stack (and Adobe's own pricing/subscription posture) once the deal closes. Watch for roadmap clarity post-close.",
+      source: "TechCrunch (techcrunch.com/2026/06/25/adobe-acquires-image-and-video-enhancement-tool-maker-topaz-labs/)",
+      date: "2026-06-25",
+    },
+    {
       description: "Perpetual licenses killed in October 2025 -- longtime users who paid $299 once now face $199-399/year subscriptions, generating massive backlash",
       source: "DPReview Forums",
       date: "2025-10",
@@ -76,8 +81,9 @@ export const topazAi: ToolReview = {
   notFor: "Hobbyists who can't justify $200+/year for photo enhancement, or anyone without a dedicated GPU. Free alternatives like Upscayl handle basic upscaling fine.",
   verdict: "Topaz still produces the best AI-enhanced images and video on the market -- that hasn't changed. What has changed is the pricing model. The shift from a one-time $299 purchase to a $199-399/year subscription alienated a huge chunk of their user base, and the persistent bug issues don't help. If you're a working professional who bills clients, the cost is easy to justify. Everyone else should think hard about whether the quality bump over free alternatives is worth the annual fee.",
 
-  lastReviewedDate: "2026-04-17",
+  lastReviewedDate: "2026-07-04",
   dataSources: [
+    { name: "TechCrunch: Adobe acquires Topaz Labs (2026-06-25)", url: "https://techcrunch.com/2026/06/25/adobe-acquires-image-and-video-enhancement-tool-maker-topaz-labs/", dateAccessed: "2026-07-04" },
     { name: "Topaz Labs official site", dateAccessed: "2026-04-02" },
     { name: "DPReview Forums", dateAccessed: "2026-04-02" },
     { name: "Topaz Community Forums", dateAccessed: "2026-04-02" },
@@ -85,6 +91,6 @@ export const topazAi: ToolReview = {
   ],
   affiliateUrl: "https://www.topazlabs.com",
   status: "active",
-  metaTitle: "Topaz Labs Review 2026: Best AI Photo/Video Enhancement (But at What Cost)?",
+  metaTitle: "Topaz Labs Review 2026: Best AI Photo/Video Enhancement -- Now Being Acquired by Adobe",
   metaDescription: "Honest Topaz Labs review. Best-in-class AI upscaling and denoising, but controversial subscription switch. Full scores, pricing, known issues. April 2026.",
 };

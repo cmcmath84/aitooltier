@@ -45,6 +45,11 @@ export const glm: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "INDEPENDENT BENCHMARK PUBLISHED (verified 2026-07-04): Artificial Analysis now has a citable independent eval for GLM-5.2 -- **Intelligence Index = 51, ranked #1 of 93 open-weight models** (artificialanalysis.ai/models/glm-5-2), corroborating the vendor's 'tops the open-weights index' claim with a third-party number. Keep the Zhipu-reported figures (SWE-Bench Pro 62.1%, Terminal-Bench 2.1 81.0%) labeled as vendor benchmarks -- the AA-51 is the independently-measured one to lead with.",
+      source: "Artificial Analysis (artificialanalysis.ai/models/glm-5-2), Crypto Briefing",
+      date: "2026-07-04",
+    },
+    {
       description: "MODEL LAUNCH (2026-06-13): **GLM-5.2** -- Z.ai's new open-weights flagship 'for long-horizon tasks', a substantial leap over GLM-5.1. ~753B-parameter MoE, MIT licensed, with a 1M-token context that sustains long-horizon work and the new **IndexShare** sparse-attention architecture that cuts per-token FLOPs ~2.9x at 1M-token context. Vendor-published benchmarks (third-party verification still settling): SWE-Bench Pro 62.1, GPQA-Diamond ~91.2, AIME 2026 ~99.2, HLE reasoning ~40.5. It tops the Artificial Analysis open-weights Intelligence Index, and VentureBeat reports it beats GPT-5.5 on several long-horizon coding benchmarks at roughly 1/6 the cost. MIT weights shipped to Hugging Face (zai-org/GLM-5.2) and ModelScope; works as a drop-in coding backend for Claude Code, Cline, and OpenCode. Note: exact active-parameter count for 5.2 was not published in the model card -- treat the MoE-active figure as unconfirmed pending a vendor spec sheet.",
       source: "Hugging Face zai-org/GLM-5.2 model card, VentureBeat (z-ais-open-weights-glm-5-2-beats-gpt-5-5...), z.ai/blog/glm-5.2",
       date: "2026-06-13",
@@ -64,8 +69,9 @@ export const glm: ToolReview = {
   notFor: "Consumer-facing English content generation (Mistral or Claude write better), or ultra-low-resource deployment (use Gemma 4 or Phi-4 instead).",
   verdict: "With GLM-5.2 (June 13, 2026), Z.ai has the strongest MIT-licensed open-weights model of 2026 -- a ~753B MoE with a 1M context, SWE-Bench Pro 62.1, and the top spot on Artificial Analysis's open-weights index, which VentureBeat says edges GPT-5.5 on long-horizon coding at a fraction of the cost. The true MIT license puts it ahead of Llama 4 on licensing, and the agentic tool-use performance beats most of its open-weight peers. GLM-4.6V is legitimately the best open multimodal model on several benchmarks. The weakness is purely ecosystem: fewer Western fine-tunes and less Ollama coverage. If you're building an agent or multimodal product and want clean licensing, GLM is the pick.",
 
-  lastReviewedDate: "2026-06-18",
+  lastReviewedDate: "2026-07-04",
   dataSources: [
+    { name: "Artificial Analysis: GLM-5.2 (Intelligence Index 51, #1 open-weight)", url: "https://artificialanalysis.ai/models/glm-5-2", dateAccessed: "2026-07-04" },
     { name: "Hugging Face: zai-org/GLM-5.2 model card (specs, license, benchmarks)", url: "https://huggingface.co/zai-org/GLM-5.2", dateAccessed: "2026-06-18" },
     { name: "VentureBeat: Z.ai's open-weights GLM-5.2 beats GPT-5.5 on long-horizon coding for ~1/6 the cost", url: "https://venturebeat.com/technology/z-ais-open-weights-glm-5-2-beats-gpt-5-5-on-multiple-long-horizon-coding-benchmarks-for-1-6th-the-cost", dateAccessed: "2026-06-18" },
     { name: "Winbuzzer: Z.ai releases GLM-5.1 754B tops SWE-Bench Pro", url: "https://winbuzzer.com/2026/04/09/z-ai-releases-glm-5-1-754b-model-tops-swe-bench-pro-xcxwbn/", dateAccessed: "2026-04-17" },

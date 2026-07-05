@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const claude: ToolReview = {
   slug: "claude",
   name: "Claude (Anthropic)",
-  tagline: "Anthropic's flagship LLM family. Claude Fable 5 (launched June 9, 2026) was the first publicly available Mythos-class model -- but on June 12, 2026 a US government export-control directive ordered access suspended, and Anthropic disabled Fable 5 + Mythos 5 for ALL customers to comply (every other Claude model is unaffected). Opus 4.8 (May 28) is the available flagship: $5/$25 per 1M, 1M-token context, effort control, and a cheap fast mode",
+  tagline: "Anthropic's flagship LLM family. After a 19-day US-government export-control suspension (June 12-30), Claude Fable 5 -- the first publicly available Mythos-class model -- returned globally on July 1, 2026. New on June 30: Claude Sonnet 5, the 'most agentic Sonnet yet,' now the default on Free/Pro at $2/$10 per 1M (intro through Aug 31, then $3/$15). Opus 4.8 remains the top-end flagship at $5/$25 per 1M with a 1M-token context, effort control, and a cheap fast mode",
   category: "ai-llms",
   url: "https://claude.ai",
 
@@ -20,13 +20,13 @@ export const claude: ToolReview = {
     {
       plan: "Free",
       price: "$0",
-      features: ["Limited messages/day", "Claude Sonnet 4.6", "Basic features"],
+      features: ["Limited messages/day", "Claude Sonnet 5 (default as of 2026-06-30)", "Basic features"],
     },
     {
       plan: "Pro",
       price: "$20",
       period: "month",
-      features: ["5x more usage than Free", "Claude Opus 4.8 + Sonnet 4.6", "Effort control + extended thinking", "Priority access"],
+      features: ["5x more usage than Free", "Claude Opus 4.8 + Sonnet 5", "Effort control + extended thinking", "Priority access"],
     },
     {
       plan: "Max (5x)",
@@ -47,10 +47,16 @@ export const claude: ToolReview = {
       features: ["Unchanged from Opus 4.7 pricing", "1M context window", "Fast mode at $10 / $50 per 1M (2.5x speed, 3x cheaper than prior fast mode)", "Tool use, MCP, high-res vision; Bedrock, Vertex AI, Foundry"],
     },
     {
+      plan: "API (Sonnet 5)",
+      price: "$2 / $10",
+      period: "per 1M tokens (input/output) -- intro through 2026-08-31, then $3 / $15",
+      features: ["Launched 2026-06-30 as the 'most agentic Sonnet yet' -- approaches Opus 4.8 quality at lower cost", "Default model on Free + Pro; also on Max/Team/Enterprise, Claude Code, and the API (claude-sonnet-5)", "Updated tokenizer (input maps to ~1.0-1.35x more tokens depending on content type)", "OSWorld-Verified 78.5%; scored 0.0% on cyber-exploit-development evals (safety)"],
+    },
+    {
       plan: "API (Fable 5)",
       price: "$10 / $50",
       period: "per 1M tokens (input/output)",
-      features: ["First publicly available Mythos-class model (launched 2026-06-09)", "Included on Pro/Max/Team/Enterprise at no extra cost through 2026-06-22, usage credits after", "Auto-fallback to Opus 4.8 on cyber/bio/chem-flagged requests (<5% of sessions)", "Mandatory 30-day retention on all Mythos-class traffic (not used for training)"],
+      features: ["First publicly available Mythos-class model (launched 2026-06-09; suspended 6/12 by US-gov order; RESTORED globally 2026-07-01 after controls lifted 6/30)", "Included for up to 50% of weekly usage limits on Pro/Max/Team/Enterprise through 2026-07-07, usage credits after", "Auto-fallback to Opus 4.8 on cyber/bio/chem-flagged requests (<5% of sessions); new classifier blocks the reported jailbreak technique in >99% of cases", "Mandatory 30-day retention on all Mythos-class traffic (not used for training)"],
     },
   ],
 
@@ -69,7 +75,17 @@ export const claude: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "ACCESS SUSPENDED BY US GOVERNMENT (2026-06-12): A US government export-control directive ordered Anthropic to **suspend all access to Claude Fable 5 and Claude Mythos 5** -- for any foreign national whether inside or outside the US, including foreign-national Anthropic employees. To comply, Anthropic **disabled Fable 5 and Mythos 5 for ALL customers** (the directive's scope made selective enforcement impractical). **Access to every other Anthropic model -- Opus 4.8, Sonnet 4.6, Haiku 4.5 -- is unaffected and remains fully available.** Stated cause: the Commerce Department acted after another company claimed it had found a way to 'jailbreak' Mythos, raising national-security concerns. Anthropic publicly disagrees that a narrow potential jailbreak should justify recalling a commercially deployed model, arguing the same standard 'would essentially halt all new model deployments for all frontier model providers,' and met with the Trump administration on 2026-06-15 to contest it. Net effect for users TODAY: Fable 5 is not selectable on claude.ai or the API; use Opus 4.8 instead. This is the first time a frontier model has been pulled from public access by US-government order -- watch for restoration terms.",
+      description: "ACCESS RESTORED (2026-07-01): The US government **lifted the export controls on Fable 5 and Mythos 5 on June 30**, and Anthropic redeployed **Claude Fable 5 globally on July 1, 2026** -- across Claude Platform, claude.ai, Claude Code, and Claude Cowork -- ending a 19-day suspension. To re-launch, Anthropic shipped a new safety classifier that it says blocks the specific technique described in the Amazon jailbreak report 'in over 99% of cases.' Access economics on paid plans: Fable 5 is **included for up to 50% of weekly usage limits through July 7**, then moves to usage credits. **Mythos 5 was only PARTIALLY restored** -- to a set of US organizations with US-government approval -- and Anthropic is still working to expand access to the broader domestic + international Glasswing partners (see the claude-mythos page). Net for users today: Fable 5 is selectable again everywhere; the Fable-tier ceiling is back.",
+      source: "Anthropic (anthropic.com/news/redeploying-fable-5), CNBC (2026-06-30, export controls lifted)",
+      date: "2026-07-01",
+    },
+    {
+      description: "MODEL LAUNCH (2026-06-30): **Claude Sonnet 5** shipped as 'the most agentic Sonnet model yet' -- Anthropic positions its performance as approaching Opus 4.8 at substantially lower cost, and a big step over Sonnet 4.6. It is now the **default model on Free and Pro**, and is available to Max/Team/Enterprise, in Claude Code, and via the API as `claude-sonnet-5`. Pricing: **$2/$10 per 1M tokens as introductory pricing through Aug 31, 2026, then $3/$15**. It uses an updated tokenizer (input maps to ~1.0-1.35x more tokens depending on content type, so per-request cost can rise even at the lower rate). Vendor-cited data points: OSWorld-Verified **78.5%**, a wider cost-performance range than 4.6 on BrowseComp; on Anthropic's cyber-exploit-development eval both Sonnet models scored **0.0%** (i.e., could not build a working exploit -- a safety result). Practical impact: the default free/cheap Claude just got materially more capable for agentic + coding work.",
+      source: "Anthropic news (anthropic.com/news/claude-sonnet-5), TechCrunch, SiliconANGLE, GitHub Copilot changelog (GA 2026-06-30)",
+      date: "2026-06-30",
+    },
+    {
+      description: "ACCESS SUSPENDED BY US GOVERNMENT (2026-06-12; RESOLVED 2026-07-01 -- see the restoration entry above): A US government export-control directive ordered Anthropic to **suspend all access to Claude Fable 5 and Claude Mythos 5** -- for any foreign national whether inside or outside the US, including foreign-national Anthropic employees. To comply, Anthropic **disabled Fable 5 and Mythos 5 for ALL customers** (the directive's scope made selective enforcement impractical). **Access to every other Anthropic model -- Opus 4.8, Sonnet 4.6, Haiku 4.5 -- is unaffected and remains fully available.** Stated cause: the Commerce Department acted after another company claimed it had found a way to 'jailbreak' Mythos, raising national-security concerns. Anthropic publicly disagrees that a narrow potential jailbreak should justify recalling a commercially deployed model, arguing the same standard 'would essentially halt all new model deployments for all frontier model providers,' and met with the Trump administration on 2026-06-15 to contest it. Net effect for users TODAY: Fable 5 is not selectable on claude.ai or the API; use Opus 4.8 instead. This is the first time a frontier model has been pulled from public access by US-government order -- watch for restoration terms.",
       source: "Anthropic (anthropic.com/news/fable-mythos-access), CNBC (2026-06-12 + 2026-06-15), TechCrunch, Axios",
       date: "2026-06-12",
     },
@@ -186,10 +202,12 @@ export const claude: ToolReview = {
   ],
   bestFor: "Writers, analysts, developers, and anyone who values quality of output over quantity of features. If you care about how good the actual text is, Claude is the best.",
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
-  verdict: "Claude is the LLM you pick when quality matters more than features. For three days in June it looked like the ceiling had moved: Fable 5 (June 9, 2026) was the first Mythos-class model anyone could actually use, topping LMArena and the Artificial Analysis Index. Then on June 12 a US government export-control directive forced Anthropic to suspend Fable 5 -- and Mythos 5 -- for all customers, and as of this review it remains unavailable. So the practical flagship today is Opus 4.8: the $5/$25 workhorse with effort control, a cheap fast mode, a 1M context window, high-res vision, and MCP support, plus Apple naming Claude a selectable system assistant in iOS 27 this fall. Opus 4.8 is still arguably the best writing-and-reasoning model you can buy. Whether Fable-tier capability returns to the public depends on a regulatory fight Anthropic is actively contesting -- worth watching, but don't plan around Fable 5 right now.",
+  verdict: "Claude is the LLM you pick when quality matters more than features -- and after a turbulent June, the full lineup is back on the table. Fable 5 (June 9, 2026), the first publicly usable Mythos-class model, was pulled by a US-government export-control order on June 12; the controls were lifted June 30 and Anthropic redeployed Fable 5 globally on July 1, so the Fable-tier ceiling is available again (with a new classifier hardening it against the reported jailbreak). Alongside the restoration, the more consequential change for most users is Claude Sonnet 5 (June 30): the new default on Free and Pro, 'most agentic Sonnet yet,' at $2/$10 per 1M through August. Above it sits Opus 4.8 -- the $5/$25 workhorse with effort control, a cheap fast mode, a 1M context window, high-res vision, and MCP -- still arguably the best writing-and-reasoning model you can buy, with Apple naming Claude a selectable system assistant in iOS 27 this fall. The practical read: pick Sonnet 5 for everyday agentic/coding work, Opus 4.8 when quality is non-negotiable, and Fable 5 when you need the absolute frontier.",
 
-  lastReviewedDate: "2026-06-18",
+  lastReviewedDate: "2026-07-04",
   dataSources: [
+    { name: "Anthropic: Redeploying Fable 5 (restored 2026-07-01 after controls lifted 2026-06-30)", url: "https://www.anthropic.com/news/redeploying-fable-5", dateAccessed: "2026-07-04" },
+    { name: "Anthropic: Introducing Claude Sonnet 5 (2026-06-30)", url: "https://www.anthropic.com/news/claude-sonnet-5", dateAccessed: "2026-07-04" },
     { name: "Anthropic: Statement on the US government directive to suspend access to Fable 5 and Mythos 5 (2026-06-12)", url: "https://www.anthropic.com/news/fable-mythos-access", dateAccessed: "2026-06-18" },
     { name: "CNBC: Anthropic disables access to Fable 5 and Mythos 5 to comply with government directive (2026-06-12)", url: "https://www.cnbc.com/2026/06/12/anthropic-disables-access-to-fable-5-and-mythos-5-to-comply-with-government-directive.html", dateAccessed: "2026-06-18" },
     { name: "CNBC: Anthropic to meet with Trump administration over Mythos dispute (2026-06-15)", url: "https://www.cnbc.com/2026/06/15/anthropic-mythos-trump-ai.html", dateAccessed: "2026-06-18" },
@@ -212,7 +230,7 @@ export const claude: ToolReview = {
   affiliateUrl: "https://claude.ai",
   status: "active",
   benchmarks: {
-    modelName: "Claude Fable 5 (launched 2026-06-09; access SUSPENDED 2026-06-12 by US gov order -- scores are the pre-suspension record) -- vendor SWE-Bench Pro 80.3% (vs GPT-5.5 58.6%); #1 LMArena Elo 1510 and #1 Artificial Analysis Index 65 as of 6/11; legacy Opus-line reasoning-suite scores shown below as baseline pending full third-party suites",
+    modelName: "Claude Fable 5 (launched 2026-06-09; suspended 2026-06-12 by US gov order; RESTORED globally 2026-07-01 after controls lifted 6/30) -- vendor SWE-Bench Pro 80.3% (vs GPT-5.5 58.6%); #1 LMArena Elo 1510 and #1 Artificial Analysis Index 65 as of 6/11. New default Sonnet 5 (2026-06-30): OSWorld-Verified 78.5%. Legacy Opus-line reasoning-suite scores shown below as baseline pending full third-party suites",
     scores: [
       { name: "MMLU", score: 91.3, maxScore: 100, unit: "%" },
       { name: "GPQA Diamond", score: 91.3, maxScore: 100, unit: "%" },
@@ -229,6 +247,6 @@ export const claude: ToolReview = {
     tone: "Measured, careful, and slightly formal. Claude explains tradeoffs rather than handing back one-liner answers, asks clarifying questions when a request is ambiguous, and hedges openly when it is not confident.",
     quirks: "More willing than most models to refuse edgy or ambiguous requests, pushes back on premises it disagrees with, and will flag when you are probably asking the wrong question instead of just answering the one you typed.",
   },
-  metaTitle: "Claude Review 2026: Fable 5 Suspended by US Gov Order (June 12) -- Opus 4.8 Is the Flagship",
-  metaDescription: "Claude review. US government ordered Fable 5 + Mythos 5 access suspended June 12, 2026 -- Anthropic disabled both for all customers; all other Claude models unaffected. Opus 4.8 ($5/$25 per 1M, 1M context, effort control) is the available flagship.",
+  metaTitle: "Claude Review 2026: Sonnet 5 Is the New Default + Fable 5 Restored -- Opus 4.8 Still Top Flagship",
+  metaDescription: "Claude review. Sonnet 5 (June 30) is now the default on Free/Pro at $2/$10 per 1M. Fable 5 was suspended by US-gov order June 12 and restored globally July 1. Opus 4.8 ($5/$25, 1M context, effort control) remains the top flagship.",
 };

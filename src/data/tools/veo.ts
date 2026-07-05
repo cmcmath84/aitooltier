@@ -74,9 +74,14 @@ export const veo: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "API MODEL-ID SHUTDOWN (announced 2026-06-15): Google is retiring the older Veo API model IDs. **Veo 2.0 and Veo 3.0 shut down 2026-06-30** -- developers must migrate to the Veo 3.1 preview IDs (`veo-3.1-generate-preview`, `veo-3.1-fast-generate-preview`) or the 3.1 GA models on the Gemini Enterprise Agent Platform to avoid interruption. Only affects direct API callers on the legacy 2.0/3.0 endpoints; consumer Veo 3.1 in Gemini / Google Vids is unaffected. (Separately, Google's older Imagen 4.0 image models shut down 2026-08-17.)",
-      source: "Gemini API changelog (ai.google.dev/gemini-api/docs/changelog, 2026-06-15 entry)",
-      date: "2026-06-15",
+      description: "NEW SIBLING MODEL (2026-06-30): Google shipped **Gemini Omni Flash** (`gemini-omni-flash-preview`), a natively multimodal video-generation + conversational-editing model, to the Gemini API / AI Studio at **$0.10 per second of video output** (10-second clips at launch, longer coming). It sits alongside Veo 3.1 rather than replacing it -- Omni Flash targets fast, natural-language, in-conversation video editing, while Veo remains the peak-quality 4K/60fps cinematic model. Worth knowing if you're choosing a Google video API by cost vs. fidelity.",
+      source: "blog.google (blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/)",
+      date: "2026-06-30",
+    },
+    {
+      description: "API MODEL-ID SHUTDOWN NOW IN EFFECT (2026-06-30): the older Veo API model IDs announced 6/15 have retired on schedule -- **Veo 2.0 and Veo 3.0 (`veo-2.0-generate-001`, `veo-3.0-generate-001`, `veo-3.0-fast-generate-001`) shut down 2026-06-30**. Pinned calls to these legacy endpoints are now failing; migrate to `veo-3.1-generate-preview` / `veo-3.1-fast-generate-preview` or the 3.1 GA models. Only affects direct API callers on the legacy 2.0/3.0 endpoints; consumer Veo 3.1 in Gemini / Google Vids is unaffected. (Separately, Google's older Imagen 4.0 image models shut down 2026-08-17.)",
+      source: "Gemini API changelog + deprecations (ai.google.dev/gemini-api/docs/deprecations)",
+      date: "2026-06-30",
     },
     {
       description: "Generated humans still occasionally exhibit uncanny-valley effects on micro-expressions, though 3.1 is noticeably better than 3.0 on eye contact and mouth shape",
@@ -98,9 +103,10 @@ export const veo: ToolReview = {
   notFor: "High-volume TikTok / Reels creators where CapCut + Seedance 2.0 beats Veo on workflow friction. Also not ideal for anyone wanting strong stylistic control -- Veo's cinematic default is hard to escape.",
   verdict: "Veo 3.1 solidified Google's video lead after OpenAI shut down Sora in March 2026. Quality-wise it remains the benchmark -- 4K/60fps with synchronized audio, and the April 2026 free rollout to every Google account is a structural shift that puts best-in-class AI video in front of billions overnight. The remaining weaknesses are workflow friction (generation is slow, Google ecosystem lock-in) and stylistic narrowness. The honest read: for pure quality and accessibility, Veo 3.1 is the 2026 default. For short-form social workflows where speed matters more than peak quality, Seedance 2.0 inside CapCut is the more pragmatic choice.",
 
-  lastReviewedDate: "2026-06-18",
+  lastReviewedDate: "2026-07-04",
   dataSources: [
-    { name: "Gemini API changelog: Veo 2.0/3.0 API shutdown 2026-06-30", url: "https://ai.google.dev/gemini-api/docs/changelog", dateAccessed: "2026-06-18" },
+    { name: "Google Blog: Gemini Omni Flash + Nano Banana 2 Lite (2026-06-30)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/", dateAccessed: "2026-07-04" },
+    { name: "Gemini API deprecations: Veo 2.0/3.0 API shutdown took effect 2026-06-30", url: "https://ai.google.dev/gemini-api/docs/deprecations", dateAccessed: "2026-07-04" },
     { name: "Google Cloud: Veo 3.1 Lite on Vertex AI", url: "https://cloud.google.com/blog/products/ai-machine-learning/veo-3-1-lite-and-a-new-veo-upscaling-capability-on-vertex-ai", dateAccessed: "2026-04-16" },
     { name: "Bloomberg: AI Video Generators Replacing Sora", url: "https://www.bloomberg.com/news/articles/2026-04-01/kling-ai-runway-vidu-the-ai-video-generators-set-to-replace-openai-s-sora", dateAccessed: "2026-04-16" },
     { name: "Google Vids / Google One AI Pro pages", dateAccessed: "2026-04-16" },

@@ -52,6 +52,11 @@ export const minimax: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "INDEPENDENT BENCHMARK PUBLISHED (verified 2026-07-04): Artificial Analysis now has a citable M3 page (artificialanalysis.ai/models/minimax-m3, 'Released June 2026') showing an **Intelligence Index of 44**. This is lower than early social-media chatter had suggested (~55 circulated on X/LinkedIn but does not match the authoritative page) -- cite 44 as the independently-measured number. It keeps M3 solidly mid-pack among open-weights (below GLM-5.2's 51) despite the strong vendor SWE-Bench Pro 59% claim; treat vendor coding numbers and the AA general-intelligence number as measuring different things.",
+      source: "Artificial Analysis (artificialanalysis.ai/models/minimax-m3)",
+      date: "2026-07-04",
+    },
+    {
       description: "WEIGHTS SHIPPED (2026-06-12): **MiniMax-M3 open weights landed on HuggingFace** (MiniMaxAI/MiniMax-M3 + an MXFP8 quant) -- hitting the 'within 10 days of June 1' promise on day 10-11. Model-card specs: **~428B total / ~23B active params**, native multimodal (text/image/video input), MiniMax Sparse Attention, 1M-token context, 9x prefill / 15x decode speedup vs M2 at 1M ctx; tech report arXiv:2606.13392. LICENSE CAVEAT: **minimax-community license**, not MIT like the M2 line -- review terms before commercial self-hosting. Self-reported SWE-Bench Pro 59% now open to independent verification (Artificial Analysis pre-drop analysis pending update)",
       source: "HuggingFace (huggingface.co/MiniMaxAI/MiniMax-M3), Artificial Analysis (artificialanalysis.ai/articles/minimax-m3), The Decoder",
       date: "2026-06-12",
@@ -81,8 +86,9 @@ export const minimax: ToolReview = {
   notFor: "Teams that prioritize polished English writing (Mistral Large 3 or Claude are better), or anyone who needs the deepest ecosystem support (Llama is still that).",
   verdict: "MiniMax M2/M2.5 is the most cost-efficient frontier-tier open model in 2026. The 80.2% SWE-Bench Verified score is a genuine breakthrough -- matching Claude Opus 4.6 on real coding tasks at a tenth of the price. The sparse 10B-active MoE runs fast on moderate hardware. The main drawback is ecosystem: MiniMax has less Western infrastructure support than Alibaba or DeepSeek. If you're building an agentic product and want maximum value per token, M2.5 is an A-tier pick.",
 
-  lastReviewedDate: "2026-06-12",
+  lastReviewedDate: "2026-07-04",
   dataSources: [
+    { name: "Artificial Analysis: MiniMax M3 (Intelligence Index 44, released June 2026)", url: "https://artificialanalysis.ai/models/minimax-m3", dateAccessed: "2026-07-04" },
     { name: "MiniMax: M2.7 release blog (2026-03-18)", url: "https://www.minimax.io/news/minimax-m27-en", dateAccessed: "2026-04-27" },
     { name: "HuggingFace MiniMaxAI/MiniMax-M2.7", url: "https://huggingface.co/MiniMaxAI/MiniMax-M2.7", dateAccessed: "2026-04-27" },
     { name: "MarkTechPost: MiniMax M2.7 release coverage", url: "https://www.marktechpost.com/2026/04/12/minimax-just-open-sourced-minimax-m2-7-a-self-evolving-agent-model-that-scores-56-22-on-swe-pro-and-57-0-on-terminal-bench-2/", dateAccessed: "2026-04-27" },

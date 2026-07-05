@@ -50,6 +50,11 @@ export const deepl: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "ACQUISITION (2026-06-17): **DeepL acquired Mixhalo**, a live-event low-latency audio-streaming company, to push its Voice-to-Voice translation into live-event and in-venue settings (real-time translated audio streamed to attendees' phones). Pairs with DeepL's April Voice launch and a broader push beyond text -- also opening a San Francisco office and expanding its Amazon partnership (real-time voice). Signals DeepL is serious about owning real-time spoken translation, not just document/text.",
+      source: "TechCrunch (techcrunch.com/2026/06/17/deepl-acquires-mixhalo-for-live-event-audio-streaming-and-translation/)",
+      date: "2026-06-17",
+    },
+    {
       description: "DeepL Voice-to-Voice launched 2026-04-16 as a full real-time spoken translation suite -- Zoom and Microsoft Teams add-ons for meetings, a conversation mode for group settings, and an enterprise Voice API. 40+ languages including EU languages plus Vietnamese, Thai, Arabic, Hebrew, Bengali, Tagalog. DeepL reports 96% linguist preference over Google/Microsoft/Zoom in blind evaluation. Major strategic expansion beyond text-only translation",
       source: "DeepL press release, TechCrunch, The Next Web",
       date: "2026-04",
@@ -69,8 +74,9 @@ export const deepl: ToolReview = {
   notFor: "Casual users who just need quick gist translations (Google Translate is free and good enough), or teams needing Asian language pairs as their primary use case.",
   verdict: "DeepL earned its reputation honestly -- for European language pairs, the translation quality is measurably better than the competition. It reads like a human translated it, not a machine. The gap narrows significantly for Asian languages, though, where Google has invested more heavily. At $8.74/mo the Starter plan is reasonable, but the free tier is too limited to be useful for regular work. If you translate European languages professionally, DeepL is the obvious choice.",
 
-  lastReviewedDate: "2026-04-18",
+  lastReviewedDate: "2026-07-04",
   dataSources: [
+    { name: "TechCrunch: DeepL acquires Mixhalo (2026-06-17)", url: "https://techcrunch.com/2026/06/17/deepl-acquires-mixhalo-for-live-event-audio-streaming-and-translation/", dateAccessed: "2026-07-04" },
     { name: "DeepL: Voice-to-Voice press release", url: "https://www.deepl.com/en/press-release/deepl-unveils-real-time-spoken-translation-breaking-the-next-language-barrier-with-voice-to-voice", dateAccessed: "2026-04-18" },
     { name: "DeepL Voice product page", url: "https://www.deepl.com/en/products/voice", dateAccessed: "2026-04-18" },
     { name: "TechCrunch: DeepL voice translation", url: "https://techcrunch.com/2026/04/16/deepl-known-for-text-translation-now-wants-to-translate-your-voice/", dateAccessed: "2026-04-18" },

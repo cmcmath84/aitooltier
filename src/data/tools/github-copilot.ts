@@ -67,6 +67,11 @@ export const githubCopilot: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "LATE-JUNE/JULY CLUSTER (2026-06-30 → 2026-07-02, vendor changelog): (1) **Claude Sonnet 5 is GA in GitHub Copilot** (6/30) -- day-one availability alongside Anthropic's launch; the new 'most agentic Sonnet' model joins the picker. (2) **Browser tools for Copilot agents are GA in VS Code** (7/1) -- agents can drive a browser to test/verify their own web changes. (3) **GitHub Models is being fully retired on 2026-07-30** (7/1 announcement) -- the model-catalog/playground product winds down; migrate off before the date. (4) **Kimi K2.7 Code (open-weight) added to the model picker** (~7/2) -- a lower-cost open-weight option meters against the 6/1 credit system.",
+      source: "GitHub Changelog (github.blog/changelog/2026-06-30-claude-sonnet-5-is-generally-available-for-github-copilot/, .../2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/, .../2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/)",
+      date: "2026-07-01",
+    },
+    {
       description: "MODEL ADD (2026-06-09, vendor-primary github.blog/changelog): **Claude Fable 5 is generally available in GitHub Copilot** on launch day -- Anthropic's first public Mythos-class model lands in the Copilot model picker the same day it ships, ahead of Cursor (which still lacks it as of 6/10). For Copilot users this is currently the strongest available model on agentic coding benchmarks (vendor: SWE-Bench Pro 80.3%). Usage meters against the 6/1 credit system like other premium models",
       source: "GitHub blog (github.blog/changelog/2026-06-09-claude-fable-5-is-generally-available-for-github-copilot/)",
       date: "2026-06-09",
@@ -156,8 +161,10 @@ export const githubCopilot: ToolReview = {
   notFor: "Anyone trying to sign up for Pro, Pro+, or Student right now -- signups are paused (2026-04-20 onward). Also not for developers who specifically wanted Claude Opus on the $10 Pro plan; Opus was just pulled to Pro+ only. Cursor or Claude Code are the obvious alternatives during the pause.",
   verdict: "GitHub Copilot hit a wall on 2026-04-20: new Pro/Pro+/Student signups paused, Claude Opus pulled from Pro, and usage caps tightened across the board. Microsoft is openly admitting that agent workloads consume more compute than the current subscription tiers can sustain, and the product is being retuned in real time. For existing subscribers the inline completions remain best-in-class, but the value proposition has gotten worse overnight. If you're shopping for an AI code assistant in the next 30 days, Cursor (Pro+ $60) and Claude Code are the practical choices until Microsoft either reopens signups or reprices. Watch the refund window (through 2026-05-20) if you're on the fence about staying.",
 
-  lastReviewedDate: "2026-06-10",
+  lastReviewedDate: "2026-07-04",
   dataSources: [
+    { name: "GitHub Changelog: Claude Sonnet 5 GA for GitHub Copilot (2026-06-30)", url: "https://github.blog/changelog/2026-06-30-claude-sonnet-5-is-generally-available-for-github-copilot/", dateAccessed: "2026-07-04" },
+    { name: "GitHub Changelog: GitHub Models fully retired 2026-07-30 (announced 2026-07-01)", url: "https://github.blog/changelog/2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/", dateAccessed: "2026-07-04" },
     { name: "GitHub Changelog: Updates to GitHub Copilot billing and plans -- usage-based billing live (2026-06-01)", url: "https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/", dateAccessed: "2026-06-02" },
     { name: "Microsoft AI: Introducing MAI-Code-1-Flash (2026-06-02)", url: "https://microsoft.ai/news/introducingmai-code-1-flash/", dateAccessed: "2026-06-02" },
     { name: "GitHub Changelog: GPT-5.2 + GPT-5.2-Codex deprecation (2026-05-01, retiring 2026-06-01)", url: "https://github.blog/changelog/2026-05-01-upcoming-deprecation-of-gpt-5-2-and-gpt-5-2-codex/", dateAccessed: "2026-05-04" },
