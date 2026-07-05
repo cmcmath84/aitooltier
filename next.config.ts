@@ -37,6 +37,19 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  // www serves the full site as a duplicate host (Vercel assigns both domains
+  // to this deployment). Google was indexing both homepages separately,
+  // splitting the little equity the domain has. Collapse everything onto apex.
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.aitooltier.com" }],
+        destination: "https://aitooltier.com/:path*",
+        permanent: true,
+      },
+    ];
+  },
 };
 
 export default nextConfig;

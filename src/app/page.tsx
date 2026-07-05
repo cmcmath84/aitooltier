@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { categories } from "@/data/categories";
 import { tools } from "@/data/tools";
@@ -6,6 +7,13 @@ import { homepageJsonLd, safeJsonLd } from "@/lib/structured-data";
 import TierList from "@/components/ui/TierList";
 import ToolCard from "@/components/tools/ToolCard";
 import CategoryIcon from "@/components/ui/CategoryIcon";
+
+// The homepage is the only indexed page and was the one page with no
+// canonical tag, so Google indexed the apex and www copies as separate
+// documents. Self-canonical to apex (resolved against metadataBase).
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 const featuredCategories = [
   "ai-chatbots",
