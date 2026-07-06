@@ -62,6 +62,11 @@ export const characterAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PENNSYLVANIA LAWSUIT -- UNAUTHORIZED PRACTICE OF MEDICINE (2026-05-05): The Shapiro Administration (PA Department of State) sued Character Technologies, Inc. under Pennsylvania's Medical Practice Act -- the first enforcement action of its kind by a US governor. Investigators documented a bot ('Emilie') that claimed to be a licensed psychiatrist, cited Imperial College London training, claimed UK and PA licensure, and produced a fake Pennsylvania medical license number. The state seeks a preliminary injunction stopping bots from misrepresenting themselves as licensed medical professionals. Adds regulatory risk on top of the existing TRAIGA-compliance burden",
+      source: "PA Governor's newsroom (pa.gov, 2026-05-05), NPR, The Hill, NBC",
+      date: "2026-05-05",
+    },
+    {
       description: "MEMORY UPGRADE + MODEL CONSOLIDATION (April-May 2026): **5/21 'Smarter Memory for Smarter Chats'** (vendor blog) -- Story Memory, Facts, and Memory Usage shipped, running on PipSqueak 2 (free tier) and DeepSqueak. CONSOLIDATION: legacy chat styles were retired around **May 8** (Roar and Pawly killed immediately; Meow and others moved to a Legacy menu then retired) with chats consolidated onto PipSqueak 2 -- announced ~4/28, drew significant community backlash. **Soft Launch came BACK as a c.ai+ exclusive** (paywalled behind the standing $9.99/mo subscription -- note c.ai+ has been $9.99 since 2023; this is NOT a price change, just a newly gated style). The 'cheaper model' rationale circulating on Reddit is community speculation, not vendor-stated",
       source: "Character.AI blog (blog.character.ai/memory/ 2026-05-21, blog.character.ai/pipsqueak2-and-more/ 2026-04-14), r/CharacterAI staff posts, PiunikaWeb",
       date: "2026-05-21",
@@ -91,8 +96,9 @@ export const characterAi: ToolReview = {
   notFor: "Long-time users who built custom Characters pre-2026 and lost them in the Moderatedpocalypse. Also not for anyone who values creative latitude, NSFW-adjacent roleplay, or frontier response quality. The migration destinations (Janitor AI, Chai, DreamGen) cover those use cases better in 2026.",
   verdict: "Character.AI in 2026 is a very different product from the one that hit 200M+ monthly visitors in 2023-2024. The 2026-02-18 mass-delete, layered TRAIGA restrictions, and resulting ~30%+ traffic decline leave the platform in an awkward middle: big enough to still dominate on Character catalog size, small enough to be actively losing ground every month to focused alternatives. If you're picking a Character-chat platform from scratch today, the honest answer is: try Character.AI's free tier first (network effect still counts), then immediately evaluate Janitor AI, Chai, and DreamGen based on your use case. The c.ai+ subscription is hard to justify -- it buys speed, not creative freedom.",
 
-  lastReviewedDate: "2026-06-10",
+  lastReviewedDate: "2026-07-05",
   dataSources: [
+    { name: "PA Governor's newsroom: Shapiro Administration sues Character.AI over fake medical claim", url: "https://www.pa.gov/governor/newsroom/2026-press-releases/shapiro-administration-sues-character-ai-over-fake-medical-claim", dateAccessed: "2026-07-05" },
     { name: "PiunikaWeb: Character.AI moderation wave 2026-02-18", url: "https://piunikaweb.com/2026/02/18/character-ai-moderation-wave-bots-removed-2026/", dateAccessed: "2026-04-19" },
     { name: "HackerNoon: How C.AI lost millions of users", url: "https://hackernoon.com/how-characterai-lost-millions-of-its-users-a-case-study-of-negligence", dateAccessed: "2026-04-19" },
     { name: "AI Insights: What happened to Character AI", url: "https://aiinsightsnews.net/what-happened-to-character-ai/", dateAccessed: "2026-04-19" },
@@ -102,5 +108,5 @@ export const characterAi: ToolReview = {
   affiliateUrl: "https://character.ai",
   status: "active",
   metaTitle: "Character.AI Review 2026: After the Moderatedpocalypse + Best Alternatives",
-  metaDescription: "Character.AI review 2026. The Feb 18 Moderatedpocalypse, 30% traffic decline, TRAIGA restrictions. Alternatives: Janitor AI, Chai, DreamGen. Honest scores + pricing.",
+  metaDescription: "Character.AI review 2026. The Feb 18 Moderatedpocalypse, 30% traffic decline, TRAIGA restrictions, PA medical-advice lawsuit (May 2026). Alternatives: Janitor AI, Chai, DreamGen. Honest scores + pricing.",
 };

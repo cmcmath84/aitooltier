@@ -53,6 +53,12 @@ export const agentforceVibes: ToolReview = {
   knownIssues: [
     {
       description:
+        "BILLING CHANGE -- VIBES NO LONGER FREE (effective 2026-06-01): agentic chat in Vibes now requires Flex Credits or the Unmetered Platform Developer and Admin AI User Permission Set License for non-Developer Edition orgs. Developer Editions keep limited free access -- 110 requests / 1.5M tokens on Claude Sonnet 4.5 as a LIFETIME org limit (no monthly refresh), with no fallback model (previously 50 requests / 1M tokens on GPT-5 with GPT-5 mini fallback). GPT-5 became a selectable model the same day. Budget accordingly before adopting for prototyping",
+      source: "SalesforceBen (2026-05-15), Salesforce developer billing docs",
+      date: "2026-06-01",
+    },
+    {
+      description:
         "Launched 2026-04-15 at Salesforce TDX 2026 as part of the broader Headless 360 announcement. Vibes 2.0 specifically is the multi-model + open-harness iteration of the earlier Agentforce Vibes; the 2.0 label signals this is a significant rework rather than an incremental update",
       source: "VentureBeat, SalesforceBen (TDX 2026 coverage)",
       date: "2026-04",
@@ -77,8 +83,9 @@ export const agentforceVibes: ToolReview = {
   verdict:
     "Agentforce Vibes 2.0 + Headless 360 is one of the more strategically consequential enterprise AI releases of 2026. The deeper story isn't the agent -- it's that Salesforce now exposes every piece of its platform as API/MCP/CLI, which means external agents (Claude Code, Cursor, Codex) can operate the world's biggest CRM directly. For enterprise Salesforce buyers, this is the new baseline. For everyone else, it's mostly a signal that the agent-driven-enterprise-software era has started arriving in enterprise SaaS, not a product you can buy today.",
 
-  lastReviewedDate: "2026-04-21",
+  lastReviewedDate: "2026-07-05",
   dataSources: [
+    { name: "SalesforceBen: Agentforce Vibes no longer free for use", url: "https://www.salesforceben.com/agentforce-vibes-no-longer-free-for-use/", dateAccessed: "2026-07-05" },
     { name: "VentureBeat: Salesforce Headless 360 launch", url: "https://venturebeat.com/technology/salesforce-launches-headless-360-to-turn-its-entire-platform-into-infrastructure-for-ai-agents", dateAccessed: "2026-04-21" },
     { name: "The Register: Salesforce Headless 360", url: "https://www.theregister.com/2026/04/15/salesforce_headless_360/", dateAccessed: "2026-04-21" },
     { name: "SalesforceBen: TDX 2026 keynote coverage", url: "https://www.salesforceben.com/salesforce-headless-360-and-agentforce-vibes-2-0-revealed-at-tdx-2026/", dateAccessed: "2026-04-21" },
@@ -87,5 +94,5 @@ export const agentforceVibes: ToolReview = {
   status: "active",
   metaTitle: "Agentforce Vibes 2.0 Review 2026: Salesforce Multi-Model Agent Platform",
   metaDescription:
-    "Agentforce Vibes 2.0 review. Salesforce multi-model agent (Claude + GPT-5) + Headless 360 turns all SFDC capabilities into APIs/MCP/CLI. TDX 2026 launch.",
+    "Agentforce Vibes 2.0 review. Salesforce multi-model agent (Claude + GPT-5) + Headless 360 turns all SFDC capabilities into APIs/MCP/CLI. No longer free as of June 2026 -- billing details inside.",
 };

@@ -57,6 +57,11 @@ export const gemini: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "GEMINI SPARK ON MACOS (2026-06-30/07-01): Google's agentic assistant Gemini Spark launched on the Mac Gemini app in beta -- Google AI Ultra subscribers, 18+, US only (gemini.google/mac). Local file automation, MCP support, and new connected apps: Canva, Dropbox, Instacart, OpenTable, Zillow Rentals, plus Google Tasks/Keep. Google's answer to Claude desktop agents and OpenAI's Codex/Operator surface war on the desktop",
+      source: "blog.google (blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-june-2026/), TechCrunch 2026-07-01",
+      date: "2026-07-01",
+    },
+    {
       description: "NEW MEDIA MODELS (2026-06-30, vendor post): Google shipped **Nano Banana 2 Lite** (`gemini-3.1-flash-lite-image`) and **Gemini Omni Flash** (`gemini-omni-flash-preview`) to AI Studio, the Gemini API, and the Enterprise Agent Platform. Nano Banana 2 Lite is Google's 'fastest, most cost-efficient Gemini Image model' -- text-to-image in ~4 seconds at **$0.034 per 1K-resolution image** (coming to AI Mode in Search, the Gemini app, NotebookLM, and Google Photos). Gemini Omni Flash does video generation + conversational (natural-language) video editing and multimodal referencing at **$0.10 per second of video output** (10-second clips at launch, longer coming); SynthID watermarked. Both target high-volume, low-latency workflows. See the nano-banana and veo pages for detail.",
       source: "blog.google (blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/)",
       date: "2026-06-30",
@@ -151,10 +156,11 @@ export const gemini: ToolReview = {
   notFor: "Anyone who needs the best raw output quality. Claude and GPT-4 both write better. Also not for anyone spooked by Google's history of abandoning products.",
   verdict: "Gemini's strength is the ecosystem play. The 1M context window is genuinely useful for long documents, and the Google Workspace integration is something neither OpenAI nor Anthropic can match. But purely as an LLM, the output quality is a step behind Claude and GPT-4. Pick Gemini if you're deep in Google's ecosystem. Otherwise, the other two are better standalone.",
 
-  lastReviewedDate: "2026-07-04",
+  lastReviewedDate: "2026-07-05",
   dataSources: [
     { name: "Google Blog: Gemini Omni Flash + Nano Banana 2 Lite (2026-06-30)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/", dateAccessed: "2026-07-04" },
     { name: "Google Blog: Computer use in Gemini 3.5 Flash (2026-06-24)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/", dateAccessed: "2026-07-04" },
+    { name: "Google Blog: Gemini Spark updates June 2026 (macOS beta)", url: "https://blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-june-2026/", dateAccessed: "2026-07-05" },
     { name: "Google Developers Blog: Transitioning Gemini CLI to Antigravity CLI (shutdown took effect 2026-06-18)", url: "https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/", dateAccessed: "2026-06-18" },
     { name: "Gemini API changelog: Veo 2.0/3.0 (6/30), Nano Banana preview (6/25), Imagen 4.0 (8/17) shutdowns", url: "https://ai.google.dev/gemini-api/docs/changelog", dateAccessed: "2026-06-18" },
     { name: "Google Blog: Gemini 3.5 frontier intelligence with action (2026-05-19)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/", dateAccessed: "2026-05-20" },

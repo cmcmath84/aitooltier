@@ -52,6 +52,11 @@ export const alexaPlus: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "ALEXA PODCASTS SHIPPED (2026-05-18): Alexa+ can now generate on-demand podcast episodes on any topic, with two AI co-host voices. Users preview the episode plan and adjust length and tone before generation; content is sourced from 200+ licensed publications (AP, Reuters, Washington Post, TIME, Forbes, local papers). US Alexa+ customers only; included with Prime, $19.99/mo otherwise",
+      source: "Amazon newsroom (aboutamazon.com), TechCrunch 2026-05-18",
+      date: "2026-05-18",
+    },
+    {
       description: "Cross-device conversation handoff occasionally drops context when moving from Echo to Fire TV mid-task, forcing users to repeat prompts",
       source: "Reddit r/alexa",
       date: "2026-03",
@@ -66,8 +71,9 @@ export const alexaPlus: ToolReview = {
   notFor: "Users outside the Amazon ecosystem, privacy-conscious users who don't want always-on microphones, or anyone who wants the smartest AI assistant available. ChatGPT on iOS and Gemini on Android both produce noticeably better outputs and don't require hardware investment.",
   verdict: "Alexa+ is Amazon's overdue upgrade to what voice assistants should have been three years ago -- genuine multi-turn agent capability, persistent memory, and task chaining across your home ecosystem. It's not ChatGPT-smart, but for Prime households the value math is hard to beat: every Echo device in the house just got materially more capable for zero additional cost. The honest read: if you already own Alexa hardware and pay for Prime, Alexa+ is a no-brainer starting today. If you're picking a single AI assistant in 2026 and starting from zero, Gemini on Android or ChatGPT on iOS offers better intelligence for free.",
 
-  lastReviewedDate: "2026-04-16",
+  lastReviewedDate: "2026-07-05",
   dataSources: [
+    { name: "Amazon newsroom: Alexa Podcasts", url: "https://www.aboutamazon.com/news/devices/alexa-podcasts-ai-generated-audio-episodes", dateAccessed: "2026-07-05" },
     { name: "Amazon Alexa+ product page", url: "https://www.amazon.com/alexaplus", dateAccessed: "2026-04-16" },
     { name: "TechCrunch: Alexa+ available to everyone in the U.S.", url: "https://techcrunch.com/2026/02/04/alexa-amazons-ai-assistant-is-now-available-to-everyone-in-the-u-s/", dateAccessed: "2026-04-16" },
     { name: "CNBC: Alexa+ US release", url: "https://www.cnbc.com/2026/02/04/amazon-alexa-plus-us-releas.html", dateAccessed: "2026-04-16" },
@@ -82,5 +88,5 @@ export const alexaPlus: ToolReview = {
     quirks: "Defaults toward Amazon ecosystem actions when ambiguous (Prime Video over Netflix, Whole Foods over other grocery). Occasionally references things it did 'for you' in shopping assistant mode. Still has the classic Alexa habit of asking clarifying questions out loud instead of making assumptions.",
   },
   metaTitle: "Alexa+ Review 2026: Amazon's Rebuilt AI Assistant, Tested",
-  metaDescription: "Alexa+ review. Amazon's multi-turn AI assistant across Echo, Fire TV, and Ring. Free for Prime, $19.99 standalone. Pros, cons, vs ChatGPT. April 2026.",
+  metaDescription: "Alexa+ review. Amazon's multi-turn AI assistant across Echo, Fire TV, and Ring. AI podcast generation (May 2026), free for Prime, $19.99 standalone. Pros, cons, vs ChatGPT. July 2026.",
 };

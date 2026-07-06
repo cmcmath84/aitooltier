@@ -64,13 +64,20 @@ export const siriAi: ToolReview = {
       source: "Apple newsroom",
       date: "2026-06-08",
     },
+    {
+      description: "EU DELAY IS DMA-DRIVEN, TALKS ONGOING: Apple's own newsroom post (2026-06-08) attributes the EU iPhone/iPad delay to the Digital Markets Act -- the European Commission rejected Apple's 'Trusted System Agent' proposal and its 18-month rollout plan. Follow-up (reported by FT, 2026-07-01): Tim Cook held a virtual meeting with EU tech chief Henna Virkkunen on June 30; an EU spokesperson called it a 'constructive exchange.' Still no committed EU date",
+      source: "Apple newsroom (apple.com/newsroom/2026/06/due-to-dma-siri-ai-delayed-in-eu-for-ios-27-and-ipados-27/), FT via MacRumors 2026-07-01",
+      date: "2026-07-01",
+    },
   ],
   bestFor: "Anyone already in the Apple ecosystem with a qualifying device who wants a capable assistant woven into the OS rather than bolted on through an app. Come fall, this is the default AI for hundreds of millions of iPhones.",
   notFor: "Anyone who needs it today (it's developer-beta only), EU iPhone users, anyone in China, older-device owners, or power users who want full control over model choice and parameters -- use ChatGPT, Claude, or Gemini apps directly instead.",
   verdict: "Apple finally did the Siri rebuild everyone has demanded since 2023 -- and did it by admitting it needed help, building its new foundation models in collaboration with Google's Gemini. The pitch is compelling: a frontier-class conversational assistant with on-screen awareness and personal-context search, free with the OS, plus an Extensions framework that lets you swap in Claude or Gemini as your system assistant. The catch is that none of it reaches regular users until the public beta in July and the fall OS releases, the device floor is steep, and the EU/China exclusions cut out two enormous markets. We're listing it now because the announcement reshapes the assistant landscape -- but score it as a promise, not a product, until the fall ships.",
 
-  lastReviewedDate: "2026-06-09",
+  lastReviewedDate: "2026-07-05",
   dataSources: [
+    { name: "Apple newsroom: Due to DMA, Siri AI delayed in EU for iOS 27 and iPadOS 27 (2026-06-08)", url: "https://www.apple.com/newsroom/2026/06/due-to-dma-siri-ai-delayed-in-eu-for-ios-27-and-ipados-27/", dateAccessed: "2026-07-05" },
+    { name: "MacRumors: Cook 'constructive' EU talks on Siri AI launch (FT-sourced, 2026-07-01)", url: "https://www.macrumors.com/2026/07/01/tim-cook-constructive-talks-eu-siri-ai-launch/", dateAccessed: "2026-07-05" },
     { name: "Apple newsroom: Apple unveils next generation of Apple Intelligence, Siri AI, and more (2026-06-08)", url: "https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/", dateAccessed: "2026-06-09" },
     { name: "Apple newsroom: New intelligence frameworks and advanced tools (2026-06-08)", url: "https://www.apple.com/newsroom/2026/06/apple-aids-app-development-with-new-intelligence-frameworks-and-advanced-tools/", dateAccessed: "2026-06-09" },
     { name: "TechCrunch: WWDC 2026 -- everything announced", url: "https://techcrunch.com/2026/06/09/wwdc-2026-everything-announced-on-siri-ai-os-27-apple-intelligence-and-more/", dateAccessed: "2026-06-09" },

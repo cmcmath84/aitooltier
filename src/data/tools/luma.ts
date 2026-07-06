@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const luma: ToolReview = {
   slug: "luma",
   name: "Luma Dream Machine",
-  tagline: "Fast AI video generator with its own Ray 3 model plus access to Veo 3 and Kling in one interface. Sora option removed from the model picker after OpenAI retired it on 2026-04-26",
+  tagline: "Fast AI video generator with its own Ray3.2 model (June 2026: 16 keyframes, HDR/EXR, 20s 1080p clips) plus access to Veo 3 and Kling in one interface",
   category: "ai-video-generators",
   url: "https://lumalabs.ai/dream-machine",
 
@@ -50,6 +50,11 @@ export const luma: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "RAY3.2 SHIPPED (2026-06-09): Luma's newest in-house model + API -- up to 16 keyframes per clip, facial performance tracking across up to 8 faces, native HDR with 16-bit EXR export, reframing, and clips up to 20 seconds at 1080p. Separately, Luma announced the Open Physical AI Lab (2026-06-01) -- an open-science lab targeting generalization in physical AI / world models, marking Luma's expansion beyond consumer video into robotics research",
+      source: "lumalabs.ai/news (Ray3.2 + Open Physical AI Lab posts), Semafor",
+      date: "2026-06",
+    },
+    {
       description: "Sora dropped from Luma's model picker after OpenAI's consumer Sora shutdown on 2026-04-26 (API survives until 2026-09-24 but Luma's integration was the consumer surface). Older review copy referencing 'Sora 2' was tied to OpenAI's now-retired branding -- updated tagline + pros to reflect current model lineup (Ray 3 + Veo 3 + Kling)",
       source: "OpenAI Help Center, Luma Labs changelog",
       date: "2026-04-26",
@@ -69,8 +74,10 @@ export const luma: ToolReview = {
   notFor: "Filmmakers who need precise camera control and consistent characters across shots -- Runway offers more control. Also not for anyone on a tight budget given the pricing.",
   verdict: "Luma Dream Machine's value proposition is speed and model aggregation. Being able to test the same prompt across Ray 3, Veo 3, and Kling from one dashboard is genuinely useful -- it saves you from subscribing to multiple services. The trade-off is that you get less control than dedicated tools like Runway, and the quality ceiling depends on which model you're using. The OpenAI Sora consumer shutdown (2026-04-26) removed one of Luma's model-picker options, narrowing the differentiation slightly -- but the core multi-model premise still holds. At $24/mo for Standard, it's a reasonable entry point for video experimentation. The Pro tier is harder to justify unless you're doing commercial volume.",
 
-  lastReviewedDate: "2026-05-01",
+  lastReviewedDate: "2026-07-05",
   dataSources: [
+    { name: "Luma Labs news: Introducing Ray3.2", url: "https://lumalabs.ai/news/introducing-ray-3-2", dateAccessed: "2026-07-05" },
+    { name: "Luma Labs news: Open Physical AI Lab", url: "https://lumalabs.ai/news/luma-open-physical-ai-lab", dateAccessed: "2026-07-05" },
     { name: "Luma Labs official site", dateAccessed: "2026-03-31" },
     { name: "Reddit r/aivideo", dateAccessed: "2026-03-31" },
     { name: "Discord community feedback", dateAccessed: "2026-03-31" },
@@ -78,6 +85,6 @@ export const luma: ToolReview = {
   ],
   affiliateUrl: "https://lumalabs.ai/dream-machine",
   status: "active",
-  metaTitle: "Luma Dream Machine Review 2026: Fast AI Video With Multi-Model Access",
-  metaDescription: "Luma Dream Machine review. Fast video generation with Ray 3 plus Veo 3 + Kling access (Sora dropped post 2026-04-26 OpenAI shutdown). Speed vs. quality trade-offs. Scores, pricing.",
+  metaTitle: "Luma Dream Machine Review 2026: Ray3.2 + Multi-Model AI Video",
+  metaDescription: "Luma Dream Machine review. Ray3.2 (June 2026: 16 keyframes, 8-face tracking, HDR/EXR, 20s 1080p) plus Veo 3 + Kling access in one interface. Scores, pricing, trade-offs. July 2026.",
 };

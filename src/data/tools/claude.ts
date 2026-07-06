@@ -75,6 +75,11 @@ export const claude: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT LAUNCH -- CLAUDE SCIENCE (2026-06-30): Anthropic launched **Claude Science**, an AI workbench for scientists -- a generalist coordinating agent plus 60+ curated skills/connectors preconfigured for genomics, single-cell analysis, proteomics, structural biology, and cheminformatics, with auditable output history. **Beta for Claude Pro, Max, Team, and Enterprise users.** Anthropic also announced up to 50 'AI for Science' grants of up to $30,000 in credits (applications through July 15, awards by July 31), and said it will use the product internally for drug-discovery research into rare/neglected diseases. Launched the same day as Sonnet 5 and largely overshadowed by it in coverage. Separately (2026-07-02) Anthropic published a follow-up detailing Fable 5's cyber safeguards and its jailbreak-response framework",
+      source: "Anthropic (anthropic.com/news/claude-science-ai-workbench), MIT Technology Review (2026-06-30), STAT News",
+      date: "2026-06-30",
+    },
+    {
       description: "ACCESS RESTORED (2026-07-01): The US government **lifted the export controls on Fable 5 and Mythos 5 on June 30**, and Anthropic redeployed **Claude Fable 5 globally on July 1, 2026** -- across Claude Platform, claude.ai, Claude Code, and Claude Cowork -- ending a 19-day suspension. To re-launch, Anthropic shipped a new safety classifier that it says blocks the specific technique described in the Amazon jailbreak report 'in over 99% of cases.' Access economics on paid plans: Fable 5 is **included for up to 50% of weekly usage limits through July 7**, then moves to usage credits. **Mythos 5 was only PARTIALLY restored** -- to a set of US organizations with US-government approval -- and Anthropic is still working to expand access to the broader domestic + international Glasswing partners (see the claude-mythos page). Net for users today: Fable 5 is selectable again everywhere; the Fable-tier ceiling is back.",
       source: "Anthropic (anthropic.com/news/redeploying-fable-5), CNBC (2026-06-30, export controls lifted)",
       date: "2026-07-01",
@@ -204,8 +209,9 @@ export const claude: ToolReview = {
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
   verdict: "Claude is the LLM you pick when quality matters more than features -- and after a turbulent June, the full lineup is back on the table. Fable 5 (June 9, 2026), the first publicly usable Mythos-class model, was pulled by a US-government export-control order on June 12; the controls were lifted June 30 and Anthropic redeployed Fable 5 globally on July 1, so the Fable-tier ceiling is available again (with a new classifier hardening it against the reported jailbreak). Alongside the restoration, the more consequential change for most users is Claude Sonnet 5 (June 30): the new default on Free and Pro, 'most agentic Sonnet yet,' at $2/$10 per 1M through August. Above it sits Opus 4.8 -- the $5/$25 workhorse with effort control, a cheap fast mode, a 1M context window, high-res vision, and MCP -- still arguably the best writing-and-reasoning model you can buy, with Apple naming Claude a selectable system assistant in iOS 27 this fall. The practical read: pick Sonnet 5 for everyday agentic/coding work, Opus 4.8 when quality is non-negotiable, and Fable 5 when you need the absolute frontier.",
 
-  lastReviewedDate: "2026-07-04",
+  lastReviewedDate: "2026-07-05",
   dataSources: [
+    { name: "Anthropic: Claude Science AI workbench (2026-06-30)", url: "https://www.anthropic.com/news/claude-science-ai-workbench", dateAccessed: "2026-07-05" },
     { name: "Anthropic: Redeploying Fable 5 (restored 2026-07-01 after controls lifted 2026-06-30)", url: "https://www.anthropic.com/news/redeploying-fable-5", dateAccessed: "2026-07-04" },
     { name: "Anthropic: Introducing Claude Sonnet 5 (2026-06-30)", url: "https://www.anthropic.com/news/claude-sonnet-5", dateAccessed: "2026-07-04" },
     { name: "Anthropic: Statement on the US government directive to suspend access to Fable 5 and Mythos 5 (2026-06-12)", url: "https://www.anthropic.com/news/fable-mythos-access", dateAccessed: "2026-06-18" },

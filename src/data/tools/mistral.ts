@@ -92,6 +92,11 @@ export const mistral: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "LEANSTRAL 1.5 RELEASED (2026-07-02, hit #1 on Hacker News 7/4): a formal-verification / Lean 4 theorem-proving model -- 119B total / 6B active params, Apache 2.0 open weights (mistralai/Leanstral-1.5-119B-A6B on Hugging Face) plus a FREE API endpoint (leanstral-1-5). Vendor-reported results: saturates miniF2F (100%), 587/672 on PutnamBench, 87% FATE-H / 34% FATE-X. Niche (math/proof engineering) but notable as a genuinely open frontier release in a specialty domain where closed labs dominate",
+      source: "Mistral AI blog (mistral.ai/news/leanstral-1-5)",
+      date: "2026-07-02",
+    },
+    {
       description: "REBRAND (2026-05-28): **Le Chat is now 'Vibe'** -- Mistral merged its consumer chat product into a single agent brand spanning Work Mode and Code Mode, with a new VS Code extension and CLI. Mistral Medium 3.5 (public preview since 4/29, broader rollout 5/22) is the default model powering Vibe's remote coding agents. Adjacent late-May moves: Emmi AI (physics/industrial simulation, via acquisition) added to the enterprise platform and a new Search Toolkit (5/28). If you bookmarked chat.mistral.ai as 'Le Chat,' it's the same product under the new name -- pricing tiers unchanged",
       source: "Mistral AI blog (mistral.ai/news/vibe-agent, mistral.ai/news/vibe-remote-agents-mistral-medium-3-5)",
       date: "2026-05-28",
@@ -121,8 +126,9 @@ export const mistral: ToolReview = {
   notFor: "Non-technical users looking for a polished chat experience. ChatGPT and Claude are much better as consumer products.",
   verdict: "Mistral is the scrappy underdog that keeps surprising people. Their models are impressively efficient -- you get near-GPT-4 quality at a fraction of the API cost. But the consumer experience (Le Chat) is rough. This is primarily a developer's tool. If you're building AI applications on a budget, Mistral should be on your shortlist.",
 
-  lastReviewedDate: "2026-06-09",
+  lastReviewedDate: "2026-07-05",
   dataSources: [
+    { name: "Mistral AI: Leanstral 1.5 (2026-07-02)", url: "https://mistral.ai/news/leanstral-1-5", dateAccessed: "2026-07-05" },
     { name: "Mistral AI: Workflows public preview (2026-04-28)", url: "https://mistral.ai/news/workflows", dateAccessed: "2026-05-04" },
     { name: "Mistral AI: Vibe Remote Agents + Mistral Medium 3.5 (2026-04-29)", url: "https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5", dateAccessed: "2026-04-30" },
     { name: "Mistral AI official site", url: "https://mistral.ai", dateAccessed: "2026-04-30" },

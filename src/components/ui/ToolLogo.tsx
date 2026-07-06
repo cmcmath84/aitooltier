@@ -18,6 +18,8 @@ const logoMap: Record<string, string> = {
   // LLMs / chatbots
   claude: "/logos/anthropic.png",
   "claude-mythos": "/logos/anthropic.png",
+  "claude-science": "/logos/anthropic.png",
+  longcat: "/logos/meituan.png",
   chatgpt: "/logos/openai.png",
   "gpt-rosalind": "/logos/openai.png",
   "gpt-cyber": "/logos/openai.png",

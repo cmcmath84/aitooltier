@@ -44,6 +44,7 @@ import { stepfun } from "./stepfun";
 import { commandA } from "./command-a";
 import { hunyuan3 } from "./hunyuan-3";
 import { mimo } from "./mimo";
+import { longcat } from "./longcat";
 
 // AI Writing Tools
 import { jasper } from "./jasper";
@@ -132,6 +133,7 @@ import { synthesia } from "./synthesia";
 import { juliusAi } from "./julius-ai";
 import { tableauAi } from "./tableau-ai";
 import { powerBi } from "./power-bi";
+import { claudeScience } from "./claude-science";
 
 // AI Presentation Tools
 import { napkinAi } from "./napkin-ai";
@@ -224,6 +226,7 @@ export const tools: ToolReview[] = [
   commandA,
   hunyuan3,
   mimo,
+  longcat,
   // Writing
   jasper,
   copyAi,
@@ -301,6 +304,7 @@ export const tools: ToolReview[] = [
   juliusAi,
   tableauAi,
   powerBi,
+  claudeScience,
   // Presentation Tools
   napkinAi,
   beautifulAi,
