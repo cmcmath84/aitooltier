@@ -7,6 +7,7 @@ const logoMap: Record<string, string> = {
   "dall-e": "/logos/openai.png",
   "nano-banana": "/logos/gemini.png",
   "mai-image-2": "/logos/microsoft.png",
+  "muse-image": "/logos/meta.png",
   "stable-diffusion": "/logos/stability.png",
   "leonardo-ai": "/logos/leonardo.png",
   "adobe-firefly": "/logos/adobe.png",

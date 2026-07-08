@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const grokVoice: ToolReview = {
   slug: "grok-voice",
   name: "Grok Speech (STT + TTS APIs)",
-  tagline: "xAI's standalone voice APIs -- launched 2026-04-17. Built on the stack that powers Grok Voice, Tesla vehicles, and Starlink customer support. $0.10/hr STT batch, $4.20 per 1M characters TTS, 25+ languages, word-level timestamps + speaker diarization",
+  tagline: "xAI's standalone voice APIs -- launched 2026-04-17. Built on the stack that powers Grok Voice, Tesla vehicles, and Starlink customer support. $0.10/hr STT batch, $4.20 per 1M characters TTS, 25+ languages. Now 26 flagship TTS voices (21 new added 2026-07-06), custom voice cloning from ~1 min of audio, and a no-code Grok Voice Agent Builder",
   category: "ai-voice-audio",
   url: "https://x.ai/news/grok-stt-and-tts-apis",
 
@@ -63,9 +63,14 @@ export const grokVoice: ToolReview = {
     "Brand-new (launched 2026-04-17) -- expect early rough edges in non-English accents and in the streaming WebSocket API as the infrastructure scales",
     "xAI's post-SpaceX-acquisition status (SpaceX bought xAI, announced 2026-02-02) means procurement teams at US-regulated orgs may need to re-run vendor-approval workflows. Bring that up early with your security team if you're enterprise",
     "No consumer web UI -- this is API-only. ElevenLabs' Creator/Studio web apps remain easier for one-off podcast or audiobook work",
-    "Voice cloning from a few seconds of input isn't exposed in this release -- the TTS voices are xAI-provided presets. If custom-voice cloning is the requirement, ElevenLabs or Microsoft MAI-Voice-1 (Azure Foundry) still win",
+    "Still API/console-first -- no polished consumer web app for one-off podcast or audiobook production the way ElevenLabs Studio offers, even with the new no-code Voice Agent Builder",
   ],
   knownIssues: [
+    {
+      description: "EXPANSION (2026-07-06): xAI released **21 new flagship TTS voices** (Lumen, Castor, Naksh, Atlas, Carina, Zagan, Helix, Orion, Luna, and more), bringing the lineup to 26 -- each cast for a specific job (support, characters, commentary, advertising, education) and natively multilingual across Grok Voice's 25+ languages. The original five (Ara, Eve, Leo, Rex, Sal) were retrained for more natural pacing/phrasing/emphasis. All are available in the realtime Voice Agent API, the Text-to-Speech API, and a **new no-code Grok Voice Agent Builder** in the xAI console. **Custom voice cloning from ~1 minute of audio is now exposed** (closes a prior gap vs ElevenLabs). Speech tags ([pause], <whisper>, <emphasis>, <soft>) control delivery",
+      source: "xAI (x.ai/news/new-flagship-voices)",
+      date: "2026-07-06",
+    },
     {
       description: "Launched 2026-04-17 -- expect first-week rate-limit surprises and occasional multilingual hiccups in the streaming path. xAI's console rate limits are documented but may be adjusted during the shakedown period",
       source: "xAI STT/TTS announcement",
@@ -83,11 +88,12 @@ export const grokVoice: ToolReview = {
     },
   ],
   bestFor: "Developers building voice agents, real-time transcription tools, accessibility features, or high-volume TTS workloads where the cost per hour of audio actually matters at scale. Strong fit for phone-call and meeting transcription use cases where xAI's published WER advantage (5.0% on phone-call entities vs. ElevenLabs 12.0%) compounds quickly.",
-  notFor: "Consumer creators who want a web UI with voice presets and style sliders -- use ElevenLabs Creator. Also not the right pick if custom voice cloning is the requirement (use ElevenLabs or Microsoft MAI-Voice-1). Enterprises in highly-regulated verticals should confirm the post-acquisition vendor pathway works for them before committing.",
+  notFor: "Consumer creators who want a polished web studio with voice presets and style sliders -- ElevenLabs Creator/Studio is still easier for one-off podcast or audiobook work. Enterprises in highly-regulated verticals should confirm the post-acquisition (SpaceX) vendor pathway works for them before committing.",
   verdict: "Grok Speech is xAI's clearest 'we are a platform, not just a chatbot' shot at the voice-API category, and on day-one pricing alone it's a credible threat to ElevenLabs, Deepgram, and AssemblyAI for production STT workloads. The published WER numbers are aggressive but plausible given the Tesla / Starlink deployment footprint. TTS at $4.20/1M char with real expressive tags undercuts ElevenLabs on price while narrowing the expressiveness gap. The open questions are (1) how it handles long-tail accents and non-English quality in practice, (2) whether the post-SpaceX procurement pathway slows enterprise adoption, and (3) how ElevenLabs responds on price. For new voice-API buyers shipping in Q2 2026, Grok Speech is now a first-call option alongside ElevenLabs and Deepgram.",
 
-  lastReviewedDate: "2026-04-18",
+  lastReviewedDate: "2026-07-07",
   dataSources: [
+    { name: "xAI: 21 New Flagship Grok Voices (2026-07-06)", url: "https://x.ai/news/new-flagship-voices", dateAccessed: "2026-07-07" },
     { name: "xAI: Grok Speech to Text and Text to Speech APIs", url: "https://x.ai/news/grok-stt-and-tts-apis", dateAccessed: "2026-04-18" },
     { name: "xAI STT docs", url: "https://docs.x.ai/developers/model-capabilities/audio/speech-to-text", dateAccessed: "2026-04-18" },
     { name: "xAI TTS docs", url: "https://docs.x.ai/developers/model-capabilities/audio/text-to-speech", dateAccessed: "2026-04-18" },
@@ -96,5 +102,5 @@ export const grokVoice: ToolReview = {
   affiliateUrl: "https://x.ai/news/grok-stt-and-tts-apis",
   status: "active",
   metaTitle: "Grok Speech (STT + TTS) Review 2026: xAI Voice APIs Launched April 17",
-  metaDescription: "Grok Speech review. xAI's new STT + TTS APIs launched Apr 17 2026. $0.10/hr STT batch, $4.20 per 1M char TTS, 25+ languages, beats ElevenLabs + Deepgram on WER.",
+  metaDescription: "Grok Speech review. xAI's STT + TTS APIs. $0.10/hr STT batch, $4.20 per 1M char TTS, 26 voices (21 new July 2026), custom voice cloning + no-code Voice Agent Builder, 25+ languages. Beats ElevenLabs + Deepgram on WER.",
 };

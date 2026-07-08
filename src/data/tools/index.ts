@@ -12,6 +12,7 @@ import { kreaAi } from "./krea-ai";
 import { nightcafe } from "./nightcafe";
 import { nanoBanana } from "./nano-banana";
 import { maiImage2 } from "./mai-image-2";
+import { museImage } from "./muse-image";
 
 // AI LLMs & Models
 import { claude } from "./claude";
@@ -196,6 +197,7 @@ export const tools: ToolReview[] = [
   nightcafe,
   nanoBanana,
   maiImage2,
+  museImage,
   // LLMs
   claude,
   claudeMythos,

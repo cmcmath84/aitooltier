@@ -65,6 +65,11 @@ export const manusAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "META ACQUISITION BLOCKED BY CHINA, THEN UNWOUND (2026): Meta had agreed to acquire Manus for ~$2B (announced Dec 2025), but China's National Development and Reform Commission opened an investigation in Jan 2026 and **prohibited the foreign acquisition in late April 2026**, ordering the parties to withdraw from the deal. By **June 2026 Meta began dismantling the deal** to comply -- completing an operational split, ordering employees to stop using Manus tools for internal projects, and blocking Manus staff from Meta's internal data systems. Manus (which had moved HQ from Beijing to Singapore in mid-2025) remains independent. Practical read for buyers: near-term ownership/roadmap uncertainty and a live signal of US-China AI decoupling around this vendor; it did NOT change Manus's product or pricing, but factor the governance overhang into any long-term dependency",
+      source: "CNBC (2026-04-27 block + 2026-06-12 dismantling), NPR, Fortune, The Register",
+      date: "2026-06-12",
+    },
+    {
       description: "PRODUCT (2026-04-30): Manus shipped Cloud Computer -- 24/7 persistent virtual machines (Ubuntu, SSH + web terminal access) for autonomous agents. Unlike the prior temporary sandbox, file system + running processes + databases + scheduled jobs persist across sessions, enabling overnight work, long-running scrapes, and bot hosting that survives between chat turns. Manus auto-routes tasks to Cloud Computer when continuous uptime is needed; no manual provisioning. Tier-based pricing (Basic / Standard / Advanced) -- exact monthly costs not disclosed on launch blog. This is a meaningful capability upgrade against OpenClaw and Hermes (which both require user-provisioned infra to achieve the same persistence) and narrows the 'less powerful but easier' framing in our verdict",
       source: "Manus AI blog (manus.im/blog/manus-cloud-computer)",
       date: "2026-04-30",
@@ -84,8 +89,10 @@ export const manusAi: ToolReview = {
   notFor: "Anyone who wants to own their agent's data and skills end-to-end, or who needs to swap LLM providers freely. If self-hosting is an option, OpenClaw or Hermes will give you more capability for less ongoing cost.",
   verdict: "Manus AI is the hosted counterweight to the open-source wave. It's less powerful than OpenClaw or Hermes on raw capability, but dramatically easier to adopt -- and for 80% of would-be agent users, 'easier to adopt' is the feature they actually need. The Pro tier at $20/month is fair if you'd otherwise spend a weekend on setup and $10/month on a VPS. Just go in knowing you're picking convenience and paying for it in lock-in and control.",
 
-  lastReviewedDate: "2026-05-04",
+  lastReviewedDate: "2026-07-07",
   dataSources: [
+    { name: "CNBC: China blocks Meta's $2B takeover of Manus (2026-04-27)", url: "https://www.cnbc.com/2026/04/27/meta-manus-china-blocks-acquisition-ai-startup.html", dateAccessed: "2026-07-07" },
+    { name: "CNBC: Meta begins dismantling $2B Manus deal on Beijing's orders (2026-06-12)", url: "https://www.cnbc.com/2026/06/12/meta-reportedly-begins-dismantling-2-billion-manus-deal-on-beijings-orders.html", dateAccessed: "2026-07-07" },
     { name: "Manus AI: Manus Cloud Computer launch (2026-04-30)", url: "https://manus.im/blog/manus-cloud-computer", dateAccessed: "2026-05-04" },
     { name: "Manus AI official site", url: "https://manus.im/", dateAccessed: "2026-05-04" },
     { name: "Reddit r/aiToolForBusiness: OpenClaw alternatives", url: "https://www.reddit.com/r/aiToolForBusiness/comments/1rd8pww/50_openclaw_alternatives_for_business/", dateAccessed: "2026-04-13" },
@@ -93,5 +100,5 @@ export const manusAi: ToolReview = {
   affiliateUrl: "https://manus.im/",
   status: "active",
   metaTitle: "Manus AI Review 2026: Hosted Autonomous AI Agent Over Telegram, Tested",
-  metaDescription: "Manus AI review. Hosted autonomous agent over Telegram/WhatsApp/Slack. The no-setup alternative to OpenClaw and Hermes. Scores, pricing, trade-offs. April 2026.",
+  metaDescription: "Manus AI review. Hosted autonomous agent over Telegram/WhatsApp/Slack. The no-setup alternative to OpenClaw and Hermes. China blocked Meta's $2B acquisition (2026). Scores, pricing, trade-offs. July 2026.",
 };

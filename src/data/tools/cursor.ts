@@ -68,6 +68,11 @@ export const cursor: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "SPACEXAI JOINT MODEL IMMINENT (reported 2026-07-07 by Reuters/The Information -- NOT yet shipped): SpaceXAI (xAI, now under SpaceX) and Cursor/Anysphere are reported to be launching their first jointly-developed model 'as soon as Wednesday' (2026-07-08), trained partly on Cursor coding data and positioned to compete with Claude Opus 4.8 and GPT-5.5 on speed. The launch was reportedly pushed back earlier that week to improve efficiency. This is the model behind the 'Grok 4.5' rumors; there is NO vendor-primary confirmation yet from cursor.com or x.ai. Watch for the actual release before treating it as available",
+      source: "Reuters relaying The Information (2026-07-07)",
+      date: "2026-07-07",
+    },
+    {
       description: "TEAMS PRICING OVERHAUL (2026-06, effective immediately for new customers / **billing cycles starting 2026-07-01 for renewals**): Cursor restructured Teams into TWO usage pools per seat -- a 'generous' pool reserved for first-party Cursor models (Composer + Auto), and a separate pool for third-party API models (Claude/OpenAI/Gemini). **Standard seat: $32/mo annual ($40 monthly), now with MORE included usage at the same price** (Cursor credits Composer 2.5's cost efficiency). **New Premium seat: $96/mo annual ($120 monthly) = 5x the Standard seat's included usage at 3x the cost** -- for heavy agentic teams. Practical read: if your team lived on third-party frontier models, watch which pool your usage draws from now; the extra headroom is concentrated in the first-party Composer pool. NOT the June-2025 Pro-plan backlash -- this is a fresh Teams-tier change.",
       source: "Cursor blog (cursor.com/blog/teams-pricing-june-2026)",
       date: "2026-07-01",
@@ -167,8 +172,9 @@ export const cursor: ToolReview = {
   notFor: "Developers happy with their current editor setup who just want basic autocomplete -- Copilot is still less disruptive for that. Also not for anyone skeptical of Cursor's own coding model; if you want pure frontier-model access for every task, paying Claude or OpenAI directly and using Claude Code is cleaner.",
   verdict: "Cursor 3 + Composer 2 (April 2026) is the release where Cursor stops being an AI-augmented editor and becomes an agent-first dev environment. Composer 2's speed at $0.50/$2.50 per 1M tokens is the real story -- it makes tight iteration loops feel instant in a way frontier models can't, even if the quality is slightly below Opus 4.6. The multi-workspace + cross-platform handoff design assumes you want your agents everywhere; if you don't, it's overkill. The honest read: for developers willing to go all-in on agentic workflows, Cursor 3 is the 2026 default. For everyone else, Claude Code + Copilot is a simpler, less committing stack.",
 
-  lastReviewedDate: "2026-07-04",
+  lastReviewedDate: "2026-07-07",
   dataSources: [
+    { name: "Reuters/The Information: SpaceXAI + Cursor joint model imminent (2026-07-07)", url: "https://www.reuters.com/technology/", dateAccessed: "2026-07-07" },
     { name: "Cursor blog: Teams pricing (June 2026, renewals effective 2026-07-01)", url: "https://cursor.com/blog/teams-pricing-june-2026", dateAccessed: "2026-07-04" },
     { name: "Cursor: Development Environments for Cloud Agents (2026-05-13)", url: "https://cursor.com/blog/cloud-agent-development-environments", dateAccessed: "2026-05-13" },
     { name: "Cursor changelog: Microsoft Teams (2026-05-11)", url: "https://cursor.com/changelog/microsoft-teams", dateAccessed: "2026-05-13" },
