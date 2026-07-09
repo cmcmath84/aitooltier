@@ -20,13 +20,13 @@ export const windsurf: ToolReview = {
     {
       plan: "Free",
       price: "$0",
-      features: ["Unlimited autocomplete", "Limited Cascade actions", "Basic chat"],
+      features: ["Unlimited autocomplete", "Limited Devin Local agent actions (Cascade retired 2026-07-01)", "Basic chat"],
     },
     {
       plan: "Pro",
       price: "$20",
       period: "month (raised from $15 in March 2026)",
-      features: ["Cascade flows with daily/weekly quotas (replaced legacy monthly allocation)", "Claude Opus 4.7, GPT-5.4, Gemini access", "Priority completions"],
+      features: ["Devin Local agent flows with daily/weekly quotas (successor to Cascade, retired 2026-07-01)", "Claude Opus 4.7, GPT-5.4, Gemini access", "Priority completions"],
     },
     {
       plan: "Team",
@@ -59,6 +59,11 @@ export const windsurf: ToolReview = {
     "Community / third-party skill ecosystem is smaller than Cursor's, and the product is changing fast enough that third-party tutorials age quickly",
   ],
   knownIssues: [
+    {
+      description: "CASCADE END-OF-LIFE (2026-07-01, vendor blog): the legacy **Cascade local agent reached end-of-life on July 1, 2026** -- Devin Local, rewritten from scratch in Rust, is now the sole local agent ('the successor to Cascade as our primary local agent,' per Cognition; same capabilities and settings, up to 30% more token-efficient, adds subagents). Any automations or scripts that invoked Cascade directly stop working; quotas and plan structures carry over under the Devin Local name",
+      source: "Devin blog (devin.ai/blog/windsurf-is-now-devin-desktop/ -- Cascade migration section)",
+      date: "2026-07-01",
+    },
     {
       description: "REBRAND (2026-06-02): **Windsurf is now Devin Desktop.** Cognition shipped the rename as an over-the-air update (build 2026.5.26) -- windsurf.com/editor now titles itself 'Devin Desktop' and the changelog has become 'Devin Docs.' Nothing breaks: plans, pricing, settings, and extensions carry over unchanged. What's new in the bundle: the local agent is branded **Devin Local**, and **Devin Cloud agent access now starts on the $20 Pro plan** (previously enterprise-only positioning). The rebrand completes the post-acquisition consolidation -- Cognition now ships one product family (Devin Cloud, Devin Desktop, Devin Review) instead of two brands. Context: Cognition announced 2026-05-27 it has raised over $1B at a $26B valuation (Lux Capital, General Catalyst, 8VC)",
       source: "Devin blog (devin.ai/blog, 'Windsurf is now Devin Desktop', 2026-06-02), windsurf.com/editor, Cognition blog (cognition.ai/blog, 'More Devins in More Places')",
@@ -99,7 +104,7 @@ export const windsurf: ToolReview = {
   notFor: "Developers who just want great autocomplete and inline chat with BYO-API-key flexibility -- Cursor 3 has the deeper model catalog and Pro+ tier. Also not for teams with strict data-residency needs that preclude Cognition's cloud agents.",
   verdict: "The Windsurf name is gone -- as of June 2, 2026 this product is Devin Desktop, and the rebrand tells you exactly where Cognition is taking it: one Devin family where the IDE is the supervised surface and Devin Cloud is the autonomous one. Nothing about the editor itself changed in the rename (same VS Code base, plans, extensions), and Devin Cloud access landing on the $20 Pro plan makes the agent-first pitch more accessible than it was under enterprise gating. The honest read is unchanged from the Windsurf 2.0 era: for agent-heavy workflows this is a first-tier choice alongside Cursor; for autocomplete-and-chat minimalists, Cursor or Copilot remains simpler. With $1B raised at a $26B valuation, Cognition has the runway to keep pushing -- expect the Devin Desktop / Cursor rivalry to define the category through 2026.",
 
-  lastReviewedDate: "2026-06-09",
+  lastReviewedDate: "2026-07-09",
   dataSources: [
     { name: "Devin blog: Windsurf is now Devin Desktop (2026-06-02)", url: "https://www.devin.ai/blog", dateAccessed: "2026-06-09" },
     { name: "Cognition: More Devins in More Places ($1B raise, 2026-05-27)", url: "https://www.cognition.ai/blog", dateAccessed: "2026-06-09" },

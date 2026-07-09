@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const codex: ToolReview = {
   slug: "codex",
   name: "Codex (OpenAI)",
-  tagline: "OpenAI's cloud-based coding agent -- runs parallel tasks, proposes PRs, and lives inside ChatGPT",
+  tagline: "OpenAI's coding agent -- parallel tasks, PRs, and as of 2026-07-09 merged into the unified ChatGPT desktop app (Chat + Work + Codex, every plan incl. Free) with GPT-5.6 across the lineup",
   category: "ai-code-assistants",
   url: "https://openai.com/index/introducing-codex/",
 
@@ -41,6 +41,11 @@ export const codex: ToolReview = {
     "Response latency can spike to 3+ minutes per response during peak hours",
   ],
   knownIssues: [
+    {
+      description: "APP MERGER + GPT-5.6 (2026-07-09): The **standalone Codex app is merging into the new unified ChatGPT desktop app** (Mac/Windows) -- update the Codex app and it becomes the ChatGPT app with Chat, Work, and Codex surfaces; developers can set Codex as the default view and keep the Codex icon; desktop Codex projects are accessible from the ChatGPT mobile app; the old ChatGPT desktop app is renamed 'ChatGPT Classic.' Codex itself gains: **inline editing within diffs, PR review in the side panel, faster computer use (powered by GPT-5.6), and multi-repo projects**. Model lineup: **GPT-5.6 GA in Codex same day** -- Free/Go get Terra; Plus+ pick Sol/Terra/Luna with per-model effort; `max` toggleable for all GPT-5.6 users; **`ultra` (4 parallel agents) available from Plus up in Codex**. Scale disclosure: 5M+ weekly Codex users, 1M+ using it for non-development work. Net read: Codex stops being a separate app and becomes the engine inside ChatGPT's agent stack (ChatGPT Work is built on Codex technology -- see /tools/chatgpt-work)",
+      source: "OpenAI (openai.com/index/chatgpt-for-your-most-ambitious-work/), OpenAI (openai.com/index/gpt-5-6/)",
+      date: "2026-07-09",
+    },
     {
       description: "FEATURE CLUSTER (May-June 2026, all vendor changelog): **5/14 Codex in the ChatGPT mobile app** (iOS/Android) -- monitor and drive Codex sessions from your phone by connecting to a Mac running the Codex app (remote control, not standalone mobile execution). **5/21 Goal mode GA** -- out of experimental, available in Codex app + IDE extension + CLI. **5/29 Computer Use on Windows** + remote control of Windows devices. **6/1 Amazon Bedrock support** -- Codex can use supported OpenAI models through Bedrock. **6/2 Sites preview** -- create AND deploy websites/web apps to OpenAI-hosted infrastructure from inside Codex. The Sites ship is the notable one: Codex now competes directly with Lovable/Bolt/v0 on the build-and-host loop, not just the code-generation step",
       source: "OpenAI Codex changelog (developers.openai.com/codex/changelog)",
@@ -81,8 +86,10 @@ export const codex: ToolReview = {
   notFor: "Developers who need fine-grained control mid-task (use Claude Code or Cursor instead). Also not ideal for complex architectural refactors where the AI needs human guidance throughout the process.",
   verdict: "Codex is OpenAI's answer to Claude Code and Devin, and it has one killer advantage: it's bundled with ChatGPT Plus. If you're already paying $20/mo for ChatGPT, you get a cloud coding agent for free. The parallel task execution is genuinely unique -- no other coding agent lets you fire off 5 tasks and check back later. But the rough edges are real: you can't steer it mid-task, complex refactors fall flat, and the usage limits feel tight. For straightforward coding tasks and code review, it's excellent. For anything nuanced, Claude Code's interactive approach is still better.",
 
-  lastReviewedDate: "2026-06-10",
+  lastReviewedDate: "2026-07-09",
   dataSources: [
+    { name: "OpenAI: ChatGPT Work + desktop app merger (2026-07-09)", url: "https://openai.com/index/chatgpt-for-your-most-ambitious-work/", dateAccessed: "2026-07-09" },
+    { name: "OpenAI: GPT-5.6 GA (Codex availability matrix)", url: "https://openai.com/index/gpt-5-6/", dateAccessed: "2026-07-09" },
     { name: "OpenAI: Introducing GPT-5.2-Codex (2026-04-23)", url: "https://openai.com/index/introducing-gpt-5-2-codex/", dateAccessed: "2026-04-25" },
     { name: "OpenAI Codex changelog", url: "https://developers.openai.com/codex/changelog", dateAccessed: "2026-04-25" },
     { name: "OpenAI Chronicle docs (Apr 2026)", url: "https://developers.openai.com/codex/memories/chronicle", dateAccessed: "2026-04-22" },
@@ -94,7 +101,7 @@ export const codex: ToolReview = {
   ],
   affiliateUrl: "https://openai.com/index/introducing-codex/",
   status: "active",
-  poweredBy: "GPT-5.2-Codex (default 2026-04-23) / GPT-5.5 / GPT-5.4",
+  poweredBy: "GPT-5.6 Sol/Terra/Luna (GA 2026-07-09; Terra default on Free/Go) / GPT-5.2-Codex / GPT-5.5",
   benchmarks: {
     modelName: "GPT-5.2-Codex (launched 2026-04-23 -- SOTA on SWE-Bench Pro and Terminal-Bench 2.0; first-party scores below pending detailed third-party verification)",
     scores: [
@@ -103,6 +110,6 @@ export const codex: ToolReview = {
     ],
     lastUpdated: "2026-04-25",
   },
-  metaTitle: "OpenAI Codex Review 2026: GPT-5.2-Codex + Chronicle Screen Memory",
-  metaDescription: "OpenAI Codex review. GPT-5.2-Codex (Apr 23 2026, SOTA on SWE-Bench Pro + Terminal-Bench 2.0), Chronicle screen-context memory, parallel cloud tasks. Free with ChatGPT Plus.",
+  metaTitle: "OpenAI Codex Review 2026: GPT-5.6, Unified ChatGPT App Merger + ultra Mode",
+  metaDescription: "OpenAI Codex review. July 9, 2026: Codex app merges into the unified ChatGPT desktop app (every plan incl. Free), GPT-5.6 Sol/Terra/Luna across Codex, ultra 4-agent mode from Plus up, inline diff editing + side-panel PR review. 5M+ weekly users.",
 };

@@ -67,6 +67,11 @@ export const githubCopilot: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "JULY WEEK-2 CLUSTER (2026-07-01 → 2026-07-09, all vendor changelog): (1) **GPT-5.6 Sol, Terra, and Luna landed in Copilot 7/9** -- day-one availability with OpenAI's GA; the picker now spans GPT-5.6 (three tiers), Sonnet 5, Fable 5, and Kimi K2.7. (2) **Deprecation notice 7/2: Gemini 2.5 Pro and Gemini 3 Flash are being removed from Copilot** (removal date not yet specified in the changelog -- migrate picker defaults off them). (3) 7/7: **Kimi K2.7 extended to Business/Enterprise**, **Codex now works as an agent provider inside JetBrains IDEs**, the **GitHub Copilot app is available to all**, and the Copilot Billing Preview app retires 8/3. (4) 7/1: **Copilot vision GA** (images/PDFs in chat) + CLI auto model selection. Net: Copilot's picker is now the fastest-moving multi-vendor surface in the market -- three frontier vendors shipped into it inside 10 days",
+      source: "GitHub Changelog (github.blog/changelog/label/copilot -- 2026-07-01 through 2026-07-09 entries)",
+      date: "2026-07-09",
+    },
+    {
       description: "LATE-JUNE/JULY CLUSTER (2026-06-30 → 2026-07-02, vendor changelog): (1) **Claude Sonnet 5 is GA in GitHub Copilot** (6/30) -- day-one availability alongside Anthropic's launch; the new 'most agentic Sonnet' model joins the picker. (2) **Browser tools for Copilot agents are GA in VS Code** (7/1) -- agents can drive a browser to test/verify their own web changes. (3) **GitHub Models is being fully retired on 2026-07-30** (7/1 announcement) -- the model-catalog/playground product winds down; migrate off before the date. (4) **Kimi K2.7 Code is GA in Copilot** (7/1) -- the first open-weight Chinese model in the picker; a lower-cost option that meters against the 6/1 credit system. Sonnet 5 note: available to Pro/Pro+/Max/Business/Enterprise, billed at provider list pricing under usage-based billing (no special multiplier), Zero Data Retention, rolling out across VS Code / Visual Studio / CLI / JetBrains / Xcode / Eclipse / mobile.",
       source: "GitHub Changelog (github.blog/changelog/2026-06-30-claude-sonnet-5-is-generally-available-for-github-copilot/, .../2026-07-01-browser-tools-for-github-copilot-in-vs-code-are-generally-available/, .../2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/, Kimi K2.7 Code GA entry 2026-07-01)",
       date: "2026-07-01",
@@ -161,7 +166,7 @@ export const githubCopilot: ToolReview = {
   notFor: "Anyone trying to sign up for Pro, Pro+, or Student right now -- signups are paused (2026-04-20 onward). Also not for developers who specifically wanted Claude Opus on the $10 Pro plan; Opus was just pulled to Pro+ only. Cursor or Claude Code are the obvious alternatives during the pause.",
   verdict: "GitHub Copilot hit a wall on 2026-04-20: new Pro/Pro+/Student signups paused, Claude Opus pulled from Pro, and usage caps tightened across the board. Microsoft is openly admitting that agent workloads consume more compute than the current subscription tiers can sustain, and the product is being retuned in real time. For existing subscribers the inline completions remain best-in-class, but the value proposition has gotten worse overnight. If you're shopping for an AI code assistant in the next 30 days, Cursor (Pro+ $60) and Claude Code are the practical choices until Microsoft either reopens signups or reprices. Watch the refund window (through 2026-05-20) if you're on the fence about staying.",
 
-  lastReviewedDate: "2026-07-04",
+  lastReviewedDate: "2026-07-09",
   dataSources: [
     { name: "GitHub Changelog: Claude Sonnet 5 GA for GitHub Copilot (2026-06-30)", url: "https://github.blog/changelog/2026-06-30-claude-sonnet-5-is-generally-available-for-github-copilot/", dateAccessed: "2026-07-04" },
     { name: "GitHub Changelog: GitHub Models fully retired 2026-07-30 (announced 2026-07-01)", url: "https://github.blog/changelog/2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/", dateAccessed: "2026-07-04" },

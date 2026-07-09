@@ -92,6 +92,11 @@ export const mistral: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "ROBOSTRAL NAVIGATE (2026-07-08, vendor-primary): Mistral's first **embodied-AI navigation model** -- an 8B-param model, built in-house and trained entirely in simulation (400K trajectories across 6K simulated environments, RL via CISPO), that guides **wheeled, legged, and flying robots** using just a single RGB camera + a plain-language instruction (no LiDAR/depth sensors). Vendor benchmarks: **R2R-CE 79.4% success (seen) / 76.6% (unseen)** -- +9.7 pts over the best single-camera approach and +4.5 over the best depth/multi-camera system. Caveats: all results are simulation-only, the pointing-based approach can't handle targets outside the camera's field of view, and **no weights, API, or license were published** -- access is 'talk with our team.' A research/enterprise play, not a product you can use today; notable as Mistral's entry into robotics. Same week (7/9): **Prompt & Skills Management** shipped in Mistral Studio -- a versioned system-of-record for prompts and skills",
+      source: "Mistral AI (mistral.ai/news/robostral-navigate/), Mistral AI news (Studio prompt management, 2026-07-09)",
+      date: "2026-07-08",
+    },
+    {
       description: "LEANSTRAL 1.5 RELEASED (2026-07-02, hit #1 on Hacker News 7/4): a formal-verification / Lean 4 theorem-proving model -- 119B total / 6B active params, Apache 2.0 open weights (mistralai/Leanstral-1.5-119B-A6B on Hugging Face) plus a FREE API endpoint (leanstral-1-5). Vendor-reported results: saturates miniF2F (100%), 587/672 on PutnamBench, 87% FATE-H / 34% FATE-X. Niche (math/proof engineering) but notable as a genuinely open frontier release in a specialty domain where closed labs dominate",
       source: "Mistral AI blog (mistral.ai/news/leanstral-1-5)",
       date: "2026-07-02",
@@ -126,7 +131,7 @@ export const mistral: ToolReview = {
   notFor: "Non-technical users looking for a polished chat experience. ChatGPT and Claude are much better as consumer products.",
   verdict: "Mistral is the scrappy underdog that keeps surprising people. Their models are impressively efficient -- you get near-GPT-4 quality at a fraction of the API cost. But the consumer experience (Le Chat) is rough. This is primarily a developer's tool. If you're building AI applications on a budget, Mistral should be on your shortlist.",
 
-  lastReviewedDate: "2026-07-05",
+  lastReviewedDate: "2026-07-09",
   dataSources: [
     { name: "Mistral AI: Leanstral 1.5 (2026-07-02)", url: "https://mistral.ai/news/leanstral-1-5", dateAccessed: "2026-07-05" },
     { name: "Mistral AI: Workflows public preview (2026-04-28)", url: "https://mistral.ai/news/workflows", dateAccessed: "2026-05-04" },

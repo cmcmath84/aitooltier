@@ -102,6 +102,7 @@ import { descript } from "./descript";
 import { speechify } from "./speechify";
 import { maiVoice1 } from "./mai-voice-1";
 import { grokVoice } from "./grok-voice";
+import { gptLive } from "./gpt-live";
 import { cohereTranscribe } from "./cohere-transcribe";
 
 // AI Voice Agents
@@ -171,6 +172,7 @@ import { deepl } from "./deepl";
 import { openclaw } from "./openclaw";
 import { hermesAgent } from "./hermes-agent";
 import { manusAi } from "./manus-ai";
+import { chatgptWork } from "./chatgpt-work";
 import { perplexityComputer } from "./perplexity-computer";
 import { emergentWingman } from "./emergent-wingman";
 import { perplexityComet } from "./perplexity-comet";
@@ -280,6 +282,7 @@ export const tools: ToolReview[] = [
   speechify,
   maiVoice1,
   grokVoice,
+  gptLive,
   cohereTranscribe,
   // Voice Agents
   blandAi,
@@ -335,6 +338,7 @@ export const tools: ToolReview[] = [
   openclaw,
   hermesAgent,
   manusAi,
+  chatgptWork,
   perplexityComputer,
   emergentWingman,
   perplexityComet,

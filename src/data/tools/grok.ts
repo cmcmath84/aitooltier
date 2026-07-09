@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const grok: ToolReview = {
   slug: "grok",
   name: "Grok",
-  tagline: "xAI's irreverent chatbot with a direct line to X/Twitter -- real-time data meets unfiltered personality. Grok 4.3 production launched 2026-05-02 with Custom Voices cloning + Imagine Agent Mode + ~40% API price cut to $1.25/$2.50 per 1M tokens",
+  tagline: "SpaceXAI's irreverent chatbot with a direct line to X/Twitter -- and now Grok 4.5 (launched 2026-07-08), the frontier MoE model trained jointly with Cursor for coding, agentic tasks, and knowledge work at $2/$6 per 1M tokens. Grok 4.3 remains the value tier at $1.25/$2.50",
   category: "ai-llms",
   url: "https://grok.x.ai",
 
@@ -47,6 +47,12 @@ export const grok: ToolReview = {
       features: ["Grok 4 Heavy model", "Highest priority", "Multi-agent at scale", "Note: Grok 4.3 beta-gating ended 2026-05-02"],
     },
     {
+      plan: "API (Grok 4.5, launched 2026-07-08)",
+      price: "$2 / $6",
+      period: "per 1M tokens (input/output)",
+      features: ["SpaceXAI + Cursor joint frontier MoE model", "Faster variant $4/$18 via Cursor", "Available in Grok Build, SpaceXAI console/API, Cursor (all plans)", "NOT available in EU at launch", "Vendor benchmarks: Terminal-Bench 2.1 83.3%, SWE-Bench Pro 64.7% (third-party verification pending)"],
+    },
+    {
       plan: "API (Grok 4.3)",
       price: "$1.25 / $2.50",
       period: "per 1M tokens (input/output)",
@@ -67,6 +73,11 @@ export const grok: ToolReview = {
     "Image generation and analysis capabilities lag behind what you get from ChatGPT or Gemini",
   ],
   knownIssues: [
+    {
+      description: "GROK 4.5 LAUNCHED (2026-07-08 developer surfaces, public rollout reported 7/9): SpaceXAI shipped **Grok 4.5, 'our smartest model built for coding, agentic tasks, and knowledge work'** -- a mixture-of-experts frontier model **trained jointly with Cursor** (SpaceX closed its Anysphere/Cursor acquisition in June) on trillions of tokens of Cursor data. Musk's framing: 'Opus-class, but faster, more token-efficient and lower cost.' **API pricing: $2/M input + $6/M output** (a faster variant at $4/$18 is offered through Cursor). Day-one availability: **Grok Build, the SpaceXAI console/API, and Cursor on all plans**; press reports public access via grok.com and the X app from 7/9; **NOT available in the EU at launch**. Vendor-reported benchmarks (charts, third-party verification pending): **Terminal-Bench 2.1 83.3%, SWE-Bench Pro 64.7%, #1 on Harvey's Legal Agent Benchmark**, with standout token efficiency (~16K output tokens per SWE-Bench Pro task vs ~67K for Opus 4.8 max per launch charts); Artificial Analysis measured 91.3 tok/s on the API. Consumer-tier access details (which SuperGrok/Premium tiers get 4.5 at what limits) were not spelled out in launch coverage -- verify before relying on it. Aggregator claims of a '1.5T-param V9 foundation' remain UNVERIFIED -- treat as rumor",
+      source: "SpaceXAI (x.ai/news/grok-4-5), Cursor blog (cursor.com/blog/grok-4-5), Axios (2026-07-08)",
+      date: "2026-07-08",
+    },
     {
       description: "GROK BUILD PLUGIN MARKETPLACE (2026-06-11, vendor-primary): xAI launched a built-in **plugin marketplace for Grok Build** -- plugins bundle skills, slash commands, agents, hooks, MCP servers, and LSPs; installs are commit-SHA-pinned for supply-chain safety; the catalog is open to community submissions via PR. Launch partners: MongoDB, Vercel, Sentry, Chrome DevTools, Cloudflare. Mirrors the plugin/extension pattern Claude Code and Gemini-CLI-era tooling established -- Grok Build is maturing fast for a product still labeled beta",
       source: "xAI news (x.ai/news/grok-plugin-marketplace), GitHub (github.com/xai-org/plugin-marketplace)",
@@ -132,8 +143,11 @@ export const grok: ToolReview = {
   notFor: "Enterprise users who need reliable, consistent outputs. Also not the best pick if you don't use X -- the real-time data advantage disappears and you're left with a solid-but-not-best-in-class LLM.",
   verdict: "Grok has come a long way from being dismissed as Elon's pet project. The Grok 3 models are legitimately competitive, and the real-time X integration is a unique differentiator that no other chatbot can match. But the value proposition gets muddier when you strip away the X angle -- at $30/mo for SuperGrok, you're paying a premium for personality and Twitter data. If those matter to you, Grok is great. If not, Claude or ChatGPT give you more for less.",
 
-  lastReviewedDate: "2026-06-11",
+  lastReviewedDate: "2026-07-09",
   dataSources: [
+    { name: "SpaceXAI: Introducing Grok 4.5 (2026-07-08)", url: "https://x.ai/news/grok-4-5", dateAccessed: "2026-07-09" },
+    { name: "Cursor blog: Introducing Grok 4.5 (joint training details)", url: "https://cursor.com/blog/grok-4-5", dateAccessed: "2026-07-09" },
+    { name: "Axios: SpaceXAI launches new model, Grok 4.5", url: "https://www.axios.com/2026/07/08/spacexai-grok-new-model", dateAccessed: "2026-07-09" },
     { name: "xAI May 15 model retirement docs", url: "https://docs.x.ai/developers/migration/may-15-retirement", dateAccessed: "2026-05-19" },
     { name: "VentureBeat: xAI launches Grok 4.3 with voice cloning (2026-05-02)", url: "https://venturebeat.com/technology/xai-launches-grok-4-3-at-an-aggressively-low-price-and-a-new-fast-powerful-voice-cloning-suite", dateAccessed: "2026-05-05" },
     { name: "Winbuzzer: xAI Grok 4.3 + Custom Voices (2026-05-03)", url: "https://winbuzzer.com/2026/05/03/xai-grok-4-3-custom-voices-voice-cloning-launch-xcxwbn/", dateAccessed: "2026-05-05" },
@@ -147,7 +161,7 @@ export const grok: ToolReview = {
   affiliateUrl: "https://grok.x.ai",
   status: "active",
   benchmarks: {
-    modelName: "Grok 4.20",
+    modelName: "Grok 4.20 (baseline -- Grok 4.5 launched 2026-07-08; vendor-reported 4.5 scores in Known Issues pending third-party verification)",
     scores: [
       { name: "MMLU", score: 88.5, maxScore: 100, unit: "%" },
       { name: "GPQA Diamond", score: 85.0, maxScore: 100, unit: "%" },
@@ -162,6 +176,6 @@ export const grok: ToolReview = {
     tone: "Casual, jokey, and willing to swear. Grok takes strong positions without hedging, leans into an edgy 'based' persona, and cracks jokes far more often than Claude, ChatGPT, or Gemini.",
     quirks: "Engages with topics other chatbots refuse, pulls live context from X so it reflects whatever is trending that hour, and will freely mock things -- including itself. In SuperGrok's multi-agent mode it can sound like several personalities arguing with each other.",
   },
-  metaTitle: "Grok 4.20 Review 2026: SuperGrok, Multi-Agent AI With X Integration",
-  metaDescription: "Grok 4.20 review. New 4-agent multi-agent system, SuperGrok $30/mo, Heavy $300, real-time X data, rapid weekly learning. Scores, pricing. April 2026.",
+  metaTitle: "Grok Review 2026: Grok 4.5 Launch -- SpaceXAI + Cursor's Frontier Model",
+  metaDescription: "Grok review. Grok 4.5 (July 8, 2026): SpaceXAI's smartest model, trained jointly with Cursor, $2/$6 per 1M tokens, Terminal-Bench 2.1 83.3%. Plus SuperGrok tiers, Grok Build, real-time X data, and Grok 4.3 as the value API tier.",
 };

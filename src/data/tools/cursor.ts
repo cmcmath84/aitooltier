@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const cursor: ToolReview = {
   slug: "cursor",
   name: "Cursor",
-  tagline: "AI-native code editor, agent-first in Cursor 3 -- multi-workspace, cross-platform agents, and Composer 2.5 (shipped 2026-05-18, Cursor's frontier coding model at $0.50/$2.50 per 1M tokens, 2x usage during launch week)",
+  tagline: "AI-native code editor, agent-first in Cursor 3 -- and now home to Grok 4.5 (launched 2026-07-08), the frontier MoE model Cursor trained jointly with SpaceXAI on trillions of Cursor tokens ($2/$6 per 1M, all plans, desktop/web/iOS/CLI/SDK), with Composer 2.5 as the fast lower-cost tier",
   category: "ai-code-assistants",
   url: "https://cursor.com",
 
@@ -68,9 +68,14 @@ export const cursor: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "SPACEXAI JOINT MODEL IMMINENT (reported 2026-07-07 by Reuters/The Information -- NOT yet shipped): SpaceXAI (xAI, now under SpaceX) and Cursor/Anysphere are reported to be launching their first jointly-developed model 'as soon as Wednesday' (2026-07-08), trained partly on Cursor coding data and positioned to compete with Claude Opus 4.8 and GPT-5.5 on speed. The launch was reportedly pushed back earlier that week to improve efficiency. This is the model behind the 'Grok 4.5' rumors; there is NO vendor-primary confirmation yet from cursor.com or x.ai. Watch for the actual release before treating it as available",
-      source: "Reuters relaying The Information (2026-07-07)",
-      date: "2026-07-07",
+      description: "GROK 4.5 SHIPPED (2026-07-08, vendor-primary on BOTH sides): the SpaceXAI + Cursor joint model is real and launched as **Grok 4.5** -- a mixture-of-experts frontier model Cursor says it 'trained jointly with SpaceXAI,' incorporating **trillions of tokens of Cursor data** plus RL on deliberately hard problems, aimed beyond software engineering at data science, finance, and legal work. **Available in Cursor on ALL plans across desktop, web, iOS, CLI, and the SDK** from day one. Pricing: **$2/M input + $6/M output** (base) and **$4/$18 for a faster variant**. Vendor-reported benchmarks (charts, third-party verification pending): Terminal-Bench 2.1 83.3%, SWE-Bench Pro 64.7%, #1 on Harvey's Legal Agent Benchmark, and striking token efficiency (~15,954 output tokens per SWE-Bench Pro task vs ~67,020 for Opus 4.8 max, per press relaying the launch charts); Artificial Analysis measured 91.3 tok/s through SpaceXAI's API. **Composer 2.5 remains available as a separate, smaller weight class** -- Grok 4.5 is the frontier tier above it. Not yet available in the EU at launch. This resolves the 7/7 Reuters/The Information 'imminent' report and confirms the post-acquisition Cursor+SpaceXAI stack is shipping first-party frontier models",
+      source: "Cursor blog (cursor.com/blog/grok-4-5), SpaceXAI (x.ai/news/grok-4-5), Axios (2026-07-08)",
+      date: "2026-07-08",
+    },
+    {
+      description: "ENTERPRISE (2026-06-30, v3.10 changelog): **Team MCP servers** -- admins configure MCP servers once at the team level and they distribute across cloud agents, the Agents window, IDE, and CLI; marketplace access can now be restricted by organization group. Small release, but it closes an enterprise-governance gap for MCP-heavy teams",
+      source: "Cursor changelog (cursor.com/changelog)",
+      date: "2026-06-30",
     },
     {
       description: "TEAMS PRICING OVERHAUL (2026-06, effective immediately for new customers / **billing cycles starting 2026-07-01 for renewals**): Cursor restructured Teams into TWO usage pools per seat -- a 'generous' pool reserved for first-party Cursor models (Composer + Auto), and a separate pool for third-party API models (Claude/OpenAI/Gemini). **Standard seat: $32/mo annual ($40 monthly), now with MORE included usage at the same price** (Cursor credits Composer 2.5's cost efficiency). **New Premium seat: $96/mo annual ($120 monthly) = 5x the Standard seat's included usage at 3x the cost** -- for heavy agentic teams. Practical read: if your team lived on third-party frontier models, watch which pool your usage draws from now; the extra headroom is concentrated in the first-party Composer pool. NOT the June-2025 Pro-plan backlash -- this is a fresh Teams-tier change.",
@@ -172,9 +177,11 @@ export const cursor: ToolReview = {
   notFor: "Developers happy with their current editor setup who just want basic autocomplete -- Copilot is still less disruptive for that. Also not for anyone skeptical of Cursor's own coding model; if you want pure frontier-model access for every task, paying Claude or OpenAI directly and using Claude Code is cleaner.",
   verdict: "Cursor 3 + Composer 2 (April 2026) is the release where Cursor stops being an AI-augmented editor and becomes an agent-first dev environment. Composer 2's speed at $0.50/$2.50 per 1M tokens is the real story -- it makes tight iteration loops feel instant in a way frontier models can't, even if the quality is slightly below Opus 4.6. The multi-workspace + cross-platform handoff design assumes you want your agents everywhere; if you don't, it's overkill. The honest read: for developers willing to go all-in on agentic workflows, Cursor 3 is the 2026 default. For everyone else, Claude Code + Copilot is a simpler, less committing stack.",
 
-  lastReviewedDate: "2026-07-07",
+  lastReviewedDate: "2026-07-09",
   dataSources: [
-    { name: "Reuters/The Information: SpaceXAI + Cursor joint model imminent (2026-07-07)", url: "https://www.reuters.com/technology/", dateAccessed: "2026-07-07" },
+    { name: "Cursor blog: Introducing Grok 4.5 (2026-07-08)", url: "https://cursor.com/blog/grok-4-5", dateAccessed: "2026-07-09" },
+    { name: "SpaceXAI: Introducing Grok 4.5", url: "https://x.ai/news/grok-4-5", dateAccessed: "2026-07-09" },
+    { name: "Axios: SpaceXAI launches new model, Grok 4.5 (2026-07-08)", url: "https://www.axios.com/2026/07/08/spacexai-grok-new-model", dateAccessed: "2026-07-09" },
     { name: "Cursor blog: Teams pricing (June 2026, renewals effective 2026-07-01)", url: "https://cursor.com/blog/teams-pricing-june-2026", dateAccessed: "2026-07-04" },
     { name: "Cursor: Development Environments for Cloud Agents (2026-05-13)", url: "https://cursor.com/blog/cloud-agent-development-environments", dateAccessed: "2026-05-13" },
     { name: "Cursor changelog: Microsoft Teams (2026-05-11)", url: "https://cursor.com/changelog/microsoft-teams", dateAccessed: "2026-05-13" },
@@ -191,7 +198,7 @@ export const cursor: ToolReview = {
   ],
   affiliateUrl: "https://cursor.com",
   status: "active",
-  poweredBy: "Composer 2.5 (Cursor's own) / Claude / GPT-5.5 / Gemini (user selects)",
-  metaTitle: "Cursor Review 2026: Agent-First Editor -- Composer 2.5, iOS Beta, New Teams Pricing",
-  metaDescription: "Cursor review. Agent-first editor with Composer 2.5 ($0.50/$2.50 per 1M), cross-platform agents, iOS public beta, and the July 2026 Teams pricing overhaul (Standard $32-40, Premium $96-120, dual usage pools).",
+  poweredBy: "Grok 4.5 (Cursor + SpaceXAI joint, 2026-07-08) / Composer 2.5 / Claude / GPT-5.6 / Gemini (user selects)",
+  metaTitle: "Cursor Review 2026: Grok 4.5 Launch -- Cursor + SpaceXAI's Frontier Model",
+  metaDescription: "Cursor review. Grok 4.5 (July 8, 2026) is the Cursor + SpaceXAI joint frontier model -- $2/$6 per 1M, all plans, trained on trillions of Cursor tokens, Terminal-Bench 2.1 83.3%. Plus Composer 2.5, iOS beta, and the July Teams pricing overhaul.",
 };

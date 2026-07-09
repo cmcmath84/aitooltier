@@ -45,6 +45,11 @@ export const glm: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "ZCODE HARNESS LAUNCHED (2026-07-02, press-verified): Zhipu released **ZCode**, an agentic-coding harness for GLM-5.2 that lets developers build autonomous coding assistants on the model -- an explicit shot at Anthropic's Claude Code, leaning on developer frustration with Anthropic's recent access restrictions and Zhipu's open-weights positioning. Launch incentives: **5 million free tokens for new ZCode users** and a 50% data-quota boost for existing subscribers. Open-source status implied but not explicitly confirmed -- verify the repo/license before building on it. Strategically this completes the GLM-5.2 story: MIT-licensed frontier weights + a first-party harness = a full Claude Code substitute stack from one Chinese lab",
+      source: "SCMP (scmp.com/tech/tech-trends/article/3359170, 2026-07-02)",
+      date: "2026-07-02",
+    },
+    {
       description: "INDEPENDENT BENCHMARK PUBLISHED (verified 2026-07-04): Artificial Analysis now has a citable independent eval for GLM-5.2 -- **Intelligence Index = 51, ranked #1 of 93 open-weight models** (artificialanalysis.ai/models/glm-5-2), corroborating the vendor's 'tops the open-weights index' claim with a third-party number. Keep the Zhipu-reported figures (SWE-Bench Pro 62.1%, Terminal-Bench 2.1 81.0%) labeled as vendor benchmarks -- the AA-51 is the independently-measured one to lead with.",
       source: "Artificial Analysis (artificialanalysis.ai/models/glm-5-2), Crypto Briefing",
       date: "2026-07-04",
@@ -69,7 +74,7 @@ export const glm: ToolReview = {
   notFor: "Consumer-facing English content generation (Mistral or Claude write better), or ultra-low-resource deployment (use Gemma 4 or Phi-4 instead).",
   verdict: "With GLM-5.2 (June 13, 2026), Z.ai has the strongest MIT-licensed open-weights model of 2026 -- a ~753B MoE with a 1M context, SWE-Bench Pro 62.1, and the top spot on Artificial Analysis's open-weights index, which VentureBeat says edges GPT-5.5 on long-horizon coding at a fraction of the cost. The true MIT license puts it ahead of Llama 4 on licensing, and the agentic tool-use performance beats most of its open-weight peers. GLM-4.6V is legitimately the best open multimodal model on several benchmarks. The weakness is purely ecosystem: fewer Western fine-tunes and less Ollama coverage. If you're building an agent or multimodal product and want clean licensing, GLM is the pick.",
 
-  lastReviewedDate: "2026-07-04",
+  lastReviewedDate: "2026-07-09",
   dataSources: [
     { name: "Artificial Analysis: GLM-5.2 (Intelligence Index 51, #1 open-weight)", url: "https://artificialanalysis.ai/models/glm-5-2", dateAccessed: "2026-07-04" },
     { name: "Hugging Face: zai-org/GLM-5.2 model card (specs, license, benchmarks)", url: "https://huggingface.co/zai-org/GLM-5.2", dateAccessed: "2026-06-18" },

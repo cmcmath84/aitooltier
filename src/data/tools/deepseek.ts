@@ -55,6 +55,16 @@ export const deepseek: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "LEGACY API ALIASES RETIRE 2026-07-24 (vendor-primary, HARD deadline): **`deepseek-chat` and `deepseek-reasoner` will be fully retired and inaccessible after July 24, 2026, 15:59 UTC.** The aliases currently route to deepseek-v4-flash (non-thinking/thinking respectively). Migration is a one-line change: keep base_url, update `model` to `deepseek-v4-pro` or `deepseek-v4-flash` -- but note the gotcha that `deepseek-reasoner` maps to FLASH-tier thinking, not V4-Pro, so 'upgrading' to Pro changes both cost and behavior. Any production code still pinned to the legacy aliases breaks on the 24th",
+      source: "DeepSeek API docs (api-docs.deepseek.com/news/news260424)",
+      date: "2026-07-24",
+    },
+    {
+      description: "V4 OFFICIAL RELEASE MID-JULY + FIRST PEAK/OFF-PEAK PRICING (announced 2026-06-30): DeepSeek scheduled the **official (non-preview) V4 release for mid-July 2026**, with 1M context across the lineup -- and will introduce **time-of-day API pricing for the first time: peak hours (9:00-12:00 and 14:00-18:00 daily) billed at 2x the off-peak rate**, effective alongside the release. Exact per-token rates not yet published; if you batch heavy workloads, shifting them off-peak will halve token costs once this lands. Watch for the release + rate card mid-July",
+      source: "TechNode (technode.com/2026/06/30/deepseek-to-launch-v4-in-mid-july-with-new-peak-time-api-pricing/)",
+      date: "2026-06-30",
+    },
+    {
       description: "Regional availability restrictions: EU, Canada, South Korea, Australia, and India issued formal restrictions or bans on deployment of DeepSeek-V3 and the enterprise API in Q1 2026 over data-residency concerns (traffic routing through mainland China). Germany's BSI confirmed classified metadata leak from a parliamentary pilot. If you're deploying DeepSeek in any of these jurisdictions, check local compliance guidance before shipping; self-hosted open-weights deployment is often the workaround but changes the operational picture",
       source: "National CSIRT/BSI statements (aggregated), Alibaba policy analysis",
       date: "2026-Q1",
@@ -89,7 +99,7 @@ export const deepseek: ToolReview = {
   notFor: "Anyone working on content that touches geopolitical topics, or teams that need guaranteed uptime and enterprise SLAs. Also not ideal if your primary use case is creative English writing.",
   verdict: "DeepSeek is the real deal when it comes to bang-for-your-buck AI. The reasoning capabilities are legitimately impressive, and the open-source angle gives it a flexibility that closed models can't match. The censorship limitations are a dealbreaker for some use cases, and the writing quality trails behind Claude and GPT-4. But for coding, math, and analytical tasks? It's hard to argue with near-frontier performance at a fraction of the cost.",
 
-  lastReviewedDate: "2026-05-26",
+  lastReviewedDate: "2026-07-09",
   dataSources: [
     { name: "DeepSeek V4 API launch announcement (2026-04-24)", url: "https://api-docs.deepseek.com/news/news260424", dateAccessed: "2026-04-24" },
     { name: "Bloomberg: DeepSeek unveils newest flagship (2026-04-24)", url: "https://www.bloomberg.com/news/articles/2026-04-24/deepseek-unveils-newest-flagship-a-year-after-ai-breakthrough", dateAccessed: "2026-04-24" },

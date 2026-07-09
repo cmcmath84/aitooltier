@@ -61,10 +61,15 @@ export const notionAi: ToolReview = {
   cons: [
     "The writing quality is generic ChatGPT-level output -- fine for first drafts but needs heavy editing",
     "Pricing feels steep at $10/member/month on top of an already paid plan",
-    "AI features only work within Notion -- no way to connect it to external tools or data sources",
+    "External connectivity is young -- Database Sync, MCP connections, and External Agents (Notion 3.6) are new and still beta-grade in places",
     "Q&A sometimes confidently returns wrong answers based on outdated or irrelevant pages in your workspace",
   ],
   knownIssues: [
+    {
+      description: "NOTION 3.6 (2026-07-01, vendor releases page): the External Agents alpha from Platform 3.5 is now a headline feature -- **External Agents (Claude and Cursor first)** can be assigned tasks from a shared board, @-mentioned like teammates, and watched as they run; **multi-agent workflows** bring several agents into one UI to automate workflows end-to-end. Also shipped: **interactive HTML blocks** (agents build ROI calculators/quizzes/org-chart visualizers that live in Notion), **speaker identification in AI Meeting Notes** (mic-based) + audio file uploads, **Microsoft Office file support** (create/read PPTX/XLSX/DOCX), **Outlook Mail + Calendar integration**, 5 new MCP connections for Custom Agents (Mercury, Mixpanel, Miro, Box, ClickHouse), expanded model options (**Opus 4.8, Grok 4.3, GLM 5.2**), Custom Agent audit logging (Enterprise), and Windows CLI support. The 'Notion can't reach outside Notion' criticism is now largely obsolete",
+      source: "Notion releases (notion.com/releases/2026-07-01)",
+      date: "2026-07-01",
+    },
     {
       description: "DEVELOPER PLATFORM 3.5 (2026-05-13, vendor releases page): Notion's biggest platform release of 2026 -- **Notion Workers** (hosted runtime: deploy custom code via CLI into a Notion-managed sandbox; **free during beta, pricing starts August 11, 2026** billed in Notion credits), **Database Sync beta** (sync any API source -- Zendesk, Salesforce -- into Notion databases), **bidirectional webhook triggers** (external apps can now trigger Notion workflows), Custom Agent Tools beta, a Notion CLI, an **External Agents API alpha** (Claude, Codex, and Decagon agents operating inside Notion -- waitlist), Agent SDK alpha, and a Developer Portal (app.notion.com/developers). Also notable: Notion MCP rebuilt to be 91% more token-efficient on database operations. Earlier in May: **Plan Mode** (5/7) -- agents ask clarifying questions and present a plan before bulk edits. Mark your calendar on the Workers pricing date if you build on the beta",
       source: "Notion releases (notion.com/releases/2026-05-13), Notion help center",
@@ -101,7 +106,7 @@ export const notionAi: ToolReview = {
   verdict:
     "Notion AI is convenient, not exceptional. If Notion is already your team's brain, the AI features add genuine value for summarization and workspace search. But the writing output is mediocre, the per-member pricing adds up fast, and you can get better AI writing from dedicated tools. It's a nice-to-have, not a must-have.",
 
-  lastReviewedDate: "2026-06-11",
+  lastReviewedDate: "2026-07-09",
   dataSources: [
     { name: "Notion releases 2026-04-14", url: "https://www.notion.com/releases/2026-04-14", dateAccessed: "2026-04-18" },
     { name: "Fazm Blog: Notion AI April 2026", url: "https://fazm.ai/blog/notion-ai-releases-april-2026-complete-list-of-every-ai-feature-shipped", dateAccessed: "2026-04-18" },

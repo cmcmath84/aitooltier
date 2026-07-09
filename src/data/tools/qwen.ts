@@ -90,6 +90,11 @@ export const qwen: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "USER-CREATED AI AGENTS SHUT DOWN 2026-07-15 (announced ~7/4-7/6, tier-1 press): Alibaba's Qwen app (and ByteDance's Doubao, simultaneously) is **discontinuing its AI agent-creation features on July 15, 2026 -- and ALL existing user-created agents stop functioning**, including humanlike 'AI companion' agents. Driver: China's 'Interim Measures for the Administration of Anthropomorphic AI Interaction Services' takes effect the same day. Users keep temporary access to agent configurations and chat histories during a transition window and are advised to back up before **October 15**, when related data becomes unrecoverable. This is a consumer-app change -- the Qwen models/API are unaffected. Separately (SCMP, early July, press-reported): Alibaba cut Qwen3.7-Max by ~80% and Qwen3.7-Plus by ~60% for international users on the Qoder platform during off-peak hours (10pm-8am Beijing = US working hours) -- an explicit play for US developer demand amid a broader Chinese token price war",
+      source: "Bloomberg (2026-07-06), TechNode (technode.com/2026/07/06/bytedances-doubao-and-alibabas-qwen-to-shut-down-ai-agent-features-on-july-15/), SCMP",
+      date: "2026-07-15",
+    },
+    {
       description: "FLAGSHIP GA + VENDOR NUMBERS CONFIRMED (verified 2026-06-09): **Qwen 3.7 Max** shipped 2026-05-20 ('Qwen3.7: The Agent Frontier' on the official Qwen blog) -- the benchmark figures that circulated in aggregators are now vendor-published: **SWE-Bench Pro 60.6%, Terminal-Bench 2.0-Terminus 69.7%, GPQA 92.4%**, plus SWE-Multilingual 78.3%, SciCode 53.5%, QwenSVG 1608. PROPRIETARY / API-only on DashScope/Model Studio. Official pricing: **$2.50/M input, $7.50/M output list -- with a 50% launch promo ($1.25/$3.75) running until 2026-06-22**. Separately, **Qwen3.7-Plus** launched ~2026-06-02 on Bailian/Model Studio: multimodal (image + video input, text output) with GUI-agent, deep reasoning, and tool invocation at $0.40/$1.60 per 1M -- press-reported agent scores (ScreenSpot Pro 79.0, AndroidWorld 81.0) await vendor tables. Both models confirmed on Alibaba's official Model Studio model list",
       source: "Qwen blog (qwen.ai/blog?id=qwen3.7), Alibaba Cloud pricing campaign (alibabacloud.com/campaign/qwen-discount), Alibaba Model Studio model list (help.aliyun.com/zh/model-studio/models), VentureBeat (Qwen3.7-Plus)",
       date: "2026-06-09",
@@ -134,7 +139,7 @@ export const qwen: ToolReview = {
   notFor: "Teams that need the Qwen3-Max flagship self-hostable (it's API-only), or use cases that touch Chinese-government-sensitive topics.",
   verdict: "Qwen is the most complete open-weights family in 2026. Alibaba ships Apache-2.0 weights across text, coding, vision, and reasoning -- every modality has a top-tier entry. Qwen3-Coder-Next is a standout: 3B active params but competitive with Claude Sonnet on coding. The catch is that Qwen3-Max, the absolute flagship, stays closed. If you can live with the PRC content filters and want the best open-weights ecosystem, Qwen is the S-tier pick.",
 
-  lastReviewedDate: "2026-06-09",
+  lastReviewedDate: "2026-07-09",
   dataSources: [
     { name: "Qwen blog: Qwen3.7 -- The Agent Frontier (vendor benchmarks)", url: "https://qwen.ai/blog?id=qwen3.7", dateAccessed: "2026-06-09" },
     { name: "Alibaba Cloud: Qwen 3.7 Max pricing + launch discount", url: "https://www.alibabacloud.com/campaign/qwen-discount", dateAccessed: "2026-06-09" },
