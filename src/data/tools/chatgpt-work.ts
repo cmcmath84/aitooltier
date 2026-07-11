@@ -47,6 +47,11 @@ export const chatgptWork: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "ROLLOUT + USAGE-POOL GOTCHA (2026-07-10, press): the **Plus/Business rollout began 7/10** (day after Pro/Enterprise/Edu), on track with the 'coming days' guidance. Biggest early complaint (analyst-reported): **ChatGPT Work and Codex draw from the SAME usage pool** -- a long Work run can silently consume your Codex weekly limits, which surprised teams using both. Enterprise admins got per-user monthly limits + workspace overage caps in response. Also note desktop/cloud Work conversations didn't sync at launch",
+      source: "Dataconomy (2026-07-10), The Tech Portal (2026-07-10), digitalapplied.com week-one recap",
+      date: "2026-07-10",
+    },
+    {
       description: "LAUNCH (2026-07-09): OpenAI launched **ChatGPT Work**, an agent that takes goals ('analyze month-end budget variance,' 'turn research into a campaign brief') and works for hours across connected apps to return finished sheets/slides/docs/web apps. Built on **Codex technology** (5M+ weekly Codex users, 1M+ using it for non-dev work) and powered by **GPT-5.6** (GA the same day). Key surfaces: **unified plugins directory** (Drive, SharePoint, Slack, Teams, Gmail, Outlook, Salesforce, Adobe, Zoom, LinkedIn, GitHub, Canva, Dropbox), **Scheduled Tasks** (recurring/event-driven runs), **Sites in public beta** (publish interactive dashboards/web apps to a URL), and a **new unified ChatGPT desktop app** (Mac/Windows, all plans incl. Free) with built-in browser and desktop Computer Use. The **Codex app merges into the new desktop app** (developers can keep Codex as the default view); the old ChatGPT desktop app is renamed **ChatGPT Classic**; the standalone **Atlas browser will be sunset** in favor of the built-in browser + an updated Chrome sidebar extension. Rollout: web/mobile Pro/Enterprise/Edu 7/9, Plus/Business over the following days; desktop everywhere day one. Usage follows the Codex metering structure; Enterprise admins get spend controls + Compliance API visibility. Security: 'auto-review' inspects important connected-tool actions before execution -- OpenAI says it blocked 100% of adversarial data-exfiltration attempts in red teaming",
       source: "OpenAI (openai.com/index/chatgpt-for-your-most-ambitious-work/), Bloomberg, The Decoder, VentureBeat",
       date: "2026-07-09",
@@ -56,7 +61,7 @@ export const chatgptWork: ToolReview = {
   notFor: "Anyone who needs deterministic, auditable automation today (this is a v1 agent with staged rollout), teams on non-OpenAI stacks, or privacy-sensitive orgs not ready to hand an agent connected-app access. For pure coding, Codex/Claude Code/Cursor remain the sharper tools.",
   verdict: "ChatGPT Work is OpenAI generalizing the Codex playbook to all knowledge work, and it's the most credible 'agent that finishes the job' launch yet from a consumer-scale vendor: real app connections through one plugins directory, hours-long autonomous runs with approval gates, scheduled automations, and publishable Sites -- distributed free on every desktop plan from day one. The bet is distribution plus GPT-5.6's template-following gains, and the honest caveats are the usual agent ones: usage metering makes heavy runs tier-dependent, connected-tool agents carry structural prompt-injection risk, and v1 roughness is guaranteed. If you're a Pro/Enterprise user it's an immediate try; Plus users should test it the week it lands for them.",
 
-  lastReviewedDate: "2026-07-09",
+  lastReviewedDate: "2026-07-10",
   dataSources: [
     { name: "OpenAI: ChatGPT is now a partner for your most ambitious work (2026-07-09)", url: "https://openai.com/index/chatgpt-for-your-most-ambitious-work/", dateAccessed: "2026-07-09" },
     { name: "OpenAI: GPT-5.6 GA (powers ChatGPT Work)", url: "https://openai.com/index/gpt-5-6/", dateAccessed: "2026-07-09" },

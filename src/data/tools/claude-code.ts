@@ -56,9 +56,9 @@ export const claudeCode: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "ALIBABA WORKPLACE BAN (effective 2026-07-10, reported by Reuters 7/3): Alibaba is banning Claude Code company-wide over an alleged 'backdoor' -- since v2.1.91 (April 2) Claude Code reportedly checked for Asia/Shanghai and Asia/Urumqi timezones plus a 147-entry list of Chinese proxy/cloud/AI-lab URLs, inserting markers into prompts. Anthropic says it was an anti-distillation / reseller-abuse experiment from March, rolled back as of July 1. Alibaba employees are directed to the in-house Qoder tool. Background: Anthropic's June 10 letter accused Qwen operators of ~25,000 fraudulent accounts and 28.8M distillation conversations. Relevant if you operate in China-adjacent environments or are sensitive to telemetry behavior in CLI tools",
-      source: "Reuters (2026-07-03), The Information, The Decoder",
-      date: "2026-07-03",
+      description: "ALIBABA WORKPLACE BAN NOW IN EFFECT (took effect 2026-07-10 per the announced schedule -- scope and date unchanged in all reporting through 7/10, no delay reported, no formal Anthropic statement): Alibaba banned Claude Code company-wide over an alleged 'backdoor' -- since v2.1.91 (April 2) Claude Code reportedly checked for Asia/Shanghai and Asia/Urumqi timezones plus a 147-entry list of Chinese proxy/cloud/AI-lab URLs, inserting markers into prompts; Claude Code is now on Alibaba's 'high-risk software' list. Anthropic's only response remains a Claude Code engineer's statement that it was an anti-distillation / reseller-abuse experiment from March, rolled back as of July 1. Alibaba employees are directed to the in-house Qoder tool. Background: Anthropic's June 10 letter accused Qwen operators of ~25,000 fraudulent accounts and 28.8M distillation conversations. Relevant if you operate in China-adjacent environments or are sensitive to telemetry behavior in CLI tools",
+      source: "Reuters (2026-07-03), CNBC (2026-07-06), SCMP, The Decoder",
+      date: "2026-07-10",
     },
     {
       description: "MODEL UPDATE (2026-06-30): **Claude Sonnet 5** is now available in Claude Code (and is the new default on Free/Pro). Anthropic bills it as 'the most agentic Sonnet yet,' approaching Opus 4.8 quality at lower cost -- a meaningful default upgrade for everyday coding sessions, at $2/$10 per 1M intro pricing through Aug 31 (then $3/$15). Opus 4.8 remains the top-end option on Max for the hardest agentic work; the `xhigh` effort level is still the recommendation for coding. Note the new Sonnet-5 tokenizer inflates input token counts ~1.0-1.35x, so watch session cost on large repos. Separately, after a 19-day export-control suspension, Fable 5 returned to Claude Code on 2026-07-01 (see claude.ts).",
@@ -105,7 +105,7 @@ export const claudeCode: ToolReview = {
   notFor: "Beginners who want a visual coding assistant, or anyone who needs predictable monthly costs. If you're looking for autocomplete-style help, Copilot or Cursor are better fits.",
   verdict: "Claude Code is the most capable agentic coding tool available right now. The ability to read entire codebases, execute code, run tests, and iterate on results puts it in a different category than autocomplete-style assistants. The output quality on complex tasks is outstanding. But it's firmly a power-user tool -- the CLI-only interface, unpredictable costs, and learning curve mean it's not for everyone. If you're a developer who thinks in terms of terminal workflows and you're working on non-trivial projects, Claude Code is worth every penny. Just keep an eye on your API bill.",
 
-  lastReviewedDate: "2026-07-05",
+  lastReviewedDate: "2026-07-10",
   dataSources: [
     { name: "Reuters (via TradingView syndication): Alibaba to ban Claude Code in workplace over alleged backdoor risks", url: "https://www.tradingview.com/news/reuters.com,2026:newsml_P8N42I08H:0-alibaba-to-ban-claude-code-in-workplace-over-alleged-backdoor-risks-source-says/", dateAccessed: "2026-07-05" },
     { name: "Anthropic: Introducing Claude Sonnet 5 (2026-06-30, available in Claude Code)", url: "https://www.anthropic.com/news/claude-sonnet-5", dateAccessed: "2026-07-04" },

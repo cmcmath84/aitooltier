@@ -75,6 +75,11 @@ export const claude: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-07-09): Anthropic launched **Reflect (beta)** -- a usage-reflection dashboard in Settings (web + desktop) showing topics you discuss, tasks you delegate, and usage patterns over 1/3/6/12-month windows, plus quiet-hours and take-a-break nudges. Available to free AND paid users; **requires memory to be ON**; excludes incognito chats and health-connector data; a time-spent view is coming. Press framing is split between 'screen-time for AI' wellness tooling and (per TechCrunch) a soft self-marketing surface. Minor feature, but notable as the first usage-transparency dashboard from a frontier lab",
+      source: "Anthropic (anthropic.com/news/reflect-with-claude), TechCrunch (2026-07-09), Axios, MacRumors",
+      date: "2026-07-09",
+    },
+    {
       description: "FABLE 5 INCLUSION EXTENDED TO JULY 12 (announced 2026-07-07): Anthropic **extended the included-usage window for Fable 5 by five days** -- Pro, Max, Team, and select Enterprise subscribers keep Fable 5 for up to 50% of weekly usage limits **through 2026-07-12 at 11:59:59 PM PT** (was July 7). From **July 13**, Fable 5 moves to prepaid usage credits at **$10/M input + $50/M output** -- double Opus 4.8 and the highest published pricing for a GA Anthropic model; with credits off, access simply ends. A Claude Code lead engineer said Anthropic 'aims to restore Fable 5 as a standard part of subscriptions as soon as capacity allows.' NOTE: the announcement went out via Anthropic's official X account -- anthropic.com/news/redeploying-fable-5 still shows the stale July 7 date as of 7/9. The aggregator-circulated 'billing cliff July 8' framing was wrong on both date and mechanics",
       source: "Anthropic (@claudeai on X, 2026-07-07), Forbes (2026-07-07), Android Authority",
       date: "2026-07-07",
@@ -214,7 +219,7 @@ export const claude: ToolReview = {
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
   verdict: "Claude is the LLM you pick when quality matters more than features -- and after a turbulent June, the full lineup is back on the table. Fable 5 (June 9, 2026), the first publicly usable Mythos-class model, was pulled by a US-government export-control order on June 12; the controls were lifted June 30 and Anthropic redeployed Fable 5 globally on July 1, so the Fable-tier ceiling is available again (with a new classifier hardening it against the reported jailbreak). Alongside the restoration, the more consequential change for most users is Claude Sonnet 5 (June 30): the new default on Free and Pro, 'most agentic Sonnet yet,' at $2/$10 per 1M through August. Above it sits Opus 4.8 -- the $5/$25 workhorse with effort control, a cheap fast mode, a 1M context window, high-res vision, and MCP -- still arguably the best writing-and-reasoning model you can buy, with Apple naming Claude a selectable system assistant in iOS 27 this fall. The practical read: pick Sonnet 5 for everyday agentic/coding work, Opus 4.8 when quality is non-negotiable, and Fable 5 when you need the absolute frontier.",
 
-  lastReviewedDate: "2026-07-09",
+  lastReviewedDate: "2026-07-10",
   dataSources: [
     { name: "Anthropic: Claude Science AI workbench (2026-06-30)", url: "https://www.anthropic.com/news/claude-science-ai-workbench", dateAccessed: "2026-07-05" },
     { name: "Anthropic: Redeploying Fable 5 (restored 2026-07-01 after controls lifted 2026-06-30)", url: "https://www.anthropic.com/news/redeploying-fable-5", dateAccessed: "2026-07-04" },

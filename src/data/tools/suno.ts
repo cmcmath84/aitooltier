@@ -65,6 +65,12 @@ export const suno: ToolReview = {
   knownIssues: [
     {
       description:
+        "TWO COURT RULINGS DUE THIS MONTH (as of 2026-07-09 press): (1) **Sony v. Suno summary-judgment hearing is scheduled for July 2026** before Chief Judge F. Dennis Saylor IV (D. Mass.) -- the first real fair-use ruling on AI music training in the US; no ruling as of 7/10. (2) **GEMA v. Suno: the Munich Regional Court verdict is due July 31, 2026** -- the German case could produce the first European judgment on the same question. Adjacent (7/5): Suno is leveraging Udio's SDNY win (judge denied Sony's bid to expand admissible infringed works) to fight UMG/Sony's motion to add ~61K recordings to the Massachusetts case. Either ruling could materially change Suno's legal posture -- if you're building a business on Suno output, watch both dates",
+      source: "Music Times (2026-07-09), Digital Music News (2026-07-05), Music Business Worldwide",
+      date: "2026-07-09",
+    },
+    {
+      description:
         "FUNDING + LICENSED MODEL (2026-06-03): Suno raised **$400M+ Series D at a $5.4B post-money valuation**, led by Bond Capital (IVP, Forerunner, USV, Alkeon, Lightspeed, Menlo, Matrix + unnamed artists/songwriters participating) -- more than doubling the $2.45B valuation from ~6 months prior. CEO Mikey Shulman confirmed the first industry-sanctioned model is a **Warner Music Group partnership**, currently in testing, rolling out 'in the coming months' -- note this is WMG-specific (post-settlement), NOT a blanket music-industry license; Sony and UMG litigation continues with a summary-judgment hearing set for July 2026. **Suno v6 remains unreleased** -- vendor model timeline still tops out at V5.5; treat v6 release-date claims as rumor",
       source: "Hollywood Reporter (suno-announces-400m-funding-round-5-4b-valuation), Billboard, Suno help center model timeline",
       date: "2026-06-03",
@@ -107,7 +113,7 @@ export const suno: ToolReview = {
   verdict:
     "Suno is the fastest way to go from an idea to a full song, and for casual use it's genuinely fun. But the lack of editing control and the inconsistent vocal quality mean it's better suited for content creators and hobbyists than anyone trying to produce polished tracks. The free tier is worth trying -- just don't expect studio quality.",
 
-  lastReviewedDate: "2026-06-10",
+  lastReviewedDate: "2026-07-10",
   dataSources: [
     { name: "Suno blog: v5.5", url: "https://suno.com/blog/v5-5", dateAccessed: "2026-04-18" },
     { name: "Music Business Worldwide: Suno v5.5", url: "https://www.musicbusinessworldwide.com/suno-launches-v5-5-ai-model-with-voice-capture-and-personalization-features/", dateAccessed: "2026-04-18" },
