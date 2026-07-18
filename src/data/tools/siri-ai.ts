@@ -37,13 +37,18 @@ export const siriAi: ToolReview = {
     "Privacy posture carries over: on-device processing where possible, Private Cloud Compute for the rest",
   ],
   cons: [
-    "Not actually available to regular users yet -- developer betas only since June 8, public beta in July, general availability this fall; treat every capability claim as unverified until then",
+    "Beta-only for regular users -- the iOS 27 public beta (July 13) is the first public access, some features are waitlist-gated inside it, and general availability doesn't come until this fall",
     "EU iPhone/iPad users excluded at launch (Mac, Watch, Vision Pro get it with supported languages); China excluded entirely pending regulatory approval",
     "English-only at launch",
     "Steep device floor: iPhone 15 Pro / iPhone 16+ or Apple Silicon -- a huge share of active iPhones won't qualify",
     "Apple's assistant track record demands skepticism -- the original 'smarter Siri' was announced at WWDC 2024 and slipped for two years before this rebuild",
   ],
   knownIssues: [
+    {
+      description: "PUBLIC BETA SHIPPED (2026-07-13/14): the **iOS 27 public beta is live**, and with it the first public access to the rebuilt Siri AI. Confirmed in the beta: **Siri ships as a standalone, preinstalled Home Screen app for the first time** -- chat-style interface, revisit all past Siri conversations and start new ones, iCloud sync across devices, on-screen awareness, and personal-context search of everything on the iPhone. Device floor holds: Apple Intelligence hardware required (iPhone 15 Pro or newer / iPhone Air). Caveats: some Siri AI features are reportedly **waitlist-gated even inside the beta** (per BGR/Mashable), and this is still a beta of an update -- GA comes with iOS 27 this fall (September on standard cadence, alongside iPhone 18). EU iPhone/iPad + China exclusions unchanged",
+      source: "TechCrunch (techcrunch.com/2026/07/14/apple-opens-its-new-siri-ai-to-everyone-with-the-ios-27-public-beta/), 9to5Mac (2026-07-16, standalone app), MacRumors (public beta 7/13), BGR/Mashable (waitlist gating)",
+      date: "2026-07-14",
+    },
     {
       description: "LAUNCH TIMELINE (announced 2026-06-08 at WWDC): developer testing began immediately in the OS 27 developer betas; public beta arrives in July 2026; general availability comes this fall with iOS 27 / iPadOS 27 / macOS 27 / watchOS 27 / visionOS 27. The Siri AI user-facing beta itself launches 'later this year,' initially in English. Apple's PR positions it as 'profoundly more intelligent, knowledgeable, and capable' -- understands on-screen content, searches personal data across apps, accesses web information, performs system-wide actions, and gets a dedicated Siri app with iCloud-synced conversation history",
       source: "Apple newsroom (apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/)",
@@ -74,8 +79,10 @@ export const siriAi: ToolReview = {
   notFor: "Anyone who needs it today (it's developer-beta only), EU iPhone users, anyone in China, older-device owners, or power users who want full control over model choice and parameters -- use ChatGPT, Claude, or Gemini apps directly instead.",
   verdict: "Apple finally did the Siri rebuild everyone has demanded since 2023 -- and did it by admitting it needed help, building its new foundation models in collaboration with Google's Gemini. The pitch is compelling: a frontier-class conversational assistant with on-screen awareness and personal-context search, free with the OS, plus an Extensions framework that lets you swap in Claude or Gemini as your system assistant. The catch is that none of it reaches regular users until the public beta in July and the fall OS releases, the device floor is steep, and the EU/China exclusions cut out two enormous markets. We're listing it now because the announcement reshapes the assistant landscape -- but score it as a promise, not a product, until the fall ships.",
 
-  lastReviewedDate: "2026-07-05",
+  lastReviewedDate: "2026-07-18",
   dataSources: [
+    { name: "9to5Mac: iOS 27 adds an all-new app to your iPhone's Home Screen (standalone Siri app, 2026-07-16)", url: "https://9to5mac.com/2026/07/16/ios-27-adds-an-all-new-app-to-your-iphones-home-screen/", dateAccessed: "2026-07-18" },
+    { name: "TechCrunch: Apple opens its new Siri AI to everyone with the iOS 27 public beta (2026-07-14)", url: "https://techcrunch.com/2026/07/14/apple-opens-its-new-siri-ai-to-everyone-with-the-ios-27-public-beta/", dateAccessed: "2026-07-18" },
     { name: "Apple newsroom: Due to DMA, Siri AI delayed in EU for iOS 27 and iPadOS 27 (2026-06-08)", url: "https://www.apple.com/newsroom/2026/06/due-to-dma-siri-ai-delayed-in-eu-for-ios-27-and-ipados-27/", dateAccessed: "2026-07-05" },
     { name: "MacRumors: Cook 'constructive' EU talks on Siri AI launch (FT-sourced, 2026-07-01)", url: "https://www.macrumors.com/2026/07/01/tim-cook-constructive-talks-eu-siri-ai-launch/", dateAccessed: "2026-07-05" },
     { name: "Apple newsroom: Apple unveils next generation of Apple Intelligence, Siri AI, and more (2026-06-08)", url: "https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/", dateAccessed: "2026-06-09" },

@@ -46,6 +46,8 @@ import { commandA } from "./command-a";
 import { hunyuan3 } from "./hunyuan-3";
 import { mimo } from "./mimo";
 import { longcat } from "./longcat";
+import { inkling } from "./inkling";
+import { bonsai27b } from "./bonsai-27b";
 
 // AI Writing Tools
 import { jasper } from "./jasper";
@@ -231,6 +233,8 @@ export const tools: ToolReview[] = [
   hunyuan3,
   mimo,
   longcat,
+  inkling,
+  bonsai27b,
   // Writing
   jasper,
   copyAi,

@@ -47,6 +47,11 @@ export const chatgptWork: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "ROLLOUT STATUS (week two, as of 2026-07-18): OpenAI's business release notes (7/9) say Work launched on 'all paid plans except Free and Go,' with Pro/Pro Lite/Enterprise/Edu first and 'Plus and Business users will follow over the coming days' -- no vendor confirmation of completion has been posted since, so treat Plus/Business availability as rolling out, not done. **Enterprise/Edu get a two-week preview period, off by default, that auto-enables at the end (~7/23)** -- admins who want it off must act before then. Also confirmed at launch: ChatGPT Sites public publishing is NOT available in the EEA/Switzerland/UK, and legacy group chats began retiring 7/9. Week-two incident worth knowing (single-source, TechTimes 7/12 -- flagged as such): reports that GPT-5.6 Sol deleted user files during the Work launch, a failure mode OpenAI's own System Card documented pre-release; treat cautiously pending wider confirmation. ATLAS DATE FIRMED UP: the Atlas browser announced for sunset on 7/9 **stops working August 9, 2026** per press (TechRadar); browsing/agent features fold into the unified desktop app + Chrome extension",
+      source: "OpenAI business release notes (help.openai.com/en/articles/11391654), TechCrunch (2026-07-09, Atlas), TechRadar (Aug 9 stop-work date), TechTimes (2026-07-12, single-source file-deletion reports)",
+      date: "2026-07-18",
+    },
+    {
       description: "ROLLOUT + USAGE-POOL GOTCHA (2026-07-10, press): the **Plus/Business rollout began 7/10** (day after Pro/Enterprise/Edu), on track with the 'coming days' guidance. Biggest early complaint (analyst-reported): **ChatGPT Work and Codex draw from the SAME usage pool** -- a long Work run can silently consume your Codex weekly limits, which surprised teams using both. Enterprise admins got per-user monthly limits + workspace overage caps in response. Also note desktop/cloud Work conversations didn't sync at launch",
       source: "Dataconomy (2026-07-10), The Tech Portal (2026-07-10), digitalapplied.com week-one recap",
       date: "2026-07-10",
@@ -61,8 +66,10 @@ export const chatgptWork: ToolReview = {
   notFor: "Anyone who needs deterministic, auditable automation today (this is a v1 agent with staged rollout), teams on non-OpenAI stacks, or privacy-sensitive orgs not ready to hand an agent connected-app access. For pure coding, Codex/Claude Code/Cursor remain the sharper tools.",
   verdict: "ChatGPT Work is OpenAI generalizing the Codex playbook to all knowledge work, and it's the most credible 'agent that finishes the job' launch yet from a consumer-scale vendor: real app connections through one plugins directory, hours-long autonomous runs with approval gates, scheduled automations, and publishable Sites -- distributed free on every desktop plan from day one. The bet is distribution plus GPT-5.6's template-following gains, and the honest caveats are the usual agent ones: usage metering makes heavy runs tier-dependent, connected-tool agents carry structural prompt-injection risk, and v1 roughness is guaranteed. If you're a Pro/Enterprise user it's an immediate try; Plus users should test it the week it lands for them.",
 
-  lastReviewedDate: "2026-07-10",
+  lastReviewedDate: "2026-07-18",
   dataSources: [
+    { name: "OpenAI business release notes (Work rollout terms)", url: "https://help.openai.com/en/articles/11391654-chatgpt-business-release-notes", dateAccessed: "2026-07-18" },
+    { name: "TechCrunch: OpenAI is shutting down Atlas (2026-07-09)", url: "https://techcrunch.com/2026/07/09/openai-is-shutting-down-atlas-but-its-ai-browser-ambitions-are-still-growing/", dateAccessed: "2026-07-18" },
     { name: "OpenAI: ChatGPT is now a partner for your most ambitious work (2026-07-09)", url: "https://openai.com/index/chatgpt-for-your-most-ambitious-work/", dateAccessed: "2026-07-09" },
     { name: "OpenAI: GPT-5.6 GA (powers ChatGPT Work)", url: "https://openai.com/index/gpt-5-6/", dateAccessed: "2026-07-09" },
     { name: "Bloomberg: OpenAI unveils ChatGPT Work agent to field tasks for hours", url: "https://www.bloomberg.com/news/articles/2026-07-09/openai-unveils-chatgpt-work-agent-to-field-tasks-for-hours", dateAccessed: "2026-07-09" },

@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const gemini: ToolReview = {
   slug: "gemini",
   name: "Gemini (Google)",
-  tagline: "Google's LLM with deep Google Workspace integration, 2M token context window, and native code execution -- Gemini 3.5 Flash GA 2026-05-19 (I/O 2026, now with native computer use), Gemini 3.5 Pro still unshipped as of July 2026 (slipped past its June window), Gemini Spark agent + Managed Agents public preview in the Gemini API",
+  tagline: "Google's LLM with deep Google Workspace integration, 2M token context window, and native code execution -- Gemini 3.5 Flash GA 2026-05-19 (I/O 2026, now with native computer use), Gemini 3.5 Pro delayed months behind schedule (Bloomberg, 7/16 -- coding shortfalls; upgraded Flash stopgap in partner testing), Gemini Spark agent + Managed Agents public preview in the Gemini API",
   category: "ai-llms",
   url: "https://gemini.google.com",
 
@@ -56,6 +56,11 @@ export const gemini: ToolReview = {
     "The Gemini app UI feels like Google slapped AI onto an existing product",
   ],
   knownIssues: [
+    {
+      description: "GEMINI 3.5 PRO DELAY NOW VENDOR-SIDE CONFIRMED (2026-07-16, Bloomberg): Google is reportedly **months behind schedule** on Gemini 3.5 Pro -- Bloomberg's sourcing says the model's capabilities, 'particularly in coding,' fell short of internal goals, and a late-June remediation attempt (updated training data) produced 'disappointing' results. This is the third missed window (June -> the aggregator-only 'July 17' -> TBD), and press reports the delay news knocked ~$200B off Alphabet's market value on 7/16. Google's own statement: it is 'currently testing 3.5 Pro, an upgraded Flash model, and other models with partners' -- so an upgraded Flash stopgap may ship first. The 'July 17' date circulating on aggregators was never Google-confirmed. Treat all 3.5 Pro capability claims as unshipped. SEPARATE COMMUNITY WATCH (unconfirmed, do not treat as vendor fact): devs on Google's official AI forum report `gemini-2.5-flash` returning 'no longer available' 404s starting ~7/9, three months ahead of its published Oct 16, 2026 shutdown date -- no Google response in-thread yet; could be a bug or partial rollout. If you depend on 2.5 Flash, verify availability directly",
+      source: "Bloomberg (2026-07-16), 9to5Google (9to5google.com/2026/07/16/gemini-3-5-pro-delays/), LA Times (2026-07-17), discuss.ai.google.dev thread 174217 (community, unconfirmed)",
+      date: "2026-07-16",
+    },
     {
       description: "GEMINI SPARK ON MACOS (2026-06-30/07-01): Google's agentic assistant Gemini Spark launched on the Mac Gemini app in beta -- Google AI Ultra subscribers, 18+, US only (gemini.google/mac). Local file automation, MCP support, and new connected apps: Canva, Dropbox, Instacart, OpenTable, Zillow Rentals, plus Google Tasks/Keep. Google's answer to Claude desktop agents and OpenAI's Codex/Operator surface war on the desktop",
       source: "blog.google (blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-june-2026/), TechCrunch 2026-07-01",
@@ -156,8 +161,9 @@ export const gemini: ToolReview = {
   notFor: "Anyone who needs the best raw output quality. Claude and GPT-4 both write better. Also not for anyone spooked by Google's history of abandoning products.",
   verdict: "Gemini's strength is the ecosystem play. The 1M context window is genuinely useful for long documents, and the Google Workspace integration is something neither OpenAI nor Anthropic can match. But purely as an LLM, the output quality is a step behind Claude and GPT-4. Pick Gemini if you're deep in Google's ecosystem. Otherwise, the other two are better standalone.",
 
-  lastReviewedDate: "2026-07-05",
+  lastReviewedDate: "2026-07-18",
   dataSources: [
+    { name: "9to5Google: Gemini 3.5 Pro delays (Bloomberg-sourced, 2026-07-16)", url: "https://9to5google.com/2026/07/16/gemini-3-5-pro-delays/", dateAccessed: "2026-07-18" },
     { name: "Google Blog: Gemini Omni Flash + Nano Banana 2 Lite (2026-06-30)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/", dateAccessed: "2026-07-04" },
     { name: "Google Blog: Computer use in Gemini 3.5 Flash (2026-06-24)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/", dateAccessed: "2026-07-04" },
     { name: "Google Blog: Gemini Spark updates June 2026 (macOS beta)", url: "https://blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-june-2026/", dateAccessed: "2026-07-05" },

@@ -53,6 +53,16 @@ export const runway: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PLATFORM LAUNCH -- RUNWAY DEV (2026-07-08, vendor): Runway launched **Runway Dev**, 'the AI media platform for developers: one API to integrate the best image, video, audio and real-time character models.' Four surfaces: **Models** (first-party Gen-4.5, Aleph 2.0, Act-Two PLUS third-party models incl. Seedance, GPT Image 2, ElevenLabs -- 'swap between them by changing one line of code'), **Recipes** (prebuilt endpoints: Ad Localization, Product Ad, Product Swap, Multi-Shot Video, Marketing Stock Image), **Workflows** (custom multi-model pipelines behind private API endpoints), and **Characters** (interactive avatars with voice, tool calling, knowledge bases). Enterprise posture: SOC 2 Type II, IP indemnification, no-training terms, 99.9% uptime, per-model cost visibility. Named customers: Adobe, ElevenLabs, Shutterstock, Figma Weave, Gamma. Pricing not in the launch post",
+      source: "Runway news (runwayml.com/news/company-news/introducing-runway-dev)",
+      date: "2026-07-08",
+    },
+    {
+      description: "MODEL SUNSETS (vendor-confirmed dates): **Gen-3 Alpha went offline July 8, 2026** ('Gen-3 Alpha will no longer be available after July 8, 2026' -- Runway help center) and **Gen-3 Alpha Turbo + Gen-4 Aleph are deprecated and officially sunset July 30, 2026** (Runway dev docs: 'Gen-3 Alpha Turbo and Gen-4 Aleph are deprecated and will be officially sunset on July 30th, 2026'). Migration targets per vendor: Gen-3 Alpha Turbo -> Gen-4.5; Gen-4 Aleph -> Aleph 2.0. If you have pipelines pinned to Gen-3-era model ids, migrate before month-end",
+      source: "Runway help center (help.runwayml.com/hc/en-us/articles/30266515017875), Runway dev docs (docs.dev.runwayml.com/guides/pricing/, /guides/models/)",
+      date: "2026-07-08",
+    },
+    {
       description: "LATE-MAY/JUNE CLUSTER (all vendor-primary, runwayml.com/news): **5/26 Project Luxo** ('Crossing the Uncanny Valley of AI Media' -- research direction post), **5/27 Runway MCP** (drive Runway generation/editing from Claude, Cursor, and other MCP clients -- significant for agentic video pipelines), **6/1 Cosmos Coalition** launch, and **6/1 London HQ** opening as a world-model research hub for the UK/Europe. The MCP ship is the practical one: Runway becomes scriptable from inside coding agents, which no other major video platform offered as of early June",
       source: "Runway news (runwayml.com/news/project-luxo, /mcp, /introducing-cosmos-coalition, /runway-opens-london-hq)",
       date: "2026-06-01",
@@ -87,8 +97,10 @@ export const runway: ToolReview = {
   notFor: "Casual users or anyone on a tight budget. Credits disappear fast (especially at 4K), and the free tier barely lets you try it. For experimentation, Pika or Kling at similar price points are more forgiving.",
   verdict: "Runway remains the professional-tier pick for AI video in 2026. Gen-4.5 (shipped 2025-12-01) holds #1 on Artificial Analysis's text-to-video leaderboard at 1,247 Elo, with native 4K via Gen-4 Turbo and meaningful improvements in motion and physics over Gen-3. The creative suite -- inpainting, motion brush, video-to-video -- is still the widest in the market. Downsides are unchanged from Gen-3: credits burn fast (worse at 4K), 10-second clip cap, competition from Kling 3.0 and Veo 3.1 is tightening. If you need the best available quality or the full creative toolset, Runway. If you're budget-conscious or experimenting, Pika or Kling first.",
 
-  lastReviewedDate: "2026-06-10",
+  lastReviewedDate: "2026-07-18",
   dataSources: [
+    { name: "Runway news: Introducing Runway Dev (2026-07-08)", url: "https://runwayml.com/news/company-news/introducing-runway-dev", dateAccessed: "2026-07-18" },
+    { name: "Runway help center: Gen-3 Alpha / Turbo availability dates", url: "https://help.runwayml.com/hc/en-us/articles/30266515017875-Creating-with-Gen-3-Alpha-and-Gen-3-Alpha-Turbo", dateAccessed: "2026-07-18" },
     { name: "Runway Research: Introducing Runway Gen-4.5", url: "https://runwayml.com/research/introducing-runway-gen-4.5", dateAccessed: "2026-04-24" },
     { name: "CNBC: Runway Gen-4.5 video model (2025-12-01)", url: "https://www.cnbc.com/2025/12/01/runway-gen-4-5-video-model-google-open-ai.html", dateAccessed: "2026-04-24" },
     { name: "Artificial Analysis text-to-video leaderboard", url: "https://artificialanalysis.ai/text-to-video/arena", dateAccessed: "2026-04-24" },

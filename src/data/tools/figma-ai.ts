@@ -50,6 +50,11 @@ export const figmaAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "ACQUISITION (2026-07-07): Figma **acquired the team behind Bud (formerly Orchids)**, a vibe-coding / AI-agent platform for building applications across platforms. Both the Bud and Orchids products **shut down by July 18, 2026** -- existing users had to migrate their projects out before the deadline. Figma's stated aim: expand beyond design into coding and prototyping, 'giving teams more tools for building and prototyping apps, not just ideating over static concepts.' Read: the in-canvas design agent (May) + code layers (Config, June) + this team are one arc -- Figma is assembling an AI app-building layer directly on its canvas to defend against Claude Design / Cursor-style tools",
+      source: "TechCrunch (techcrunch.com/2026/07/07/figma-acquires-team-behind-a-vibe-coding-app/)",
+      date: "2026-07-07",
+    },
+    {
       description: "CONFIG 2026 (2026-06-24/25): At its annual conference Figma shipped a batch of AI + platform updates -- **code layers** (attach real code to design layers), **support for animations**, more AI features, and the in-canvas **design agent moving through beta**. Extends the May in-canvas agent and the design-to-code push, and lands as Figma defends its turf against Claude Design + Cursor-style design modes. Output-quality verdict below still stands until we re-test against the Config 2026 features.",
       source: "TechCrunch (techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/)",
       date: "2026-06-24",
@@ -79,8 +84,9 @@ export const figmaAi: ToolReview = {
   notFor: "Anyone expecting AI to generate production-ready designs from a text prompt -- it's not there yet.",
   verdict: "Figma AI is a collection of helpful shortcuts rather than a design revolution. The layer renaming, auto-layout suggestions, and content generation features genuinely save time on busywork. But the generative design features -- creating layouts from prompts -- produce generic results that no serious designer would ship. Think of it as a productivity add-on to an already great tool, not an AI design assistant. The real value is in the small time-savers, not the headline features.",
 
-  lastReviewedDate: "2026-07-04",
+  lastReviewedDate: "2026-07-18",
   dataSources: [
+    { name: "TechCrunch: Figma acquires team behind a vibe-coding app (2026-07-07)", url: "https://techcrunch.com/2026/07/07/figma-acquires-team-behind-a-vibe-coding-app/", dateAccessed: "2026-07-18" },
     { name: "TechCrunch: Figma adds code layers, animation support, more AI (Config 2026, 2026-06-24)", url: "https://techcrunch.com/2026/06/24/figma-adds-code-layers-support-for-animations-more-ai-features-in-new-update/", dateAccessed: "2026-07-04" },
     { name: "TechCrunch: Figma adds an AI assistant to its collaborative canvas (2026-05-20)", url: "https://techcrunch.com/2026/05/20/figma-adds-an-ai-assistant-to-its-collaborative-canvas/", dateAccessed: "2026-05-26" },
     { name: "Figma release notes", url: "https://www.figma.com/release-notes/", dateAccessed: "2026-04-18" },

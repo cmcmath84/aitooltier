@@ -43,6 +43,11 @@ export const museImage: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "FEATURE PULLED AFTER BACKLASH (~2026-07-10): Meta discontinued the Instagram feature that let users **generate AI images using photos from other people's public Instagram accounts**, days after it launched with the Muse rollout. The default was automatic opt-in, which drew immediate criticism from entertainment-industry figures and SAG-AFTRA ('Anything other than a clear and conspicuous opt-in for these types of uses of Instagram users' images is unacceptable'). Meta's statement: 'We've heard the feedback that this feature missed the mark, so it's no longer available.' IMPORTANT SCOPE: this kills only the public-photos remix feature -- **the Muse Image model itself remains live** in the Meta AI app, Instagram Stories, and WhatsApp. Worth knowing as a consent/provenance signal when evaluating Meta's media tools",
+      source: "Reuters (2026-07-10), Meta statement, SAG-AFTRA statement, Benzinga, Medianama",
+      date: "2026-07-10",
+    },
+    {
       description: "LAUNCH (2026-07-07): Meta Superintelligence Labs (led by Alexandr Wang) launched its first media-generation models. **Muse Image is generally available** across the Meta AI app, meta.ai, Instagram Stories (US), and WhatsApp (limited countries), coming soon to Facebook -- capabilities include instruction-faithful editing, multi-reference composition, tool use (coding + web search), self-refinement, and test-time compute scaling. It ranks #2 on Arena for text-to-image, single-image editing, and multi-image editing (as of 2026-07-05). **Muse Video is in preview** ('exceptional visual fidelity with native audio support,' Arena #3 for text-to-video), coming soon to creators and Meta AI. Images carry a hidden Content Seal provenance watermark. No pricing, benchmarks beyond Arena placement, or public API were disclosed at launch",
       source: "Meta AI blog (ai.meta.com/blog/introducing-muse-image-muse-video-msl/), Meta newsroom (about.fb.com), Reuters, CNBC",
       date: "2026-07-07",
@@ -52,8 +57,9 @@ export const museImage: ToolReview = {
   notFor: "Developers who need an API (there isn't one yet), teams that need production video today (Muse Video is preview-only), or anyone outside the launch regions. For a public API or top-of-Arena fidelity, use Nano Banana 2 or a dedicated provider.",
   verdict: "Meta Muse is a serious debut: a frontier lab's first image model landing at #2 on Arena across text-to-image and both editing tracks, free, and embedded directly in the apps where billions of people already share photos. The instruction-following and multi-reference composition are the features that make it useful beyond novelty, and shipping Content Seal provenance from day one is the right call. The caveats are real -- Muse Video is preview-only, there's no API or pricing, and the rollout is region-gated -- so treat this as an excellent in-app consumer tool today rather than a production or developer platform. If you live in Instagram/WhatsApp, it's an easy default; if you need an API or the outright quality ceiling, look at Nano Banana 2.",
 
-  lastReviewedDate: "2026-07-07",
+  lastReviewedDate: "2026-07-18",
   dataSources: [
+    { name: "Reuters (via AOL): Meta discontinues AI image feature days after launch (2026-07-10)", url: "https://www.aol.com/articles/meta-discontinues-ai-image-feature-233135000.html", dateAccessed: "2026-07-18" },
     { name: "Meta AI blog: Introducing Muse Image + Muse Video (2026-07-07)", url: "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/", dateAccessed: "2026-07-07" },
     { name: "Meta newsroom: Introducing Muse Image", url: "https://about.fb.com/news/2026/07/introducing-muse-image-meta-ai/", dateAccessed: "2026-07-07" },
     { name: "Reuters: Meta expands generative AI tools with Muse Image rollout", url: "https://www.reuters.com/technology/meta-expands-generative-ai-tools-with-muse-image-rollout-2026-07-07/", dateAccessed: "2026-07-07" },

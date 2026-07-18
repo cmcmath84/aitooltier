@@ -37,6 +37,11 @@ export const elevenlabs: ToolReview = {
     "Mistral Voxtral TTS (March 2026) now offers open-source 4B-param speech for free -- the gap has narrowed for self-hosting use cases",
   ],
   knownIssues: [
+    {
+      description: "DEPRECATION STATUS SETTLED (verified on vendor docs 2026-07-18): **scribe_v1 is now formally listed in the 'Deprecated models' table** -- 'First generation speech recognition (outclassed by v2 models)', replacement suggestion `scribe_v2` -- with NO removal date published (the ambiguous removal wording from early July is gone; it remains deprecated-but-available). Current STT flagships are Scribe v2 and Scribe v2 Realtime. Also now marked deprecated/legacy on the same models page: **eleven_turbo_v2_5, eleven_turbo_v2, and music_v1**. The monolingual_v1 + multilingual_v1 removals executed 7/9-7/10 stand. If you still call any v1 or turbo_v2-era model id, plan migrations now rather than waiting for a removal date to be announced",
+      source: "ElevenLabs docs: Models (elevenlabs.io/docs/overview/models, scraped 2026-07-18)",
+      date: "2026-07-18",
+    },
     { description: "V1 MODEL REMOVAL EXECUTED (2026-07-09; confirmed via docs delisting 7/10): **eleven_monolingual_v1 and eleven_multilingual_v1 are now delisted entirely from the vendor models page** -- the July 9 removal went through as scheduled, and pinned API calls to those TTS v1 model IDs should be treated as failing. **scribe_v1 remains listed as deprecated** ('outclassed by v2 models') with the removal-date wording now gone -- if you're still pinned to scribe_v1, migrate to scribe_v2 immediately rather than betting on the ambiguity. No past-tense changelog entry was posted for the removal; the delisting is the confirmation. These are model deprecations, not voice-library removals; cloned/library voices are unaffected. Separately (7/6 changelog): the Agents 'Simulate conversation' endpoints are deprecated in favor of newer test endpoints, and the `disable_interruptions` param was replaced by `interruption_mode`", source: "ElevenLabs docs (elevenlabs.io/docs/overview/models -- checked 2026-07-09 and 2026-07-10), ElevenLabs changelog (2026-06-08 removal announcement)", date: "2026-07-09" },
     { description: "PRODUCT (2026-05-26 + 2026-05-28): **Eleven Music v2** (5/26) -- genre switching mid-track, coherent fast rap, embedded sound effects in generated tracks (see the elevenmusic page for detail). **Dubbing v2** (5/28) -- next-gen dubbing pipeline on the main platform. Also: UK Government voice-AI partnership announced 6/8. No pricing changes attached to either release", source: "ElevenLabs blog (elevenlabs.io/blog), TechCrunch (2026-05-27)", date: "2026-05-28" },
     { description: "Platform continues to face deepfake-abuse pressure -- voice cloning requires verified identity for new accounts as of 2026", source: "The Verge", date: "2026-01" },
@@ -46,9 +51,9 @@ export const elevenlabs: ToolReview = {
   notFor: "Users who only need occasional text-to-speech (browser TTS is free), or open-source purists (Mistral Voxtral fills that niche now).",
   verdict: "ElevenLabs remained the clear voice-quality leader through 2026 and extended its lead with Eleven v3 expressive speech plus the 11.ai MCP-based voice assistant (alpha). The February 2026 $500M raise at $11B and subsequent ~50% pricing cut made the consumer tiers meaningfully cheaper. The IBM watsonx partnership unlocks regulated-industry enterprise voice. If you produce any serious audio content, this is still the default. The only real competitive pressure is from Mistral's Voxtral TTS on the open-source side and from Google/Meta native voice models bundled into Gemini/Llama.",
 
-  lastReviewedDate: "2026-07-10",
+  lastReviewedDate: "2026-07-18",
   dataSources: [
-    { name: "ElevenLabs docs: Models (v1 deprecations, removal 2026-07-09)", url: "https://elevenlabs.io/docs/overview/models", dateAccessed: "2026-07-09" },
+    { name: "ElevenLabs docs: Models (scribe_v1/turbo_v2/music_v1 deprecated; v1 removals executed)", url: "https://elevenlabs.io/docs/overview/models", dateAccessed: "2026-07-18" },
     { name: "ElevenLabs official site", url: "https://elevenlabs.io", dateAccessed: "2026-04-16" },
     { name: "Voice.ai: ElevenLabs debuts 11.ai", url: "https://voice.ai/hub/ai-voice-agents/11-ai/", dateAccessed: "2026-04-16" },
     { name: "IBM Newsroom: ElevenLabs + IBM watsonx", url: "https://newsroom.ibm.com/2026-03-25-enterprise-ai-finds-its-voice-elevenlabs-and-ibm-bring-premium-voice-capabilities-to-agentic-ai", dateAccessed: "2026-04-16" },

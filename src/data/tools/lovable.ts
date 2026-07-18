@@ -56,6 +56,11 @@ export const lovable: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "FUNDING TALKS (2026-07-08, press-reported -- not closed): Lovable is **reportedly in talks to raise $300M at a $13.2B valuation** led by Menlo Ventures -- exactly double its $6.6B December 2025 valuation, seven months later, on the back of the $500M ARR milestone (June). Sourced to Sifted via TechCrunch; treat as 'in talks' until the round is confirmed closed. Separately shipped (2026-07-15, vendor blog): **your Lovable app now works inside ChatGPT and Claude** -- Lovable-built apps are accessible directly within ChatGPT, Claude, and other AI tools, a distribution play that puts user-built apps where the AI chat traffic already is",
+      source: "TechCrunch (techcrunch.com/2026/07/08/lovable-reportedly-in-talks-to-double-its-valuation-to-13-2b/), Sifted, Lovable blog (2026-07-15)",
+      date: "2026-07-15",
+    },
+    {
       description: "GROWTH MILESTONE (2026-06-09): Lovable said it hit **$500M in annualized revenue with ~1 million new projects created per week** -- a steep ramp from the ~$400M ARR figure reported earlier in 2026. It also expanded its Google Cloud partnership (6/3) and is opening a US (Boston) office. Context for buyers: this is one of the fastest-scaling AI app builders, which cuts both ways -- strong momentum and staying power, but also rapid product/pricing evolution to expect.",
       source: "TechCrunch (techcrunch.com/2026/06/09/lovable-says-it-has-hit-500m-in-annualized-revenue-with-1-million-new-projects-a-week/)",
       date: "2026-06-09",
@@ -95,8 +100,10 @@ export const lovable: ToolReview = {
   notFor: "Experienced developers building production applications with complex business logic. If you need custom backends, specific architectures, or clean maintainable code, you'll outgrow Lovable quickly.",
   verdict: "Lovable is genuinely magical for its target audience. Watching an app materialize from a text description is still impressive, and the 8M user base proves there's massive demand for this. But there's a ceiling, and you'll hit it faster than the marketing suggests. Simple CRUD apps and landing pages? Fantastic. Anything with complex state, custom business logic, or specific architectural needs? The generated code becomes a liability. Use it for prototypes and MVPs, but plan to rewrite if the project takes off.",
 
-  lastReviewedDate: "2026-07-04",
+  lastReviewedDate: "2026-07-18",
   dataSources: [
+    { name: "TechCrunch: Lovable reportedly in talks to double valuation to $13.2B (2026-07-08)", url: "https://techcrunch.com/2026/07/08/lovable-reportedly-in-talks-to-double-its-valuation-to-13-2b/", dateAccessed: "2026-07-18" },
+    { name: "Lovable blog: Your Lovable app now works inside ChatGPT and Claude (2026-07-15)", url: "https://lovable.dev/blog", dateAccessed: "2026-07-18" },
     { name: "TechCrunch: Lovable hits $500M ARR with 1M new projects/week (2026-06-09)", url: "https://techcrunch.com/2026/06/09/lovable-says-it-has-hit-500m-in-annualized-revenue-with-1-million-new-projects-a-week/", dateAccessed: "2026-07-04" },
     { name: "Lovable Blog: The Lovable mobile app is here (2026-04-27)", url: "https://lovable.dev/blog/mobile-app", dateAccessed: "2026-05-20" },
     { name: "Lovable official site", dateAccessed: "2026-03-31" },

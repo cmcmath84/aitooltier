@@ -66,6 +66,11 @@ export const notionAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRODUCT (2026-07-09, vendor release notes): **Notion Workers are now shareable across teams** -- 'You can now share your Notion Workers': build a Worker once, distribute it to power Custom Agents across departments, with two permission tiers (`Can connect` = teammates use it; `Full access` = teammates can modify/repurpose it). Managed from the Developer Portal (Settings -> Connections). Example use: one teammate's Salesforce Worker powering sales + marketing agents org-wide. REMINDER on the money clock: Workers remain free until **August 11, 2026, when the credit system begins** (announced with Platform 3.5) -- shared Workers spreading through an org now will start metering then; audit which Workers teams depend on before the flip",
+      source: "Notion releases (notion.com/releases/2026-07-09)",
+      date: "2026-07-09",
+    },
+    {
       description: "NOTION 3.6 (2026-07-01, vendor releases page): the External Agents alpha from Platform 3.5 is now a headline feature -- **External Agents (Claude and Cursor first)** can be assigned tasks from a shared board, @-mentioned like teammates, and watched as they run; **multi-agent workflows** bring several agents into one UI to automate workflows end-to-end. Also shipped: **interactive HTML blocks** (agents build ROI calculators/quizzes/org-chart visualizers that live in Notion), **speaker identification in AI Meeting Notes** (mic-based) + audio file uploads, **Microsoft Office file support** (create/read PPTX/XLSX/DOCX), **Outlook Mail + Calendar integration**, 5 new MCP connections for Custom Agents (Mercury, Mixpanel, Miro, Box, ClickHouse), expanded model options (**Opus 4.8, Grok 4.3, GLM 5.2**), Custom Agent audit logging (Enterprise), and Windows CLI support. The 'Notion can't reach outside Notion' criticism is now largely obsolete",
       source: "Notion releases (notion.com/releases/2026-07-01)",
       date: "2026-07-01",
@@ -106,8 +111,9 @@ export const notionAi: ToolReview = {
   verdict:
     "Notion AI is convenient, not exceptional. If Notion is already your team's brain, the AI features add genuine value for summarization and workspace search. But the writing output is mediocre, the per-member pricing adds up fast, and you can get better AI writing from dedicated tools. It's a nice-to-have, not a must-have.",
 
-  lastReviewedDate: "2026-07-09",
+  lastReviewedDate: "2026-07-18",
   dataSources: [
+    { name: "Notion releases 2026-07-09 (shareable Workers)", url: "https://www.notion.com/releases/2026-07-09", dateAccessed: "2026-07-18" },
     { name: "Notion releases 2026-04-14", url: "https://www.notion.com/releases/2026-04-14", dateAccessed: "2026-04-18" },
     { name: "Fazm Blog: Notion AI April 2026", url: "https://fazm.ai/blog/notion-ai-releases-april-2026-complete-list-of-every-ai-feature-shipped", dateAccessed: "2026-04-18" },
     { name: "Reddit r/Notion", dateAccessed: "2026-04-18" },

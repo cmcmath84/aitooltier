@@ -21,6 +21,8 @@ const logoMap: Record<string, string> = {
   "claude-mythos": "/logos/anthropic.png",
   "claude-science": "/logos/anthropic.png",
   longcat: "/logos/meituan.png",
+  inkling: "/logos/thinkingmachines.png",
+  "bonsai-27b": "/logos/prismml.png",
   chatgpt: "/logos/openai.png",
   "chatgpt-work": "/logos/openai.png",
   "gpt-live": "/logos/openai.png",
