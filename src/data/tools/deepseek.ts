@@ -60,8 +60,8 @@ export const deepseek: ToolReview = {
       date: "2026-07-24",
     },
     {
-      description: "V4 OFFICIAL RELEASE MID-JULY + FIRST PEAK/OFF-PEAK PRICING (announced 2026-06-30): DeepSeek scheduled the **official (non-preview) V4 release for mid-July 2026**, with 1M context across the lineup -- and will introduce **time-of-day API pricing for the first time: peak hours (9:00-12:00 and 14:00-18:00 daily) billed at 2x the off-peak rate**, effective alongside the release. Exact per-token rates not yet published; if you batch heavy workloads, shifting them off-peak will halve token costs once this lands. Watch for the release + rate card mid-July",
-      source: "TechNode (technode.com/2026/06/30/deepseek-to-launch-v4-in-mid-july-with-new-peak-time-api-pricing/)",
+      description: "V4 OFFICIAL RELEASE MID-JULY + FIRST PEAK/OFF-PEAK PRICING (announced 2026-06-30): DeepSeek scheduled the **official (non-preview) V4 release for mid-July 2026**, with 1M context across the lineup -- and will introduce **time-of-day API pricing for the first time: peak hours (9:00-12:00 and 14:00-18:00 daily) billed at 2x the off-peak rate**, effective alongside the release. STATUS as of 2026-07-22: the vendor news page (api-docs.deepseek.com/news/news260424) STILL labels V4 as 'Preview' and the peak/off-peak rate card has not been published as text (only a pricing image), so treat 'GA' as imminent-but-not-confirmed; community reporting points to a WAIC-timed reveal (~7/20-26, Shanghai). What IS locked is the **7/24 15:59 UTC legacy-alias retirement** (see entry above) -- that is the hard, vendor-confirmed date. If you batch heavy workloads, shifting them off-peak will halve token costs once the rate card lands",
+      source: "TechNode (technode.com/2026/06/30/deepseek-to-launch-v4-in-mid-july-with-new-peak-time-api-pricing/), DeepSeek API docs (api-docs.deepseek.com/news/news260424, re-checked 2026-07-22 -- still 'Preview')",
       date: "2026-06-30",
     },
     {
@@ -99,9 +99,9 @@ export const deepseek: ToolReview = {
   notFor: "Anyone working on content that touches geopolitical topics, or teams that need guaranteed uptime and enterprise SLAs. Also not ideal if your primary use case is creative English writing.",
   verdict: "DeepSeek is the real deal when it comes to bang-for-your-buck AI. The reasoning capabilities are legitimately impressive, and the open-source angle gives it a flexibility that closed models can't match. The censorship limitations are a dealbreaker for some use cases, and the writing quality trails behind Claude and GPT-4. But for coding, math, and analytical tasks? It's hard to argue with near-frontier performance at a fraction of the cost.",
 
-  lastReviewedDate: "2026-07-09",
+  lastReviewedDate: "2026-07-22",
   dataSources: [
-    { name: "DeepSeek V4 API launch announcement (2026-04-24)", url: "https://api-docs.deepseek.com/news/news260424", dateAccessed: "2026-04-24" },
+    { name: "DeepSeek V4 API launch announcement + 7/24 alias retirement (re-checked 2026-07-22)", url: "https://api-docs.deepseek.com/news/news260424", dateAccessed: "2026-07-22" },
     { name: "Bloomberg: DeepSeek unveils newest flagship (2026-04-24)", url: "https://www.bloomberg.com/news/articles/2026-04-24/deepseek-unveils-newest-flagship-a-year-after-ai-breakthrough", dateAccessed: "2026-04-24" },
     { name: "CNBC: DeepSeek V4 LLM preview (2026-04-24)", url: "https://www.cnbc.com/2026/04/24/deepseek-v4-llm-preview-open-source-ai-competition-china.html", dateAccessed: "2026-04-24" },
     { name: "TechCrunch: DeepSeek V4 closes gap with frontier (2026-04-24)", url: "https://techcrunch.com/2026/04/24/deepseek-previews-new-ai-model-that-closes-the-gap-with-frontier-models/", dateAccessed: "2026-04-24" },

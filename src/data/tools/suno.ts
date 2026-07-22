@@ -65,9 +65,15 @@ export const suno: ToolReview = {
   knownIssues: [
     {
       description:
-        "TWO COURT RULINGS DUE THIS MONTH (as of 2026-07-09 press): (1) **Sony v. Suno summary-judgment hearing is scheduled for July 2026** before Chief Judge F. Dennis Saylor IV (D. Mass.) -- the first real fair-use ruling on AI music training in the US; no ruling as of 7/10. (2) **GEMA v. Suno: the Munich Regional Court verdict is due July 31, 2026** -- the German case could produce the first European judgment on the same question. Adjacent (7/5): Suno is leveraging Udio's SDNY win (judge denied Sony's bid to expand admissible infringed works) to fight UMG/Sony's motion to add ~61K recordings to the Massachusetts case. Either ruling could materially change Suno's legal posture -- if you're building a business on Suno output, watch both dates",
-      source: "Music Times (2026-07-09), Digital Music News (2026-07-05), Music Business Worldwide",
-      date: "2026-07-09",
+        "SOURCE-CODE LEAK + DATA BREACH EXPOSES TRAINING-DATA SCRAPING (mid-July 2026, first reported by 404 Media ~7/15, covered by TechCrunch): a hacker leaked Suno source code after a **November 2025 supply-chain compromise** (traced to the Shai-Hulud npm attack) that captured an employee's credentials. The code allegedly documents mass scraping of copyrighted audio -- **YouTube Music (~113,879 hrs), Genius (~17,615 hrs), Deezer (~12,287 hrs)**, plus Pond5/Jamendo/Freesound/IMSLP, podcast RSS feeds, and stock libraries (hours per Music Business Worldwide / 404 Media). A parallel **user-data breach** reportedly exposed data on tens of millions of accounts (~55M cited), including emails, phone numbers, and partial credit-card / Stripe payment metadata. Suno characterized it as a 'limited security incident that was quickly contained,' said the exposed code was 'outdated / no longer in use,' and reportedly did not notify customers of the Nov 2025 breach. LEGAL WEIGHT: labels argue the scraping deliberately circumvented YouTube's protections (a DMCA / terms-of-service violation) -- potentially a 'smoking gun' that undercuts Suno's fair-use defense in the pending GEMA and UMG/Sony cases",
+      source: "404 Media (404media.co/hack-reveals-suno-ai-music-generator-scraped-youtube-deezer-and-genius/), TechCrunch (2026-07-15), Music Business Worldwide",
+      date: "2026-07-15",
+    },
+    {
+      description:
+        "LITIGATION STATUS -- ONE VERDICT DUE 7/31, US CASE NOT UNTIL 2027 (corrected 2026-07-22): (1) **GEMA v. Suno: the Munich Regional Court reads its decision Friday July 31, 2026, 9:00, Courtroom 270** (postponed to this date) -- potentially the first European ruling that training AI music on copyrighted works requires a license, enforceable under German law during any appeal. (2) **US case (UMG/Sony v. Suno, D. Mass., Chief Judge F. Dennis Saylor IV) is NOT imminent** -- CORRECTION to earlier 'July 2026 summary-judgment hearing' reporting: the court **reset its schedule on 2026-06-30, with dispositive (summary-judgment) motions now due April 9, 2027**. So the only near-term ruling is Munich's 7/31; the US fair-use question is a 2027+ timeline. The mid-July source-code leak (see entry above) is likely to feature in both proceedings",
+      source: "MLex (2026, GEMA-Suno ruling postponed to July 31), TechTimes (2026-07-10), CourtListener docket 68878608 (UMG Recordings v. Suno, schedule reset)",
+      date: "2026-07-22",
     },
     {
       description:
@@ -113,8 +119,12 @@ export const suno: ToolReview = {
   verdict:
     "Suno is the fastest way to go from an idea to a full song, and for casual use it's genuinely fun. But the lack of editing control and the inconsistent vocal quality mean it's better suited for content creators and hobbyists than anyone trying to produce polished tracks. The free tier is worth trying -- just don't expect studio quality.",
 
-  lastReviewedDate: "2026-07-10",
+  lastReviewedDate: "2026-07-22",
   dataSources: [
+    { name: "TechCrunch: Hack suggests Suno scraped YouTube for training data (2026-07-15)", url: "https://techcrunch.com/2026/07/15/hack-suggests-ai-music-generator-suno-scraped-youtube-for-training-data/", dateAccessed: "2026-07-22" },
+    { name: "404 Media: Hack reveals Suno scraped YouTube, Deezer, and Genius", url: "https://www.404media.co/hack-reveals-suno-ai-music-generator-scraped-youtube-deezer-and-genius/", dateAccessed: "2026-07-22" },
+    { name: "MLex: GEMA-Suno copyright ruling postponed to July 31", url: "https://www.mlex.com/mlex/articles/2481789/gema-suno-copyright-ruling-postponed-by-munich-court-to-july-31", dateAccessed: "2026-07-22" },
+    { name: "CourtListener: UMG Recordings v. Suno docket (schedule reset, motions due April 2027)", url: "https://www.courtlistener.com/docket/68878608/umg-recordings-inc-v-suno-inc/", dateAccessed: "2026-07-22" },
     { name: "Suno blog: v5.5", url: "https://suno.com/blog/v5-5", dateAccessed: "2026-04-18" },
     { name: "Music Business Worldwide: Suno v5.5", url: "https://www.musicbusinessworldwide.com/suno-launches-v5-5-ai-model-with-voice-capture-and-personalization-features/", dateAccessed: "2026-04-18" },
     { name: "Digital Music News: Suno-UMG impasse", url: "https://www.digitalmusicnews.com/2026/04/09/suno-universal-music-lawsuit-settlement-impasse/", dateAccessed: "2026-04-18" },
@@ -122,7 +132,7 @@ export const suno: ToolReview = {
   ],
   affiliateUrl: "https://suno.com",
   status: "active",
-  metaTitle: "Suno Review 2026: AI Music Generator That Makes Full Songs From Text",
+  metaTitle: "Suno Review 2026: AI Music Generator (Full Songs From Text) + Hack & Lawsuit Update",
   metaDescription:
-    "Suno review. Generate full songs with vocals from a text prompt. Great for content creators, limited for musicians. Scores, pricing, known issues. March 2026.",
+    "Suno review. Generate full songs with vocals from a text prompt. Plus the July 2026 source-code leak, data breach, and where the GEMA (7/31 verdict) and UMG/Sony cases stand. Scores, pricing, known issues.",
 };

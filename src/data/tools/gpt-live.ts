@@ -46,6 +46,11 @@ export const gptLive: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "LEGACY AUDIO/REALTIME/TRANSCRIPTION MODELS DEPRECATED (2026-07-20, vendor-primary; removal 2027-01-20): OpenAI notified developers that its legacy audio, realtime, and transcription model families are deprecated and **will be removed from the API on January 20, 2027**. Affected IDs and their replacements: `gpt-realtime` -> `gpt-realtime-2.1`; `gpt-4o-realtime` -> `gpt-realtime-2.1`; `gpt-realtime-mini` / `gpt-4o-mini-realtime` -> `gpt-realtime-2.1-mini`; `gpt-audio`, `gpt-4o-audio`, `gpt-audio-mini`, `gpt-4o-mini-audio` -> `gpt-audio-1.5`; `gpt-4o-mini-transcribe-2025-03-20` -> `gpt-4o-mini-transcribe-2025-12-15`. This is the developer-API voice stack (distinct from the consumer GPT-Live experience below, which has no public API yet). If you build on OpenAI voice/realtime today, plan the migration before the Jan 2027 cutoff -- `gpt-realtime-2.1` / `-mini` are the current GA developer path while the consumer GPT-Live API remains 'coming soon'",
+      source: "OpenAI API deprecations (developers.openai.com/api/docs/deprecations)",
+      date: "2026-07-20",
+    },
+    {
       description: "LAUNCH (2026-07-08): OpenAI launched **GPT-Live**, a new generation of full-duplex voice models that replaces the default ChatGPT Voice experience (150M+ weekly voice users). **GPT-Live-1** becomes the default for Go/Plus/Pro; **GPT-Live-1 mini** for Free; rolling out globally across iOS/Android/web. Architecture: continuous listen-while-speaking (interaction decisions many times per second) + **delegation** -- search/reasoning/agentic work is handed to GPT-5.5 (Instant, or Thinking at Medium/High effort) in the background while the conversation continues; OpenAI says the background model will track its latest frontier releases. Vendor benchmarks vs Advanced Voice Mode: **GPQA 76.5-84.2% (by effort) vs 45.3%; BrowseComp 35.1-75.2% vs 0.7%**; preferred over AVM in 75.7% (Live-1) / 69.2% (mini) of matched 5-10 min conversations. Also: visual answer cards (weather/stocks/sports/maps), nine remastered predefined voices (no cloning by design), voice-adapted safety stack (real-time steering, crisis flows, teen protections + parental notifications, system card at deploymentsafety.openai.com/gpt-live). Launch limitations: **no API yet** ('coming soon,' sign-up form live), **no video/screen-share** (legacy Standard/Advanced Voice Mode remain available for those), uneven fluency outside major languages",
       source: "OpenAI (openai.com/index/introducing-gpt-live/), TechCrunch, MacRumors",
       date: "2026-07-08",
@@ -55,8 +60,9 @@ export const gptLive: ToolReview = {
   notFor: "Developers (no API yet), anyone needing voice cloning or custom voices (ElevenLabs, Grok Voice), video/screen-share workflows (stay on legacy Advanced Voice Mode until GPT-Live adds it), or heavy non-English users in less-supported languages.",
   verdict: "GPT-Live is the biggest step-change in consumer voice AI since Advanced Voice Mode shipped: full-duplex conversation that finally stops feeling like walkie-talkie turns, plus a delegation trick that quietly gives your voice assistant frontier-model intelligence without breaking flow. The GPQA and BrowseComp deltas over AVM are not incremental -- they're a different class. What keeps it from a higher score is scope: no API, no video/screen-share, no custom voices. As a ChatGPT feature it's excellent and free; as a platform it hasn't started yet. If the API lands at reasonable pricing, this becomes a direct threat to every voice-agent stack.",
 
-  lastReviewedDate: "2026-07-09",
+  lastReviewedDate: "2026-07-22",
   dataSources: [
+    { name: "OpenAI API deprecations: legacy audio/realtime/transcription removal 2027-01-20 (announced 2026-07-20)", url: "https://developers.openai.com/api/docs/deprecations", dateAccessed: "2026-07-22" },
     { name: "OpenAI: Introducing GPT-Live (2026-07-08)", url: "https://openai.com/index/introducing-gpt-live/", dateAccessed: "2026-07-09" },
     { name: "OpenAI GPT-Live system card", url: "https://deploymentsafety.openai.com/gpt-live", dateAccessed: "2026-07-09" },
     { name: "OpenAI: GPT-Live API notification form", url: "https://openai.com/form/gpt-live-1-in-the-api/", dateAccessed: "2026-07-09" },

@@ -26,7 +26,7 @@ export const kimi: ToolReview = {
     {
       plan: "Self-hosted (Free -- K2.6/K2.7 line)",
       price: "$0",
-      features: ["Modified MIT license -- commercial use allowed", "K2.6 + K2.7-Code weights on Hugging Face today", "K3 weights promised late July 2026 (press reports cite 7/27) -- NOT yet published as of 7/18", "Fine-tuning permitted"],
+      features: ["Modified MIT license -- commercial use allowed", "K2.6 + K2.7-Code weights on Hugging Face today", "K3 weights promised late July 2026 (press reports cite 7/27) -- NOT yet published as of 7/22", "Fine-tuning permitted"],
     },
     {
       plan: "API (Moonshot direct, K2.6)",
@@ -92,7 +92,7 @@ export const kimi: ToolReview = {
   notFor: "Solo developers or hobbyists who want to run models locally -- 2.8T parameters is far beyond consumer hardware, and K3's weights aren't even published yet. Use Qwen3-Coder-Next or DeepSeek for self-hosting today.",
   verdict: "Kimi K3 (July 16-17, 2026) vaulted Moonshot from 'best open-weights value' to genuine frontier contention: 2.8T parameters, 1M context, multimodal, ranked best-available on Arena.AI at launch, and priced at $3/$15 per 1M -- a fifth of Anthropic's Fable 5 output rate. The launch rattled markets enough to be called a second DeepSeek shock. The caveats matter, though: the 'open-weight' branding is a promise, not a shipped artifact (weights due late July, license unconfirmed), vendor benchmark claims await third-party verification, and the API is visibly capacity-strained. If you want maximum capability per dollar via hosted API, K3 is now the pick to test first. If you need weights you can actually download today, that's still K2.6/K2.7-Code -- or watch for the K3 drop.",
 
-  lastReviewedDate: "2026-07-18",
+  lastReviewedDate: "2026-07-22",
   dataSources: [
     { name: "OpenRouter: Kimi K3 (pricing, context, capacity notes)", url: "https://openrouter.ai/moonshotai/kimi-k3", dateAccessed: "2026-07-18" },
     { name: "Fortune: Moonshot Kimi K3 rattles markets (2026-07-17)", url: "https://fortune.com/2026/07/17/china-moonshot-kimi-k3-markets-china-ai/", dateAccessed: "2026-07-18" },

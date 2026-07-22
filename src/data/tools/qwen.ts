@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const qwen: ToolReview = {
   slug: "qwen",
   name: "Qwen (Alibaba)",
-  tagline: "Alibaba's open-weights + API family -- Qwen 3.7 Max flagship GA (May 20 2026: SWE-Bench Pro 60.6%, Terminal-Bench 69.7%, GPQA 92.4%, $2.50/$7.50 per 1M with 50% promo until 6/22), Qwen3.7-Plus multimodal API (Jun 2), Qwen3.6-27B dense Apache 2.0 (beats the 397B MoE on coding from one consumer GPU)",
+  tagline: "Alibaba's open-weights + API family -- Qwen3.8-Max flagship previewed at WAIC (Jul 19 2026: 2.4T sparse-MoE multimodal, closed preview, 'second only to Fable 5'), Qwen 3.7 Max GA (SWE-Bench Pro 60.6%, Terminal-Bench 69.7%, $2.50/$7.50 per 1M), Qwen3.6-27B dense Apache 2.0 (beats the 397B MoE on coding from one consumer GPU)",
   category: "ai-local-models",
   url: "https://qwen.ai",
 
@@ -90,6 +90,11 @@ export const qwen: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "FLAGSHIP PREVIEW -- QWEN3.8-MAX (2026-07-19 at WAIC Shanghai, press-reported): Alibaba previewed **Qwen3.8-Max**, a **2.4-trillion-parameter sparse-MoE multimodal model** (text/image/video/docs), days after Moonshot's Kimi K3 open-weights launch. Alibaba positions it as 'second only to [Claude] Fable 5.' Access at preview is CLOSED: via Alibaba's Token Plan subscription plus the Qoder / QoderWork agentic platforms, at roughly 10% of standard pricing; **open weights 'promised soon' with no date or license, and no model card, benchmark table, or third-party eval yet** -- treat the ranking claim as unverified vendor positioning. SEPARATELY (2026-07-21) the Qwen team released **Qwen-Image-3.0**, a 3rd-gen image model (up to ~4,500-token prompts, legible text down to ~10px, 12 languages, UI/web + live-data rendering) -- but a transparency regression: **Qwen Chat access only, no open weights, no benchmarks, no technical report** (a departure from Qwen's prior Apache-2.0 same-day-weights image releases)",
+      source: "MarkTechPost (2026-07-19, Qwen3.8-Max preview), Unite.ai (2026-07-21, Qwen-Image-3.0)",
+      date: "2026-07-19",
+    },
+    {
       description: "USER-CREATED AI AGENTS SHUT DOWN -- TOOK EFFECT 2026-07-15 (confirmed): Alibaba's Qwen app (and ByteDance's Doubao, simultaneously) **shut down user-created/custom AI agent features on July 15, 2026** as China's rules on 'humanlike AI interaction services' (the anthropomorphic-AI/companion rules) took effect that day; Qwen had already disabled humanlike interactive agents ~7/10 ahead of the broader cutoff. IMPORTANT DATA DETAIL: the platforms diverge -- **Doubao** offers read-only access to old agent data until **October 15, 2026** (unrecoverable after), but **Qwen offers no migration path at all**: agent configurations and conversation histories are permanently deleted. This is a consumer-app change -- the Qwen models/API are unaffected. Separately (SCMP, early July, press-reported): Alibaba cut Qwen3.7-Max by ~80% and Qwen3.7-Plus by ~60% for international users on the Qoder platform during off-peak hours (10pm-8am Beijing = US working hours) -- an explicit play for US developer demand amid a broader Chinese token price war",
       source: "SCMP (scmp.com/tech/big-tech/article/3359482), TechTimes (2026-07-15, effective-date confirmation), Bloomberg (2026-07-06), TechNode",
       date: "2026-07-15",
@@ -139,8 +144,10 @@ export const qwen: ToolReview = {
   notFor: "Teams that need the Qwen3-Max flagship self-hostable (it's API-only), or use cases that touch Chinese-government-sensitive topics.",
   verdict: "Qwen is the most complete open-weights family in 2026. Alibaba ships Apache-2.0 weights across text, coding, vision, and reasoning -- every modality has a top-tier entry. Qwen3-Coder-Next is a standout: 3B active params but competitive with Claude Sonnet on coding. The catch is that Qwen3-Max, the absolute flagship, stays closed. If you can live with the PRC content filters and want the best open-weights ecosystem, Qwen is the S-tier pick.",
 
-  lastReviewedDate: "2026-07-09",
+  lastReviewedDate: "2026-07-22",
   dataSources: [
+    { name: "MarkTechPost: Alibaba previews Qwen3.8-Max (2.4T multimodal, 2026-07-19)", url: "https://www.marktechpost.com/2026/07/19/alibaba-previews-qwen3-8-max-a-2-4-trillion-parameter-multimodal-model-days-after-moonshots-kimi-k3-open-weight-launch/", dateAccessed: "2026-07-22" },
+    { name: "Unite.ai: Alibaba launches Qwen-Image-3.0 without benchmarks or weights (2026-07-21)", url: "https://www.unite.ai/alibaba-launches-qwen-image-3-0-without-benchmarks-or-weights/", dateAccessed: "2026-07-22" },
     { name: "Qwen blog: Qwen3.7 -- The Agent Frontier (vendor benchmarks)", url: "https://qwen.ai/blog?id=qwen3.7", dateAccessed: "2026-06-09" },
     { name: "Alibaba Cloud: Qwen 3.7 Max pricing + launch discount", url: "https://www.alibabacloud.com/campaign/qwen-discount", dateAccessed: "2026-06-09" },
     { name: "Alibaba Model Studio model list (qwen3.7-max + qwen3.7-plus)", url: "https://help.aliyun.com/zh/model-studio/models", dateAccessed: "2026-06-09" },

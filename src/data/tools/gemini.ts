@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const gemini: ToolReview = {
   slug: "gemini",
   name: "Gemini (Google)",
-  tagline: "Google's LLM with deep Google Workspace integration, 2M token context window, and native code execution -- Gemini 3.5 Flash GA 2026-05-19 (I/O 2026, now with native computer use), Gemini 3.5 Pro delayed months behind schedule (Bloomberg, 7/16 -- coding shortfalls; upgraded Flash stopgap in partner testing), Gemini Spark agent + Managed Agents public preview in the Gemini API",
+  tagline: "Google's LLM with deep Google Workspace integration, 2M token context window, and native code execution -- Gemini 3.6 Flash + 3.5 Flash-Lite GA 2026-07-21 (the 'upgraded Flash stopgap'; 3.6 Flash at $1.50/$7.50 per 1M, 17% fewer output tokens), Gemini 3.5 Pro STILL delayed and partner-testing-only (Bloomberg, 7/16 -- coding shortfalls, no ship date), Gemini 4 pre-training now underway",
   category: "ai-llms",
   url: "https://gemini.google.com",
 
@@ -20,7 +20,7 @@ export const gemini: ToolReview = {
     {
       plan: "Free",
       price: "$0",
-      features: ["Gemini 3.5 Flash (GA 2026-05-19)", "Basic features", "Google integration"],
+      features: ["Gemini 3.6 Flash (GA 2026-07-21)", "Basic features", "Google integration"],
     },
     {
       plan: "Google AI Pro",
@@ -56,6 +56,11 @@ export const gemini: ToolReview = {
     "The Gemini app UI feels like Google slapped AI onto an existing product",
   ],
   knownIssues: [
+    {
+      description: "NEW MODELS -- GEMINI 3.6 FLASH + 3.5 FLASH-LITE + 3.5 FLASH CYBER GA (2026-07-21, vendor post): Google shipped the 'upgraded Flash stopgap' it had flagged while Gemini 3.5 Pro stayed delayed. **Gemini 3.6 Flash** -- improved workhorse for coding/knowledge/multimodal at **$1.50/M input, $7.50/M output** (a ~17% output price cut vs 3.5 Flash's $9), uses **17% fewer output tokens** than 3.5 Flash, up to +65% on DeepSWE and 49% vs 37% on certain code tasks; live day-one across the Gemini API (AI Studio, Android Studio), Google Antigravity, the Gemini app, and GitHub Copilot. **Gemini 3.5 Flash-Lite** -- fastest 3.5-class model at **$0.30/M input, $2.50/M output**, **350 output tokens/sec**, 54% on Terminal-Bench 2.1 (vs 31% prior); on Gemini API + Enterprise + rolling out in Google Search. **Gemini 3.5 Flash Cyber** -- a security-tuned model for finding/fixing vulnerabilities paired with the CodeMender agent, gov/trusted-partner-only via a limited-access pilot (no public pricing). CRUCIAL: Gemini 3.5 **Pro did NOT ship** here -- Google says it is 'currently testing 3.5 Pro with partners' and will release it 'as soon as it's ready' (still no date). Google also disclosed it has 'started our most ambitious pre-training run yet, for **Gemini 4**' (pre-training only, no specs, no date)",
+      source: "Google (blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/), TechCrunch (2026-07-21), 9to5Google, GitHub Copilot changelog (2026-07-21)",
+      date: "2026-07-21",
+    },
     {
       description: "GEMINI 3.5 PRO DELAY NOW VENDOR-SIDE CONFIRMED (2026-07-16, Bloomberg): Google is reportedly **months behind schedule** on Gemini 3.5 Pro -- Bloomberg's sourcing says the model's capabilities, 'particularly in coding,' fell short of internal goals, and a late-June remediation attempt (updated training data) produced 'disappointing' results. This is the third missed window (June -> the aggregator-only 'July 17' -> TBD), and press reports the delay news knocked ~$200B off Alphabet's market value on 7/16. Google's own statement: it is 'currently testing 3.5 Pro, an upgraded Flash model, and other models with partners' -- so an upgraded Flash stopgap may ship first. The 'July 17' date circulating on aggregators was never Google-confirmed. Treat all 3.5 Pro capability claims as unshipped. SEPARATE COMMUNITY WATCH (unconfirmed, do not treat as vendor fact): devs on Google's official AI forum report `gemini-2.5-flash` returning 'no longer available' 404s starting ~7/9, three months ahead of its published Oct 16, 2026 shutdown date -- no Google response in-thread yet; could be a bug or partial rollout. If you depend on 2.5 Flash, verify availability directly",
       source: "Bloomberg (2026-07-16), 9to5Google (9to5google.com/2026/07/16/gemini-3-5-pro-delays/), LA Times (2026-07-17), discuss.ai.google.dev thread 174217 (community, unconfirmed)",
@@ -161,8 +166,10 @@ export const gemini: ToolReview = {
   notFor: "Anyone who needs the best raw output quality. Claude and GPT-4 both write better. Also not for anyone spooked by Google's history of abandoning products.",
   verdict: "Gemini's strength is the ecosystem play. The 1M context window is genuinely useful for long documents, and the Google Workspace integration is something neither OpenAI nor Anthropic can match. But purely as an LLM, the output quality is a step behind Claude and GPT-4. Pick Gemini if you're deep in Google's ecosystem. Otherwise, the other two are better standalone.",
 
-  lastReviewedDate: "2026-07-18",
+  lastReviewedDate: "2026-07-22",
   dataSources: [
+    { name: "Google Blog: Gemini 3.6 Flash + 3.5 Flash-Lite + 3.5 Flash Cyber (2026-07-21)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/", dateAccessed: "2026-07-22" },
+    { name: "TechCrunch: Google releases three new Gemini models but no 3.5 Pro (2026-07-21)", url: "https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/", dateAccessed: "2026-07-22" },
     { name: "9to5Google: Gemini 3.5 Pro delays (Bloomberg-sourced, 2026-07-16)", url: "https://9to5google.com/2026/07/16/gemini-3-5-pro-delays/", dateAccessed: "2026-07-18" },
     { name: "Google Blog: Gemini Omni Flash + Nano Banana 2 Lite (2026-06-30)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/", dateAccessed: "2026-07-04" },
     { name: "Google Blog: Computer use in Gemini 3.5 Flash (2026-06-24)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/", dateAccessed: "2026-07-04" },

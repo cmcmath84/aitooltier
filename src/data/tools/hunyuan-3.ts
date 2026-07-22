@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const hunyuan3: ToolReview = {
   slug: "hunyuan-3",
   name: "Hunyuan 3 (Tencent Hy3)",
-  tagline: "Tencent's Hy3 Preview launched 2026-04-23 -- 295B total / 21B active MoE, 256K context, open-sourced on HuggingFace under tencent/Hy3-preview. Cheapest frontier-class API at ~1.2 RMB per million input tokens. Integrated into Yuanbao, WeChat, QQ",
+  tagline: "Tencent's Hy3 reached GA 2026-07-06 (upgraded from the April preview) -- 295B total / 21B active MoE, 256K context, now Apache 2.0 open weights on HuggingFace + ModelScope with the EU/UK/South Korea restriction lifted. ~90% agent-task completion on Tencent's internal apps; API via Tencent Cloud TokenHub. Integrated into Yuanbao, WeChat, QQ",
   category: "ai-llms",
   url: "https://hy3ai.com",
 
@@ -59,14 +59,14 @@ export const hunyuan3: ToolReview = {
   cons: [
     "Third-party benchmarks (Artificial Analysis, LMSYS, SWE-bench) are still spotty as of launch week -- treat Tencent's own benchmark claims with the usual self-reporting discount until independent runs corroborate",
     "PRC content filters apply -- expect refusals or blandness on Tiananmen, Taiwan sovereignty, Xi Jinping, and other politically sensitive topics. Pattern matches DeepSeek and Qwen",
-    "Geo-availability: developers in EU / UK / Australia / Canada / South Korea / India should check local data-residency rules before deploying via API. Self-hosted open-weights deployment is the workaround",
+    "Geo-availability improved at GA: the preview license's explicit EU / UK / South Korea exclusion was lifted with the Apache 2.0 GA release (2026-07-06). Developers should still check local data-residency rules before deploying via API; self-hosted open-weights deployment remains the fallback",
     "English-language polish lags Claude and GPT for nuanced writing tasks -- this is a coding / reasoning / Chinese-language pick first, prose-quality pick second",
   ],
   knownIssues: [
     {
-      description: "Hy3 Preview was released 2026-04-23 -- this is preview-stage, not GA. Expect rough edges around tokenizer behavior on rare scripts, occasional spec-compliance gaps in API responses, and Tencent quota tightening as adoption ramps. Track Tencent's GitHub + HF repo for stable-version cuts before depending on it in production",
-      source: "Caixin Global, Pandaily, HuggingFace tencent/Hy3-preview",
-      date: "2026-04-23",
+      description: "HY3 REACHED GA (2026-07-06): Tencent officially released the final Hunyuan Hy3 model, upgrading the April preview with more post-training compute and higher-quality data. Same architecture (295B total / 21B active MoE, 256K context) but two material changes: (1) it now ships under **Apache 2.0** with the preview's **EU / UK / South Korea use restriction lifted**, open-weights day-one on Hugging Face + ModelScope; (2) heavily strengthened autonomous-agent capability -- Tencent claims a **~90% task-completion rate** across several of its internal applications, and bundled a free AI-agent feature into the consumer apps. API is now served via **Tencent Cloud's TokenHub** platform. This flips the earlier 'preview-stage, not GA' caveat -- Hy3 is now a stable, production-oriented release",
+      source: "Tencent (tencent.com/en-us/articles/2202386.html), Caixin Global (2026-07-06), TechNode (2026-07-07), Pandaily",
+      date: "2026-07-06",
     },
     {
       description: "Pricing in RMB is the published number -- USD pricing depends on FX and may move. ~1.2 RMB/M input ≈ $0.16 USD at April 2026 rates. Output token pricing is published separately; check api docs before forecasting cost",
@@ -86,8 +86,11 @@ export const hunyuan3: ToolReview = {
   verdict:
     "Hy3 is Tencent finally entering the open-weights race with a serious model and aggressive pricing. The 295B / 21B-active MoE design is aligned with what Alibaba and DeepSeek have shown works at scale, and the ~1.2 RMB/M-token list price puts Hy3 in real competition with DeepSeek V4-Flash for the cost-per-token crown. Distribution through Yuanbao + WeChat + QQ is a structural advantage Western developers tend to under-weight. Caveats: it's preview-stage, third-party benchmarks are still incoming, PRC content filters apply. For a US/EU developer comparison-shopping a cheap frontier-class API right now, DeepSeek V4-Flash is still the safer first stop -- but Hy3 deserves a spot on the bench, especially if Chinese market reach matters.",
 
-  lastReviewedDate: "2026-04-25",
+  lastReviewedDate: "2026-07-22",
   dataSources: [
+    { name: "Tencent: Hunyuan officially releases Hy3 (GA, 2026-07-06)", url: "https://www.tencent.com/en-us/articles/2202386.html", dateAccessed: "2026-07-22" },
+    { name: "Caixin Global: Tencent launches final Hunyuan 3 model with free AI-agent feature (2026-07-06)", url: "https://www.caixinglobal.com/2026-07-06/tencent-launches-upgraded-hunyuan-3-ai-model-with-free-agent-feature-102461489.html", dateAccessed: "2026-07-22" },
+    { name: "TechNode: Tencent launches Hunyuan Hy3, integrates across products (2026-07-07)", url: "https://technode.com/2026/07/07/tencent-launches-hunyuan-hy3-integrates-model-across-multiple-products/", dateAccessed: "2026-07-22" },
     { name: "Caixin Global: Tencent unveils new AI model to close gap with rivals (2026-04-23)", url: "https://www.caixinglobal.com/2026-04-23/tencent-unveils-new-ai-model-to-close-gap-with-rivals-102437241.html", dateAccessed: "2026-04-25" },
     { name: "HuggingFace: tencent/Hy3-preview", url: "https://huggingface.co/tencent/Hy3-preview", dateAccessed: "2026-04-25" },
     { name: "Pandaily: How Tencent is building its global AI moat", url: "https://pandaily.com/beyond-the-model-race-how-tencent-is-building-its-global-ai-moat", dateAccessed: "2026-04-25" },
@@ -111,6 +114,6 @@ export const hunyuan3: ToolReview = {
     tone: "Direct and structured, similar to DeepSeek's chat tone -- compact answers in technical domains, reasonable Chinese-language polish, English noticeably less expressive than Claude or GPT.",
     quirks: "PRC content filters apply across the same set of regulated topics as DeepSeek and Qwen. Distribution via Yuanbao + WeChat + QQ means many Hy3 users in the wild are talking to it through chat-app surfaces rather than a developer console.",
   },
-  metaTitle: "Tencent Hy3 (Hunyuan 3) Review 2026: Open-Weights MoE at ~1.2 RMB/M Tokens",
-  metaDescription: "Tencent Hy3 Preview review. 295B/21B MoE launched April 23 2026, 256K context, open-source on HuggingFace, ~1.2 RMB per million input tokens. How it stacks up vs DeepSeek V4 + Qwen 3.6.",
+  metaTitle: "Tencent Hy3 (Hunyuan 3) Review 2026: Apache 2.0 Open-Weights MoE, Now GA",
+  metaDescription: "Tencent Hy3 review. 295B/21B MoE reached GA July 6 2026 under Apache 2.0 (EU/UK/SK restriction lifted), 256K context, ~90% agent-task completion, open weights on HuggingFace + ModelScope. How it stacks up vs DeepSeek V4 + Qwen 3.6.",
 };
