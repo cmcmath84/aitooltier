@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { categories } from "@/data/categories";
@@ -60,7 +60,7 @@ export default function SubmitForm() {
           htmlFor="tool-name"
           className="mb-1.5 block text-sm font-medium text-foreground"
         >
-          Tool name <span className="text-red-600">*</span>
+          Tool name <span className="text-stop">*</span>
         </label>
         <input
           id="tool-name"
@@ -78,7 +78,7 @@ export default function SubmitForm() {
           htmlFor="tool-url"
           className="mb-1.5 block text-sm font-medium text-foreground"
         >
-          Tool URL <span className="text-red-600">*</span>
+          Tool URL <span className="text-stop">*</span>
         </label>
         <input
           id="tool-url"
@@ -163,7 +163,7 @@ export default function SubmitForm() {
       </div>
 
       {openIn === "github" && (
-        <div className="rounded-lg border border-green-200 bg-green-50 p-4 text-sm text-green-900">
+        <div className="rounded-lg border-l-4 border-go bg-go-bg p-4 text-sm text-foreground">
           A new tab opened with your pre-filled submission. If it
           didn&apos;t,{" "}
           <a

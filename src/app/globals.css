@@ -1,38 +1,47 @@
 @import "tailwindcss";
 
 /* ============================================================
-   AIToolTier design system — "tier-list native"
-   Clean, data-forward, tier-badge color language. Chosen
-   neutrals (cool slate), single ink-indigo accent, solid tier
-   colors, mono for labels/data. No gradient orbs, no shimmer.
+   AIToolTier design system — dark artifact style
+   Source of truth: docs/design-reference-dark.html
+   Dark ground, bordered panels, flat tinted tier chips, mono
+   for labels/data, single indigo accent. No gradients, no glow,
+   no shadows.
    ============================================================ */
 
 :root {
-  /* neutrals — cool slate, picked not defaulted */
-  --background: #f7f8fa;
-  --foreground: #14171c;
-  --card: #ffffff;
-  --muted: #eef1f5;
-  --muted-foreground: #5b616e;
-  --border: #e4e7ec;
+  color-scheme: dark;
 
-  /* accent — ink indigo, used sparingly */
-  --primary: #4f46e5;
-  --primary-hover: #4338ca;
-  --primary-soft: #eef0fe;
+  /* ground */
+  --background: #0e1014;
+  --foreground: #e8eaf0;
+  --card: #171a21;
+  --muted: #13161d;
+  --muted-foreground: #9aa2b1;
+  --border: #262b34;
+
+  /* accent — indigo, lightened for dark ground */
+  --primary: #8b8cf5;
+  --primary-hover: #a2a4f8;
+  --primary-soft: #1e2030;
+
+  /* status (go / warn / stop pills) */
+  --go: #4ade80;      --go-bg: #132a1c;
+  --warn: #fbbf24;    --warn-bg: #2c2211;
+  --stop: #f87171;    --stop-bg: #2c1517;
 
   /* semantic (names kept for existing references) */
-  --accent: #16a34a;
-  --accent-red: #dc2626;
-  --accent-yellow: #ca8a04;
+  --accent: #4ade80;
+  --accent-red: #f87171;
+  --accent-yellow: #fbbf24;
 
-  /* tier palette — solid, flat, refined (S best → F worst) */
-  --tier-s: #dc2626;  --tier-s-bg: #fbe9ea;
-  --tier-a: #ea580c;  --tier-a-bg: #fdeee4;
-  --tier-b: #ca8a04;  --tier-b-bg: #faf3dd;
-  --tier-c: #16a34a;  --tier-c-bg: #e7f5ec;
-  --tier-d: #2563eb;  --tier-d-bg: #e8f0fe;
-  --tier-f: #64748b;  --tier-f-bg: #eef1f5;
+  /* tier palette — site semantics (S best → F worst), flat ink +
+     soft tinted bg pairs, artifact chip style */
+  --tier-s: #f87171;  --tier-s-bg: #2c1517;
+  --tier-a: #fb923c;  --tier-a-bg: #2b1c10;
+  --tier-b: #fbbf24;  --tier-b-bg: #2c2211;
+  --tier-c: #4ade80;  --tier-c-bg: #132a1c;
+  --tier-d: #60a5fa;  --tier-d-bg: #111e33;
+  --tier-f: #94a3b8;  --tier-f-bg: #1b2029;
 }
 
 @theme inline {
@@ -49,6 +58,10 @@
   --color-accent-red: var(--accent-red);
   --color-accent-yellow: var(--accent-yellow);
 
+  --color-go: var(--go);       --color-go-bg: var(--go-bg);
+  --color-warn: var(--warn);   --color-warn-bg: var(--warn-bg);
+  --color-stop: var(--stop);   --color-stop-bg: var(--stop-bg);
+
   --color-tier-s: var(--tier-s);   --color-tier-s-bg: var(--tier-s-bg);
   --color-tier-a: var(--tier-a);   --color-tier-a-bg: var(--tier-a-bg);
   --color-tier-b: var(--tier-b);   --color-tier-b-bg: var(--tier-b-bg);
@@ -63,6 +76,7 @@
 body {
   color: var(--foreground);
   background-color: var(--background);
+  -webkit-font-smoothing: antialiased;
 }
 
 /* mono uppercase eyebrow label — a structural device, used for
@@ -74,6 +88,14 @@ body {
   text-transform: uppercase;
   color: var(--primary);
   font-weight: 600;
+}
+
+/* numbered section header marker: <span class="sec-n">01</span> */
+.sec-n {
+  font-family: var(--font-mono);
+  font-size: 0.8em;
+  color: var(--primary);
+  font-weight: 700;
 }
 
 .section-alt { background-color: var(--muted); }

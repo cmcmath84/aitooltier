@@ -11,7 +11,7 @@ export default function ToolCard({ tool }: ToolCardProps) {
   return (
     <Link
       href={`/tools/${tool.slug}`}
-      className="group flex flex-col rounded-xl border border-border bg-card p-5 transition-all hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5"
+      className="group flex flex-col rounded-xl border border-border bg-card p-5 transition hover:border-primary/40"
     >
       <div className="flex items-start justify-between">
         <div className="flex flex-1 items-start gap-3">
@@ -30,7 +30,7 @@ export default function ToolCard({ tool }: ToolCardProps) {
 
       <div className="mt-4 flex items-center gap-3">
         {tool.hasFreeTier && (
-          <span className="inline-flex items-center rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-800">
+          <span className="inline-flex items-center rounded-full bg-go-bg px-2 py-0.5 font-mono text-xs font-medium text-go">
             Free tier
           </span>
         )}

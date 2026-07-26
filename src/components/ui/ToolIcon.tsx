@@ -104,7 +104,7 @@ export default function ToolIcon({ slug, name, size = "md" }: ToolIconProps) {
     const Icon = config.icon;
     return (
       <div
-        className={`flex shrink-0 items-center justify-center shadow-sm ${config.bg} ${s.container}`}
+        className={`flex shrink-0 items-center justify-center ${config.bg} ${s.container}`}
       >
         <Icon size={s.icon} className={config.text} strokeWidth={2} />
       </div>
@@ -121,7 +121,7 @@ export default function ToolIcon({ slug, name, size = "md" }: ToolIconProps) {
 
   return (
     <div
-      className={`flex shrink-0 items-center justify-center font-bold text-white shadow-sm ${colors[colorIndex]} ${s.container}`}
+      className={`flex shrink-0 items-center justify-center font-bold text-white ${colors[colorIndex]} ${s.container}`}
     >
       {initial}
     </div>

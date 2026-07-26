@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 import { tools } from "@/data/tools";
 import { getCategoryBySlug } from "@/data/categories";
@@ -63,7 +63,7 @@ export default function TrendingPage() {
       {/* Recently Updated */}
       <section className="mt-8">
         <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-foreground">
-          <span className="inline-block h-2 w-2 rounded-full bg-emerald-500" />
+          <span className="inline-block h-2 w-2 rounded-full bg-go" />
           Recently Updated
         </h2>
         <div className="space-y-3">
@@ -107,7 +107,7 @@ export default function TrendingPage() {
       {/* Top Rated */}
       <section className="mt-10">
         <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-foreground">
-          <span className="inline-block h-2 w-2 rounded-full bg-amber-500" />
+          <span className="inline-block h-2 w-2 rounded-full bg-warn" />
           Highest Rated
         </h2>
         <div className="overflow-x-auto rounded-lg border border-border">
@@ -159,7 +159,7 @@ export default function TrendingPage() {
       {/* Best Value */}
       <section className="mt-10">
         <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-foreground">
-          <span className="inline-block h-2 w-2 rounded-full bg-blue-500" />
+          <span className="inline-block h-2 w-2 rounded-full bg-tier-d" />
           Best Value
         </h2>
         <div className="overflow-x-auto rounded-lg border border-border">
@@ -198,9 +198,9 @@ export default function TrendingPage() {
                   </td>
                   <td className="px-3 py-2 text-center">
                     {tool.hasFreeTier ? (
-                      <span className="text-emerald-600">Yes</span>
+                      <span className="text-go">Yes</span>
                     ) : (
-                      <span className="text-red-500">No</span>
+                      <span className="text-stop">No</span>
                     )}
                   </td>
                   <td className="px-3 py-2 text-center">

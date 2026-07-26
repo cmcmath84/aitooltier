@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -102,7 +102,7 @@ export default function MethodologyPage() {
             <tbody>
               <tr className="border-t border-border">
                 <td className="px-4 py-2">
-                  <span className="inline-block rounded bg-gradient-to-br from-red-500 to-rose-600 px-2 py-0.5 text-xs font-bold text-white">
+                  <span className="inline-block rounded bg-tier-s-bg px-2 py-0.5 font-mono text-xs font-bold text-tier-s">
                     S
                   </span>
                 </td>
@@ -113,7 +113,7 @@ export default function MethodologyPage() {
               </tr>
               <tr className="border-t border-border">
                 <td className="px-4 py-2">
-                  <span className="inline-block rounded bg-gradient-to-br from-orange-500 to-amber-500 px-2 py-0.5 text-xs font-bold text-white">
+                  <span className="inline-block rounded bg-tier-a-bg px-2 py-0.5 font-mono text-xs font-bold text-tier-a">
                     A
                   </span>
                 </td>
@@ -124,7 +124,7 @@ export default function MethodologyPage() {
               </tr>
               <tr className="border-t border-border">
                 <td className="px-4 py-2">
-                  <span className="inline-block rounded bg-gradient-to-br from-yellow-400 to-amber-400 px-2 py-0.5 text-xs font-bold text-white">
+                  <span className="inline-block rounded bg-tier-b-bg px-2 py-0.5 font-mono text-xs font-bold text-tier-b">
                     B
                   </span>
                 </td>
@@ -135,7 +135,7 @@ export default function MethodologyPage() {
               </tr>
               <tr className="border-t border-border">
                 <td className="px-4 py-2">
-                  <span className="inline-block rounded bg-gradient-to-br from-green-500 to-emerald-500 px-2 py-0.5 text-xs font-bold text-white">
+                  <span className="inline-block rounded bg-tier-c-bg px-2 py-0.5 font-mono text-xs font-bold text-tier-c">
                     C
                   </span>
                 </td>
@@ -146,7 +146,7 @@ export default function MethodologyPage() {
               </tr>
               <tr className="border-t border-border">
                 <td className="px-4 py-2">
-                  <span className="inline-block rounded bg-gradient-to-br from-blue-500 to-indigo-500 px-2 py-0.5 text-xs font-bold text-white">
+                  <span className="inline-block rounded bg-tier-d-bg px-2 py-0.5 font-mono text-xs font-bold text-tier-d">
                     D
                   </span>
                 </td>
@@ -157,7 +157,7 @@ export default function MethodologyPage() {
               </tr>
               <tr className="border-t border-border">
                 <td className="px-4 py-2">
-                  <span className="inline-block rounded bg-gradient-to-br from-gray-400 to-gray-500 px-2 py-0.5 text-xs font-bold text-white">
+                  <span className="inline-block rounded bg-tier-f-bg px-2 py-0.5 font-mono text-xs font-bold text-tier-f">
                     F
                   </span>
                 </td>
@@ -183,14 +183,14 @@ export default function MethodologyPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 text-primary">&#10003;</span>
             <span>
-              <strong className="text-foreground">Official sites</strong> —
+              <strong className="text-foreground">Official sites</strong> â€”
               pricing pages, feature lists, documentation, and changelogs.
             </span>
           </li>
           <li className="flex items-start gap-2">
             <span className="mt-0.5 text-primary">&#10003;</span>
             <span>
-              <strong className="text-foreground">User forums</strong> — Reddit,
+              <strong className="text-foreground">User forums</strong> â€” Reddit,
               GitHub Issues, Discord servers, and product communities for
               real-world complaints and praise.
             </span>
@@ -198,7 +198,7 @@ export default function MethodologyPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 text-primary">&#10003;</span>
             <span>
-              <strong className="text-foreground">Review platforms</strong> — G2,
+              <strong className="text-foreground">Review platforms</strong> â€” G2,
               Capterra, Product Hunt, and TrustPilot for aggregated user
               sentiment.
             </span>
@@ -206,7 +206,7 @@ export default function MethodologyPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 text-primary">&#10003;</span>
             <span>
-              <strong className="text-foreground">Benchmarks</strong> — LMSYS
+              <strong className="text-foreground">Benchmarks</strong> â€” LMSYS
               Arena, Artificial Analysis, and published benchmark results where
               applicable.
             </span>
@@ -214,7 +214,7 @@ export default function MethodologyPage() {
           <li className="flex items-start gap-2">
             <span className="mt-0.5 text-primary">&#10003;</span>
             <span>
-              <strong className="text-foreground">Hands-on testing</strong> — We
+              <strong className="text-foreground">Hands-on testing</strong> â€” We
               use the tools ourselves. No tool gets a review without someone
               actually using it.
             </span>
@@ -231,7 +231,7 @@ export default function MethodologyPage() {
           Every review includes a Known Issues section that tracks real problems
           reported by users. Each issue is sourced (Reddit, GitHub, G2, etc.)
           and date-stamped so you know when it was reported. This is not a
-          negative hit piece — it is context that helps you make a better
+          negative hit piece â€” it is context that helps you make a better
           decision.
         </p>
       </section>

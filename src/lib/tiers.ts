@@ -1,4 +1,4 @@
-export type TierRank = "S" | "A" | "B" | "C" | "D" | "F";
+﻿export type TierRank = "S" | "A" | "B" | "C" | "D" | "F";
 
 export interface TierConfig {
   rank: TierRank;
@@ -7,70 +7,79 @@ export interface TierConfig {
   bg: string;
   labelBg: string;
   labelText: string;
+  solid: string;
   border: string;
   glow: string;
 }
 
+// Artifact chip language: the tier color lives in the tag (soft tinted
+// bg + tier-colored text); surfaces stay flat panels. No gradients.
 export const tiers: TierConfig[] = [
   {
     rank: "S",
     label: "S Tier",
     minScore: 9.0,
-    bg: "bg-red-50",
-    labelBg: "bg-gradient-to-br from-red-500 to-rose-600",
-    labelText: "text-white",
-    border: "border-red-200",
-    glow: "glow-s",
+    bg: "bg-card",
+    labelBg: "bg-tier-s-bg",
+    labelText: "text-tier-s",
+    solid: "bg-tier-s",
+    border: "border-border",
+    glow: "",
   },
   {
     rank: "A",
     label: "A Tier",
     minScore: 8.0,
-    bg: "bg-orange-50",
-    labelBg: "bg-gradient-to-br from-orange-500 to-amber-500",
-    labelText: "text-white",
-    border: "border-orange-200",
-    glow: "glow-a",
+    bg: "bg-card",
+    labelBg: "bg-tier-a-bg",
+    labelText: "text-tier-a",
+    solid: "bg-tier-a",
+    border: "border-border",
+    glow: "",
   },
   {
     rank: "B",
     label: "B Tier",
     minScore: 7.0,
-    bg: "bg-yellow-50",
-    labelBg: "bg-gradient-to-br from-yellow-400 to-yellow-500",
-    labelText: "text-yellow-900",
-    border: "border-yellow-200",
-    glow: "glow-b",
+    bg: "bg-card",
+    labelBg: "bg-tier-b-bg",
+    labelText: "text-tier-b",
+    solid: "bg-tier-b",
+    border: "border-border",
+    glow: "",
   },
   {
     rank: "C",
     label: "C Tier",
     minScore: 6.0,
-    bg: "bg-green-50",
-    labelBg: "bg-gradient-to-br from-emerald-500 to-green-600",
-    labelText: "text-white",
-    border: "border-green-200",
-    glow: "glow-c",
+    bg: "bg-card",
+    labelBg: "bg-tier-c-bg",
+    labelText: "text-tier-c",
+    solid: "bg-tier-c",
+    border: "border-border",
+    glow: "",
   },
   {
     rank: "D",
     label: "D Tier",
     minScore: 5.0,
-    bg: "bg-blue-50",
-    labelBg: "bg-gradient-to-br from-blue-500 to-indigo-500",
-    labelText: "text-white",
-    border: "border-blue-200",
-    glow: "glow-d",
+    bg: "bg-card",
+    labelBg: "bg-tier-d-bg",
+    labelText: "text-tier-d",
+    solid: "bg-tier-d",
+    border: "border-border",
+    glow: "",
   },
   {
     rank: "F",
     label: "F Tier",
     minScore: 0,
-    bg: "bg-gray-50",
-    labelBg: "bg-gradient-to-br from-gray-500 to-gray-600",
-    labelText: "text-white",
-    border: "border-gray-200",
-    glow: "glow-f",
+    bg: "bg-card",
+    labelBg: "bg-tier-f-bg",
+    labelText: "text-tier-f",
+    solid: "bg-tier-f",
+    border: "border-border",
+    glow: "",
   },
 ];
 

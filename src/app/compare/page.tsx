@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 import { tools } from "@/data/tools";
 import { getTierForScore } from "@/lib/tiers";
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Side-by-side comparisons of the best AI tools. Scores, benchmarks, pricing, features, and honest analysis.",
 };
 
-// Popular comparisons — manually curated from GSC data
+// Popular comparisons â€” manually curated from GSC data
 const popularSlugs = [
   "claude-vs-grok",
   "chatgpt-vs-claude",
@@ -27,7 +27,7 @@ const popularSlugs = [
   "codex-vs-antigravity",
 ];
 
-// LLMs vs Local/Open-Weight Models — cross-category comparisons
+// LLMs vs Local/Open-Weight Models â€” cross-category comparisons
 const llmVsLocalSlugs = [
   "claude-vs-llama",
   "chatgpt-vs-deepseek",
@@ -52,7 +52,7 @@ function CompareCard({
   return (
     <Link
       href={`/compare/${toolA.slug}-vs-${toolB.slug}`}
-      className="group flex items-center gap-3 rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5"
+      className="group flex items-center gap-3 rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/40"
     >
       {/* Tool A */}
       <div className="flex flex-1 items-center gap-2 min-w-0">
@@ -63,7 +63,7 @@ function CompareCard({
           </p>
           <span
             className={`text-xs font-bold ${
-              aWins ? tierA.labelText.replace("text-white", "text-primary") : "text-muted-foreground"
+              aWins ? tierA.labelText : "text-muted-foreground"
             }`}
           >
             {toolA.scores.overall.toFixed(1)}
@@ -86,7 +86,7 @@ function CompareCard({
           </p>
           <span
             className={`text-xs font-bold ${
-              bWins ? tierB.labelText.replace("text-white", "text-primary") : "text-muted-foreground"
+              bWins ? tierB.labelText : "text-muted-foreground"
             }`}
           >
             {toolB.scores.overall.toFixed(1)}
@@ -130,7 +130,7 @@ export default function ComparePage() {
       {popular.length > 0 && (
         <div className="mt-8">
           <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-foreground">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-100 text-sm">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-warn-bg text-sm">
               &#9733;
             </span>
             Popular Comparisons
@@ -151,7 +151,7 @@ export default function ComparePage() {
       {llmVsLocal.length > 0 && (
         <div className="mt-10">
           <h2 className="mb-4 flex items-center gap-2 text-xl font-bold text-foreground">
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-indigo-100 text-sm">
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary-soft text-sm">
               &#9878;
             </span>
             Cloud LLMs vs Open-Weight Models

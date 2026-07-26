@@ -89,7 +89,7 @@ export default function CompareSearch({ tools }: CompareSearchProps) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Search tools to compare..."
-          className="w-full rounded-xl border border-border bg-white py-3 pl-12 pr-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition"
+          className="w-full rounded-xl border border-border bg-card py-3 pl-12 pr-4 text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40 transition"
         />
       </div>
 
@@ -141,7 +141,7 @@ function CompareCardClient({ toolA, toolB }: { toolA: ToolData; toolB: ToolData 
   return (
     <Link
       href={`/compare/${toolA.slug}-vs-${toolB.slug}`}
-      className="group flex items-center gap-3 rounded-xl border border-border bg-card p-4 transition-all hover:border-primary/40 hover:shadow-md hover:-translate-y-0.5"
+      className="group flex items-center gap-3 rounded-xl border border-border bg-card p-4 transition hover:border-primary/40"
     >
       <div className="flex flex-1 items-center gap-2 min-w-0">
         <ToolLogo slug={toolA.slug} name={toolA.name} size="sm" />
@@ -153,7 +153,7 @@ function CompareCardClient({ toolA, toolB }: { toolA: ToolData; toolB: ToolData 
         </div>
       </div>
       <div className="flex shrink-0 items-center justify-center">
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-muted text-xs font-black text-muted-foreground group-hover:bg-primary/10 group-hover:text-primary transition">
+        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-muted font-mono text-xs font-black text-muted-foreground group-hover:bg-primary-soft group-hover:text-primary transition">
           VS
         </span>
       </div>

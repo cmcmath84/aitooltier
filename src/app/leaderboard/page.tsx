@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 import { categories } from "@/data/categories";
 import { tools, getToolsByCategory } from "@/data/tools";
@@ -90,7 +90,7 @@ export default function LeaderboardHubPage() {
             <Link
               key={cat.slug}
               href={`/leaderboard/${leaderboardSlug(cat.slug)}`}
-              className="group rounded-xl border border-border bg-card p-5 transition hover:border-foreground/20 hover:shadow-md"
+              className="group rounded-xl border border-border bg-card p-5 transition hover:border-primary/40"
             >
               <div className="flex items-start justify-between gap-3">
                 <div className="flex items-center gap-3">

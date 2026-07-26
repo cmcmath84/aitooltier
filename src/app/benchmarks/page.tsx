@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 import { tools } from "@/data/tools";
 import { BENCHMARK_PAGES, getRankedToolsForBenchmark } from "@/lib/benchmarks";
@@ -79,7 +79,7 @@ export default function BenchmarksHubPage() {
                 <Link
                   key={b.slug}
                   href={`/benchmarks/${b.slug}`}
-                  className="group rounded-xl border border-border bg-card p-5 transition hover:border-foreground/20 hover:shadow-md"
+                  className="group rounded-xl border border-border bg-card p-5 transition hover:border-primary/40"
                 >
                   <div className="flex items-baseline justify-between gap-3">
                     <h3 className="text-base font-bold text-foreground group-hover:underline">

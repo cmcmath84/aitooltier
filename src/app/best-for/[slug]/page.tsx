@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tools, getToolsByCategory } from "@/data/tools";
@@ -195,7 +195,7 @@ export default async function UseCasePage({
 
       {/* Top pick highlight */}
       {topPick && (
-        <div className="mt-6 rounded-xl border-2 border-primary/30 bg-blue-50 p-6">
+        <div className="mt-6 rounded-xl border-2 border-primary/30 bg-primary-soft p-6">
           <span className="rounded-full bg-primary px-3 py-0.5 text-xs font-bold text-white">
             Top Pick
           </span>
@@ -258,7 +258,7 @@ export default async function UseCasePage({
                     </Link>
                     <TierBadge score={tool.scores.overall} size="sm" />
                     {tool.hasFreeTier && (
-                      <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-700">
+                      <span className="rounded-full bg-go-bg px-2 py-0.5 font-mono text-xs font-medium text-go">
                         Free tier
                       </span>
                     )}
@@ -348,9 +348,9 @@ export default async function UseCasePage({
                   </td>
                   <td className="px-3 py-2 text-center">
                     {tool.hasFreeTier ? (
-                      <span className="text-emerald-600">Yes</span>
+                      <span className="text-go">Yes</span>
                     ) : (
-                      <span className="text-red-500">No</span>
+                      <span className="text-stop">No</span>
                     )}
                   </td>
                   <td className="px-3 py-2 text-center">

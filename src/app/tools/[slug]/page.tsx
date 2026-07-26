@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tools, getToolBySlug, getToolsByCategory } from "@/data/tools";
@@ -133,12 +133,12 @@ export default async function ToolReviewPage({
             <div className="mt-2 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
               <span>Last updated: {tool.lastReviewedDate}</span>
               {tool.hasFreeTier && (
-                <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-800">
+                <span className="rounded-full bg-go-bg px-2 py-0.5 font-mono text-xs font-medium text-go">
                   Free tier available
                 </span>
               )}
               {tool.poweredBy && (
-                <span className="rounded-full bg-purple-100 px-2 py-0.5 text-xs font-medium text-purple-800">
+                <span className="rounded-full bg-primary-soft px-2 py-0.5 font-mono text-xs font-medium text-primary">
                   Powered by {tool.poweredBy}
                 </span>
               )}
@@ -326,12 +326,12 @@ export default async function ToolReviewPage({
           <h2 className="mb-4 text-lg font-semibold text-foreground">
             Known Issues
           </h2>
-          <div className="rounded-lg border border-amber-200 bg-amber-50 p-4">
+          <div className="rounded-lg border-l-4 border-warn bg-warn-bg p-4">
             <ul className="space-y-3">
               {tool.knownIssues.map((issue, i) => (
-                <li key={i} className="text-sm text-amber-900">
+                <li key={i} className="text-sm text-foreground">
                   <span className="font-medium">{issue.description}</span>
-                  <span className="mt-0.5 block text-xs text-amber-700">
+                  <span className="mt-0.5 block text-xs text-warn">
                     Source: {issue.source} &middot; {issue.date}
                   </span>
                 </li>
@@ -354,7 +354,7 @@ export default async function ToolReviewPage({
       </div>
 
       {/* Verdict */}
-      <div className="mt-8 rounded-lg border border-primary/20 bg-blue-50 p-6">
+      <div className="mt-8 rounded-lg border border-primary/20 bg-primary-soft p-6">
         <h2 className="mb-2 text-lg font-semibold text-foreground">
           Our Verdict
         </h2>

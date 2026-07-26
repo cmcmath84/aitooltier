@@ -57,12 +57,12 @@ export default function Home() {
   const totalComparisons = (tools.length * (tools.length - 1)) / 2;
 
   const tierLegend = [
-    { rank: "S", cls: "bg-tier-s", label: "9.0+" },
-    { rank: "A", cls: "bg-tier-a", label: "8.0" },
-    { rank: "B", cls: "bg-tier-b", label: "7.0" },
-    { rank: "C", cls: "bg-tier-c", label: "6.0" },
-    { rank: "D", cls: "bg-tier-d", label: "5.0" },
-    { rank: "F", cls: "bg-tier-f", label: "<5" },
+    { rank: "S", cls: "bg-tier-s-bg text-tier-s", label: "9.0+" },
+    { rank: "A", cls: "bg-tier-a-bg text-tier-a", label: "8.0" },
+    { rank: "B", cls: "bg-tier-b-bg text-tier-b", label: "7.0" },
+    { rank: "C", cls: "bg-tier-c-bg text-tier-c", label: "6.0" },
+    { rank: "D", cls: "bg-tier-d-bg text-tier-d", label: "5.0" },
+    { rank: "F", cls: "bg-tier-f-bg text-tier-f", label: "<5" },
   ];
 
   return (
@@ -116,7 +116,7 @@ export default function Home() {
             {tierLegend.map((t) => (
               <div key={t.rank} className="flex flex-col items-center gap-1.5">
                 <div
-                  className={`flex h-11 w-11 items-center justify-center rounded-lg font-mono text-base font-bold text-white sm:h-12 sm:w-12 ${t.cls}`}
+                  className={`flex h-11 w-11 items-center justify-center rounded-lg font-mono text-base font-bold sm:h-12 sm:w-12 ${t.cls}`}
                 >
                   {t.rank}
                 </div>
@@ -137,7 +137,7 @@ export default function Home() {
             { value: "Daily", label: "Updates" },
           ].map((stat) => (
             <div key={stat.label} className="px-6 py-5 text-center">
-              <div className="tabular text-2xl font-black text-foreground sm:text-3xl">
+              <div className="tabular font-mono text-2xl font-black text-foreground sm:text-3xl">
                 {stat.value}
               </div>
               <div className="mt-0.5 text-xs text-muted-foreground">
@@ -153,9 +153,8 @@ export default function Home() {
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between">
             <div>
-              <p className="eyebrow mb-2">Tier List</p>
-              <h2 className="text-2xl font-black text-foreground sm:text-3xl">
-                The Tier List
+              <h2 className="flex items-center gap-2.5 text-2xl font-black text-foreground sm:text-3xl">
+                <span className="sec-n">01</span> The Tier List
               </h2>
               <p className="mt-1 text-muted-foreground">
                 Top picks across {featuredCategories.length} categories.
@@ -172,7 +171,7 @@ export default function Home() {
           <div className="mt-6 text-center">
             <Link
               href="/all-tools"
-              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition-all hover:border-primary/30 hover:shadow-md hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-5 py-2.5 text-sm font-medium text-foreground transition hover:border-primary/40"
             >
               View all {tools.length} tools
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -186,9 +185,8 @@ export default function Home() {
       {/* ============ CATEGORIES ============ */}
       <section className="section-alt px-4 py-16">
         <div className="mx-auto max-w-7xl">
-          <p className="eyebrow mb-2">Browse</p>
-          <h2 className="text-2xl font-black text-foreground sm:text-3xl">
-            Browse by Category
+          <h2 className="flex items-center gap-2.5 text-2xl font-black text-foreground sm:text-3xl">
+            <span className="sec-n">02</span> Browse by Category
           </h2>
           <p className="mt-1 text-muted-foreground">
             Find tools for exactly what you need.
@@ -224,9 +222,8 @@ export default function Home() {
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between">
             <div>
-              <p className="eyebrow mb-2">Fresh</p>
-              <h2 className="text-2xl font-black text-foreground sm:text-3xl">
-                Latest Reviews
+              <h2 className="flex items-center gap-2.5 text-2xl font-black text-foreground sm:text-3xl">
+                <span className="sec-n">03</span> Latest Reviews
               </h2>
               <p className="mt-1 text-muted-foreground">
                 Recently reviewed and updated.
@@ -250,9 +247,8 @@ export default function Home() {
       {/* ============ TRUST CTA ============ */}
       <section className="border-t border-border bg-muted px-4 py-16">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="eyebrow">Why trust the rankings</p>
-          <h2 className="mt-3 text-balance text-2xl font-black text-foreground sm:text-3xl">
-            Reviews you can actually trust
+          <h2 className="flex items-center justify-center gap-2.5 text-balance text-2xl font-black text-foreground sm:text-3xl">
+            <span className="sec-n">04</span> Reviews you can actually trust
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             Every review is based on hands-on testing, cross-referenced user

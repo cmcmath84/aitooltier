@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { categories } from "@/data/categories";
@@ -158,7 +158,7 @@ export default async function LeaderboardDetailPage({
                         <Link
                           key={tool.slug}
                           href={`/tools/${tool.slug}`}
-                          className="rounded-md border border-border bg-white px-3 py-1.5 text-sm font-medium text-foreground transition hover:border-foreground/30 hover:shadow-sm dark:bg-card"
+                          className="rounded-md border border-border bg-card px-3 py-1.5 text-sm font-medium text-foreground transition hover:border-primary/40"
                         >
                           {tool.name}
                           <span className="ml-2 font-mono text-xs text-muted-foreground">

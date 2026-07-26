@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tools, getToolBySlug } from "@/data/tools";
@@ -175,7 +175,7 @@ export default async function ComparisonPage({
           <div className="grid grid-cols-[1fr_auto_1fr] items-center gap-3 sm:gap-6">
             <ToolBlock tool={toolA} winner={winner} align="right" />
             <div className="flex flex-col items-center">
-              <span className="select-none bg-gradient-to-br from-foreground to-muted-foreground bg-clip-text text-3xl font-black tracking-tight text-transparent sm:text-5xl">
+              <span className="select-none font-mono text-3xl font-black tracking-tight text-muted-foreground sm:text-5xl">
                 VS
               </span>
             </div>
@@ -191,8 +191,8 @@ export default async function ComparisonPage({
               Tier-list head-to-head. {winner.name} takes the {winnerTier.rank}
               -tier slot &mdash; here&apos;s the breakdown.
             </p>
-            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground shadow-sm">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+            <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-muted-foreground">
+              <span className="h-1.5 w-1.5 rounded-full bg-go" />
               Last reviewed {formatReviewDate(freshDate)} &middot; sweep-fresh
             </div>
           </div>
@@ -204,7 +204,7 @@ export default async function ComparisonPage({
         {/* AT A GLANCE */}
         <section className="mt-2">
           <SectionHeading kicker="Spec sheet" title="At a glance" />
-          <div className="mt-4 overflow-hidden rounded-xl border border-border bg-card shadow-sm">
+          <div className="mt-4 overflow-hidden rounded-xl border border-border bg-card">
             <table className="w-full text-sm">
               <thead className="bg-muted/60">
                 <tr>
@@ -281,7 +281,7 @@ export default async function ComparisonPage({
             title="Score showdown"
             sub="Rated 1-10 on the same rubric across all 130 tools we cover."
           />
-          <div className="mt-6 rounded-xl border border-border bg-card p-5 shadow-sm sm:p-7">
+          <div className="mt-6 rounded-xl border border-border bg-card p-5 sm:p-7">
             <ScoreBars toolA={toolA} toolB={toolB} />
           </div>
         </section>
@@ -298,7 +298,7 @@ export default async function ComparisonPage({
               {[toolA, toolB].map((tool) => (
                 <article
                   key={tool.slug}
-                  className="relative rounded-xl border border-border bg-card p-5 shadow-sm sm:p-6"
+                  className="relative rounded-xl border border-border bg-card p-5 sm:p-6"
                 >
                   <span className="absolute -top-3 left-5 rounded-full border border-border bg-card px-2 py-0.5 text-[10px] font-bold uppercase tracking-wide text-muted-foreground">
                     {tool.name}
@@ -341,7 +341,7 @@ export default async function ComparisonPage({
             {[toolA, toolB].map((tool) => (
               <article
                 key={tool.slug}
-                className="rounded-xl border border-border bg-card p-5 shadow-sm sm:p-6"
+                className="rounded-xl border border-border bg-card p-5 sm:p-6"
               >
                 <header className="mb-4 flex items-center gap-3">
                   <ToolLogo slug={tool.slug} name={tool.name} size="md" />
@@ -400,7 +400,7 @@ export default async function ComparisonPage({
               return (
                 <article
                   key={tool.slug}
-                  className={`relative overflow-hidden rounded-xl border p-5 shadow-sm sm:p-6 ${
+                  className={`relative overflow-hidden rounded-xl border p-5 sm:p-6 ${
                     isWinner
                       ? `${tier.border} ${tier.bg}`
                       : "border-border bg-card"
@@ -408,7 +408,7 @@ export default async function ComparisonPage({
                 >
                   {isWinner && (
                     <span
-                      className={`absolute right-4 top-4 inline-flex items-center gap-1 rounded-full ${tier.labelBg} px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide text-white shadow-sm`}
+                      className={`absolute right-4 top-4 inline-flex items-center gap-1 rounded-full font-mono ${tier.labelBg} ${tier.labelText} px-2.5 py-1 text-[10px] font-bold uppercase tracking-wide`}
                     >
                       Our pick
                     </span>
@@ -431,9 +431,11 @@ export default async function ComparisonPage({
                           className="flex items-start gap-2 text-sm leading-relaxed text-muted-foreground"
                         >
                           <span
-                            className={`mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full ${
-                              isWinner ? tier.labelBg : "bg-muted-foreground/40"
-                            } text-[9px] font-bold text-white`}
+                            className={`mt-0.5 inline-flex h-4 w-4 shrink-0 items-center justify-center rounded-full text-[9px] font-bold ${
+                              isWinner
+                                ? `${tier.labelBg} ${tier.labelText}`
+                                : "bg-muted-foreground/40 text-background"
+                            }`}
                           >
                             &#10003;
                           </span>
@@ -451,7 +453,7 @@ export default async function ComparisonPage({
                     href={getAffiliateUrl(tool.slug, tool.url)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-5 inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm font-medium text-white shadow-sm transition hover:bg-primary-hover"
+                    className="mt-5 inline-flex items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-sm font-medium text-white transition hover:bg-primary-hover"
                   >
                     Visit {tool.name}
                     <span aria-hidden>&rarr;</span>
@@ -465,7 +467,7 @@ export default async function ComparisonPage({
         {/* THE VERDICT -- editorial */}
         <section className="mt-12">
           <SectionHeading kicker="Bottom line" title="The verdict" />
-          <article className="relative mt-6 rounded-2xl border border-primary/20 bg-gradient-to-br from-blue-50 via-white to-emerald-50 p-6 shadow-sm sm:p-8">
+          <article className="relative mt-6 rounded-2xl border border-border bg-primary-soft p-6 sm:p-8">
             <span
               aria-hidden
               className="absolute left-6 top-3 select-none font-serif text-7xl leading-none text-primary/15 sm:text-8xl"
@@ -532,7 +534,7 @@ export default async function ComparisonPage({
                 <Link
                   key={`a-${t.slug}`}
                   href={`/compare/${first}-vs-${second}`}
-                  className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground shadow-sm transition hover:border-primary hover:text-primary"
+                  className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground transition hover:border-primary hover:text-primary"
                 >
                   {t.name}
                 </Link>
@@ -553,7 +555,7 @@ export default async function ComparisonPage({
                 <Link
                   key={`b-${t.slug}`}
                   href={`/compare/${first}-vs-${second}`}
-                  className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground shadow-sm transition hover:border-primary hover:text-primary"
+                  className="rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-foreground transition hover:border-primary hover:text-primary"
                 >
                   {t.name}
                 </Link>
@@ -612,17 +614,14 @@ function ToolBlock({
       }`}
     >
       <div
-        className={`relative rounded-2xl border-2 ${tier.border} bg-card p-3 shadow-md transition sm:p-4 ${
-          isWinner ? `ring-2 ring-offset-2 ${tier.glow}` : "opacity-95"
+        className={`relative rounded-2xl border-2 bg-card p-3 transition sm:p-4 ${
+          isWinner ? "border-primary" : "border-border opacity-95"
         }`}
-        style={{
-          // Use tier border color via the existing class system; ring uses default.
-        }}
       >
         <ToolLogo slug={tool.slug} name={tool.name} size="2xl" />
         {isWinner && (
           <span
-            className={`absolute -top-3 left-1/2 -translate-x-1/2 rounded-full ${tier.labelBg} px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide text-white shadow-md`}
+            className={`absolute -top-3 left-1/2 -translate-x-1/2 rounded-full font-mono ${tier.labelBg} ${tier.labelText} px-2.5 py-0.5 text-[10px] font-bold uppercase tracking-wide`}
           >
             Our pick
           </span>
@@ -684,7 +683,7 @@ function ExploreCard({
   return (
     <Link
       href={href}
-      className="group flex items-center justify-between gap-4 rounded-xl border border-border bg-card p-4 shadow-sm transition hover:border-primary hover:shadow-md"
+      className="group flex items-center justify-between gap-4 rounded-xl border border-border bg-card p-4 transition hover:border-primary"
     >
       <div>
         <p className="text-sm font-semibold text-foreground group-hover:text-primary">

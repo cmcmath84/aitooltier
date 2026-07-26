@@ -23,7 +23,7 @@ export default function TierBadge({
   return (
     <div className="flex flex-col items-center gap-1">
       <div
-        className={`flex items-center justify-center ${tier.labelBg} ${tier.labelText} ${sizes[size]} shadow-lg ${tier.glow}`}
+        className={`flex items-center justify-center font-mono ${tier.labelBg} ${tier.labelText} ${sizes[size]}`}
       >
         {tier.rank}
       </div>

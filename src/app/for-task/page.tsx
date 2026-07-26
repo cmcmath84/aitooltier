@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 import {
   tasks,
@@ -114,7 +114,7 @@ export default function ForTaskHubPage() {
                   <Link
                     key={task.slug}
                     href={`/for-task/${task.slug}`}
-                    className="group rounded-xl border border-border bg-card p-5 transition hover:border-foreground/20 hover:shadow-md"
+                    className="group rounded-xl border border-border bg-card p-5 transition hover:border-primary/40"
                   >
                     <h3 className="text-base font-bold text-foreground group-hover:underline">
                       {task.name}

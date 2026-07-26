@@ -1,4 +1,4 @@
-import { ToolBenchmarks } from "@/lib/types";
+﻿import { ToolBenchmarks } from "@/lib/types";
 import { getBenchmarkInfo } from "@/lib/benchmarks";
 
 interface BenchmarkTableProps {
@@ -32,16 +32,16 @@ export default function BenchmarkTable({ benchmarks }: BenchmarkTableProps) {
         <table className="w-full text-sm">
           <thead className="bg-muted">
             <tr>
-              <th className="px-4 py-3 text-left font-semibold text-foreground">
+              <th className="px-4 py-3 text-left font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                 Benchmark
               </th>
-              <th className="hidden px-4 py-3 text-left font-semibold text-foreground sm:table-cell">
+              <th className="hidden px-4 py-3 text-left font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground sm:table-cell">
                 Description
               </th>
-              <th className="px-4 py-3 text-right font-semibold text-foreground">
+              <th className="px-4 py-3 text-right font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                 Score
               </th>
-              <th className="hidden px-4 py-3 text-left font-semibold text-foreground min-w-[120px] md:table-cell">
+              <th className="hidden px-4 py-3 text-left font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground min-w-[120px] md:table-cell">
                 &nbsp;
               </th>
             </tr>
@@ -54,7 +54,7 @@ export default function BenchmarkTable({ benchmarks }: BenchmarkTableProps) {
               return (
                 <tr
                   key={score.name}
-                  className="border-t border-border transition hover:bg-muted/50"
+                  className="border-t border-border transition hover:bg-primary-soft"
                 >
                   <td className="px-4 py-3 font-medium text-foreground">
                     {info.label}
@@ -67,7 +67,7 @@ export default function BenchmarkTable({ benchmarks }: BenchmarkTableProps) {
                     {score.unit}
                   </td>
                   <td className="hidden px-4 py-3 md:table-cell">
-                    <div className="h-2 w-full rounded-full bg-muted">
+                    <div className="h-2 w-full rounded-full bg-background">
                       <div
                         className="h-2 rounded-full bg-primary animate-bar"
                         style={{ width: `${pct}%` }}

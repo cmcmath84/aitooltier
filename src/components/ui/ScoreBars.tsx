@@ -70,12 +70,10 @@ export default function ScoreBars({ toolA, toolB }: ScoreBarsProps) {
                 >
                   {toolA.name}
                 </span>
-                <div className="relative h-3 flex-1 overflow-hidden rounded-full bg-muted">
+                <div className="relative h-3 flex-1 overflow-hidden rounded-full bg-background">
                   <div
                     className={`h-full rounded-full ${
-                      aWins
-                        ? `${tierA.labelBg} shadow-sm`
-                        : "bg-muted-foreground/30"
+                      aWins ? tierA.solid : "bg-muted-foreground/30"
                     }`}
                     style={{ width: `${(a / 10) * 100}%` }}
                   />
@@ -98,12 +96,10 @@ export default function ScoreBars({ toolA, toolB }: ScoreBarsProps) {
                 >
                   {toolB.name}
                 </span>
-                <div className="relative h-3 flex-1 overflow-hidden rounded-full bg-muted">
+                <div className="relative h-3 flex-1 overflow-hidden rounded-full bg-background">
                   <div
                     className={`h-full rounded-full ${
-                      bWins
-                        ? `${tierB.labelBg} shadow-sm`
-                        : "bg-muted-foreground/30"
+                      bWins ? tierB.solid : "bg-muted-foreground/30"
                     }`}
                     style={{ width: `${(b / 10) * 100}%` }}
                   />

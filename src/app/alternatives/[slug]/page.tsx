@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tools, getToolBySlug, getToolsByCategory } from "@/data/tools";
@@ -125,7 +125,7 @@ export default async function AlternativesPage({
             return (
               <div
                 key={alt.slug}
-                className={`rounded-lg border p-4 transition hover:shadow-sm ${tier.border} ${tier.bg}`}
+                className={`rounded-lg border p-4 transition ${tier.border} ${tier.bg}`}
               >
                 <div className="flex items-start gap-3">
                   <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-foreground/10 text-sm font-bold text-foreground">
@@ -142,7 +142,7 @@ export default async function AlternativesPage({
                       </Link>
                       <TierBadge score={alt.scores.overall} size="sm" />
                       {scoreDiff > 0 && (
-                        <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-700">
+                        <span className="rounded-full bg-go-bg px-2 py-0.5 font-mono text-xs font-medium text-go">
                           +{scoreDiff.toFixed(1)} higher
                         </span>
                       )}
@@ -263,7 +263,7 @@ export default async function AlternativesPage({
       </div>
 
       {/* CTA */}
-      <div className="mt-8 rounded-lg border border-primary/20 bg-blue-50 p-6 text-center">
+      <div className="mt-8 rounded-lg border border-primary/20 bg-primary-soft p-6 text-center">
         <h2 className="text-lg font-semibold text-foreground">
           Not sure which to pick?
         </h2>

@@ -1,4 +1,4 @@
-import { ToolReview } from "@/lib/types";
+﻿import { ToolReview } from "@/lib/types";
 import { getSharedBenchmarks, getBenchmarkInfo } from "@/lib/benchmarks";
 
 interface BenchmarkComparisonProps {
@@ -72,13 +72,13 @@ export default function BenchmarkComparison({
           <table className="w-full text-sm">
             <thead className="bg-muted">
               <tr>
-                <th className="px-4 py-3 text-left font-semibold text-foreground">
+                <th className="px-4 py-3 text-left font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                   Benchmark
                 </th>
-                <th className="px-4 py-3 text-right font-semibold text-foreground">
+                <th className="px-4 py-3 text-right font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                   {toolA.name}
                 </th>
-                <th className="px-4 py-3 text-right font-semibold text-foreground">
+                <th className="px-4 py-3 text-right font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                   {toolB.name}
                 </th>
               </tr>
@@ -92,7 +92,7 @@ export default function BenchmarkComparison({
                 return (
                   <tr
                     key={name}
-                    className="border-t border-border transition hover:bg-muted/50"
+                    className="border-t border-border transition hover:bg-primary-soft"
                   >
                     <td className="px-4 py-3">
                       <span className="font-medium text-foreground">
@@ -129,13 +129,13 @@ export default function BenchmarkComparison({
           <table className="w-full text-sm">
             <thead className="bg-muted">
               <tr>
-                <th className="px-4 py-3 text-left font-semibold text-foreground">
+                <th className="px-4 py-3 text-left font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                   Benchmark
                 </th>
-                <th className="hidden px-4 py-3 text-left font-semibold text-foreground sm:table-cell">
+                <th className="hidden px-4 py-3 text-left font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground sm:table-cell">
                   Description
                 </th>
-                <th className="px-4 py-3 text-right font-semibold text-foreground">
+                <th className="px-4 py-3 text-right font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                   Score
                 </th>
               </tr>
@@ -146,7 +146,7 @@ export default function BenchmarkComparison({
                 return (
                   <tr
                     key={score.name}
-                    className="border-t border-border transition hover:bg-muted/50"
+                    className="border-t border-border transition hover:bg-primary-soft"
                   >
                     <td className="px-4 py-3 font-medium text-foreground">
                       {info.label}

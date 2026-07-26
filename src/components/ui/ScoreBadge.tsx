@@ -5,10 +5,10 @@ interface ScoreBadgeProps {
 }
 
 function getScoreColor(score: number): string {
-  if (score >= 8) return "bg-emerald-100 text-emerald-800 border-emerald-200";
-  if (score >= 6) return "bg-blue-100 text-blue-800 border-blue-200";
-  if (score >= 4) return "bg-amber-100 text-amber-800 border-amber-200";
-  return "bg-red-100 text-red-800 border-red-200";
+  if (score >= 8) return "bg-go-bg text-go border-border";
+  if (score >= 6) return "bg-tier-d-bg text-tier-d border-border";
+  if (score >= 4) return "bg-warn-bg text-warn border-border";
+  return "bg-stop-bg text-stop border-border";
 }
 
 function getScoreLabel(score: number): string {
@@ -35,7 +35,7 @@ export default function ScoreBadge({
   return (
     <div className="flex flex-col items-center gap-1">
       <div
-        className={`flex items-center justify-center rounded-lg border font-bold ${getScoreColor(score)} ${sizes[size]}`}
+        className={`tabular flex items-center justify-center rounded-lg border font-mono font-bold ${getScoreColor(score)} ${sizes[size]}`}
       >
         {score.toFixed(1)}
       </div>

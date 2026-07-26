@@ -82,7 +82,7 @@ export default function AllToolsPage() {
                         </td>
                         <td className="px-4 py-2 text-center">
                           <span
-                            className={`inline-flex h-7 w-7 items-center justify-center rounded-md bg-gradient-to-br ${tier.labelBg} text-xs font-black text-white`}
+                            className={`inline-flex h-7 w-7 items-center justify-center rounded-md font-mono ${tier.labelBg} ${tier.labelText} text-xs font-black`}
                           >
                             {tier.rank}
                           </span>

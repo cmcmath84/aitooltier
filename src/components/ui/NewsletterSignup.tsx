@@ -42,7 +42,7 @@ export default function NewsletterSignup() {
   }
 
   return (
-    <div className="rounded-lg border border-primary/20 bg-blue-50 p-6">
+    <div className="rounded-xl border border-border bg-primary-soft p-6">
       <h3 className="text-lg font-semibold text-foreground">
         The Tier List Tuesday
       </h3>
@@ -51,7 +51,7 @@ export default function NewsletterSignup() {
         Built from our daily AI-tool sweeps. No spam, unsubscribe anytime.
       </p>
       {status === "success" ? (
-        <p className="mt-3 text-sm font-medium text-emerald-700">
+        <p className="mt-3 text-sm font-medium text-go">
           Almost there -- confirm in the tab that just opened, then check your
           inbox.
         </p>
@@ -63,7 +63,7 @@ export default function NewsletterSignup() {
             onChange={(e) => setEmail(e.target.value)}
             placeholder="you@example.com"
             required
-            className="flex-1 rounded-md border border-border bg-card px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+            className="flex-1 rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
           />
           <button
             type="submit"
@@ -74,7 +74,7 @@ export default function NewsletterSignup() {
         </form>
       )}
       {status === "error" && (
-        <p className="mt-2 text-sm text-red-600">
+        <p className="mt-2 text-sm text-stop">
           Something went wrong. Please try again.
         </p>
       )}

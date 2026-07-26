@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tools, getToolBySlug, getToolsByCategory } from "@/data/tools";
@@ -88,14 +88,14 @@ export default async function PricingPage({
       {/* Quick summary */}
       <div className="mt-6 flex flex-wrap gap-3">
         {tool.hasFreeTier && (
-          <span className="rounded-full bg-emerald-100 px-3 py-1 text-sm font-medium text-emerald-800">
+          <span className="rounded-full bg-go-bg px-3 py-1 font-mono text-sm font-medium text-go">
             Free tier available
           </span>
         )}
-        <span className="rounded-full bg-blue-100 px-3 py-1 text-sm font-medium text-blue-800">
+        <span className="rounded-full bg-tier-d-bg px-3 py-1 font-mono text-sm font-medium text-tier-d">
           {tool.pricing.length} plan{tool.pricing.length !== 1 ? "s" : ""}
         </span>
-        <span className="rounded-full bg-purple-100 px-3 py-1 text-sm font-medium text-purple-800">
+        <span className="rounded-full bg-primary-soft px-3 py-1 font-mono text-sm font-medium text-primary">
           {getTierLabel(tool.scores.value)} value score ({tool.scores.value}/10)
         </span>
       </div>
@@ -111,7 +111,7 @@ export default async function PricingPage({
               key={i}
               className={`relative rounded-lg border p-5 ${
                 isMostPopular
-                  ? "border-primary bg-blue-50 shadow-md"
+                  ? "border-primary bg-primary-soft"
                   : "border-border bg-card"
               }`}
             >
@@ -216,7 +216,7 @@ export default async function PricingPage({
                   <tr
                     key={t.slug}
                     className={`border-t border-border ${
-                      t.slug === tool.slug ? "bg-blue-50/50" : ""
+                      t.slug === tool.slug ? "bg-primary-soft/50" : ""
                     }`}
                   >
                     <td className="px-3 py-2 font-medium">
@@ -234,9 +234,9 @@ export default async function PricingPage({
                     </td>
                     <td className="px-3 py-2 text-center">
                       {t.hasFreeTier ? (
-                        <span className="text-emerald-600">Yes</span>
+                        <span className="text-go">Yes</span>
                       ) : (
-                        <span className="text-red-500">No</span>
+                        <span className="text-stop">No</span>
                       )}
                     </td>
                     <td className="px-3 py-2 text-center">

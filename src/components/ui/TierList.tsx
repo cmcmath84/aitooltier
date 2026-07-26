@@ -30,7 +30,7 @@ export default function TierList({ tools }: TierListProps) {
             className={`flex w-16 shrink-0 items-center justify-center ${tier.labelBg} sm:w-20`}
           >
             <span
-              className={`text-2xl font-black ${tier.labelText} sm:text-3xl`}
+              className={`font-mono text-2xl font-black ${tier.labelText} sm:text-3xl`}
             >
               {tier.rank}
             </span>
@@ -42,7 +42,7 @@ export default function TierList({ tools }: TierListProps) {
               <Link
                 key={tool.slug}
                 href={`/tools/${tool.slug}`}
-                className="group flex items-center gap-2 rounded-lg border border-white/80 bg-white/90 px-3 py-2 shadow-sm transition-all hover:shadow-md hover:-translate-y-0.5 hover:bg-white sm:gap-3 sm:px-4 sm:py-3"
+                className="group flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-2 transition hover:border-primary/40 sm:gap-3 sm:px-4 sm:py-3"
               >
                 <ToolLogo slug={tool.slug} name={tool.name} size="sm" />
                 <div className="min-w-0">
@@ -52,7 +52,7 @@ export default function TierList({ tools }: TierListProps) {
                   <div className="text-xs text-muted-foreground hidden sm:block">
                     {tool.scores.overall.toFixed(1)}/10
                     {tool.hasFreeTier && (
-                      <span className="ml-2 text-emerald-600">Free tier</span>
+                      <span className="ml-2 text-go">Free tier</span>
                     )}
                   </div>
                 </div>

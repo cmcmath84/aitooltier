@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+﻿import { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { tools, getToolsByCategory } from "@/data/tools";
@@ -268,7 +268,7 @@ export default async function ProfessionPage({
                         </Link>
                         <TierBadge score={tool.scores.overall} size="sm" />
                         {tool.hasFreeTier && (
-                          <span className="rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-700">
+                          <span className="rounded-full bg-go-bg px-2 py-0.5 font-mono text-xs font-medium text-go">
                             Free tier
                           </span>
                         )}

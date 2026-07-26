@@ -199,19 +199,19 @@ export default function SearchBar() {
           placeholder="Search tools..."
           className="h-9 w-full rounded-lg border border-border bg-muted pl-9 pr-8 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary md:w-44 lg:w-56"
         />
-        <kbd className="pointer-events-none absolute right-2 top-1/2 hidden -translate-y-1/2 rounded border border-border bg-white px-1.5 text-[10px] font-medium text-muted-foreground sm:block">
+        <kbd className="pointer-events-none absolute right-2 top-1/2 hidden -translate-y-1/2 rounded border border-border bg-card px-1.5 font-mono text-[10px] font-medium text-muted-foreground sm:block">
           /
         </kbd>
       </div>
 
       {open && allResults.length > 0 && (
-        <div className="absolute left-0 right-0 top-full z-50 mt-1 max-w-80 overflow-hidden rounded-lg border border-border bg-white shadow-lg md:left-auto">
+        <div className="absolute left-0 right-0 top-full z-50 mt-1 max-w-80 overflow-hidden rounded-lg border border-border bg-card md:left-auto">
           {allResults.map((result, i) => (
             <button
               key={result.href}
               className={`flex w-full items-center gap-3 px-3 py-2.5 text-left text-sm transition ${
                 i === selectedIndex
-                  ? "bg-primary/5 text-foreground"
+                  ? "bg-primary-soft text-foreground"
                   : "text-muted-foreground hover:bg-muted hover:text-foreground"
               }`}
               onMouseEnter={() => setSelectedIndex(i)}
@@ -247,7 +247,7 @@ export default function SearchBar() {
       )}
 
       {open && query.length >= 1 && allResults.length === 0 && (
-        <div className="absolute left-0 right-0 top-full z-50 mt-1 max-w-80 rounded-lg border border-border bg-white p-4 text-center text-sm text-muted-foreground shadow-lg md:left-auto">
+        <div className="absolute left-0 right-0 top-full z-50 mt-1 max-w-80 rounded-lg border border-border bg-card p-4 text-center text-sm text-muted-foreground md:left-auto">
           No results for &ldquo;{query}&rdquo;
         </div>
       )}

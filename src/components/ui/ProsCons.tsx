@@ -7,8 +7,8 @@ export default function ProsCons({ pros, cons }: ProsConsProps) {
   return (
     <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
       {/* Pros */}
-      <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-4">
-        <h3 className="mb-3 flex items-center gap-2 font-semibold text-emerald-800">
+      <div className="rounded-lg border-l-4 border-go bg-go-bg p-4">
+        <h3 className="mb-3 flex items-center gap-2 font-semibold text-go">
           <svg
             className="h-5 w-5"
             fill="none"
@@ -26,8 +26,8 @@ export default function ProsCons({ pros, cons }: ProsConsProps) {
         </h3>
         <ul className="space-y-2">
           {pros.map((pro, i) => (
-            <li key={i} className="flex gap-2 text-sm text-emerald-900">
-              <span className="mt-0.5 shrink-0 text-emerald-500">+</span>
+            <li key={i} className="flex gap-2 text-sm text-foreground">
+              <span className="mt-0.5 shrink-0 font-mono text-go">+</span>
               {pro}
             </li>
           ))}
@@ -35,8 +35,8 @@ export default function ProsCons({ pros, cons }: ProsConsProps) {
       </div>
 
       {/* Cons */}
-      <div className="rounded-lg border border-red-200 bg-red-50 p-4">
-        <h3 className="mb-3 flex items-center gap-2 font-semibold text-red-800">
+      <div className="rounded-lg border-l-4 border-stop bg-stop-bg p-4">
+        <h3 className="mb-3 flex items-center gap-2 font-semibold text-stop">
           <svg
             className="h-5 w-5"
             fill="none"
@@ -54,8 +54,8 @@ export default function ProsCons({ pros, cons }: ProsConsProps) {
         </h3>
         <ul className="space-y-2">
           {cons.map((con, i) => (
-            <li key={i} className="flex gap-2 text-sm text-red-900">
-              <span className="mt-0.5 shrink-0 text-red-500">&minus;</span>
+            <li key={i} className="flex gap-2 text-sm text-foreground">
+              <span className="mt-0.5 shrink-0 font-mono text-stop">&minus;</span>
               {con}
             </li>
           ))}

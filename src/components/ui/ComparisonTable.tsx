@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ToolReview } from "@/lib/types";
 import ScoreBadge from "./ScoreBadge";
 import ToolLogo from "./ToolLogo";
@@ -21,25 +21,25 @@ export default function ComparisonTable({
       <table className="w-full text-sm">
         <thead className="bg-muted">
           <tr>
-            <th className="px-4 py-3 text-left font-semibold text-foreground">
+            <th className="px-4 py-3 text-left font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
               #
             </th>
-            <th className="px-4 py-3 text-left font-semibold text-foreground">
+            <th className="px-4 py-3 text-left font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
               Tool
             </th>
-            <th className="px-4 py-3 text-center font-semibold text-foreground">
+            <th className="px-4 py-3 text-center font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
               Score
             </th>
-            <th className="hidden px-4 py-3 text-left font-semibold text-foreground sm:table-cell">
+            <th className="hidden px-4 py-3 text-left font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground sm:table-cell">
               Best For
             </th>
-            <th className="px-4 py-3 text-left font-semibold text-foreground">
+            <th className="px-4 py-3 text-left font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
               Price
             </th>
-            <th className="hidden px-4 py-3 text-center font-semibold text-foreground sm:table-cell">
+            <th className="hidden px-4 py-3 text-center font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground sm:table-cell">
               Free Tier
             </th>
-            <th className="px-4 py-3 text-right font-semibold text-foreground">
+            <th className="px-4 py-3 text-right font-mono text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
               &nbsp;
             </th>
           </tr>
@@ -48,7 +48,7 @@ export default function ComparisonTable({
           {sorted.map((tool, index) => (
             <tr
               key={tool.slug}
-              className="border-t border-border transition hover:bg-muted/50"
+              className="border-t border-border transition hover:bg-primary-soft"
             >
               <td className="px-4 py-4 font-medium text-muted-foreground">
                 {index + 1}
@@ -84,11 +84,11 @@ export default function ComparisonTable({
               </td>
               <td className="hidden px-4 py-4 text-center sm:table-cell">
                 {tool.hasFreeTier ? (
-                  <span className="inline-flex items-center rounded-full bg-emerald-100 px-2 py-0.5 text-xs font-medium text-emerald-800">
+                  <span className="inline-flex items-center rounded-full bg-go-bg px-2 py-0.5 font-mono text-xs font-medium text-go">
                     Yes
                   </span>
                 ) : (
-                  <span className="inline-flex items-center rounded-full bg-gray-100 px-2 py-0.5 text-xs font-medium text-gray-600">
+                  <span className="inline-flex items-center rounded-full bg-tier-f-bg px-2 py-0.5 font-mono text-xs font-medium text-tier-f">
                     No
                   </span>
                 )}
