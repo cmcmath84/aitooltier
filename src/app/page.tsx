@@ -129,7 +129,7 @@ export default function Home() {
 
       {/* ============ STATS BAR ============ */}
       <section className="mx-auto max-w-4xl px-4">
-        <div className="fade-in-up-d5 -mt-8 grid grid-cols-2 divide-y divide-border rounded-xl border border-border bg-card sm:grid-cols-4 sm:divide-x sm:divide-y-0">
+        <div className="fade-in-up-d5 relative z-10 -mt-8 grid grid-cols-2 divide-y divide-border rounded-xl border border-border bg-card sm:grid-cols-4 sm:divide-x sm:divide-y-0">
           {[
             { value: tools.length.toString(), label: "Tools ranked" },
             { value: categories.length.toString(), label: "Categories" },
