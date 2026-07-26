@@ -98,6 +98,20 @@ body {
   font-weight: 700;
 }
 
+/* Raised hero surface — a couple shades above the panel color, with a
+   soft accent glow at the top and an ambient shadow bleeding onto the
+   page so the hero reads as its own layer. */
+.hero-surface {
+  position: relative;
+  background:
+    radial-gradient(ellipse 85% 65% at 50% -12%, rgba(139, 140, 245, 0.14), transparent 62%),
+    linear-gradient(180deg, #242836 0%, #1b1f29 58%, #171a21 100%);
+  border-bottom: 1px solid var(--border);
+  box-shadow:
+    0 22px 55px -22px rgba(0, 0, 0, 0.65),
+    0 30px 90px -34px rgba(139, 140, 245, 0.2);
+}
+
 .section-alt { background-color: var(--muted); }
 .tabular { font-variant-numeric: tabular-nums; }
 

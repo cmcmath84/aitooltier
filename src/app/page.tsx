@@ -76,7 +76,7 @@ export default function Home() {
       ))}
 
       {/* ============ HERO ============ */}
-      <section className="border-b border-border bg-card px-4 py-16 sm:py-24">
+      <section className="hero-surface px-4 py-16 sm:py-24">
         <div className="mx-auto max-w-4xl text-center">
           <p className="fade-in-up eyebrow flex items-center justify-center gap-2">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-tier-c" />
