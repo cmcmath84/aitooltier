@@ -1,0 +1,313 @@
+<title>AIToolTier — Backlink Directory Battle Plan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root{
+    --bg:#f6f7f9; --panel:#ffffff; --ink:#15171c; --muted:#5b616e; --line:#e3e6eb;
+    --accent:#4f46e5; --accent-soft:#eef0fe;
+    --go:#15803d; --go-bg:#e7f5ec; --warn:#b45309; --warn-bg:#fbf1e3; --stop:#c2313a; --stop-bg:#fbe9ea;
+    --tS:#b8860b; --tS-bg:#faf3dd; --tA:#15803d; --tA-bg:#e7f5ec; --tB:#2563eb; --tB-bg:#e8f0fe; --tC:#64748b; --tC-bg:#eef1f5;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#0e1014; --panel:#171a21; --ink:#e8eaf0; --muted:#9aa2b1; --line:#262b34;
+      --accent:#8b8cf5; --accent-soft:#1e2030;
+      --go:#4ade80; --go-bg:#132a1c; --warn:#fbbf24; --warn-bg:#2c2211; --stop:#f87171; --stop-bg:#2c1517;
+      --tS:#e3b341; --tS-bg:#2a2411; --tA:#4ade80; --tA-bg:#132a1c; --tB:#60a5fa; --tB-bg:#111e33; --tC:#94a3b8; --tC-bg:#1b2029;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e1014; --panel:#171a21; --ink:#e8eaf0; --muted:#9aa2b1; --line:#262b34;
+    --accent:#8b8cf5; --accent-soft:#1e2030;
+    --go:#4ade80; --go-bg:#132a1c; --warn:#fbbf24; --warn-bg:#2c2211; --stop:#f87171; --stop-bg:#2c1517;
+    --tS:#e3b341; --tS-bg:#2a2411; --tA:#4ade80; --tA-bg:#132a1c; --tB:#60a5fa; --tB-bg:#111e33; --tC:#94a3b8; --tC-bg:#1b2029;
+  }
+  :root[data-theme="light"]{
+    --bg:#f6f7f9; --panel:#ffffff; --ink:#15171c; --muted:#5b616e; --line:#e3e6eb;
+    --accent:#4f46e5; --accent-soft:#eef0fe;
+    --go:#15803d; --go-bg:#e7f5ec; --warn:#b45309; --warn-bg:#fbf1e3; --stop:#c2313a; --stop-bg:#fbe9ea;
+    --tS:#b8860b; --tS-bg:#faf3dd; --tA:#15803d; --tA-bg:#e7f5ec; --tB:#2563eb; --tB-bg:#e8f0fe; --tC:#64748b; --tC-bg:#eef1f5;
+  }
+  *{box-sizing:border-box}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5;margin:0;
+    -webkit-font-smoothing:antialiased;padding:0}
+  .wrap{max-width:1120px;margin:0 auto;padding:32px 20px 80px}
+  header.top{display:flex;flex-direction:column;gap:6px;margin-bottom:6px}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+  h1{font-size:clamp(26px,4vw,38px);line-height:1.08;margin:0;letter-spacing:-.02em;text-wrap:balance;font-weight:800}
+  .sub{color:var(--muted);font-size:15px;max-width:62ch}
+  h2{font-size:19px;margin:44px 0 12px;letter-spacing:-.01em;display:flex;align-items:center;gap:10px}
+  h2 .n{font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:700}
+  .panel{background:var(--panel);border:1px solid var(--line);border-radius:12px}
+  .callout{padding:18px 20px;border-left:4px solid var(--warn);background:var(--warn-bg);border-radius:10px;margin-top:20px}
+  .callout.stop{border-left-color:var(--stop);background:var(--stop-bg)}
+  .callout h3{margin:0 0 6px;font-size:15px}
+  .callout p{margin:6px 0 0;font-size:14px;color:var(--ink)}
+  .callout strong{font-weight:700}
+  /* tiers strip */
+  .tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:8px}
+  .tier{padding:14px 16px;border:1px solid var(--line);border-radius:11px;background:var(--panel)}
+  .tier .badge{font-family:var(--mono);font-weight:800;font-size:13px;padding:2px 9px;border-radius:6px;display:inline-block}
+  .tier h4{margin:9px 0 4px;font-size:14px}
+  .tier p{margin:0;font-size:12.5px;color:var(--muted)}
+  .bS{background:var(--tS-bg);color:var(--tS)} .bA{background:var(--tA-bg);color:var(--tA)}
+  .bB{background:var(--tB-bg);color:var(--tB)} .bC{background:var(--tC-bg);color:var(--tC)}
+  /* legend + controls */
+  .legend{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:13px;color:var(--muted);margin:14px 0 4px}
+  .legend b{color:var(--ink);font-weight:600}
+  .dot{font-size:12px}
+  .controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:16px 0 12px}
+  .seg{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+  .seg button{font-family:var(--sans);font-size:13px;padding:7px 12px;background:var(--panel);color:var(--muted);border:0;cursor:pointer;border-right:1px solid var(--line)}
+  .seg button:last-child{border-right:0}
+  .seg button[aria-pressed="true"]{background:var(--accent);color:#fff;font-weight:600}
+  input#q{font-family:var(--sans);font-size:13px;padding:8px 12px;border:1px solid var(--line);border-radius:9px;background:var(--panel);color:var(--ink);min-width:180px;flex:1}
+  input#q:focus,.seg button:focus-visible,th.sortable:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+  .count{font-family:var(--mono);font-size:12px;color:var(--muted)}
+  /* table */
+  .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+  table{border-collapse:collapse;width:100%;min-width:820px;font-size:13.5px}
+  thead th{position:sticky;top:0;background:var(--panel);text-align:left;font-size:11px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--muted);font-weight:600;padding:11px 12px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th.sortable{cursor:pointer;user-select:none}
+  th.sortable:hover{color:var(--ink)}
+  tbody td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+  tbody tr:last-child td{border-bottom:0}
+  tbody tr:hover{background:var(--accent-soft)}
+  td.dr,td.tier-c{font-family:var(--mono);font-variant-numeric:tabular-nums}
+  a{color:var(--accent);text-decoration:none;font-weight:600}
+  a:hover{text-decoration:underline}
+  .name{font-weight:700;color:var(--ink)}
+  .pill{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:700;padding:2px 8px;border-radius:20px;white-space:nowrap}
+  .p-go{background:var(--go-bg);color:var(--go)} .p-warn{background:var(--warn-bg);color:var(--warn)} .p-stop{background:var(--stop-bg);color:var(--stop)}
+  .df{background:var(--tC-bg);color:var(--tC);font-size:10.5px} .nf{background:transparent;color:var(--muted);border:1px solid var(--line);font-size:10.5px}
+  .tag{font-family:var(--mono);font-weight:800;font-size:12px;padding:2px 8px;border-radius:6px}
+  .note{color:var(--muted);font-size:12.5px;max-width:34ch}
+  /* kit */
+  .kit{display:grid;gap:12px;margin-top:8px}
+  .field{border:1px solid var(--line);border-radius:10px;padding:12px 14px;background:var(--panel)}
+  .field .k{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:5px;display:flex;justify-content:space-between;align-items:center}
+  .field .v{font-size:14px;white-space:pre-wrap;word-break:break-word}
+  .copy{font-family:var(--sans);font-size:11px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:6px;padding:3px 9px;cursor:pointer}
+  .copy:hover{color:var(--ink);border-color:var(--accent)}
+  .avoid{display:grid;gap:8px;margin-top:8px}
+  .avoid .row{display:flex;gap:10px;font-size:13.5px;align-items:baseline;padding:9px 12px;border:1px dashed var(--line);border-radius:9px}
+  .avoid .x{color:var(--stop);font-weight:800}
+  footer{margin-top:44px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:16px}
+  @media (max-width:560px){.note{max-width:22ch}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">AIToolTier · Authority Recovery</span>
+    <h1>Backlink Directory Battle Plan</h1>
+    <p class="sub">55 real places to list <b>aitooltier.com</b>, ranked by bot-detection difficulty and by whether the link is actually worth chasing for a domain that's recovering from deindexing. Filter, work top-down, skip the farms.</p>
+  </header>
+
+  <div class="callout stop">
+    <h3>⚠ Read this before submitting to anything</h3>
+    <p>AIToolTier is <strong>recovering from a deindexing event</strong>. On a domain in that state, blasting 55 directories is the wrong move — a flood of low-quality links looks like manipulation and can set the recovery <em>back</em>. The winning play is the opposite: pursue the <strong>S and A tiers only</strong> (real editorial/AI directories with genuine traffic), skip the C-tier grind until indexing recovers, and <strong>never</strong> touch the link-farm networks in the last section. Quality and slow velocity beat volume here.</p>
+  </div>
+
+  <h2><span class="n">01</span> The tiered game plan</h2>
+  <div class="tiers">
+    <div class="tier"><span class="badge bS">S</span><h4>Do these first (8)</h4><p>High-trust AI directories + launch platforms with real traffic and dofollow links. Worth the manual effort. Start here.</p></div>
+    <div class="tier"><span class="badge bA">A</span><h4>Strong second wave (12)</h4><p>Reputable SaaS/AI directories. Do after the S-tier lands and indexing shows life.</p></div>
+    <div class="tier"><span class="badge bB">B</span><h4>Fine, low priority (20)</h4><p>Decent DR, real sites. Steady drip — a few a week, not all at once.</p></div>
+    <div class="tier"><span class="badge bC">C</span><h4>Only if bored (15)</h4><p>Low DR but legitimate & free. Marginal value; don't prioritize on a recovering domain.</p></div>
+  </div>
+
+  <h2><span class="n">02</span> The list — <span class="count" id="legendcount"></span></h2>
+  <div class="legend">
+    <span><span class="dot">🟢</span> <b>Easy</b> — no CAPTCHA / simple form → Hermes can auto-submit</span>
+    <span><span class="dot">🟡</span> <b>Medium</b> — reCAPTCHA or login/OAuth → semi-auto (fill, you clear it)</span>
+    <span><span class="dot">🔴</span> <b>Hard</b> — manual editorial review / heavy anti-bot → by hand</span>
+  </div>
+  <div class="legend"><span><b>DR</b> ≈ estimated domain rating · <b>Link</b>: <span class="pill df">dofollow</span> passes SEO value, <span class="pill nf">nofollow</span> is discovery/referral only · verify CAPTCHA at submission</span></div>
+
+  <div class="controls">
+    <div class="seg" id="diff" role="group" aria-label="Filter by difficulty">
+      <button data-f="all" aria-pressed="true">All</button>
+      <button data-f="go">🟢 Easy</button>
+      <button data-f="warn">🟡 Medium</button>
+      <button data-f="stop">🔴 Hard</button>
+    </div>
+    <div class="seg" id="tierf" role="group" aria-label="Filter by tier">
+      <button data-t="all" aria-pressed="true">All tiers</button>
+      <button data-t="S">S</button>
+      <button data-t="A">A</button>
+      <button data-t="B">B</button>
+      <button data-t="C">C</button>
+    </div>
+    <input id="q" type="search" placeholder="Search directory or type…" aria-label="Search">
+    <span class="count" id="count"></span>
+  </div>
+
+  <div class="tablewrap">
+    <table>
+      <thead><tr>
+        <th class="sortable" data-s="tier" tabindex="0">Tier</th>
+        <th>Directory</th>
+        <th>Type</th>
+        <th class="sortable" data-s="dr" tabindex="0">≈DR</th>
+        <th>Link</th>
+        <th class="sortable" data-s="diff" tabindex="0">Signup</th>
+        <th>Account</th>
+        <th>Notes</th>
+      </tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <h2><span class="n">03</span> Submission kit — one identity, copy-paste everywhere</h2>
+  <p class="sub">Fill these into every form so the listing is consistent (consistent NAP/branding is itself a small trust signal). Tap copy.</p>
+  <div class="kit" id="kit"></div>
+
+  <h2><span class="n">04</span> Do NOT submit here — link farms that hurt recovery</h2>
+  <div class="avoid">
+    <div class="row"><span class="x">✕</span><div><b>neobacklinks.net</b> network (zendirectory, poec, coastradar, besttopdir…) — auto-generated PBN-style directories. Textbook toxic links.</div></div>
+    <div class="row"><span class="x">✕</span><div><b>"350+/500+ Free DA-PA directory submission" lists</b> (dsom.in, futuregenapps, saalinko, serpmaestro) — mass generic web directories, zero relevance, spammy footprint.</div></div>
+    <div class="row"><span class="x">✕</span><div><b>Done-for-you "submit to 100+ directories" services</b> (launchdirectories, effortlessbacklinks paid tiers) — the exact velocity/pattern that flags manipulation on a recovering domain.</div></div>
+    <div class="row"><span class="x">✕</span><div><b>Generic business-listing farms</b> (freefind, guestbook-free, promotebusinessdirectory) — built for local SEO spam, not an AI product.</div></div>
+  </div>
+
+  <footer>
+    DR & CAPTCHA columns are best-effort estimates — confirm each at submission time. Built for aitooltier.com · pursue top-down, drip slowly, quality over count.
+  </footer>
+</div>
+
+<script>
+const D=[
+ // AI-tool directories (most on-topic for an AI tool-review site)
+ ["S","There's An AI For That","theresanaiforthat.com","https://theresanaiforthat.com/submit/","AI directory",85,"nf","stop","Paid+review","Biggest AI directory. Strict manual review; submission fee. High visibility if accepted."],
+ ["S","Futurepedia","futurepedia.io","https://www.futurepedia.io/submit-tool","AI directory",70,"df","stop","Review","Major AI directory, real traffic. Free tier slow; editorial review."],
+ ["S","Toolify.ai","toolify.ai","https://www.toolify.ai/submit","AI directory",70,"df","warn","Account","Large AI directory, dofollow. Account + reCAPTCHA."],
+ ["S","Uneed","uneed.best","https://www.uneed.best/submit-a-tool","Launch",74,"df","warn","Google login","Already in progress. Dofollow, real launch spike."],
+ ["S","SaaS AI Tools","saasaitools.com","https://saasaitools.com/submit/","AI directory",58,"df","go","Email","Clean AI directory, dofollow, light-touch submit."],
+ ["S","Dang.ai","dang.ai","https://dang.ai/submit","AI directory",48,"df","warn","Account","Popular AI directory w/ verified badge, dofollow."],
+ ["S","Product Hunt","producthunt.com","https://www.producthunt.com/posts/new","Launch",91,"nf","warn","OAuth","Nofollow but huge discovery. Plan a real launch day."],
+ ["S","Microlaunch","microlaunch.net","https://microlaunch.net/","Launch",58,"df","warn","Account","Already in progress. Free maker listing, dofollow."],
+
+ // A tier
+ ["A","Easy With AI","easywithai.com","https://easywithai.com/submit-ai-tool/","AI directory",55,"df","go","Email","Curated AI directory, dofollow, simple form."],
+ ["A","AI Valley","aivalley.ai","https://aivalley.ai/submit/","AI directory",55,"df","warn","Account","Well-trafficked AI directory."],
+ ["A","AllThingsAI","allthingsai.com","https://allthingsai.com/submit","AI directory",52,"df","warn","Account","Curated, dofollow."],
+ ["A","Insidr AI","insidr.ai","https://www.insidr.ai/submit-your-ai-tool/","AI directory",55,"df","warn","Form","Good AI directory, editorial-ish."],
+ ["A","SaaSHub","saashub.com","https://www.saashub.com/submit","SaaS directory",68,"df","warn","Account","Strong SaaS directory, dofollow, steady organic."],
+ ["A","Indie Hackers","indiehackers.com","https://www.indiehackers.com/products/new","Community",72,"df","warn","OAuth","Product page = dofollow link + community. Be genuine."],
+ ["A","Crunchbase","crunchbase.com","https://www.crunchbase.com/","Startup db",91,"nf","warn","Account","Nofollow but a must-have authority profile."],
+ ["A","AIScout","aiscout.net","https://aiscout.net/","AI directory",55,"df","go","Email","AI tool directory, simple submit."],
+ ["A","TopAI.tools","topai.tools","https://topai.tools/submit","AI directory",58,"df","warn","Account","Large AI listing, dofollow."],
+ ["A","Future Tools","futuretools.io","https://www.futuretools.io/submit-a-tool","AI directory",65,"nf","stop","Curated","Matt Wolfe's hand-curated list. Nofollow, hard to get in, but pure discovery."],
+ ["A","AlternativeTo","alternativeto.net","https://alternativeto.net/manage/create/","Software db",85,"nf","warn","Account","Nofollow, but high-authority listing + real traffic."],
+ ["A","Dev Hunt","devhunt.org","https://devhunt.org/","Launch",55,"df","warn","OAuth","Dev-tool launch board, dofollow, weekly."],
+
+ // B tier
+ ["B","TinyLaunch","tinylaunch.com","https://www.tinylaunch.com/","Launch",45,"df","warn","Account","Weekly micro-SaaS launches, dofollow."],
+ ["B","Startup Fame","startupfa.me","https://startupfa.me/","Launch",45,"df","warn","Account","Launch directory, dofollow."],
+ ["B","Turbo0","turbo0.com","https://turbo0.com/","AI launch",40,"df","warn","Account","AI-tool launch board, dofollow."],
+ ["B","Fazier","fazier.com","https://fazier.com/","Launch",50,"df","warn","OAuth","PH-style launch board, dofollow."],
+ ["B","BetaList","betalist.com","https://betalist.com/submit","Launch",72,"nf","stop","Review","Early-stage feature, editorial review, nofollow."],
+ ["B","Peerlist","peerlist.io","https://peerlist.io/","Community",70,"nf","warn","OAuth","Project post, discovery."],
+ ["B","Launching Next","launchingnext.com","https://www.launchingnext.com/submit/","Launch",52,"df","go","Form","Simple daily launch list, dofollow."],
+ ["B","SpotSaaS","spotsaas.com","https://www.spotsaas.com/","SaaS directory",50,"df","warn","Account","SaaS listing, dofollow."],
+ ["B","SaaSworthy","saasworthy.com","https://www.saasworthy.com/","SaaS directory",60,"df","warn","Account","Larger SaaS directory."],
+ ["B","Crozdesk","crozdesk.com","https://www.crozdesk.com/vendors","SaaS directory",55,"df","warn","Account","SaaS marketplace listing."],
+ ["B","Tekpon","tekpon.com","https://tekpon.com/","SaaS directory",55,"df","stop","Review","SaaS directory, editorial-ish, dofollow."],
+ ["B","F6S","f6s.com","https://www.f6s.com/","Startup db",83,"nf","warn","Account","Startup profile, authority."],
+ ["B","Startup Stash","startupstash.com","https://startupstash.com/","Directory",60,"df","stop","Review","Curated resource list, dofollow if accepted."],
+ ["B","OpenTools","opentools.ai","https://opentools.ai/","AI directory",45,"df","warn","Account","AI tools directory."],
+ ["B","aitools.fyi","aitools.fyi","https://aitools.fyi/submit","AI directory",50,"df","warn","Form","AI directory, dofollow."],
+ ["B","AI Tool Hunt","aitoolhunt.com","https://www.aitoolhunt.com/submit","AI directory",50,"df","go","Email","AI directory, simple submit."],
+ ["B","EverFeatured","everfeatured.com","https://www.everfeatured.com/","Launch",40,"df","warn","Account","Launch directory, dofollow."],
+ ["B","Open Launch","open-launch.com","https://open-launch.com/","Launch",35,"df","warn","OAuth","Open-source PH alt, dofollow."],
+ ["B","SideProjectors","sideprojectors.com","https://www.sideprojectors.com/project/submit/","Directory",45,"df","go","Account","List a project, dofollow."],
+ ["B","Twelve Tools","twelve.tools","https://twelve.tools/","Directory",40,"df","go","Form","Fast free listing, dofollow."],
+
+ // C tier
+ ["C","GPTBot.io","gptbot.io","https://gptbot.io/submit-ai-tool","AI directory",40,"df","go","Form","Free tier + do-follow fast track."],
+ ["C","Free AIO","freeaio.com","https://freeaio.com/submit-ai-tool/","AI directory",35,"df","go","Form","Free AI listing, dofollow."],
+ ["C","SubmitAITools","submitaitools.org","https://submitaitools.org/","AI directory",40,"df","go","Form","Free AI directory, dofollow."],
+ ["C","AI Gems","aigems.net","https://aigems.net/","AI directory",30,"df","warn","Account","Free AI listing."],
+ ["C","AIToolMall","aitoolmall.com","https://aitoolmall.com/","AI directory",40,"df","go","Form","Free AI directory."],
+ ["C","unlimitedai.tools","unlimitedai.tools","https://unlimitedai.tools/","AI directory",30,"df","go","Form","Free AI list."],
+ ["C","AI Directory","aidirectory.com","https://aidirectory.com/submit-tool/","AI directory",35,"df","go","Form","Free listing."],
+ ["C","SmolLaunch","smollaunch.com","https://smollaunch.com/","Launch",35,"df","warn","Account","Weekly indie launch."],
+ ["C","Launchlist","getlaunchlist.com","https://getlaunchlist.com/","Directory",53,"df","go","Form","Launch discovery listing."],
+ ["C","Betapage","betapage.co","https://betapage.co/submit-startup","Launch",44,"df","warn","Account","Startup discovery, dofollow."],
+ ["C","StartupBase","startupbase.io","https://startupbase.io/","Directory",45,"df","warn","Account","Indie startup directory."],
+ ["C","RankInPublic","rankinpublic.com","https://rankinpublic.com/","Launch",30,"df","warn","Account","Launch board."],
+ ["C","PeerPush","peerpush.net","https://peerpush.net/","Launch",35,"df","warn","Account","Indie product network."],
+ ["C","Fazier alt · SaaSHunt","saashunt.ai","https://www.saashunt.ai/","SaaS directory",35,"df","warn","Account","SaaS discovery listing."],
+ ["C","AllThingsAI alt · AI Center","aicenter.ai","https://aicenter.ai/","AI directory",30,"df","go","Form","Free AI listing."]
+];
+const DIFF={go:"🟢",warn:"🟡",stop:"🔴"};
+const DIFFLABEL={go:"Easy",warn:"Medium",stop:"Hard"};
+const TORD={S:0,A:1,B:2,C:3};
+let fDiff="all",fTier="all",fQ="",sortKey=null,sortDir=1;
+
+const rows=document.getElementById("rows");
+function render(){
+  let data=D.filter(r=>
+    (fDiff==="all"||r[7]===fDiff)&&
+    (fTier==="all"||r[0]===fTier)&&
+    (fQ===""||(r[1]+" "+r[4]+" "+r[2]).toLowerCase().includes(fQ)));
+  if(sortKey){
+    data=[...data].sort((a,b)=>{
+      let x,y;
+      if(sortKey==="tier"){x=TORD[a[0]];y=TORD[b[0]];}
+      else if(sortKey==="dr"){x=a[5];y=b[5];}
+      else{const o={go:0,warn:1,stop:2};x=o[a[7]];y=o[b[7]];}
+      return (x-y)*sortDir;
+    });
+  }
+  rows.innerHTML=data.map(r=>{
+    const [tier,name,dom,url,type,dr,link,diff,acct,note]=r;
+    const linkPill=link==="df"?'<span class="pill df">dofollow</span>':'<span class="pill nf">nofollow</span>';
+    return `<tr>
+      <td class="tier-c"><span class="tag b${tier}">${tier}</span></td>
+      <td><a href="${url}" target="_blank" rel="noopener">${name}</a><div class="note" style="font-size:11px">${dom}</div></td>
+      <td>${type}</td>
+      <td class="dr">${dr}</td>
+      <td>${linkPill}</td>
+      <td><span class="pill p-${diff}">${DIFF[diff]} ${DIFFLABEL[diff]}</span></td>
+      <td>${acct}</td>
+      <td class="note">${note}</td>
+    </tr>`;
+  }).join("");
+  document.getElementById("count").textContent=data.length+" of "+D.length+" shown";
+}
+document.getElementById("legendcount").textContent=D.length+" directories";
+document.querySelectorAll('#diff button').forEach(b=>b.onclick=()=>{
+  fDiff=b.dataset.f;document.querySelectorAll('#diff button').forEach(x=>x.setAttribute('aria-pressed',x===b));render();});
+document.querySelectorAll('#tierf button').forEach(b=>b.onclick=()=>{
+  fTier=b.dataset.t;document.querySelectorAll('#tierf button').forEach(x=>x.setAttribute('aria-pressed',x===b));render();});
+document.getElementById('q').oninput=e=>{fQ=e.target.value.toLowerCase().trim();render();};
+document.querySelectorAll('th.sortable').forEach(th=>{
+  const go=()=>{const k=th.dataset.s;if(sortKey===k)sortDir*=-1;else{sortKey=k;sortDir=1;}render();};
+  th.onclick=go;th.onkeydown=e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();go();}};
+});
+render();
+
+// Submission kit
+const KIT=[
+ ["Product name","AIToolTier"],
+ ["URL","https://aitooltier.com"],
+ ["Tagline (≤60)","Honest, data-backed AI tool tier lists"],
+ ["Short description (≤160)","AIToolTier ranks 140+ AI tools S-to-F across 23 categories — transparent pricing, real limitations, and no affiliate hype."],
+ ["Long description","AIToolTier cuts through AI marketing noise with standardized, side-by-side evaluation. Every tool gets an S-to-F tier rating, a transparent pricing breakdown, its real limitations, and objective feature notes across 23 categories — from AI coding assistants to image, video, and voice. Built for founders, developers, and creators who want unbiased picks, not sponsored rankings."],
+ ["Categories / tags","AI Tools, AI Directory, Reviews, Productivity, SaaS Discovery"],
+ ["Maker name","Chringle McMath"],
+ ["Contact email","cmcmath84@gmail.com"],
+ ["Preferred username","aitooltier  (fallbacks: mcmathmatics · chringle · mcmath)"],
+ ["Pricing","Free"],
+ ["Maker bio","Building AIToolTier — honest, data-backed tier lists for AI tools. S-to-F rankings, no affiliate hype."]
+];
+const kit=document.getElementById("kit");
+kit.innerHTML=KIT.map((f,i)=>`<div class="field"><div class="k">${f[0]}<button class="copy" data-i="${i}">Copy</button></div><div class="v" id="v${i}">${f[1]}</div></div>`).join("");
+kit.querySelectorAll(".copy").forEach(b=>b.onclick=()=>{
+  const t=KIT[b.dataset.i][1];
+  navigator.clipboard&&navigator.clipboard.writeText(t).then(()=>{b.textContent="Copied ✓";setTimeout(()=>b.textContent="Copy",1400);});
+});
+</script>
