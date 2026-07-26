@@ -56,6 +56,15 @@ export default function Home() {
 
   const totalComparisons = (tools.length * (tools.length - 1)) / 2;
 
+  const tierLegend = [
+    { rank: "S", cls: "bg-tier-s", label: "9.0+" },
+    { rank: "A", cls: "bg-tier-a", label: "8.0" },
+    { rank: "B", cls: "bg-tier-b", label: "7.0" },
+    { rank: "C", cls: "bg-tier-c", label: "6.0" },
+    { rank: "D", cls: "bg-tier-d", label: "5.0" },
+    { rank: "F", cls: "bg-tier-f", label: "<5" },
+  ];
+
   return (
     <div>
       {jsonLdItems.map((item, i) => (
@@ -67,40 +76,27 @@ export default function Home() {
       ))}
 
       {/* ============ HERO ============ */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-gray-900 via-gray-800 to-slate-900 px-4 py-20 sm:py-28">
-        {/* Animated gradient orbs */}
-        <div className="gradient-orb animate-float" style={{ width: 500, height: 500, top: -100, left: -100, background: 'radial-gradient(circle, rgba(239,68,68,0.5), transparent)' }} />
-        <div className="gradient-orb animate-float-slow" style={{ width: 400, height: 400, top: 50, right: -50, background: 'radial-gradient(circle, rgba(59,130,246,0.5), transparent)' }} />
-        <div className="gradient-orb animate-float-delay" style={{ width: 300, height: 300, bottom: -50, left: '40%', background: 'radial-gradient(circle, rgba(16,185,129,0.4), transparent)' }} />
-
-        {/* Grid pattern overlay */}
-        <div className="pointer-events-none absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)', backgroundSize: '40px 40px' }} />
-
-        <div className="relative mx-auto max-w-4xl text-center">
-          {/* Status badge */}
-          <div className="fade-in-up mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm text-gray-300 backdrop-blur-sm">
-            <span className="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-            Updated daily with real data
-          </div>
-
-          {/* Title with gradient shimmer */}
-          <h1 className="fade-in-up-d1 text-4xl font-black tracking-tight text-white sm:text-5xl lg:text-7xl">
-            AI Tools,{" "}
-            <span className="text-shimmer text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-amber-400 via-yellow-300 to-emerald-400">
-              Ranked by Tier
-            </span>
-          </h1>
-
-          <p className="fade-in-up-d2 mx-auto mt-6 max-w-2xl text-lg text-gray-400 sm:text-xl">
-            Every tool tested, scored, and placed in its tier. We report the
-            bugs, show the data, and tell you what actually works.
+      <section className="border-b border-border bg-card px-4 py-16 sm:py-24">
+        <div className="mx-auto max-w-4xl text-center">
+          <p className="fade-in-up eyebrow flex items-center justify-center gap-2">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-tier-c" />
+            AI Tool Tier List · Updated Daily
           </p>
 
-          {/* CTA buttons */}
+          <h1 className="fade-in-up-d1 mt-5 text-balance text-4xl font-black tracking-tight text-foreground sm:text-5xl lg:text-6xl">
+            AI tools, ranked <span className="text-primary">S to F.</span>
+          </h1>
+
+          <p className="fade-in-up-d2 mx-auto mt-5 max-w-2xl text-lg text-muted-foreground">
+            Every tool tested, scored, and placed in its tier. We report the
+            bugs, show the pricing traps, and tell you what actually works. No
+            sponsored placements.
+          </p>
+
           <div className="fade-in-up-d3 mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               href="/compare"
-              className="inline-flex items-center gap-2 rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition hover:bg-primary-hover hover:shadow-primary/40 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-hover"
             >
               Compare Tools
               <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor">
@@ -109,29 +105,22 @@ export default function Home() {
             </Link>
             <Link
               href="/all-tools"
-              className="inline-flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-gray-300 backdrop-blur-sm transition hover:bg-white/10 hover:-translate-y-0.5"
+              className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary/40 hover:text-primary"
             >
               View All {tools.length} Tools
             </Link>
           </div>
 
-          {/* Mini tier legend */}
-          <div className="fade-in-up-d4 mt-12 flex items-center justify-center gap-2 sm:gap-4">
-            {[
-              { rank: "S", color: "from-red-500 to-rose-600", label: "9+" },
-              { rank: "A", color: "from-orange-500 to-amber-500", label: "8-9" },
-              { rank: "B", color: "from-yellow-400 to-yellow-500 text-yellow-900", label: "7-8" },
-              { rank: "C", color: "from-emerald-500 to-green-600", label: "6-7" },
-              { rank: "D", color: "from-blue-500 to-indigo-500", label: "5-6" },
-              { rank: "F", color: "from-gray-500 to-gray-600", label: "<5" },
-            ].map((t) => (
-              <div key={t.rank} className="group flex flex-col items-center gap-1.5 transition-transform hover:scale-110">
+          {/* Flat tier legend */}
+          <div className="fade-in-up-d4 mt-12 flex items-center justify-center gap-3 sm:gap-5">
+            {tierLegend.map((t) => (
+              <div key={t.rank} className="flex flex-col items-center gap-1.5">
                 <div
-                  className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${t.color} text-sm font-black text-white shadow-lg transition-shadow group-hover:shadow-xl sm:h-12 sm:w-12 sm:text-base`}
+                  className={`flex h-11 w-11 items-center justify-center rounded-lg font-mono text-base font-bold text-white sm:h-12 sm:w-12 ${t.cls}`}
                 >
                   {t.rank}
                 </div>
-                <span className="text-[10px] text-gray-500">{t.label}</span>
+                <span className="tabular font-mono text-[11px] text-muted-foreground">{t.label}</span>
               </div>
             ))}
           </div>
@@ -139,19 +128,19 @@ export default function Home() {
       </section>
 
       {/* ============ STATS BAR ============ */}
-      <section className="relative -mt-6 z-10 mx-auto max-w-4xl px-4">
-        <div className="fade-in-up-d5 flex items-center justify-around rounded-2xl border border-border bg-white px-6 py-5 shadow-xl shadow-black/5">
+      <section className="mx-auto max-w-4xl px-4">
+        <div className="fade-in-up-d5 -mt-8 grid grid-cols-2 divide-y divide-border rounded-xl border border-border bg-card sm:grid-cols-4 sm:divide-x sm:divide-y-0">
           {[
-            { value: tools.length.toString(), label: "Tools Ranked" },
+            { value: tools.length.toString(), label: "Tools ranked" },
             { value: categories.length.toString(), label: "Categories" },
             { value: totalComparisons.toLocaleString() + "+", label: "Comparisons" },
             { value: "Daily", label: "Updates" },
           ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-2xl font-black text-foreground sm:text-3xl">
+            <div key={stat.label} className="px-6 py-5 text-center">
+              <div className="tabular text-2xl font-black text-foreground sm:text-3xl">
                 {stat.value}
               </div>
-              <div className="mt-0.5 text-xs text-muted-foreground sm:text-sm">
+              <div className="mt-0.5 text-xs text-muted-foreground">
                 {stat.label}
               </div>
             </div>
@@ -164,6 +153,7 @@ export default function Home() {
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between">
             <div>
+              <p className="eyebrow mb-2">Tier List</p>
               <h2 className="text-2xl font-black text-foreground sm:text-3xl">
                 The Tier List
               </h2>
@@ -196,6 +186,7 @@ export default function Home() {
       {/* ============ CATEGORIES ============ */}
       <section className="section-alt px-4 py-16">
         <div className="mx-auto max-w-7xl">
+          <p className="eyebrow mb-2">Browse</p>
           <h2 className="text-2xl font-black text-foreground sm:text-3xl">
             Browse by Category
           </h2>
@@ -209,7 +200,7 @@ export default function Home() {
                 <Link
                   key={cat.slug}
                   href={`/categories/${cat.slug}`}
-                  className="card-shine group flex items-center gap-3 rounded-xl border border-border bg-white px-4 py-4 transition-all hover:border-primary/30 hover:shadow-lg hover:-translate-y-1"
+                  className="group flex items-center gap-3 rounded-xl border border-border bg-card px-4 py-4 transition hover:border-primary/40"
                   style={{ animationDelay: `${i * 0.03}s` }}
                 >
                   <CategoryIcon slug={cat.slug} size="md" />
@@ -233,6 +224,7 @@ export default function Home() {
         <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
           <div className="flex items-end justify-between">
             <div>
+              <p className="eyebrow mb-2">Fresh</p>
               <h2 className="text-2xl font-black text-foreground sm:text-3xl">
                 Latest Reviews
               </h2>
@@ -256,45 +248,38 @@ export default function Home() {
       )}
 
       {/* ============ TRUST CTA ============ */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900 px-4 py-20">
-        {/* Decorative gradient */}
-        <div className="gradient-orb animate-float-slow" style={{ width: 400, height: 400, top: -100, right: -100, background: 'radial-gradient(circle, rgba(37,99,235,0.4), transparent)' }} />
-
-        <div className="relative mx-auto max-w-3xl text-center">
-          <h2 className="text-2xl font-black text-white sm:text-3xl">
-            Reviews You Can Actually Trust
+      <section className="border-t border-border bg-muted px-4 py-16">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="eyebrow">Why trust the rankings</p>
+          <h2 className="mt-3 text-balance text-2xl font-black text-foreground sm:text-3xl">
+            Reviews you can actually trust
           </h2>
-          <p className="mt-4 text-gray-400 sm:text-lg">
-            Every review on AIToolTier is based on hands-on testing,
-            cross-referenced user reviews from G2, Reddit, and Capterra, and
-            real pricing data. We report known bugs and issues. We don&apos;t do
-            paid placements.
+          <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
+            Every review is based on hands-on testing, cross-referenced user
+            sentiment from G2, Reddit, and Capterra, and real pricing data. We
+            report known bugs. We don&apos;t do paid placements.
           </p>
           <div className="mt-8 flex flex-col items-center gap-3 sm:flex-row sm:justify-center">
             <Link
               href="/how-we-review"
-              className="inline-flex items-center rounded-xl bg-primary px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-primary/25 transition hover:bg-primary-hover hover:shadow-primary/40 hover:-translate-y-0.5"
+              className="inline-flex items-center rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-white transition hover:bg-primary-hover"
             >
               See How We Review
             </Link>
             <Link
               href="/methodology"
-              className="inline-flex items-center rounded-xl border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-gray-300 backdrop-blur-sm transition hover:bg-white/10 hover:-translate-y-0.5"
+              className="inline-flex items-center rounded-lg border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition hover:border-primary/40 hover:text-primary"
             >
               Our Methodology
             </Link>
           </div>
-
-          {/* Trust indicators */}
-          <div className="mt-12 flex items-center justify-center gap-8 text-gray-500">
-            {[
-              { icon: "&#10003;", text: "No paid placements" },
-              { icon: "&#10003;", text: "Real bug reports" },
-              { icon: "&#10003;", text: "Updated daily" },
-            ].map((item) => (
-              <div key={item.text} className="flex items-center gap-2 text-sm">
-                <span className="text-emerald-400" dangerouslySetInnerHTML={{ __html: item.icon }} />
-                <span>{item.text}</span>
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-sm text-muted-foreground">
+            {["No paid placements", "Real bug reports", "Updated daily"].map((text) => (
+              <div key={text} className="flex items-center gap-2">
+                <svg className="h-4 w-4 text-tier-c" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M16.7 5.3a1 1 0 0 1 0 1.4l-7.5 7.5a1 1 0 0 1-1.4 0L3.3 10.7a1 1 0 1 1 1.4-1.4l3.1 3.1 6.8-6.8a1 1 0 0 1 1.4 0Z" clipRule="evenodd" />
+                </svg>
+                <span>{text}</span>
               </div>
             ))}
           </div>

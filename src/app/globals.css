@@ -1,17 +1,38 @@
 @import "tailwindcss";
 
+/* ============================================================
+   AIToolTier design system — "tier-list native"
+   Clean, data-forward, tier-badge color language. Chosen
+   neutrals (cool slate), single ink-indigo accent, solid tier
+   colors, mono for labels/data. No gradient orbs, no shimmer.
+   ============================================================ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #111827;
-  --primary: #2563eb;
-  --primary-hover: #1d4ed8;
-  --muted: #f9fafb;
-  --muted-foreground: #6b7280;
-  --border: #e5e7eb;
+  /* neutrals — cool slate, picked not defaulted */
+  --background: #f7f8fa;
+  --foreground: #14171c;
   --card: #ffffff;
-  --accent: #10b981;
-  --accent-red: #ef4444;
-  --accent-yellow: #f59e0b;
+  --muted: #eef1f5;
+  --muted-foreground: #5b616e;
+  --border: #e4e7ec;
+
+  /* accent — ink indigo, used sparingly */
+  --primary: #4f46e5;
+  --primary-hover: #4338ca;
+  --primary-soft: #eef0fe;
+
+  /* semantic (names kept for existing references) */
+  --accent: #16a34a;
+  --accent-red: #dc2626;
+  --accent-yellow: #ca8a04;
+
+  /* tier palette — solid, flat, refined (S best → F worst) */
+  --tier-s: #dc2626;  --tier-s-bg: #fbe9ea;
+  --tier-a: #ea580c;  --tier-a-bg: #fdeee4;
+  --tier-b: #ca8a04;  --tier-b-bg: #faf3dd;
+  --tier-c: #16a34a;  --tier-c-bg: #e7f5ec;
+  --tier-d: #2563eb;  --tier-d-bg: #e8f0fe;
+  --tier-f: #64748b;  --tier-f-bg: #eef1f5;
 }
 
 @theme inline {
@@ -19,6 +40,7 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
@@ -26,123 +48,52 @@
   --color-accent: var(--accent);
   --color-accent-red: var(--accent-red);
   --color-accent-yellow: var(--accent-yellow);
+
+  --color-tier-s: var(--tier-s);   --color-tier-s-bg: var(--tier-s-bg);
+  --color-tier-a: var(--tier-a);   --color-tier-a-bg: var(--tier-a-bg);
+  --color-tier-b: var(--tier-b);   --color-tier-b-bg: var(--tier-b-bg);
+  --color-tier-c: var(--tier-c);   --color-tier-c-bg: var(--tier-c-bg);
+  --color-tier-d: var(--tier-d);   --color-tier-d-bg: var(--tier-d-bg);
+  --color-tier-f: var(--tier-f);   --color-tier-f-bg: var(--tier-f-bg);
+
   --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-mono: ui-monospace, "SF Mono", "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
 }
 
 body {
   color: var(--foreground);
-  background-color: #f8fafc;
-  background-image:
-    /* Soft gradient blobs for depth */
-    radial-gradient(ellipse 800px 600px at 10% 20%, rgba(59, 130, 246, 0.08), transparent),
-    radial-gradient(ellipse 600px 500px at 85% 50%, rgba(168, 85, 247, 0.06), transparent),
-    radial-gradient(ellipse 700px 500px at 30% 80%, rgba(16, 185, 129, 0.06), transparent),
-    /* Dot grid pattern */
-    radial-gradient(circle at 1px 1px, rgba(100, 116, 139, 0.25) 1px, transparent 0);
-  background-size:
-    100% 100%,
-    100% 100%,
-    100% 100%,
-    28px 28px;
-  background-attachment: fixed;
+  background-color: var(--background);
 }
 
-.section-alt {
-  background-color: rgba(241, 245, 249, 0.8);
-  backdrop-filter: blur(1px);
+/* mono uppercase eyebrow label — a structural device, used for
+   real section markers, not decoration */
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--primary);
+  font-weight: 600;
 }
 
-.glow-s { box-shadow: 0 0 20px rgba(239, 68, 68, 0.4), 0 0 6px rgba(239, 68, 68, 0.2); }
-.glow-a { box-shadow: 0 0 20px rgba(249, 115, 22, 0.4), 0 0 6px rgba(249, 115, 22, 0.2); }
-.glow-b { box-shadow: 0 0 20px rgba(234, 179, 8, 0.35), 0 0 6px rgba(234, 179, 8, 0.2); }
-.glow-c { box-shadow: 0 0 20px rgba(16, 185, 129, 0.35), 0 0 6px rgba(16, 185, 129, 0.2); }
-.glow-d { box-shadow: 0 0 20px rgba(59, 130, 246, 0.35), 0 0 6px rgba(59, 130, 246, 0.2); }
-.glow-f { box-shadow: 0 0 15px rgba(107, 114, 128, 0.25); }
+.section-alt { background-color: var(--muted); }
+.tabular { font-variant-numeric: tabular-nums; }
 
-@keyframes grow-bar {
-  from { width: 0%; }
-}
-.animate-bar {
-  animation: grow-bar 0.8s ease-out forwards;
-}
+/* Tasteful entrance only. Score bars keep their grow animation. */
+@keyframes grow-bar { from { width: 0%; } }
+.animate-bar { animation: grow-bar 0.7s ease-out forwards; }
 
-/* Fade in up animation */
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
 }
-.fade-in-up {
-  animation: fadeInUp 0.6s ease-out both;
-}
-.fade-in-up-d1 { animation: fadeInUp 0.6s ease-out 0.1s both; }
-.fade-in-up-d2 { animation: fadeInUp 0.6s ease-out 0.2s both; }
-.fade-in-up-d3 { animation: fadeInUp 0.6s ease-out 0.3s both; }
-.fade-in-up-d4 { animation: fadeInUp 0.6s ease-out 0.4s both; }
-.fade-in-up-d5 { animation: fadeInUp 0.6s ease-out 0.5s both; }
+.fade-in-up    { animation: fadeInUp 0.5s ease-out both; }
+.fade-in-up-d1 { animation: fadeInUp 0.5s ease-out 0.06s both; }
+.fade-in-up-d2 { animation: fadeInUp 0.5s ease-out 0.12s both; }
+.fade-in-up-d3 { animation: fadeInUp 0.5s ease-out 0.18s both; }
+.fade-in-up-d4 { animation: fadeInUp 0.5s ease-out 0.24s both; }
+.fade-in-up-d5 { animation: fadeInUp 0.5s ease-out 0.30s both; }
 
-/* Floating animation for decorative elements */
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-20px) rotate(3deg); }
-}
-.animate-float {
-  animation: float 6s ease-in-out infinite;
-}
-.animate-float-slow {
-  animation: float 8s ease-in-out infinite;
-}
-.animate-float-delay {
-  animation: float 7s ease-in-out 2s infinite;
-}
-
-/* Shimmer text effect */
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-.text-shimmer {
-  background-size: 200% auto;
-  animation: shimmer 4s linear infinite;
-}
-
-/* Gradient border glow on hover */
-@keyframes borderGlow {
-  0%, 100% { border-color: rgba(37, 99, 235, 0.2); }
-  50% { border-color: rgba(37, 99, 235, 0.5); }
-}
-.hover-glow:hover {
-  animation: borderGlow 2s ease-in-out infinite;
-}
-
-/* Stats counter pulse */
-@keyframes countPulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
-}
-
-/* Gradient orb decorations */
-.gradient-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.15;
-  pointer-events: none;
-}
-
-/* Card shine effect on hover */
-.card-shine {
-  position: relative;
-  overflow: hidden;
-}
-.card-shine::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.1) 45%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 55%, transparent 60%);
-  transform: translateX(-100%);
-  transition: transform 0.6s ease;
-}
-.card-shine:hover::after {
-  transform: translateX(100%);
+@media (prefers-reduced-motion: reduce) {
+  .animate-bar, .fade-in-up, [class*="fade-in-up-"] { animation: none; }
 }
