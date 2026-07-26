@@ -112,6 +112,17 @@ body {
     0 30px 90px -34px rgba(139, 140, 245, 0.2);
 }
 
+/* Latest-sweep ticker along the hero's top edge. The track holds two
+   identical groups; sliding -50% loops seamlessly. */
+@keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.ticker-track {
+  display: flex;
+  width: max-content;
+  animation: ticker-scroll 45s linear infinite;
+}
+.ticker:hover .ticker-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .ticker-track { animation: none; } }
+
 .section-alt { background-color: var(--muted); }
 .tabular { font-variant-numeric: tabular-nums; }
 

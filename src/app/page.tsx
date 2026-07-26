@@ -44,13 +44,13 @@ export default function Home() {
     tools[0].lastReviewedDate
   );
 
-  const latestTools = [...tools]
-    .sort(
-      (a, b) =>
-        new Date(b.lastReviewedDate).getTime() -
-        new Date(a.lastReviewedDate).getTime()
-    )
-    .slice(0, 6);
+  const byRecency = [...tools].sort(
+    (a, b) =>
+      new Date(b.lastReviewedDate).getTime() -
+      new Date(a.lastReviewedDate).getTime()
+  );
+  const latestTools = byRecency.slice(0, 6);
+  const tickerTools = byRecency.slice(0, 10);
 
   const jsonLdItems = homepageJsonLd(tools.length);
 
@@ -77,6 +77,46 @@ export default function Home() {
 
       {/* ============ HERO ============ */}
       <section className="hero-surface px-4 py-16 sm:py-24">
+        {/* Latest-sweep ticker */}
+        <div className="ticker absolute inset-x-0 top-0 overflow-hidden border-b border-white/5 [mask-image:linear-gradient(90deg,transparent,black_5%,black_95%,transparent)]">
+          <div className="ticker-track items-center gap-8 px-6 py-2">
+            {[0, 1].map((dup) => (
+              <div
+                key={dup}
+                aria-hidden={dup === 1}
+                className="flex items-center gap-8 pr-8 font-mono text-[11px] tracking-wide"
+              >
+                <span className="font-semibold uppercase text-primary">
+                  Latest sweep
+                </span>
+                {tickerTools.map((t) => {
+                  const tier = getTierForScore(t.scores.overall);
+                  return (
+                    <Link
+                      key={`${dup}-${t.slug}`}
+                      href={`/tools/${t.slug}`}
+                      tabIndex={dup === 1 ? -1 : undefined}
+                      className="group flex items-center gap-2 whitespace-nowrap"
+                    >
+                      <span
+                        className={`rounded px-1.5 py-0.5 text-[10px] font-bold ${tier.labelBg} ${tier.labelText}`}
+                      >
+                        {tier.rank}
+                      </span>
+                      <span className="text-muted-foreground transition group-hover:text-foreground">
+                        {t.name}
+                      </span>
+                      <span className="tabular text-foreground/70">
+                        {t.scores.overall.toFixed(1)}
+                      </span>
+                    </Link>
+                  );
+                })}
+              </div>
+            ))}
+          </div>
+        </div>
+
         <div className="mx-auto max-w-4xl text-center">
           <p className="fade-in-up eyebrow flex items-center justify-center gap-2">
             <span className="inline-block h-1.5 w-1.5 rounded-full bg-tier-c" />
