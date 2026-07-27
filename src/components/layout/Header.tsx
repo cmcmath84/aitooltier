@@ -17,7 +17,7 @@ export default function Header() {
         {/* Logo */}
         <Link href="/" className="flex items-center">
           <Image
-            src="/logo.png"
+            src="/logo-dark.png"
             alt="AIToolTier"
             width={160}
             height={40}
