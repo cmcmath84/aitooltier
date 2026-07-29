@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const githubCopilot: ToolReview = {
   slug: "github-copilot",
   name: "GitHub Copilot",
-  tagline: "AI code assistant that lives in your editor -- autocomplete on steroids. Usage-based billing went LIVE 2026-06-01: AI Credits + token metering across all plans, code completions still free. New Copilot Max tier added the same day. New signups for Student/Pro/Pro+/Max remain PAUSED. As of 2026-06-02 (Microsoft Build), Microsoft's own MAI-Code-1-Flash is rolling into the VS Code model picker",
+  tagline: "AI code assistant that lives in your editor -- autocomplete on steroids, now with the broadest model picker of any coding tool. **Claude Opus 5 landed 2026-07-24** (Pro+, Max, Business, Enterprise) and **Grok 4.5 on 2026-07-28** (all five paid SKUs, up to 500K context, text and image input, low/medium/high reasoning effort). Both bill usage-based at provider list price, and both are off by default for Business/Enterprise until an admin enables the policy. Usage-based billing went live 2026-06-01 with AI Credits and token metering; code completions are still free; new signups for Student/Pro/Pro+/Max remain PAUSED",
   category: "ai-code-assistants",
   url: "https://github.com/features/copilot",
 
@@ -66,6 +66,16 @@ export const githubCopilot: ToolReview = {
     "Multi-file refactoring understanding is limited compared to Cursor",
   ],
   knownIssues: [
+    {
+      description: "MODEL ADD -- GROK 4.5 (2026-07-28): GitHub added xAI's Grok 4.5 to Copilot for **'Copilot Pro, Pro+, Max, Business, and Enterprise SKUs'** -- a wider plan list than Opus 5 got four days earlier, since it includes base Pro. Specs from the changelog: **up to 500,000 tokens of context**, text and image input, and selectable **low / medium / high reasoning effort**, positioned for fast agentic coding and complex multi-step workflows. Billing is usage-based at provider list pricing. **Business and Enterprise administrators must enable the Grok 4.5 policy in Copilot settings -- it is disabled by default**, so it will not simply appear for org users",
+      source: "GitHub changelog (github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot/, fetched 2026-07-29)",
+      date: "2026-07-28",
+    },
+    {
+      description: "MODEL ADD -- CLAUDE OPUS 5 (2026-07-24): Copilot picked up Anthropic's new flagship **the same day Anthropic launched it**. Availability is **'Copilot Pro+, Max, Business, and Enterprise users'** -- note this **excludes base Copilot Pro**, unlike the Grok 4.5 add four days later. Billed usage-based at provider API list rates (GitHub published no multiplier and no context figure in the changelog), and **Enterprise/Business admins must enable the Claude Opus 5 policy** before their developers see it. Rollout was gradual. Practical read: the strongest Anthropic model is now a Copilot option, which narrows the model-access gap that pushed heavy users toward Cursor and Claude Code",
+      source: "GitHub changelog (github.blog/changelog/2026-07-24-claude-opus-5-is-now-available-in-github-copilot/, fetched 2026-07-29)",
+      date: "2026-07-24",
+    },
     {
       description: "JULY WEEK-2 CLUSTER (2026-07-01 → 2026-07-09, all vendor changelog): (1) **GPT-5.6 Sol, Terra, and Luna landed in Copilot 7/9** -- day-one availability with OpenAI's GA; the picker now spans GPT-5.6 (three tiers), Sonnet 5, Fable 5, and Kimi K2.7. (2) **Deprecation notice 7/2: Gemini 2.5 Pro and Gemini 3 Flash are being removed from Copilot** (removal date not yet specified in the changelog -- migrate picker defaults off them). (3) 7/7: **Kimi K2.7 extended to Business/Enterprise**, **Codex now works as an agent provider inside JetBrains IDEs**, the **GitHub Copilot app is available to all**, and the Copilot Billing Preview app retires 8/3. (4) 7/1: **Copilot vision GA** (images/PDFs in chat) + CLI auto model selection. Net: Copilot's picker is now the fastest-moving multi-vendor surface in the market -- three frontier vendors shipped into it inside 10 days",
       source: "GitHub Changelog (github.blog/changelog/label/copilot -- 2026-07-01 through 2026-07-09 entries)",
@@ -166,8 +176,10 @@ export const githubCopilot: ToolReview = {
   notFor: "Anyone trying to sign up for Pro, Pro+, or Student right now -- signups are paused (2026-04-20 onward). Also not for developers who specifically wanted Claude Opus on the $10 Pro plan; Opus was just pulled to Pro+ only. Cursor or Claude Code are the obvious alternatives during the pause.",
   verdict: "GitHub Copilot hit a wall on 2026-04-20: new Pro/Pro+/Student signups paused, Claude Opus pulled from Pro, and usage caps tightened across the board. Microsoft is openly admitting that agent workloads consume more compute than the current subscription tiers can sustain, and the product is being retuned in real time. For existing subscribers the inline completions remain best-in-class, but the value proposition has gotten worse overnight. If you're shopping for an AI code assistant in the next 30 days, Cursor (Pro+ $60) and Claude Code are the practical choices until Microsoft either reopens signups or reprices. Watch the refund window (through 2026-05-20) if you're on the fence about staying.",
 
-  lastReviewedDate: "2026-07-09",
+  lastReviewedDate: "2026-07-29",
   dataSources: [
+    { name: "GitHub changelog: Grok 4.5 is now available in GitHub Copilot (2026-07-28)", url: "https://github.blog/changelog/2026-07-28-grok-4-5-is-now-available-in-github-copilot/", dateAccessed: "2026-07-29" },
+    { name: "GitHub changelog: Claude Opus 5 is now available in GitHub Copilot (2026-07-24)", url: "https://github.blog/changelog/2026-07-24-claude-opus-5-is-now-available-in-github-copilot/", dateAccessed: "2026-07-29" },
     { name: "GitHub Changelog: Claude Sonnet 5 GA for GitHub Copilot (2026-06-30)", url: "https://github.blog/changelog/2026-06-30-claude-sonnet-5-is-generally-available-for-github-copilot/", dateAccessed: "2026-07-04" },
     { name: "GitHub Changelog: GitHub Models fully retired 2026-07-30 (announced 2026-07-01)", url: "https://github.blog/changelog/2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/", dateAccessed: "2026-07-04" },
     { name: "GitHub Changelog: Updates to GitHub Copilot billing and plans -- usage-based billing live (2026-06-01)", url: "https://github.blog/changelog/2026-06-01-updates-to-github-copilot-billing-and-plans/", dateAccessed: "2026-06-02" },
@@ -186,7 +198,7 @@ export const githubCopilot: ToolReview = {
   ],
   affiliateUrl: "https://github.com/features/copilot",
   status: "active",
-  poweredBy: "GPT-5.4 (Pro) / Claude Opus 4.7 + GPT-5.4 (Pro+)",
-  metaTitle: "GitHub Copilot Review 2026: Usage-Based Billing Live + New Copilot Max + MAI-Code-1-Flash",
-  metaDescription: "GitHub Copilot review. Usage-based AI Credits billing went live 2026-06-01; new Copilot Max tier added; signups still paused for Student/Pro/Pro+/Max. Microsoft's MAI-Code-1-Flash now in the VS Code picker (Build, June 2). Code completions stay free.",
+  poweredBy: "Multi-model picker: Claude Opus 5 (Pro+/Max/Business/Enterprise, added 2026-07-24), Grok 4.5 (all paid SKUs, added 2026-07-28), Kimi K2.7-Code, Microsoft MAI-Code-1-Flash, plus the GPT-5.x line",
+  metaTitle: "GitHub Copilot Review 2026: Claude Opus 5 (Jul 24) + Grok 4.5 (Jul 28) Join the Model Picker",
+  metaDescription: "GitHub Copilot review. Claude Opus 5 arrived July 24 on Pro+/Max/Business/Enterprise and Grok 4.5 on July 28 across all paid SKUs with 500K context. Both bill usage-based at provider list price and are off by default for orgs. Code completions stay free; signups still paused.",
 };

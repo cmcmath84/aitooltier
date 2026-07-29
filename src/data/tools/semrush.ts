@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const semrush: ToolReview = {
   slug: "semrush",
   name: "SEMrush",
-  tagline: "The Swiss Army knife of SEO -- does everything from keyword research to PPC analysis, with AI sprinkled throughout",
+  tagline: "The Swiss Army knife of SEO, now repositioned around 'SEO + AI Search' -- it tracks how often you get cited in ChatGPT, Perplexity, and Gemini alongside classic keyword and PPC research. NOTE: the old Pro/Guru/Business plan names are retired; the 2026 lineup is SEO $139 / Starter $199 / Pro+ $299 / Advanced $549 monthly",
   category: "ai-seo-tools",
   url: "https://www.semrush.com",
 
@@ -20,25 +20,31 @@ export const semrush: ToolReview = {
     {
       plan: "Free",
       price: "$0",
-      features: ["10 searches/day", "Limited data", "1 project"],
+      features: ["1 demo project", "10 reports/day across tools", "Basic AI visibility features"],
     },
     {
-      plan: "Pro",
-      price: "$139.95",
-      period: "month",
-      features: ["500 keywords to track", "5 projects", "10,000 results per report"],
+      plan: "SEO",
+      price: "$139",
+      period: "month ($117.33/mo billed annually)",
+      features: ["5 websites monitored", "500 keywords tracked daily", "Includes AI search tracking"],
     },
     {
-      plan: "Guru",
-      price: "$249.95",
-      period: "month",
-      features: ["1,500 keywords", "15 projects", "Content marketing tools", "Historical data"],
+      plan: "Starter",
+      price: "$199",
+      period: "month ($165.17/mo billed annually)",
+      features: ["5 websites monitored", "500 keywords tracked daily", "50 prompts tracked daily across multiple LLMs", "AI visibility reports"],
     },
     {
-      plan: "Business",
-      price: "$499.95",
-      period: "month",
-      features: ["5,000 keywords", "40 projects", "API access", "Share of Voice"],
+      plan: "Pro+",
+      price: "$299",
+      period: "month ($248.17/mo billed annually)",
+      features: ["15 websites monitored", "1,500 keywords tracked daily", "100 prompts tracked daily for AI visibility"],
+    },
+    {
+      plan: "Advanced",
+      price: "$549",
+      period: "month ($455.67/mo billed annually)",
+      features: ["40 websites monitored", "5,000 keywords tracked daily", "200 prompts tracked daily for AI search monitoring"],
     },
   ],
 
@@ -70,8 +76,9 @@ export const semrush: ToolReview = {
   notFor: "Solo operators who only need backlink analysis -- you'd pay for a lot of features you'll never touch.",
   verdict: "SEMrush is the most complete digital marketing toolkit available. If you need keyword research, rank tracking, site auditing, PPC intelligence, and content optimization all in one place, nothing else comes close to the breadth of features. The AI additions are practical rather than flashy. The main downsides are a cluttered interface that takes time to learn and pricing that escalates fast with extra users. For agencies managing multiple clients, the all-in-one value is hard to beat. For solo SEOs focused mainly on link building, Ahrefs is probably the better pick.",
 
-  lastReviewedDate: "2026-03-27",
+  lastReviewedDate: "2026-07-29",
   dataSources: [
+    { name: "Semrush pricing page (2026 lineup: SEO/Starter/Pro+/Advanced, AI-visibility prompt tracking per tier)", url: "https://www.semrush.com/pricing/", dateAccessed: "2026-07-29" },
     { name: "SEMrush official site", dateAccessed: "2026-03-27" },
     { name: "G2 Reviews", dateAccessed: "2026-03-27" },
     { name: "Reddit r/SEO", dateAccessed: "2026-03-27" },

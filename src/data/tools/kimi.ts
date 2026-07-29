@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const kimi: ToolReview = {
   slug: "kimi",
   name: "Kimi K3 (Moonshot)",
-  tagline: "Moonshot's 2.8T-parameter Kimi K3 (launched 2026-07-16/17) is the largest open-weight model ever announced -- 1M context, multimodal, $3/$15 per 1M via API, ranked best-available on Arena.AI at launch. Weights promised late July (press cites 7/27); K2.6/K2.7-Code remain the shipped-weights line",
+  tagline: "Moonshot's 2.8T-parameter Kimi K3 (launched 2026-07-16/17) is the largest open-weight model ever released -- 1M context, multimodal, $3/$15 per 1M via API, ranked best-available on Arena.AI at launch. WEIGHTS SHIPPED ~2026-07-26/27 on Hugging Face (2.8T total / 104B activated, safetensors) under a custom Kimi K3 License, not the Modified MIT of the K2 line",
   category: "ai-local-models",
   url: "https://www.moonshot.cn",
 
@@ -26,7 +26,7 @@ export const kimi: ToolReview = {
     {
       plan: "Self-hosted (Free -- K2.6/K2.7 line)",
       price: "$0",
-      features: ["Modified MIT license -- commercial use allowed", "K2.6 + K2.7-Code weights on Hugging Face today", "K3 weights promised late July 2026 (press reports cite 7/27) -- NOT yet published as of 7/22", "Fine-tuning permitted"],
+      features: ["K3 WEIGHTS PUBLISHED ~2026-07-26/27 at huggingface.co/moonshotai/Kimi-K3 -- safetensors, 2.8T total params, 104B activated, 1,048,576-token context", "K3 ships under its own **Kimi K3 License**, NOT the Modified MIT used for K2 -- read the license terms before commercial use", "K2.6 + K2.7-Code weights remain on Hugging Face under Modified MIT", "Fine-tuning permitted"],
     },
     {
       plan: "API (Moonshot direct, K2.6)",
@@ -41,11 +41,11 @@ export const kimi: ToolReview = {
     "Beats Claude Opus 4.5 on several coding benchmarks per community testing",
     "Unified thinking + non-thinking modes in one model (no need to swap)",
     "256K context window handles large codebases for agentic coding",
-    "Modified MIT license permits commercial use of weights",
+    "Weights are genuinely downloadable -- K2.6/K2.7-Code under Modified MIT, and K3 under its own Kimi K3 License (check its terms before commercial use)",
     "Native tool-use and agentic planning trained in -- not bolted on",
   ],
   cons: [
-    "1T parameter model is impractical to self-host without 4+ H100-class GPUs",
+    "Self-hosting is datacenter-only -- K3 is 2.8T params (104B activated) and even the older K2 line needs 4+ H100-class GPUs",
     "Moonshot is a smaller lab than DeepSeek/Alibaba -- less Western infrastructure support",
     "API pricing ($0.60 in / $3.00 out) is higher than DeepSeek V3.2 ($0.28 in / $0.42 out)",
     "PRC content filters apply (Tiananmen, Taiwan, etc.)",
@@ -53,7 +53,12 @@ export const kimi: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "MODEL LAUNCH -- KIMI K3 (2026-07-16/17): Moonshot shipped **Kimi K3**, billed as the largest open-weight model ever announced -- **2.8T total parameters**, multimodal reasoning, **1M token context**, live immediately on kimi.com, the Kimi app, the Moonshot API, and OpenRouter at **$3/M input, $15/M output** (vs Fable 5's $50/M output). Unveiled at the World AI Conference in Shanghai 7/17 after appearing on platforms 7/16; the stealth Arena model 'Kivine' was K3 in testing, and Arena.AI ranked it the best available model at launch. Vendor claims it performs competitively with Claude Fable 5 and 'substantially outperforms' Opus 4.8 and GPT-5.6 Sol -- third-party verification pending; treat vendor benchmark claims accordingly. Market reaction was dubbed a 'second DeepSeek shock': TSMC fell 7%, SoftBank 9%, Nasdaq 100 ~1% on 7/17. CAVEATS: (a) full open weights are NOT on Hugging Face yet -- Moonshot promised them late July (press reports cite 7/27) and the license is unconfirmed (K2 precedent: Modified MIT); (b) API capacity is limited at launch -- OpenRouter flags frequent 429 errors; (c) reasoning effort currently supports only 'max'; (d) active-parameter count is aggregator-reported (~50B), not vendor-published -- treat with caution",
+      description: "OPEN WEIGHTS SHIPPED (~2026-07-26/27 -- Moonshot announced 7/27 and reporting puts the actual drop a day earlier, so treat the exact day as approximate): Moonshot published **Kimi K3's weights** to Hugging Face at `moonshotai/Kimi-K3`, resolving the open question this page carried since launch. The model card confirms **2.8T total parameters with 104B activated** (the ~50B active figure that circulated in aggregator coverage was wrong), a **1,048,576-token context window**, and safetensors in F32 / BF16 / U8. **License is the bespoke 'Kimi K3 License', NOT the Modified MIT that covers K2.6 and K2.7-Code** -- the card states 'Both the code repository and the model weights are released under the Kimi K3 License', so anyone planning commercial use or a derivative needs to read those terms rather than assuming K2 permissions carry over. Practical effect: K3 becomes the largest open-weight model actually downloadable, though at 2.8T params it is a datacenter-class deployment, not a local one",
+      source: "Hugging Face model card (huggingface.co/moonshotai/Kimi-K3, fetched 2026-07-29)",
+      date: "2026-07-27",
+    },
+    {
+      description: "MODEL LAUNCH -- KIMI K3 (2026-07-16/17): Moonshot shipped **Kimi K3**, billed as the largest open-weight model ever announced -- **2.8T total parameters**, multimodal reasoning, **1M token context**, live immediately on kimi.com, the Kimi app, the Moonshot API, and OpenRouter at **$3/M input, $15/M output** (vs Fable 5's $50/M output). Unveiled at the World AI Conference in Shanghai 7/17 after appearing on platforms 7/16; the stealth Arena model 'Kivine' was K3 in testing, and Arena.AI ranked it the best available model at launch. Vendor claims it performs competitively with Claude Fable 5 and 'substantially outperforms' Opus 4.8 and GPT-5.6 Sol -- third-party verification pending; treat vendor benchmark claims accordingly. Market reaction was dubbed a 'second DeepSeek shock': TSMC fell 7%, SoftBank 9%, Nasdaq 100 ~1% on 7/17. CAVEATS (updated 2026-07-29 -- (a) and (d) are now RESOLVED, see the weights-release entry above): (a) weights shipped ~2026-07-26/27; (b) API capacity is limited at launch -- OpenRouter flags frequent 429 errors; (c) reasoning effort currently supports only 'max'; (d) the aggregator-reported ~50B active-parameter figure was WRONG -- the model card publishes **104B activated**",
       source: "OpenRouter (openrouter.ai/moonshotai/kimi-k3), Fortune (2026-07-17), Reuters, CNBC, r/LocalLLaMA",
       date: "2026-07-17",
     },
@@ -89,11 +94,12 @@ export const kimi: ToolReview = {
     },
   ],
   bestFor: "Agentic coding workflows, tool-use agents, long-horizon repository work (1M context), and teams who want frontier-tier quality at a fraction of frontier pricing ($15/M output vs Fable 5's $50/M).",
-  notFor: "Solo developers or hobbyists who want to run models locally -- 2.8T parameters is far beyond consumer hardware, and K3's weights aren't even published yet. Use Qwen3-Coder-Next or DeepSeek for self-hosting today.",
+  notFor: "Solo developers or hobbyists who want to run models locally -- the K3 weights are public now, but 2.8T parameters is datacenter territory, far beyond consumer hardware. Use Qwen3-Coder-Next or DeepSeek for self-hosting today.",
   verdict: "Kimi K3 (July 16-17, 2026) vaulted Moonshot from 'best open-weights value' to genuine frontier contention: 2.8T parameters, 1M context, multimodal, ranked best-available on Arena.AI at launch, and priced at $3/$15 per 1M -- a fifth of Anthropic's Fable 5 output rate. The launch rattled markets enough to be called a second DeepSeek shock. The caveats matter, though: the 'open-weight' branding is a promise, not a shipped artifact (weights due late July, license unconfirmed), vendor benchmark claims await third-party verification, and the API is visibly capacity-strained. If you want maximum capability per dollar via hosted API, K3 is now the pick to test first. If you need weights you can actually download today, that's still K2.6/K2.7-Code -- or watch for the K3 drop.",
 
-  lastReviewedDate: "2026-07-22",
+  lastReviewedDate: "2026-07-29",
   dataSources: [
+    { name: "Hugging Face: moonshotai/Kimi-K3 model card (weights published 2026-07-27; 2.8T total / 104B activated; Kimi K3 License)", url: "https://huggingface.co/moonshotai/Kimi-K3", dateAccessed: "2026-07-29" },
     { name: "OpenRouter: Kimi K3 (pricing, context, capacity notes)", url: "https://openrouter.ai/moonshotai/kimi-k3", dateAccessed: "2026-07-18" },
     { name: "Fortune: Moonshot Kimi K3 rattles markets (2026-07-17)", url: "https://fortune.com/2026/07/17/china-moonshot-kimi-k3-markets-china-ai/", dateAccessed: "2026-07-18" },
     { name: "Moonshot Kimi K2.6 blog (GA 2026-04-20)", url: "https://www.kimi.com/blog/kimi-k2-6", dateAccessed: "2026-04-27" },

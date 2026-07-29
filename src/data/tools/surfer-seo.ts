@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const surferSeo: ToolReview = {
   slug: "surfer-seo",
   name: "Surfer SEO",
-  tagline: "AI-powered content optimization that tells you exactly what to write to rank on Google",
+  tagline: "AI-powered content optimization that tells you exactly what to write to rank on Google -- and, since the 2026 repricing, an AI-visibility tracker for ChatGPT and other LLMs. Plans restructured to Discovery $49 / Standard $99 / Pro $182 / Peace of Mind $299 (annual), with AI Search Analytics sold standalone at $158",
   category: "ai-seo-tools",
   url: "https://surferseo.com",
 
@@ -17,9 +17,12 @@ export const surferSeo: ToolReview = {
 
   hasFreeTier: false,
   pricing: [
-    { plan: "Essential", price: "$89", period: "month", features: ["30 articles/mo", "Content editor", "SERP analyzer"] },
-    { plan: "Scale", price: "$129", period: "month", features: ["100 articles/mo", "AI writing", "Audit tool", "API"] },
-    { plan: "Enterprise", price: "Custom", features: ["Unlimited articles", "Custom AI models", "Priority support"] },
+    { plan: "Discovery", price: "$49", period: "month (billed annually)", features: ["Create or optimize 120 documents", "Track 10 pages", "Entry tier -- no AI-visibility tracking"] },
+    { plan: "Standard", price: "$99", period: "month (billed annually)", features: ["Create or optimize 360 documents", "Adds AI visibility tracking across ChatGPT"] },
+    { plan: "Pro", price: "$182", period: "month (billed annually)", features: ["Create or optimize 360 documents", "Track 50 AI prompts daily across multiple LLMs"] },
+    { plan: "Peace of Mind", price: "$299", period: "month (billed annually)", features: ["Unlimited document creation/optimization", "Track 100 AI prompts daily"] },
+    { plan: "AI Search Analytics (standalone)", price: "$158", period: "month (billed annually)", features: ["Sold separately from the writing tiers", "Tracks 100 AI prompts refreshed daily across key LLMs"] },
+    { plan: "Enterprise", price: "$999", period: "month (custom)", features: ["Advisory-led strategy", "Automation", "Enterprise-grade controls"] },
   ],
 
   pros: [
@@ -29,7 +32,7 @@ export const surferSeo: ToolReview = {
     "Audit feature identifies quick wins on existing content",
   ],
   cons: [
-    "Expensive -- $89/mo minimum puts it out of reach for solo bloggers",
+    "Still pricey, though the floor dropped -- entry is now $49/mo on annual billing (Discovery), and the AI-prompt tracking that justifies the tool in 2026 starts at $99",
     "Can lead to over-optimized, formulaic content if you follow scores too literally",
     "AI writer is decent but not as good as just using Claude with Surfer's guidelines",
     "Keyword research features are basic compared to dedicated tools like Ahrefs",
@@ -39,10 +42,11 @@ export const surferSeo: ToolReview = {
   ],
   bestFor: "Content teams and SEO agencies producing high volumes of search-optimized content. The Content Editor workflow is genuinely useful for improving rankings.",
   notFor: "Solo bloggers or small businesses on a budget. You can get 80% of the value from free tools and ChatGPT/Claude.",
-  verdict: "Surfer SEO works. Content written with the Content Editor does rank better in our experience. The question is whether the price is worth it for your situation. For agencies and content teams, absolutely. For individual creators, the ROI is harder to justify at $89/mo. The AI writer is decent but you'll get better results writing yourself with Surfer's guidelines.",
+  verdict: "Surfer SEO works. Content written with the Content Editor does rank better in our experience. The question is whether the price is worth it for your situation. For agencies and content teams, absolutely. For individual creators the ROI is easier than it used to be now that Discovery starts at $49/mo on annual billing, though prompt-level AI tracking means stepping up to $99 or more. The AI writer is decent but you'll get better results writing yourself with Surfer's guidelines.",
 
-  lastReviewedDate: "2026-03-26",
+  lastReviewedDate: "2026-07-29",
   dataSources: [
+    { name: "Surfer SEO pricing page (2026 plan restructure: Discovery/Standard/Pro/Peace of Mind + standalone AI Search Analytics)", url: "https://surferseo.com/pricing/", dateAccessed: "2026-07-29" },
     { name: "Surfer SEO official site", dateAccessed: "2026-03-26" },
     { name: "G2 Reviews", dateAccessed: "2026-03-26" },
     { name: "Hands-on testing with live content", dateAccessed: "2026-03-26" },
@@ -50,5 +54,5 @@ export const surferSeo: ToolReview = {
   affiliateUrl: "https://surferseo.com",
   status: "active",
   metaTitle: "Surfer SEO Review 2026: AI Content Optimization That Works",
-  metaDescription: "Surfer SEO review. Content Editor improves rankings, but is it worth $89/mo? Honest scores, pricing breakdown, pros and cons. March 2026.",
+  metaDescription: "Surfer SEO review. 2026 pricing rebuilt: Discovery $49, Standard $99, Pro $182, Peace of Mind $299 annually, plus standalone AI Search Analytics at $158. Honest scores, AI-visibility features, pros and cons.",
 };

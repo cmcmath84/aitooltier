@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const claude: ToolReview = {
   slug: "claude",
   name: "Claude (Anthropic)",
-  tagline: "Anthropic's flagship LLM family. After a 19-day US-government export-control suspension (June 12-30), Claude Fable 5 -- the first publicly available Mythos-class model -- returned globally on July 1, 2026. New on June 30: Claude Sonnet 5, the 'most agentic Sonnet yet,' now the default on Free/Pro at $2/$10 per 1M (intro through Aug 31, then $3/$15). Opus 4.8 remains the top-end flagship at $5/$25 per 1M with a 1M-token context, effort control, and a cheap fast mode",
+  tagline: "Anthropic's flagship LLM family. **Claude Opus 5 launched 2026-07-24** and is now the default model on Claude Max and the strongest model on Claude Pro -- same $5/$25 per 1M as Opus 4.8, but Anthropic says it lands within 0.5% of Fable 5 on CursorBench at half the cost. Sonnet 5 (June 30) stays the default on Free/Pro at $2/$10 per 1M (intro through Aug 31, then $3/$15), and Fable 5 -- back globally since July 1 after a 19-day export-control suspension -- remains the top of the range at $10/$50",
   category: "ai-llms",
   url: "https://claude.ai",
 
@@ -26,19 +26,25 @@ export const claude: ToolReview = {
       plan: "Pro",
       price: "$20",
       period: "month",
-      features: ["5x more usage than Free", "Claude Opus 4.8 + Sonnet 5", "Effort control + extended thinking", "Priority access"],
+      features: ["5x more usage than Free", "Claude Opus 5 -- the strongest model on Pro as of 2026-07-24", "Sonnet 5 as the everyday default", "Effort control + extended thinking", "Priority access"],
     },
     {
       plan: "Max (5x)",
       price: "$100",
       period: "month",
-      features: ["5x Pro usage", "Priority queue", "Opus 4.8 with full effort control + fast mode"],
+      features: ["5x Pro usage", "Priority queue", "Opus 5 is the DEFAULT model on Max as of 2026-07-24", "Full effort control + fast mode"],
     },
     {
       plan: "Max (20x)",
       price: "$200",
       period: "month",
       features: ["20x Pro usage", "Highest priority", "All generally-available models", "Best for power users and agents"],
+    },
+    {
+      plan: "API (Opus 5)",
+      price: "$5 / $25",
+      period: "per 1M tokens (input/output)",
+      features: ["Launched 2026-07-24 as `claude-opus-5`; same rate as Opus 4.8, half of Fable 5's $10/$50", "Default model on Claude Max, strongest model on Claude Pro; also on Claude Code and Claude Cowork", "Anthropic's stated positioning: within 0.5% of Fable 5's peak CursorBench 3.2 score at half the cost per task", "Available via the Claude API, Google Cloud, and Bedrock (anthropic.claude-opus-5)"],
     },
     {
       plan: "API (Opus 4.8)",
@@ -74,6 +80,16 @@ export const claude: ToolReview = {
     "Can be overly cautious and refuse requests that are perfectly fine",
   ],
   knownIssues: [
+    {
+      description: "PRIVACY -- SHARED CHATS AND ARTIFACTS TURNED UP IN GOOGLE (surfaced 2026-07-25/26, covered 2026-07-27, results cleared by the afternoon of 07-28): conversations and Artifacts published through Claude's share-link feature became findable with a `site:claude.ai/share` search. Reported exposures included medical records and clinical-trial results with patient names, documents marked 'internal use only', names and phone numbers of school-aged children, employee reviews, and work code. **The technical lesson is the reusable one: `robots.txt` Disallow is not noindex.** Anthropic blocks crawling of /share, but Google can still index a URL it never fetches if that URL is linked from a public page, which is exactly what happened when users posted their share links elsewhere. Anthropic's position, per spokeswoman Amie Rotherham: 'We give people control over sharing their Claude conversations publicly, and in keeping with our privacy principles, we do not share chat directories or sitemaps with search engines like Google. These shareable links are not guessable or discoverable unless people choose to share them themselves.' In other words Anthropic treats this as working as designed rather than a vulnerability. Practical guidance for readers: a Claude share link is a public URL -- treat it as publishable, not semi-private, and do not share anything through it you would not post openly",
+      source: "TechCrunch (techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/, fetched 2026-07-29)",
+      date: "2026-07-27",
+    },
+    {
+      description: "MODEL LAUNCH -- CLAUDE OPUS 5 (2026-07-24): Anthropic shipped **Claude Opus 5** (`claude-opus-5`) at **$5 per million input / $25 per million output -- explicitly 'the same as Opus 4.8'**, and half of Fable 5's $10/$50. Vendor status verbatim: it is **'the new default model on Claude Max, and the strongest model on Claude Pro'**, and it is live on claude.ai, Claude Code, Claude Cowork, the Claude API, Google Cloud, and Bedrock. **IMPORTANT for anyone quoting scores: Anthropic published only COMPARATIVE benchmark claims, no absolute numbers.** Their exact wording: Frontier-Bench -- 'Opus 5 surpasses all other models, and more than doubles Opus 4.8's performance'; CursorBench 3.2 -- 'performs within 0.5% of Fable 5's peak score, but at half the cost'; ARC-AGI 3 -- 'Opus 5's score is three times as high as the next-best model'; Zapier AutomationBench -- 'pass rate is around 1.5x the next-best model'; OSWorld 2.0 -- 'surpassing Fable 5's best result at just over a third of the cost'; plus organic chemistry +10.2 points and protein tasks +7.7 points over Opus 4.8. Do NOT publish SWE-bench, GPQA, or Terminal-Bench figures for Opus 5 -- none were released. Practical read: the price/performance ceiling moved, not the price -- Opus 5 is the model to reach for where Opus 4.8 used to be, and it weakens the case for paying Fable 5 rates on most work",
+      source: "Anthropic (anthropic.com/news/claude-opus-5, fetched 2026-07-29)",
+      date: "2026-07-24",
+    },
     {
       description: "FABLE 5 ACCESS PERMANENTLY RESTRUCTURED (announced 2026-07-18 via @claudeai on X; effective July 20): the extension limbo is over, resolved as a **plan split** rather than a cliff or a fourth extension. **Max and Team Premium plans keep Fable 5 included permanently, capped at 50% of usage limits** (for Claude Code users this is a real reduction from the boosted promotional allocation), and are NOT eligible for the credit. **Pro and Team Standard lose in-plan access and move to pay-as-you-go usage credits at the standard $10/M input, $50/M output rate** (2x Opus 4.8), softened by a **one-time $100 credit -- claimable July 20 through Aug 2, and expiring September 17, 2026 regardless of when it's claimed**; tiered credit bundles discount up to 30%. **Enterprise:** standard seats get no included allowance (credits only); premium seats are included at 50%, mirroring Max/Team Premium. NOTE (2026-07-22 re-verification): these figures are confirmed across July-18 press coverage but the specific Anthropic Help Center article URL still could not be located, and anthropic.com/news/redeploying-fable-5 remains STALE (still shows the old 'through July 7' terms) -- treat the credit-window/expiry mechanics as press-confirmed rather than vendor-doc-confirmed",
       source: "@claudeai on X (2026-07-18), TechTimes (2026-07-18), XenoSpectrum (Fable5 Max/Pro usage credits), Dawn (2026-07-18), Technobezz",
@@ -195,7 +211,7 @@ export const claude: ToolReview = {
       date: "2026-04",
     },
     {
-      description: "Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) RETIRED 2026-06-15 -- deprecated -> retired flip confirmed on Anthropic's deprecations page (verified 2026-06-15; the page now lists both as 'Retired' and the history note reads 'These models were retired June 15, 2026'). Announced 2026-04-14. If your product still targets those specific snapshots, requests are now failing -- migrate to Sonnet 4.6 (`claude-sonnet-4-6`) or Opus 4.8 (`claude-opus-4-8`, the current recommended Opus replacement). NOTE: the SEPARATE programmatic-billing change once slated for the same day (Agent SDK / `claude -p` / GitHub Actions onto a metered credit pool) was PAUSED before it shipped -- 'nothing changes for now' -- see claude-code.ts. NEXT IN LINE: Claude Opus 4.1 (claude-opus-4-1-20250805) was deprecated 2026-06-05 and retires 2026-08-05 -- same migration target",
+      description: "Claude Sonnet 4 (claude-sonnet-4-20250514) and Claude Opus 4 (claude-opus-4-20250514) RETIRED 2026-06-15 -- deprecated -> retired flip confirmed on Anthropic's deprecations page (verified 2026-06-15; the page now lists both as 'Retired' and the history note reads 'These models were retired June 15, 2026'). Announced 2026-04-14. If your product still targets those specific snapshots, requests are now failing -- migrate to Sonnet 4.6 (`claude-sonnet-4-6`) or **Opus 5 (`claude-opus-5`) -- as of the 2026-07-24 launch, Anthropic's docs name Opus 5, not Opus 4.8, as the recommended Opus replacement**. NOTE: the SEPARATE programmatic-billing change once slated for the same day (Agent SDK / `claude -p` / GitHub Actions onto a metered credit pool) was PAUSED before it shipped -- 'nothing changes for now' -- see claude-code.ts. NEXT IN LINE: Claude Opus 4.1 (claude-opus-4-1-20250805) was deprecated 2026-06-05 and retires 2026-08-05 -- same migration target",
       source: "Anthropic model deprecations page (platform.claude.com/docs/en/about-claude/model-deprecations)",
       date: "2026-06",
     },
@@ -232,10 +248,12 @@ export const claude: ToolReview = {
   ],
   bestFor: "Writers, analysts, developers, and anyone who values quality of output over quantity of features. If you care about how good the actual text is, Claude is the best.",
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
-  verdict: "Claude is the LLM you pick when quality matters more than features -- and after a turbulent June, the full lineup is back on the table. Fable 5 (June 9, 2026), the first publicly usable Mythos-class model, was pulled by a US-government export-control order on June 12; the controls were lifted June 30 and Anthropic redeployed Fable 5 globally on July 1, so the Fable-tier ceiling is available again (with a new classifier hardening it against the reported jailbreak). Alongside the restoration, the more consequential change for most users is Claude Sonnet 5 (June 30): the new default on Free and Pro, 'most agentic Sonnet yet,' at $2/$10 per 1M through August. Above it sits Opus 4.8 -- the $5/$25 workhorse with effort control, a cheap fast mode, a 1M context window, high-res vision, and MCP -- still arguably the best writing-and-reasoning model you can buy, with Apple naming Claude a selectable system assistant in iOS 27 this fall. The practical read: pick Sonnet 5 for everyday agentic/coding work, Opus 4.8 when quality is non-negotiable, and Fable 5 when you need the absolute frontier.",
+  verdict: "Claude is the LLM you pick when quality matters more than features, and the July 24 arrival of Opus 5 is the most consequential thing to happen to that calculus all year. Opus 5 costs exactly what Opus 4.8 cost -- $5/$25 per 1M -- while Anthropic claims it lands within 0.5% of Fable 5 on CursorBench at half the cost per task, and it is now the default on Max and the strongest model available on Pro. That quietly demotes Fable 5 from 'the model you pay up for' to 'the model you reach for when nothing else will do,' because the $10/$50 tier now has to justify a much smaller gap. Below it, Sonnet 5 (June 30) remains the default on Free and Pro at $2/$10 through August, and it is still the right pick for everyday agentic and coding work. Worth knowing before you quote numbers: Anthropic published only comparative benchmark claims for Opus 5, no absolute scores. The practical read: Sonnet 5 for volume, Opus 5 for anything that matters, Fable 5 only when the frontier is genuinely the requirement -- with Apple naming Claude a selectable system assistant in iOS 27 this fall.",
 
-  lastReviewedDate: "2026-07-22",
+  lastReviewedDate: "2026-07-29",
   dataSources: [
+    { name: "TechCrunch: Your Claude shared chats and Artifacts may have ended up on Google (2026-07-27)", url: "https://techcrunch.com/2026/07/27/psa-your-claude-shared-chats-and-artifacts-may-have-ended-up-on-google/", dateAccessed: "2026-07-29" },
+    { name: "Anthropic: Introducing Claude Opus 5 (2026-07-24) -- $5/$25, default on Max, comparative benchmarks only", url: "https://www.anthropic.com/news/claude-opus-5", dateAccessed: "2026-07-29" },
     { name: "Dawn: Fable 5 added to Max/Team Premium at 50% of usage limits (2026-07-18)", url: "https://www.dawn.com/news/2016483", dateAccessed: "2026-07-19" },
     { name: "XenoSpectrum: Fable 5 stays in Max beyond July 20; Pro one-time $100 credit (claim 7/20-8/2, expires 9/17)", url: "https://xenospectrum.com/en/anthropic-fable5-max-pro-usage-credits/", dateAccessed: "2026-07-22" },
     { name: "TechTimes: Anthropic Fable 5 plan split, credit terms (2026-07-18)", url: "https://www.techtimes.com/articles/320905/20260718/", dateAccessed: "2026-07-22" },
@@ -266,7 +284,7 @@ export const claude: ToolReview = {
   affiliateUrl: "https://claude.ai",
   status: "active",
   benchmarks: {
-    modelName: "Claude Fable 5 (launched 2026-06-09; suspended 2026-06-12 by US gov order; RESTORED globally 2026-07-01 after controls lifted 6/30) -- vendor SWE-Bench Pro 80.3% (vs GPT-5.5 58.6%); #1 LMArena Elo 1510 and #1 Artificial Analysis Index 65 as of 6/11. New default Sonnet 5 (2026-06-30): OSWorld-Verified 78.5%. Legacy Opus-line reasoning-suite scores shown below as baseline pending full third-party suites",
+    modelName: "Claude Opus 5 (launched 2026-07-24) is the current flagship and the default on Max -- Anthropic released COMPARATIVE claims only, no absolute scores: more than doubles Opus 4.8 on Frontier-Bench, within 0.5% of Fable 5 on CursorBench 3.2 at half the cost, 3x the next-best model on ARC-AGI 3, ~1.5x on Zapier AutomationBench, and beats Fable 5's best OSWorld 2.0 result at just over a third of the cost. Fable 5 (2026-06-09) holds vendor SWE-Bench Pro 80.3% (vs GPT-5.5 58.6%), #1 LMArena Elo 1510 and #1 Artificial Analysis Index 65 as of 6/11. Sonnet 5 (2026-06-30): OSWorld-Verified 78.5%. Legacy Opus-line reasoning-suite scores shown below as baseline pending third-party suites for Opus 5",
     scores: [
       { name: "MMLU", score: 91.3, maxScore: 100, unit: "%" },
       { name: "GPQA Diamond", score: 91.3, maxScore: 100, unit: "%" },
@@ -283,6 +301,6 @@ export const claude: ToolReview = {
     tone: "Measured, careful, and slightly formal. Claude explains tradeoffs rather than handing back one-liner answers, asks clarifying questions when a request is ambiguous, and hedges openly when it is not confident.",
     quirks: "More willing than most models to refuse edgy or ambiguous requests, pushes back on premises it disagrees with, and will flag when you are probably asking the wrong question instead of just answering the one you typed.",
   },
-  metaTitle: "Claude Review 2026: Sonnet 5 Is the New Default + Fable 5 Restored -- Opus 4.8 Still Top Flagship",
-  metaDescription: "Claude review. Sonnet 5 (June 30) is now the default on Free/Pro at $2/$10 per 1M. Fable 5 was suspended by US-gov order June 12 and restored globally July 1. Opus 4.8 ($5/$25, 1M context, effort control) remains the top flagship.",
+  metaTitle: "Claude Review 2026: Opus 5 Lands at Opus 4.8 Prices -- Near-Fable-5 Quality for $5/$25",
+  metaDescription: "Claude review. Opus 5 (July 24) is the new default on Max and the strongest model on Pro at $5/$25 per 1M, which Anthropic says lands within 0.5% of Fable 5 on CursorBench at half the cost. Sonnet 5 stays the Free/Pro default at $2/$10 through Aug 31.",
 };
