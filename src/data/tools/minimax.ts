@@ -52,6 +52,11 @@ export const minimax: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "NEW MODEL -- MINIMAX H3 / HAILUO 3.0 (2026-07-31, vendor blog): MiniMax launched **H3**, a general-purpose **omni-modal** model that understands and generates across text, images, video and audio. Vendor-stated capability, verbatim: '**H3 understands unified context across text, images, video, and audio, generating video with native stereo sound, up to 15 seconds at 2K resolution**' -- plus instruction following, text rendering, V2V motion transfer, and multimodal editing. The headline is that audio is **jointly generated with the video** rather than added afterwards. On cost, MiniMax claims H3 runs at less than one-third the cost of mainstream models at 2K, though the post publishes no rate card. **IMPORTANT -- DO NOT LABEL THIS OPEN-WEIGHT YET.** MiniMax only *promises* weights: '**we plan to open up the model weights in the coming days**, subject to applicable laws and regulations.' As of 2026-08-03 the weights are not released, so H3 is currently a closed model from an otherwise open-weight-leaning vendor -- re-check before describing it as open",
+      source: "MiniMax (minimax.io/blog/minimax-h3, fetched 2026-08-03)",
+      date: "2026-07-31",
+    },
+    {
       description: "INDEPENDENT BENCHMARK PUBLISHED (verified 2026-07-04): Artificial Analysis now has a citable M3 page (artificialanalysis.ai/models/minimax-m3, 'Released June 2026') showing an **Intelligence Index of 44**. This is lower than early social-media chatter had suggested (~55 circulated on X/LinkedIn but does not match the authoritative page) -- cite 44 as the independently-measured number. It keeps M3 solidly mid-pack among open-weights (below GLM-5.2's 51) despite the strong vendor SWE-Bench Pro 59% claim; treat vendor coding numbers and the AA general-intelligence number as measuring different things.",
       source: "Artificial Analysis (artificialanalysis.ai/models/minimax-m3)",
       date: "2026-07-04",
@@ -86,7 +91,7 @@ export const minimax: ToolReview = {
   notFor: "Teams that prioritize polished English writing (Mistral Large 3 or Claude are better), or anyone who needs the deepest ecosystem support (Llama is still that).",
   verdict: "MiniMax M2/M2.5 is the most cost-efficient frontier-tier open model in 2026. The 80.2% SWE-Bench Verified score is a genuine breakthrough -- matching Claude Opus 4.6 on real coding tasks at a tenth of the price. The sparse 10B-active MoE runs fast on moderate hardware. The main drawback is ecosystem: MiniMax has less Western infrastructure support than Alibaba or DeepSeek. If you're building an agentic product and want maximum value per token, M2.5 is an A-tier pick.",
 
-  lastReviewedDate: "2026-07-04",
+  lastReviewedDate: "2026-08-03",
   dataSources: [
     { name: "Artificial Analysis: MiniMax M3 (Intelligence Index 44, released June 2026)", url: "https://artificialanalysis.ai/models/minimax-m3", dateAccessed: "2026-07-04" },
     { name: "MiniMax: M2.7 release blog (2026-03-18)", url: "https://www.minimax.io/news/minimax-m27-en", dateAccessed: "2026-04-27" },

@@ -45,6 +45,16 @@ export const devin: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "DEVIN OUTPOSTS -- RUN DEVIN ON YOUR OWN MACHINES (2026-07-21, vendor post): Cognition split Devin's brain from its hands. You can now run **Devin Cloud sessions on any machine you operate** -- a GPU box, a VM inside your private network, a Kubernetes cluster next to internal services, or a Mac mini. The agent loop and inference stay in Cognition's cloud; all command execution, file edits and repo access happen on your infrastructure, and '**Your machines only dial out -- no inbound connectivity required.**' That unlocks Devin against private databases, internal APIs, proprietary toolchains and hardware that only exists inside your environment. Launch partners: **Modal, Cloudflare, Namespace, Daytona, E2B, NVIDIA Brev, NVIDIA OpenShell**. Outposts is the third hosting tier alongside multi-tenant and dedicated-tenant, and Cognition recommends it for 'tech-native organizations or small, trusted teams' already comfortable running remote dev infrastructure -- it is not a click-to-enable feature. No pricing disclosed. This is the answer to the single biggest enterprise objection to Devin: our code cannot leave our network. SWEEP NOTE: this post lives on **devin.ai/blog**, not cognition.com/blog, and the Cognition blog index does not list it -- which is why earlier sweeps missed it",
+      source: "Devin blog (devin.ai/blog/introducing-devin-outposts)",
+      date: "2026-07-21",
+    },
+    {
+      description: "SWE-1.7 -- COGNITION SHIPPED ITS OWN FRONTIER-CLASS MODEL (2026-07-08, vendor post): rather than only orchestrating other people's models, Cognition released 'SWE-1.7, the most capable model we've trained so far. It reaches frontier-level intelligence at a much lower cost, advancing the cost-performance Pareto curve.' Built with heavy RL post-training on a **Kimi K2.7** base. Vendor-reported: **42.3% on FrontierCode 1.1 Main at $1.97 cost per task**, served **via Cerebras at 1000 tokens/sec**, and 'available today in Devin (Web, Desktop, and CLI).' READ THE BENCHMARK WITH CARE: FrontierCode is Cognition's own benchmark, so a Cognition model scoring well on it is not independent evidence -- the durable claims here are the **speed (1000 tok/s)** and the **cost per task**, which are what actually change day-to-day use",
+      source: "Cognition blog (cognition.com/blog/swe-1-7)",
+      date: "2026-07-08",
+    },
+    {
       description: "BENCHMARK PUBLISHED (2026-06-08): Cognition released **FrontierCode** -- a benchmark measuring 'code mergeability' (would a maintainer actually merge the generated code, not just does it pass tests). 150 tasks in nested subsets (Extended 150 / Main 100 / Diamond 50-hardest), scored on blocker-criteria pass rate + weighted rubric, 5 runs per task. Diamond results: Claude Opus 4.8 13.4%, GPT-5.5 6.3% (with 4x fewer tokens), Gemini 3.1 Pro 4.7%, Kimi K2.6 3.8% (open-source leader). Tasks are NOT public (contamination prevention); evals opening to model creators. Positions Cognition as a measurement authority for exactly the metric Devin sells on -- and the low absolute scores are a sober counterpoint to 'AI writes mergeable code today' marketing",
       source: "Cognition blog (cognition.ai/blog/frontier-code)",
       date: "2026-06-08",
@@ -79,7 +89,7 @@ export const devin: ToolReview = {
   notFor: "Developers who want fast inline suggestions while coding -- Cursor or Copilot are better for that. Also not ready for unsupervised work on critical production systems.",
   verdict: "Devin is the most ambitious AI coding tool available, and at $20/mo it's finally priced for experimentation. When it works, it's like having a junior developer who never sleeps. When it doesn't, it's like watching that junior dev spend three hours on something you could've done in twenty minutes. The key is task selection -- give it clear, bounded work and it impresses. Give it vague requirements and you'll burn credits watching it spin. It's a glimpse of the future, but today it's a supplemental tool, not a replacement for an IDE-integrated copilot.",
 
-  lastReviewedDate: "2026-06-10",
+  lastReviewedDate: "2026-08-03",
   dataSources: [
     { name: "Cognition: More Devins in More Places ($1B raise, 2026-05-27)", url: "https://www.cognition.ai/blog", dateAccessed: "2026-06-09" },
     { name: "Devin blog: Windsurf is now Devin Desktop (2026-06-02)", url: "https://www.devin.ai/blog", dateAccessed: "2026-06-09" },

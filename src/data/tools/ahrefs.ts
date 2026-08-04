@@ -56,6 +56,11 @@ export const ahrefs: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRICING LADDER CHANGED AND ONE OF OUR CRITICISMS IS NOW OUT OF DATE (checked 2026-08-03, vendor pricing page): the ladder now runs **Free / Starter $29 / Lite $129 / Standard $249 / Advanced $449 / Enterprise $1,499 per month** (Enterprise requires an annual commitment), with annual billing saving up to 17%. Two things this changes on our page: **(1)** $129 Lite is no longer the entry point -- there is a **$29 Starter** tier below it; **(2)** the credit complaint now applies to Lite only -- **credits are capped only on Lite (1,000/user/mo); Standard, Advanced and Enterprise are unlimited credits per user.** Ahrefs has also built out an AI-visibility line that did not exist in the 2025 product: **Brand Radar** (track your brand's visibility inside LLMs, from $199/mo), **Custom Prompts** packages ($50 / $100 / $250 per month for 2,500 / 7,000 / 25,000 checks, overage $0.020 / $0.015 / $0.010 per check), **Bot Analytics**, **GBP Monitor** (beta) and an **MCP server**. Add-ons stack on top -- Content Kit from $99/mo, Report Builder $99/mo, Project Boost Pro $20/mo per project, Project Boost Max $200/mo per project -- so the sticker price is increasingly not the real price",
+      source: "Ahrefs pricing page (ahrefs.com/pricing)",
+      date: "2026-08-03",
+    },
+    {
       description: "Credit usage on Lite plan is opaque -- users report running out of credits mid-month without clear tracking",
       source: "Reddit r/SEO",
       date: "2026-03",
@@ -70,7 +75,7 @@ export const ahrefs: ToolReview = {
   notFor: "Small businesses or bloggers on a budget -- the pricing is hard to justify unless SEO is your primary growth channel.",
   verdict: "Ahrefs is the gold standard for backlink analysis and competitive research. The data quality is genuinely best-in-class, and the interface makes complex SEO data approachable. But the pricing is a real barrier -- $129/month with credit limits means even the entry plan requires careful usage. The newer AI features are fine but nothing special. If backlinks and competitive analysis are central to your work, Ahrefs is worth the investment. If you mostly need keyword research and on-page tools, SEMrush might give you more for less.",
 
-  lastReviewedDate: "2026-03-27",
+  lastReviewedDate: "2026-08-03",
   dataSources: [
     { name: "Ahrefs official site", dateAccessed: "2026-03-27" },
     { name: "G2 Reviews", dateAccessed: "2026-03-27" },

@@ -71,9 +71,15 @@ export const suno: ToolReview = {
     },
     {
       description:
-        "LITIGATION STATUS -- ONE VERDICT DUE 7/31, US CASE NOT UNTIL 2027 (corrected 2026-07-22): (1) **GEMA v. Suno: the Munich Regional Court reads its decision Friday July 31, 2026, 9:00, Courtroom 270** (postponed to this date) -- potentially the first European ruling that training AI music on copyrighted works requires a license, enforceable under German law during any appeal. (2) **US case (UMG/Sony v. Suno, D. Mass., Chief Judge F. Dennis Saylor IV) is NOT imminent** -- CORRECTION to earlier 'July 2026 summary-judgment hearing' reporting: the court **reset its schedule on 2026-06-30, with dispositive (summary-judgment) motions now due April 9, 2027**. So the only near-term ruling is Munich's 7/31; the US fair-use question is a 2027+ timeline. The mid-July source-code leak (see entry above) is likely to feature in both proceedings",
-      source: "MLex (2026, GEMA-Suno ruling postponed to July 31), TechTimes (2026-07-10), CourtListener docket 68878608 (UMG Recordings v. Suno, schedule reset)",
-      date: "2026-07-22",
+        "SUNO LOST THE GEMA CASE -- FIRST EUROPEAN RULING THAT AI MUSIC TRAINING NEEDS A LICENCE (verdict delivered 2026-07-31, **Landgericht München I (Munich I Regional Court), 42nd Civil Chamber, case 42 O 763/25**, presiding judge Elke Schwager): the court ruled **against Suno**, finding that its models reproduce GEMA's repertoire and that both the **training in the USA** and the **storage and reproduction of the outputs in Europe** infringe copyright. The court's central factual finding, verbatim: **'The musical pieces in question are reproducibly contained in the defendant's models, versions v3.5 and v4'** -- and that 'randomness as the cause of their playback can be ruled out.' Six works were tested: **'Atemlos durch die Nacht', 'Rasputin', 'Big in Japan', 'Forever Young', the refrain of 'Mambo No. 5', and 'Daddy Cool'** (the case covered musical compositions, not lyrics). The court also found the training involved **stream-ripping from YouTube while circumventing technical protection measures** -- which connects directly to the mid-July source-code leak described above. GEMA was awarded **injunctive relief, disclosure (to calculate damages), and damages -- with the amount not yet determined**. The significance is the extraterritorial reach: this is the first European decision holding that training on protected works without a licence can infringe **even though the training happened outside the EU**, with the court stating that even under US copyright law AI providers need a GEMA licence. **The judgment is NOT final and IS appealable** -- the court's own press release states 'Das Urteil ist nicht rechtskräftig' (the judgment is not legally final). Suno's statement, verbatim: 'We trained our models to create new songs, not reproduce existing ones, and built protections into our platform. We disagree with today's ruling...and are evaluating all available options, including an appeal.' GEMA CEO Dr. Tobias Holzmüller: 'AI models built on stolen intellectual property have no protection under the law.' This is GEMA's **second** win in the same court, after its November 2025 judgment against OpenAI. PRACTICAL READ FOR USERS: nothing changes in the product today, but if the ruling survives appeal, German/EU commercial use of Suno output carries real licensing risk, and Suno's economics change if it must licence European repertoire",
+      source: "Landgericht München I press release (justiz.bayern.de, case 42 O 763/25), GEMA (gema.de/de/w/suno-entscheidung-2026), JUVE Patent, Music Ally (2026-07-31), Music Week (2026-07-31)",
+      date: "2026-07-31",
+    },
+    {
+      description:
+        "US CASE IS A 2027 TIMELINE, NOT IMMINENT (corrected 2026-07-22, still accurate 2026-08-03): **UMG/Sony v. Suno (D. Mass., Chief Judge F. Dennis Saylor IV) is NOT near a ruling** -- CORRECTION to earlier 'July 2026 summary-judgment hearing' reporting: the court **reset its schedule on 2026-06-30, with dispositive (summary-judgment) motions now due April 9, 2027**. So the Munich verdict above is the only decided case; the US fair-use question remains open into 2027+. The mid-July source-code leak (see entry above) is likely to feature in the US proceeding",
+      source: "CourtListener docket 68878608 (UMG Recordings v. Suno, schedule reset), TechTimes (2026-07-10)",
+      date: "2026-08-03",
     },
     {
       description:
@@ -119,7 +125,7 @@ export const suno: ToolReview = {
   verdict:
     "Suno is the fastest way to go from an idea to a full song, and for casual use it's genuinely fun. But the lack of editing control and the inconsistent vocal quality mean it's better suited for content creators and hobbyists than anyone trying to produce polished tracks. The free tier is worth trying -- just don't expect studio quality.",
 
-  lastReviewedDate: "2026-07-22",
+  lastReviewedDate: "2026-08-03",
   dataSources: [
     { name: "TechCrunch: Hack suggests Suno scraped YouTube for training data (2026-07-15)", url: "https://techcrunch.com/2026/07/15/hack-suggests-ai-music-generator-suno-scraped-youtube-for-training-data/", dateAccessed: "2026-07-22" },
     { name: "404 Media: Hack reveals Suno scraped YouTube, Deezer, and Genius", url: "https://www.404media.co/hack-reveals-suno-ai-music-generator-scraped-youtube-deezer-and-genius/", dateAccessed: "2026-07-22" },
@@ -129,10 +135,17 @@ export const suno: ToolReview = {
     { name: "Music Business Worldwide: Suno v5.5", url: "https://www.musicbusinessworldwide.com/suno-launches-v5-5-ai-model-with-voice-capture-and-personalization-features/", dateAccessed: "2026-04-18" },
     { name: "Digital Music News: Suno-UMG impasse", url: "https://www.digitalmusicnews.com/2026/04/09/suno-universal-music-lawsuit-settlement-impasse/", dateAccessed: "2026-04-18" },
     { name: "Reddit r/SunoAI", dateAccessed: "2026-04-18" },
+    { name: "Landgericht München I: press release on the Suno judgment (case 42 O 763/25, 2026-07-31)", url: "https://www.justiz.bayern.de/gerichte-und-behoerden/landgericht/muenchen-1/presse/2026/16.php", dateAccessed: "2026-08-03" },
+    { name: "GEMA: Suno decision (2026-07-31)", url: "https://www.gema.de/de/w/suno-entscheidung-2026", dateAccessed: "2026-08-03" },
+    { name: "JUVE Patent: Munich Regional Court stops Suno using GEMA-protected music", url: "https://www.juve-patent.com/cases/munich-regional-court-stops-suno-using-gema-protected-music/", dateAccessed: "2026-08-03" },
+    { name: "Music Ally: GEMA wins its copyright-infringement lawsuit against Suno (2026-07-31)", url: "https://musically.com/2026/07/31/german-collecting-society-gema-wins-its-copyright-infringement-lawsuit-against-suno/", dateAccessed: "2026-08-03" },
+    { name: "Music Week: GEMA wins court ruling on breach of copyright by Suno (2026-07-31)", url: "https://www.musicweek.com/publishing/read/gema-wins-court-ruling-on-breach-of-copyright-by-ai-music-firm-suno/094644", dateAccessed: "2026-08-03" },
+    { name: "Variety: Suno loses landmark AI lawsuit to GEMA (2026-07-31)", url: "https://variety.com/2026/digital/news/suno-loses-ai-lawsuit-gema-1236825010/", dateAccessed: "2026-08-03" },
+    { name: "Deadline: German court rules against Suno (2026-07-31)", url: "https://deadline.com/2026/07/ai-copyright-lawsuit-germany-suno-1237014566/", dateAccessed: "2026-08-03" },
   ],
   affiliateUrl: "https://suno.com",
   status: "active",
-  metaTitle: "Suno Review 2026: AI Music Generator (Full Songs From Text) + Hack & Lawsuit Update",
+  metaTitle: "Suno Review 2026: AI Music Generator + Suno Lost the GEMA Copyright Case (July 31)",
   metaDescription:
-    "Suno review. Generate full songs with vocals from a text prompt. Plus the July 2026 source-code leak, data breach, and where the GEMA (7/31 verdict) and UMG/Sony cases stand. Scores, pricing, known issues.",
+    "Suno review. Generate full songs with vocals from a text prompt. Plus the July 31, 2026 Munich ruling that Suno infringed copyright -- injunction, disclosure and damages -- the source-code leak, and where the US case stands. Scores, pricing, known issues.",
 };

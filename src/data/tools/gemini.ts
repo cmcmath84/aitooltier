@@ -32,7 +32,7 @@ export const gemini: ToolReview = {
       plan: "Google AI Ultra",
       price: "$249.99",
       period: "month",
-      features: ["Gemini 3.1 Ultra (max usage)", "Gemini 3.1 Flash Live audio", "Gemini Spark agent access (US 18+, rolling out post-I/O 2026)", "Lyria 3 Pro full access", "Highest API priority", "30TB Google storage"],
+      features: ["Gemini 3.1 Ultra (max usage)", "Gemini 3.1 Flash Live audio", "Gemini Spark agent access (expanded 2026-07-30 to 160+ countries and DOWN to the AI Pro tier; Chrome auto-browse US-first; unavailable in the EEA, UK, Switzerland and Nigeria)", "Lyria 3 Pro full access", "Highest API priority", "30TB Google storage"],
     },
     {
       plan: "API",
@@ -57,6 +57,11 @@ export const gemini: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "GEMINI 3.5 PRO STATUS CHECK (2026-08-03): still unshipped, and there is **no new information since July 21**. The Gemini API changelog runs through 7/30 (latest entries are the Robotics-ER 2 previews) with **no `gemini-3.5-pro` release at any point**, and there has been no GA post on blog.google. Google's last public word remains the 7/21 model post: 'Gemini 3.5 Pro is currently testing with partners and we plan to make it broadly available as soon as it's ready.' That is three missed windows -- June, the aggregator-only 'July 17', and the 7/21 drop that shipped Flash variants instead. **No vendor date exists; any '3.5 Pro is coming on X' claim is speculation.** Practical read for buyers: Google AI Pro's in-tier flagship is still Gemini 3.1 Ultra, and **Gemini 3.6 Flash (7/21) is the model to actually plan around**. Separately, Google has confirmed pre-training has begun on Gemini 4 -- no specs, no date",
+      source: "ai.google.dev/gemini-api/docs/changelog (checked 2026-08-03, no 3.5 Pro entry through 7/30); blog.google Gemini 3.6 Flash post (2026-07-21)",
+      date: "2026-08-03",
+    },
+    {
       description: "NEW MODELS -- GEMINI 3.6 FLASH + 3.5 FLASH-LITE + 3.5 FLASH CYBER GA (2026-07-21, vendor post): Google shipped the 'upgraded Flash stopgap' it had flagged while Gemini 3.5 Pro stayed delayed. **Gemini 3.6 Flash** -- improved workhorse for coding/knowledge/multimodal at **$1.50/M input, $7.50/M output** (a ~17% output price cut vs 3.5 Flash's $9), uses **17% fewer output tokens** than 3.5 Flash, up to +65% on DeepSWE and 49% vs 37% on certain code tasks; live day-one across the Gemini API (AI Studio, Android Studio), Google Antigravity, the Gemini app, and GitHub Copilot. **Gemini 3.5 Flash-Lite** -- fastest 3.5-class model at **$0.30/M input, $2.50/M output**, **350 output tokens/sec**, 54% on Terminal-Bench 2.1 (vs 31% prior); on Gemini API + Enterprise + rolling out in Google Search. **Gemini 3.5 Flash Cyber** -- a security-tuned model for finding/fixing vulnerabilities paired with the CodeMender agent, gov/trusted-partner-only via a limited-access pilot (no public pricing). CRUCIAL: Gemini 3.5 **Pro did NOT ship** here -- Google says it is 'currently testing 3.5 Pro with partners' and will release it 'as soon as it's ready' (still no date). Google also disclosed it has 'started our most ambitious pre-training run yet, for **Gemini 4**' (pre-training only, no specs, no date)",
       source: "Google (blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/), TechCrunch (2026-07-21), 9to5Google, GitHub Copilot changelog (2026-07-21)",
       date: "2026-07-21",
@@ -65,6 +70,21 @@ export const gemini: ToolReview = {
       description: "GEMINI 3.5 PRO DELAY NOW VENDOR-SIDE CONFIRMED (2026-07-16, Bloomberg): Google is reportedly **months behind schedule** on Gemini 3.5 Pro -- Bloomberg's sourcing says the model's capabilities, 'particularly in coding,' fell short of internal goals, and a late-June remediation attempt (updated training data) produced 'disappointing' results. This is the third missed window (June -> the aggregator-only 'July 17' -> TBD), and press reports the delay news knocked ~$200B off Alphabet's market value on 7/16. Google's own statement: it is 'currently testing 3.5 Pro, an upgraded Flash model, and other models with partners' -- so an upgraded Flash stopgap may ship first. The 'July 17' date circulating on aggregators was never Google-confirmed. Treat all 3.5 Pro capability claims as unshipped. SEPARATE COMMUNITY WATCH (unconfirmed, do not treat as vendor fact): devs on Google's official AI forum report `gemini-2.5-flash` returning 'no longer available' 404s starting ~7/9, three months ahead of its published Oct 16, 2026 shutdown date -- no Google response in-thread yet; could be a bug or partial rollout. If you depend on 2.5 Flash, verify availability directly",
       source: "Bloomberg (2026-07-16), 9to5Google (9to5google.com/2026/07/16/gemini-3-5-pro-delays/), LA Times (2026-07-17), discuss.ai.google.dev thread 174217 (community, unconfirmed)",
       date: "2026-07-16",
+    },
+    {
+      description: "GEMINI SPARK: CHROME AUTO-BROWSE + 160-COUNTRY EXPANSION, AND IT DROPS TO THE AI PRO TIER (2026-07-30, vendor post): the biggest Spark update since launch, and it changes who can get it. **(1) Chrome integration.** Spark now drives Chrome directly -- Google's wording: Spark can 'use your logged-in accounts and saved passwords to handle tedious web errands, like scheduling viewings for apartments you've saved or researching flight options.' Safety posture: Google says it architected defenses against prompt injection and keeps humans in the loop on sensitive actions, 'such as payments, by handing the task back to you.' **Chrome auto-browse is rolling out in the U.S. first**, with other regions later. **(2) Availability widens sharply, and the tier drops.** Access opened to **over 160 additional countries** -- and critically for **Google AI Pro ($19.99/mo) subscribers**, not just the AI Ultra tier Spark launched on. **(3) The exclusions matter and Google does not list them in the blog post:** per Google's own support documentation, 'Spark is currently unavailable in the European Economic Area, Nigeria, Switzerland, and the United Kingdom.' So EU and UK readers are still locked out even after the expansion -- an unusually large carve-out that reads as regulatory caution rather than capacity. (Exclusion list quoted from Google support docs as reported by PPC Land; the blog post itself is silent on it -- flagging the sourcing because it is the detail most likely to affect a reader's decision.)",
+      source: "blog.google (blog.google/innovation-and-ai/products/gemini-app/gemini-spark-updates-july-2026/, fetched 2026-08-03); exclusion list via PPC Land quoting Google support documentation",
+      date: "2026-07-30",
+    },
+    {
+      description: "LYRIA 3.5 MUSIC MODEL (2026-07-29, vendor post): Google shipped **Lyria 3.5**, described as 'our newest music generation model', delivering 'significant advancements across musicality, lyrics, and vocal quality.' Specifics Google cites: richer and more complex melodic structures, better lyric prompt-adherence and structural awareness, more realistic and emotionally nuanced vocals with improved pronunciation, and more creative control over tempo and duration. **Availability is narrow: it is rolling out in Google Flow Music.** The announcement does NOT mention the Gemini app, the API, or MusicFX, and says nothing about SynthID watermarking -- so do not assume API access. See the lyria page for detail",
+      source: "blog.google (blog.google/innovation-and-ai/models-and-research/google-labs/lyria-3-5/, fetched 2026-08-03)",
+      date: "2026-07-29",
+    },
+    {
+      description: "GEMINI ROBOTICS ER 2 (2026-07-30, vendor): Google released **two new embodied-reasoning model endpoints for robotics in public preview**, per the Gemini API changelog: 'Gemini Robotics ER 2 in public preview: Released two new embodied reasoning model endpoints for robotics.' Google's blog frames the capability as real-time spatial reasoning, multi-step task planning, and collaboration between different robots. Noted here for completeness -- it is a developer/robotics API, not a consumer Gemini feature, and does not change anything in the Gemini app",
+      source: "ai.google.dev/gemini-api/docs/changelog (2026-07-30), blog.google (blog.google/innovation-and-ai/models-and-research/google-deepmind/gemini-robotics-er-2/)",
+      date: "2026-07-30",
     },
     {
       description: "GEMINI SPARK ON MACOS (2026-06-30/07-01): Google's agentic assistant Gemini Spark launched on the Mac Gemini app in beta -- Google AI Ultra subscribers, 18+, US only (gemini.google/mac). Local file automation, MCP support, and new connected apps: Canva, Dropbox, Instacart, OpenTable, Zillow Rentals, plus Google Tasks/Keep. Google's answer to Claude desktop agents and OpenAI's Codex/Operator surface war on the desktop",
@@ -166,7 +186,7 @@ export const gemini: ToolReview = {
   notFor: "Anyone who needs the best raw output quality. Claude and GPT-4 both write better. Also not for anyone spooked by Google's history of abandoning products.",
   verdict: "Gemini's strength is the ecosystem play. The 1M context window is genuinely useful for long documents, and the Google Workspace integration is something neither OpenAI nor Anthropic can match. But purely as an LLM, the output quality is a step behind Claude and GPT-4. Pick Gemini if you're deep in Google's ecosystem. Otherwise, the other two are better standalone.",
 
-  lastReviewedDate: "2026-07-22",
+  lastReviewedDate: "2026-08-03",
   dataSources: [
     { name: "Google Blog: Gemini 3.6 Flash + 3.5 Flash-Lite + 3.5 Flash Cyber (2026-07-21)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/", dateAccessed: "2026-07-22" },
     { name: "TechCrunch: Google releases three new Gemini models but no 3.5 Pro (2026-07-21)", url: "https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/", dateAccessed: "2026-07-22" },

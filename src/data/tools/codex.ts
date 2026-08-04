@@ -19,7 +19,7 @@ export const codex: ToolReview = {
   pricing: [
     { plan: "Free", price: "$0", features: ["Basic Codex access", "Quick coding tasks only", "Explore capabilities"] },
     { plan: "Go", price: "$8", period: "month", features: ["Lightweight coding tasks", "Codex CLI access"] },
-    { plan: "Plus", price: "$20", period: "month", features: ["Codex web + CLI + IDE extension", "GPT-5.4 + GPT-5.3-Codex", "20-100 local messages per 5h", "Slack integration", "Cloud code review"] },
+    { plan: "Plus", price: "$20", period: "month", features: ["Codex web + CLI + IDE extension", "GPT-5.6 Sol / Terra / Luna (GPT-5.3-Codex already deprecated; GPT-5.4 leaves Codex 2026-08-31)", "20-100 local messages per 5h", "Slack integration", "Cloud code review"] },
     { plan: "Pro", price: "$100", period: "month", features: ["10-20x higher rate limits", "GPT-5.3-Codex-Spark (research preview)", "Up to 2,000 messages per 5h", "Priority processing"] },
     { plan: "Business", price: "Pay as you go", period: "per seat", features: ["30-150 local messages per 5h", "10-60 cloud tasks per 5h", "20-50 code reviews per 5h", "Admin controls", "Larger VMs"] },
   ],
@@ -41,6 +41,11 @@ export const codex: ToolReview = {
     "Response latency can spike to 3+ minutes per response during peak hours",
   ],
   knownIssues: [
+    {
+      description: "MODEL RETIREMENT WAVE EXECUTED 2026-07-23 -- AND GPT-5.4 LEAVES CODEX ON 2026-08-31 (announced 2026-04-22, vendor deprecation ledger): OpenAI shut down **18 model IDs across 15 ledger rows**. The Codex-branded ones all went in one sweep: **`gpt-5-codex`, `gpt-5.1-codex`, `gpt-5.1-codex-max`, `gpt-5.1-codex-mini` and `gpt-5.2-codex`** -- substituted by `gpt-5.6-sol`, except `gpt-5.1-codex-mini` which maps to `gpt-5.6-terra`. Also retired: `gpt-5-chat-latest`, `gpt-5.1-chat-latest`, `computer-use-preview`, `o3-deep-research`, `o4-mini-deep-research`. **TWO MORE CODEX DEPRECATIONS ARE LIVE RIGHT NOW:** `gpt-5.2` and `gpt-5.3-codex` are already deprecated for ChatGPT sign-in, and **`gpt-5.4` + `gpt-5.4-mini` retire from Codex on 2026-08-31** (migrate to `gpt-5.6-terra` and `gpt-5.6-luna` respectively). If you have `model = \"gpt-5.4\"` in a config.toml, a custom agent, a scheduled task, or a `codex exec --model` script, you have until the end of August. **The OpenAI API and Codex authenticated with your own API key are not affected by the GPT-5.4 retirement** -- this is specifically Codex with ChatGPT sign-in. Current recommended set is **GPT-5.6 Sol / Terra / Luna**, with Sol the only one available in Codex cloud, plus **GPT-5.3-Codex-Spark** as a Pro-only text-only research preview for near-instant iteration. DATA-HYGIENE WARNING: OpenAI's own models index still serves live doc pages for several retired IDs with no retirement banner -- do not treat presence in the docs as evidence a model is callable",
+      source: "OpenAI deprecations ledger (developers.openai.com/api/docs/deprecations), OpenAI Codex models doc (developers.openai.com/codex/models)",
+      date: "2026-07-23",
+    },
     {
       description: "APP MERGER + GPT-5.6 (2026-07-09): The **standalone Codex app is merging into the new unified ChatGPT desktop app** (Mac/Windows) -- update the Codex app and it becomes the ChatGPT app with Chat, Work, and Codex surfaces; developers can set Codex as the default view and keep the Codex icon; desktop Codex projects are accessible from the ChatGPT mobile app; the old ChatGPT desktop app is renamed 'ChatGPT Classic.' Codex itself gains: **inline editing within diffs, PR review in the side panel, faster computer use (powered by GPT-5.6), and multi-repo projects**. Model lineup: **GPT-5.6 GA in Codex same day** -- Free/Go get Terra; Plus+ pick Sol/Terra/Luna with per-model effort; `max` toggleable for all GPT-5.6 users; **`ultra` (4 parallel agents) available from Plus up in Codex**. Scale disclosure: 5M+ weekly Codex users, 1M+ using it for non-development work. Net read: Codex stops being a separate app and becomes the engine inside ChatGPT's agent stack (ChatGPT Work is built on Codex technology -- see /tools/chatgpt-work)",
       source: "OpenAI (openai.com/index/chatgpt-for-your-most-ambitious-work/), OpenAI (openai.com/index/gpt-5-6/)",
@@ -86,7 +91,7 @@ export const codex: ToolReview = {
   notFor: "Developers who need fine-grained control mid-task (use Claude Code or Cursor instead). Also not ideal for complex architectural refactors where the AI needs human guidance throughout the process.",
   verdict: "Codex is OpenAI's answer to Claude Code and Devin, and it has one killer advantage: it's bundled with ChatGPT Plus. If you're already paying $20/mo for ChatGPT, you get a cloud coding agent for free. The parallel task execution is genuinely unique -- no other coding agent lets you fire off 5 tasks and check back later. But the rough edges are real: you can't steer it mid-task, complex refactors fall flat, and the usage limits feel tight. For straightforward coding tasks and code review, it's excellent. For anything nuanced, Claude Code's interactive approach is still better.",
 
-  lastReviewedDate: "2026-07-09",
+  lastReviewedDate: "2026-08-03",
   dataSources: [
     { name: "OpenAI: ChatGPT Work + desktop app merger (2026-07-09)", url: "https://openai.com/index/chatgpt-for-your-most-ambitious-work/", dateAccessed: "2026-07-09" },
     { name: "OpenAI: GPT-5.6 GA (Codex availability matrix)", url: "https://openai.com/index/gpt-5-6/", dateAccessed: "2026-07-09" },
@@ -101,9 +106,9 @@ export const codex: ToolReview = {
   ],
   affiliateUrl: "https://openai.com/index/introducing-codex/",
   status: "active",
-  poweredBy: "GPT-5.6 Sol/Terra/Luna (GA 2026-07-09; Terra default on Free/Go) / GPT-5.2-Codex / GPT-5.5",
+  poweredBy: "GPT-5.6 Sol / Terra / Luna (GA 2026-07-09; Terra default on Free/Go, Sol the only one in Codex cloud) + GPT-5.3-Codex-Spark research preview on Pro. GPT-5.5 remains selectable as previous-gen; GPT-5.2-Codex was RETIRED 2026-07-23",
   benchmarks: {
-    modelName: "GPT-5.2-Codex (launched 2026-04-23 -- SOTA on SWE-Bench Pro and Terminal-Bench 2.0; first-party scores below pending detailed third-party verification)",
+    modelName: "GPT-5.2-Codex (HISTORICAL -- this model was RETIRED 2026-07-23; scores retained for trend context only. Current Codex default is GPT-5.6 Sol, whose first-party Codex benchmarks are pending)",
     scores: [
       { name: "SWE-bench Verified", score: 72.0, maxScore: 100, unit: "%" },
       { name: "HumanEval", score: 95.0, maxScore: 100, unit: "%" },

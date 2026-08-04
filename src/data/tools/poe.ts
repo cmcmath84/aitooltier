@@ -50,6 +50,11 @@ export const poe: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "MODEL LINEUP AND PRICING BOTH REFRESHED -- OUR COPY WAS TWO MODEL GENERATIONS STALE (checked 2026-08-03, vendor pages): Poe's own site now fronts, verbatim, '**GPT-5.6-Sol, Claude-Opus-5, Claude-Fable-5, Claude-Sonnet-5, Kimi-K3**, and thousands of others', with Poe's blog citing **200+** text, image, video and audio models. The pricing model is the part most people get wrong: **Poe bills in shared POINTS, not messages.** Every bot draws from one balance at its own per-bot rate (shown via a 'Rates' button in each chat), and Poe quotes pre-purchase at **$30 per 1M points**. Free users get a daily allowance that **resets every 24 hours and does not roll over**. The practical consequence: your effective message cap depends entirely on which models you pick -- a day of Opus 5 and a day of a cheap open-weights bot are not remotely the same allowance. Poe also now sells a **$4.99/mo Basic** tier ($49.99/yr) below the $19.99 Plus tier ($199.99/yr), so the old 'Poe is $20 or nothing' framing is out of date. NOT SHIPPED FOR LACK OF A SOURCE: a widely-repeated claim that Quora cut the Poe subsidy on 2026-04-20 could not be confirmed against any primary source this sweep (Poe's blog has no post after 2025-11-21 and the help centre says nothing) -- deliberately omitted rather than repeated",
+      source: "poe.com and poe.com/about (fetched 2026-08-03), Poe help centre (help.poe.com -- Poe FAQs and Poe Purchases FAQs), Apple App Store listing (Quora, Inc.)",
+      date: "2026-08-03",
+    },
+    {
       description: "Premium model quotas reset at inconsistent times, and usage tracking in the UI doesn't always match actual remaining messages",
       source: "Reddit r/Poe",
       date: "2026-03",
@@ -64,7 +69,7 @@ export const poe: ToolReview = {
   notFor: "Anyone who primarily uses one model -- just subscribe to that model's native platform for better limits and features.",
   verdict: "Poe's value proposition is simple: pay one price, get access to all the major AI models. And for people who regularly switch between GPT-4 and Claude depending on the task, it actually makes financial sense. The interface is clean and the custom bot feature is a nice bonus. But you're always getting a slightly diminished version of each model -- fewer messages, delayed feature rollouts, and less integration depth. If you're a model-hopper who likes variety, Poe is great. If you have a favorite model, subscribe to it directly.",
 
-  lastReviewedDate: "2026-03-27",
+  lastReviewedDate: "2026-08-03",
   dataSources: [
     { name: "Poe official site", dateAccessed: "2026-03-27" },
     { name: "Reddit r/Poe", dateAccessed: "2026-03-27" },

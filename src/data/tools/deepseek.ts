@@ -55,6 +55,16 @@ export const deepseek: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "V4-FLASH OFFICIAL RELEASE / PUBLIC BETA -- AND V4-PRO IS STILL NOT GA (2026-07-31, vendor changelog; CORRECTS WIDESPREAD AGGREGATOR REPORTING): DeepSeek's own change log states, verbatim: 'The official release of the DeepSeek-V4-Flash API is now in public beta... The DeepSeek-V4-Pro API and the APP/WEB models are unchanged. **The official release of DeepSeek-V4-Pro will follow soon.**' So only FLASH graduated -- aggregators claiming 'DeepSeek V4 went GA in mid/late July' are wrong, and V4-Pro remains Preview. No API change needed: set the model name to `deepseek-v4-flash`. **Vendor-published V4-Flash-0731 benchmarks** (agent-focused, stated as 'far exceeding V4-Pro-Preview'): Terminal Bench 2.1 **82.7**, NL2Repo **54.2**, Cybergym **76.7**, DeepSWE **54.4**, Toolathlon verified **70.3**, Agent Last Exam **25.2**, Automation Bench (public) **25.1**, plus internal sets DSBench-FullStack 68.7 and DSBench-Hard 59.6. Caveats DeepSeek states itself: code-agent numbers were run with the **DeepSeek Harness minimal mode (which it says is still 'to be released soon')** at max effort, topp=0.95, temperature=1.0 -- so they are not straightforwardly reproducible yet, and all figures are first-party. Architecture note: **V4-Flash-0731 keeps the same architecture and size as V4-Flash-Preview and was only re-post-trained.** It also now **natively supports the Responses API format and is specifically adapted for Codex**",
+      source: "DeepSeek API change log (api-docs.deepseek.com/updates, fetched 2026-08-03)",
+      date: "2026-07-31",
+    },
+    {
+      description: "CORRECTION -- THE 2x PEAK-HOUR PRICING HAS NOT ACTUALLY STARTED (re-verified 2026-08-03): our earlier entry described time-of-day pricing as shipping alongside the mid-July V4 release. It has not. DeepSeek's pricing page still frames it in the future tense -- it 'will soon adopt a peak/off-peak pricing policy', with peak hours 09:00-12:00 and 14:00-18:00 Beijing time billed at 2x, and explicitly: '**The effective date will be subject to the official announcement.**' No such announcement has been published as of 2026-08-03. Treat 2x peak pricing as ANNOUNCED-BUT-NOT-IN-EFFECT; current rates are the standing ones shown in the pricing table above",
+      source: "DeepSeek pricing docs (api-docs.deepseek.com/quick_start/pricing, re-checked 2026-08-03)",
+      date: "2026-08-03",
+    },
+    {
       description: "LEGACY API ALIASES RETIRE 2026-07-24 (vendor-primary, HARD deadline): **`deepseek-chat` and `deepseek-reasoner` will be fully retired and inaccessible after July 24, 2026, 15:59 UTC.** The aliases currently route to deepseek-v4-flash (non-thinking/thinking respectively). Migration is a one-line change: keep base_url, update `model` to `deepseek-v4-pro` or `deepseek-v4-flash` -- but note the gotcha that `deepseek-reasoner` maps to FLASH-tier thinking, not V4-Pro, so 'upgrading' to Pro changes both cost and behavior. Any production code still pinned to the legacy aliases breaks on the 24th",
       source: "DeepSeek API docs (api-docs.deepseek.com/news/news260424)",
       date: "2026-07-24",
@@ -99,7 +109,7 @@ export const deepseek: ToolReview = {
   notFor: "Anyone working on content that touches geopolitical topics, or teams that need guaranteed uptime and enterprise SLAs. Also not ideal if your primary use case is creative English writing.",
   verdict: "DeepSeek is the real deal when it comes to bang-for-your-buck AI. The reasoning capabilities are legitimately impressive, and the open-source angle gives it a flexibility that closed models can't match. The censorship limitations are a dealbreaker for some use cases, and the writing quality trails behind Claude and GPT-4. But for coding, math, and analytical tasks? It's hard to argue with near-frontier performance at a fraction of the cost.",
 
-  lastReviewedDate: "2026-07-22",
+  lastReviewedDate: "2026-08-03",
   dataSources: [
     { name: "DeepSeek V4 API launch announcement + 7/24 alias retirement (re-checked 2026-07-22)", url: "https://api-docs.deepseek.com/news/news260424", dateAccessed: "2026-07-22" },
     { name: "Bloomberg: DeepSeek unveils newest flagship (2026-04-24)", url: "https://www.bloomberg.com/news/articles/2026-04-24/deepseek-unveils-newest-flagship-a-year-after-ai-breakthrough", dateAccessed: "2026-04-24" },

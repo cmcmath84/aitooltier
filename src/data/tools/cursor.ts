@@ -68,6 +68,11 @@ export const cursor: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "THREE SHIPS IN A WEEK -- CURSOR START (INDIA), IPAD, AND GOOGLE WORKSPACE (2026-07-28 -> 2026-08-03, vendor changelog): **(1) Cursor Start, 2026-07-28** -- a new **India-only** plan at **Rs 649/month**, vendor wording: 'a new Rs 649 monthly plan for developers in India, making daily agentic development accessible and payment easy with local pricing and UPI.' It bundles Grok 4.5 (fixed medium effort, non-fast), Composer, always-on cloud agents and iOS access. This is Cursor's first regional price tier and reads as a direct response to price-sensitive high-volume markets. **(2) Cursor for iPad, 2026-07-29** -- 'Cursor for iPad is now available on all paid plans', shipping alongside an inbox for organising work and a review experience that covers the full PR, plus Bitbucket and Azure DevOps SCM support and multi-PR sessions. **(3) Google Workspace plugins, 2026-08-03 (today)** -- 'Cursor can now read, write, and act across your Google Workspace', with plugins giving coding agents direct access to **Gmail, Google Drive, Calendar, Docs, and Sheets.' That last one pushes Cursor beyond the IDE into general knowledge work, which is a notable scope expansion for a coding tool",
+      source: "Cursor changelog (cursor.com/changelog plus /changelog/cursor-start, /changelog/ipad, /changelog/google-workspace-plugins; fetched 2026-08-03)",
+      date: "2026-08-03",
+    },
+    {
       description: "CURSOR ROUTER (2026-07-22, vendor changelog): Cursor shipped **Cursor Router**, intelligent per-request model routing that picks the model for each request across three selectable modes -- **Intelligence** (best model regardless of cost), **Balance**, and **Cost** -- rather than making you pin one model. Admin controls let teams restrict which modes are allowed and allowlist specific models; it works across desktop, web, iOS, CLI, and SDK, and is **on by default for Teams**. Separately (2026-07-17) Cursor overhauled its **Slack integration** -- plan-before-execute, multi-repo awareness, and cross-channel context. Feature releases, no pricing change",
       source: "Cursor changelog (cursor.com/changelog)",
       date: "2026-07-22",

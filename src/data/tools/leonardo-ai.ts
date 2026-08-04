@@ -50,6 +50,11 @@ export const leonardoAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PLAN RENAME + A NEW TOP TIER -- OUR OLD PLAN NAMES NO LONGER EXIST (checked 2026-08-03, vendor pricing page): the Apprentice and Artisan tiers are gone. Solo tiers are now **Free / Essential $12 / Premium $30 / Ultimate $60** per month (ex. tax), with annual billing up to 20% off. The $12 and $30 price points survived the rename but the allowances are now explicit: **8,500 / 25,000 / 60,000 fast tokens per month** against token banks of 25,500 / 75,000 / 180,000, and 10 / 20 / 50 personal AI models. **Premium and above get unlimited relaxed-pace image generation; only Ultimate gets unlimited relaxed-pace video.** Team plans start at **Starter $72/mo ($24/seat)** and **Growth $144/mo ($48/seat)**, plus a separate API tier. One thing the page now states plainly: **Essential is 'Included with Canva Business'** -- Leonardo is a Canva property, so if your organisation already pays for Canva Business you may already have this",
+      source: "Leonardo AI pricing page (leonardo.ai/pricing)",
+      date: "2026-08-03",
+    },
+    {
       description: "Token consumption rates changed without clear notice, some users reported using tokens faster than expected",
       source: "Reddit r/leonardoai",
       date: "2026-02",
@@ -59,7 +64,7 @@ export const leonardoAi: ToolReview = {
   notFor: "If you only care about the absolute best image quality and don't mind paying, Midjourney still edges it out.",
   verdict: "Leonardo AI hits a sweet spot that most competitors miss. The free tier is genuinely useful, the web interface is polished, and the fine-tuned models give you more control than DALL-E. It's not quite Midjourney quality, but it's close -- and you can actually try it before paying.",
 
-  lastReviewedDate: "2026-03-26",
+  lastReviewedDate: "2026-08-03",
   dataSources: [
     { name: "Leonardo AI official site", dateAccessed: "2026-03-26" },
     { name: "G2 Reviews", dateAccessed: "2026-03-26" },

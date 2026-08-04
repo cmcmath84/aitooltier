@@ -40,6 +40,11 @@ export const lyria: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "LYRIA 3.5 SHIPPED (2026-07-29, vendor post): Google released **Lyria 3.5**, '**our newest music generation model**', which it says '**delivers significant advancements across musicality, lyrics, and vocal quality**'. Google's specifics: '**improved musicality: create richer, more complex melodic structures**', better lyric prompt-adherence and structural awareness, more realistic and emotionally nuanced vocals with improved pronunciation, and greater creative control over tempo and duration. **AVAILABILITY IS THE CATCH: it is rolling out in Google Flow Music.** The announcement makes **no mention of the Gemini app, the Gemini API, Vertex AI, or MusicFX**, so do not assume you can call it -- and it says nothing about SynthID watermarking, which prior Lyria material did document. Re-check API availability before planning around it",
+      source: "Google (blog.google/innovation-and-ai/models-and-research/google-labs/lyria-3-5/, fetched 2026-08-03)",
+      date: "2026-07-29",
+    },
+    {
       description: "Lyria 3 Pro is in preview on Vertex AI -- pricing for Vertex API access has not been officially disclosed as of April 2026",
       source: "Google Cloud blog, OpenRouter",
       date: "2026-04",
@@ -54,7 +59,7 @@ export const lyria: ToolReview = {
   notFor: "Standalone music creators who don't use Google's ecosystem -- Suno or Udio give you a simpler workflow without subscription bundling.",
   verdict: "Lyria 3 Pro is Google's serious entry into the AI music race, and it shows -- 3-minute songs with structural control is a real step beyond Suno's 'one prompt, one song' approach. The $0.08/song API pricing is the most attractive part for developers. But for standalone creators, the fragmented subscription tiers and Google account lock-in make it less appealing than Suno or Udio. Worth it if you're already paying for Gemini Pro or Ultra. Otherwise, Suno is still the easier path.",
 
-  lastReviewedDate: "2026-04-08",
+  lastReviewedDate: "2026-08-03",
   dataSources: [
     { name: "Google DeepMind Lyria page", dateAccessed: "2026-04-08" },
     { name: "Google blog: Lyria 3 Pro launch", dateAccessed: "2026-04-08" },
