@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const mistral: ToolReview = {
   slug: "mistral",
   name: "Mistral AI",
-  tagline: "European AI lab with open and commercial models -- Le Chat is now **Vibe** (May 28 2026): one agent across Work Mode + Code Mode with a VS Code extension and CLI, powered by Mistral Medium 3.5 (128B dense, 256k context, 77.6% SWE-Bench Verified). Earlier 2026 line: Small 4 (119B MoE Apache 2.0), Medium 3, Voxtral TTS",
+  tagline: "European AI lab with open and commercial models -- Le Chat is now **Vibe** (May 28 2026): one agent across Work Mode + Code Mode with a VS Code extension and CLI, powered by Mistral Medium 3.5 (128B dense, 256k context, 77.6% SWE-Bench Verified). Newest release: **Shieldstral 1.0** (Aug 4 2026), a 3B Apache 2.0 multimodal safety classifier that runs on one 16GB GPU. Earlier 2026 line: Small 4 (119B MoE Apache 2.0), Medium 3, Voxtral TTS",
   category: "ai-local-models",
   url: "https://mistral.ai",
 
@@ -92,6 +92,11 @@ export const mistral: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "SHIELDSTRAL RELEASED (2026-08-04, vendor-primary): Mistral shipped **Shieldstral 1.0**, a **3B-parameter, Apache 2.0 open-weights, policy-adaptive multimodal safety classifier** -- a guard model that screens prompts, responses, and **images** for harmful content. The design point is that it treats moderation as question-answering: you supply your **safety policy in plain language at inference time**, with **no retraining or fine-tuning**, and it returns a **calibrated yes/no probability from a single forward pass**. Mistral's claim is that it **matches or beats guard models up to 7x its size** on text safety, refusal detection, policy adaptability, and multimodal safety. Practical appeal: it runs on **a single 16GB NVIDIA GPU**, so self-hosters and small teams can put a real moderation layer in front of an open model without renting a second big box. Weights are on Hugging Face as **mistralai/Shieldstral-1.0-3B**; no pricing (open weights, free to download). Caveats worth knowing before you deploy it: **all comparative benchmark numbers are vendor-published and not yet third-party verified**, and **multilingual coverage is listed as future work** -- Mistral did not claim non-English safety performance at launch, which is a notable gap for a lab whose main differentiator is multilingual strength. Context: guard models are becoming table stakes as the **EU AI Act's Article 50 transparency duties went enforceable 2026-08-02**, and an EU-hosted, open-weights, self-deployable classifier is a pointed answer to US-hosted moderation APIs",
+      source: "Mistral AI (mistral.ai/news/shieldstral/), Mistral AI news RSS (pubDate 2026-08-04), Hugging Face (mistralai/Shieldstral-1.0-3B)",
+      date: "2026-08-04",
+    },
+    {
       description: "MICROSOFT PARTNERSHIP EXPANDED -- MULTIBILLION-DOLLAR DEAL (2026-07-21, Microsoft newsroom): Microsoft and Mistral announced a major expansion of their strategic partnership aimed at enterprises and regulated industries (finance, healthcare, manufacturing). Terms: **thousands of NVIDIA Vera Rubin GPUs** allocated for EU-based compute, and **Mistral Medium 3.5 + Mistral OCR 4 now available in Microsoft Foundry and Copilot Studio**. The pitch is control/sovereignty -- cloud, Azure Local, and fully air-gapped/disconnected deployment so regulated customers can run frontier Mistral models on their own terms. Strategically this deepens Mistral's distribution on Azure (Microsoft is also a Mistral investor) and gives European enterprises a non-US-lab frontier option inside the Microsoft stack. Not a new base model -- an availability + partnership expansion",
       source: "Microsoft (news.microsoft.com/source/2026/07/21/microsoft-and-mistral-expand-strategic-partnership-to-give-enterprises-and-regulated-industries-frontier-ai-they-can-control/)",
       date: "2026-07-21",
@@ -136,8 +141,10 @@ export const mistral: ToolReview = {
   notFor: "Non-technical users looking for a polished chat experience. ChatGPT and Claude are much better as consumer products.",
   verdict: "Mistral is the scrappy underdog that keeps surprising people. Their models are impressively efficient -- you get near-GPT-4 quality at a fraction of the API cost. But the consumer experience (Le Chat) is rough. This is primarily a developer's tool. If you're building AI applications on a budget, Mistral should be on your shortlist.",
 
-  lastReviewedDate: "2026-07-22",
+  lastReviewedDate: "2026-08-04",
   dataSources: [
+    { name: "Mistral AI: Introducing Shieldstral (2026-08-04)", url: "https://mistral.ai/news/shieldstral/", dateAccessed: "2026-08-04" },
+    { name: "Hugging Face: mistralai/Shieldstral-1.0-3B", url: "https://huggingface.co/mistralai/Shieldstral-1.0-3B", dateAccessed: "2026-08-04" },
     { name: "Microsoft: Microsoft and Mistral expand strategic partnership (2026-07-21)", url: "https://news.microsoft.com/source/2026/07/21/microsoft-and-mistral-expand-strategic-partnership-to-give-enterprises-and-regulated-industries-frontier-ai-they-can-control/", dateAccessed: "2026-07-22" },
     { name: "Mistral AI: Leanstral 1.5 (2026-07-02)", url: "https://mistral.ai/news/leanstral-1-5", dateAccessed: "2026-07-05" },
     { name: "Mistral AI: Workflows public preview (2026-04-28)", url: "https://mistral.ai/news/workflows", dateAccessed: "2026-05-04" },
