@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const cursor: ToolReview = {
   slug: "cursor",
   name: "Cursor",
-  tagline: "AI-native code editor, agent-first in Cursor 3 -- and now home to Grok 4.5 (launched 2026-07-08), the frontier MoE model Cursor trained jointly with SpaceXAI on trillions of Cursor tokens ($2/$6 per 1M, all plans, desktop/web/iOS/CLI/SDK), with Composer 2.5 as the fast lower-cost tier",
+  tagline: "AI-native code editor, agent-first in Cursor 3 -- and now home to **Grok 4.6 on day one (2026-08-12)**, following the Grok 4.5 model Cursor trained jointly with SpaceXAI on trillions of Cursor tokens (still $2/$6 per 1M, fast variant 2x, desktop/web/iOS/CLI/SDK), with Composer 2.5 as the fast lower-cost tier. Since 2026-08-11 the **Cursor Ultra and Teams Premium tiers also entitle you to xAI's Grok Bot**",
   category: "ai-code-assistants",
   url: "https://cursor.com",
 
@@ -67,6 +67,11 @@ export const cursor: ToolReview = {
     "The Agent Command Center is a power feature that casual users won't touch -- if you're just here for tab completion, Cursor 3 is more tool than you need and Copilot remains less disruptive",
   ],
   knownIssues: [
+    {
+      description: "GROK 4.6 LANDS IN CURSOR ON DAY ONE, AND GROK BOT SHIPS AS A CURSOR-TIER ENTITLEMENT (2026-08-11 / 2026-08-12, both vendor-primary): **(1) Grok 4.6, 8/12.** xAI's new model is 'available today in Cursor and Grok Build' -- Cursor published its own post the same day. **$2/M input, $6/M output** (unchanged from Grok 4.5), with a **fast variant at twice the price**, and **2x included usage inside Cursor and Grok Build for the first week**. xAI's stated positioning is long-running agents and interactive/visual work; on xAI's own table it posts **CursorBench v3.2 69.9%** (up from Grok 4.5's 66.7%) but is beaten there by **Fable 5 Max at 70.5%** -- worth knowing if you pick models by Cursor's own benchmark. **(2) Grok Bot, 8/11 -- this is the structurally interesting one.** xAI's new always-on agent product is 'available today for SuperGrok Heavy, **Cursor Ultra, and Cursor Teams Premium** subscribers,' i.e. **paying for Cursor's top tiers now entitles you to an xAI product**. Cursor's pricing page corroborates how deep the relationship runs: **Grok is a top-level nav item and every paid tier advertises 'Generous limits for Grok'**. Following SpaceX's Anysphere acquisition, Cursor is functioning as xAI's primary developer distribution channel. **The buyer-side caution:** this cuts both ways -- Cursor's model neutrality is a selling point for teams that want to pick the best model per task, and a subscription increasingly bundled with one vendor's models is a different product than the model-agnostic editor Cursor was. Cursor Router (7/22) still routes across vendors, so neutrality is not gone, but the commercial gravity is visible",
+      source: "Cursor (cursor.com/blog/grok-4-6, dated Aug 12, 2026) and SpaceXAI (x.ai/news/grok-4-6, Aug 12; x.ai/news/introducing-grok-bot, Aug 11); tier names and Grok positioning verified on cursor.com/pricing -- all fetched 2026-08-13",
+      date: "2026-08-12",
+    },
     {
       description: "THREE SHIPS IN A WEEK -- CURSOR START (INDIA), IPAD, AND GOOGLE WORKSPACE (2026-07-28 -> 2026-08-03, vendor changelog): **(1) Cursor Start, 2026-07-28** -- a new **India-only** plan at **Rs 649/month**, vendor wording: 'a new Rs 649 monthly plan for developers in India, making daily agentic development accessible and payment easy with local pricing and UPI.' It bundles Grok 4.5 (fixed medium effort, non-fast), Composer, always-on cloud agents and iOS access. This is Cursor's first regional price tier and reads as a direct response to price-sensitive high-volume markets. **(2) Cursor for iPad, 2026-07-29** -- 'Cursor for iPad is now available on all paid plans', shipping alongside an inbox for organising work and a review experience that covers the full PR, plus Bitbucket and Azure DevOps SCM support and multi-PR sessions. **(3) Google Workspace plugins, 2026-08-03 (today)** -- 'Cursor can now read, write, and act across your Google Workspace', with plugins giving coding agents direct access to **Gmail, Google Drive, Calendar, Docs, and Sheets.' That last one pushes Cursor beyond the IDE into general knowledge work, which is a notable scope expansion for a coding tool",
       source: "Cursor changelog (cursor.com/changelog plus /changelog/cursor-start, /changelog/ipad, /changelog/google-workspace-plugins; fetched 2026-08-03)",
@@ -187,8 +192,11 @@ export const cursor: ToolReview = {
   notFor: "Developers happy with their current editor setup who just want basic autocomplete -- Copilot is still less disruptive for that. Also not for anyone skeptical of Cursor's own coding model; if you want pure frontier-model access for every task, paying Claude or OpenAI directly and using Claude Code is cleaner.",
   verdict: "Cursor 3 + Composer 2 (April 2026) is the release where Cursor stops being an AI-augmented editor and becomes an agent-first dev environment. Composer 2's speed at $0.50/$2.50 per 1M tokens is the real story -- it makes tight iteration loops feel instant in a way frontier models can't, even if the quality is slightly below Opus 4.6. The multi-workspace + cross-platform handoff design assumes you want your agents everywhere; if you don't, it's overkill. The honest read: for developers willing to go all-in on agentic workflows, Cursor 3 is the 2026 default. For everyone else, Claude Code + Copilot is a simpler, less committing stack.",
 
-  lastReviewedDate: "2026-07-22",
+  lastReviewedDate: "2026-08-13",
   dataSources: [
+    { name: "Cursor blog: Grok 4.6 in Cursor day one (2026-08-12)", url: "https://cursor.com/blog/grok-4-6", dateAccessed: "2026-08-13" },
+    { name: "SpaceXAI: Introducing Grok Bot -- entitles Cursor Ultra and Cursor Teams Premium subscribers (2026-08-11)", url: "https://x.ai/news/introducing-grok-bot", dateAccessed: "2026-08-13" },
+    { name: "Cursor pricing (tier names Ultra / Teams Premium; 'Generous limits for Grok' on all paid plans)", url: "https://cursor.com/pricing", dateAccessed: "2026-08-13" },
     { name: "Cursor changelog: Cursor Router (2026-07-22) + Slack overhaul (2026-07-17)", url: "https://cursor.com/changelog", dateAccessed: "2026-07-22" },
     { name: "Cursor blog: Introducing Grok 4.5 (2026-07-08)", url: "https://cursor.com/blog/grok-4-5", dateAccessed: "2026-07-09" },
     { name: "SpaceXAI: Introducing Grok 4.5", url: "https://x.ai/news/grok-4-5", dateAccessed: "2026-07-09" },

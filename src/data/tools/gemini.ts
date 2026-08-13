@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const gemini: ToolReview = {
   slug: "gemini",
   name: "Gemini (Google)",
-  tagline: "Google's LLM with deep Google Workspace integration, 2M token context window, and native code execution -- Gemini 3.6 Flash + 3.5 Flash-Lite GA 2026-07-21 (the 'upgraded Flash stopgap'; 3.6 Flash at $1.50/$7.50 per 1M, 17% fewer output tokens), Gemini 3.5 Pro STILL delayed and partner-testing-only (Bloomberg, 7/16 -- coding shortfalls, no ship date), Gemini 4 pre-training now underway",
+  tagline: "Google's LLM with deep Google Workspace integration, 2M token context window, and native code execution -- **Gemini 3.7 Flash launched 2026-08-13** at intro pricing of $0.75/$3.75 per 1M (doubling to $1.50/$7.50 on 2027-01-01), superseding Gemini 3.6 Flash after just three weeks and posting large coding/agent gains (DeepSWE 65.3% vs 49.0%). Gemini 3.5 Pro STILL delayed and partner-testing-only (Bloomberg, 7/16 -- coding shortfalls, no ship date), so Flash keeps shipping while the Pro line stalls. Gemini 4 pre-training underway",
   category: "ai-llms",
   url: "https://gemini.google.com",
 
@@ -20,7 +20,7 @@ export const gemini: ToolReview = {
     {
       plan: "Free",
       price: "$0",
-      features: ["Gemini 3.6 Flash (GA 2026-07-21)", "Basic features", "Google integration"],
+      features: ["Gemini 3.6 Flash (GA 2026-07-21)", "Basic features", "Google integration", "Gemini 3.7 Flash (2026-08-13) is in Gemini Spark for Pro/Ultra, not the free tier"],
     },
     {
       plan: "Google AI Pro",
@@ -38,7 +38,7 @@ export const gemini: ToolReview = {
       plan: "API",
       price: "$0.075-5",
       period: "per 1M tokens",
-      features: ["All models", "2M context", "Flash-Lite at $0.25/M input", "Grounding with Google Search", "Code Execution", "Mandatory spend caps (April 2026)"],
+      features: ["All models", "2M context", "Gemini 3.7 Flash (2026-08-13) at $0.75/M input and $3.75/M output -- INTRO pricing through 2026-12-31, doubling to $1.50/$7.50 on 2027-01-01", "Flash-Lite at $0.25/M input", "Grounding with Google Search", "Code Execution", "Mandatory spend caps (April 2026)"],
     },
   ],
 
@@ -56,6 +56,11 @@ export const gemini: ToolReview = {
     "The Gemini app UI feels like Google slapped AI onto an existing product",
   ],
   knownIssues: [
+    {
+      description: "NEW FLAGSHIP WORKHORSE -- GEMINI 3.7 FLASH (2026-08-13, vendor post): Google shipped **Gemini 3.7 Flash**, billed as 'our most intelligent workhorse model yet for coding and agents' -- and it **supersedes Gemini 3.6 Flash after only three weeks** (3.6 Flash was 7/21). **Vendor-published benchmarks, all versus 3.6 Flash:** FrontierCode 1.1 Main **43.6% (from 34.4%)**, DeepSWE v1.1 **65.3% (from 49.0%)**, WebDev Arena Elo **1588 (from 1538)**, GDP.pdf **34.0% (from 22.0%)**, AutomationBench **30.4% (from 17.0%)**. These are first-party figures; third-party verification pending. **PRICING IS INTRODUCTORY AND IT DOUBLES -- read this before you build on it:** **$0.75/M input and $3.75/M output through 2026-12-31**, then **$1.50/M input and $7.50/M output from 2027-01-01** (confirmed on both the launch post and ai.google.dev's pricing table). Note what that means in context: the post-promo price is **exactly Gemini 3.6 Flash's price**, so the intro rate is a 50% launch discount rather than a durable price cut -- budget on $1.50/$7.50 for anything running past New Year. **Availability day one:** Google AI Studio and Android Studio, the Gemini API, Google Antigravity, the Gemini Enterprise Agent Platform, and **Gemini Spark in the Gemini app for Pro and Ultra subscribers**. **The strategic read:** Google has now shipped three Flash generations (3.5 Flash-Lite, 3.6, 3.7) in roughly seven weeks while **Gemini 3.5 Pro remains unshipped and partner-only** -- the Flash line is where Google's coding-model progress is actually landing, and buyers waiting on a Pro-tier answer should plan around Flash instead",
+      source: "Google (blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/, fetched 2026-08-13); pricing independently confirmed at ai.google.dev/gemini-api/docs/pricing (fetched 2026-08-13)",
+      date: "2026-08-13",
+    },
     {
       description: "GEMINI 3.5 PRO STATUS CHECK (2026-08-03): still unshipped, and there is **no new information since July 21**. The Gemini API changelog runs through 7/30 (latest entries are the Robotics-ER 2 previews) with **no `gemini-3.5-pro` release at any point**, and there has been no GA post on blog.google. Google's last public word remains the 7/21 model post: 'Gemini 3.5 Pro is currently testing with partners and we plan to make it broadly available as soon as it's ready.' That is three missed windows -- June, the aggregator-only 'July 17', and the 7/21 drop that shipped Flash variants instead. **No vendor date exists; any '3.5 Pro is coming on X' claim is speculation.** Practical read for buyers: Google AI Pro's in-tier flagship is still Gemini 3.1 Ultra, and **Gemini 3.6 Flash (7/21) is the model to actually plan around**. Separately, Google has confirmed pre-training has begun on Gemini 4 -- no specs, no date",
       source: "ai.google.dev/gemini-api/docs/changelog (checked 2026-08-03, no 3.5 Pro entry through 7/30); blog.google Gemini 3.6 Flash post (2026-07-21)",
@@ -186,8 +191,10 @@ export const gemini: ToolReview = {
   notFor: "Anyone who needs the best raw output quality. Claude and GPT-4 both write better. Also not for anyone spooked by Google's history of abandoning products.",
   verdict: "Gemini's strength is the ecosystem play. The 1M context window is genuinely useful for long documents, and the Google Workspace integration is something neither OpenAI nor Anthropic can match. But purely as an LLM, the output quality is a step behind Claude and GPT-4. Pick Gemini if you're deep in Google's ecosystem. Otherwise, the other two are better standalone.",
 
-  lastReviewedDate: "2026-08-03",
+  lastReviewedDate: "2026-08-13",
   dataSources: [
+    { name: "Google Blog: Introducing Gemini 3.7 Flash (2026-08-13)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-3-7-flash/", dateAccessed: "2026-08-13" },
+    { name: "Gemini API pricing (3.7 Flash intro $0.75/$3.75 through 2026-12-31, then $1.50/$7.50)", url: "https://ai.google.dev/gemini-api/docs/pricing", dateAccessed: "2026-08-13" },
     { name: "Google Blog: Gemini 3.6 Flash + 3.5 Flash-Lite + 3.5 Flash Cyber (2026-07-21)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/", dateAccessed: "2026-07-22" },
     { name: "TechCrunch: Google releases three new Gemini models but no 3.5 Pro (2026-07-21)", url: "https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/", dateAccessed: "2026-07-22" },
     { name: "9to5Google: Gemini 3.5 Pro delays (Bloomberg-sourced, 2026-07-16)", url: "https://9to5google.com/2026/07/16/gemini-3-5-pro-delays/", dateAccessed: "2026-07-18" },
