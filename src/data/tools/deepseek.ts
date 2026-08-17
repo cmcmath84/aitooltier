@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const deepseek: ToolReview = {
   slug: "deepseek",
   name: "DeepSeek",
-  tagline: "DeepSeek V4 shipped 2026-04-24: V4-Pro (1.6T/49B active MoE) + V4-Flash (284B/13B active), 1M native context, Hybrid Attention Architecture, open-source on HF. **V4-Pro reached GA 2026-08-13** (Terminal Bench 2.1 87.9, three thinking-effort levels, native Responses API). **Pricing changes 2026-08-16:** peak/off-peak billing raises rates at every hour of the day -- V4-Pro goes from $0.435/$0.87 to $0.66/$1.98 off-peak and $1.32/$3.96 peak",
+  tagline: "DeepSeek V4 shipped 2026-04-24: V4-Pro (1.6T/49B active MoE) + V4-Flash (284B/13B active), 1M native context, Hybrid Attention Architecture, open-source on HF. **V4-Pro reached GA 2026-08-13** (Terminal Bench 2.1 87.9, three thinking-effort levels, native Responses API). **Pricing changed 2026-08-16 and the new rates are now live:** peak/off-peak billing raised rates at every hour of the day -- V4-Pro went from $0.435/$0.87 to **$0.66/$1.98 off-peak and $1.32/$3.96 peak**. Despite the 'off-peak' framing there is no hour at which it is cheaper than before",
   category: "ai-local-models",
   url: "https://www.deepseek.com",
 
@@ -24,15 +24,15 @@ export const deepseek: ToolReview = {
     },
     {
       plan: "API -- V4-Flash",
-      price: "$0.14/$0.28",
-      period: "per 1M tokens input/output",
-      features: ["284B total / 13B active MoE", "1M native context", "Cheapest frontier-class API on market", "Pay-as-you-go, no minimum"],
+      price: "$0.22/$0.66 off-peak, $0.44/$1.32 peak",
+      period: "per 1M tokens input/output (peak/off-peak since 2026-08-16)",
+      features: ["284B total / 13B active MoE", "1M native context", "Still among the cheapest frontier-class APIs, but no longer at the old $0.14/$0.28 rate", "Peak hours 01:00-04:00 and 06:00-10:00 UTC; all other hours off-peak", "Cache-hit input $0.007 off-peak / $0.014 peak", "Pay-as-you-go, no minimum"],
     },
     {
       plan: "API -- V4-Pro",
-      price: "$0.435/$0.87",
-      period: "per 1M tokens input/output",
-      features: ["1.6T total / 49B active MoE", "1M native context", "GA as DeepSeek-V4-Pro-0813 on 2026-08-13", "Trails only Gemini 3.1 Pro on world knowledge benchmarks", "PRICING CHANGES 2026-08-16 16:00 UTC: the $0.435/$0.87 standing rate is replaced by peak/off-peak billing at $0.66/$1.98 off-peak and $1.32/$3.96 peak -- a rise at every hour, not a discount. See knownIssues", "Still cheap relative to Western frontier models, but the gap narrows sharply after 8/16"],
+      price: "$0.66/$1.98 off-peak, $1.32/$3.96 peak",
+      period: "per 1M tokens input/output (peak/off-peak since 2026-08-16)",
+      features: ["1.6T total / 49B active MoE", "1M native context", "GA as DeepSeek-V4-Pro-0813 on 2026-08-13", "Trails only Gemini 3.1 Pro on world knowledge benchmarks", "PRICING CHANGED 2026-08-16 16:00 UTC (EXECUTED, verified live 8/17): the $0.435/$0.87 standing rate is gone, replaced by peak/off-peak billing at $0.66/$1.98 off-peak and $1.32/$3.96 peak -- a rise at every hour, not a discount. Peak hours are 01:00-04:00 and 06:00-10:00 UTC. See knownIssues", "Still cheaper than Western frontier models, but the gap narrowed sharply on 8/16"],
     },
     {
       plan: "Self-hosted (open-source)",
@@ -54,6 +54,11 @@ export const deepseek: ToolReview = {
     "Service reliability has been spotty during high-demand periods -- the free tier especially suffers from rate limiting",
   ],
   knownIssues: [
+    {
+      description: "THE PEAK/OFF-PEAK PRICE RISE IS NOW EXECUTED AND LIVE -- CONFIRMED ON THE VENDOR RATE CARD (2026-08-16 16:00 UTC, re-verified 2026-08-17): the change we flagged on 8/13 as scheduled has landed. **DeepSeek's Models & Pricing page no longer shows the old $0.435/$0.87 standing rate at all** -- the peak/off-peak table is now the only rate card published, which is the confirmation that matters. **Live V4-Pro rates per 1M:** off-peak **$0.022 cache-hit / $0.66 cache-miss input / $1.98 output**; peak **$0.044 / $1.32 / $3.96**. **Live V4-Flash rates:** off-peak **$0.007 / $0.22 / $0.66**; peak **$0.014 / $0.44 / $1.32**. **Peak hours, verbatim from the page footnote: 'Peak hours are 01:00 - 04:00 and 06:00 - 10:00 UTC (all other hours are off-peak),'** with 'off-peak rates are half of the peak rates.' That is 7 peak hours in 24. **THE CORRECTION THIS PAGE HAS BEEN MAKING SINCE 8/13 NOW STANDS CONFIRMED AGAINST A LIVE RATE CARD, SO DO NOT LET A LATER SOURCE REVERSE IT:** the 'off-peak is half of peak' wording invites reporting this as a discount scheme, and it is not one. Measured against the $0.435/$0.87 price that was in force until 8/16, **V4-Pro off-peak input is up ~52% and off-peak output up ~128%**; at peak, input roughly triples and output is up ~355%. V4-Flash off-peak output is up ~136% from $0.28. **There is still no hour of the day at which the new pricing beats the old.** The practical consequence for anyone who budgeted DeepSeek as the cheap frontier option: the headline gap to Western frontier models has narrowed sharply, and scheduling work into off-peak windows now only avoids a surcharge on top of an already-raised base -- it does not recover the old price. Concurrency limits published alongside are unchanged at 500 (V4-Pro) and 2500 (V4-Flash)",
+      source: "DeepSeek Models & Pricing (api-docs.deepseek.com/quick_start/pricing) -- live rate card fetched 2026-08-17 via Firecrawl render, since the pricing table is client-rendered and does not appear in the raw HTML",
+      date: "2026-08-16",
+    },
     {
       description: "V4-PRO IS FINALLY GA (2026-08-13, vendor change log) -- AND THE ACCOMPANYING 'PEAK/OFF-PEAK' PRICING IS A PRICE **RISE**, NOT A DISCOUNT. THIS IS THE MOST MISREPORTABLE ITEM ON THIS PAGE, SO READ THE NUMBERS. **(1) The GA itself.** DeepSeek's change log states 'The GA release of DeepSeek-V4-Pro has been rolled out on the APP, Web, and API,' model version **DeepSeek-V4-Pro-0813**, calling convention unchanged (`deepseek-v4-pro`). This closes the watch item open since 7/31, when only V4-Flash graduated and DeepSeek said Pro would 'follow soon.' **Vendor-published GA benchmarks:** HLE (without/with tools) **42.7/60.0**, Terminal Bench 2.1 **87.9**, NL2Repo **61.5**, Cybergym **83.3**, DeepSWE **62.7**, Toolathlon-Verified **74.1**, Agents' Last Exam **25.7**, AutomationBench public **31.8**, plus internal sets DSBench-FullStack **71.1** and DSBench-Hard **67.2**. All first-party. **(2) The pricing change -- effective 16:00 UTC on 2026-08-16.** DeepSeek is moving to peak/off-peak billing with 'off-peak prices set at half the peak-hour prices.' **Peak hours are 01:00-04:00 and 06:00-10:00 UTC**; every other hour is off-peak (so ~7 of 24 hours are peak). New V4-Pro rates per 1M: **off-peak $0.022 cache-hit / $0.66 cache-miss input / $1.98 output**; **peak $0.044 / $1.32 / $3.96**. New V4-Flash rates: **off-peak $0.007 / $0.22 / $0.66**; **peak $0.014 / $0.44 / $1.32**. **NOW COMPARE TO WHAT YOU PAY TODAY:** V4-Pro is currently **$0.435 input / $0.87 output**, and V4-Flash **$0.14 / $0.28**. So **even the cheapest new off-peak rate is above the current standing price** -- V4-Pro off-peak input rises ~52% and output ~128%; at peak, input roughly triples and output rises ~355%. V4-Flash off-peak output rises ~136%. **There is no time of day at which the new pricing is cheaper than the old.** Framing it as a discount scheme (which the 'off-peak is half of peak' wording invites) is wrong; the correct read is a substantial across-the-board increase with a time-of-day surcharge layered on top. **This also supersedes our own long-standing note that the 75%-off V4-Pro rate had become the permanent standing price** -- that was true from 2026-05-26 until this change, and it ends on 8/16. **(3) Other GA changes:** thinking effort is now three levels (**low / high / max**) on both Pro and Flash, and the API 'natively supports the OpenAI Responses API format and is specifically adapted for Codex' with a one-click config script",
       source: "DeepSeek API change log (api-docs.deepseek.com/updates, entry dated 2026-08-13) and Models & Pricing (api-docs.deepseek.com/quick_start/pricing, carrying both current and 2026-08-16 rate tables) -- both fetched 2026-08-13",
@@ -114,8 +119,9 @@ export const deepseek: ToolReview = {
   notFor: "Anyone working on content that touches geopolitical topics, or teams that need guaranteed uptime and enterprise SLAs. Also not ideal if your primary use case is creative English writing.",
   verdict: "DeepSeek is the real deal when it comes to bang-for-your-buck AI. The reasoning capabilities are legitimately impressive, and the open-source angle gives it a flexibility that closed models can't match. The censorship limitations are a dealbreaker for some use cases, and the writing quality trails behind Claude and GPT-4. But for coding, math, and analytical tasks? It's hard to argue with near-frontier performance at a fraction of the cost.",
 
-  lastReviewedDate: "2026-08-13",
+  lastReviewedDate: "2026-08-17",
   dataSources: [
+    { name: "DeepSeek Models & Pricing -- LIVE peak/off-peak rate card after the 2026-08-16 16:00 UTC change (old $0.435/$0.87 rate no longer listed)", url: "https://api-docs.deepseek.com/quick_start/pricing", dateAccessed: "2026-08-17" },
     { name: "DeepSeek API Change Log: V4-Pro GA (DeepSeek-V4-Pro-0813), benchmarks, thinking-effort levels, 2026-08-16 pricing change (2026-08-13)", url: "https://api-docs.deepseek.com/updates", dateAccessed: "2026-08-13" },
     { name: "DeepSeek Models & Pricing: current rates plus the peak/off-peak table effective 16:00 UTC 2026-08-16", url: "https://api-docs.deepseek.com/quick_start/pricing", dateAccessed: "2026-08-13" },
     { name: "DeepSeek V4 API launch announcement + 7/24 alias retirement (re-checked 2026-07-22)", url: "https://api-docs.deepseek.com/news/news260424", dateAccessed: "2026-07-22" },
@@ -169,6 +175,6 @@ export const deepseek: ToolReview = {
     tone: "Direct and technical. DeepSeek's chat models give compact, math- and code-first answers and are noticeably less chatty than Claude or ChatGPT. When asked to reason, they expose a lot of visible thinking.",
     quirks: "Refusal patterns differ from Western models -- more permissive on many technical and gray-area prompts, more cautious on China-specific political questions. Community-tuned variants exist with different system prompts and guardrails.",
   },
-  metaTitle: "DeepSeek V4 Review 2026: V4-Pro + V4-Flash (Apr 24 Launch), Open Source",
-  metaDescription: "DeepSeek V4 shipped April 24, 2026. V4-Pro (1.6T/49B MoE) + V4-Flash (284B/13B) both open-source with 1M context. $0.14-$3.48 per 1M tokens. Trails only Gemini 3.1 Pro on world knowledge.",
+  metaTitle: "DeepSeek V4 Review 2026: V4-Pro GA + the Aug 16 Peak/Off-Peak Price Rise",
+  metaDescription: "DeepSeek V4-Pro reached GA August 13, 2026. On August 16 DeepSeek switched to peak/off-peak API pricing -- V4-Pro is now $0.66/$1.98 off-peak and $1.32/$3.96 peak, up from a flat $0.435/$0.87. Despite the 'off-peak' framing there is no hour at which it is cheaper than before.",
 };
