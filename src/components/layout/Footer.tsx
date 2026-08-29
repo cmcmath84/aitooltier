@@ -167,7 +167,18 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 border-t border-border pt-6 text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} AIToolTier. All rights reserved.
+          <p>&copy; {new Date().getFullYear()} AIToolTier. All rights reserved.</p>
+          <p className="mt-1.5">
+            Powered by{" "}
+            <a
+              href="https://www.mcmathmatics.com"
+              target="_blank"
+              rel="noopener"
+              className="underline underline-offset-2 hover:text-foreground transition-colors"
+            >
+              McMathmatics
+            </a>
+          </p>
         </div>
       </div>
     </footer>
