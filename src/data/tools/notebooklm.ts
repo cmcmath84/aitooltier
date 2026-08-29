@@ -2,8 +2,8 @@ import { ToolReview } from "@/lib/types";
 
 export const notebookLm: ToolReview = {
   slug: "notebooklm",
-  name: "NotebookLM",
-  tagline: "Google's free research assistant that turns your documents into an AI you can query -- and a podcast you can listen to",
+  name: "Gemini Notebook (formerly NotebookLM)",
+  tagline: "Google's free research assistant that turns your documents into an AI you can query -- and a podcast you can listen to. **Renamed from NotebookLM to Gemini Notebook on 2026-07-16**, still a standalone product, now with in-notebook code execution and syncing across the Gemini app and Search. **Expert Intelligence (2026-08-27) makes purchased Play Books ebooks a first-class source**; compute-weighted usage limits that refresh every 5 hours roll out 2026-09-02",
   category: "ai-chatbots",
   url: "https://notebooklm.google.com",
 
@@ -37,6 +37,21 @@ export const notebookLm: ToolReview = {
     "Collaboration is improving via the new Notebooks-in-Gemini integration but team workflows are still thinner than in dedicated research tools",
   ],
   knownIssues: [
+    {
+      description: "THE PRODUCT WAS RENAMED TO GEMINI NOTEBOOK ON 2026-07-16 AND THIS PAGE MISSED IT FOR SIX WEEKS (2026-07-16, vendor-primary -- staleness catch, recorded 2026-08-28): Google renamed **NotebookLM to Gemini Notebook**. This review was last checked 2026-07-04, twelve days before the rename, and four subsequent sweeps did not catch it -- the same failure class as the Grammarly/Superhuman miss. **It is explicitly still a standalone product**, not a feature folded into the Gemini app: Google's wording is 'It remains a standalone product focused on being your premier research tool.' What changed alongside the name: **code execution inside notebooks** for deeper data analysis (rolling out to Pro users), a **secure cloud computer** behind it, and **notebooks syncing across the Gemini app and Google Search**. Scale figures Google published at the rename: **more than 30 million people and over 600,000 organizations**. **We keep the /notebooklm URL deliberately** -- the old name still carries the search demand, and the page now serves both queries.",
+      source: "Google (blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/, on-page 'Jul 16, 2026') -- fetched 2026-08-28 via curl",
+      date: "2026-07-16",
+    },
+    {
+      description: "EXPERT INTELLIGENCE -- PURCHASED BOOKS BECOME NOTEBOOK SOURCES (2026-08-27, vendor-primary): Google launched Expert Intelligence, a cross-Google initiative that lets you pull '**insights from leading authors, publications, and domain experts**' into Gemini Notebook, **including from titles you have purchased**. Concretely: **select ebooks bought from Google Play Books can be added directly to a notebook**, and answers are grounded in that book. This is a genuine change to the sourcing model -- Gemini Notebook has always been strictly bring-your-own-documents, and this is the first time licensed third-party commercial content is a first-class source. **Gemini Notebook is the launch surface, with 'more products from across Google joining soon'** -- so expect this in the Gemini app and Search later. **CAVEAT WORTH KEEPING: it is limited to *select* purchased titles, so it is a publisher-by-publisher licensing rollout, not your whole Play Books library.**",
+      source: "Google (blog.google/innovation-and-ai/products/gemini-notebook/expert-intelligence-leading-sources/, on-page 'Aug 27, 2026', RSS pubDate 'Thu, 27 Aug 2026 19:30:00 +0000') -- fetched 2026-08-28 via curl",
+      date: "2026-08-27",
+    },
+    {
+      description: "FLEXIBLE, COMPUTE-WEIGHTED USAGE LIMITS -- ANNOUNCED 8/28, ROLLING OUT 9/2 (2026-08-28, vendor-primary): Google is replacing Gemini Notebook's flat daily caps with '**compute-specific**' limits. **The two changes that actually matter to a heavy user point in opposite directions.** (1) **Limits refresh every five hours rather than daily** -- strictly better; you are no longer locked out for a full day after one heavy session. (2) **Your overall limit now factors in prompt complexity, chat length, number of sources, and which features you use** -- so an identical number of prompts can consume materially different amounts of quota, and the ceiling becomes harder to predict than a plain daily count. Google frames this as 'more control over your compute budget'; the honest read is that it is **metering that tracks cost rather than actions**. The notebook surfaces your usage and will suggest cheaper alternative outputs when a request would exceed the limit, and expensive artefacts (**Video Overviews, Slide Decks**) can be **deferred to generate automatically later** with a notification. **DATED WATCH -- these are rolling out to consumer accounts on web and mobile starting 2026-09-02, so as of this review they are announced and not yet live.** Google states all existing features remain accessible.",
+      source: "Google (blog.google/innovation-and-ai/products/gemini-notebook/new-flexible-usage-limits/, on-page 'Aug 28, 2026', RSS pubDate 'Fri, 28 Aug 2026 17:00:00 +0000') -- fetched 2026-08-28 via curl",
+      date: "2026-08-28",
+    },
     {
       description: "NEW FEATURE (2026-07-01): NotebookLM added **Short Video Overviews** -- it generates ~60-second vertical (Shorts/Reels/TikTok-style) videos from your uploaded documents, extending the two-host Audio/Video Overview format into a social-native short clip. Pairs with the June Gemini 3.5 upgrade and the longer Cinematic Video Overviews already in the product. Practical use: turn a source doc into a shareable short without a separate video tool.",
       source: "The Verge (theverge.com/tech/959778/google-notebooklm-ai-clips)",
@@ -82,8 +97,11 @@ export const notebookLm: ToolReview = {
   notFor: "People who want a general-purpose AI chatbot -- NotebookLM deliberately won't answer questions outside your uploaded sources. Also not for teams needing shared workspaces.",
   verdict: "NotebookLM is the rare Google product that's both free and genuinely useful. The source-grounded approach means you can trust the answers more than a general chatbot, and Audio Overviews are a legitimately novel feature. The limitations are real -- the 50-source cap, no collaboration, and no general knowledge -- but for individual research and document synthesis, nothing else is this good at this price (free). It feels like Google's loss leader for Workspace AI, so enjoy it while it lasts.",
 
-  lastReviewedDate: "2026-07-04",
+  lastReviewedDate: "2026-08-28",
   dataSources: [
+    { name: "Google: NotebookLM is now Gemini Notebook (2026-07-16)", url: "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/", dateAccessed: "2026-08-28" },
+    { name: "Google: Expert Intelligence (2026-08-27)", url: "https://blog.google/innovation-and-ai/products/gemini-notebook/expert-intelligence-leading-sources/", dateAccessed: "2026-08-28" },
+    { name: "Google: Flexible usage limits for Gemini Notebook (2026-08-28)", url: "https://blog.google/innovation-and-ai/products/gemini-notebook/new-flexible-usage-limits/", dateAccessed: "2026-08-28" },
     { name: "The Verge: NotebookLM Short Video Overviews (2026-07-01)", url: "https://www.theverge.com/tech/959778/google-notebooklm-ai-clips", dateAccessed: "2026-07-04" },
     { name: "blog.google: Notebooks in Gemini + NotebookLM (Apr 2026)", url: "https://blog.google/innovation-and-ai/products/gemini-app/notebooks-gemini-notebooklm/", dateAccessed: "2026-04-25" },
     { name: "Google Workspace Updates: Expanded NotebookLM for Education Plus + Teaching and Learning", url: "https://workspaceupdates.googleblog.com/2026/04/expanded-notebooklm-capabilities-for-Education-Plus-and-Teaching-and-Learning-add-on-customers.html", dateAccessed: "2026-04-25" },
@@ -98,6 +116,6 @@ export const notebookLm: ToolReview = {
     tone: "Careful and citation-only. NotebookLM only answers from the documents you upload -- if the source does not say it, NotebookLM will not make it up, and it will tell you when the corpus is silent.",
     quirks: "Refuses to speculate beyond your notebook, which makes it the least 'personality'-driven chatbot on this list. The Audio Overview feature is genuinely different though -- two synthetic podcast hosts summarize your docs with real banter.",
   },
-  metaTitle: "NotebookLM Review 2026: Google's Free AI Research Tool With Audio Overviews",
-  metaDescription: "NotebookLM review. Free AI tool that queries your documents and generates podcast summaries. No hallucinations from outside sources. Scores, features. March 2026.",
+  metaTitle: "Gemini Notebook (formerly NotebookLM) Review 2026: Rename, Expert Intelligence + New Usage Limits",
+  metaDescription: "Gemini Notebook review -- NotebookLM was renamed on 2026-07-16. Free source-grounded research AI with Audio Overviews, now with code execution, Expert Intelligence ebook sources, and 5-hourly compute-weighted limits from 2026-09-02.",
 };
