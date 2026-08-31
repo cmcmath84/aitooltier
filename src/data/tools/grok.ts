@@ -74,6 +74,11 @@ export const grok: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "GROK BOT GETS A FIRST-PARTY X INTEGRATION, AND xAI HANDS OUT X API CREDITS TO PULL YOU IN (2026-08-29, vendor-primary): xAI shipped an X connector for **Grok Bot**. The mechanics are unusually frictionless and that is the point: '**Connect your X account in Grok Bot and we'll create a developer account for you if you don't have one**' -- so the X developer-account step, historically the barrier to building anything against X, is provisioned automatically. '**Paid Grok Bot users get free X API credits to start.**' Once connected you can ask a Bot to '**search posts, read your timeline, check mentions, or pull together what's happening on X**'. **WHY THIS IS MORE THAN A CONNECTOR:** X API access has been expensive and rationed since 2023, and xAI is now giving it away as a bundled benefit of a Grok subscription. **That converts a paywalled data asset into a customer-acquisition subsidy for the agent product** -- and it is only possible because SpaceX owns both, following the consolidation that closed 2026-08-14. Read alongside the 8/26 change that pushed Grok Bot down to Cursor Pro and every paid Cursor tier: within two weeks xAI has both widened who gets Grok Bot and deepened what it can reach. **CAVEATS, AND xAI STATES THEM ITSELF:** '**This is the first version of this integration**', with no capability guarantees beyond the four read-oriented actions listed. **The credit grant is characterised only as 'free X API credits to start'** -- no volume, no duration, and no published rate for what happens after they run out, so do not build a production workflow on this without pricing the fallback. Access requires signing in with the X connector from inside Grok Bot.",
+      source: "xAI (x.ai/news/grok-bot-and-x, on-page 'Aug 29, 2026') -- fetched 2026-08-31 via curl with browser UA (x.ai 403s WebFetch)",
+      date: "2026-08-29",
+    },
+    {
       description: "GROK 4.6 ON GOOGLE'S GEMINI ENTERPRISE AGENT PLATFORM, WITH A PUBLISHED RATE CARD (2026-08-21, vendor-primary): Grok 4.6 became available through **Model Garden** on the Gemini Enterprise Agent Platform. **Pricing, verbatim from xAI: $2.00 per 1M input, $0.50 per 1M cached input, $6.00 per 1M output.** Same 500k context and low/medium/high/xhigh reasoning efforts. **PRICE CORRECTION WORTH KEEPING: our daily triage reported cached input at $0.30 per 1M. The vendor page says $0.50. We ship $0.50** -- if an aggregator later shows $0.30, this note is why we did not follow it. Note also that xAI's post title says 'Vertex AI' in the URL slug while the page body consistently says **Gemini Enterprise Agent Platform**; Google renamed the surface, and the body text is the current name.",
       source: "xAI (x.ai/news/grok-4-6-vertex-ai, on-page 'Aug 21, 2026') -- fetched 2026-08-28 via curl with browser UA",
       date: "2026-08-21",
@@ -193,8 +198,9 @@ export const grok: ToolReview = {
   notFor: "Enterprise users who need reliable, consistent outputs. Also not the best pick if you don't use X -- the real-time data advantage disappears and you're left with a solid-but-not-best-in-class LLM.",
   verdict: "Grok has come a long way from being dismissed as Elon's pet project. The Grok 3 models are legitimately competitive, and the real-time X integration is a unique differentiator that no other chatbot can match. But the value proposition gets muddier when you strip away the X angle -- at $30/mo for SuperGrok, you're paying a premium for personality and Twitter data. If those matter to you, Grok is great. If not, Claude or ChatGPT give you more for less.",
 
-  lastReviewedDate: "2026-08-28",
+  lastReviewedDate: "2026-08-31",
   dataSources: [
+    { name: "xAI: Grok Bot now works with X -- X connector, auto-provisioned developer account, free X API credits for paid users (2026-08-29)", url: "https://x.ai/news/grok-bot-and-x", dateAccessed: "2026-08-31" },
     { name: "xAI: Grok 4.6 on Gemini Enterprise Agent Platform (2026-08-21)", url: "https://x.ai/news/grok-4-6-vertex-ai", dateAccessed: "2026-08-28" },
     { name: "xAI: Grok 4.6 on Microsoft Foundry (2026-08-26)", url: "https://x.ai/news/grok-4-6-microsoft-foundry", dateAccessed: "2026-08-28" },
     { name: "xAI: Grok Bot is now included with more plans (2026-08-26)", url: "https://x.ai/news/grok-bot-more-plans", dateAccessed: "2026-08-28" },

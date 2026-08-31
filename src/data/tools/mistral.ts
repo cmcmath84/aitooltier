@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const mistral: ToolReview = {
   slug: "mistral",
   name: "Mistral AI",
-  tagline: "European AI lab with open and commercial models -- Le Chat is now **Vibe** (May 28 2026): one agent across Work Mode + Code Mode with a VS Code extension and CLI, powered by Mistral Medium 3.5 (128B dense, 256k context, 77.6% SWE-Bench Verified). Newest release: **Shieldstral 1.0** (Aug 4 2026), a 3B Apache 2.0 multimodal safety classifier that runs on one 16GB GPU. Earlier 2026 line: Small 4 (119B MoE Apache 2.0), Medium 3, Voxtral TTS",
+  tagline: "European AI lab with open and commercial models -- Le Chat is now **Vibe** (May 28 2026): one agent across Work Mode + Code Mode with a VS Code extension and CLI, powered by Mistral Medium 3.5 (128B dense, 256k context, 77.6% SWE-Bench Verified). Newest release: **Shieldstral 1.0** (Aug 4 2026), a 3B Apache 2.0 multimodal safety classifier that runs on one 16GB GPU. Earlier 2026 line: Small 4 (119B MoE Apache 2.0), Voxtral TTS. **Mistral Medium 3.1 and Medium 3 were both retired 2026-08-31** -- Medium 3.5 is the vendor-listed replacement for each",
   category: "ai-local-models",
   url: "https://mistral.ai",
 
@@ -22,7 +22,7 @@ export const mistral: ToolReview = {
       price: "$0",
       features: [
         "Web chat interface with Mistral models",
-        "Mistral Small 4 + Medium 3 available",
+        "Mistral Small 4 + Medium 3.5 available (Medium 3 retired 2026-08-31)",
         "Basic features, limited rate",
       ],
     },
@@ -47,13 +47,13 @@ export const mistral: ToolReview = {
       ],
     },
     {
-      plan: "API (Mistral Medium 3 -- predecessor)",
+      plan: "API (Mistral Medium 3 -- RETIRED 2026-08-31)",
       price: "$1",
-      period: "per 1M tokens",
+      period: "per 1M tokens -- no longer available",
       features: [
         "Launched April 9, 2026",
         "EU AI Act compliance metadata",
-        "Balanced price/performance, superseded by 3.5 for new workloads",
+        "**RETIRED 2026-08-31 alongside Medium 3.1** -- `mistral-medium-2505` was deprecated 2026-05-22 and reached retirement today; the vendor-listed replacement is **Mistral Medium 3.5**",
       ],
     },
     {
@@ -91,6 +91,11 @@ export const mistral: ToolReview = {
     "Documentation could be better, especially for newer models",
   ],
   knownIssues: [
+    {
+      description: "TWO MISTRAL MEDIUM GENERATIONS RETIRE TODAY -- MEDIUM 3.1 AND MEDIUM 3 BOTH HIT END-OF-LIFE 2026-08-31 (verified on Mistral's model lifecycle table): both models now sit in the **'Deprecated & retired models'** section of Mistral's models overview with a retirement date of **8/31/2026**. Specifically: **Mistral Medium 3.1** (`mistral-medium-2508`, v25.08) -- deprecated **5/22/2026**, retired **8/31/2026**; and **Mistral Medium 3** (`mistral-medium-2505`, v25.05) -- deprecated **5/22/2026**, retired **8/31/2026**. **The vendor-listed alternative for both is Mistral Medium 3.5.** **Why this matters more than a routine EOL:** Medium is Mistral's volume commercial tier, and this retires **two consecutive generations on the same day**, roughly 100 days after a single joint deprecation notice. If you pinned a model string rather than tracking an alias, a `mistral-medium-2508` or `mistral-medium-2505` call breaks today, and the migration target is a different model with a different price -- **Medium 3.5 is $1.5/$7.5 per 1M**, against the **$1 per 1M** this page recorded for Medium 3. **So for anyone still on Medium 3 the retirement is also a price increase, which the lifecycle table does not tell you.** Note Mistral's deprecation-to-retirement gap here was about **three months**, shorter than the twelve months OpenAI gave the Assistants API -- worth knowing when you plan around Mistral model lifetimes generally. Same-day cohort from the same 5/22 notice: **Devstral 2**, **Magistral Medium 1.2**, **Magistral Small 1.2** and **Mistral Nemo 12B** were all retired on 7/31, so this 8/31 pair is the tail of that wave rather than a new announcement.",
+      source: "Mistral (docs.mistral.ai/getting-started/models/models_overview/, 'Deprecated & retired models' table -- rows 'Mistral Medium 3.1 | 25.08 | mistral-medium-2508 | 5/22/2026 | 8/31/2026 | Mistral Medium 3.5' and 'Mistral Medium 3 | 25.05 | mistral-medium-2505 | 5/22/2026 | 8/31/2026 | Mistral Medium 3.5') -- fetched 2026-08-31 via curl",
+      date: "2026-08-31",
+    },
     {
       description: "AGENTIC SEARCH -- MISTRAL'S RETRIEVAL LAYER, WITH UNUSUALLY LARGE VENDOR BENCHMARK DELTAS (2026-08-20, vendor-primary): Mistral shipped **Agentic Search**, a multi-step retrieval loop positioned explicitly against one-shot RAG. Rather than handing a model a fixed set of retrieved chunks, it **navigates documents using five tools -- search, open, navigate, read and grep** -- and builds on your existing search index rather than requiring a new one. **AVAILABILITY:** through the **Mistral Search Toolkit**, and built into **Libraries in both Studio and Vibe**. Mistral stresses the deployment story for regulated buyers: 'portable and open tooling helps you unlock value from your data **without crossing your isolation boundaries** in the cloud or on-premises.' **THE VENDOR NUMBERS, QUOTED AND LABELLED AS VENDOR-MEASURED -- NO THIRD-PARTY VERIFICATION EXISTS YET:** on **FinanceBench**, correctness on financial filings goes **from 26.7% to 86%** (Mistral describes this as 'up to 3x correctness'); on **OfficeQA Pro**, table-heavy multi-document questions gain **+45.6 points, from 6.3% to 51.9%**; **p90 latency falls up to 39.6%** and token consumption drops '**by up to one-third**' from fewer repeated searches. **HOW TO READ THOSE DELTAS HONESTLY:** a 26.7% baseline is a one-shot RAG configuration Mistral chose, and the size of the gain is a statement about how badly chunk-based RAG performs on dense financial filings as much as about Agentic Search itself. The efficiency claims (latency, tokens) are the more transferable ones because they are architectural -- targeted navigation genuinely issues fewer retrieval calls. **NO PRICING IS PUBLISHED IN THE POST** and it does not state whether Agentic Search is metered separately from Search Toolkit usage; treat cost as unknown until Mistral's pricing page reflects it. **STRATEGIC READ:** this extends the 5/28 Search Toolkit into the agentic layer and pairs with the 8/11 in-region inference push -- Mistral is assembling a sovereignty-first enterprise stack where the differentiator is that the retrieval runs inside your boundary, not that the model is the smartest available",
       source: "Mistral AI (mistral.ai/news/agentic-search/, RSS pubDate 'Thu, 20 Aug 2026 12:00:17 GMT', fetched 2026-08-20 via curl)",
@@ -151,8 +156,9 @@ export const mistral: ToolReview = {
   notFor: "Non-technical users looking for a polished chat experience. ChatGPT and Claude are much better as consumer products.",
   verdict: "Mistral is the scrappy underdog that keeps surprising people. Their models are impressively efficient -- you get near-GPT-4 quality at a fraction of the API cost. But the consumer experience (Le Chat) is rough. This is primarily a developer's tool. If you're building AI applications on a budget, Mistral should be on your shortlist.",
 
-  lastReviewedDate: "2026-08-20",
+  lastReviewedDate: "2026-08-31",
   dataSources: [
+    { name: "Mistral docs: models overview + deprecated/retired model lifecycle table -- Medium 3.1 and Medium 3 both retired 2026-08-31, replacement Medium 3.5 (verified 2026-08-31)", url: "https://docs.mistral.ai/getting-started/models/models_overview/", dateAccessed: "2026-08-31" },
     { name: "Mistral AI: Introducing Agentic Search -- FinanceBench 26.7% to 86%, OfficeQA Pro +45.6pt (2026-08-20)", url: "https://mistral.ai/news/agentic-search/", dateAccessed: "2026-08-20" },
     { name: "Mistral AI: In-region inference, open models, and new European infrastructure for sovereign AI -- Regional Endpoints GA, Priority Tier preview, GLM-5.2 hosting, ECUs (2026-08-11)", url: "https://mistral.ai/news/regional-inference-open-models-new-compute/", dateAccessed: "2026-08-13" },
     { name: "Mistral AI: Introducing Shieldstral (2026-08-04)", url: "https://mistral.ai/news/shieldstral/", dateAccessed: "2026-08-04" },
