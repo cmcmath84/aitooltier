@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const notebookLm: ToolReview = {
   slug: "notebooklm",
   name: "Gemini Notebook (formerly NotebookLM)",
-  tagline: "Google's free research assistant that turns your documents into an AI you can query -- and a podcast you can listen to. **Renamed from NotebookLM to Gemini Notebook on 2026-07-16**, still a standalone product, now with in-notebook code execution and syncing across the Gemini app and Search. **Expert Intelligence (2026-08-27) makes purchased Play Books ebooks a first-class source**; compute-weighted usage limits that refresh every 5 hours roll out 2026-09-02",
+  tagline: "Google's free research assistant that turns your documents into an AI you can query -- and a podcast you can listen to. **Renamed from NotebookLM to Gemini Notebook on 2026-07-16**, still a standalone product, now with in-notebook code execution and syncing across the Gemini app and Search. **Expert Intelligence (2026-08-27) makes purchased Play Books ebooks a first-class source**; compute-weighted usage limits that refresh every 5 hours took effect 2026-09-02 (Google's help page still reads prospectively -- no delay announced)",
   category: "ai-chatbots",
   url: "https://notebooklm.google.com",
 
@@ -37,6 +37,11 @@ export const notebookLm: ToolReview = {
     "Collaboration is improving via the new Notebooks-in-Gemini integration but team workflows are still thinner than in dedicated research tools",
   ],
   knownIssues: [
+    {
+      description: "THE COMPUTE-WEIGHTED USAGE LIMITS DATE ARRIVED (2026-09-02) -- BUT GOOGLE'S OWN HELP PAGE STILL DESCRIBES THEM IN THE FUTURE TENSE (checked 2026-09-05): the 5-hourly, compute-weighted limits announced on 2026-08-28 were scheduled to take effect **2026-09-02**, and that date has now passed. **This page has been flipped to past tense on the strength of the scheduled date, with an explicit caveat: Google's Gemini Notebook support page still reads '<em>Starting on September 2, 2026, there will be changes to your usage limits for Gemini Notebook</em>'** -- prospective phrasing on a date three days gone. **DO NOT READ THAT AS EVIDENCE OF A DELAY.** There is no announcement of a postponement, no revised date, and no vendor statement withdrawing the change; the likeliest explanation by a wide margin is that the help-centre copy simply was not re-edited after the rollout, which is routine. But it is also not positive confirmation that the new limits are live for every account, and this sweep could not obtain one without an authenticated session. **What to do with that if you are budgeting against it: treat 2026-09-02 as the effective date, and treat the old flat daily caps as gone, but verify against your own account before relying on a specific refresh window.** The substance of the change is unchanged from the 8/28 entry below -- flat daily caps replaced by compute-specific limits that refresh every five hours, which helps light users and constrains heavy ones. **Flag for the next sweep: re-check whether Google has updated the support page wording, and downgrade this caveat once it has.**",
+      source: "Google (support.google.com/notebooklm -- Gemini Notebook usage limits notice, still reading 'Starting on September 2, 2026' when checked) -- fetched 2026-09-05 via curl with browser UA",
+      date: "2026-09-02",
+    },
     {
       description: "THE PRODUCT WAS RENAMED TO GEMINI NOTEBOOK ON 2026-07-16 AND THIS PAGE MISSED IT FOR SIX WEEKS (2026-07-16, vendor-primary -- staleness catch, recorded 2026-08-28): Google renamed **NotebookLM to Gemini Notebook**. This review was last checked 2026-07-04, twelve days before the rename, and four subsequent sweeps did not catch it -- the same failure class as the Grammarly/Superhuman miss. **It is explicitly still a standalone product**, not a feature folded into the Gemini app: Google's wording is 'It remains a standalone product focused on being your premier research tool.' What changed alongside the name: **code execution inside notebooks** for deeper data analysis (rolling out to Pro users), a **secure cloud computer** behind it, and **notebooks syncing across the Gemini app and Google Search**. Scale figures Google published at the rename: **more than 30 million people and over 600,000 organizations**. **We keep the /notebooklm URL deliberately** -- the old name still carries the search demand, and the page now serves both queries.",
       source: "Google (blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/, on-page 'Jul 16, 2026') -- fetched 2026-08-28 via curl",
@@ -97,8 +102,9 @@ export const notebookLm: ToolReview = {
   notFor: "People who want a general-purpose AI chatbot -- NotebookLM deliberately won't answer questions outside your uploaded sources. Also not for teams needing shared workspaces.",
   verdict: "NotebookLM is the rare Google product that's both free and genuinely useful. The source-grounded approach means you can trust the answers more than a general chatbot, and Audio Overviews are a legitimately novel feature. The limitations are real -- the 50-source cap, no collaboration, and no general knowledge -- but for individual research and document synthesis, nothing else is this good at this price (free). It feels like Google's loss leader for Workspace AI, so enjoy it while it lasts.",
 
-  lastReviewedDate: "2026-08-28",
+  lastReviewedDate: "2026-09-05",
   dataSources: [
+    { name: "Google Support: Gemini Notebook usage limits notice -- still phrased 'Starting on September 2, 2026' when checked on 2026-09-05", url: "https://support.google.com/notebooklm/answer/16213268", dateAccessed: "2026-09-05" },
     { name: "Google: NotebookLM is now Gemini Notebook (2026-07-16)", url: "https://blog.google/innovation-and-ai/products/gemini-notebook/notebooklm-gemini-notebook/", dateAccessed: "2026-08-28" },
     { name: "Google: Expert Intelligence (2026-08-27)", url: "https://blog.google/innovation-and-ai/products/gemini-notebook/expert-intelligence-leading-sources/", dateAccessed: "2026-08-28" },
     { name: "Google: Flexible usage limits for Gemini Notebook (2026-08-28)", url: "https://blog.google/innovation-and-ai/products/gemini-notebook/new-flexible-usage-limits/", dateAccessed: "2026-08-28" },
@@ -117,5 +123,5 @@ export const notebookLm: ToolReview = {
     quirks: "Refuses to speculate beyond your notebook, which makes it the least 'personality'-driven chatbot on this list. The Audio Overview feature is genuinely different though -- two synthetic podcast hosts summarize your docs with real banter.",
   },
   metaTitle: "Gemini Notebook (formerly NotebookLM) Review 2026: Rename, Expert Intelligence + New Usage Limits",
-  metaDescription: "Gemini Notebook review -- NotebookLM was renamed on 2026-07-16. Free source-grounded research AI with Audio Overviews, now with code execution, Expert Intelligence ebook sources, and 5-hourly compute-weighted limits from 2026-09-02.",
+  metaDescription: "Gemini Notebook review -- NotebookLM was renamed on 2026-07-16. Free source-grounded research AI with Audio Overviews, now with code execution, Expert Intelligence ebook sources, and 5-hourly compute-weighted limits in effect since 2026-09-02.",
 };

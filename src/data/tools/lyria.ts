@@ -2,8 +2,8 @@ import { ToolReview } from "@/lib/types";
 
 export const lyria: ToolReview = {
   slug: "lyria",
-  name: "Lyria 3 Pro (Google)",
-  tagline: "Google DeepMind's music generation model -- 3-minute structured songs with intro, verse, chorus, and outro control",
+  name: "Lyria 3.5 (Google)",
+  tagline: "Google DeepMind's music generation model. **Lyria 3.5 launched 2026-09-04** in the Gemini app and Gemini API -- more expressive vocals, richer arrangements, genre and vocal/instrumental selection, starter templates and a choice of short or longer tracks. **Available to all users globally on web and mobile**, plus Google Flow Music, AI Studio and Google Vids. No API rate card, track-length spec or commercial-rights statement published for 3.5 yet. The Lyria 3 Pro line brought 3-minute structured songs with intro, verse, chorus and outro control",
   category: "ai-music-generators",
   url: "https://deepmind.google/models/lyria/",
 
@@ -40,6 +40,11 @@ export const lyria: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "LYRIA 3.5 SHIPS TO THE GEMINI APP AND THE GEMINI API -- AND IT IS GLOBAL AND FREE-TIER-REACHABLE, WHICH IS THE COMPETITIVE FACT (2026-09-04, vendor-primary): Google launched **Lyria 3.5**, 'our best-sounding music generation model', now 'available in the Gemini app and the Gemini API'. Google describes '**more expressive vocals and richer musical arrangements**', allowing tracks 'with higher fidelity'. **AVAILABILITY IS THE HEADLINE, NOT THE MODEL.** Google states Lyria 3.5 is '**available to all users globally on the web and in the mobile app**' -- not gated behind Google AI Pro or Ultra, unlike Gemini 3.8 Flash which shipped two days earlier to paid tiers only. **A frontier-vendor music model reaching every Gemini user worldwide at no stated cost is direct pressure on the paid-subscription music generators**, which is the context this page's Suno and Udio comparisons should now be read in. **WHAT IS NEW IN THE GEMINI APP:** select or describe a genre and choose **vocal or instrumental**; **templates** to start from (Google names background music and custom birthday tracks); and the ability to **choose short or longer tracks** -- a change from the fixed-length generation this page has documented on the Lyria 3 Pro line. **OTHER SURFACES:** **Google Flow Music** for 'artists and AI creatives', and **Google AI Studio** and **Google Vids** for developers and technologists. **WHAT GOOGLE DID NOT PUBLISH:** no API rate card in this post, no maximum track length in seconds, no benchmark or listener-preference data, and no statement on commercial usage rights or SynthID watermarking for 3.5 specifically. **Do not assume the Lyria 3 Pro terms carry over** -- they are not restated here, and this page should not extend them to 3.5 until Google does.",
+      source: "Google (blog.google/innovation-and-ai/products/gemini-app/better-tracks-lyria-gemini/, root-RSS pubDate 'Fri, 04 Sep 2026 16:00:00 +0000', on-page 'Sep 04, 2026') -- fetched 2026-09-05 via curl with browser UA",
+      date: "2026-09-04",
+    },
+    {
       description: "LYRIA 3.5 SHIPPED (2026-07-29, vendor post): Google released **Lyria 3.5**, '**our newest music generation model**', which it says '**delivers significant advancements across musicality, lyrics, and vocal quality**'. Google's specifics: '**improved musicality: create richer, more complex melodic structures**', better lyric prompt-adherence and structural awareness, more realistic and emotionally nuanced vocals with improved pronunciation, and greater creative control over tempo and duration. **AVAILABILITY IS THE CATCH: it is rolling out in Google Flow Music.** The announcement makes **no mention of the Gemini app, the Gemini API, Vertex AI, or MusicFX**, so do not assume you can call it -- and it says nothing about SynthID watermarking, which prior Lyria material did document. Re-check API availability before planning around it",
       source: "Google (blog.google/innovation-and-ai/models-and-research/google-labs/lyria-3-5/, fetched 2026-08-03)",
       date: "2026-07-29",
@@ -59,8 +64,9 @@ export const lyria: ToolReview = {
   notFor: "Standalone music creators who don't use Google's ecosystem -- Suno or Udio give you a simpler workflow without subscription bundling.",
   verdict: "Lyria 3 Pro is Google's serious entry into the AI music race, and it shows -- 3-minute songs with structural control is a real step beyond Suno's 'one prompt, one song' approach. The $0.08/song API pricing is the most attractive part for developers. But for standalone creators, the fragmented subscription tiers and Google account lock-in make it less appealing than Suno or Udio. Worth it if you're already paying for Gemini Pro or Ultra. Otherwise, Suno is still the easier path.",
 
-  lastReviewedDate: "2026-08-03",
+  lastReviewedDate: "2026-09-05",
   dataSources: [
+    { name: "Google: Create your best tracks yet with Lyria 3.5 in Gemini (2026-09-04) -- global availability in the Gemini app and Gemini API, vocal/instrumental and length control", url: "https://blog.google/innovation-and-ai/products/gemini-app/better-tracks-lyria-gemini/", dateAccessed: "2026-09-05" },
     { name: "Google DeepMind Lyria page", dateAccessed: "2026-04-08" },
     { name: "Google blog: Lyria 3 Pro launch", dateAccessed: "2026-04-08" },
     { name: "TechCrunch coverage", dateAccessed: "2026-04-08" },
