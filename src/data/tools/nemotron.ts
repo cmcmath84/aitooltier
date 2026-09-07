@@ -45,6 +45,12 @@ export const nemotron: ToolReview = {
   ],
   knownIssues: [
     {
+      description:
+        "NVIDIA HAS AGREED TO ACQUIRE HUGGING FACE FOR $12,930,300,000 (announced 2026-09-03 by Jensen Huang on NVIDIA's own blog, confirmed the same day by Hugging Face on its homepage) -- THE OWNER OF NEMOTRON NOW ALSO OWNS THE HUB NEMOTRON IS DISTRIBUTED ON. This is the most consequential corporate fact in the open-weights ecosystem this year, and it is stated first-party by both sides, so it is not rumour: NVIDIA's post is by-lined Jensen Huang and gives an exact figure, and huggingface.co carries a banner reading 'We are happy to share our intention to join forces with **NVIDIA**' linking to it. **SCALE OF WHAT IS BEING BOUGHT, PER NVIDIA:** more than **18 million developers, researchers and creators**, more than **3 million models, 500,000 datasets and 1 million applications**, and more than **200,000 companies** using the platform. **THE COMMITMENTS NVIDIA MADE IN WRITING, WHICH ARE THE PART THAT MATTERS TO ANYONE RELYING ON THE HUB:** 'Hugging Face will remain an open platform for the entire AI ecosystem'; developers 'will choose the models they want, the frameworks they want, the clouds and inference service providers they want and the computing platforms they want'; and, explicitly, **'NVIDIA compute will not be required to build on or deploy through Hugging Face'**, with continued support for **multi-cloud and multi-accelerator development and deployment** and for open models 'from every model builder'. **NVIDIA'S STATED STANDING IN THE ECOSYSTEM:** it calls itself 'the largest contributor of open models and data to Hugging Face', citing **more than 500 models and more than 250 open datasets** released there -- Nemotron among them. **READ THE CONFLICT OF INTEREST HONESTLY RATHER THAN EITHER DISMISSING IT OR OVERSTATING IT.** The neutrality commitments above are unusually specific and were made unprompted, which is meaningful. But the structural fact is unchanged: the company that sells the accelerators, and that publishes Nemotron in competition with every other open-weights family on the hub, now controls the **default distribution and discovery surface** for all of them -- including model cards, search ranking and the download path. None of the commitments are time-bound or externally enforceable. **WHAT IS NOT KNOWN, AND DO NOT LET AN AGGREGATOR FILL IT IN:** NVIDIA's post is an intention-to-acquire announcement and contains **no closing date, no regulatory-approval language and no customary-conditions clause**. The deal is agreed, not closed. Treat any reported completion date as unsourced until NVIDIA or Hugging Face says so",
+      source: "NVIDIA blog (blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/, JSON-LD datePublished 2026-09-03, by Jensen Huang); Hugging Face homepage announcement banner (huggingface.co) -- both fetched 2026-09-07",
+      date: "2026-09-03",
+    },
+    {
       description: "NEMOTRON 3 ULTRA SHIPPED (2026-06-04, announced at Computex 6/1): the family flagship is live -- 550B total / 55B active hybrid Mamba-Transformer MoE, NVFP4 precision, Nvidia claims ~5x throughput vs comparable open models and ~30% lower cost on long-running agentic tasks (vendor numbers, third-party verification pending). Available on Hugging Face, NVIDIA NIM, build.nvidia.com, OpenRouter, and Perplexity Pro. Correction to earlier coalition note: Nemotron 3 Super (120B total / 12B active, 1M-token context) had already shipped 2026-03-11 -- the 'Super/Ultra expected H1 2026' framing is obsolete",
       source: "Nvidia developer blog (Ultra + Super launch posts), Nvidia newsroom",
       date: "2026-06",
@@ -74,8 +80,10 @@ export const nemotron: ToolReview = {
   notFor: "Apple Silicon / AMD GPU users -- Mamba hybrid kernels are Nvidia-first. Also not ideal if you want maximum community support (use Llama or Qwen).",
   verdict: "Nemotron is Nvidia's bet that architecture innovation (hybrid Mamba-Transformer MoE) beats pure scale. The bet largely pays off: Nemotron 3 Super runs on a gaming GPU while posting reasoning scores that rival much larger dense models. If you're deployed on Nvidia hardware and need efficient long-context inference, Nemotron is the natural pick. If you're not on Nvidia or need absolute frontier quality, Qwen3 or DeepSeek are stronger options.",
 
-  lastReviewedDate: "2026-07-05",
+  lastReviewedDate: "2026-09-07",
   dataSources: [
+    { name: "NVIDIA blog: NVIDIA to Acquire Hugging Face (2026-09-03, by Jensen Huang)", url: "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/", dateAccessed: "2026-09-07" },
+    { name: "Hugging Face homepage -- announcement banner confirming intention to join forces with NVIDIA", url: "https://huggingface.co/", dateAccessed: "2026-09-07" },
     { name: "Nvidia developer blog: Nemotron 3 Ultra launch", url: "https://developer.nvidia.com/blog/nvidia-nemotron-3-ultra-powers-faster-more-efficient-reasoning-for-long-running-agents/", dateAccessed: "2026-07-05" },
     { name: "Nvidia developer blog: Introducing Nemotron 3 Super", url: "https://developer.nvidia.com/blog/introducing-nemotron-3-super-an-open-hybrid-mamba-transformer-moe-for-agentic-reasoning/", dateAccessed: "2026-07-05" },
     { name: "Nvidia press release: Nemotron Coalition", url: "https://nvidianews.nvidia.com/news/nvidia-launches-nemotron-coalition-of-leading-global-ai-labs-to-advance-open-frontier-models", dateAccessed: "2026-04-17" },
@@ -128,6 +136,6 @@ export const nemotron: ToolReview = {
     tone: "Polished, safe, and aimed at business use. Nemotron responses feel engineered -- consistent length, clear structure, little snark -- like it was optimized for predictability rather than personality.",
     quirks: "Heavy RLHF for workplace-friendly outputs. Great for enterprise deployment; less interesting for open-ended chat. Runs best on Nvidia stacks, which is the whole point -- you pay (or don't) for that optimization.",
   },
-  metaTitle: "Nvidia Nemotron Review 2026: Nemotron 3 Ultra 550B + Hybrid Mamba MoE",
-  metaDescription: "Nvidia Nemotron review. Nemotron 3 Ultra (550B/55B active, June 2026) + Super (120B/12B, 1M context). Hybrid Mamba-Transformer MoE, efficient long-context reasoning on Nvidia hardware. July 2026.",
+  metaTitle: "Nvidia Nemotron Review 2026: Nemotron 3 Ultra 550B + Nvidia Buys Hugging Face",
+  metaDescription: "Nvidia Nemotron review. Nemotron 3 Ultra (550B/55B active, June 2026) + Super (120B/12B, 1M context), hybrid Mamba-Transformer MoE. Plus Nvidia's agreement to acquire Hugging Face for $12.93B (September 3 2026) and what its open-platform commitments do and do not guarantee.",
 };

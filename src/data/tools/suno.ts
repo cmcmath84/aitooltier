@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const suno: ToolReview = {
   slug: "suno",
   name: "Suno",
-  tagline: "Type a sentence, get a full song back -- vocals, instruments, and all",
+  tagline: "Type a sentence, get a full song back -- vocals, instruments, and all. **Download limits and a new Terms of Service took effect 2026-09-03**: Free gets 7 lifetime trial downloads, Pro 20/month, Premier 60/month (unlimited for Premier via Suno Studio), applied retroactively to songs made before that date. Suno has also confirmed that **all current models will be retired when its first industry-partnered model generation launches** (no date given)",
   category: "ai-music-generators",
   url: "https://suno.com",
 
@@ -21,9 +21,11 @@ export const suno: ToolReview = {
       plan: "Free",
       price: "$0",
       features: [
-        "10 credits/day (5 songs)",
+        "50 credits renew daily (10 songs) -- v4.5-all only",
+        "**No monthly song downloads** -- 7 lifetime trial downloads only, personal use (since 2026-09-03)",
         "Non-commercial use only",
-        "2 concurrent generations",
+        "4 concurrent generations (shared queue)",
+        "No stem separation, no add-on credit purchases",
       ],
     },
     {
@@ -31,10 +33,12 @@ export const suno: ToolReview = {
       price: "$10",
       period: "month",
       features: [
-        "500 credits/mo (~250 songs)",
-        "Commercial use",
-        "10 concurrent generations",
-        "Priority queue",
+        "**$8/mo billed annually (save 20%)** -- the pricing page renders the annual view by default",
+        "2,500 credits/mo (up to 500 songs) -- v5.5 and all advanced models",
+        "**20 song downloads per month** (since 2026-09-03)",
+        "Commercial use rights for new songs made",
+        "2 stem separation types; upload up to 30 min of audio; custom models",
+        "10 concurrent generations, priority queue",
       ],
     },
     {
@@ -42,10 +46,13 @@ export const suno: ToolReview = {
       price: "$30",
       period: "month",
       features: [
-        "2,000 credits/mo (~1,000 songs)",
-        "Commercial use",
-        "10 concurrent generations",
-        "Priority queue",
+        "**$24/mo billed annually (save 20%)** -- the pricing page renders the annual view by default",
+        "10,000 credits/mo (up to 2,000 songs) -- v5.5 and all advanced models",
+        "**60 song downloads per month** -- unlimited when downloading via Suno Studio (since 2026-09-03)",
+        "Access to Suno Studio 2.0 (MIDI, effects, automation, custom plugins)",
+        "Commercial use rights for new songs made",
+        "3 stem separation types; upload up to 30 min of audio; custom models",
+        "10 concurrent generations, priority queue",
       ],
     },
   ],
@@ -63,6 +70,30 @@ export const suno: ToolReview = {
     "Audio quality tops out around demo-level -- don't expect anything you'd put on a commercial release without heavy post-production",
   ],
   knownIssues: [
+    {
+      description:
+        "DOWNLOAD LIMITS AND A NEW TERMS OF SERVICE TOOK EFFECT 2026-09-03 -- VERIFIED LIVE ON THE VENDOR'S OWN PAGES (announced 2026-08-10, effective 2026-09-03, confirmed on suno.com/terms and suno.com/pricing on 2026-09-07): this is the single biggest change to what a Suno subscription actually buys since the free tier launched, and it executed on schedule. **THE DOWNLOAD CAPS, VERBATIM FROM THE ANNOUNCEMENT:** '**Free: Up to 7 (lifetime) trial downloads. Pro: 20 downloads per month. Premier: 60 downloads per month.**' Confirmed live on the pricing page, which now reads '**No monthly song downloads**' for Free, '**20 song downloads per month**' for Pro and '**60 song downloads per month**' for Premier. **For Premier subscribers using Suno Studio there are NO download limits** -- so Studio is now the unlimited-export route and the practical reason to be on Premier. Additional downloads beyond the cap are **available for purchase**. **THE PART THAT WILL SURPRISE EXISTING USERS, AND SUNO SAYS IT PLAINLY:** '**Limits apply to all downloads starting September 3, including songs created before that date.**' The caps are **retroactive to your whole back catalogue** -- a library of a thousand songs made under the old unlimited-download regime is now gated behind 20 or 60 exports a month. Everything stays playable and shareable on the platform; it is specifically *export* that is metered. **TRIAL DOWNLOADS ARE ONE-TIME AND NON-COMMERCIAL:** 'Trial downloads don\u2019t reset monthly, they are a one-time allowance', and 'commercial rights apply to songs downloaded on paid plans' -- so a free user's 7 downloads carry **no commercial rights at all**. **THE NEW TERMS OF SERVICE, EFFECTIVE THE SAME DAY (suno.com/terms now reads 'Effective Date: September 3, 2026'):** two substantive changes. (1) **Content and commercial use** -- Suno 'clarified the rights you have in your content and how commercial use of music generated with Suno works'; songs downloaded on paid plans 'remain yours to use commercially or personally'. (2) **Dispute resolution** -- updates to the **Arbitration Agreement and provisions governing mass arbitrations**. That second one is the one to read closely if you are a commercial user: mass-arbitration provisions are specifically designed to blunt coordinated claims, and Suno is currently a defendant in active copyright litigation on two continents (see the GEMA and UMG/Sony entries below). **SUNO'S STATED RATIONALE:** 'limiting downloads will make it harder for bad actors to mass-export music' and ensures 'the platform is used for intentional music creation'. **THIS EXECUTES THE POLICY SHIFT THIS PAGE HAS FLAGGED AS A WATCH ITEM SINCE APRIL** -- the 2026-04 entry below predicted 'free-tier downloads removed, current pre-Warner models scheduled for deprecation later in 2026'. Half of that has now happened on the record; the model retirement has not (see the next entry)",
+      source: "Suno blog (suno.com/blog/suno-updates-tos, by-lined Aug 10, 2026, changes effective September 3, 2026); Suno Terms of Service (suno.com/terms, reading 'Effective Date: September 3, 2026'); Suno pricing page (suno.com/pricing) -- all three fetched 2026-09-07",
+      date: "2026-09-03",
+    },
+    {
+      description:
+        "SUNO HAS CONFIRMED THAT ALL CURRENT MODELS WILL BE RETIRED -- NO DATE, AND THIS IS THE BIGGEST UNPRICED RISK ON THE PLATFORM (stated 2026-08-10, still undated as of 2026-09-07): in the same post that set the download caps, Suno announced a coming '**new generation of Suno models, developed in partnership with the music industry**' and stated, verbatim: '**When the new models launch, all prior models will be retired.**' That means **v5.5, v5, v4.5+, v4.5 and v4 are all scheduled to disappear**, not be kept as legacy options. **WHAT SUNO PROMISES IS PRESERVED IS NARROWER THAN IT FIRST READS:** 'everything you\u2019ve already made will remain in your library. Every song will continue to be playable and shareable, and you can still use existing songs as the basis for covers and remixes.' So **your outputs survive; your ability to generate new material in the current models' voice does not.** If you have built a sound around a specific model version -- or a Custom Model tuned on your own audio under v5.5 -- there is no vendor commitment that it survives the transition. **THE CLAIMS ABOUT THE NEW MODELS ARE VENDOR-ONLY AND UNQUANTIFIED:** 'better than anything we\u2019ve ever released - on every metric we\u2019ve ever measured', generating 'outputs faster', 'higher fidelity audio', and 'more control'. **No benchmark, no sample, no date, and no third-party evaluation exists** -- treat all of it as marketing until the models ship. **WHY THIS CONNECTS TO THE LITIGATION:** these are the industry-partnered models trailed since the Warner deal (Dec 2025) and the BMG partnership (2026-08-12), so the retirement is very likely the point at which Suno stops serving models trained on the disputed corpus. **PRACTICAL ADVICE: if you rely on a current model, export what you need while your monthly download allowance is the only constraint** -- once the models are retired, regeneration is not an option",
+      source: "Suno blog (suno.com/blog/suno-updates-tos, 'New models coming soon' section) -- fetched 2026-09-07",
+      date: "2026-09-03",
+    },
+    {
+      description:
+        "SUNO STUDIO 2.0 SHIPPED 2026-08-13 -- AND IT IS NOW THE ONLY UNLIMITED-DOWNLOAD PATH (vendor-primary, caught 2026-09-07 on a staleness check; this page had never recorded it): Studio 2.0 is a Premier-tier DAW upgrade that materially changes who Suno is for. **MIDI, described by Suno as 'the most requested addition to Studio'** -- import, record and edit MIDI directly on the timeline, plus a **new wavetable synth** for sound design, and a genuinely novel touch: **MIDI clips can be used as a prompt for new audio generations**. You can play notes from a typing keyboard if you have no controller. **CHAT BAR (BETA)** -- a conversational production assistant that can 'create instruments and vocals from scratch' and **design new plugins**, and will tidy up a session on request. **ADVANCED STEM SEPARATION** -- you can bring in audio from outside Suno, split it into stems and rearrange it in Studio, which makes Studio useful on material Suno did not generate. **AUDIO EFFECTS AND USER-DESIGNED PLUGINS.** **WHY IT MATTERS MORE NOW THAN IT DID IN AUGUST:** the 2026-09-03 download caps exempt Premier subscribers downloading through Studio, so Studio 2.0 went from 'nice extra on the top tier' to **the mechanism that avoids a hard export cap**. Read the Premier tier as a Studio subscription with generation attached, not the other way round",
+      source: "Suno blog (suno.com/blog/studio-2, by-lined Aug 13, 2026) -- fetched 2026-09-07",
+      date: "2026-08-13",
+    },
+    {
+      description:
+        "LANDMARK GLOBAL PARTNERSHIP WITH BMG (2026-08-12, vendor-primary; recorded 2026-09-07): CEO Mikey Shulman announced a global partnership with **BMG, one of the largest music companies**, and stated explicitly that the deal '**is part of our upcoming launch of our first music model developed with the music industry**'. This is the second major-label agreement after the Warner deal (Dec 2025) and it dates the licensed-model programme: BMG is a named partner in the model generation that will **retire all current models** (see the entry above). Suno frames the economics as opt-in -- 'new economic opportunities for artists and songwriters that **opt-in** to them' -- which is the structural difference from the training practices at issue in the GEMA and UMG/Sony cases. **KEEP THE SCOPE HONEST: this is BMG, not a blanket industry licence.** Universal and Sony litigation is still live (see below), and the Munich GEMA judgment still stands against Suno pending appeal. A partnership with one major does not resolve either",
+      source: "Suno blog (suno.com/blog/suno-partnership-bmg, by-lined Aug 12, 2026, by Mikey Shulman) -- fetched 2026-09-07",
+      date: "2026-08-12",
+    },
     {
       description:
         "SOURCE-CODE LEAK + DATA BREACH EXPOSES TRAINING-DATA SCRAPING (mid-July 2026, first reported by 404 Media ~7/15, covered by TechCrunch): a hacker leaked Suno source code after a **November 2025 supply-chain compromise** (traced to the Shai-Hulud npm attack) that captured an employee's credentials. The code allegedly documents mass scraping of copyrighted audio -- **YouTube Music (~113,879 hrs), Genius (~17,615 hrs), Deezer (~12,287 hrs)**, plus Pond5/Jamendo/Freesound/IMSLP, podcast RSS feeds, and stock libraries (hours per Music Business Worldwide / 404 Media). A parallel **user-data breach** reportedly exposed data on tens of millions of accounts (~55M cited), including emails, phone numbers, and partial credit-card / Stripe payment metadata. Suno characterized it as a 'limited security incident that was quickly contained,' said the exposed code was 'outdated / no longer in use,' and reportedly did not notify customers of the Nov 2025 breach. LEGAL WEIGHT: labels argue the scraping deliberately circumvented YouTube's protections (a DMCA / terms-of-service violation) -- potentially a 'smoking gun' that undercuts Suno's fair-use defense in the pending GEMA and UMG/Sony cases",
@@ -125,8 +156,13 @@ export const suno: ToolReview = {
   verdict:
     "Suno is the fastest way to go from an idea to a full song, and for casual use it's genuinely fun. But the lack of editing control and the inconsistent vocal quality mean it's better suited for content creators and hobbyists than anyone trying to produce polished tracks. The free tier is worth trying -- just don't expect studio quality.",
 
-  lastReviewedDate: "2026-08-03",
+  lastReviewedDate: "2026-09-07",
   dataSources: [
+    { name: "Suno blog: An update to our downloads policy and Terms of Service (by-lined 2026-08-10, effective 2026-09-03)", url: "https://suno.com/blog/suno-updates-tos", dateAccessed: "2026-09-07" },
+    { name: "Suno Terms of Service -- reads 'Effective Date: September 3, 2026'", url: "https://suno.com/terms", dateAccessed: "2026-09-07" },
+    { name: "Suno pricing page -- live per-tier download caps and credit allowances", url: "https://suno.com/pricing", dateAccessed: "2026-09-07" },
+    { name: "Suno blog: Introducing Studio 2.0 (2026-08-13)", url: "https://suno.com/blog/studio-2", dateAccessed: "2026-09-07" },
+    { name: "Suno blog: Announcing a Landmark Global Partnership with BMG (2026-08-12)", url: "https://suno.com/blog/suno-partnership-bmg", dateAccessed: "2026-09-07" },
     { name: "TechCrunch: Hack suggests Suno scraped YouTube for training data (2026-07-15)", url: "https://techcrunch.com/2026/07/15/hack-suggests-ai-music-generator-suno-scraped-youtube-for-training-data/", dateAccessed: "2026-07-22" },
     { name: "404 Media: Hack reveals Suno scraped YouTube, Deezer, and Genius", url: "https://www.404media.co/hack-reveals-suno-ai-music-generator-scraped-youtube-deezer-and-genius/", dateAccessed: "2026-07-22" },
     { name: "MLex: GEMA-Suno copyright ruling postponed to July 31", url: "https://www.mlex.com/mlex/articles/2481789/gema-suno-copyright-ruling-postponed-by-munich-court-to-july-31", dateAccessed: "2026-07-22" },
@@ -145,7 +181,7 @@ export const suno: ToolReview = {
   ],
   affiliateUrl: "https://suno.com",
   status: "active",
-  metaTitle: "Suno Review 2026: AI Music Generator + Suno Lost the GEMA Copyright Case (July 31)",
+  metaTitle: "Suno Review 2026: Download Limits Live Sept 3 (Free 7, Pro 20, Premier 60)",
   metaDescription:
-    "Suno review. Generate full songs with vocals from a text prompt. Plus the July 31, 2026 Munich ruling that Suno infringed copyright -- injunction, disclosure and damages -- the source-code leak, and where the US case stands. Scores, pricing, known issues.",
+    "Suno review. Download limits took effect September 3 2026 -- Free 7 lifetime trial downloads, Pro 20/month, Premier 60/month, unlimited via Suno Studio, applied retroactively to older songs. New Terms of Service same day (arbitration + mass-arbitration changes). Suno also confirms all current models will be retired when its industry-partnered generation ships. Plus the GEMA ruling and live pricing.",
 };
