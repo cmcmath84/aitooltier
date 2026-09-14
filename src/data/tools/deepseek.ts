@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const deepseek: ToolReview = {
   slug: "deepseek",
   name: "DeepSeek",
-  tagline: "DeepSeek V4 shipped 2026-04-24: V4-Pro (1.6T/49B active MoE) + V4-Flash (284B/13B active), 1M native context, Hybrid Attention Architecture, open-source on HF. **V4-Pro reached GA 2026-08-13** (Terminal Bench 2.1 87.9, three thinking-effort levels, native Responses API). **Pricing changed 2026-08-16 and the new rates are now live:** peak/off-peak billing raised rates at every hour of the day -- V4-Pro went from $0.435/$0.87 to **$0.66/$1.98 off-peak and $1.32/$3.96 peak**. Despite the 'off-peak' framing there is no hour at which it is cheaper than before",
+  tagline: "**DeepSeek-V4.1-Flash shipped 2026-09-10**: a 552B MoE on a new Causal Encoder-Decoder architecture (8B active for input, 16B for output), natively multimodal, MIT-licensed on HF, and priced BELOW the V4-Flash it replaces -- $0.15/$0.60 off-peak, $0.30/$1.20 peak per 1M, with cache-hit input cut to $0.003/$0.006. V4-Flash and V4-Flash-Vision-Exp are retired (aliases route to V4.1-Flash). DeepSeek said V4-Pro would be phased out on 9/14, then **reversed that four days later** -- V4-Pro stays on the API at unchanged $0.66/$1.98 off-peak, $1.32/$3.96 peak until V4.1-Pro lands. V4.1-Flash's vendor benchmarks beat V4-Pro (DeepSWE 74.2, Terminal-Bench 2.1 90.6, GPQA 90.9)",
   category: "ai-local-models",
   url: "https://www.deepseek.com",
 
@@ -20,19 +20,19 @@ export const deepseek: ToolReview = {
     {
       plan: "Free",
       price: "$0",
-      features: ["Web chat access at chat.deepseek.com", "V4-Flash by default (as of 2026-04-24 launch)", "Basic usage limits"],
+      features: ["Web chat access at chat.deepseek.com", "V4-Flash was the default from the 2026-04-24 launch; V4-Flash retired 2026-09-10 in favour of V4.1-Flash", "Basic usage limits"],
     },
     {
-      plan: "API -- V4-Flash",
-      price: "$0.22/$0.66 off-peak, $0.44/$1.32 peak",
-      period: "per 1M tokens input/output (peak/off-peak since 2026-08-16)",
-      features: ["284B total / 13B active MoE", "1M native context", "Still among the cheapest frontier-class APIs, but no longer at the old $0.14/$0.28 rate", "Peak hours 01:00-04:00 and 06:00-10:00 UTC; all other hours off-peak", "Cache-hit input $0.007 off-peak / $0.014 peak", "Pay-as-you-go, no minimum"],
+      plan: "API -- V4.1-Flash (model name `deepseek-flash`, since 2026-09-10)",
+      price: "$0.15/$0.60 off-peak, $0.30/$1.20 peak",
+      period: "per 1M tokens input/output (peak/off-peak; new rates effective 04:00 UTC 2026-09-10)",
+      features: ["552B total MoE, Causal Encoder-Decoder: 8B active for input, 16B active for output", "1M context, 384K max output, native vision input (no separate Vision model any more)", "PRICE CUT vs the retired V4-Flash: input down ~32% ($0.22 -> $0.15 off-peak), output down ~9% ($0.66 -> $0.60), cache-hit input down ~57% ($0.007 -> $0.003)", "Still above the pre-August flat V4-Flash rate on output ($0.28 -> $0.60 off-peak) -- the 8/16 rise is only partly unwound", "Peak hours 01:00-04:00 and 06:00-10:00 UTC Mon-Fri; all other hours off-peak", "Cache-hit input $0.003 off-peak / $0.006 peak", "Legacy names deepseek-v4-flash and deepseek-v4-flash-vision-exp still accepted, served by V4.1-Flash at Flash prices", "Concurrency limit 2500", "Pay-as-you-go, no minimum"],
     },
     {
       plan: "API -- V4-Pro",
       price: "$0.66/$1.98 off-peak, $1.32/$3.96 peak",
       period: "per 1M tokens input/output (peak/off-peak since 2026-08-16)",
-      features: ["1.6T total / 49B active MoE", "1M native context", "GA as DeepSeek-V4-Pro-0813 on 2026-08-13", "Trails only Gemini 3.1 Pro on world knowledge benchmarks", "PRICING CHANGED 2026-08-16 16:00 UTC (EXECUTED, verified live 8/17): the $0.435/$0.87 standing rate is gone, replaced by peak/off-peak billing at $0.66/$1.98 off-peak and $1.32/$3.96 peak -- a rise at every hour, not a discount. Peak hours are 01:00-04:00 and 06:00-10:00 UTC. See knownIssues", "Still cheaper than Western frontier models, but the gap narrowed sharply on 8/16"],
+      features: ["1.6T total / 49B active MoE", "1M native context", "GA as DeepSeek-V4-Pro-0813 on 2026-08-13", "STILL SERVED AFTER 2026-09-14: DeepSeek announced on 9/10 that all deepseek-v4-pro requests would route to V4.1-Flash from 9/14, then reversed on the change log and rate card -- 'we have decided to continue providing API services for DeepSeek V4 Pro after September 14, 2026, with the billing method remaining unchanged'", "No vision input (V4.1-Flash has it; V4-Pro does not)", "Trails only Gemini 3.1 Pro on world knowledge benchmarks", "PRICING CHANGED 2026-08-16 16:00 UTC (EXECUTED, verified live 8/17): the $0.435/$0.87 standing rate is gone, replaced by peak/off-peak billing at $0.66/$1.98 off-peak and $1.32/$3.96 peak -- a rise at every hour, not a discount. Peak hours are 01:00-04:00 and 06:00-10:00 UTC. See knownIssues", "Still cheaper than Western frontier models, but the gap narrowed sharply on 8/16"],
     },
     {
       plan: "Self-hosted (open-source)",
@@ -54,6 +54,11 @@ export const deepseek: ToolReview = {
     "Service reliability has been spotty during high-demand periods -- the free tier especially suffers from rate limiting",
   ],
   knownIssues: [
+    {
+      description: "DEEPSEEK-V4.1-FLASH LANDS ON A NEW ARCHITECTURE, RETIRES V4-FLASH, CUTS PRICES -- AND THE V4-PRO PHASE-OUT WAS ANNOUNCED THEN REVERSED WITHIN FOUR DAYS (2026-09-10 release, 2026-09-14 reversal; vendor-primary throughout): DeepSeek released **DeepSeek-V4.1-Flash**, 'the smallest model in our new architecture family', a **552B-parameter MoE** on a new **Causal Encoder-Decoder** design with **8B parameters active for input and 16B for output**, with **native visual understanding** built in -- so the separate V4-Flash-Vision-Exp line is gone. DeepSeek's headline engineering claim is KV-cache compression: the cache needs **1/4 the HBM and 1/8 the SSD storage** of the previous generation, which it links directly to agent cost ('cache-hit charges often account for a large share of agent costs'). **Weights on Hugging Face under MIT** (deepseek-ai/DeepSeek-V4.1-Flash, created 2026-09-10) with a technical report. **VENDOR BENCHMARKS (first-party, no third-party replication yet):** GPQA Diamond **90.9**, HLE **36.8** (39.1 text-only), Codeforces **3471**, MathArena Apex 65.6, Terminal-Bench 2.1 **90.6**, Terminal-Bench 3.0 30.0, Terminal-Bench 4.0 31.2, DeepSWE v1.1 **74.2**, NL2Repo 65.4, CyberGym **88.1**, SEC-Bench Pro 62.8, HLE with tools 63.9, Automation-Bench 54.8, Agents' Last Exam 31.8. **Compare to V4-Pro-0813's own GA numbers on this page: Terminal-Bench 2.1 87.9, DeepSWE 62.7, NL2Repo 61.5, CyberGym 83.3, Agents' Last Exam 25.7 -- the cheap model now beats the flagship on every shared row**, which DeepSeek states outright ('benchmark results ahead of flagship models, including DeepSeek-V4-Pro'). **API CHANGES:** set `model=deepseek-flash`. **V4-Flash and V4-Flash-Vision-Exp are retired**; the old names temporarily route to V4.1-Flash and are billed at Flash prices. **PRICING (new rates from 04:00 UTC 2026-09-10, verified on the live rate card):** off-peak **$0.003 cache-hit / $0.15 cache-miss input / $0.60 output** per 1M, peak **$0.006 / $0.30 / $1.20**; peak hours are still 01:00-04:00 and 06:00-10:00 UTC, now stated as **Monday through Friday**. Against the V4-Flash rates it replaces ($0.007 / $0.22 / $0.66 off-peak) that is a **~32% input cut, ~9% output cut and ~57% cache-hit cut** -- the first price reduction since the 8/16 rise, though output is still more than double the pre-August flat $0.28. **THE V4-PRO STORY IS THE ONE TO READ CAREFULLY, BECAUSE THE VENDOR CHANGED ITS MIND IN PUBLIC.** The 9/10 release post says: 'Tests by multiple parties put V4.1-Flash ahead of V4-Pro on performance, cost, speed & total runtime. **We're phasing out V4-Pro.** Starting at 04:00 UTC on Sept 14, 2026, all deepseek-v4-pro requests will route to V4.1-Flash at V4.1-Flash rates. This will continue until V4.1-Pro launches.' **Four days later the change log and the rate-card footnote both say the opposite:** 'In response to user demand, **we have decided to continue providing API services for DeepSeek V4 Pro after September 14, 2026, with the billing method remaining unchanged.** We will provide further notice should there be any changes.' The rate card still lists deepseek-v4-pro (DeepSeek-V4-Pro-0813) at $0.66/$1.98 off-peak and $1.32/$3.96 peak, concurrency 500. **So as of 2026-09-14: V4-Pro is alive, unchanged in price, and has no retirement date; a V4.1-Pro is promised with no date.** Aggregators that reported the 9/14 routing as executed are wrong; the news post itself still carries the superseded wording. **PRACTICAL READ:** for almost any workload V4.1-Flash is now the model to use on the DeepSeek API -- it is cheaper than V4-Pro by 4x on input and 3x on output, has vision, and scores higher on the vendor's own agentic suites. Reasons to stay on V4-Pro are limited to reproducibility of an existing pipeline and the 49B-active-parameter model's world-knowledge edge, which V4.1-Flash's benchmark list does not address. **Partners named at launch:** WorkBuddy (incl. CodeBuddy) and OpenCode. Third-party evaluation pending -- treat every number above as vendor-stated.",
+      source: "DeepSeek (api-docs.deepseek.com/news/news260910, on-page '2026/09/10'), DeepSeek API change log (api-docs.deepseek.com/updates, entry 'Date: 2026-09-10' carrying the V4-Pro continuation notice), DeepSeek Models & Pricing (api-docs.deepseek.com/quick_start/pricing, live rate card rendered via Firecrawl, footnote 2 = V4-Pro continuation), Hugging Face deepseek-ai/DeepSeek-V4.1-Flash (license: mit, createdAt 2026-09-10) -- all fetched 2026-09-14",
+      date: "2026-09-10",
+    },
     {
       description: "DEEPSEEK-V4-FLASH-VISION-EXP -- THE CHEAP TIER GETS EYES, AND A FREE FILES API LANDS WITH IT (2026-08-21, vendor-primary): DeepSeek put **DeepSeek-V4-Flash-Vision-Exp** live on the API Platform, an **experimental** multimodal model that DeepSeek says **matches V4-Flash on text** (agents, reasoning, world knowledge) while adding image input. Call it with `model='deepseek-v4-flash-vision-exp'`. **The billing detail is the one that decides whether this is actually cheap: images are tokenized at up to 384 tokens each and billed at V4-Flash pricing** -- so vision is not a separate premium rate, it is ordinary Flash tokens, which is unusually favourable. Supports **Chat Completions, Messages and Responses**, and mixed text+image input via base64, external URL, or the new Files API. **Files API is live and free to use**: upload an image once and reference it by `file_id` across requests instead of re-uploading. **DeepSeek Harness 0.1.1** shipped the same day with out-of-the-box support. **TREAT THE HEADLINE BENCHMARK CLAIM AS VENDOR-STATED AND UNVERIFIED: DeepSeek says that on multimodal agent benchmarks the model 'makes a major leap over V4-Flash, bringing multimodal agent performance close to Opus-4.8'.** No benchmark table, no named suite, no third-party confirmation -- and 'close to' a competitor's flagship is precisely the sort of claim that needs independent replication before it belongs in a ranking. **Also note the 'Exp' suffix: DeepSeek is labelling this experimental, so it is not a stability guarantee.**",
       source: "DeepSeek (api-docs.deepseek.com/news/news260821, on-page '2026/08/21') -- fetched 2026-08-28 via curl",
@@ -124,8 +129,12 @@ export const deepseek: ToolReview = {
   notFor: "Anyone working on content that touches geopolitical topics, or teams that need guaranteed uptime and enterprise SLAs. Also not ideal if your primary use case is creative English writing.",
   verdict: "DeepSeek is the real deal when it comes to bang-for-your-buck AI. The reasoning capabilities are legitimately impressive, and the open-source angle gives it a flexibility that closed models can't match. The censorship limitations are a dealbreaker for some use cases, and the writing quality trails behind Claude and GPT-4. But for coding, math, and analytical tasks? It's hard to argue with near-frontier performance at a fraction of the cost.",
 
-  lastReviewedDate: "2026-08-28",
+  lastReviewedDate: "2026-09-14",
   dataSources: [
+    { name: "DeepSeek: DeepSeek-V4.1-Flash release -- 552B MoE, 8B/16B active, native vision, V4-Flash retired, price cut, (superseded) V4-Pro phase-out notice (2026-09-10)", url: "https://api-docs.deepseek.com/news/news260910", dateAccessed: "2026-09-14" },
+    { name: "DeepSeek API Change Log: 2026-09-10 entry -- V4.1-Flash benchmarks, API changes, and the V4-Pro continuation after 2026-09-14 with billing unchanged", url: "https://api-docs.deepseek.com/updates", dateAccessed: "2026-09-14" },
+    { name: "DeepSeek Models & Pricing -- live rate card 2026-09-14: deepseek-flash $0.15/$0.60 off-peak, $0.30/$1.20 peak; deepseek-v4-pro unchanged; footnote confirming V4-Pro continues after 9/14", url: "https://api-docs.deepseek.com/quick_start/pricing", dateAccessed: "2026-09-14" },
+    { name: "Hugging Face: deepseek-ai/DeepSeek-V4.1-Flash (MIT, created 2026-09-10) + technical report", url: "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash", dateAccessed: "2026-09-14" },
     { name: "DeepSeek: DeepSeek-V4-Flash-Vision-Exp Release (2026-08-21)", url: "https://api-docs.deepseek.com/news/news260821", dateAccessed: "2026-08-28" },
     { name: "DeepSeek Models & Pricing -- LIVE peak/off-peak rate card after the 2026-08-16 16:00 UTC change (old $0.435/$0.87 rate no longer listed)", url: "https://api-docs.deepseek.com/quick_start/pricing", dateAccessed: "2026-08-17" },
     { name: "DeepSeek API Change Log: V4-Pro GA (DeepSeek-V4-Pro-0813), benchmarks, thinking-effort levels, 2026-08-16 pricing change (2026-08-13)", url: "https://api-docs.deepseek.com/updates", dateAccessed: "2026-08-13" },
@@ -144,7 +153,7 @@ export const deepseek: ToolReview = {
   affiliateUrl: "https://www.deepseek.com",
   status: "active",
   benchmarks: {
-    modelName: "DeepSeek V4-Pro (SWE-bench + Arena Elo third-party verified post-launch; knowledge rows are V3.x baseline pending V4 figures)",
+    modelName: "DeepSeek V4-Pro (SWE-bench + Arena Elo third-party verified post-launch; knowledge rows are V3.x baseline pending V4 figures). V4.1-Flash (2026-09-10) vendor-only so far: GPQA Diamond 90.9, DeepSWE 74.2, Terminal-Bench 2.1 90.6 -- third-party verification pending",
     scores: [
       { name: "MMLU", score: 90.8, maxScore: 100, unit: "%" },
       { name: "MMLU-Pro", score: 85.0, maxScore: 100, unit: "%" },
@@ -157,7 +166,13 @@ export const deepseek: ToolReview = {
   },
   systemRequirements: [
     {
-      variant: "DeepSeek V4-Flash (284B total, 13B active MoE)",
+      variant: "DeepSeek V4.1-Flash (552B total MoE, 8B active input / 16B active output) -- current Flash, 2026-09-10",
+      min: "Multi-GPU workstation: ~4x RTX 4090/5090 with aggressive quantization (552B of weights must be resident even at 8-16B active) -- experimental, community recipes pending",
+      max: "4x H100/H200 FP8 (production); the compressed KV cache (1/4 HBM vs V4-Flash per DeepSeek) is the main win for long-context serving",
+      notes: "MIT license, open weights on HuggingFace (deepseek-ai/DeepSeek-V4.1-Flash). Total parameter count nearly doubled vs V4-Flash, so it is LESS accessible on consumer hardware even though it is cheaper on the API. Hardware figures are estimates pending vendor/community deployment guides",
+    },
+    {
+      variant: "DeepSeek V4-Flash (284B total, 13B active MoE) -- retired from the API 2026-09-10, weights still downloadable",
       min: "96 GB RAM + 1× RTX 3090/4090 (Q4 quantization, ~3-5 tok/s)",
       max: "2× H100 FP8 or 1× H200 (FP8 production, fast)",
       notes: "MIT license, open weights on HuggingFace. Flash is the accessible entry point -- feasible on enthusiast / workstation hardware",
@@ -181,6 +196,6 @@ export const deepseek: ToolReview = {
     tone: "Direct and technical. DeepSeek's chat models give compact, math- and code-first answers and are noticeably less chatty than Claude or ChatGPT. When asked to reason, they expose a lot of visible thinking.",
     quirks: "Refusal patterns differ from Western models -- more permissive on many technical and gray-area prompts, more cautious on China-specific political questions. Community-tuned variants exist with different system prompts and guardrails.",
   },
-  metaTitle: "DeepSeek V4 Review 2026: V4-Pro GA + the Aug 16 Peak/Off-Peak Price Rise",
-  metaDescription: "DeepSeek V4-Pro reached GA August 13, 2026. On August 16 DeepSeek switched to peak/off-peak API pricing -- V4-Pro is now $0.66/$1.98 off-peak and $1.32/$3.96 peak, up from a flat $0.435/$0.87. Despite the 'off-peak' framing there is no hour at which it is cheaper than before.",
+  metaTitle: "DeepSeek Review 2026: V4.1-Flash Ships Sept 10, Cheaper Than V4-Flash, V4-Pro Stays",
+  metaDescription: "DeepSeek-V4.1-Flash launched September 10, 2026: 552B MoE, 8B/16B active, native vision, MIT weights, $0.15/$0.60 off-peak and $0.30/$1.20 peak per 1M -- a cut from V4-Flash, which is retired. DeepSeek announced a V4-Pro phase-out for Sept 14 and then reversed it: V4-Pro stays at $0.66/$1.98 off-peak. Vendor benchmarks put V4.1-Flash ahead of V4-Pro.",
 };

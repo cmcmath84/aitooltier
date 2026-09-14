@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const notionAi: ToolReview = {
   slug: "notion-ai",
   name: "Notion AI",
-  tagline: "AI built into Notion -- Custom Agents exited beta 2026-05-04/05 with admin controls (per-agent spend caps, workspace caps, auto-pause on limit) and credit billing live at $10 / 1,000 credits (~$0.17-$0.33 per agent run) as an add-on to Business/Enterprise",
+  tagline: "**Model controls (2026-09-09)**: Business/Enterprise workspace owners can now pick which AI models Notion Agent and Custom Agents may use and set a default -- a cost and compliance lever the page lacked. Also new since July: suggest-edits mode (8/28), a model picker with scorecards (8/14), the Developer Portal in the sidebar (8/19), and AI Meeting Notes triggering Custom Agents (7/31). AI built into Notion -- Custom Agents exited beta 2026-05-04/05 with admin controls (per-agent spend caps, workspace caps, auto-pause on limit) and credit billing live at $10 / 1,000 credits (~$0.17-$0.33 per agent run) as an add-on to Business/Enterprise",
   category: "ai-business-productivity",
   url: "https://notion.so",
 
@@ -66,6 +66,11 @@ export const notionAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "MODEL CONTROLS FOR AGENTS, SUGGEST-EDITS MODE, AND A MODEL PICKER WITH SCORECARDS -- SIX NOTION RELEASES SINCE THIS PAGE WAS LAST REVIEWED (2026-07-31 to 2026-09-09, all vendor release notes; page last reviewed 7/18): **(1) Model controls (2026-09-09):** 'workspace owners can choose which AI models are available in **Notion Agent and Custom Agents separately**, and set a default model for Custom Agents' -- pitched as 'keep costs predictable and support your compliance needs.' **Business and Enterprise plans only**, under Settings -> Notion AI -> General -> Model controls. This is the first admin-side lever over which vendor's model handles company data inside Notion, and it pairs with the per-agent spend caps recorded in May. **(2) Suggest edits (2026-08-28):** agents 'can now propose changes instead of making them directly' -- ask for 'suggest edits' and approve each one top to bottom; Notion positions it for line-level passes like grammar. **(3) Developer Portal in the sidebar (2026-08-19):** manage Workers, connections and personal access tokens from a new Developer section, see deployed Workers and per-run logs, and a **developer bar** that surfaces page/database/block/workspace/user IDs (or the full API object) in one click; enable under Settings -> Developer. **(4) Model selection, simplified (2026-08-14):** the picker 'now leads with a shortlist of models made for your hardest tasks, and every model has a **scorecard to compare speed, intelligence, and cost**', with pinning and an effort dial. **(5) Share context from the Share menu (2026-08-07)** -- share a doc or database directly to a Custom Agent. **(6) AI Meeting Notes can trigger Custom Agents (2026-07-31):** a 'Meeting note summarized' trigger runs an agent after a call -- update a tracker, post a recap, file tickets. **NET:** no pricing change and no plan restructure in the window; credit billing ($10 / 1,000 credits) and the Business/Enterprise gating on Custom Agents stand. The direction is admin control and agent governance, which is what Enterprise buyers were asking for after the May GA.",
+      source: "Notion releases (notion.com/releases/2026-09-09, /2026-08-28, /2026-08-19, /2026-08-14, /2026-08-07, /2026-07-31) -- all fetched 2026-09-14 via curl",
+      date: "2026-09-09",
+    },
+    {
       description: "PRODUCT (2026-07-09, vendor release notes): **Notion Workers are now shareable across teams** -- 'You can now share your Notion Workers': build a Worker once, distribute it to power Custom Agents across departments, with two permission tiers (`Can connect` = teammates use it; `Full access` = teammates can modify/repurpose it). Managed from the Developer Portal (Settings -> Connections). Example use: one teammate's Salesforce Worker powering sales + marketing agents org-wide. REMINDER on the money clock: Workers remain free until **August 11, 2026, when the credit system begins** (announced with Platform 3.5) -- shared Workers spreading through an org now will start metering then; audit which Workers teams depend on before the flip",
       source: "Notion releases (notion.com/releases/2026-07-09)",
       date: "2026-07-09",
@@ -111,8 +116,13 @@ export const notionAi: ToolReview = {
   verdict:
     "Notion AI is convenient, not exceptional. If Notion is already your team's brain, the AI features add genuine value for summarization and workspace search. But the writing output is mediocre, the per-member pricing adds up fast, and you can get better AI writing from dedicated tools. It's a nice-to-have, not a must-have.",
 
-  lastReviewedDate: "2026-07-18",
+  lastReviewedDate: "2026-09-14",
   dataSources: [
+    { name: "Notion releases 2026-09-09 -- Control which AI models your agents can use (Business/Enterprise)", url: "https://www.notion.com/releases/2026-09-09", dateAccessed: "2026-09-14" },
+    { name: "Notion releases 2026-08-28 -- Ask your agent to suggest edits", url: "https://www.notion.com/releases/2026-08-28", dateAccessed: "2026-09-14" },
+    { name: "Notion releases 2026-08-19 -- Developer Portal in the sidebar, developer bar", url: "https://www.notion.com/releases/2026-08-19", dateAccessed: "2026-09-14" },
+    { name: "Notion releases 2026-08-14 -- Model selection simplified, per-model scorecards", url: "https://www.notion.com/releases/2026-08-14", dateAccessed: "2026-09-14" },
+    { name: "Notion releases 2026-07-31 -- AI Meeting Notes can trigger Custom Agents", url: "https://www.notion.com/releases/2026-07-31", dateAccessed: "2026-09-14" },
     { name: "Notion releases 2026-07-09 (shareable Workers)", url: "https://www.notion.com/releases/2026-07-09", dateAccessed: "2026-07-18" },
     { name: "Notion releases 2026-04-14", url: "https://www.notion.com/releases/2026-04-14", dateAccessed: "2026-04-18" },
     { name: "Fazm Blog: Notion AI April 2026", url: "https://fazm.ai/blog/notion-ai-releases-april-2026-complete-list-of-every-ai-feature-shipped", dateAccessed: "2026-04-18" },
@@ -121,7 +131,6 @@ export const notionAi: ToolReview = {
   ],
   affiliateUrl: "https://notion.so",
   status: "active",
-  metaTitle: "Notion AI Review 2026: Useful Add-On or Overpriced Extra?",
-  metaDescription:
-    "Notion AI review. Workspace Q&A, summarization, and drafting built into Notion. Convenient but pricey per member. Scores, pricing, honest take. March 2026.",
+  metaTitle: "Notion AI Review 2026: Custom Agents, Model Controls + Credit Billing Explained",
+  metaDescription: "Notion AI review. Custom Agents went GA in May 2026 with credit billing ($10 per 1,000 credits) on Business/Enterprise; Sept 9 added admin model controls (choose and default the models agents may use), Aug 28 suggest-edits mode, Aug 14 a model picker with speed/intelligence/cost scorecards. Is it worth the add-on?",
 };

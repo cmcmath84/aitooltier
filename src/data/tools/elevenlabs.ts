@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const elevenlabs: ToolReview = {
   slug: "elevenlabs",
   name: "ElevenLabs",
-  tagline: "Best-in-class AI voice generation -- now includes 11.ai (MCP-based voice assistant), Eleven v3 expressive speech, and IBM watsonx partnership. $500M raise at $11B valuation (Feb 2026)",
+  tagline: "Best-in-class AI voice generation -- 11.ai (MCP-based voice assistant), Eleven v3 expressive speech, ElevenMusic and ElevenAgents. **On 2026-09-10 ElevenLabs signed a multi-year licensing and product deal with Universal Music Group** -- its first major-label agreement -- to build a fan remix/mashup platform on licensed music. **ElevenLabs CLI v1 (2026-08-24)** exposes the entire API in the terminal with agents-as-code. $500M+ ARR (May 2026); $500M raise at $11B valuation (Feb 2026)",
   category: "ai-voice-audio",
   url: "https://elevenlabs.io",
 
@@ -38,6 +38,16 @@ export const elevenlabs: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "ELEVENLABS AND UNIVERSAL MUSIC GROUP -- FIRST MAJOR-LABEL DEAL, A LICENSED FAN-REMIX PLATFORM IS COMING, AND IT PUTS ELEVENLABS IN DIRECT COMPETITION WITH SUNO v6 (2026-09-10, vendor-primary): ElevenLabs announced 'a **multi-year licensing agreement and strategic collaboration with Universal Music Group**', described as 'our first agreement with a major label, encompassing licensing and product development.' **What is actually being built:** 'a new AI-powered music creation platform built on licensed music and artist participation', now in development, letting fans 'co-create with music from participating artists and songwriters, including through **remixes and mashups, new track interpretations, and personalized vocal experiences**', plus jointly developed audio products for artists and songwriters. UMG's Lucian Grainge is quoted; CEO Mati Staniszewski frames it as artists and songwriters being 'fairly compensated'. **SCOPE, PER ELEVENLABS:** the new platform 'will be distinct and offered separately from our existing music products' -- the **Music API** and **ElevenMusic** are unaffected and remain the current offering. **No launch date, no pricing, no artist roster named.** **WHY IT MATTERS:** on 9/09 Suno launched v6 with Warner, BMG and Believe and promised opt-in artist experiences; a day later UMG -- the label suing Suno -- picked ElevenLabs as its licensed-AI partner. The licensed-fan-remix category now has two label-backed entrants a day apart, and UMG is on the ElevenLabs side of it. ElevenLabs has not disclosed whether the UMG catalogue will be used to train new models or only to license outputs; the post says 'built on licensed music', which is a product statement, not a training-data one.",
+      source: "ElevenLabs (elevenlabs.io/blog/umg, JSON-LD datePublished 2026-09-10) -- fetched 2026-09-14 via curl",
+      date: "2026-09-10",
+    },
+    {
+      description: "STALENESS CATCH-UP, JUNE-AUGUST 2026 (this page was last reviewed 2026-07-18; everything below is from ElevenLabs' own blog, dated by JSON-LD, and none of it was on the page): **ElevenLabs CLI v1 (2026-08-24)** -- 'brings the ElevenLabs API directly into your terminal', designed 'agents first' with structured JSON output, a `--dry-run` mode, and **agents-as-code for ElevenAgents**: pull every agent in a workspace into local config files, diff, and push to production by hand or from a coding agent. Every endpoint in the OpenAPI spec is a subcommand. Install via Homebrew (`elevenlabs/tap/elevenlabs`), Scoop, or a curl installer. **Procedures in ElevenAgents (2026-06-30)**, **Ads Engine in ElevenCreative (2026-06-22)** -- localise ads across 50+ languages, **Flows Agent in ElevenCreative (2026-06-04)**, plus the previously recorded Music v2 and Dubbing v2 (May). **Corporate:** **$500M ARR** crossed with new investors (2026-05-05); **$22M earned by voice creators**, doubling in six months (2026-05-22); expansions in Canada (7/07), California (173 jobs, 6/22), Australia/NZ, plus Poland and UK government partnerships (June); a new **CRO (Ashley Kramer, 9/02)** and **CFO (Ethan Tandowsky, 9/08)** -- both ex-executive hires that usually precede an IPO-readiness push, though ElevenLabs has said nothing about listing. **No pricing changes and no model deprecations found in the window** -- the models page state recorded 7/18 (scribe_v1 deprecated, v1 TTS removed) stands.",
+      source: "ElevenLabs blog (elevenlabs.io/blog/elevenlabs-cli-v1 datePublished 2026-08-24; /procedures 2026-06-30; /introducing-ads-engine-in-elevencreative 2026-06-22; /introducing-flows-agent 2026-06-04; /500m-arr-and-new-investors 2026-05-05; /22-million-earned-by-voice-creators-on-elevenlabs 2026-05-22; /canada 2026-07-07; /expanding-in-california 2026-06-22; /cro 2026-09-02; /cfo 2026-09-08) -- all fetched 2026-09-14 via curl",
+      date: "2026-08-24",
+    },
+    {
       description: "DEPRECATION STATUS SETTLED (verified on vendor docs 2026-07-18): **scribe_v1 is now formally listed in the 'Deprecated models' table** -- 'First generation speech recognition (outclassed by v2 models)', replacement suggestion `scribe_v2` -- with NO removal date published (the ambiguous removal wording from early July is gone; it remains deprecated-but-available). Current STT flagships are Scribe v2 and Scribe v2 Realtime. Also now marked deprecated/legacy on the same models page: **eleven_turbo_v2_5, eleven_turbo_v2, and music_v1**. The monolingual_v1 + multilingual_v1 removals executed 7/9-7/10 stand. If you still call any v1 or turbo_v2-era model id, plan migrations now rather than waiting for a removal date to be announced",
       source: "ElevenLabs docs: Models (elevenlabs.io/docs/overview/models, scraped 2026-07-18)",
       date: "2026-07-18",
@@ -51,8 +61,13 @@ export const elevenlabs: ToolReview = {
   notFor: "Users who only need occasional text-to-speech (browser TTS is free), or open-source purists (Mistral Voxtral fills that niche now).",
   verdict: "ElevenLabs remained the clear voice-quality leader through 2026 and extended its lead with Eleven v3 expressive speech plus the 11.ai MCP-based voice assistant (alpha). The February 2026 $500M raise at $11B and subsequent ~50% pricing cut made the consumer tiers meaningfully cheaper. The IBM watsonx partnership unlocks regulated-industry enterprise voice. If you produce any serious audio content, this is still the default. The only real competitive pressure is from Mistral's Voxtral TTS on the open-source side and from Google/Meta native voice models bundled into Gemini/Llama.",
 
-  lastReviewedDate: "2026-07-18",
+  lastReviewedDate: "2026-09-14",
   dataSources: [
+    { name: "ElevenLabs: ElevenLabs and Universal Music Group enter strategic agreement -- first major-label deal, licensed fan remix platform in development (2026-09-10)", url: "https://elevenlabs.io/blog/umg", dateAccessed: "2026-09-14" },
+    { name: "ElevenLabs: ElevenLabs CLI v1 -- agents as code, entire API in terminal (2026-08-24)", url: "https://elevenlabs.io/blog/elevenlabs-cli-v1", dateAccessed: "2026-09-14" },
+    { name: "ElevenLabs: Introducing Procedures in ElevenAgents (2026-06-30)", url: "https://elevenlabs.io/blog/procedures", dateAccessed: "2026-09-14" },
+    { name: "ElevenLabs: Introducing Ads Engine in ElevenCreative -- 50+ languages (2026-06-22)", url: "https://elevenlabs.io/blog/introducing-ads-engine-in-elevencreative", dateAccessed: "2026-09-14" },
+    { name: "ElevenLabs: ElevenLabs crosses $500M ARR and welcomes new investors (2026-05-05)", url: "https://elevenlabs.io/blog/500m-arr-and-new-investors", dateAccessed: "2026-09-14" },
     { name: "ElevenLabs docs: Models (scribe_v1/turbo_v2/music_v1 deprecated; v1 removals executed)", url: "https://elevenlabs.io/docs/overview/models", dateAccessed: "2026-07-18" },
     { name: "ElevenLabs official site", url: "https://elevenlabs.io", dateAccessed: "2026-04-16" },
     { name: "Voice.ai: ElevenLabs debuts 11.ai", url: "https://voice.ai/hub/ai-voice-agents/11-ai/", dateAccessed: "2026-04-16" },
@@ -62,6 +77,6 @@ export const elevenlabs: ToolReview = {
   ],
   affiliateUrl: "https://elevenlabs.io",
   status: "active",
-  metaTitle: "ElevenLabs Review 2026: 11.ai Voice Assistant, Eleven v3, IBM Partnership",
-  metaDescription: "ElevenLabs review. Best AI voice, now with 11.ai (MCP voice assistant), Eleven v3 expressive speech, IBM watsonx. ~50% pricing cut Feb 2026. April 2026.",
+  metaTitle: "ElevenLabs Review 2026: UMG Licensing Deal, CLI v1, Eleven v3 + 11.ai",
+  metaDescription: "ElevenLabs review. Sept 10, 2026: multi-year licensing and product deal with Universal Music Group -- its first major label -- for a licensed fan remix platform. CLI v1 (Aug 24) puts the whole API and agents-as-code in the terminal. Eleven v3, 11.ai, ElevenMusic, $500M+ ARR. Pricing and model status verified.",
 };

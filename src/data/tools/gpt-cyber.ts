@@ -2,8 +2,8 @@ import { ToolReview } from "@/lib/types";
 
 export const gptCyber: ToolReview = {
   slug: "gpt-cyber",
-  name: "GPT-5.4-Cyber (OpenAI)",
-  tagline: "OpenAI's defensive-cybersecurity variant of GPT-5.4, launched 2026-04-16. Lowered refusal boundary for security-research tasks and native binary reverse-engineering. Access gated via Trusted Access for Cyber (TAC) program -- thousands of verified defenders, hundreds of teams, no public pricing. On **2026-08-17 OpenAI published its first dedicated post on the Hugging Face incident**, conceding it 'underestimated the real-world cyber capabilities of our AI models' and confirming it now releases cyber capabilities only to trusted defenders. **On 2026-09-01 OpenAI confirmed GPT-6 Astra meets the Critical cyber threshold -- the first model it has ever designated at that level -- and on 2026-09-03 committed $1B to Daybreak for Frontline Defenders**",
+  name: "GPT-5.6-Cyber / GPT-5.4-Cyber (OpenAI)",
+  tagline: "**OpenAI is retiring GPT-5.4-Cyber (notice 2026-09-11, removed from the API 2026-10-01); its replacement is `gpt-5.6-cyber`**, an alias for OpenAI's most advanced purpose-trained cyber models, gated behind the Daybreak program and priced at $12.50/$75 per 1M (first published price for any OpenAI cyber model). Original page: OpenAI's defensive-cybersecurity variant of GPT-5.4, launched 2026-04-16. Lowered refusal boundary for security-research tasks and native binary reverse-engineering. Access gated via Trusted Access for Cyber (TAC) program -- thousands of verified defenders, hundreds of teams, no public pricing. On **2026-08-17 OpenAI published its first dedicated post on the Hugging Face incident**, conceding it 'underestimated the real-world cyber capabilities of our AI models' and confirming it now releases cyber capabilities only to trusted defenders. **On 2026-09-01 OpenAI confirmed GPT-6 Astra meets the Critical cyber threshold -- the first model it has ever designated at that level -- and on 2026-09-03 committed $1B to Daybreak for Frontline Defenders**",
   category: "ai-llms",
   url: "https://openai.com/index/scaling-trusted-access-for-cyber-defense/",
 
@@ -18,7 +18,18 @@ export const gptCyber: ToolReview = {
   hasFreeTier: false,
   pricing: [
     {
-      plan: "Trusted Access for Cyber (TAC) -- gated",
+      plan: "API -- gpt-5.6-cyber (Daybreak program approval required; the replacement for gpt-5.4-cyber from 2026-10-01)",
+      price: "$12.50 / $75",
+      period: "per 1M input / output tokens (cached input $1.25; >272K-token prompts billed 2x input, 1.5x output)",
+      features: [
+        "Alias for 'our most advanced purpose-trained cybersecurity models, for approved defenders conducting advanced, authorized vulnerability research, exploit validation, and security testing'",
+        "400K context, 272K max input, 128K max output, text + image in, reasoning tokens, Feb 16 2026 knowledge cutoff",
+        "Requires separate approval and provisioning via openai.com/daybreak -- still no self-serve path",
+        "First OpenAI cyber model with a published rate card: 25% above GPT-6 Astra's $10/$50 on input, 50% above on output",
+      ],
+    },
+    {
+      plan: "Trusted Access for Cyber (TAC) -- gated (original GPT-5.4-Cyber access route, model retires 2026-10-01)",
       price: "Not publicly disclosed",
       features: [
         "Verified access for defenders, red/blue-team practitioners, and enterprise SOC teams",
@@ -45,11 +56,16 @@ export const gptCyber: ToolReview = {
   ],
   cons: [
     "You cannot simply buy access. If you are not inside the TAC program, this tool is functionally invisible -- there is no Plus/Pro/Team SKU that unlocks GPT-5.4-Cyber",
-    "No public pricing means no clear way to evaluate cost-per-token or per-seat total cost. Enterprises procuring this go through OpenAI's account team, not a billing console",
+    "Pricing was undisclosed for GPT-5.4-Cyber's entire five-month life; gpt-5.6-cyber finally publishes a rate ($12.50/$75 per 1M) but you still cannot buy it -- approval and provisioning through Daybreak come first, and the model doc says so",
     "'Lowered refusal boundary' is not 'no refusal' -- OpenAI still applies safety policy, which means sophisticated red teams may still hit refusals on the specific prompts they care most about. Claude Mythos Preview is perceived to go slightly further on security capability, though neither vendor has published head-to-head evals",
     "Gated access is a real procurement obstacle for smaller security shops that can't get a meeting with OpenAI's enterprise team",
   ],
   knownIssues: [
+    {
+      description: "GPT-5.4-CYBER IS DEPRECATED -- REMOVED FROM THE API ON 2026-10-01, REPLACEMENT IS gpt-5.6-cyber, AND FOR THE FIRST TIME AN OPENAI CYBER MODEL HAS A PUBLISHED PRICE (deprecation notice dated 2026-09-11, vendor-primary): OpenAI's deprecations ledger now carries, as its newest entry: '**2026-09-11: GPT-5.4-Cyber. The `gpt-5.4-cyber` model is deprecated and will be removed from the API on October 1, 2026. Migrate to `gpt-5.6-cyber` before the shutdown date.**' That is a **20-day notice** -- far shorter than the six months OpenAI gave the transcription models on 8/26 -- and the `gpt-5.4-cyber` model documentation page already returns 404. **This retires the model this page was built around, five months after its 2026-04-16 launch.** No blog post accompanied it; it was found by reading the deprecations doc, which is the same way the 8/26 Whisper retirement was caught. **THE REPLACEMENT, PER ITS OWN MODEL DOC:** `gpt-5.6-cyber` is described as 'an alias for our most advanced purpose-trained cybersecurity models, for approved defenders conducting advanced, authorized vulnerability research, exploit validation, and security testing.' Because it is an **alias**, the underlying snapshot can move without a rename -- which is also how OpenAI will presumably roll Astra-generation cyber capability under it later. Specs: **400K context, 272K max input, 128K max output, text and image input, reasoning tokens, knowledge cutoff 2026-02-16.** **Access is now routed through the Daybreak program** ('This model requires separate approval and provisioning, you can apply to join the Daybreak program'), which folds the Trusted Access for Cyber gate this page describes into the $1B Daybreak initiative announced 9/03. **PRICING -- THE GENUINELY NEW FACT:** **$12.50 per 1M input, $1.25 cached input, $75 per 1M output**, with prompts over 272K input tokens billed at 2x input and 1.5x output for the whole request. This is the first time any OpenAI cyber-tuned model has had a public rate card; GPT-5.4-Cyber never did. It is priced at a **25% input / 50% output premium over GPT-6 Astra** ($10/$50), i.e. the cyber tuning is sold as a premium SKU on top of frontier pricing, not as a research courtesy. **WHAT TO DO IF YOU ARE ON GPT-5.4-CYBER:** you need Daybreak approval for the successor, not just a model-string change -- start that now, because TAC enrolment on this page has historically taken 'weeks to months'. **PAGE STATUS:** we are keeping the `gpt-cyber` slug and treating this as a generation change on one page rather than a new tool; name, tagline, pricing and meta updated 2026-09-14.",
+      source: "OpenAI deprecations (platform.openai.com/docs/deprecations, fetched as .md -- section '2026-09-11: GPT-5.4-Cyber' with shutdown table 'Oct 1, 2026 | gpt-5.4-cyber | gpt-5.6-cyber'); OpenAI model docs (developers.openai.com/api/docs/models/gpt-5.6-cyber.md -- specs, Daybreak gating, $12.5/$1.25/$75 rate card; gpt-5.4-cyber.md now 404) -- all fetched 2026-09-14 via curl",
+      date: "2026-09-11",
+    },
     {
       description: "OPENAI COMMITS $1 BILLION TO 'DAYBREAK FOR FRONTLINE DEFENDERS' -- THE SAME WEEK IT SHIPPED ITS FIRST CRITICAL-CYBER MODEL (2026-09-03, vendor-primary): OpenAI announced **Daybreak for Frontline Defenders**, described as 'a new global initiative to help frontline defenders use frontier AI cyber capabilities to protect essential services in the United States and around the world.' **The headline commitment is a $1 billion global commitment to expand subsidized access to Daybreak cyber models and products, training, technical support, and partnerships**, plus **Daybreak for America**, which consolidates OpenAI's US protective work across water, electricity, local government and banking. **THE TIMING IS THE STORY AND IT IS THE SAME PATTERN THIS PAGE DOCUMENTED ON 2026-08-10.** On the same day OpenAI released **GPT-6 Astra** -- the first model it has ever designated **Critical** for cybersecurity capability under its Preparedness Framework -- it also widened *defensive* distribution and attached a very large number to it. OpenAI's cyber capability continues to travel outward through subsidized, vetted, partner-mediated channels rather than through a purchasable plan, and the subsidy is now the largest it has ever announced. **WHAT IT DOES NOT DO:** the announcement does not open public access to frontier cyber capability, does not publish pricing, and does not change the Trusted Access for Cyber gate that governs this model. **For a buyer, the practical position is unchanged and now more explicit than ever: the route to frontier cyber capability is an eligibility determination, not a subscription -- OpenAI is just paying more of the bill for defenders who qualify.**",
       source: "OpenAI (openai.com/index/daybreak-for-frontline-defenders/, publicationDateText 'September 3, 2026') -- fetched 2026-09-05 via curl with browser UA",
@@ -93,10 +109,12 @@ export const gptCyber: ToolReview = {
   ],
   bestFor: "Enterprise SOC teams, established security research orgs, and vetted individual defenders who can qualify for Trusted Access for Cyber. Strongest fit if your work involves binary analysis, vulnerability research, or defensive-security tooling where standard GPT-5.4 refusals actually block the work.",
   notFor: "Anyone who can't clear TAC enrollment -- this includes most indie researchers, small consultancies, and students. For those audiences, standard GPT-5.4 (via ChatGPT Plus) or Claude Opus 4.7 are the realistic options. Also not for offensive-security workflows -- the model is tuned for defense, and refusal patterns reflect that.",
-  verdict: "GPT-5.4-Cyber is one half of the two-model cyber-access picture in 2026 (the other being Anthropic's Claude Mythos Preview). Both are frontier models with relaxed refusals for vetted defenders. If you are on a team that qualifies, apply to both -- the programs are complementary, not exclusive. If you don't qualify, the tool is effectively invisible: there is no consumer tier, no published pricing, and no self-serve path. That gating is the whole point, but it also means most of the buzz around GPT-5.4-Cyber is watched from outside the program rather than evaluated from inside it. For now, the honest read is: it exists, it's meaningful if you can get in, and the public-SERP question is 'how do I get TAC access,' not 'should I buy this.'",
+  verdict: "Update 2026-09-14: GPT-5.4-Cyber itself is being retired on 2026-10-01 in favour of the gpt-5.6-cyber alias ($12.50/$75 per 1M, Daybreak approval required) -- the access model below is unchanged, only the model string and the existence of a price are new. Original verdict: GPT-5.4-Cyber is one half of the two-model cyber-access picture in 2026 (the other being Anthropic's Claude Mythos Preview). Both are frontier models with relaxed refusals for vetted defenders. If you are on a team that qualifies, apply to both -- the programs are complementary, not exclusive. If you don't qualify, the tool is effectively invisible: there is no consumer tier, no published pricing, and no self-serve path. That gating is the whole point, but it also means most of the buzz around GPT-5.4-Cyber is watched from outside the program rather than evaluated from inside it. For now, the honest read is: it exists, it's meaningful if you can get in, and the public-SERP question is 'how do I get TAC access,' not 'should I buy this.'",
 
-  lastReviewedDate: "2026-09-05",
+  lastReviewedDate: "2026-09-14",
   dataSources: [
+    { name: "OpenAI deprecations: 2026-09-11 GPT-5.4-Cyber -- removed from the API 2026-10-01, migrate to gpt-5.6-cyber", url: "https://platform.openai.com/docs/deprecations", dateAccessed: "2026-09-14" },
+    { name: "OpenAI model docs: GPT-5.6 Cyber -- alias for purpose-trained cyber models, Daybreak approval required, $12.50/$75 per 1M, 400K context", url: "https://developers.openai.com/api/docs/models/gpt-5.6-cyber", dateAccessed: "2026-09-14" },
     { name: "OpenAI: Daybreak for Frontline Defenders -- $1B to protect essential services (2026-09-03)", url: "https://openai.com/index/daybreak-for-frontline-defenders/", dateAccessed: "2026-09-05" },
     { name: "OpenAI: Path to Astra -- Astra confirmed at the Critical cyber threshold, a first (2026-09-01)", url: "https://openai.com/index/path-to-astra/", dateAccessed: "2026-09-05" },
     { name: "OpenAI: Safety overview GPT-6 Astra -- monitorability decreased vs GPT-5.6 Sol (2026-09-03)", url: "https://openai.com/index/safety-overview-gpt-6-astra/", dateAccessed: "2026-09-05" },
@@ -110,6 +128,6 @@ export const gptCyber: ToolReview = {
   ],
   affiliateUrl: "https://openai.com/index/scaling-trusted-access-for-cyber-defense/",
   status: "active",
-  metaTitle: "GPT-5.4-Cyber Review 2026: OpenAI's Defensive-Cyber Model (Trusted Access Only)",
-  metaDescription: "GPT-5.4-Cyber review. OpenAI's cyber-tuned GPT-5.4 (launched Apr 16 2026). Trusted Access for Cyber (TAC) program only, no public pricing. vs Claude Mythos Preview.",
+  metaTitle: "GPT-5.6-Cyber / GPT-5.4-Cyber Review 2026: OpenAI's Gated Cyber Model, $12.50/$75",
+  metaDescription: "GPT-5.4-Cyber is deprecated (Sept 11, 2026) and leaves the API October 1; the replacement gpt-5.6-cyber costs $12.50/$75 per 1M and requires Daybreak program approval. Trusted-defender-only since April 2026, now with a published price. vs Claude Mythos Preview.",
 };
