@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const veo: ToolReview = {
   slug: "veo",
   name: "Google Veo 3.1",
-  tagline: "Google's dominant AI video generator -- native 4K at 60fps with synchronized audio, now free to every Google account via Google Vids",
+  tagline: "Google's AI video stack -- Veo 3.1 (native 4K at 60fps with synchronized audio) plus the newer Gemini Omni 1.1 Flash, which from **2026-09-23 generates free 1080p scenes for any Google account inside Google Vids** (extend scenes, set exact clip durations, upscale, templates, SynthID watermark) after landing in Google Flow on 8/27. Also 9/23: **Google Flow Tools** -- describe a workflow and Flow builds a reusable custom tool; six creator-built tools shipped (ambient sound and foley stems, multilingual captions, social thumbnails, architectural textures, animated collages, Swiss-style motion graphics), each duplicable and remixable.",
   category: "ai-video-generators",
   url: "https://deepmind.google/technologies/veo",
 
@@ -21,6 +21,7 @@ export const veo: ToolReview = {
       plan: "Google Vids (Free)",
       price: "$0",
       features: [
+        "Gemini Omni 1.1 Flash in Google Vids at no cost for any Google or Workspace account (2026-09-23): new 1080p scenes, scene extension, exact clip durations, upscaling, templates, SynthID watermark; free-tier limits not published",
         "Veo 3.1 Lite free to every Google account (rolled out April 2026)",
         "Limited daily generations",
         "Native Google Vids integration for editing",
@@ -74,6 +75,16 @@ export const veo: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "OMNI 1.1 FLASH IN GOOGLE VIDS AT NO COST FOR ANY GOOGLE ACCOUNT, WITH 1080P, SCENE EXTENSION AND EXACT DURATIONS (2026-09-23, vendor-primary): 'We're bringing the magic of video creation to everyone by expanding access to Google Vids. Now anyone with a Google or Google Workspace account can generate high-quality videos at no cost using our latest Gemini Omni 1.1 Flash model and new creative controls.' Entry point: vids.new on desktop, then 'Create AI videos'. Controls: **extend scenes** with smooth transitions 'while keeping the visual context, lighting, characters' appearance, and the environment consistent'; **set super-specific durations** so a clip aligns with a voiceover; **generate in HD** -- 'brand-new AI video scenes in full 1080p HD, or upscale existing AI clips'; templates for product launches, promo videos from a few photos, landing-page and event-signage clips. Every generated clip includes an imperceptible SynthID watermark. What Google does not state: per-account generation limits for the free tier, whether the Omni output in Vids matches the Flow resolution ladder recorded on 8/27, or any change to Veo 3.1 Lite's role in Vids -- so the pricing rows below keep both models. Related the same day: Gemini 3.8 Flash-Lite TTS is rolling into Google Vids 'for everyone' for voiceover (see gemini.ts).",
+      source: "Google (blog.google/products-and-platforms/products/workspace/gemini-omni-in-google-vids/, on-page 'Sep 23, 2026') -- fetched 2026-09-28 via curl with browser UA",
+      date: "2026-09-23",
+    },
+    {
+      description: "GOOGLE FLOW TOOLS -- BUILD A CUSTOM WORKFLOW BY DESCRIBING IT, AND SIX CREATOR-BUILT TOOLS TO START FROM (2026-09-23, vendor-primary): Google Labs confirmed the feature the 9/18 fashion-week story only hinted at: 'with Google Flow Tools, you can build custom workflows simply by describing what you need', and 'open Google Flow, describe the task, and build your own tool today'. Six tools built with industry creatives shipped: **Mondo Sonico** (custom background ambiance, foley and contextual sound effects synchronized across separate editable tracks with exportable stems -- Ricardo Villavicencio and Sebastian Carvallo), **CaptionCast** (single-pass multilingual caption transcription, styling and animation -- Jay Pirabakaran), **ThumbnailForge** (photorealistic social thumbnails from one image, headline and prompt), **Surface** (generated architectural textures mapped in real time onto 3D walls, ceilings and floors -- Vojtek Morsztyn), **CollageMotion Pro** (animated mixed-media collages from text -- Hashem Al-Ghaili) and **SwissFlow Studio** (scripts to Swiss-style motion graphics). Any tool can be tried, duplicated and remixed. Why it matters here: Flow is the Veo/Omni creative surface, and 'tools' turns it from a prompt box into a small app platform on top of the video and music models; the sound-design tool is the first Google-shipped audio-stems workflow we have seen on Flow. Pricing and plan gating for Flow Tools are not stated in the post.",
+      source: "Google Labs (blog.google/innovation-and-ai/models-and-research/google-labs/six-new-tools-built-by-creatives/, on-page 'Sep 23, 2026') -- fetched 2026-09-28 via curl with browser UA",
+      date: "2026-09-23",
+    },
+    {
       description: "GOOGLE FLOW GETS OMNI 1.1 CREATIVE CONTROLS -- AND NOTE THE RESOLUTION LADDER, IT IS THE PRICING STORY (2026-08-27, vendor-primary): Google rolled Gemini Omni 1.1 Flash into **Google Flow**, its filmmaking front-end, '**starting today**' (i.e. live, not staged). **What creators get:** (1) **start and end frame control**, to keep characters and narrative consistent across a transition; (2) **export in 1080p or 4K** for broadcast/social finishing; (3) a **360p draft tier at explicitly 'lower-credit' cost** to test concepts and compositions before committing to a full render, after which you download at 720p. **THE 360p DRAFT TIER IS THE MOST PRACTICALLY USEFUL PART AND IT IS A COST MECHANIC, NOT A QUALITY ONE** -- Google is telling you iteration was the thing burning credits, and it is now separable from final render. Google calls this out as especially useful in the **Flow mobile app**: draft on a phone, upscale the keepers. **Relationship to this page: Flow is the consumer/creator surface for the same Omni 1.1 Flash model that shipped to developers via the Gemini API the same day** -- one story, two doors.",
       source: "Google (blog.google/innovation-and-ai/models-and-research/google-labs/new-creative-controls-google-flow/, on-page 'Aug 27, 2026', RSS pubDate 'Thu, 27 Aug 2026 16:00:00 +0000'); developer-side counterpart blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/ -- both fetched 2026-08-28 via curl",
       date: "2026-08-27",
@@ -108,8 +119,10 @@ export const veo: ToolReview = {
   notFor: "High-volume TikTok / Reels creators where CapCut + Seedance 2.0 beats Veo on workflow friction. Also not ideal for anyone wanting strong stylistic control -- Veo's cinematic default is hard to escape.",
   verdict: "Veo 3.1 solidified Google's video lead after OpenAI shut down Sora in March 2026. Quality-wise it remains the benchmark -- 4K/60fps with synchronized audio, and the April 2026 free rollout to every Google account is a structural shift that puts best-in-class AI video in front of billions overnight. The remaining weaknesses are workflow friction (generation is slow, Google ecosystem lock-in) and stylistic narrowness. The honest read: for pure quality and accessibility, Veo 3.1 is the 2026 default. For short-form social workflows where speed matters more than peak quality, Seedance 2.0 inside CapCut is the more pragmatic choice.",
 
-  lastReviewedDate: "2026-08-28",
+  lastReviewedDate: "2026-09-28",
   dataSources: [
+    { name: "Google: Anyone can make stunning HD videos with Gemini Omni in Google Vids (2026-09-23) -- Omni 1.1 Flash free for any Google account, 1080p, scene extension, durations, SynthID", url: "https://blog.google/products-and-platforms/products/workspace/gemini-omni-in-google-vids/", dateAccessed: "2026-09-28" },
+    { name: "Google Labs: 6 new Google Flow Tools built by industry creatives (2026-09-23) -- describe a workflow to build a tool; six creator-built tools", url: "https://blog.google/innovation-and-ai/models-and-research/google-labs/six-new-tools-built-by-creatives/", dateAccessed: "2026-09-28" },
     { name: "Google: Gemini Omni 1.1 Flash (2026-08-27)", url: "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/", dateAccessed: "2026-08-28" },
     { name: "Google: New creative controls in Google Flow (2026-08-27)", url: "https://blog.google/innovation-and-ai/models-and-research/google-labs/new-creative-controls-google-flow/", dateAccessed: "2026-08-28" },
     { name: "Google Blog: Gemini Omni Flash + Nano Banana 2 Lite (2026-06-30)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/", dateAccessed: "2026-07-04" },
@@ -122,6 +135,6 @@ export const veo: ToolReview = {
   ],
   affiliateUrl: "https://deepmind.google/technologies/veo",
   status: "active",
-  metaTitle: "Google Veo 3.1 Review 2026: Free AI Video for Every Google Account",
-  metaDescription: "Google Veo 3.1 review. 4K/60fps AI video with native audio, now free via Google Vids. Pro + Ultra tiers, Vertex AI API. Scores, pricing. April 2026.",
+  metaTitle: "Google Veo and Omni Review 2026: Free 1080p Omni 1.1 Video in Google Vids, Flow Tools",
+  metaDescription: "Google Veo 3.1 and Gemini Omni review. From Sept 23, 2026 anyone with a Google account can generate free 1080p video scenes with Omni 1.1 Flash in Google Vids -- scene extension, exact clip durations, upscaling, SynthID watermark. Google Flow Tools let you build a custom workflow by describing it, with six creator-built tools to remix. Veo 3.1 4K/60fps with native audio on Pro and Ultra, Vertex AI API.",
 };

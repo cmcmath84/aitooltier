@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const claudeCode: ToolReview = {
   slug: "claude-code",
   name: "Claude Code",
-  tagline: "Anthropic's terminal-based coding agent that reads your whole repo and makes real changes -- not just suggestions. **Claude Fable 5.1 (2026-09-01) is the top model and defaults to High effort in Claude Code specifically** -- Medium on every other Anthropic surface -- at an unchanged $10/$50 per 1M with cache reads cut 4x to $0.25/MTok. **Changelog pass (2026-09-21): 121 releases between 2.1.132 and 2.1.278 since the May 6 conference batch**, the ones that change how you buy or use it being agent view (5/11), Fable 5 (6/09), Sonnet 5 as default (6/30), Opus 5 (7/24), **AGENTS.md read when no CLAUDE.md exists (9/18)** and **auto mode moving to a server-side classifier with no classifier overhead charge (9/19)**. v2.1.131 (2026-05-06) shipped Code Review GA + Remote Agents + CI Auto-Fix + Routines",
+  tagline: "Anthropic's terminal-based coding agent that reads your whole repo and makes real changes -- not just suggestions. **Claude Opus 5.5 became the default Opus model in 2.1.280 (2026-09-22) and Claude Sonnet 5.5 the default Sonnet in 2.1.284 (2026-09-28)** -- the defaults flipped in two point releases six days apart: Opus 5.5 at $4/$20 with $0.20 cache reads and fast mode at $8/$40 for up to 2.5x speed, Sonnet 5.5 at an unchanged $2/$10 with far fewer tokens per task. Both are 1M context. Fable 5.1 (2026-09-01) remains the top model and still defaults to High effort in Claude Code specifically. Also since 9/22: a 'Yes, but ask again next time' auto-mode answer, dollar amounts on gateway spend limits, `/doctor prompt-audit` to find prompts written for older models, `deniedModels` and exact-version `availableModels` managed settings, and `\"attribution\": false` to hide commit and PR attribution.",
   category: "ai-code-assistants",
   url: "https://docs.anthropic.com/en/docs/claude-code",
 
@@ -21,24 +21,24 @@ export const claudeCode: ToolReview = {
       plan: "Claude Pro",
       price: "$20",
       period: "month",
-      features: ["Included Claude Code access", "Usage limits apply", "Claude Sonnet 5 (new default, 2026-06-30)"],
+      features: ["Included Claude Code access", "Usage limits apply", "Claude Sonnet 5.5 (default Sonnet since 2.1.284, 2026-09-28; Medium effort by default in Claude Code)"],
     },
     {
       plan: "Claude Max (5x)",
       price: "$100",
       period: "month",
-      features: ["5x Pro usage", "Opus model access", "Higher rate limits"],
+      features: ["5x Pro usage", "Opus 5.5 access (default Opus since 2.1.280, 2026-09-22)", "Higher rate limits"],
     },
     {
       plan: "Claude Max (20x)",
       price: "$200",
       period: "month",
-      features: ["20x Pro usage", "Opus model access", "Highest rate limits"],
+      features: ["20x Pro usage", "Opus 5.5 access (default Opus since 2.1.280, 2026-09-22)", "Highest rate limits"],
     },
     {
       plan: "API Direct",
       price: "Usage-based",
-      features: ["Pay per token", "Full model selection", "No monthly commitment"],
+      features: ["Pay per token: Opus 5.5 $4/$20 (cache reads $0.20; fast mode $8/$40 up to 2.5x), Sonnet 5.5 $2/$10, Fable 5.1 $10/$50", "Full model selection", "No monthly commitment"],
     },
   ],
 
@@ -55,6 +55,11 @@ export const claudeCode: ToolReview = {
     "Learning curve is real -- you need to understand how to write good prompts and set appropriate boundaries",
   ],
   knownIssues: [
+    {
+      description: "OPUS 5.5 AND SONNET 5.5 BECOME THE DEFAULTS, SIX DAYS APART -- PLUS FIVE RELEASES OF ENTERPRISE CONTROLS (2.1.280 on 2026-09-22 through 2.1.284 on 2026-09-28, vendor-primary via the Claude Code changelog): **2.1.280 (9/22)** added **Claude Opus 5.5 (`claude-opus-5-5`), 'now the default Opus model -- 1M context, $4/$20 per Mtok with $0.20/Mtok cache reads'**; the same release fixed auto mode retrying an action forever when a safety check declined to review it (now denied once) and backing off when the check gives no answer (turn stops after ten in a row), and stopped writes through a symlink being judged by their in-tree path. **2.1.284 (9/28)** added **Claude Sonnet 5.5 (`claude-sonnet-5-5`), 'now the default Sonnet model on the Anthropic API -- 1M context, $2/$10 per Mtok with $0.20/Mtok cache reads'**, a **'Yes, but ask again next time'** answer to auto mode's prompt before a read outside the working directories, **dollar amounts on the Claude apps gateway spend limit** in `/usage` and the status line ('$271.40 / $500.00 spent this month', with `used_usd` / `limit_usd` / `period` in `rate_limits.spend_limit`), rebindable `/effort` slider keys including `toggleUltracode`, `/rate-limit-options` in the command menu, and `/mcp reconnect all`. In between: **2.1.281 (9/23)** -- `\"attribution\": false` in settings.json hides all commit and PR attribution (keep the object form in shared files, older CLIs skip a file holding it); MCP URL-mode elicitation on 2026-07-28 protocol connections; `claude plugin validate` now reports `.mcp.json` entries that would be silently dropped; an auto-mode recommendation in `/insights` estimating how many prompts auto mode could have handled; gateway `assume_role` and Bedrock `guardrail` upstream options. **2.1.282 (9/24)** -- `maxProseWidth` caps prose width in wide terminals; a startup notice lists telemetry variables a project's settings ignored; `allowClaudeInChromeWithManagedMcp`; fixes for resumed sessions dropping earlier extended thinking and for every request failing with a 400 when history holds undecryptable web-search results from a third-party gateway. **2.1.283 (9/25)** -- `availableModelsMatch: \"exact\"` so new model releases stay blocked until listed, a **`deniedModels`** managed setting, **`/doctor prompt-audit`** (also `/checkup prompt-audit`) to audit CLAUDE.md files, skills, agents and commands for prompting patterns written for older models, `x-claude-code-prompt-id` gateway hint header, MCP/WebFetch/WebSearch outputs in the OpenTelemetry `tool.output` event, a gateway `load_test_mode`, and a `mantle` upstream for Amazon Bedrock's Mantle endpoint. Practical read: the two default flips are the story -- an unchanged Max or Pro session now runs Opus 5.5 where it ran Opus 5, and API-metered Sonnet work moves to 5.5 (Sonnet 5.5's default effort in Claude Code is Medium; Anthropic's migration note says thinking-off Sonnet users must adopt `between_tools` first).",
+      source: "Anthropic (code.claude.com/docs/en/changelog.md -- Update labels 2.1.280 'September 22, 2026' through 2.1.284 'September 28, 2026') + anthropic.com/claude-opus-5-5 (9/22) + anthropic.com/claude-sonnet-5-5 (9/28) -- fetched 2026-09-28 via curl with browser UA",
+      date: "2026-09-28",
+    },
     {
       description: "CHANGELOG PASS -- 121 RELEASES BETWEEN 2.1.132 (2026-05-06) AND 2.1.278 (2026-09-19), NEAR-DAILY, AND HERE ARE THE ONES THAT CHANGE HOW YOU USE OR PAY FOR IT (compiled 2026-09-21 from Anthropic's own changelog, vendor-primary): This page had cited v2.1.131 (May 6) as the last product batch; Claude Code has shipped a version almost every weekday since. Model events already recorded above (Fable 5 in 2.1.170 on 6/09, Sonnet 5 as default in 2.1.197 on 6/30 with its $2/$10 promo, Opus 5 as the default Opus in 2.1.219 on 7/24 -- 1M context, fast mode at $10/$50 -- and Fable 5.1 on 9/01) are the headline. **Product changes worth knowing, in date order:** (1) **Agent view, research preview (2.1.139, 5/11)** -- `claude agents` gives 'a single list of every Claude Code session -- running, blocked on you, or done'; the same release **disabled Remote Control, /schedule, claude.ai MCP connectors and notification preferences whenever an API key is set**, even with a claude.ai login present. (2) **Fast mode default moved to Opus 4.7 (2.1.142, 5/14)** and then, with Opus 5, to the current line. (3) **AGENTS.md support (2.1.277, 9/18)** -- 'in a project with no CLAUDE.md, Claude Code reads AGENTS.md instead', switchable under Project instructions in /config; not yet on Bedrock, Vertex or Foundry. That is the cross-vendor agent-instructions convention Cursor, Codex and Copilot already read, so repos no longer need a Claude-specific file. (4) **Auto mode now defaults to a server-side classifier (2.1.278, 9/19)** for Claude API and Enterprise users and on Bedrock, Vertex, Foundry and gateways -- and Anthropic says it '**does not charge for classifier overhead**'; `CLAUDE_CODE_AUTO_MODE_SERVER=0` opts out on the cloud platforms, the CLI warns when it falls back to billed classification, and /status gains an 'Auto mode server' row. For anyone who avoided auto mode because the safety classifier cost tokens, that objection is gone. (5) **Headless and SDK hardening (2.1.277, 9/18)** -- `claude -p` and Agent SDK sessions that could hang after an internal error now exit with code 1, headless resumes keep cost totals, and the background auto-title request was removed from `claude -p` runs outside an SDK or IDE. (6) **The deprecated TaskOutput tool was removed (9/18)**; Claude reads background-task output files directly. (7) **Claude Code on the web (9/18)** -- Personal and Organization environment sections for Team/Enterprise, and admins can share a personal cloud environment org-wide. (8) **VS Code extension (9/18)** shows session cost and token usage in the Account and usage dialog for API-key, Vertex, Bedrock and Foundry users, where plan limits do not apply. (9) **Security posture:** subagent results now arrive under a header marking them as subagent output, 'so text in a subagent's result cannot pass as the session's own instructions' (9/18), and prompts are scrubbed of invisible Unicode formatting characters before sending. **What the page still does not cover and the docs sidebar now lists:** Chrome, Slack, Claude Tag, mobile, keybindings and /schedule routines exist as surfaces; they are mentioned here as present, not reviewed. Check the changelog itself for the bug-fix stream -- it runs to dozens of items per release.",
       source: "Anthropic: Claude Code changelog (code.claude.com/docs/en/changelog.md -- entries 2.1.132 'May 6, 2026' through 2.1.278 'September 19, 2026'; generated from github.com/anthropics/claude-code CHANGELOG.md) -- fetched 2026-09-21 via curl",
@@ -125,8 +130,11 @@ export const claudeCode: ToolReview = {
   notFor: "Beginners who want a visual coding assistant, or anyone who needs predictable monthly costs. If you're looking for autocomplete-style help, Copilot or Cursor are better fits.",
   verdict: "Claude Code is the most capable agentic coding tool available right now. The ability to read entire codebases, execute code, run tests, and iterate on results puts it in a different category than autocomplete-style assistants. The output quality on complex tasks is outstanding. But it's firmly a power-user tool -- the CLI-only interface, unpredictable costs, and learning curve mean it's not for everyone. If you're a developer who thinks in terms of terminal workflows and you're working on non-trivial projects, Claude Code is worth every penny. Just keep an eye on your API bill.",
 
-  lastReviewedDate: "2026-09-21",
+  lastReviewedDate: "2026-09-28",
   dataSources: [
+    { name: "Anthropic: Claude Code changelog -- 2.1.280 (Sept 22, 2026: Opus 5.5 default) through 2.1.284 (Sept 28, 2026: Sonnet 5.5 default, spend-limit dollars, prompt-audit, deniedModels)", url: "https://code.claude.com/docs/en/changelog", dateAccessed: "2026-09-28" },
+    { name: "Anthropic: Introducing Claude Opus 5.5 (2026-09-22) -- $4/$20, $0.20 cache reads, fast mode $8/$40 in Claude Code and the Claude Platform", url: "https://www.anthropic.com/claude-opus-5-5", dateAccessed: "2026-09-28" },
+    { name: "Anthropic: Introducing Claude Sonnet 5.5 (2026-09-28) -- $2/$10, Medium effort default in Claude Code, between_tools migration note", url: "https://www.anthropic.com/claude-sonnet-5-5", dateAccessed: "2026-09-28" },
     { name: "Anthropic: Claude Code changelog -- 2.1.132 (May 6, 2026) through 2.1.278 (Sept 19, 2026): agent view, AGENTS.md support, server-side auto mode classifier, TaskOutput removal", url: "https://code.claude.com/docs/en/changelog", dateAccessed: "2026-09-21" },
     { name: "Anthropic: Claude Fable 5.1 launch -- defaults to High effort in Claude Code, Medium elsewhere (2026-09-01)", url: "https://www.anthropic.com/claude-fable-and-mythos-5-1", dateAccessed: "2026-09-05" },
     { name: "Anthropic pricing docs: Fable 5.1 cache hits $0.25/MTok (0.025x); base $10/$50 unchanged (verified 2026-09-05)", url: "https://platform.claude.com/docs/en/about-claude/pricing", dateAccessed: "2026-09-05" },
@@ -149,7 +157,7 @@ export const claudeCode: ToolReview = {
   ],
   affiliateUrl: "https://docs.anthropic.com/en/docs/claude-code",
   status: "active",
-  poweredBy: "Claude Sonnet 5 (default on Pro) / Claude Opus 5 / Claude Fable 5.1 (top model, defaults to High effort in Claude Code)",
-  metaTitle: "Claude Code Review 2026: Fable 5.1 High-Effort Default, AGENTS.md Support, Free Auto-Mode Classifier",
-  metaDescription: "Claude Code review. Anthropic's terminal coding agent reads entire repos, runs tests and refactors across files. Fable 5.1 (Sept 1, 2026) is the top model and defaults to High effort here at $10/$50 per 1M with $0.25 cache reads. Changelog pass through 2.1.278 (Sept 19): AGENTS.md read when no CLAUDE.md exists, auto mode moves to a server-side classifier with no overhead charge, agent view, Sonnet 5 default, Opus 5. Pricing, pros, cons.",
+  poweredBy: "Claude Sonnet 5.5 (default Sonnet since 2.1.284, 2026-09-28) / Claude Opus 5.5 (default Opus since 2.1.280, 2026-09-22; fast mode up to 2.5x) / Claude Fable 5.1 (top model, defaults to High effort in Claude Code)",
+  metaTitle: "Claude Code Review 2026: Opus 5.5 and Sonnet 5.5 Defaults, Prompt Audit, Spend-Limit Dollars",
+  metaDescription: "Claude Code review. Anthropic's terminal coding agent reads entire repos, runs tests and refactors across files. Claude Opus 5.5 became the default Opus in 2.1.280 (Sept 22, 2026) at $4/$20 with $0.20 cache reads and 2.5x fast mode at $8/$40; Claude Sonnet 5.5 became the default Sonnet in 2.1.284 (Sept 28) at $2/$10. Also new: /doctor prompt-audit, deniedModels, attribution off, dollar amounts on spend limits.",
 };

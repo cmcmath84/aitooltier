@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const perplexityComputer: ToolReview = {
   slug: "perplexity-computer",
   name: "Perplexity Computer",
-  tagline: "Perplexity's general-purpose digital worker -- operates real software like you do, runs for hours or months, routes sub-tasks to Opus, Gemini, GPT-5.2, Grok, and Veo 3.1",
+  tagline: "Perplexity's general-purpose digital worker -- operates real software like you do, runs for hours or months, and since 2026-09-21 is documented as served by GLM 5.2 rather than a frontier council: Perplexity disclosed that Computer sessions run on Z.ai's open-weight GLM 5.2, post-trained on real user sessions, with the trained checkpoint offered as a model option (21.2% fewer live tool-call failures). **Portable Computer** runs the whole thing on your own hardware -- NVIDIA RTX since 8/25, Windows since 9/14, AMD Ryzen AI Max since 9/24 -- on PPLX 27B or Qwen 3.8 27B with 24 GB of GPU memory, and local inference does not consume Computer credits. Included on Pro ($20) since 5/07, not only Max ($200).",
   category: "ai-personal-agents",
   url: "https://www.perplexity.ai/hub/blog/introducing-perplexity-computer",
 
@@ -58,12 +58,17 @@ export const perplexityComputer: ToolReview = {
     "Operates real applications through a browser/desktop layer, not just API calls, so it handles web apps that OpenAI-style tool use cannot reach",
   ],
   cons: [
-    "$200/month Max tier is the only way to get it -- this is a premium product and the cost adds up fast if you have any other SaaS subscriptions",
+    "Personal Computer is on the $20 Pro tier since 2026-05-07, but the full long-running product and highest limits still sit on the $200 Max tier -- and cloud sessions burn Computer credits, which is why Perplexity keeps pushing Portable Computer (local inference is credit-free but needs a 24 GB GPU)",
     "Closed-source and fully hosted -- your data, your workflows, your credentials live on Perplexity's infrastructure with no self-hosted escape hatch",
     "Sibling product Comet has a documented prompt-injection-to-phishing exploit (March 2026) -- Computer uses the same agentic infrastructure, treat it as an active security surface",
-    "Model Council routing is impressive but also a black box -- you don't control which sub-agent gets a task, and you pay one price for all of them whether you wanted GPT-5.2 or not",
+    "Perplexity disclosed on 2026-09-21 that Computer sessions are served by GLM 5.2 post-trained on user sessions -- an open-weight Chinese model rather than the frontier Opus/GPT council the launch marketing implied; capable, but not what the Model Council pitch suggested, and per-task routing is a black box either way",
   ],
   knownIssues: [
+    {
+      description: "STALENESS CATCH-UP (page last reviewed 2026-05-26): WHAT RUNS COMPUTER, PORTABLE COMPUTER ON YOUR OWN HARDWARE, AND THE SANDBOX RED-TEAM (2026-08-25 to 2026-09-24, vendor-primary): (1) **The model.** Perplexity's 9/21 research post 'Learning from real-world experience' says Computer sessions are served by **GLM 5.2** (Z.ai's open-weight model) post-trained by Perplexity with rejection-sampling fine-tuning plus hint-guided self-distillation on real sessions; the later checkpoint cut live tool-call failures 21.2% relative (2.24% to 1.77%) and 'becomes a model option in Computer'. This supersedes the launch-era 'Model Council' framing on this page (Opus 4.6, GPT-5.2, Gemini, Grok, Veo 3.1 routing) for the core session model; per-task routing to third-party models is not restated in the 9/21 post, so treat the council description as historical. (2) **Portable Computer.** Introduced 8/25 as 'Perplexity Computer entirely on device with NVIDIA, keeping private data local and escalating to the cloud only when a task needs it' (hub index); Windows app 9/14; **AMD Ryzen AI Max on 9/24** with the local models named for the first time -- **'Qwen 3.8 27B and PPLX 27B, Perplexity's post-trained model'** -- requiring at least 24 GB of GPU-accessible memory, Windows 10/11 and ~20 GB disk; 'local inference doesn't consume Computer credits'; local MCP servers reach apps on the same PC; **Pro and Max subscribers on individual and enterprise plans**, admin-gated on enterprise. (3) **Sandbox.** The 9/23 'Escaping SPACE: Part I' report red-teamed SPACE, 'the sandbox platform behind Perplexity Computer': nine models with root in a guest VM, **no VM-to-host escape in 108 runs**, but four models bypassed network confinement via DNS spoofing or shared-IP routing; defenses were added and a re-evaluation produced no verified bypass. (4) **Pricing rows and cons on this page were internally inconsistent** -- the pricing table has said since 5/26 that Personal Computer is included on the $20 Pro tier, while the cons still called $200 Max 'the only way to get it'; corrected today per the same-page rule.",
+      source: "Perplexity (perplexity.ai/hub/blog/learning-from-real-world-experience, 9/21; perplexity.ai/hub/blog/portable-computer-comes-to-amd-powered-agentic-pcs, 9/24; perplexity.ai/hub/blog/escaping-space-part-i, 9/23; hub index dates via Firecrawl) -- fetched 2026-09-28",
+      date: "2026-09-24",
+    },
     {
       description: "PRICING / DISTRIBUTION (CONFIRMED 2026-05-26 via MacRumors): on 2026-05-07 Perplexity launched a Mac desktop app and expanded 'Personal Computer' access beyond Max to include the Pro $20/mo and Enterprise tiers (prior gating was Max-only at $200/mo). Runs on any Mac with macOS 14 Sonoma or later (a Mac mini is recommended for always-on operation); activated by pressing both Command keys; the agent gets local file + web access inside a secure sandbox with auditable, reversible actions. The Pro tier above is updated to reflect that it now includes Personal Computer on Mac. Note: Perplexity's own changelog/hub still returns 403 to automated fetch (same bot-blocking pattern as OpenAI), so tier-1 press is the verification path here rather than a vendor-page failure meaning 'no change'.",
       source: "MacRumors (macrumors.com/2026/05/07/perplexity-mac-app-personal-computer); Perplexity changelog (vendor, 403 to automated fetch)",
@@ -84,8 +89,12 @@ export const perplexityComputer: ToolReview = {
   notFor: "Anyone price-sensitive (OpenClaw + Claude API is a fraction of the cost), anyone who needs data sovereignty (self-host Hermes instead), or anyone whose workflow doesn't actually need multi-model routing. Also wrong if you want a messaging-first UX -- Perplexity Computer lives in the browser, not in your Telegram.",
   verdict: "Perplexity Computer is the most capable hosted personal agent in 2026 and it's not especially close on output quality -- routing frontier models by task is a genuine architectural advantage over single-model agents. It's also the most expensive option in this category by an order of magnitude, and it lives on infrastructure you don't control with an active prompt-injection exposure on the sibling product. Buy it if your time is worth more than $200/month and the quality difference will show up in your work. Skip it and run OpenClaw or Hermes with Claude API if you're cost-sensitive or security-paranoid -- you'll give up the Model Council but save $150+/month.",
 
-  lastReviewedDate: "2026-05-26",
+  lastReviewedDate: "2026-09-28",
   dataSources: [
+    { name: "Perplexity: Learning from real-world experience (2026-09-21) -- Computer sessions served by GLM 5.2, post-trained checkpoint as a model option, 21.2% fewer tool-call failures", url: "https://www.perplexity.ai/hub/blog/learning-from-real-world-experience", dateAccessed: "2026-09-28" },
+    { name: "Perplexity: Portable Computer comes to AMD-powered agentic PCs (2026-09-24) -- PPLX 27B and Qwen 3.8 27B, 24 GB floor, credit-free local inference, Pro/Max", url: "https://www.perplexity.ai/hub/blog/portable-computer-comes-to-amd-powered-agentic-pcs", dateAccessed: "2026-09-28" },
+    { name: "Perplexity: Escaping SPACE: Part I (2026-09-23) -- red-team of the sandbox behind Computer", url: "https://www.perplexity.ai/hub/blog/escaping-space-part-i", dateAccessed: "2026-09-28" },
+    { name: "Perplexity hub blog index -- Portable Computer intro dated Aug 25, 2026 and post dates (via Firecrawl, 2026-09-28)", url: "https://www.perplexity.ai/hub/blog", dateAccessed: "2026-09-28" },
     { name: "MacRumors: Perplexity Mac app + Personal Computer (2026-05-07)", url: "https://www.macrumors.com/2026/05/07/perplexity-mac-app-personal-computer/", dateAccessed: "2026-05-26" },
     { name: "Introducing Perplexity Computer", url: "https://www.perplexity.ai/hub/blog/introducing-perplexity-computer", dateAccessed: "2026-04-13" },
     { name: "Perplexity Comet product page", url: "https://www.perplexity.ai/comet", dateAccessed: "2026-04-13" },
@@ -95,7 +104,7 @@ export const perplexityComputer: ToolReview = {
   ],
   affiliateUrl: "https://www.perplexity.ai/",
   status: "active",
-  poweredBy: "Claude Opus 4.6 (core reasoning) + Model Council",
-  metaTitle: "Perplexity Computer Review 2026: $200/mo Hosted AI Agent, Tested",
-  metaDescription: "Perplexity Computer review (May 2026). Hosted AI agent using Claude Opus, GPT-5, Gemini, Grok, and Veo. Personal Computer now on the Mac app + the $20 Pro tier, not just $200 Max. Security risks, real trade-offs.",
+  poweredBy: "GLM 5.2 (Z.ai), post-trained by Perplexity on real sessions, for cloud Computer sessions (disclosed 2026-09-21); PPLX 27B or Qwen 3.8 27B locally in Portable Computer (named 2026-09-24); launch-era Model Council routing (Opus, GPT, Gemini, Grok, Veo) is historical",
+  metaTitle: "Perplexity Computer Review 2026: Runs on GLM 5.2, Portable Computer Local on PPLX 27B",
+  metaDescription: "Perplexity Computer review. Perplexity disclosed (Sept 21, 2026) that Computer sessions run on GLM 5.2 post-trained on real sessions. Portable Computer runs it locally on NVIDIA RTX or AMD Ryzen AI Max (Sept 24) with PPLX 27B or Qwen 3.8 27B, 24 GB GPU memory, no credit spend, on Pro and Max. Sandbox red-team: no VM escape in 108 runs. Personal Computer on the $20 Pro tier since May.",
 };

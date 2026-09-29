@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const claude: ToolReview = {
   slug: "claude",
   name: "Claude (Anthropic)",
-  tagline: "**Life Sciences Verification Program opened 2026-09-17** -- verified life-science teams get Mythos 5.1, Opus 5 and Sonnet 5 with the biology safeguards relaxed (Standard Use grants renewed yearly; High-risk Use grants per project every six months, Opus 5 and Sonnet 5 today, Mythos still US-government-gated), on top of the 2026-08-27 Claude team plan for scientists (10,000 seats, standard free, premium $15/mo). Anthropic's flagship LLM family. **Claude Opus 5 launched 2026-07-24** and is now the default model on Claude Max and the strongest model on Claude Pro -- same $5/$25 per 1M as Opus 4.8, but Anthropic says it lands within 0.5% of Fable 5 on CursorBench at half the cost. **Sonnet 5's $2/$10 per 1M is now permanent** -- Anthropic cancelled the 2026-09-01 rise to $3/$15 and made the launch rate standard -- and it stays the default on Free/Pro. **Claude Fable 5.1 and Mythos 5.1 launched 2026-09-01** and now top the range -- same $10/$50 per 1M as Fable 5, with the saving delivered entirely through a 4x cheaper cache read ($1 -> $0.25/MTok), so it is 25-45% cheaper only if your workload reuses cached context. **From 2026-08-14 future Claude models watermark their text output globally** (SynthID-Text; no extra tokens, no price or speed change, no identifying information -- detector API not shipped yet), and the **legacy Workbench plus the experimental prompt-tools APIs retired 2026-08-17**",
+  tagline: "**Two Claude 5.5 models in six days: Claude Opus 5.5 (2026-09-22) and Claude Sonnet 5.5 (2026-09-28).** Opus 5.5 performs at Fable 5.1 level on most work and costs 40% less than Opus 5 to run -- $4/$20 per 1M (down from $5/$25) with cache reads cut to $0.20 (from $0.50), fast mode at $8/$40 up to 2.5x speed, output 30%+ faster, and five-hour usage limits raised on Pro, Max, Team and seat-based Enterprise with a saveable rate-limit reset. Sonnet 5.5 keeps Sonnet 5's $2/$10 but needs far fewer tokens (up to 30% cheaper per task), runs 30%+ faster and jumps Terminal-Bench 4.0 from 10.3% to 70.6%. Both are 1M context, Jun 2026 cutoff, on the Claude Platform, Bedrock, Vertex and Foundry; Haiku 5.5 follows in the coming weeks. Opus 5.5 launches with Fable-class cyber and bio safeguards (most cyber tasks fall back to Opus 4.8) and cannot run with thinking off.",
   category: "ai-llms",
   url: "https://claude.ai",
 
@@ -20,25 +20,37 @@ export const claude: ToolReview = {
     {
       plan: "Free",
       price: "$0",
-      features: ["Limited messages/day", "Claude Sonnet 5 (default as of 2026-06-30)", "Basic features"],
+      features: ["Limited messages/day", "Claude Sonnet 5 (default as of 2026-06-30); Sonnet 5.5 shipped 2026-09-28 at the same API price", "Basic features"],
     },
     {
       plan: "Pro",
       price: "$20",
       period: "month",
-      features: ["5x more usage than Free", "Claude Opus 5 -- the strongest model on Pro as of 2026-07-24", "Sonnet 5 as the everyday default", "Effort control + extended thinking", "Priority access"],
+      features: ["5x more usage than Free", "Claude Opus 5.5 (2026-09-22) -- the new leading Claude model, Fable 5.1-level on most work; Opus 5 remains", "Sonnet 5 / Sonnet 5.5 (2026-09-28) for everyday work", "Five-hour usage limits raised 2026-09-22 plus a saveable rate-limit reset", "Effort control + extended thinking", "Priority access"],
     },
     {
       plan: "Max (5x)",
       price: "$100",
       period: "month",
-      features: ["5x Pro usage", "Priority queue", "Opus 5 is the DEFAULT model on Max as of 2026-07-24", "Full effort control + fast mode"],
+      features: ["5x Pro usage", "Priority queue", "Opus 5.5 (2026-09-22) succeeds Opus 5 as the leading model; five-hour limits raised with a saveable rate-limit reset", "Full effort control + fast mode"],
     },
     {
       plan: "Max (20x)",
       price: "$200",
       period: "month",
       features: ["20x Pro usage", "Highest priority", "All generally-available models", "Best for power users and agents"],
+    },
+    {
+      plan: "API (Opus 5.5, launched 2026-09-22)",
+      price: "$4 / $20",
+      period: "per 1M tokens (input/output) -- 20% below Opus 5; cache reads $0.20 (60% below Opus 5), cache writes $5",
+      features: ["Fable 5.1-level on most work per Anthropic; 40% cheaper than Opus 5 on typical workloads at default settings", "Fast mode $8 / $40 per 1M for up to 2.5x speed (Claude Code + first-party API only)", "1M context, Jun 2026 cutoff, Batch $2 / $10; `claude-opus-5-5` on Bedrock, Vertex AI and Microsoft Foundry day one", "Ships with Fable-class cyber/bio safeguards (cyber tasks fall back to Opus 4.8) and thinking cannot be turned off"],
+    },
+    {
+      plan: "API (Sonnet 5.5, launched 2026-09-28)",
+      price: "$2 / $10",
+      period: "per 1M tokens (input/output) -- unchanged from Sonnet 5; cache reads $0.20, cache writes $2.50",
+      features: ["Up to 30% cheaper per task than Sonnet 5 through fewer tokens, output 30%+ faster", "Terminal-Bench 4.0 70.6% (Sonnet 5: 10.3%); CursorBench 4.0 55.5%; GDPval-AA 1844 vs Opus 5.5's 1846 (vendor numbers)", "1M context, Jun 2026 cutoff, Batch $1 / $5; `claude-sonnet-5-5` on all platforms", "First Sonnet with cyber safeguards and reasoning-extraction classifiers; thinking-off users must adopt `between_tools`"],
     },
     {
       plan: "API (Opus 5)",
@@ -67,19 +79,33 @@ export const claude: ToolReview = {
   ],
 
   pros: [
-    "Best writing quality of any LLM -- Opus 4.8 outputs read like a human wrote them, not a robot, and instruction-following stays sharpest in class",
+    "Opus 5.5 (2026-09-22) is the new price-performance anchor at the top of the range: Fable 5.1-level results on most work at $4/$20 with $0.20 cache reads, 40% cheaper than Opus 5 on typical workloads, 30%+ faster output, and vendor-table leads on Terminal-Bench 4.0 (66.4%), FrontierCode (54.4%), CursorBench 4.0 (57.8%) and GDPval-AA (1846)",
+    "Sonnet 5.5 (2026-09-28) turns the $2/$10 tier into a real coding model -- Terminal-Bench 4.0 70.6% vs Sonnet 5's 10.3%, CursorBench 55.5% within two points of Opus 5.5, up to 30% cheaper per task through token efficiency and 30%+ faster",
+    "Best writing quality of any LLM -- and Opus 5.5 (2026-09-22) writes more naturally still: Anthropic says it puts the key point first and testers called it clearer than Opus 5, which directly addresses the most common complaint about the previous generation",
     "1M token context window for enterprise API means it can process entire codebases, huge document sets, or long agent traces without chunking",
     "Opus 4.8 is built for agentic work -- Anthropic says it is a more effective collaborator with notably improved judgment in agent scenarios and is roughly 4x less likely than 4.7 to let code flaws slip through",
     "New user-facing effort control (claude.ai + Cowork) lets you trade depth for speed, and fast mode now runs at 2.5x speed while costing 3x less than the previous fast mode -- a real latency/cost lever short of full reasoning",
     "High-res vision (3.75MP images, 2,576px long edge) means charts, diagrams, whiteboards, and dense UIs work properly",
   ],
   cons: [
+    "Opus 5.5 and Sonnet 5.5 both ship gated: Opus 5.5 carries Fable-class cyber and bio safeguards that transparently re-route most cybersecurity tasks to Opus 4.8 (verification programs are the way through), thinking can no longer be switched off on Opus 5.5, and Sonnet users who ran thinking off must migrate to the new `between_tools` setting",
+    "Anthropic itself says benchmark margins have become a less reliable guide and that the Opus 5.5 vs Fable 5.1 gap 'is narrower than these scores suggest' -- and the Opus 5.5 scores were measured with safeguard fallbacks to older models, so treat the table as directional",
     "Free tier is more limited than ChatGPT's -- you hit the cap faster",
     "No image generation built in (unlike ChatGPT with DALL-E)",
     "Fewer third-party integrations and plugins compared to OpenAI's ecosystem",
     "Can be overly cautious and refuse requests that are perfectly fine",
   ],
   knownIssues: [
+    {
+      description: "CLAUDE SONNET 5.5 -- SAME $2/$10 AS SONNET 5, FEWER TOKENS PER TASK, 30%+ FASTER, AND TERMINAL-BENCH 4.0 GOES FROM 10.3% TO 70.6% (2026-09-28, vendor-primary): Anthropic introduced **Claude Sonnet 5.5**, 'the second model in the Claude 5.5 family', positioned as 'a faster, lower-cost complement to Claude Opus 5.5' that is 'strongest at well-scoped everyday tasks, fixing bugs, and creating polished documents, slides, and spreadsheets'. **Pricing is unchanged from Sonnet 5**: $2 input / $10 output per 1M, cache reads $0.20, cache writes $2.50 (rate card confirmed on platform.claude.com pricing.md; Batch $1/$5). The saving is in tokens, not the rate: 'it typically needs far fewer tokens to do the same work' and 'costs up to 30% less per task than its predecessor', while generating output '30%+ faster' -- 'our fastest Sonnet model to date'. **Vendor table (Sonnet 5.5 / Sonnet 5 / Opus 5.5 / GPT-6 Sol):** Terminal-Bench 4.0 **70.6% / 10.3% / 66.4%** / not reported; FrontierCode 1.1 Main 46.2% at Max (49.3% at Xhigh) / 42.4% / 54.4% / 52.1%; CursorBench 4.0 **55.5% / 34.1% / 57.8%** / not reported; GDPval-AA v2.1 **1844 / 1449 / 1846** / 1487; AA-Briefcase v1.1 1811 / 1359 / 1822 / 1483; Humanity's Last Exam (tools) 64.5% / 54.9% / 67.7%; OSWorld 2.1 80.1% / 57.0% / 81.8%; Chartography (no tools) 61.6% / 15.6% / 64.4% / 53.6%. Footnotes matter: Sonnet 5.5 scores LOWER at Max than at Xhigh on FrontierCode because at Max it more often ran Claude Code's code-review skill and made out-of-scope edits; Artificial Analysis ran GDPval-AA and AA-Briefcase on a pre-release deployment with a since-fixed structured-outputs bug; and Anthropic notes OpenAI 'recently fixed a bug that degraded image understanding in GPT-6 Sol' so third-party Sol scores may lag. Anthropic's own caveat: 'Opus 5.5 remains clearly stronger at complex, open-ended work requiring sustained judgment.' First Sonnet to beat Pokemon Red from screenshots. Default effort is Medium in Claude Code and the apps, High on the Claude Platform. **Safety:** cyber capabilities 'comparable to Opus 5's', so it is 'the first Sonnet model to launch with cyber safeguards and fallbacks'; biology safeguards same as Sonnet 5; first Sonnet with classifiers that prevent reasoning extraction, and preserved thinking now ties thinking to the account that created it (switching accounts mid-session in Claude Code is the documented edge case). **Migration trap:** if you run Sonnet with thinking off you must move to the new `between_tools` setting before switching. Available on all platforms including AWS, Google Cloud and Azure as `claude-sonnet-5-5`; zero data retention available. Testers quoted: Epic Games, Every, CodeRabbit ('Sonnet 5's tendency to reach for web search too often and its high token use are both gone'), SpaceXAI (CursorBench 55.5%, 'second only to Opus 5.5'), Base44 (3.6 iterations per build vs 7.7 for Opus 5), Unity, Slack, Zendesk, Balyasny (121k tokens per answer vs 497k), Box, Lovable, Atlassian (Rovo agents up to 30% faster). Haiku 5.5 'in the coming weeks'.",
+      source: "Anthropic (anthropic.com/claude-sonnet-5-5 -- site ROOT path, on-page 'September 28, 2026') + platform.claude.com/docs/en/about-claude/pricing.md + models/overview.md -- all fetched 2026-09-28 via curl with browser UA",
+      date: "2026-09-28",
+    },
+    {
+      description: "CLAUDE OPUS 5.5 -- FABLE 5.1-LEVEL WORK AT $4/$20, CACHE READS $0.20, 40% CHEAPER THAN OPUS 5 ON TYPICAL WORKLOADS, AND THE FIRST OPUS TO SHIP WITH FABLE-CLASS SAFEGUARDS (2026-09-22, vendor-primary): Anthropic introduced **Claude Opus 5.5**, 'the first model in our new Claude 5.5 family', which 'performs at the level of Claude Fable 5.1 on most work and costs 40% less to run than Opus 5' -- and 'our first release since we called for pacing the frontier', tested pre-release by Frontier Design and METR. **Rate card (confirmed on platform.claude.com pricing.md):** input **$4** (from $5), output **$20** (from $25), cache reads **$0.20** (from $0.50 -- 5% of input, a special footnoted rate; Fable/Mythos 5.1 stay at 2.5%), cache writes $5 (from $6.25); Batch $2/$10; **fast mode $8/$40** for 'up to 2.5x speed' in Claude Code and on the Claude Platform (first-party API only, not Bedrock/Vertex). 1M context, 128k-class output via Batch 300k beta, Jun 2026 reliable-knowledge cutoff, API id `claude-opus-5-5`, on AWS, Google Cloud and Microsoft Azure from day one. **Output is 30%+ faster than Opus 5**, and Anthropic raised five-hour usage limits on Pro, Max, Team and seat-based Enterprise plus gave subscribers 'a rate limit reset, which you can now save and use whenever you choose'. **Vendor table (Opus 5.5 / Fable 5.1 / Opus 5 / GPT-6 Astra / GPT-5.6 Sol):** Terminal-Bench 4.0 **66.4% / 55.8% / 52.3% / 57.9% / 37.3%**; FrontierCode v1.1 Main **54.4% / 50.3% / 48.0% / 53.3% / 47.5%**; CursorBench 4.0 **57.8% / 51.8% / 46.6% / -- / 41.7%**; GDPval-AA v2.1 **1846 / 1735 / 1708 / 1542 / 1588** Elo; AutomationBench (run by Zapier, no fallbacks) 40.0% / 31.4% / 26.9% / 41.4% / 28.8%; Humanity's Last Exam with tools 67.7% / 65.6% / 63.6% / 57.2%; Terminal-Bench-Science 0.1 58.7% / 52.6% / 29.0% / 64.6% / 22.4%; OSWorld 2.1 81.8% / 80.7% / 74.0% partial; Chartography 89.0% / 88.4% / 83.4%. Anthropic's own honesty check: 'benchmark margins have become a less reliable guide to real-world differences. In our own use, the gap between Opus 5.5 and Claude Fable 5.1 is narrower than these scores suggest.' Also note the safeguard confound: when Opus 5.5's production safeguards intervened, cyber tasks were completed by Opus 4.8 and biology tasks by Opus 5, which 'likely reduces' its scores. Efficiency claims: at default (Medium) effort it beats GPT-6 Astra on FrontierCode at roughly 20% of the cost per task and matches Astra on Terminal-Bench 4.0 at about 40%; a 200,000-line audit took under three hours vs over 20 for Opus 5 at 2.5x the tokens; the HAProxy C-to-Rust rewrite finished in 9.5 hours vs 12 for Fable 5.1 at 51% lower cost. **Safety and safeguards:** best scores to date on the ~2,000-scenario automated behavioral audit; ~85% fewer containment-boundary attempts than Opus 5 or Mythos 5.1, all low-severity and self-reported; but 'Opus 5.5 often suspects it is being evaluated'. Because it is 'comparable to Claude Mythos 5.1 in biology and cybersecurity', it ships with **safeguards similar to Fable 5.1**: most cybersecurity tasks are transparently re-routed to Opus 4.8 (Cyber Verification Program expanding 'in the coming weeks' with three trusted-access tiers up to Mythos), biology work runs under the Life Sciences Verification Program, preserved thinking (anti-distillation) applies to API accounts created on or after 2026-08-31, and **'thinking' mode can no longer be switched off**. Text watermarking for the EU AI Act, zero data retention available. Testers quoted: GitHub ('among the fewest tokens and steps we measured'), Clio (18-hour unattended run across six repos), Lovable, Quantium (38 prompts over four days became 11 over three hours), Spotify, Optiver (40-50% cost cut at Opus 5 quality), Column, Kiro, Walleye Capital. Sonnet 5.5 and Haiku 5.5 promised 'in the coming weeks' -- Sonnet arrived 9/28 (entry above).",
+      source: "Anthropic (anthropic.com/claude-opus-5-5 -- site ROOT path, on-page 'September 22, 2026') + platform.claude.com/docs/en/about-claude/pricing.md (Opus 5.5 rows, fast-mode table, 0.05x cache footnote) + models/overview.md (1M context, Jun 2026 cutoffs, platform IDs) -- all fetched 2026-09-28 via curl with browser UA",
+      date: "2026-09-22",
+    },
     {
       description: "LIFE SCIENCES VERIFICATION PROGRAM -- VERIFIED BIOLOGY TEAMS GET MYTHOS, OPUS AND SONNET WITH THE BIO SAFEGUARDS RELAXED, ON TWO GRANT TIERS (2026-09-17, vendor-primary): Anthropic opened the **Life Sciences Verification Program (LSVP)** in beta, 'initially for teams and institutions', with Pro and Max individual access promised 'over time'. It exists because the generally-available Fable models **block** professional biology and drug-development work; LSVP grants unlock tasks 'like drug discovery, research biology, clinical development, and manufacturing'. **Verification** reviews research credentials, security standards and ethical oversight. **Two grant types:** **Standard Use** -- team-wide, renewed yearly, 'refined classifiers that are more permissive for science tasks', applies to **Mythos 5.1, Opus 5 and Sonnet 5 today and future models as they launch**, across Claude Science, Claude.ai, Claude Code and the API. **High-risk Use** -- an add-on per single research project, renewed every six months, that 'removes all safeguards that block life sciences requests'; **available today for Opus 5 and Sonnet 5, but for Mythos 'limited to a small set of entities with additional vetting'** while Anthropic works with the US government. **Cyber classifiers stay on under every grant.** Safeguards are built around three threat models -- access compromise, insider threats and agent misuse (swarms, long-horizon tasks) -- with usage monitored against each entity's declared use cases. Dozens of organisations were onboarded in early access. **Read this alongside the 8/27 scientists post (next entry): academic PIs get Opus-class models via the team plan; verified life-science teams now get the Mythos tier via LSVP.** Pricing is not stated in the post; grants are access, not credits.",
       source: "Anthropic (anthropic.com/news/life-sciences-verification-program, on-page 'Sep 17, 2026') -- fetched 2026-09-17 via curl with browser UA",
@@ -308,10 +334,14 @@ export const claude: ToolReview = {
   ],
   bestFor: "Writers, analysts, developers, and anyone who values quality of output over quantity of features. If you care about how good the actual text is, Claude is the best.",
   notFor: "People who want an all-in-one platform with image generation, plugins, and browsing built in. ChatGPT's ecosystem is bigger.",
-  verdict: "Claude is the LLM you pick when quality matters more than features, and the July 24 arrival of Opus 5 is the most consequential thing to happen to that calculus all year. Opus 5 costs exactly what Opus 4.8 cost -- $5/$25 per 1M -- while Anthropic claims it lands within 0.5% of Fable 5 on CursorBench at half the cost per task, and it is now the default on Max and the strongest model available on Pro. That quietly demotes Fable 5 from 'the model you pay up for' to 'the model you reach for when nothing else will do,' because the $10/$50 tier now has to justify a much smaller gap. Below it, Sonnet 5 (June 30) remains the default on Free and Pro at $2/$10 through August, and it is still the right pick for everyday agentic and coding work. Worth knowing before you quote numbers: Anthropic published only comparative benchmark claims for Opus 5, no absolute scores. The practical read: Sonnet 5 for volume, Opus 5 for anything that matters, Fable 5 only when the frontier is genuinely the requirement -- with Apple naming Claude a selectable system assistant in iOS 27 this fall.",
+  verdict: "Claude is the LLM you pick when quality matters more than features, and the Claude 5.5 family (Opus 5.5 on 2026-09-22, Sonnet 5.5 on 2026-09-28) is the strongest version of that argument yet. Opus 5.5 does Fable 5.1-level work at $4/$20 with $0.20 cache reads -- 40% cheaper than Opus 5 on typical workloads by Anthropic's measurement -- and leads its own table on Terminal-Bench 4.0, FrontierCode, CursorBench and GDPval-AA, though Anthropic is unusually candid that the real-world gap to Fable 5.1 is narrower than the numbers. Sonnet 5.5 is the bigger practical shift for most people: the $2/$10 model now posts 70.6% on Terminal-Bench 4.0 where Sonnet 5 managed 10.3%, and it does it with fewer tokens and faster. The catch is the safeguard regime that now reaches down to Opus and, for cyber, to Sonnet: most security work is re-routed to older models unless you are verified, and thinking cannot be disabled on Opus 5.5. Fable 5.1 stays the top model at $10/$50 for the hardest long-horizon work; for everything else the 5.5 pair is the better buy. Scores held at 8.5 pending third-party verification of the vendor table.",
 
-  lastReviewedDate: "2026-09-17",
+  lastReviewedDate: "2026-09-28",
   dataSources: [
+    { name: "Anthropic: Introducing Claude Sonnet 5.5 (2026-09-28) -- $2/$10 unchanged, up to 30% cheaper per task, Terminal-Bench 4.0 70.6%, first Sonnet with cyber safeguards", url: "https://www.anthropic.com/claude-sonnet-5-5", dateAccessed: "2026-09-28" },
+    { name: "Anthropic: Introducing Claude Opus 5.5 (2026-09-22) -- $4/$20, cache reads $0.20, fast mode $8/$40, Fable-class safeguards, vendor benchmark table", url: "https://www.anthropic.com/claude-opus-5-5", dateAccessed: "2026-09-28" },
+    { name: "Claude Platform docs: Pricing -- Opus 5.5 and Sonnet 5.5 rows, 0.05x cache-read footnote, fast-mode table (fetched 2026-09-28)", url: "https://platform.claude.com/docs/en/about-claude/pricing", dateAccessed: "2026-09-28" },
+    { name: "Claude Platform docs: Models overview -- claude-opus-5-5 / claude-sonnet-5-5 IDs, 1M context, Jun 2026 cutoffs, Bedrock/Vertex/Foundry IDs (fetched 2026-09-28)", url: "https://platform.claude.com/docs/en/about-claude/models/overview", dateAccessed: "2026-09-28" },
     { name: "Anthropic: Introducing the Life Sciences Verification Program -- Standard Use and High-risk Use grants for Mythos 5.1, Opus 5, Sonnet 5 (2026-09-17)", url: "https://www.anthropic.com/news/life-sciences-verification-program", dateAccessed: "2026-09-17" },
     { name: "Anthropic: Expanding our support for scientists -- 10,000-seat team plan, standard free, premium $15/mo, AI for Science up to $50K (2026-08-27)", url: "https://www.anthropic.com/news/expanding-support-for-scientists", dateAccessed: "2026-09-17" },
     { name: "Anthropic: Introducing Claude Fable 5.1 and Claude Mythos 5.1 (2026-09-01) -- same model, different safeguards; 25-45% cheaper via cache reads only", url: "https://www.anthropic.com/claude-fable-and-mythos-5-1", dateAccessed: "2026-09-05" },
@@ -358,23 +388,25 @@ export const claude: ToolReview = {
   affiliateUrl: "https://claude.ai",
   status: "active",
   benchmarks: {
-    modelName: "Claude Opus 5 (launched 2026-07-24) is the current flagship and the default on Max -- Anthropic released COMPARATIVE claims only, no absolute scores: more than doubles Opus 4.8 on Frontier-Bench, within 0.5% of Fable 5 on CursorBench 3.2 at half the cost, 3x the next-best model on ARC-AGI 3, ~1.5x on Zapier AutomationBench, and beats Fable 5's best OSWorld 2.0 result at just over a third of the cost. Fable 5 (2026-06-09) holds vendor SWE-Bench Pro 80.3% (vs GPT-5.5 58.6%), #1 LMArena Elo 1510 and #1 Artificial Analysis Index 65 as of 6/11. Sonnet 5 (2026-06-30): OSWorld-Verified 78.5%. Legacy Opus-line reasoning-suite scores shown below as baseline pending third-party suites for Opus 5",
+    modelName: "Claude Opus 5.5 (launched 2026-09-22) -- Anthropic's own table, adaptive thinking at max effort unless noted; safeguard fallbacks to Opus 4.8 (cyber) and Opus 5 (bio) were active, which Anthropic says likely lowers these scores. Third-party verification pending; Sonnet 5.5 (2026-09-28) posts 70.6% Terminal-Bench 4.0 / 55.5% CursorBench / 1844 GDPval-AA on the same table",
     scores: [
-      { name: "MMLU", score: 91.3, maxScore: 100, unit: "%" },
-      { name: "GPQA Diamond", score: 91.3, maxScore: 100, unit: "%" },
-      { name: "AIME 2024", score: 99.8, maxScore: 100, unit: "%" },
-      { name: "HumanEval", score: 94.0, maxScore: 100, unit: "%" },
-      { name: "SWE-bench Verified", score: 80.8, maxScore: 100, unit: "%" },
-      { name: "ARC-AGI", score: 75.2, maxScore: 100, unit: "%" },
+      { name: "Terminal-Bench 4.0 (xhigh effort)", score: 66.4, maxScore: 100, unit: "%" },
+      { name: "FrontierCode v1.1 Main", score: 54.4, maxScore: 100, unit: "%" },
+      { name: "CursorBench 4.0", score: 57.8, maxScore: 100, unit: "%" },
+      { name: "OSWorld 2.1 (partial)", score: 81.8, maxScore: 100, unit: "%" },
+      { name: "Humanity's Last Exam (with tools)", score: 67.7, maxScore: 100, unit: "%" },
+      { name: "Terminal-Bench-Science 0.1", score: 58.7, maxScore: 100, unit: "%" },
+      { name: "Chartography (with tools)", score: 89.0, maxScore: 100, unit: "%" },
+      { name: "GDPval-AA v2.1 (Artificial Analysis)", score: 1846, maxScore: 2000, unit: "Elo" },
     ],
     chatbotArenaElo: 1510,
-    lastUpdated: "2026-06-11",
+    lastUpdated: "2026-09-28",
   },
   personality: {
     oneLiner: "The thoughtful consultant",
     tone: "Measured, careful, and slightly formal. Claude explains tradeoffs rather than handing back one-liner answers, asks clarifying questions when a request is ambiguous, and hedges openly when it is not confident.",
     quirks: "More willing than most models to refuse edgy or ambiguous requests, pushes back on premises it disagrees with, and will flag when you are probably asking the wrong question instead of just answering the one you typed.",
   },
-  metaTitle: "Claude Review 2026: Life Sciences Program Unlocks Mythos for Biology -- Fable 5.1 at $10/$50",
-  metaDescription: "Claude review. The Life Sciences Verification Program (Sept 17, 2026) gives verified biology teams Mythos 5.1, Opus 5 and Sonnet 5 with relaxed safeguards on Standard and High-risk grants. Fable 5.1 tops the range at an unchanged $10/$50 per 1M with cache reads at $0.25/MTok; Opus 5 is the Max default at $5/$25; Sonnet 5 stays $2/$10. Scientists' team plan: 10,000 seats, premium $15/mo.",
+  metaTitle: "Claude Review 2026: Opus 5.5 at $4/$20 and Sonnet 5.5 at $2/$10 -- The Claude 5.5 Family",
+  metaDescription: "Claude review. Claude Opus 5.5 (Sept 22, 2026) does Fable 5.1-level work at $4/$20 per 1M with $0.20 cache reads, 40% cheaper than Opus 5, fast mode $8/$40, and ships with Fable-class cyber and bio safeguards. Claude Sonnet 5.5 (Sept 28) keeps $2/$10, cuts tokens per task up to 30%, runs 30%+ faster and scores 70.6% on Terminal-Bench 4.0. Usage limits raised on Pro and Max. Haiku 5.5 coming.",
 };
