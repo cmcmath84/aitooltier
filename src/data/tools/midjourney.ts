@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const midjourney: ToolReview = {
   slug: "midjourney",
   name: "Midjourney",
-  tagline: "Industry-leading AI image generation with stunning artistic quality. V8.2 launched 2026-07-24 as the new default model -- an aesthetics and quality pass that Midjourney says makes output 'more creative, bold, sophisticated, edgy and fresh' while dramatically cutting low-quality results, plus better Personalization for accounts with long rating histories. No price change",
+  tagline: "Industry-leading AI image generation with stunning artistic quality. **The V8.2 Edit Model opened to everyone on 2026-08-27** -- instruction-based edits, up to four image references (replacing omni-reference), inpainting and outpainting -- and the **2026-09-24 update** makes targeted edits change only the pixels you select, adds live style previews, and fixes --tile seams on V8.1/8.2. V8.2 itself launched 2026-07-24 as the default model. No price change",
   category: "ai-image-generators",
   url: "https://midjourney.com",
 
@@ -42,6 +42,7 @@ export const midjourney: ToolReview = {
     "Huge active community for prompt inspiration",
     "Consistent improvements with each version update",
     "Strong upscaling and variation controls",
+    "The V8.2 edit model (Aug 2026) finally gives Midjourney instruction-based editing, four-image references, inpainting and outpainting inside its own UI, closing the gap with Nano Banana and FLUX for edits",
   ],
   cons: [
     "No free tier -- you have to pay to try it",
@@ -50,6 +51,11 @@ export const midjourney: ToolReview = {
     "No API access for developers on lower plans",
   ],
   knownIssues: [
+    {
+      description: "THE EDIT MODEL IS THE STORY SINCE V8.2 -- COMMUNITY TESTING OPENED 2026-08-27, AND THE 2026-09-24 UPDATE MADE EDITS PIXEL-PRECISE (vendor-primary; this page was last reviewed 2026-07-29). On 2026-08-27 Midjourney said 'today we're gonna start letting everyone test our first V8.2 image edit model': editing images with instructions, generating from other images with **up to 4 image references at once, replacing omni-reference**, changing specific areas (inpainting) or expanding the canvas (outpainting), with personalization, moodboards and srefs supported (the last two 'may work best with some extra prompt direction'). Ways in: drag images into the prompt bar, the edit button in the lightbox, the edit tab, or --edit on Discord; both midjourney.com and alpha.midjourney.com got new UIs. **2026-09-24 update**: 'Making targeted edits to the image will change only the pixels that you've selected', so repeated edits no longer degrade the image; the Styles sidebar gained **Live previews** of your current prompt across liked and featured styles (click a thumbnail to generate with it); **--tile now blends invisibly on V8.1/8.2** where seams used to show; and Midjourney is 'experimenting with fast models in the interface' on alpha. The alpha changelog of 9/23 added saved default parameters (Settings > Advanced > Your defaults), a full-width masonry Create feed with hover prompts and in-place Organize mode, and Archive across all projects; 9/16 added Korean. No pricing change; the tiers on this page were unchanged as of this pass.",
+      source: "Midjourney updates: 'Edit Model for V8' (updates.midjourney.com/edit-model-for-v8/, 2026-08-27), 'Edit updates, thumbnail previews, and more' (updates.midjourney.com/edit-updates-thumbnail-previews-and-more/, 2026-09-24), 'Alpha Changelog - 9/23/26' and '9/16/26' (fetched 2026-09-28)",
+      date: "2026-09-24",
+    },
     {
       description: "FIRST ACQUISITION -- CO-STAR (2026-07-23): Midjourney bought **Co-Star**, its first acquisition ever, to build out its Product and Design organization; Co-Star founder Banu will lead that effort. The strategic signal matters more than the deal: the post describes 'the slow blossoming of a very unusual research lab' and promises 'the announcement of half a dozen similarly ambitious projects over the next 6 months,' citing **Midjourney Medical** as the first example. Read: Midjourney is deliberately widening past image generation, which is worth watching if you evaluate it purely as an image tool",
       source: "Midjourney updates (updates.midjourney.com/midjourneys-first-acquisition/, fetched 2026-07-29)",
@@ -90,8 +96,10 @@ export const midjourney: ToolReview = {
   notFor: "Beginners who want a simple web interface, or developers who need API access on a budget.",
   verdict: "Midjourney is still the gold standard for AI image quality. The output is consistently stunning. But the Discord-first experience is a real barrier for casual users, and the lack of a free tier means you can't even test it before committing. If image quality is your top priority, it's worth the price. If you want something simpler, look at DALL-E or Leonardo AI.",
 
-  lastReviewedDate: "2026-07-29",
+  lastReviewedDate: "2026-09-28",
   dataSources: [
+    { name: "Midjourney updates: Edit Model for V8 (2026-08-27) -- instruction edits, 4 image references, inpainting and outpainting", url: "https://updates.midjourney.com/edit-model-for-v8/", dateAccessed: "2026-09-28" },
+    { name: "Midjourney updates: Edit updates, thumbnail previews, and more (2026-09-24) -- pixel-precise edits, live style previews, --tile fix", url: "https://updates.midjourney.com/edit-updates-thumbnail-previews-and-more/", dateAccessed: "2026-09-28" },
     { name: "Midjourney updates: Version 8.2 (2026-07-24, new default model)", url: "https://updates.midjourney.com/version-8-2/", dateAccessed: "2026-07-29" },
     { name: "Midjourney updates: Midjourney's First Acquisition (Co-Star, 2026-07-23)", url: "https://updates.midjourney.com/midjourneys-first-acquisition/", dateAccessed: "2026-07-29" },
     { name: "The Art Newspaper: Midjourney demands Hollywood AI secrets (2026-07-09)", url: "https://www.theartnewspaper.com/2026/07/09/midjourney-demands-hollywood-AI-secrets", dateAccessed: "2026-07-18" },
@@ -102,6 +110,6 @@ export const midjourney: ToolReview = {
   affiliateUrl: "https://midjourney.com",
   status: "active",
 
-  metaTitle: "Midjourney Review 2026: V8.2 Is the New Default (Jul 24) + First-Ever Acquisition",
-  metaDescription: "Midjourney review. V8.2 shipped 2026-07-24 as the default model -- bolder aesthetics, far fewer low-quality results, better Personalization, no price change. Plus the Co-Star acquisition (Jul 23) and what it signals. Scores, pricing, alternatives.",
+  metaTitle: "Midjourney Review 2026: V8.2 Edit Model, Pixel-Precise Edits (Sept 24), Live Style Previews",
+  metaDescription: "Midjourney review. The V8.2 edit model opened to everyone Aug 27, 2026 (instruction edits, 4 image references, inpainting, outpainting); the Sept 24 update makes edits change only selected pixels and adds live style previews. V8.2 default since Jul 24, no price change. Scores, pricing, alternatives.",
 };
