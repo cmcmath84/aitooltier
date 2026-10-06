@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const mistral: ToolReview = {
   slug: "mistral",
   name: "Mistral AI",
-  tagline: "**Mistral opened a Munich hub for Physics AI and Industrial AI on 2026-09-28**, confirming the May 2026 acquisition of Emmi AI (30+ physicists and engineers in computational fluid dynamics, structural mechanics and multi-physics simulation), naming BMW (crash simulation) and Siemens Energy as partners, and committing to **build one gigawatt of European compute capacity by 2030**. **Mistral now powers Firefox Smart Window (2026-09-16)** -- Mozilla's beta AI browsing assistant runs on Mistral models for France and North America, UK and Germany later this year, with zero data retention. **EUR 3B Series D at a EUR 21B+ post-money (9/08, Samsung-led)**; Cloudera partnership (9/10); Medium 3 retired 8/31 in favour of Medium 3.5.",
+  tagline: "**Mistral Large 4 ('le Chonk', ML4) entered public preview on 2026-10-06: a 1T-parameter natively multimodal MoE with roughly 50B active parameters, a 1M context window, callable today as mistral-large-4 at $1.36 / $0.14 cached / $4.18 per 1M tokens (batch at half price), open weights promised by the end of October, and vendor-claimed open-weight leads in cyber (Cybench 93%), coding (DeepSWE v1.1 61.7%) and agentic work (AutomationBench 59.9%).** **Mistral opened a Munich hub for Physics AI and Industrial AI on 2026-09-28**, confirming the May 2026 acquisition of Emmi AI (30+ physicists and engineers in computational fluid dynamics, structural mechanics and multi-physics simulation), naming BMW (crash simulation) and Siemens Energy as partners, and committing to **build one gigawatt of European compute capacity by 2030**. **Mistral now powers Firefox Smart Window (2026-09-16)** -- Mozilla's beta AI browsing assistant runs on Mistral models for France and North America, UK and Germany later this year, with zero data retention. **EUR 3B Series D at a EUR 21B+ post-money (9/08, Samsung-led)**; Cloudera partnership (9/10); Medium 3 retired 8/31 in favour of Medium 3.5.",
   category: "ai-local-models",
   url: "https://mistral.ai",
 
@@ -57,6 +57,16 @@ export const mistral: ToolReview = {
       ],
     },
     {
+      plan: "API (Mistral Large 4 -- public preview)",
+      price: "$1.36 / $4.18",
+      period: "per 1M tokens (input/output); cached input $0.14; batch $0.68 / $2.09",
+      features: [
+        "Public preview from 2026-10-06 as mistral-large-4 (v26.10); weights promised by the end of October 2026",
+        "1T-class granular MoE, roughly 50B active, 1.6B vision encoder, 1M context, natively multimodal",
+        "Docs list the license only as 'Open' -- the exact weight license is not yet published",
+      ],
+    },
+    {
       plan: "API (Mistral Large 3)",
       price: "$2",
       period: "per 1M tokens",
@@ -78,6 +88,7 @@ export const mistral: ToolReview = {
   ],
 
   pros: [
+    "Mistral Large 4 (public preview 2026-10-06) is the first Mistral flagship in the 1-trillion-parameter class and the first with a 1M context window; Mistral's own numbers put it ahead of DeepSeek V4 Pro 0813 and Qwen3.8 Max on its Coding Agent Index (49.8%) and claim the top score on the Artificial Analysis Cyber Index reproduce-and-patch test (82%) -- vendor-published, third-party verification pending",
     "Mistral Medium 3.5 (April 29 2026) is Mistral's first 'flagship merged' model -- 128B dense, 256k context, 77.6% on SWE-Bench Verified, in public preview at $1.5/$7.5 per million tokens. Closes most of the coding-benchmark gap to Claude Opus / GPT-5.5 at materially lower API cost",
     "Vibe Remote Agents (also 4/29) lets you launch cloud-based coding sessions that run asynchronously and in parallel via CLI or Le Chat -- file diffs, tool calls, and the ability to teleport a local session to the cloud while preserving history and approval state. Unique in the category as of today",
     "Le Chat Work Mode (4/29) is the first agentic mode shipped at the consumer-chat tier -- multi-step task completion, cross-tool workflows, research synthesis, inbox triage, with explicit approval gates for sensitive operations",
@@ -91,6 +102,11 @@ export const mistral: ToolReview = {
     "Documentation could be better, especially for newer models",
   ],
   knownIssues: [
+    {
+      description: "MISTRAL LARGE 4 ('LE CHONK') -- PUBLIC PREVIEW OF A 1-TRILLION-PARAMETER OPEN-WEIGHT FLAGSHIP, WEIGHTS DUE BY THE END OF OCTOBER (2026-10-06, vendor-primary): Mistral launched a **public preview of Mistral Large 4** ('Unofficially ML4, very officially: le Chonk'), callable today on Mistral Studio as `mistral-large-4` (v26.10; the docs model page is dated October 6, 2026, status 'Public Preview', license shown only as 'Open'). **Architecture:** the launch post says 'a 1 trillion-parameter natively multimodal model with 49 billion active parameters'; the docs model card says '52B active parameters and 1.05T total parameters, and a 1.6B vision encoder' with a **1M context window** -- the two vendor figures disagree slightly and both are recorded. Trained 'from scratch on 3,800 NVIDIA Grace Blackwell GPUs in Mistral's own datacenters in Europe', with more than 160 languages in the training data. **Rate card (docs model page, per 1M tokens): $1.36 input, $0.14 cached input, $4.18 output; a second column at exactly half ($0.68 / $0.07 / $2.09) matches Mistral's standing 50% batch discount.** Neither the public pricing page nor the docs pricing table listed Large 4 at check time -- the model page is the only price source so far. **Weights: 'We will release the weights by the end of the month'**; until then Mistral is 'red-teaming the model in real-world settings with cybersecurity leaders, vetted partners, and state authorities, who will access the same model with reduced moderation and expanded cyber capabilities'. **Vendor benchmarks (all Mistral-published, no third-party verification yet):** DeepSWE v1.1 61.7%, SWE-Atlas-QnA 59.4%, Terminal-Bench 4 28.3%, Coding Agent Index 49.8% ('ahead of DeepSeek V4 Pro 0813 and Qwen3.8 Max'); AutomationBench 59.9%; AA-Briefcase 1,393 Elo; Cybench 93% of 40 challenges; the Artificial Analysis Cyber Index reproduce-and-patch test at 82% ('the highest of any model', with the note that Claude Opus 5.5 and GPT-6 Astra 'score near zero on the same test because they refuse to perform the task'); Lakera B3 attack resistance 93.3%; KORABench 1.691 of 2; Dense 200 visual grounding 42% vs 41% for GPT-6 Astra; a Surge AI blind human coding evaluation placed ML4 Preview second of five (3.74) behind Claude Opus 5 (4.22) and ahead of Kimi K3, GLM-5.3 and GLM-5.2. Mistral calls it 'competitive with the strongest open-source models globally, while significantly outperforming any open-weight model developed in the US or Europe'. **Positioning:** sovereignty and cyber -- 'provider-level refusals can block legitimate vulnerability research', so an open-weight, self-deployable model is pitched at security operations, served from a European deployment 'that Mistral operates end-to-end' plus other regions. **Not published yet:** the weight license, architecture details, the post-training write-up and 'additional benchmarks' are all promised 'as we work toward releasing the weights'; no Vibe availability was stated. **Watch: weights and license by 2026-10-31; a row on the public pricing page; day-one adds on GitHub Copilot or Cursor (none in either changelog as of 10/06).**",
+      source: "Mistral (mistral.ai/news/mistral-large-4/, RSS pubDate 'Tue, 06 Oct 2026 12:00:27 GMT', JSON-LD datePublished 2026-10-06T12:00:27Z, on-page 'October 6, 2026'); Mistral docs model page (docs.mistral.ai/models/mistral-large-4-0 -- 'October 6, 2026', 'Public Preview', 'Open', v26.10, 1M context, $1.36 / $0.14 / $4.18 per 1M); Mistral docs models overview (docs.mistral.ai/getting-started/models/models_overview/ -- 'Mistral Large 4 | Open | v26.10') -- all fetched 2026-10-06 via curl with browser UA",
+      date: "2026-10-06",
+    },
     {
       description: "MUNICH HUB, THE EMMI AI ACQUISITION ON THE RECORD, AND A ONE-GIGAWATT EUROPEAN COMPUTE PLEDGE (2026-09-28, vendor-primary): 'Today, we are putting that conviction into practice by opening our new hub in Munich', housing 'specialised research teams dedicated to Physics AI and Industrial AI, alongside applied engineers serving our enterprise partners directly'. Two facts this page had not carried: (1) **'Following our acquisition of Emmi AI in May 2026, more than 30 physicists, researchers, and engineers with unique expertise in Physics and Engineering AI joined Mistral'** -- Emmi specialised in 'large-scale AI modelling of computational fluid dynamics, structural mechanics, and multi-physics simulations'; Mistral's pitch is replacing simulations that take 'days per run' with learned physics models, working 'with BMW on crash simulations and engineering AI, and with Siemens Energy on industrial AI applications'. (2) **'To secure Europe's AI sovereignty, Mistral will build one gigawatt of European compute capacity by 2030'**, on top of the in-region inference and sovereign infrastructure announced 8/20. The sovereignty argument is restated around open weights: 'Mistral's model weights are fully accessible to the customer. Our models run on the customer's own infrastructure, trained on their data, operated under European law'. Germany's digital minister Karsten Wildberger is quoted. No product, price or model change; recorded for the acquisition, the compute commitment and the Physics AI line, which is a new product category for Mistral.",
       source: "Mistral (mistral.ai/news/hallo-deutschland/, RSS pubDate Mon, 28 Sep 2026; on-page 'September 28, 2026') -- fetched 2026-09-28 via curl",
@@ -169,10 +185,13 @@ export const mistral: ToolReview = {
   ],
   bestFor: "Developers who want cheap, high-quality API access. Also strong for multilingual applications and European companies that prefer an EU-based AI provider for data residency.",
   notFor: "Non-technical users looking for a polished chat experience. ChatGPT and Claude are much better as consumer products.",
-  verdict: "Mistral is the scrappy underdog that keeps surprising people. Their models are impressively efficient -- you get near-GPT-4 quality at a fraction of the API cost. But the consumer experience (Le Chat) is rough. This is primarily a developer's tool. If you're building AI applications on a budget, Mistral should be on your shortlist.",
+  verdict: "Mistral is the scrappy underdog that keeps surprising people. Their models are impressively efficient -- you get frontier-adjacent quality at a fraction of the API cost, and Mistral Large 4 (public preview October 2026, open weights promised by the end of the month) puts a 1T-parameter flagship on that same cheap-and-open footing. But the consumer experience (Le Chat) is rough. This is primarily a developer's tool. If you're building AI applications on a budget, Mistral should be on your shortlist.",
 
-  lastReviewedDate: "2026-09-28",
+  lastReviewedDate: "2026-10-06",
   dataSources: [
+    { name: "Mistral: Introducing Mistral Large 4 -- public preview, 1T params / ~49B active, weights end of October, vendor benchmarks (2026-10-06)", url: "https://mistral.ai/news/mistral-large-4/", dateAccessed: "2026-10-06" },
+    { name: "Mistral docs: Mistral Large 4 model page -- mistral-large-4, v26.10, Public Preview, 1M context, $1.36 / $0.14 / $4.18 per 1M (2026-10-06)", url: "https://docs.mistral.ai/models/mistral-large-4-0", dateAccessed: "2026-10-06" },
+    { name: "Mistral docs: models overview -- Mistral Large 4 listed as Open, v26.10 (verified 2026-10-06)", url: "https://docs.mistral.ai/getting-started/models/models_overview/", dateAccessed: "2026-10-06" },
     { name: "Mistral: Hallo, Deutschland! -- Munich hub for Physics AI and Industrial AI, Emmi AI acquisition (May 2026), 1 GW European compute by 2030, BMW and Siemens Energy (2026-09-28)", url: "https://mistral.ai/news/hallo-deutschland/", dateAccessed: "2026-09-28" },
     { name: "Mistral: Mistral and Mozilla are bringing open, private and multilingual AI to your web browser -- Firefox Smart Window (2026-09-16)", url: "https://mistral.ai/news/mistral-x-mozilla/", dateAccessed: "2026-09-17" },
     { name: "Mistral: Mistral raises EUR 3B to make sovereign, open-weight AI the technology frontier -- Series D, >EUR 21B post-money, Samsung-led (2026-09-08)", url: "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/", dateAccessed: "2026-09-14" },
@@ -195,14 +214,15 @@ export const mistral: ToolReview = {
   affiliateUrl: "https://mistral.ai",
   status: "active",
   benchmarks: {
-    modelName: "Mistral Medium 3.5 (vendor-published; third-party verification pending)",
+    modelName: "Mistral Large 4 preview (vendor-published 2026-10-06; third-party verification pending)",
     scores: [
-      { name: "MMLU", score: 86.0, maxScore: 100, unit: "%" },
-      { name: "HumanEval", score: 92.0, maxScore: 100, unit: "%" },
-      { name: "MATH", score: 69.0, maxScore: 100, unit: "%" },
-      { name: "SWE-Bench Verified", score: 77.6, maxScore: 100, unit: "%" },
+      { name: "DeepSWE v1.1", score: 61.7, maxScore: 100, unit: "%" },
+      { name: "SWE-Atlas-QnA", score: 59.4, maxScore: 100, unit: "%" },
+      { name: "Terminal-Bench 4", score: 28.3, maxScore: 100, unit: "%" },
+      { name: "AutomationBench", score: 59.9, maxScore: 100, unit: "%" },
+      { name: "Cybench", score: 93.0, maxScore: 100, unit: "%" },
     ],
-    lastUpdated: "2026-04-29",
+    lastUpdated: "2026-10-06",
   },
   systemRequirements: [
     {
@@ -221,6 +241,11 @@ export const mistral: ToolReview = {
       max: "2× A100 80 GB FP16",
     },
     {
+      variant: "Mistral Large 4 (1.05T total / roughly 50B active; weights due end of Oct 2026)",
+      min: "Multi-GPU node -- about 525 GB of weights at 4-bit for 1.05T parameters (arithmetic, not a vendor spec); not a single-card model",
+      max: "8x B200-class node at BF16; the API preview is the practical route until weights and license land",
+    },
+    {
       variant: "Mistral Large 3 (flagship)",
       min: "Not self-hostable under free terms -- MRL license",
       max: "Requires paid commercial license to self-host",
@@ -232,6 +257,6 @@ export const mistral: ToolReview = {
     tone: "Efficient, terse, and slightly blunt. Mistral answers in fewer words than Claude or ChatGPT, especially on factual questions, and rarely hedges or softens its take.",
     quirks: "Trained with less Anglocentric data than Llama, so it handles French, German, and Spanish notably better than US-origin models. Refusal rates are lower than ChatGPT or Gemini on most gray-area prompts.",
   },
-  metaTitle: "Mistral AI Review 2026: EUR 3B Series D at EUR 21B+, Vibe + Medium 3.5",
-  metaDescription: "Mistral review. Munich hub for Physics AI and Industrial AI (Sept 28, 2026) confirms the May 2026 Emmi AI acquisition, BMW and Siemens Energy partnerships and a pledge to build 1 GW of European compute by 2030. Firefox Smart Window runs on Mistral models (Sept 16, zero data retention). EUR 3B Series D at EUR 21B+ (Sept 8). Le Chat became Vibe; Medium 3.5 (128B dense, 256k, SWE-Bench 77.6%).",
+  metaTitle: "Mistral AI Review 2026: Mistral Large 4 Preview at $1.36/$4.18 -- 1T-Parameter Open-Weight Flagship",
+  metaDescription: "Mistral review. Mistral Large 4 ('le Chonk') entered public preview Oct 6, 2026: a 1T-parameter natively multimodal MoE with roughly 50B active parameters and 1M context, $1.36/$4.18 per 1M tokens on the API, open weights promised by end of October, with vendor-claimed open-weight leads in cyber, coding and agentic work. Also: Munich Physics AI hub, Firefox Smart Window, EUR 3B Series D at EUR 21B+, Vibe + Medium 3.5.",
 };
