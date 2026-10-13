@@ -20,23 +20,31 @@ export const looka: ToolReview = {
     {
       plan: "Free",
       price: "$0",
-      features: ["Unlimited logo designs", "Preview only", "No downloads"],
+      features: ["Unlimited logo designs", "Preview only -- pay only when you download", "No downloads"],
     },
     {
-      plan: "Basic Logo",
-      price: "$20",
-      features: ["1 logo file", "PNG format", "No vector files"],
+      plan: "Basic Logo Package",
+      price: "$35",
+      period: "one-time",
+      features: ["One low-res PNG logo file", "No vector files"],
     },
     {
-      plan: "Premium Logo",
-      price: "$65",
-      features: ["Multiple file formats", "Vector SVG files", "Color variations"],
+      plan: "Premium Logo Package",
+      price: "$72",
+      period: "one-time",
+      features: ["High-res PNG, EPS, SVG and PDF", "Colour variations including transparent backgrounds", "Unlimited post-purchase changes, full ownership"],
     },
     {
-      plan: "Brand Kit",
+      plan: "Brand Kit Subscription",
       price: "$96",
-      period: "year",
-      features: ["Logo files", "Business card designs", "Social media kit", "Brand guidelines"],
+      period: "year (billed annually)",
+      features: ["Unlimited logo changes, hi-res and vector files", "300+ branded assets: social profiles and posts, business cards, email signatures, letterheads, invoices, brand guidelines", "Logo ownership kept after the subscription ends"],
+    },
+    {
+      plan: "Brand Kit Web Subscription",
+      price: "$129",
+      period: "year (billed annually)",
+      features: ["Everything in Brand Kit", "AI-generated website"],
     },
   ],
 
@@ -54,6 +62,11 @@ export const looka: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRICING REFRESH -- LOGO PACKAGES UP, A WEBSITE TIER ADDED (looka.com/pricing checked 2026-10-12, vendor-primary; this page was last reviewed 2026-03-27): **Basic Logo Package $35 one-time** (one low-res PNG; this page had $20), **Premium Logo Package $72 one-time** (multiple high-res formats, colour variations, unlimited post-purchase changes; had $65), **Brand Kit Subscription $96 a year** (unchanged; 300+ branded assets, unlimited logo edits, ownership kept after the subscription ends) and a **Brand Kit Web Subscription at $129 a year** that adds an AI-generated website. Designing remains free; you pay only to download. Looka's FAQ says you hold copyright in the logo as a whole but not its individual elements (such as symbols), and recommends registering a trademark separately. The page's metadata still carries an older 'Basic, Premium, and Enterprise' description; the live cards are the source used here. No rename or ownership change found (title and host unchanged).",
+      source: "Looka pricing page (looka.com/pricing/) -- fetched 2026-10-12 via Firecrawl (curl and WebFetch are blocked by Cloudflare)",
+      date: "2026-10-12",
+    },
+    {
       description: "SVG exports occasionally have misaligned elements that don't match the preview shown in the editor",
       source: "Trustpilot Reviews",
       date: "2026-02",
@@ -68,14 +81,15 @@ export const looka: ToolReview = {
   notFor: "Established brands or anyone who wants a truly unique, custom logo -- you'll outgrow Looka quickly.",
   verdict: "Looka solves a real problem: most small businesses and side projects need a logo and brand identity, but can't justify $2,000+ for a designer. The AI-generated options are polished enough to use on a real website or business card. But there's a ceiling -- the logos are assembled from templates and a limited icon set, so they'll never feel truly custom. For getting started quickly, Looka is excellent. For building a lasting brand identity, you'll eventually want to hire a human.",
 
-  lastReviewedDate: "2026-03-27",
+  lastReviewedDate: "2026-10-12",
   dataSources: [
+    { name: "Looka: Pricing -- logo packages, Brand Kit and Brand Kit Web subscriptions", url: "https://looka.com/pricing/", dateAccessed: "2026-10-12" },
     { name: "Looka official site", dateAccessed: "2026-03-27" },
     { name: "Trustpilot Reviews", dateAccessed: "2026-03-27" },
     { name: "Reddit r/Entrepreneur", dateAccessed: "2026-03-27" },
   ],
   affiliateUrl: "https://looka.com",
   status: "active",
-  metaTitle: "Looka Review 2026: AI Logo Maker for Startups and Small Business",
-  metaDescription: "Looka review. AI-generated logos and brand kits for small businesses. Good enough to ship? Honest scores, pricing breakdown, pros and cons. March 2026.",
+  metaTitle: "Looka Review 2026: AI Logo Maker Pricing ($35-$72 Logos, $96 Brand Kit, $129 With Website)",
+  metaDescription: "Looka review. AI-generated logos and brand kits for small businesses: free to design, $35 Basic or $72 Premium logo packages, a $96/year Brand Kit with 300+ branded assets, and a $129/year tier that adds an AI-built website. Honest scores, pros and cons. Pricing checked October 2026.",
 };

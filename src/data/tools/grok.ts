@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const grok: ToolReview = {
   slug: "grok",
   name: "Grok",
-  tagline: "**Team Bots launched 2026-09-28 in public beta on Teams and Enterprise plans** -- shared Grok Bots built around a role, with team context (files, instructions, skills), plugins (Salesforce, Notion, GitHub), credentials for APIs without a plugin, and memories, where the bot is shared but each person's conversations and memories stay private; each Team Bot gets its own Slack handle. SpaceXAI runs one per major sales account, and its 9/22 case study says the merged SpaceXAI + Cursor support desk absorbed a 175% ticket increase on Grok Bot with no new hires at $0.20-$0.30 per resolution. **Grok 4.7 (9/21)** remains the flagship at $2/$6 per 1M with chart-only benchmarks; Grok Voice Transcribe 2.0 and the corrected $15/1M-character TTS price stand.",
+  tagline: "**The X Subscription (2026-10-12) folds Grok, Grok Bot, Cursor and X Premium into one plan: Free, Plus $8, Premium $30 (what SuperGrok, Cursor Pro and X Premium+ cost $90 for combined), Super $100 and Ultra $200 a month, with one weekly-refreshing usage pool shared across Grok and Cursor; the old SuperGrok, Cursor and X Premium plans are closed to new sign-ups.** **Team Bots launched 2026-09-28 in public beta on Teams and Enterprise plans** -- shared Grok Bots built around a role, with team context (files, instructions, skills), plugins (Salesforce, Notion, GitHub), credentials for APIs without a plugin, and memories, where the bot is shared but each person's conversations and memories stay private; each Team Bot gets its own Slack handle. SpaceXAI runs one per major sales account, and its 9/22 case study says the merged SpaceXAI + Cursor support desk absorbed a 175% ticket increase on Grok Bot with no new hires at $0.20-$0.30 per resolution. **Grok 4.7 (9/21)** remains the flagship at $2/$6 per 1M with chart-only benchmarks; Grok Voice Transcribe 2.0 and the corrected $15/1M-character TTS price stand.",
   category: "ai-llms",
   url: "https://grok.x.ai",
 
@@ -18,33 +18,38 @@ export const grok: ToolReview = {
   hasFreeTier: true,
   pricing: [
     {
-      plan: "Free",
+      plan: "Free (The X Subscription)",
       price: "$0",
-      features: ["~10 prompts per 2 hours", "Basic Grok access", "Requires X account"],
+      features: ["Daily access to Grok Chat, Imagine, Voice and Build", "A starter allowance for Cursor's coding agents", "Standard X"],
     },
     {
-      plan: "X Premium",
+      plan: "Plus (The X Subscription, from 2026-10-12)",
       price: "$8",
       period: "month",
-      features: ["Higher query limits", "Grok 4.20 access", "Bundled X social features"],
+      features: ["Base shared AI usage pool across Grok, the Grok API and Cursor (Grok models only in Cursor)", "X checkmark, creator tools, fewer timeline ads"],
     },
     {
-      plan: "X Premium+",
-      price: "$40",
-      period: "month",
-      features: ["Higher Grok 4.20 access", "Ad-free X", "Priority responses"],
-    },
-    {
-      plan: "SuperGrok",
+      plan: "Premium (The X Subscription)",
       price: "$30",
       period: "month",
-      features: ["Full Grok 4.20 (4-agent multi-agent system)", "DeepSearch mode", "Highest rate limits", "Think mode", "$300/yr option (16% off)"],
+      features: ["4x Plus usage; Grok Bot, latest Grok models, image and video generation", "Bundles what were SuperGrok, Cursor Pro and X Premium+ -- previously $90/month combined, per SpaceXAI", "Cursor cloud agents, Origin code hosting, Bugbot reviews; third-party models in Cursor billed separately at API list price", "Ad-free X on most surfaces"],
     },
     {
-      plan: "SuperGrok Heavy",
-      price: "$300",
+      plan: "Super / Ultra (The X Subscription)",
+      price: "$100 / $200",
       period: "month",
-      features: ["Grok 4 Heavy model", "Highest priority", "Multi-agent at scale", "Note: Grok 4.3 beta-gating ended 2026-05-02"],
+      features: ["Super: 15x Plus usage, priority model access at peak times", "Ultra: 50x Plus usage, earliest access to new products and models", "Usage pool refreshes weekly; top-ups once it runs out"],
+    },
+    {
+      plan: "Teams / Enterprise (The X Subscription)",
+      price: "$30+",
+      period: "user/month (Premium, Super or Ultra seats); Enterprise custom",
+      features: ["Same per-seat prices as the individual tiers; SSO, admin controls, usage analytics", "SpaceXAI says 3x more coding usage than the older Cursor Teams plans at a lower per-seat price", "Enterprise: one usage pool and dashboard across Grok and Cursor"],
+    },
+    {
+      plan: "Legacy plans (existing subscribers only)",
+      price: "Unchanged",
+      features: ["X Premium ($8), X Premium+, SuperGrok ($30), SuperGrok Heavy and the old Cursor plans keep their price and features for current subscribers", "Closed to new sign-ups from 2026-10-12; switching gives a prorated refund", "SpaceXAI says remaining customers will eventually be moved, with advance notice and no timeline yet"],
     },
     {
       plan: "API (Grok 4.7, launched 2026-09-21)",
@@ -75,10 +80,15 @@ export const grok: ToolReview = {
   cons: [
     "The snarky personality gets old fast when you're trying to get serious work done",
     "Tied to the X ecosystem -- you need an X account, and the real-time data skews toward X's user base",
-    "SuperGrok at $30/mo is steep when Claude Pro and ChatGPT Plus are $20 with arguably better core models",
+    "The X Subscription bundle is good value only if you use the pieces: Premium at $30 is cheap for Grok plus Cursor plus X Premium+, but a Grok-only user pays $10 more than Claude Pro or ChatGPT Plus, and the shared pool means heavy Cursor use eats your Grok allowance (and vice versa)",
     "Image generation is no longer the weak spot it was -- Imagine Image 2.0 (2026-08-07) added region editing, segmentation, background removal and 5-image multi-ref, and xAI places it #2 worldwide on both Arena image boards; the remaining gap vs ChatGPT/Gemini is analysis and document understanding, not generation",
   ],
   knownIssues: [
+    {
+      description: "THE X SUBSCRIPTION -- GROK, GROK BOT, CURSOR AND X PREMIUM IN ONE PLAN, OLD PLANS CLOSED TO NEW CUSTOMERS (2026-10-12, vendor-primary): SpaceXAI introduced **The X Subscription**, 'which brings together Grok, Grok Bot, Cursor, and X Premium in one plan', available to new customers from 10/12 and 'to everyone globally' over the next few days. **Tiers (x.ai/pricing, identical on cursor.com/pricing):** **Free $0** (daily Grok Chat, Imagine, Voice and Build, a starter Cursor agent allowance, standard X); **Plus $8/month** (base usage; Grok Chat, Voice, Imagine, Build, Grok API and Cursor -- **Grok models only in Cursor on Plus**; checkmark, fewer ads, creator tools); **Premium $30/month** (4x Plus; Grok Bot, video generation, Cursor cloud agents, Origin code hosting, Bugbot reviews; 'the benefits of SuperGrok, Cursor Pro, and X Premium+, previously $90/month combined'); **Super $100/month** (15x Plus, peak-time priority); **Ultra $200/month** (50x Plus, earliest access); **Teams from $30 per user/month** (Premium, Super or Ultra seats at individual prices, SSO and admin controls; SpaceXAI claims 3x more coding usage than older Cursor Teams at a lower per-seat price); **Enterprise custom** with one usage pool across Grok and Cursor. **How usage works:** one pool shared across Grok (Chat, Imagine, Voice, Bot, API) and Cursor, **refreshed weekly**; top-ups when it runs out. **Third-party models in Cursor (Claude, GPT, Gemini) are not in the allowance on any self-serve tier -- Premium and above can use them billed separately at API list prices via top-ups**; Plus cannot use them at all. SpaceXAI says every X Subscription plan includes 'at least twice as much coding usage with our models as the comparable Cursor plan' and that each comparable new tier gives more usage per dollar. **Existing subscribers:** SuperGrok, Cursor and X Premium plans continue unchanged at their current price; 'the previous plans are no longer available for new sign-ups'; switching ends the old plan with a prorated refund and comes with limited-time upgrade offers; annual terms run to their end date; 'Eventually we'll move any remaining customers to the new plans, but there's no timeline yet', with advance notice promised. Subscriptions are sold only by X Subscription Corp. **This page's pricing table now shows the new ladder; the old X Premium+ / SuperGrok Heavy figures are no longer quoted because they were unverifiable and are closed to new buyers.**",
+      source: "SpaceXAI (x.ai/news/x-subscription, JSON-LD datePublished 2026-10-12, on-page 'Oct 12, 2026'); x.ai/pricing and cursor.com/pricing (both now show the same Free / Plus $8 / Premium $30 / Super $100 / Ultra $200 / Teams $30+ per user / Enterprise ladder, sold by X Subscription Corp.) -- post fetched via curl with browser UA, pricing pages via Firecrawl, all 2026-10-12",
+      date: "2026-10-12",
+    },
     {
       description: "TEAM BOTS -- SHARED GROK BOTS WITH PRIVATE CONVERSATIONS, PUBLIC BETA ON TEAMS AND ENTERPRISE (2026-09-28, vendor-primary): 'Today we're launching Team Bots, Grok Bots that work and learn alongside your team. Give one access to the files, apps, and expertise it needs, then share it so everyone can work from the same context.' A Team Bot is built around a role or workflow and combines four things: **Context** (files, instructions, skills -- brand guides, internal docs), **Plugins** (Salesforce, Notion, GitHub; connected per person or configured for the team), **Credentials** (secure access to third-party APIs without a plugin) and **Memories**. Privacy model: 'although the Bot is shared, each person's conversations with it remain private. The Bot keeps separate context and memories for each user while drawing on the skills shared across the team.' Slack: each Team Bot has its own handle and can be invited to a channel. SpaceXAI's own deployments: a Team Bot per major sales account that reviews company news, Gong calls, Notion and Slack nightly and posts a role-tailored morning briefing; engineering coordination; company data questions. Customer example: Harper (small-business insurance) built a lapsed-policy reinstatement bot in 24 hours and says it saved customers over $120,000 across hundreds of policies. **Availability: 'Team Bots is available today in public beta on Teams and Enterprise plans'**, with pre-built bots for sales, product management, marketing and data analytics; macOS download, contact sales. No price beyond plan membership is stated.",
       source: "SpaceXAI (x.ai/news/team-bots, JSON-LD datePublished 2026-09-28) -- fetched 2026-09-28 via curl with browser UA",
@@ -237,10 +247,12 @@ export const grok: ToolReview = {
   ],
   bestFor: "People who live on X/Twitter and want an AI that can tap into that data in real-time. Also good for users who find mainstream chatbots too sanitized and want something with more personality.",
   notFor: "Enterprise users who need reliable, consistent outputs. Also not the best pick if you don't use X -- the real-time data advantage disappears and you're left with a solid-but-not-best-in-class LLM.",
-  verdict: "Grok has come a long way from being dismissed as Elon's pet project. As of Grok 4.7 (2026-09-21) xAI ships a frontier-class coding and knowledge-work model at $2/$6 per 1M -- far below OpenAI and Anthropic list prices -- and places it in Cursor, Grok Build and GitHub Copilot on launch day, which makes the API the strongest part of the story. The consumer side is less clear-cut: at $30/mo for SuperGrok you are paying a premium for personality and real-time X data, and xAI still publishes its benchmark comparisons as charts rather than tables, so independent verification lags every launch. If real-time X data or cheap frontier tokens matter to you, Grok is a serious pick. If not, Claude or ChatGPT still give you more polish for the money.",
+  verdict: "Grok has come a long way from being dismissed as Elon's pet project. As of Grok 4.7 (2026-09-21) xAI ships a frontier-class coding and knowledge-work model at $2/$6 per 1M -- far below OpenAI and Anthropic list prices -- and places it in Cursor, Grok Build and GitHub Copilot on launch day, which makes the API the strongest part of the story. The consumer side is less clear-cut: at $30/mo (now The X Subscription Premium, which also bundles Cursor and X Premium+) you are paying for a bundle, and a Grok-only user still pays more than for Claude Pro or ChatGPT Plus, and xAI still publishes its benchmark comparisons as charts rather than tables, so independent verification lags every launch. If real-time X data or cheap frontier tokens matter to you, Grok is a serious pick. If not, Claude or ChatGPT still give you more polish for the money.",
 
-  lastReviewedDate: "2026-09-28",
+  lastReviewedDate: "2026-10-12",
   dataSources: [
+    { name: "SpaceXAI: Introducing The X Subscription (2026-10-12)", url: "https://x.ai/news/x-subscription", dateAccessed: "2026-10-12" },
+    { name: "SpaceXAI: Pricing -- The X Subscription tiers (Free, Plus, Premium, Super, Ultra, Teams, Enterprise)", url: "https://x.ai/pricing", dateAccessed: "2026-10-12" },
     { name: "SpaceXAI: Team Bots -- AI coworkers that learn from your team (2026-09-28) -- shared Grok Bots, private per-user memories, public beta on Teams and Enterprise", url: "https://x.ai/news/team-bots", dateAccessed: "2026-09-28" },
     { name: "SpaceXAI: How SpaceXAI is using Grok Bot to scale customer support (2026-09-22) -- 175% ticket growth, no new hires, $0.20-$0.30 per resolution", url: "https://x.ai/news/grok-bot-customer-support", dateAccessed: "2026-09-28" },
     { name: "SpaceXAI: Introducing Grok 4.7 (2026-09-21) -- same $2/$6 as 4.6, new base model, chart-only benchmarks, LatchBio 62.4%, HackerBench 3.3%", url: "https://x.ai/news/grok-4-7", dateAccessed: "2026-09-21" },
@@ -296,6 +308,6 @@ export const grok: ToolReview = {
     tone: "Casual, jokey, and willing to swear. Grok takes strong positions without hedging, leans into an edgy 'based' persona, and cracks jokes far more often than Claude, ChatGPT, or Gemini.",
     quirks: "Engages with topics other chatbots refuse, pulls live context from X so it reflects whatever is trending that hour, and will freely mock things -- including itself. In SuperGrok's multi-agent mode it can sound like several personalities arguing with each other.",
   },
-  metaTitle: "Grok Review 2026: Team Bots Public Beta, Grok 4.7 at $2/$6, Day-One in Cursor and Copilot",
-  metaDescription: "Grok review. Team Bots (Sept 28, 2026, public beta on Teams and Enterprise) are shared Grok Bots with team context, plugins, credentials and memories, private per user, each with a Slack handle. SpaceXAI says the merged SpaceXAI and Cursor support desk runs on Grok Bot at $0.20-$0.30 per resolution. Grok 4.7 (Sept 21) is the flagship at the same $2/$6 per 1M as 4.6, day-one in GitHub Copilot and Cursor.",
+  metaTitle: "Grok Review 2026: The X Subscription ($8 to $200) Bundles Grok, Cursor and X Premium; Grok 4.7",
+  metaDescription: "Grok review. The X Subscription (Oct 12, 2026) bundles Grok, Grok Bot, Cursor and X Premium: Free, Plus $8, Premium $30, Super $100 and Ultra $200 a month with one weekly usage pool shared across Grok and Cursor; third-party models in Cursor cost extra at API rates. SuperGrok and old Cursor plans close to new buyers. Grok 4.7 costs $2/$6 per 1M on the API.",
 };

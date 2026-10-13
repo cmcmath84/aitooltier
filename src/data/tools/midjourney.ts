@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const midjourney: ToolReview = {
   slug: "midjourney",
   name: "Midjourney",
-  tagline: "Industry-leading AI image generation with stunning artistic quality. **The V8.2 Edit Model opened to everyone on 2026-08-27** -- instruction-based edits, up to four image references (replacing omni-reference), inpainting and outpainting -- and the **2026-09-24 update** makes targeted edits change only the pixels you select, adds live style previews, and fixes --tile seams on V8.1/8.2. V8.2 itself launched 2026-07-24 as the default model. No price change",
+  tagline: "**Midjourney's alpha site gained shared folders and a Thinking mode in its 10/7 changelog: collaborators can now generate into a shared folder, and 'Rerun (Thinking)' has V8.2 inspect its own image for missed prompt details -- wrong objects, layout, anatomy, text -- and generate again.** Industry-leading AI image generation with stunning artistic quality. **The V8.2 Edit Model opened to everyone on 2026-08-27** -- instruction-based edits, up to four image references (replacing omni-reference), inpainting and outpainting -- and the **2026-09-24 update** makes targeted edits change only the pixels you select, adds live style previews, and fixes --tile seams on V8.1/8.2. V8.2 itself launched 2026-07-24 as the default model. No price change",
   category: "ai-image-generators",
   url: "https://midjourney.com",
 
@@ -52,6 +52,11 @@ export const midjourney: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "ALPHA: SHARED FOLDERS AND A THINKING MODE FOR V8.2 (Alpha Changelog 10/7/26 and 'Testing Thinking Mode', both posted 2026-10-08, vendor-primary): **Thinking mode** -- 'You can now rerun jobs made with 8.2 (standard and edit) with thinking. Midjourney looks at your image, finds where it missed your prompt (wrong objects, layout, anatomy, text) and generates again.' Run it from the lightbox via 'Rerun (Thinking)'; Midjourney says it helps 'prompt accuracy, typography, and coherence' and may later ship as a broader thinking mode or an 'add more thinking' step. **Alpha site only (alpha.midjourney.com), described as an early version; no GPU-time cost stated.** **Shared folders** -- folders can be shared with Collaborators (who can generate straight into the folder) or Viewers, by username or by link (private, anyone-with-link view, or open to any Midjourney member); the owner can delete a shared folder for everyone; images stay in each creator's own history. **Privacy caveat from Midjourney: sharing does not change image privacy -- non-stealth images made inside a private folder can still appear on Explore and on profiles.** This is the 'better ways to create together' the 10/1 changelog teased. Same changelog: stalled edit submits now fail cleanly within two minutes, older Firefox works again, Live Style Previews work on custom styles, draft mode on V8.1/V8.2 always makes a 24-image grid.",
+      source: "Midjourney updates (updates.midjourney.com/alpha-changelog-10-7-26/ and /testing-thinking-mode/, both datetime 2026-10-08) -- fetched 2026-10-12 via curl with full browser UA",
+      date: "2026-10-08",
+    },
+    {
       description: "THE EDIT MODEL IS THE STORY SINCE V8.2 -- COMMUNITY TESTING OPENED 2026-08-27, AND THE 2026-09-24 UPDATE MADE EDITS PIXEL-PRECISE (vendor-primary; this page was last reviewed 2026-07-29). On 2026-08-27 Midjourney said 'today we're gonna start letting everyone test our first V8.2 image edit model': editing images with instructions, generating from other images with **up to 4 image references at once, replacing omni-reference**, changing specific areas (inpainting) or expanding the canvas (outpainting), with personalization, moodboards and srefs supported (the last two 'may work best with some extra prompt direction'). Ways in: drag images into the prompt bar, the edit button in the lightbox, the edit tab, or --edit on Discord; both midjourney.com and alpha.midjourney.com got new UIs. **2026-09-24 update**: 'Making targeted edits to the image will change only the pixels that you've selected', so repeated edits no longer degrade the image; the Styles sidebar gained **Live previews** of your current prompt across liked and featured styles (click a thumbnail to generate with it); **--tile now blends invisibly on V8.1/8.2** where seams used to show; and Midjourney is 'experimenting with fast models in the interface' on alpha. The alpha changelog of 9/23 added saved default parameters (Settings > Advanced > Your defaults), a full-width masonry Create feed with hover prompts and in-place Organize mode, and Archive across all projects; 9/16 added Korean. No pricing change; the tiers on this page were unchanged as of this pass.",
       source: "Midjourney updates: 'Edit Model for V8' (updates.midjourney.com/edit-model-for-v8/, 2026-08-27), 'Edit updates, thumbnail previews, and more' (updates.midjourney.com/edit-updates-thumbnail-previews-and-more/, 2026-09-24), 'Alpha Changelog - 9/23/26' and '9/16/26' (fetched 2026-09-28)",
       date: "2026-09-24",
@@ -96,8 +101,10 @@ export const midjourney: ToolReview = {
   notFor: "Beginners who want a simple web interface, or developers who need API access on a budget.",
   verdict: "Midjourney is still the gold standard for AI image quality. The output is consistently stunning. But the Discord-first experience is a real barrier for casual users, and the lack of a free tier means you can't even test it before committing. If image quality is your top priority, it's worth the price. If you want something simpler, look at DALL-E or Leonardo AI.",
 
-  lastReviewedDate: "2026-09-28",
+  lastReviewedDate: "2026-10-12",
   dataSources: [
+    { name: "Midjourney: Alpha Changelog 10/7/26 -- Thinking mode, shared folders", url: "https://updates.midjourney.com/alpha-changelog-10-7-26/", dateAccessed: "2026-10-12" },
+    { name: "Midjourney: Testing Thinking Mode (2026-10-08)", url: "https://updates.midjourney.com/testing-thinking-mode/", dateAccessed: "2026-10-12" },
     { name: "Midjourney updates: Edit Model for V8 (2026-08-27) -- instruction edits, 4 image references, inpainting and outpainting", url: "https://updates.midjourney.com/edit-model-for-v8/", dateAccessed: "2026-09-28" },
     { name: "Midjourney updates: Edit updates, thumbnail previews, and more (2026-09-24) -- pixel-precise edits, live style previews, --tile fix", url: "https://updates.midjourney.com/edit-updates-thumbnail-previews-and-more/", dateAccessed: "2026-09-28" },
     { name: "Midjourney updates: Version 8.2 (2026-07-24, new default model)", url: "https://updates.midjourney.com/version-8-2/", dateAccessed: "2026-07-29" },
@@ -110,6 +117,6 @@ export const midjourney: ToolReview = {
   affiliateUrl: "https://midjourney.com",
   status: "active",
 
-  metaTitle: "Midjourney Review 2026: V8.2 Edit Model, Pixel-Precise Edits (Sept 24), Live Style Previews",
-  metaDescription: "Midjourney review. The V8.2 edit model opened to everyone Aug 27, 2026 (instruction edits, 4 image references, inpainting, outpainting); the Sept 24 update makes edits change only selected pixels and adds live style previews. V8.2 default since Jul 24, no price change. Scores, pricing, alternatives.",
+  metaTitle: "Midjourney Review 2026: V8.2 Thinking Mode and Shared Folders (Alpha), Edit Model, Pixel-Precise Edits",
+  metaDescription: "Midjourney review. Midjourney's alpha site added shared folders for collaboration and a Thinking mode that reruns V8.2 jobs after the model checks its own image for missed prompt details (Oct 8, 2026). The V8.2 edit model opened to everyone Aug 27 and the Sept 24 update made edits pixel-precise.",
 };

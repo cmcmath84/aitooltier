@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const cursor: ToolReview = {
   slug: "cursor",
   name: "Cursor",
-  tagline: "**Cursor launched two bots for the last mile of shipping code on 2026-09-23 (Teams and Enterprise): Rollouts, which attaches a monitor to every pull request and watches the change as it deploys per environment -- verified healthy, regression detected, or inconclusive -- and Security Review, which posts one comment per PR reporting exploitable bugs with severity, attack path and a proposed fix.** Rollouts is the Cursor rebuild of Firetiger's Change Monitors on the Bot Development Kit; it can open a revert PR or hand a regression to a cloud agent but does not merge or roll back on its own. Models: Anthropic's 9/28 Sonnet 5.5 post quotes SpaceXAI's Sualeh Asif on CursorBench 4.0 -- Sonnet 5.5 at 55.5% 'second only to Opus 5.5' (57.8%); Grok 4.7 and its Cursor-only Fast variant arrived 9/21. **Cursor Projects (9/10, beta)** and the 11/12 OpenAI shutoff watch continue.",
+  tagline: "**Cursor's own plans closed to new customers on 2026-10-12: Cursor is now sold through The X Subscription (Free, Plus $8, Premium $30, Super $100, Ultra $200) with one usage pool shared with Grok, at least twice the coding usage on SpaceXAI's models -- but Claude, GPT and Gemini are no longer in the allowance, billed at API list price on Premium and up and unavailable on Plus. On 2026-10-06 the Cursor iOS app gained remote control of local agents.** **Cursor launched two bots for the last mile of shipping code on 2026-09-23 (Teams and Enterprise): Rollouts, which attaches a monitor to every pull request and watches the change as it deploys per environment -- verified healthy, regression detected, or inconclusive -- and Security Review, which posts one comment per PR reporting exploitable bugs with severity, attack path and a proposed fix.** Rollouts is the Cursor rebuild of Firetiger's Change Monitors on the Bot Development Kit; it can open a revert PR or hand a regression to a cloud agent but does not merge or roll back on its own. Models: Anthropic's 9/28 Sonnet 5.5 post quotes SpaceXAI's Sualeh Asif on CursorBench 4.0 -- Sonnet 5.5 at 55.5% 'second only to Opus 5.5' (57.8%); Grok 4.7 and its Cursor-only Fast variant arrived 9/21. **Cursor Projects (9/10, beta)** and the 11/12 OpenAI shutoff watch continue.",
   category: "ai-code-assistants",
   url: "https://cursor.com",
 
@@ -18,39 +18,39 @@ export const cursor: ToolReview = {
   hasFreeTier: true,
   pricing: [
     {
-      plan: "Hobby (Free)",
+      plan: "Free (The X Subscription)",
       price: "$0",
-      features: ["2,000 completions", "50 premium requests", "Composer 2 limited access"],
+      features: ["Limited agent and Chat requests (a starter allowance)", "Includes free Grok access and standard X"],
     },
     {
-      plan: "Pro",
-      price: "$20",
+      plan: "Plus (The X Subscription, from 2026-10-12)",
+      price: "$8",
       period: "month",
-      features: ["Unlimited completions", "Extended agent limits", "Composer 2 Standard at $0.50/$2.50 per 1M tokens", "All frontier models"],
+      features: ["Base usage pool shared between Cursor and Grok", "Grok models ONLY -- no Claude, GPT or Gemini on this plan", "Bundles an X checkmark and creator tools"],
     },
     {
-      plan: "Pro+",
-      price: "$60",
+      plan: "Premium (The X Subscription)",
+      price: "$30",
       period: "month",
-      features: ["3x Pro usage on OpenAI, Claude, Gemini models", "Composer 2 Fast at $1.50/$7.50 per 1M tokens", "Multi-workspace"],
+      features: ["4x Plus usage; cloud agents and automations, Origin code hosting, Bugbot AI code reviews", "Replaces Cursor Pro for new customers and also bundles SuperGrok and X Premium+", "Third-party models (Claude, GPT, Gemini) available but billed separately at API list price via top-ups -- not in the allowance"],
     },
     {
-      plan: "Ultra",
-      price: "$200",
+      plan: "Super / Ultra (The X Subscription)",
+      price: "$100 / $200",
       period: "month",
-      features: ["20x Pro usage on all frontier models", "Highest priority queue", "Background Agents at scale"],
+      features: ["Super: 15x Plus usage, priority model access at peak times", "Ultra: 50x Plus usage, earliest access to products and models", "Third-party models still billed separately at API list price"],
     },
     {
-      plan: "Teams -- Standard seat (new pricing, renewals 2026-07-01)",
-      price: "$32-40",
-      period: "user/month ($32 annual / $40 monthly)",
-      features: ["Now includes MORE total usage at the same price (leverages Composer 2.5 cost efficiency)", "Two separate usage pools: (1) first-party Composer/Auto, (2) third-party API models", "Shared chats, centralized billing, analytics, SAML SSO, privacy mode, Agent Command Center"],
+      plan: "Teams / Enterprise (The X Subscription)",
+      price: "$30+",
+      period: "user/month; Enterprise custom",
+      features: ["Premium, Super or Ultra seats at individual prices; centralized billing, analytics, SAML/OIDC SSO, team marketplace for rules, skills and plugins", "Enterprise adds SCIM, audit logs, granular spend and model/MCP access controls, pooled usage across Grok and Cursor", "SpaceXAI: 3x more coding usage than the older Cursor Teams seats at a lower per-seat price"],
     },
     {
-      plan: "Teams -- Premium seat (new, 2026-07-01)",
-      price: "$96-120",
-      period: "user/month ($96 annual / $120 monthly)",
-      features: ["5x the included usage of the Standard seat at only 3x the cost", "Same two-pool structure (first-party vs third-party API)", "For heavy agentic teams that were previously overflowing the Standard seat"],
+      plan: "Legacy Cursor plans (existing subscribers only)",
+      price: "Hobby $0 / Pro $20 / Pro+ $60 / Ultra $200",
+      period: "month; Teams Standard $32-40 and Premium $96-120 per user",
+      features: ["Closed to new sign-ups from 2026-10-12 but unchanged for current subscribers, including their included third-party model usage", "Switching to The X Subscription ends the old plan with a prorated refund", "SpaceXAI: remaining customers will eventually be moved, with advance notice and no timeline yet"],
     },
   ],
 
@@ -61,12 +61,22 @@ export const cursor: ToolReview = {
     "Still built on VS Code so the keyboard muscle memory, extensions, and theme are preserved -- the switching cost is genuinely low for existing VS Code users",
   ],
   cons: [
-    "Premium request limits on Pro are still frustrating at heavy usage -- the Ultra tier at $200/mo exists for a reason, and serious users will end up there",
+    "Since 2026-10-12 new subscribers get Cursor through The X Subscription, whose allowance covers only SpaceXAI's Grok models: Claude, GPT and Gemini are billed separately at API list price on Premium ($30) and above and are unavailable on Plus ($8), so a developer who mainly uses third-party frontier models now pays twice -- the plan, then the tokens",
     "Composer 2 occasionally produces confident-looking code that fails in subtle ways -- the speed is real but it is noticeably less careful than Claude Opus 4.6 on complex architectural tasks",
     "Cross-platform agent handoff in Cursor 3 adds surface area -- the mobile / Slack / GitHub surfaces are still rough, and background agents sometimes do work you didn't want while you were asleep",
     "The Agent Command Center is a power feature that casual users won't touch -- if you're just here for tab completion, Cursor 3 is more tool than you need and Copilot remains less disruptive",
   ],
   knownIssues: [
+    {
+      description: "REMOTE CONTROL FOR LOCAL AGENTS FROM THE CURSOR iOS APP (2026-10-06, vendor-primary changelog): 'You can now see and reply to the local agents running on your computer from the Cursor iOS app.' Pair a computer by approving the request in Cursor desktop; local agents then appear in the app to watch or message. Agents keep running on your machine -- it must stay on and online (a 'Keep this computer awake' setting needs the machine plugged in with the lid open). **On by default for everyone except Enterprise organizations**, where admins enable it under Org settings > Security and identity > Remote control. Does not require cloud agents. Comparable to remote control in Claude Code and Codex.",
+      source: "Cursor changelog (cursor.com/changelog/remote-control-local-agents, on-page 'Oct 6, 2026') -- fetched 2026-10-12 via curl with browser UA",
+      date: "2026-10-06",
+    },
+    {
+      description: "CURSOR IS NOW SOLD THROUGH THE X SUBSCRIPTION -- THIRD-PARTY MODELS LEAVE THE ALLOWANCE FOR NEW CUSTOMERS (2026-10-12, vendor-primary): SpaceXAI, which owns Cursor since the August acquisition, launched **The X Subscription**, bundling Grok, Grok Bot, Cursor and X Premium. **cursor.com/pricing now shows the same ladder as x.ai/pricing:** Free $0, **Plus $8** ('Only Grok models are available on this plan'), **Premium $30** (4x Plus; cloud agents and automations, Origin code hosting, Bugbot reviews, third-party models at API list price), **Super $100** (15x), **Ultra $200** (50x), **Teams $30+ per user**, Enterprise custom. The Cursor FAQ: 'Plus includes Grok models only. Premium and above include generous usage of Grok models but do not include an allowance for third-party models. Third-party models remain available in Cursor at API list price.' Usage is **one pool shared with Grok, refreshed weekly**. SpaceXAI's pitch is that 'each X Subscription plan includes at least twice as much coding usage with our models as the comparable Cursor plan' and that Teams seats get 3x more coding usage than the older Cursor Teams at a lower price. **Existing Cursor subscribers keep their plan, price and included third-party usage** until they switch (prorated refund, limited-time offers); the old plans are closed to new sign-ups and SpaceXAI says it will eventually move remaining customers with advance notice. **Why it matters for rankings:** Cursor's long-standing pitch was neutral access to every frontier model under one subscription; for new buyers that is now a Grok-first subscription with Claude and GPT metered at list price on top, which changes the value comparison with GitHub Copilot (premium requests across vendors) and with paying Anthropic or OpenAI directly. The value score is held pending a sweep with real usage numbers; the new allowance multiples are relative (4x/15x/50x Plus) with no absolute token figures published.",
+      source: "SpaceXAI (x.ai/news/x-subscription, JSON-LD datePublished 2026-10-12, on-page 'Oct 12, 2026'); x.ai/pricing and cursor.com/pricing (both now show the same Free / Plus $8 / Premium $30 / Super $100 / Ultra $200 / Teams $30+ per user / Enterprise ladder, sold by X Subscription Corp.) -- post fetched via curl with browser UA, pricing pages via Firecrawl, all 2026-10-12",
+      date: "2026-10-12",
+    },
     {
       description: "ROLLOUTS AND SECURITY REVIEW -- TWO CURSOR BOTS FOR DEPLOY MONITORING AND PR SECURITY, TEAMS AND ENTERPRISE ONLY (2026-09-23, vendor-primary): 'Today we're launching two Cursor bots for the last mile of shipping code.' **Rollouts** 'attaches a monitor to every pull request and watches the change as it deploys, reporting change health per environment: verified healthy, regression detected, or inconclusive' -- 'the Cursor version of Firetiger Change Monitors, rebuilt with the Bot Development Kit'. Flow: when a PR opens it reads the diff and the systems it touches and writes a **monitoring plan as a PR comment** (risks, intended effect, signals to check, instrumentation gaps) that you can edit; it wakes on deploy events for the commit and runs the plan against logs, metrics and traces, tracking each environment separately ('a change can be verified in staging and still flagged in production'); on a regression it names the suspect change, notifies the author and, depending on configuration, 'can also open a revert PR for review or hand the finding to a cloud agent for a fix. **Rollouts does not merge or roll back on its own today.**' Integrations: Origin or GitHub for source control, your CD system for deploy events, Datadog and other telemetry providers; feature-flag integration 'coming soon'. **Security Review** 'reads every pull request in the context of the codebase and posts one review comment reporting exploitable bugs. Style and quality stay with Bugbot.' Coverage: SQL/command/template injection, authentication and authorization bypasses including checks a refactor stopped running, committed secrets, SSRF and unvalidated redirects, unsafe deserialization, dependency changes with known vulnerabilities; traces where user input enters. Each finding carries severity, attack path and a proposed fix; dismiss with a reason and it stays dismissed on that PR; team rules (e.g. which tables are never queried from a request handler) are enforced on every PR; draft PRs skipped. **Availability and price signal:** 'available today on Teams and Enterprise plans', enable from the automations tab; 'for the next 10 days, we're including usage credits so teams can try Rollouts on real changes' -- roughly 50 changes for Teams, 500 for Enterprise -- which implies usage-metered billing after the trial, not stated in the post. Note the ownership thread: Firetiger was a Cursor acquisition and Bugbot remains the style/quality reviewer.",
       source: "Cursor Changelog (cursor.com/changelog/rollouts-and-security-reviewer, on-page 'Sep 23, 2026'; mirrored at cursor.com/blog/rollouts-and-security-reviewer) -- fetched 2026-09-28 via curl with browser UA",
@@ -237,8 +247,11 @@ export const cursor: ToolReview = {
   notFor: "Developers happy with their current editor setup who just want basic autocomplete -- Copilot is still less disruptive for that. Also not for anyone skeptical of Cursor's own coding model; if you want pure frontier-model access for every task, paying Claude or OpenAI directly and using Claude Code is cleaner.",
   verdict: "Cursor 3 + Composer 2 (April 2026) is the release where Cursor stops being an AI-augmented editor and becomes an agent-first dev environment. Composer 2's speed at $0.50/$2.50 per 1M tokens is the real story -- it makes tight iteration loops feel instant in a way frontier models can't, even if the quality is slightly below Opus 4.6. The multi-workspace + cross-platform handoff design assumes you want your agents everywhere; if you don't, it's overkill. The honest read: for developers willing to go all-in on agentic workflows, Cursor 3 is the 2026 default. For everyone else, Claude Code + Copilot is a simpler, less committing stack.",
 
-  lastReviewedDate: "2026-09-28",
+  lastReviewedDate: "2026-10-12",
   dataSources: [
+    { name: "Cursor: Pricing -- The X Subscription tiers, 'Plus includes Grok models only', third-party models at API list price", url: "https://cursor.com/pricing", dateAccessed: "2026-10-12" },
+    { name: "SpaceXAI: Introducing The X Subscription (2026-10-12)", url: "https://x.ai/news/x-subscription", dateAccessed: "2026-10-12" },
+    { name: "Cursor changelog: Remote control for local agents (2026-10-06)", url: "https://cursor.com/changelog/remote-control-local-agents", dateAccessed: "2026-10-12" },
     { name: "Cursor Changelog: Rollouts and Security Review (2026-09-23) -- deploy monitor per environment, exploitable-bug PR reviews, Teams/Enterprise, 10-day usage credits", url: "https://cursor.com/changelog/rollouts-and-security-reviewer", dateAccessed: "2026-09-28" },
     { name: "Anthropic: Introducing Claude Sonnet 5.5 (2026-09-28) -- CursorBench 4.0 55.5%, SpaceXAI quote 'second only to Opus 5.5'", url: "https://www.anthropic.com/claude-sonnet-5-5", dateAccessed: "2026-09-28" },
     { name: "Anthropic: Introducing Claude Opus 5.5 (2026-09-22) -- CursorBench 4.0 57.8% at max, 52.5% at default effort", url: "https://www.anthropic.com/claude-opus-5-5", dateAccessed: "2026-09-28" },
@@ -275,6 +288,6 @@ export const cursor: ToolReview = {
   affiliateUrl: "https://cursor.com",
   status: "active",
   poweredBy: "Grok 4.7 (2026-09-21; the 2x-price 4.7 Fast variant is Cursor + Grok Build only) / Grok 4.5 (Cursor + SpaceXAI joint, 2026-07-08) / Composer 2.5 / Claude (Opus 5.5 and Sonnet 5.5 benchmarked on CursorBench 4.0 9/22 and 9/28; picker availability not announced by Cursor) / GPT-5.6 (OpenAI's proposed shutoff 2026-11-12) / Gemini (user selects)",
-  metaTitle: "Cursor Review 2026: Rollouts Deploy Monitor and Security Review Bots, Claude 5.5 on CursorBench",
-  metaDescription: "Cursor review. Rollouts and Security Review (Sept 23, 2026) add a per-environment deploy monitor that writes a monitoring plan on every PR and a security reviewer that reports exploitable bugs with attack paths -- Teams and Enterprise, with a 10-day credit trial. Claude Opus 5.5 scores 57.8% and Sonnet 5.5 55.5% on CursorBench 4.0. Cursor Projects (Sept 10) and the Nov 12 OpenAI shutoff watch continue.",
+  metaTitle: "Cursor Review 2026: Now Sold via The X Subscription ($8-$200), Third-Party Models at API Price",
+  metaDescription: "Cursor review. Since Oct 12, 2026 new customers buy Cursor through SpaceXAI's X Subscription: Free, Plus $8 (Grok models only), Premium $30, Super $100, Ultra $200, with one usage pool shared with Grok; Claude, GPT and Gemini now bill at API list price. Existing Cursor plans continue. Also: remote control of local agents from the iOS app (Oct 6), Rollouts and Security Review.",
 };
