@@ -68,6 +68,11 @@ export const cursor: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "ORIGIN APP MARKETPLACE -- 20+ INTEGRATIONS AND OPEN SUBMISSIONS FOR CURSOR'S GIT HOST (2026-10-13, vendor changelog): 'Origin now integrates with over 20 apps for deployments, CI, code review, security, monitoring, and project management, from partners including Cloudflare, Linear, Sentry, and Socket Security.' Named: deployments (Cloudflare, Netlify, Render, Spacelift, Vercel), CI (Buildkite, CircleCI, CloudBees, Depot, EngFlow, Namespace, RWX), security (Artemis Security, Semgrep, Socket Security, Upwind). 'Starting today, the marketplace is also open to public submissions': apps authenticate with an app JWT and installation tokens, receive webhooks and write back check runs, PR comments and reviews via the Origin API; submissions need a demo video and are reviewed before listing; an Origin Apps plugin can plan a port of an existing GitHub-style app. Context: Origin is the code-hosting service bundled into Cursor plans and The X Subscription; this is the first sign of a third-party ecosystem around it.",
+      source: "Cursor changelog (cursor.com/changelog/origin-app-marketplace, on-page 'Oct 13, 2026') -- fetched 2026-10-15 via curl",
+      date: "2026-10-13",
+    },
+    {
       description: "REMOTE CONTROL FOR LOCAL AGENTS FROM THE CURSOR iOS APP (2026-10-06, vendor-primary changelog): 'You can now see and reply to the local agents running on your computer from the Cursor iOS app.' Pair a computer by approving the request in Cursor desktop; local agents then appear in the app to watch or message. Agents keep running on your machine -- it must stay on and online (a 'Keep this computer awake' setting needs the machine plugged in with the lid open). **On by default for everyone except Enterprise organizations**, where admins enable it under Org settings > Security and identity > Remote control. Does not require cloud agents. Comparable to remote control in Claude Code and Codex.",
       source: "Cursor changelog (cursor.com/changelog/remote-control-local-agents, on-page 'Oct 6, 2026') -- fetched 2026-10-12 via curl with browser UA",
       date: "2026-10-06",
@@ -247,8 +252,9 @@ export const cursor: ToolReview = {
   notFor: "Developers happy with their current editor setup who just want basic autocomplete -- Copilot is still less disruptive for that. Also not for anyone skeptical of Cursor's own coding model; if you want pure frontier-model access for every task, paying Claude or OpenAI directly and using Claude Code is cleaner.",
   verdict: "Cursor 3 + Composer 2 (April 2026) is the release where Cursor stops being an AI-augmented editor and becomes an agent-first dev environment. Composer 2's speed at $0.50/$2.50 per 1M tokens is the real story -- it makes tight iteration loops feel instant in a way frontier models can't, even if the quality is slightly below Opus 4.6. The multi-workspace + cross-platform handoff design assumes you want your agents everywhere; if you don't, it's overkill. The honest read: for developers willing to go all-in on agentic workflows, Cursor 3 is the 2026 default. For everyone else, Claude Code + Copilot is a simpler, less committing stack.",
 
-  lastReviewedDate: "2026-10-12",
+  lastReviewedDate: "2026-10-15",
   dataSources: [
+    { name: "Cursor changelog: Origin App Marketplace (2026-10-13)", url: "https://cursor.com/changelog/origin-app-marketplace", dateAccessed: "2026-10-15" },
     { name: "Cursor: Pricing -- The X Subscription tiers, 'Plus includes Grok models only', third-party models at API list price", url: "https://cursor.com/pricing", dateAccessed: "2026-10-12" },
     { name: "SpaceXAI: Introducing The X Subscription (2026-10-12)", url: "https://x.ai/news/x-subscription", dateAccessed: "2026-10-12" },
     { name: "Cursor changelog: Remote control for local agents (2026-10-06)", url: "https://cursor.com/changelog/remote-control-local-agents", dateAccessed: "2026-10-12" },

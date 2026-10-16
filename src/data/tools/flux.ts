@@ -2,8 +2,8 @@ import { ToolReview } from "@/lib/types";
 
 export const flux: ToolReview = {
   slug: "flux",
-  name: "Flux (FLUX 3 + FLUX.2 [klein])",
-  tagline: "Black Forest Labs' model family has moved past still images. **FLUX 3** is a single multimodal foundation model trained across images, video and audio (Early Access 2026-07-23); **FLUX 3 Video went GA on the BFL API on 2026-08-04** with clips up to 20 seconds, native audio, multi-shot scenes and 1080p output, priced per second of video ($0.17/s HD text-to-video). **FLUX 3 Action (2026-09-22)** is an open-weight 7B world action model for robots. The open-core FLUX.2 [klein] image models (Jan 2026, sub-0.5s generation) remain the local-inference workhorse",
+  name: "Flux (FLUX 3 + FLUX 3 Image Klein)",
+  tagline: "**FLUX 3 Image Klein (2026-10-15) is the new local pick: a 5.6B open-weight text-to-image and editing model with native 4K, bounding-box control and up to 10 reference images, runnable in 8GB of VRAM with the INT8 build, free for commercial use under $5M annual revenue, and $0.009 per 1K image on the BFL API.** Black Forest Labs' model family has moved past still images. **FLUX 3** is a single multimodal foundation model trained across images, video and audio (Early Access 2026-07-23); **FLUX 3 Video went GA on the BFL API on 2026-08-04** with clips up to 20 seconds, native audio, multi-shot scenes and 1080p output, priced per second of video ($0.17/s HD text-to-video). **FLUX 3 Action (2026-09-22)** is an open-weight 7B world action model for robots. The open-core FLUX.2 [klein] image models (Jan 2026, sub-0.5s generation) remain the local-inference workhorse",
   category: "ai-image-generators",
   url: "https://flux1.ai",
 
@@ -17,6 +17,12 @@ export const flux: ToolReview = {
 
   hasFreeTier: true,
   pricing: [
+    {
+      plan: "BFL API: flux-3-image-klein (2026-10-15)",
+      price: "From $0.009",
+      period: "per 1K image",
+      features: ["Step-distilled Klein with prompt upsampling and pixel restoration (unedited regions preserved exactly)", "Text-to-image, editing, multi-reference up to 10 images, bounding boxes, native 4K", "Open weights also free to self-host under the FLUX Kommunity License (commercial use free below $5M annual revenue)"],
+    },
     {
       plan: "FLUX.2 [klein] (Open-core)",
       price: "$0",
@@ -69,14 +75,15 @@ export const flux: ToolReview = {
   ],
 
   pros: [
-    "FLUX.2 [klein] (Jan 15 2026) is the fastest frontier-quality image model to date -- sub-0.5s generation on modern hardware unlocks iterative prompt design in a way earlier Flux generations couldn't. Open-core + 13 GB VRAM minimum puts it within reach of consumer GPUs",
+    "FLUX 3 Image Klein (2026-10-15) brings FLUX 3's 4K output, bounding-box edits and 10-image references to a 5.6B open model that runs in 8GB of VRAM (INT8) and is free for commercial use below $5M revenue -- BFL measures it 91 Elo ahead of FLUX.2 [klein] 9B on text-to-image",
+    "FLUX.2 [klein] (Jan 15 2026) was the fastest frontier-quality image model of its generation (since superseded by FLUX 3 Image Klein, 2026-10-15) -- sub-0.5s generation on modern hardware unlocks iterative prompt design in a way earlier Flux generations couldn't. Open-core + 13 GB VRAM minimum puts it within reach of consumer GPUs",
     "Native image editing + multi-reference mode (new in FLUX.2 [klein]) closes the biggest UX gap vs Nano Banana 2 -- you no longer need ComfyUI inpainting workflows for basic edits",
     "Photorealistic output quality remains top-tier. Text rendering in images is vastly better than legacy DALL-E and rivals Nano Banana 2 for Latin scripts",
     "Community ecosystem (LoRAs, fine-tunes, workflows on Civitai, ComfyUI) is the deepest in open-source image generation -- moved quickly to FLUX.2 [klein] support within 2 weeks of release",
     "FLUX 3 Video is one of the few frontier video APIs that publishes a flat per-second rate card with native audio included ($0.17/s HD), and it accepts keyframes, multi-image references and continuation of your own clip in a single request",
   ],
   cons: [
-    "FLUX.2 [klein] requires 13 GB VRAM minimum for the 4B variant -- still puts it out of reach of 8 GB consumer cards. Use Flux.1 Schnell or legacy SD models on smaller hardware",
+    "FLUX.2 [klein] requires 13 GB VRAM minimum for the 4B variant -- which kept it off 8 GB consumer cards -- FLUX 3 Image Klein's INT8 build (2026-10-15) now runs in 8 GB",
     "Hosted API ([max] / [pro]) can be slow for high-resolution outputs -- expect 10-20 seconds per image in 4K",
     "Prompt adherence is still inconsistent on complex multi-element scenes -- Nano Banana 2 is more literal/reliable for commercial design work with tight spec requirements",
     "Non-technical users still face a steep onramp -- ComfyUI or Forge is the realistic path to getting best results, which is a wall for anyone who just wants to type a prompt and get an image",
@@ -84,6 +91,11 @@ export const flux: ToolReview = {
     "FLUX 3 Action ships under the FLUX Kommunity License, not Apache 2.0 -- commercial use is limited to companies under $5M revenue, and the benchmark claim is vendor-only so far",
   ],
   knownIssues: [
+    {
+      description: "FLUX 3 IMAGE KLEIN -- A 5.6B OPEN-WEIGHT IMAGE MODEL THAT REPLACES FLUX.2 [KLEIN] AS THE LOCAL PICK (2026-10-15, vendor-primary; Hugging Face repos created 2026-10-13/14): Black Forest Labs released 'FLUX 3 Image Klein, a 5.6B parameter open weights model for text-to-image generation, image editing and multi-reference generation with up to 10 reference images', sharing 'native 4K generation, pixel-perfect editing, and bounding boxes' with the full FLUX 3 Image model. **Builds:** a base model for fine-tuning and a step-distilled model, plus FP8, INT8 and NVFP4 builds made with NVIDIA. **Hardware:** generator weights 11.2 GB in BF16, 5.6 GB in FP8; the INT8 build runs on GeForce RTX GPUs 'with as little as 8GB of VRAM' via ComfyUI or Diffusers; under 0.6 s per 1MP image on GB300 in NVFP4. **Claims (BFL internal evaluations):** first in text-to-image, multi-reference and editing against larger open models (Qwen-Image 2.1 at 7B, Krea 2 at 12.9B) and above Ideogram V4.5 and FLUX.2 [pro]; **+91 Elo text-to-image and +70 editing over FLUX.2 [klein] 9B with 38% fewer parameters**. **API:** 'the distilled model is available as flux-3-image-klein ... Pricing starts at $0.009 per 1K image.' **Licence:** FLUX Kommunity License -- free commercial use 'for individuals and companies with annual revenue under $5M', plus research and non-commercial use; larger organisations need self-hosted licensing or the API. Day-one support in ComfyUI, Diffusers, TensorRT-LLM, SGLang Diffusion and vLLM-Omni; LoRA training via Ostris AI Toolkit and NVIDIA NeMo. Second open release of the FLUX 3 family after FLUX 3 Action; 'More will follow.'",
+      source: "Black Forest Labs (bfl.ai/blog/flux-3-image-klein, JSON-LD datePublished 2026-10-15) + Hugging Face API (black-forest-labs/flux-3-image-klein, createdAt 2026-10-13) -- fetched 2026-10-15 via curl",
+      date: "2026-10-15",
+    },
     {
       description: "THE FLUX FAMILY NOW GENERATES VIDEO WITH SOUND -- FLUX 3 (2026-07-23, Early Access) AND FLUX 3 VIDEO GA ON THE BFL API (2026-08-04), PLUS A 4K VIDEO UPSCALER (2026-08-20). This page had been reviewed last on 2026-04-17 and described FLUX.2 [klein] as the current release; four Black Forest Labs launches went unrecorded in between. **FLUX 3** is one model 'jointly trained across images, video and audio' on BFL's Self-Flow approach; the launch post says it generates 'images and video+audio jointly' from text or reference images and video, and that video prediction accounts for over 95% of training compute. **FLUX 3 Video** shipped to a general audience on 2026-08-04 'via the BFL API and select partners': clips up to 20 seconds at 720p or 1080p with native audio, text-to-video, image-to-video with keyframes, continuation of up to four seconds of your own video and audio, multi-shot scenes, dialogue with lip-sync in multiple languages. **Verified rate card (docs.bfl.ai, 2026-09-28): $0.17 / $0.29 / $0.40 / $0.80 per second at HD / FHD / QHD / UHD for text- or image-to-video; $0.41-$0.95 per second for video continuation; drafts $0.06/s; 24 fps, up to 3840 x 2176.** The docs still say 'FLUX 3 is a preview model' and that Omni Reference 'will be available soon'. **FLUX Video Upscale (2026-08-20)** regenerates any 480p+ video at up to 4K in two modes, Precise (4 steps, $0.07 per megapixel-second) and Creative (8 steps, $0.10), with 1.5x, 2x and 3x factors. Also unrecorded: **FLUX.2 [klein] 4B ships preloaded on ASUS ProArt RTX laptops (2026-06-04)** as the first FLUX model on consumer hardware, targeting sub-5-second generation on 8 GB of VRAM. Why it matters for this page: the 'Flux' entry is now a video vendor as much as an image one, and the video product has a public per-second price where Veo and Kling bill through app tiers or credits.",
       source: "Black Forest Labs blog: 'FLUX 3' (bfl.ai/blog/flux-3, JSON-LD datePublished 2026-07-23), 'FLUX 3 Video, Part 1: Generation' (bfl.ai/blog/flux-3-video, 2026-08-04), 'FLUX Video Upscale: 2K and 4K' (bfl.ai/blog/flux-video-upscale, 2026-08-20), 'FLUX.2 is now on device' (bfl.ai/blog/flux2-klein-on-device, 2026-06-04); docs.bfl.ai/flux_3/flux3_overview (rate table, fetched 2026-09-28)",
@@ -114,8 +126,9 @@ export const flux: ToolReview = {
   notFor: "Non-technical users who want a simple web interface. If you don't know what ComfyUI is and don't want to learn, Midjourney or DALL-E will get you results with far less friction.",
   verdict: "Flux earned its reputation as the photorealism benchmark in open image generation, and FLUX.2 [klein] is still the model to run locally if you have 13 GB of VRAM and the patience for ComfyUI. What changed in mid-2026 is scope: FLUX 3 makes Black Forest Labs a video-with-audio vendor with a flat per-second API price, and FLUX 3 Action points the same model at robots. Neither is plug-and-play -- the video side is API-only and still labelled a preview, and the Action weights carry a revenue-capped licence. If you want the best open image weights and are willing to invest in setup, this is still the answer. If you want to type a prompt and get a picture, look elsewhere; if you want 20-second clips with sound on a metered API, FLUX 3 Video is now a real option to price against Veo and Kling.",
 
-  lastReviewedDate: "2026-09-28",
+  lastReviewedDate: "2026-10-15",
   dataSources: [
+    { name: "Black Forest Labs: FLUX 3 Image Klein: open weights, 5.6B parameters (2026-10-15)", url: "https://bfl.ai/blog/flux-3-image-klein", dateAccessed: "2026-10-15" },
     { name: "Black Forest Labs blog: FLUX 3 (2026-07-23) -- multimodal image, video and audio foundation model, Early Access", url: "https://bfl.ai/blog/flux-3", dateAccessed: "2026-09-28" },
     { name: "Black Forest Labs blog: FLUX 3 Video, Part 1: Generation (2026-08-04) -- GA on the BFL API, 20-second clips with native audio", url: "https://bfl.ai/blog/flux-3-video", dateAccessed: "2026-09-28" },
     { name: "Black Forest Labs blog: FLUX Video Upscale: 2K and 4K (2026-08-20) -- $0.07 / $0.10 per megapixel-second", url: "https://bfl.ai/blog/flux-video-upscale", dateAccessed: "2026-09-28" },
@@ -132,6 +145,6 @@ export const flux: ToolReview = {
   ],
   affiliateUrl: "https://flux1.ai",
   status: "active",
-  metaTitle: "Flux Review 2026: FLUX 3 Video at $0.17/s, FLUX 3 Action Open Weights, FLUX.2 klein",
-  metaDescription: "Flux review. FLUX 3 Video went GA on the BFL API Aug 4, 2026: 20-second clips with native audio from $0.17 per second. FLUX 3 Action (Sept 22) is an open-weight 7B robot model under a revenue-capped licence. FLUX.2 klein still the local pick. Verified prices, tradeoffs.",
+  metaTitle: "Flux Review 2026: FLUX 3 Image Klein Open Weights (8GB VRAM), FLUX 3 Video at $0.17/s",
+  metaDescription: "Flux review. FLUX 3 Image Klein (Oct 15, 2026) is a 5.6B open-weight image model with 4K output, bounding-box editing and 10 reference images that runs in 8GB of VRAM, free for commercial use under $5M revenue, $0.009 per 1K image on the API. FLUX 3 Video went GA Aug 4 from $0.17 per second. Verified prices, tradeoffs.",
 };

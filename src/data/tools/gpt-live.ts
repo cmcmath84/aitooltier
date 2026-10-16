@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const gptLive: ToolReview = {
   slug: "gpt-live",
   name: "GPT-Live (ChatGPT Voice)",
-  tagline: "OpenAI's full-duplex voice models (launched in ChatGPT 2026-07-08) -- listens and speaks at the same time, backchannels naturally, and delegates hard questions to a backend model while keeping the conversation going. **GPT-Live-1 reached the API on 2026-09-10 at $0.05 per minute** for the voice layer, with telephony support, keyword biasing, delegation to any backend model (GPT-6 Astra, Luna, or a third-party model) and a wider voice set. In ChatGPT: GPT-Live-1 for paid tiers, GPT-Live-1 mini for Free. **Five days after the API launch, Google priced Gemini 3.8 Live at $0.005/min audio in and $0.018/min audio out (2026-09-15)** -- a fraction of GPT-Live-1's $0.05/min voice layer, though each stack bills backend or text tokens on top",
+  tagline: "**GPT-Live-1.1 and a smaller GPT-Live-1.1 Quip began rolling out in ChatGPT Voice on 2026-10-15, with more natural accents, shorter spoken cues while it searches, and new voices for French, German, Hindi, Japanese, Korean and Mexican Spanish plus an English voice called Bubbie.** OpenAI's full-duplex voice models (launched in ChatGPT 2026-07-08) -- listens and speaks at the same time, backchannels naturally, and delegates hard questions to a backend model while keeping the conversation going. **GPT-Live-1 reached the API on 2026-09-10 at $0.05 per minute** for the voice layer, with telephony support, keyword biasing, delegation to any backend model (GPT-6 Astra, Luna, or a third-party model) and a wider voice set. In ChatGPT: GPT-Live-1 for paid tiers, GPT-Live-1 mini for Free. **Five days after the API launch, Google priced Gemini 3.8 Live at $0.005/min audio in and $0.018/min audio out (2026-09-15)** -- a fraction of GPT-Live-1's $0.05/min voice layer, though each stack bills backend or text tokens on top",
   category: "ai-voice-audio",
   url: "https://openai.com/index/introducing-gpt-live/",
 
@@ -21,8 +21,8 @@ export const gptLive: ToolReview = {
       plan: "Included in ChatGPT (no separate price)",
       price: "$0 extra",
       features: [
-        "GPT-Live-1: default ChatGPT Voice model for Go, Plus, and Pro users",
-        "GPT-Live-1 mini: default for Free users",
+        "GPT-Live-1: default ChatGPT Voice model for Go, Plus, and Pro users -- GPT-Live-1.1 rolling out in ChatGPT Voice from 2026-10-15",
+        "GPT-Live-1 mini: default for Free users -- OpenAI now calls the new mini GPT-Live-1.1 Quip (rolling out from 2026-10-15; tier mapping not stated)",
         "Reasoning-effort choice per conversation: Instant (GPT-5.5 Instant behind the scenes) or Medium/High (GPT-5.5 Thinking)",
         "Rolling out globally 2026-07-08 across iOS, Android, and chatgpt.com",
         "No API at the July launch -- resolved 2026-09-10, see the API plan below",
@@ -53,11 +53,16 @@ export const gptLive: ToolReview = {
   cons: [
     "The API arrived two months after the consumer launch (2026-09-10) and the $0.05/minute rate is only the voice layer -- every delegated reasoning or tool call bills the backend model on top, so real per-minute cost depends heavily on how much you route to Astra-class models",
     "No video or screen-share support at launch -- you have to fall back to legacy Standard/Advanced Voice Mode for those",
-    "Predefined voices only (nine, remastered) -- deliberately no voice cloning, so ElevenLabs/Grok Voice keep that use case",
+    "Predefined voices only (nine remastered at launch, plus language-specific voices added 2026-10-15) -- deliberately no voice cloning, so ElevenLabs/Grok Voice keep that use case",
     "Optimized for ChatGPT's most popular languages; OpenAI concedes non-native accents and fluency gaps in others",
     "Delegation quality depends on the background model tier you can access -- Free users on mini get the smallest slice of the experience",
   ],
   knownIssues: [
+    {
+      description: "GPT-LIVE-1.1 AND GPT-LIVE-1.1 QUIP ROLL OUT IN CHATGPT VOICE, WITH NEW REGIONAL VOICES (2026-10-15, vendor-primary): ChatGPT release notes, October 15: 'We're rolling out GPT-Live-1.1 and GPT-Live-1.1 Quip, a mini version of the model, in ChatGPT Voice, with more natural accents across languages. Live also uses a wider range of short phrases to let you know when it's searching.' New voices: 'options for French, German, Hindi, Japanese, Korean, and Mexican Spanish, plus Bubbie in English'; 'The voices you see may vary by region and account' (Settings > Voice > Voice). **Not stated:** benchmarks, which ChatGPT tiers get 1.1 versus Quip, or any API change -- the API page still lists GPT-Live-1 at $0.05 per minute and no gpt-live-1.1 model id was announced. Same week, xAI launched Grok Voice 3.0 and claimed 71.6% on tau-Voice, 'comparable with GPT-Live-1 (Astra), but at 40% lower latency' -- a competitor's comparison against the previous GPT-Live version.",
+      source: "OpenAI ChatGPT release notes (help.openai.com/en/articles/6825453-chatgpt-release-notes, heading 'October 15, 2026') -- fetched 2026-10-15 via curl with browser UA",
+      date: "2026-10-15",
+    },
     {
       description: "GEMINI 3.8 LIVE UNDERCUTS THE GPT-LIVE-1 API ON THE VOICE LAYER, FIVE DAYS AFTER IT SHIPPED (2026-09-15, competitor vendor-primary): Google launched **Gemini 3.8 Live and 3.8 Live Extended Thinking** in the Gemini API at **$0.005 per minute of audio in and $0.018 per minute of audio out** (Google's own per-minute conversion of $3 and $12 per 1M audio tokens; text $0.75/$4.50 per 1M; free tier available). GPT-Live-1's API rate is **$0.05 per minute** for the voice layer with delegated backend calls billed separately. **This is not a like-for-like comparison, and the difference matters both ways:** Gemini's audio-out price includes its thinking tokens but text, image and tool tokens are billed on top, while GPT-Live-1's per-minute price covers the full-duplex layer only and every delegated reasoning call is a second bill. On a plain conversational minute with little delegation, Gemini's audio-in is a tenth of GPT-Live-1's flat rate and its audio-out well under half; on delegation-heavy workloads both stacks add a backend line and the gap narrows to whatever the backend costs. **On capability claims, Google published third-party leaderboard positions (#1 on Artificial Analysis' Speech to Speech Quality Index at 82.6 for Extended Thinking, second in Speech Agent Arena for 3.8 Live, 68.6% tau-Voice) where OpenAI published its own Full Duplex Bench delta**; neither vendor has published a head-to-head, and the absolute Tau3/Full Duplex numbers this page has been waiting on for GPT-Live-1 are still missing. Google also lists asynchronous function calling (tools run while audio keeps streaming) and 97-language mid-call switching, the two features closest to GPT-Live's delegation pitch. **Practical read: the API price-to-beat for a full-duplex voice agent is now Google's, and OpenAI's $0.05/min has to be justified on delegation quality and the ChatGPT install base rather than on rate.**",
       source: "Google developers post (blog.google/innovation-and-ai/technology/developers-tools/build-real-time-voice-applications-gemini-audio/, 'Sep 15, 2026') and Gemini API pricing page (ai.google.dev/gemini-api/docs/pricing, 3.8 Live row, rendered via Firecrawl); OpenAI GPT-Live-1 API post (2026-09-10, already on this page) -- all fetched 2026-09-17",
@@ -88,8 +93,9 @@ export const gptLive: ToolReview = {
   notFor: "Anyone needing self-serve voice cloning or custom voices (ElevenLabs, Grok Voice -- OpenAI's custom voices are sales-gated), video/screen-share workflows in ChatGPT (stay on legacy Advanced Voice Mode until GPT-Live adds it), heavy non-English users in less-supported languages, or developers who need a single-model turn-based stack with predictable per-token pricing rather than per-minute voice plus a separately billed backend.",
   verdict: "GPT-Live is the biggest step-change in consumer voice AI since Advanced Voice Mode shipped: full-duplex conversation that finally stops feeling like walkie-talkie turns, plus a delegation trick that quietly gives your voice assistant frontier-model intelligence without breaking flow. The GPQA and BrowseComp deltas over AVM are not incremental -- they're a different class. What kept it from a higher score at launch was scope: no API, no video/screen-share, no custom voices. The API gap closed on 2026-09-10 at $0.05 per minute for the voice layer, with telephony and delegation to any backend model -- which makes it a direct threat to every cascaded STT-LLM-TTS voice-agent stack, and the customer quotes (Yelp, Speak, Intercom's Fin, Cognition) are exactly that market. Still missing in ChatGPT: video/screen-share and custom voices. The new pressure is price: Gemini 3.8 Live (Sept 15) lists at $0.005/min in and $0.018/min out, so OpenAI's $0.05/min now has to earn its premium on delegation quality, not rate.",
 
-  lastReviewedDate: "2026-09-17",
+  lastReviewedDate: "2026-10-15",
   dataSources: [
+    { name: "OpenAI ChatGPT release notes -- October 15, 2026: GPT-Live-1.1 and GPT-Live-1.1 Quip in ChatGPT Voice, new voices", url: "https://help.openai.com/en/articles/6825453-chatgpt-release-notes", dateAccessed: "2026-10-15" },
     { name: "Google Developers: Build real-time voice applications with Gemini 3.8 Live and 3.5 Transcribe -- $0.005/min in, $0.018/min out (2026-09-15)", url: "https://blog.google/innovation-and-ai/technology/developers-tools/build-real-time-voice-applications-gemini-audio/", dateAccessed: "2026-09-17" },
     { name: "Google: Gemini API pricing -- Gemini 3.8 Live / Extended Thinking row (verified 2026-09-17)", url: "https://ai.google.dev/gemini-api/docs/pricing", dateAccessed: "2026-09-17" },
     { name: "OpenAI: Build more natural voice experiences with GPT-Live-1 in the API -- $0.05/min voice layer, telephony, backend delegation, Full Duplex Bench +30pts vs GPT-Realtime-2.1 (2026-09-10)", url: "https://openai.com/index/introducing-gpt-live-1-in-the-api/", dateAccessed: "2026-09-14" },
@@ -102,6 +108,6 @@ export const gptLive: ToolReview = {
   affiliateUrl: "https://chatgpt.com",
   status: "active",
   poweredBy: "GPT-Live-1 / GPT-Live-1 mini (delegating to a backend model -- GPT-6 Astra, Luna, or third-party via the API)",
-  metaTitle: "GPT-Live Review (2026): Full-Duplex Voice, Now in the API at $0.05/min",
-  metaDescription: "GPT-Live review. OpenAI's full-duplex voice model replaced ChatGPT Voice on July 8, 2026 and reached the API on September 10 at $0.05 per minute for the voice layer, backend billed separately. Five days later Google priced Gemini 3.8 Live at $0.005/min in and $0.018/min out. Telephony, interruption handling, +30pts on Full Duplex Bench vs GPT-Realtime-2.1. Free in every ChatGPT tier.",
+  metaTitle: "GPT-Live Review (2026): GPT-Live-1.1 in ChatGPT Voice, API at $0.05/min",
+  metaDescription: "GPT-Live review. OpenAI's full-duplex voice model: GPT-Live-1.1 and the smaller GPT-Live-1.1 Quip began rolling out in ChatGPT Voice on Oct 15, 2026 with new French, German, Hindi, Japanese, Korean and Mexican Spanish voices. The API (GPT-Live-1) costs $0.05 per minute for the voice layer, backend billed separately. Free in every ChatGPT tier.",
 };

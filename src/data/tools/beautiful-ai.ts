@@ -19,21 +19,26 @@ export const beautifulAi: ToolReview = {
   pricing: [
     {
       plan: "Pro",
-      price: "$12",
+      price: "$14.50",
       period: "month (billed annually)",
-      features: ["Unlimited slides", "AI content generation", "PowerPoint export", "Viewer analytics"],
+      features: ["Individuals", "Unlimited AI content generation", "300+ Smart Slide layouts", "PowerPoint import and export", "Custom branding and theme builder", "14-day free trial"],
     },
     {
       plan: "Pro (Monthly)",
       price: "$45",
       period: "month",
-      features: ["Same as Pro annual", "No commitment", "Cancel anytime"],
+      features: ["Everything in Pro, billed monthly", "Pitched for one-off projects", "Monthly subscriptions are non-refundable"],
     },
     {
       plan: "Team",
       price: "$40",
-      period: "user/month (billed annually)",
-      features: ["Shared brand kit", "Team collaboration", "Centralized billing", "Up to 20 users"],
+      period: "user/month (billed annually); $50 billed monthly",
+      features: ["2 to 20 seats", "Real-time collaborative editing", "Centralized slide and template library, shared assets", "Live data linking, viewer and slide analytics", "Presentations in 100+ languages"],
+    },
+    {
+      plan: "Enterprise",
+      price: "Custom",
+      features: ["SSO, advanced permissions, audit logs", "SOC 2 Type II, GDPR, CCPA, PCI", "Dedicated onboarding and priority support"],
     },
   ],
 
@@ -44,13 +49,18 @@ export const beautifulAi: ToolReview = {
     "Viewer analytics let you see who opened your deck and which slides they spent time on",
   ],
   cons: [
-    "No free plan at all -- just a 14-day trial, then you're paying $12/mo minimum (or $45 monthly)",
+    "No free plan at all -- just a 14-day trial, then you're paying $14.50/mo minimum on annual billing (or $45 monthly)",
     "Monthly pricing is absurd at $45/mo for a single user -- clearly designed to force annual commits",
     "PowerPoint exports can break formatting on complex slides -- fonts, images, and layouts shift",
     "Design output is starting to look dated compared to newer competitors like Gamma and Tome",
     "No API for programmatic deck generation, which limits business automation use cases",
   ],
   knownIssues: [
+    {
+      description: "PRICE CHECK -- PRO ANNUAL RISES TO $14.50 (verified 2026-10-15 on the live pricing page): 'Pro is $14.50 per month for individuals, billed annually. Teams of 2 to 20 pay $40 per user per month billed annually, or $50 billed monthly.' This page had listed Pro at $12 since April. The month-to-month Pro option is still $45 ('Our monthly option makes one-time projects a breeze'); an Enterprise tier (custom pricing, SSO, SOC 2 Type II) is now listed. Still no free plan -- a 14-day trial of Pro or Team.",
+      source: "Beautiful.ai pricing page (beautiful.ai/pricing, title 'Beautiful.ai Pricing and Plans') -- fetched 2026-10-15 via curl",
+      date: "2026-10-15",
+    },
     {
       description: "Cancellation process is frustrating -- users report unexpected auto-renewals for a full year after free trial ends",
       source: "Trustpilot",
@@ -68,11 +78,12 @@ export const beautifulAi: ToolReview = {
     },
   ],
   bestFor: "Sales teams and consultants who make a lot of presentations and want them to look polished without hiring a designer. The analytics are a nice bonus for tracking prospect engagement.",
-  notFor: "Casual users, students, or anyone who balks at paying $12-45/mo for a presentation tool. Google Slides and Canva's free tiers are better starting points.",
+  notFor: "Casual users, students, or anyone who balks at paying $14.50-45/mo for a presentation tool. Google Slides and Canva's free tiers are better starting points.",
   verdict: "Beautiful.ai is a solid presentation tool if you make decks regularly and can commit to annual billing. The smart formatting genuinely saves time, and the templates look good. But the pricing is aggressive -- $45/mo on monthly billing is hard to justify when Canva and Gamma exist. The billing complaints on Trustpilot are a red flag worth noting before you hand over a credit card.",
 
-  lastReviewedDate: "2026-04-02",
+  lastReviewedDate: "2026-10-15",
   dataSources: [
+    { name: "Beautiful.ai pricing -- Pro $14.50/mo annual, $45 monthly; Team $40/user annual or $50 monthly (verified 2026-10-15)", url: "https://www.beautiful.ai/pricing", dateAccessed: "2026-10-15" },
     { name: "Beautiful.ai official site", dateAccessed: "2026-04-02" },
     { name: "Trustpilot reviews", dateAccessed: "2026-04-02" },
     { name: "Capterra reviews", dateAccessed: "2026-04-02" },
@@ -81,5 +92,5 @@ export const beautifulAi: ToolReview = {
   affiliateUrl: "https://www.beautiful.ai",
   status: "active",
   metaTitle: "Beautiful.ai Review 2026: Smart Slides Worth the Price?",
-  metaDescription: "Honest Beautiful.ai review. Smart auto-formatting, good templates, but aggressive pricing and no free tier. Full scores, pricing, pros and cons. April 2026.",
+  metaDescription: "Honest Beautiful.ai review. Smart auto-formatting and good templates, but no free tier: Pro is $14.50/mo billed annually or $45 month-to-month, Team $40 per user annually (prices verified October 2026). Full scores, pricing, pros and cons.",
 };

@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const antigravity: ToolReview = {
   slug: "antigravity",
   name: "Google Antigravity",
-  tagline: "Google's agent-first AI IDE -- deploys up to 5 autonomous coding agents in parallel on a VS Code fork. Antigravity 2.0 (I/O 2026) is the runtime substrate for Gemini Spark, and the Antigravity CLI is now the official successor to Gemini CLI, which stopped serving consumer tiers on 2026-06-18",
+  tagline: "**Gemini 4 Argon reached Antigravity on 2026-10-13 for Google AI Ultra subscribers and enterprises, and Google is offering 10,000 scientists Antigravity's highest usage tier free for six months.** Google's agent-first AI IDE -- deploys up to 5 autonomous coding agents in parallel on a VS Code fork. Antigravity 2.0 (I/O 2026) is the runtime substrate for Gemini Spark, and the Antigravity CLI is now the official successor to Gemini CLI, which stopped serving consumer tiers on 2026-06-18",
   category: "ai-code-assistants",
   url: "https://antigravity.google",
 
@@ -41,6 +41,11 @@ export const antigravity: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "GEMINI 4 ARGON LANDS IN ANTIGRAVITY -- ULTRA AND ENTERPRISE ONLY, PLUS A FREE SIX-MONTH TIER FOR 10,000 SCIENTISTS (2026-10-13, vendor-primary): Google's Argon GA post makes Antigravity the model's showcase surface: Argon is available 'for Google AI Ultra subscribers in Google Antigravity' and to enterprises 'in Google Antigravity', and AI Studio access for Ultra subscribers too; **Google AI Pro subscribers get Argon in the Gemini app but not in Antigravity**. Google says 'Argon in Antigravity has helped teams increase agentic code submissions by more than 35% while reducing code rollbacks by nearly a third' internally, and cites Antigravity runs that untangled a ~6M-line Chromium feature folder, cut Agent Development Kit session prep time 40%, sped the xTB quantum-chemistry package up to 2.3x and drove a 2.85x Gemma 4 inference speedup -- all vendor anecdotes. It names /goal slash commands and multi-agent loops with custom skills as the workflow. **Offer:** 'we're offering 10,000 scientists the highest usage tier in Google Antigravity free of charge for 6 months (onboarded on a rolling basis), subject to eligibility, capacity, and selection.' API price for Argon outside Antigravity: $2 / $10 per 1M through 2026-11-30, then $4 / $20. This page's broader review (pricing, agent counts) dates from June and has not been re-verified this sweep.",
+      source: "Google (blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/, AI-vertical RSS pubDate Tue 13 Oct 2026) -- fetched 2026-10-15 via curl",
+      date: "2026-10-13",
+    },
+    {
       description: "GEMINI CLI SUCCESSOR -- CUTOVER NOW LIVE (2026-06-18, TODAY): Google designated the **Antigravity CLI** as the official replacement for Gemini CLI and the Gemini Code Assist IDE extensions, and as of today the consumer-tier cutover has taken effect -- Gemini CLI has stopped serving requests for Google AI Pro/Ultra and free Code Assist for individuals (enterprise Standard/Enterprise license holders keep Gemini CLI). Antigravity CLI is available to everyone now. Google states 'there won't be 1:1 feature parity out of the gate' but it keeps the most critical Gemini CLI features -- Agent Skills, Hooks, Subagents, and Extensions (now as Antigravity plugins). This makes Antigravity not just an IDE/runtime but Google's primary command-line agent surface for consumers. If you were scripting against `gemini` on a consumer plan, migrate now.",
       source: "Google Developers Blog (developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/), 9to5Google",
       date: "2026-06-18",
@@ -70,8 +75,9 @@ export const antigravity: ToolReview = {
   notFor: "Solo developers on a budget (the free tier is nearly useless after the cuts), anyone who values pricing transparency, or developers who prefer lightweight tools over full IDE replacements.",
   verdict: "Google Antigravity is the most ambitious AI coding tool on the market -- 5 parallel agents, built-in browser testing, multi-model support, and MCP integration. When it works, it's like having a team of junior developers. But Google's aggressive pricing changes (gutting the free tier, introducing opaque credits) have damaged trust. At $20/mo Pro it's competitive, but the credit system means your actual costs are unpredictable. If Google stabilizes the pricing, this could be the best AI IDE available. Right now, the value score drags it down.",
 
-  lastReviewedDate: "2026-06-18",
+  lastReviewedDate: "2026-10-15",
   dataSources: [
+    { name: "Google: Gemini 4 Argon is now available for everyone (2026-10-13) -- Argon in Antigravity for Ultra; 10,000 scientists free highest tier for 6 months", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/", dateAccessed: "2026-10-15" },
     { name: "Google Developers Blog: Transitioning Gemini CLI to Antigravity CLI (cutover took effect 2026-06-18)", url: "https://developers.googleblog.com/en/an-important-update-transitioning-gemini-cli-to-antigravity-cli/", dateAccessed: "2026-06-18" },
     { name: "DeepMind Blog: Introducing Google Antigravity 2.0 (2026-05-19)", url: "https://blog.google/innovation-and-ai/models-and-research/gemini-models/", dateAccessed: "2026-05-20" },
     { name: "Gemini API Changelog: antigravity-preview-05-2026 Managed Agent release (2026-05-19)", url: "https://ai.google.dev/gemini-api/docs/changelog", dateAccessed: "2026-05-20" },
@@ -84,6 +90,6 @@ export const antigravity: ToolReview = {
   affiliateUrl: "https://antigravity.google",
   status: "active",
   poweredBy: "Gemini 3.5 Flash / Gemini 3.1 Pro / Claude Opus 4.6 / GPT-OSS 120B (multi-model). Gemini 3.5 Flash added at I/O 2026 (2026-05-19) and is the model behind the antigravity-preview-05-2026 Managed Agent.",
-  metaTitle: "Google Antigravity Review 2026: 2.0, Gemini Spark Runtime + Gemini CLI Successor",
-  metaDescription: "Google Antigravity review. Antigravity 2.0 (I/O 2026), runtime for Gemini Spark, and now the official Antigravity CLI successor to Gemini CLI (consumer tiers shut down June 18, 2026). 5 parallel agents on a VS Code fork.",
+  metaTitle: "Google Antigravity Review 2026: Gemini 4 Argon for Ultra, Antigravity 2.0, Gemini CLI Successor",
+  metaDescription: "Google Antigravity review. Gemini 4 Argon reached Antigravity on Oct 13, 2026 for AI Ultra subscribers and enterprises, with 10,000 scientists offered the top tier free for six months. Antigravity 2.0 (I/O 2026) runs Gemini Spark, and the Antigravity CLI succeeded Gemini CLI for consumers on June 18, 2026.",
 };

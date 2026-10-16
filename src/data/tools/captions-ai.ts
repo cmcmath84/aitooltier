@@ -17,10 +17,28 @@ export const captionsAi: ToolReview = {
 
   hasFreeTier: true,
   pricing: [
-    { plan: "Free", price: "$0", features: ["Basic captions", "Watermarked exports", "Limited features"] },
-    { plan: "Pro", price: "$9.99", period: "month", features: ["200 credits/mo", "No watermarks", "100+ caption templates", "Basic AI editing tools"] },
-    { plan: "Max", price: "$24.99", period: "month", features: ["500 credits/mo", "AI Twin", "AI actors", "Text-to-video", "AI Lipdub"] },
-    { plan: "Scale", price: "$69.99", period: "month", features: ["1400 credits/mo", "All Max features", "Top-tier AI models", "Built for teams and agencies"] },
+    {
+      plan: "Free",
+      price: "$0",
+      features: ["Traditional editing tools (per the plan comparison table)", "1 caption template (100+ on paid plans)", "No AI usage credits"],
+    },
+    {
+      plan: "Max",
+      price: "$24.99",
+      period: "month (iOS price)",
+      features: ["500 credits/mo", "AI Edit styles, AI Creator, chat-based editor, Clips", "Digital twins and custom AI actors", "Generated B-roll, music, sound effects and images"],
+    },
+    {
+      plan: "Frontier",
+      price: "$69.99 / $139.99 / $279.99",
+      period: "month (1x / 2x / 4x usage, iOS prices)",
+      features: ["1,400 / 2,800 / 5,600 credits/mo", "Everything in Max", "Access to Captions' most sophisticated generative models"],
+    },
+    {
+      plan: "Enterprise",
+      price: "Custom",
+      features: ["Bulk credit discounts and custom seats", "Training data exclusion", "Dedicated account management"],
+    },
   ],
 
   pros: [
@@ -33,10 +51,15 @@ export const captionsAi: ToolReview = {
     "Audio sync issues after export are a dealbreaker -- multiple users report audio drifting out of sync on final renders",
     "Credit system makes costs unpredictable; generative features like dubbing and AI Twin eat through credits fast",
     "App crashes and lost projects are reported frequently, especially on longer videos",
-    "Anything beyond basic captions requires the $25/mo Max plan, which adds up quickly",
+    "There is no cheap middle tier any more: anything beyond free captions needs the $24.99/mo Max plan, and Captions' top models need Frontier at $69.99/mo or more",
     "1.6 out of 5 on Trustpilot -- customer support is widely described as unresponsive",
   ],
   knownIssues: [
+    {
+      description: "PRICE CHECK -- PRO TIER REMOVED, SCALE RENAMED FRONTIER WITH 2x AND 4x LEVELS (verified 2026-10-15 on the live pricing page): Captions now lists Free, **Max $24.99/mo (500 credits)**, **Frontier $69.99 / $139.99 / $279.99 per month (1,400 / 2,800 / 5,600 credits)** and Enterprise. The **$9.99 Pro plan (200 credits) this page listed since April is gone**, and the old 'Scale' tier at $69.99 is now Frontier 1x. The page notes 'Features and prices reflect iOS plans only' -- web or Android prices can differ.",
+      source: "Captions pricing page (captions.ai/pricing, title 'Captions AI Pricing and Subscription Plans') -- fetched 2026-10-15 via curl",
+      date: "2026-10-15",
+    },
     { description: "Audio goes out of sync after export, making final videos unusable -- reported consistently across multiple review platforms", source: "Trustpilot", date: "2026-01" },
     { description: "App crashes during export and randomly deletes projects, causing users to lose work", source: "App Store reviews", date: "2025-12" },
     { description: "Company removed 90% of available avatars mid-subscription after ending community creator contracts", source: "Trustpilot", date: "2025-10" },
@@ -46,8 +69,9 @@ export const captionsAi: ToolReview = {
   notFor: "Anyone doing serious video production or longer content. The export bugs, credit limits, and poor support make it unreliable for professional workflows.",
   verdict: "Captions nails the core caption experience -- the templates look great and the auto-captioning is accurate. But everything beyond that is rough. The audio sync bugs are a fundamental problem for a video tool, the credit system makes advanced features expensive, and the Trustpilot score of 1.6 tells you everything about the support situation. Use it for quick caption styling on short clips. For anything more, CapCut or Descript are safer bets.",
 
-  lastReviewedDate: "2026-04-02",
+  lastReviewedDate: "2026-10-15",
   dataSources: [
+    { name: "Captions pricing -- Free, Max $24.99, Frontier $69.99/$139.99/$279.99 (iOS prices; Pro removed; verified 2026-10-15)", url: "https://www.captions.ai/pricing", dateAccessed: "2026-10-15" },
     { name: "Captions AI official site", dateAccessed: "2026-04-02" },
     { name: "Trustpilot reviews", dateAccessed: "2026-04-02" },
     { name: "eesel AI review", dateAccessed: "2026-04-02" },
@@ -56,5 +80,5 @@ export const captionsAi: ToolReview = {
   affiliateUrl: "https://captions.ai",
   status: "active",
   metaTitle: "Captions AI Review 2026: Great Captions, But Watch the Bugs",
-  metaDescription: "Captions AI review. Best-in-class caption styling, but audio sync bugs and poor support drag it down. Pricing, scores, and honest verdict. April 2026.",
+  metaDescription: "Captions AI review. Best-in-class caption styling, but audio sync bugs and poor support drag it down. Pricing verified October 2026: Free, Max $24.99/mo, Frontier from $69.99/mo (the $9.99 Pro tier is gone). Scores and honest verdict.",
 };

@@ -20,36 +20,19 @@ export const gptZero: ToolReview = {
     {
       plan: "Free",
       price: "$0",
-      features: [
-        "5,000 words/month",
-        "Single document scan",
-        "Basic AI detection",
-        "Sentence-level highlighting",
-      ],
-    },
-    {
-      plan: "Essential",
-      price: "$10",
-      period: "month",
-      features: [
-        "150,000 words/month",
-        "Batch file uploads",
-        "Detailed writing reports",
-        "API access",
-      ],
+      features: ["10,000 words/month, 10,000 characters per scan", "Basic AI scan plus 1 free Advanced Scan", "5 free AI Highlights in the Chrome extension", "Batch upload up to 3 files"],
     },
     {
       plan: "Premium",
-      price: "$16",
-      period: "month",
-      features: [
-        "300,000 words/month",
-        "Batch file uploads",
-        "Full writing reports",
-        "Plagiarism detection",
-        "API access",
-        "Priority support",
-      ],
+      price: "$12.99",
+      period: "month (billed annually)",
+      features: ["300,000 words/month, 50,000 characters per scan", "Advanced AI scan, multilingual detection", "Downloadable AI reports, plagiarism checker", "AI Highlights in Chrome; batch upload up to 50 files"],
+    },
+    {
+      plan: "Professional",
+      price: "$24.99",
+      period: "month (billed annually)",
+      features: ["500,000 words/month, up to 2 million words overage", "150,000 characters per scan, 250 files at once, page-by-page scanning", "Enterprise-grade security, LMS integration (Canvas, Google Classroom)", "Team plan: same price per seat, minimum 2 seats, shared credits"],
     },
   ],
 
@@ -66,6 +49,11 @@ export const gptZero: ToolReview = {
     "Plagiarism checker is only on Premium and doesn't match Turnitin's depth",
   ],
   knownIssues: [
+    {
+      description: "PRICE CHECK -- PLANS RESTRUCTURED: ESSENTIAL GONE, PREMIUM $12.99, NEW PROFESSIONAL $24.99 (verified 2026-10-15 on the live pricing page): GPTZero now lists **Free (10,000 words/month)**, **Premium $12.99/month billed annually (300,000 words)** and **Professional $24.99/month billed annually (500,000 words, up to 2M words overage, 250-file batches, LMS integration)**, with a self-serve Professional Team plan (minimum two seats). The page had shown Free at 5,000 words, **Essential $10 (150,000 words)** and **Premium $16** since April -- Essential no longer exists. The annual toggle advertises 'Save 45%'; monthly prices were not rendered in the scrape. The API is priced separately.",
+      source: "GPTZero pricing page (gptzero.me/pricing) -- fetched 2026-10-15 via Firecrawl (the plan cards are client-rendered; curl returned no plan prices)",
+      date: "2026-10-15",
+    },
     {
       description: "Non-native English speakers' writing gets flagged as AI-generated at higher rates, raising fairness concerns",
       source: "Reddit r/professors",
@@ -86,8 +74,9 @@ export const gptZero: ToolReview = {
   notFor: "Anyone who expects 100% accuracy. No AI detector is reliable enough to be the sole basis for an accusation of cheating.",
   verdict: "GPTZero is the best AI detector available right now, but that's a low bar. It's more accurate than competitors and the sentence-level highlighting is genuinely useful. But false positives remain a serious issue, especially for non-native English writers. Use it as one signal among many, not as definitive proof. The fundamental problem is that AI detection is an arms race, and detectors are losing.",
 
-  lastReviewedDate: "2026-04-02",
+  lastReviewedDate: "2026-10-15",
   dataSources: [
+    { name: "GPTZero pricing -- Free 10K words, Premium $12.99/mo annual, Professional $24.99/mo annual (verified 2026-10-15)", url: "https://gptzero.me/pricing", dateAccessed: "2026-10-15" },
     { name: "GPTZero official site", dateAccessed: "2026-04-02" },
     { name: "Reddit r/professors", dateAccessed: "2026-04-02" },
     { name: "G2 Reviews", dateAccessed: "2026-04-02" },
@@ -96,5 +85,5 @@ export const gptZero: ToolReview = {
   affiliateUrl: "https://gptzero.me",
   status: "active",
   metaTitle: "GPTZero Review 2026: Most Accurate AI Detector?",
-  metaDescription: "Honest GPTZero review with accuracy analysis, pricing, and known false positive issues. Best AI detection tool for educators? April 2026.",
+  metaDescription: "Honest GPTZero review with accuracy analysis, pricing, and known false positive issues. Pricing verified October 2026: free 10,000 words a month, Premium $12.99/mo and Professional $24.99/mo billed annually. Best AI detection tool for educators?",
 };

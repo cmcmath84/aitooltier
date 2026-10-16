@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const grokVoice: ToolReview = {
   slug: "grok-voice",
   name: "Grok Speech (STT + TTS APIs)",
-  tagline: "xAI's standalone voice APIs. **Grok Voice Transcribe 2.0 shipped 2026-09-18** -- xAI calls it twice as accurate as 1.0 at the same $0.10/hr batch and $0.20/hr streaming, ranks it first for accuracy among 32 streaming models on Artificial Analysis, and has already made it the default STT model; **1.0 is being retired in the coming weeks, so pin grok-voice-transcribe-1.0 if you need it**. **PRICE CORRECTION: text-to-speech is $15.00 per 1M characters on xAI's live rate card (verified 2026-09-21), not the $4.20 this page carried since April.** Speech-to-speech agent $0.08/min, 26 flagship voices, ~1-minute voice cloning, no-code Voice Agent Builder",
+  tagline: "**Grok Voice 3.0, xAI's new speech-to-speech model, shipped 2026-10-14 at the same $0.08 per minute as 2.0, which xAI's rate card now flags as on its way out; grok-voice-latest switched over automatically, and xAI cites a #1 score of 86.9 on Artificial Analysis' Speech-to-Speech Index.** xAI's standalone voice APIs. **Grok Voice Transcribe 2.0 shipped 2026-09-18** -- xAI calls it twice as accurate as 1.0 at the same $0.10/hr batch and $0.20/hr streaming, ranks it first for accuracy among 32 streaming models on Artificial Analysis, and has already made it the default STT model; **1.0 is being retired in the coming weeks, so pin grok-voice-transcribe-1.0 if you need it**. **PRICE CORRECTION: text-to-speech is $15.00 per 1M characters on xAI's live rate card (verified 2026-09-21), not the $4.20 this page carried since April.** Speech-to-speech agent $0.08/min, 26 flagship voices, ~1-minute voice cloning, no-code Voice Agent Builder",
   category: "ai-voice-audio",
   url: "https://x.ai/news/grok-stt-and-tts-apis",
 
@@ -17,6 +17,12 @@ export const grokVoice: ToolReview = {
 
   hasFreeTier: false,
   pricing: [
+    {
+      plan: "Voice Agent API (Grok Voice 3.0, 2026-10-14)",
+      price: "$0.08",
+      period: "per minute ($4.80/hr) + $0.004 per text input",
+      features: ["grok-voice-3.0; grok-voice-latest moved to it automatically on launch day", "Same price as grok-voice-2.0, which the docs pricing table now labels Deprecated", "Sub-second latency claimed; powers Grok in Tesla vehicles, Grok Bot voice mode and Starlink support lines"],
+    },
     {
       plan: "Speech to Text (batch)",
       price: "$0.10",
@@ -57,6 +63,7 @@ export const grokVoice: ToolReview = {
   ],
 
   pros: [
+    "Grok Voice 3.0 (2026-10-14) upgraded the voice agent at no extra cost: still $0.08 per minute, with xAI citing #1 on Artificial Analysis' Speech-to-Speech Index (86.9, as of 10/13) and 74% on ServiceNow's EVA-Bench",
     "Published word-error-rate benchmark puts Grok STT ahead of ElevenLabs, Deepgram, and AssemblyAI across phone calls, meetings, podcasts, and telephony (6.9% overall WER vs. ElevenLabs 9.0%, Deepgram 11.0%, AssemblyAI 12.9%)",
     "STT pricing is aggressive and has not moved across two model generations -- $0.10/hr batch and $0.20/hr streaming for Transcribe 2.0, the same as 1.0, with diarization, timestamps and key terms included rather than billed as add-ons",
     "Speech tags ([laugh], [sigh], [whisper], <emphasis>, <slow>, <pause>) give expressive TTS control without SSML -- genuinely closer to ElevenLabs v3's emotional range than anything else at this price point",
@@ -69,6 +76,11 @@ export const grokVoice: ToolReview = {
     "Still API/console-first -- no polished consumer web app for one-off podcast or audiobook production the way ElevenLabs Studio offers, even with the new no-code Voice Agent Builder",
   ],
   knownIssues: [
+    {
+      description: "GROK VOICE 3.0 -- NEW SPEECH-TO-SPEECH MODEL AT THE SAME $0.08/MIN, 2.0 MARKED DEPRECATED, AND `grok-voice-latest` ALREADY MOVED (2026-10-14, vendor-primary): xAI announced 'Grok Voice 3.0, the world's most intelligent speech-to-speech model', 'available today in the API at the same price as its predecessor'. **Price:** 'available today in the Voice Agent API at $0.08 / min ($4.80 / hr), the same price as Grok Voice 2.0. Agents using grok-voice-latest have already been switched over automatically, with no changes needed.' docs.x.ai/docs/pricing (fetched 10/15) lists 'Speech to Speech (grok-voice-3.0) $0.08 / min ($4.80 / hr) $0.004 / text input' and **'Speech to Speech (grok-voice-2.0) Deprecated'** at the same rate -- no removal date given, so pin 2.0 only knowing it is on the way out. Unlike the 8/05 repoint (a 1.6x increase, entry below), this alias move does not change the bill. **Claims:** #1 on Artificial Analysis' Speech-to-Speech Index at **86.9** ('Source: Artificial Analysis, October 13, 2026' -- a dated third-party snapshot as reported by xAI); **97% on Full Duplex Bench**; **71.6% on tau-Voice**, 'comparable with GPT-Live-1 (Astra), but at 40% lower latency'; **74% accuracy on ServiceNow's EVA-Bench**, the highest; lower cost per task than GPT-Live-1 (Astra, Medium) and GPT-Realtime-2.1 on AA's Big Bench Audio run (chart only). **Deployment:** 'millions of conversations a day' in Tesla vehicles and Grok Bot voice mode; Starlink call centres take 20,000 calls a day with ~70% resolved without a human. Leaderboard positions decay -- treat the AA rank as of 2026-10-13.",
+      source: "xAI / SpaceXSI (x.ai/news/grok-voice-3, JSON-LD datePublished 2026-10-14) + docs.x.ai/docs/pricing (Voice API table) -- fetched 2026-10-15 via curl with browser UA",
+      date: "2026-10-14",
+    },
     {
       description: "GROK VOICE TRANSCRIBE 2.0 -- TWICE THE ACCURACY AT THE SAME PRICE, ALREADY THE DEFAULT, AND 1.0 IS ON ITS WAY OUT (2026-09-18, vendor-primary): xAI released its next speech-to-text model, 'one of the most accurate transcription models available today and **twice as accurate as Grok Voice Transcribe 1.0, at the same price**'. It is built on the audio foundation model behind Grok Voice and trained 'on a unique dataset of live, noisy, multilingual audio'. **Claims, and where they come from:** on the public **Artificial Analysis leaderboard it 'ranks first for accuracy among 32 streaming models'** (third-party, but the ranking is a dated snapshot -- as of 2026-09-18); on four **internal** production sets (customer-support telephony, Grok conversations, spoken credentials such as account codes and emails, short voice commands in 19 languages) it beats 1.0 on all four and 'on telephony it leads every model we tested' -- vendor-run, no table published. The one hard number: on xAI's short-phrase set **word error rate drops from 20.6% to 6.8%**. Multilingual accuracy is 'its largest improvement': dozens of languages, automatic detection, mid-recording language switches in a single pass. **API features:** batch and streaming; word-level timestamps with confidence scores; **speaker diarization at no additional cost**; up to 8-channel multichannel; **key term biasing up to 100 terms per request**; written-form formatting of numbers, dates, currencies, phone numbers and emails; filler-word removal; smart turn detection for voice agents. **PRICING IS IDENTICAL TO 1.0:** $0.10 per hour batch, $0.20 per hour streaming -- confirmed against xAI's live model catalogue, where both models carry the same per-audio-second rate. **MIGRATION:** existing integrations 'get the accuracy improvement with no code changes'; the post says 2.0 'will soon be the default' and that **1.0 'will be deprecated in the coming weeks'** -- and by 2026-09-21 the STT docs already list **grok-voice-transcribe-2.0 as 'Default when model is omitted'** and 1.0 as 'Original model. Pin this slug to keep it.' So the default flip has effectively executed; only 1.0's removal date is open. Atlassian is named as a customer: Loom now uses Transcribe 2.0, with a workflow that pipes Loom transcripts into Cursor.",
       source: "SpaceXAI (x.ai/news/grok-voice-transcribe-2, JSON-LD datePublished 2026-09-18); xAI STT docs (docs.x.ai/developers/model-capabilities/audio/speech-to-text -- 2.0 'Default when model is omitted'); xAI models catalogue (docs.x.ai/docs/models, per-audio-second pricing identical for 1.0 and 2.0) -- all fetched 2026-09-21 via curl with browser UA",
@@ -114,8 +126,10 @@ export const grokVoice: ToolReview = {
   notFor: "Consumer creators who want a polished web studio with voice presets and style sliders -- ElevenLabs Creator/Studio is still easier for one-off podcast or audiobook work. Enterprises in highly-regulated verticals should confirm the post-acquisition (SpaceX) vendor pathway works for them before committing.",
   verdict: "Grok Speech is xAI's clearest 'we are a platform, not just a chatbot' shot at the voice-API category, and on day-one pricing alone it's a credible threat to ElevenLabs, Deepgram, and AssemblyAI for production STT workloads. The published WER numbers are aggressive but plausible given the Tesla / Starlink deployment footprint. TTS at $15 per 1M characters (the rate xAI publishes as of 2026-09-21; this review previously said $4.20) no longer undercuts ElevenLabs on price, though the expressive tags still narrow the quality gap. With Transcribe 2.0 (2026-09-18) xAI held the STT price flat while claiming a 2x accuracy gain and a first-place Artificial Analysis streaming rank, so STT is where the value case lives. The open questions are (1) how it handles long-tail accents and non-English quality in practice, (2) whether the post-SpaceX procurement pathway slows enterprise adoption, and (3) how ElevenLabs responds on price. For new voice-API buyers shipping in Q2 2026, Grok Speech is now a first-call option alongside ElevenLabs and Deepgram.",
 
-  lastReviewedDate: "2026-09-21",
+  lastReviewedDate: "2026-10-15",
   dataSources: [
+    { name: "xAI: Introducing Grok Voice 3.0 (2026-10-14) -- $0.08/min, grok-voice-latest switched, AA S2S Index 86.9", url: "https://x.ai/news/grok-voice-3", dateAccessed: "2026-10-15" },
+    { name: "xAI docs pricing -- grok-voice-3.0 $0.08/min; grok-voice-2.0 marked Deprecated; TTS $15/1M chars; STT $0.10/$0.20 per hr (verified 2026-10-15)", url: "https://docs.x.ai/docs/pricing", dateAccessed: "2026-10-15" },
     { name: "SpaceXAI: Introducing Grok Voice Transcribe 2.0 (2026-09-18) -- same $0.10/$0.20 per hour, AA #1 of 32 streaming models, 1.0 retiring", url: "https://x.ai/news/grok-voice-transcribe-2", dateAccessed: "2026-09-21" },
     { name: "xAI STT docs -- grok-voice-transcribe-2.0 default when model omitted; pin 1.0 to keep it (verified 2026-09-21)", url: "https://docs.x.ai/developers/model-capabilities/audio/speech-to-text", dateAccessed: "2026-09-21" },
     { name: "xAI docs pricing -- Text to Speech $15.00 / 1M chars; STT $0.10 / $0.20 per hour; speech-to-speech $0.08/min (verified 2026-09-21)", url: "https://docs.x.ai/docs/pricing", dateAccessed: "2026-09-21" },
@@ -130,6 +144,6 @@ export const grokVoice: ToolReview = {
   ],
   affiliateUrl: "https://x.ai/news/grok-stt-and-tts-apis",
   status: "active",
-  metaTitle: "Grok Speech Review 2026: Transcribe 2.0 at $0.10/hr, TTS Now $15 per 1M Characters",
-  metaDescription: "Grok Speech review. Grok Voice Transcribe 2.0 (Sept 18, 2026) claims twice the accuracy of 1.0 at the same $0.10/hr batch and $0.20/hr streaming, ranks first among 32 streaming models on Artificial Analysis, and is already the default; 1.0 retires in the coming weeks. Price correction: xAI text-to-speech is $15.00 per 1M characters, not $4.20. Plus the Aug 5 grok-voice-latest repoint, 26 voices, cloning and the Voice Agent Builder.",
+  metaTitle: "Grok Speech Review 2026: Grok Voice 3.0 at $0.08/min, Transcribe 2.0 at $0.10/hr, TTS $15 per 1M Characters",
+  metaDescription: "Grok Speech review. Grok Voice 3.0 (Oct 14, 2026) replaces 2.0 in xAI's voice agent API at the same $0.08 per minute, with grok-voice-latest switched automatically and a #1 Artificial Analysis speech-to-speech score claimed. Grok Voice Transcribe 2.0 costs $0.10/hr batch, $0.20/hr streaming; text-to-speech is $15.00 per 1M characters.",
 };
