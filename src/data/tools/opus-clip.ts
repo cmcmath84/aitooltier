@@ -87,8 +87,9 @@ export const opusClip: ToolReview = {
   notFor: "Creators who need precise editorial control over their clips. The AI picks the moments -- you don't get fine-grained timeline editing.",
   verdict: "Opus Clip is the best long-to-short video tool on the market right now. It genuinely delivers on the promise of turning a 30-minute video into 10 usable short clips with minimal effort. The AI clipping is surprisingly good at finding engaging moments. But it's a starting point, not a finished product -- you'll still want to review and tweak the clips before posting. At $15-29/mo, it pays for itself if you're regularly repurposing content.",
 
-  lastReviewedDate: "2026-04-02",
+  lastReviewedDate: "2026-10-17",
   dataSources: [
+    { name: "OpusClip pricing (Starter $15, Pro $29 per month -- unchanged)", url: "https://www.opus.pro/pricing", dateAccessed: "2026-10-17" },
     { name: "Opus Clip official site", dateAccessed: "2026-04-02" },
     { name: "Reddit r/NewTubers", dateAccessed: "2026-04-02" },
     { name: "Trustpilot reviews", dateAccessed: "2026-04-02" },

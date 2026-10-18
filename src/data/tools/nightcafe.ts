@@ -28,33 +28,28 @@ export const nightcafe: ToolReview = {
       ],
     },
     {
-      plan: "AI Beginner",
-      price: "$5.99",
-      period: "month",
-      features: ["100 fast credits/month", "Credits roll over", "All models"],
-    },
-    {
       plan: "AI Hobbyist",
-      price: "$9.99",
-      period: "month",
-      features: ["200 fast credits/month", "Credits roll over", "All models"],
+      price: "$7.49",
+      period: "month (billed yearly; $12.50 monthly)",
+      features: ["200 fast credits/month", "Earn 600+ relax credits/month", "First creation each day free", "Purchased credits do not expire"],
     },
     {
       plan: "AI Enthusiast",
-      price: "$19.99",
-      period: "month",
-      features: ["500 fast credits/month", "Credits roll over", "All models"],
+      price: "$14.99",
+      period: "month (billed yearly; $25 monthly)",
+      features: ["500 fast credits/month", "Earn 600+ relax credits/month", "Additional fast credits $0.04 each"],
+    },
+    {
+      plan: "AI Creator",
+      price: "$23.99",
+      period: "month (billed yearly; $40 monthly)",
+      features: ["850 fast credits/month", "Earn 600+ relax credits/month", "Additional fast credits $0.038 each"],
     },
     {
       plan: "AI Artist",
-      price: "$49.99",
-      period: "month",
-      features: [
-        "1,400 fast credits/month",
-        "Credits roll over",
-        "All models",
-        "Priority generation",
-      ],
+      price: "$37.49",
+      period: "month (billed yearly; $62.50 monthly)",
+      features: ["1,400 fast credits/month", "Earn 600+ relax credits/month", "50+ PRO image models, skip the queue"],
     },
   ],
 
@@ -72,6 +67,11 @@ export const nightcafe: ToolReview = {
     "Less control over generation parameters compared to running models locally via ComfyUI",
   ],
   knownIssues: [
+    {
+      description: "PRICING CHECK (2026-10-17): NightCafe PRO now bills monthly, quarterly (save 15%) or yearly (save 40%). Plan cards: AI Hobbyist $12.50/mo or $7.49/mo yearly (200 fast credits), AI Enthusiast $25 or $14.99 (500), new **AI Creator** $40 or $23.99 (850), AI Artist $62.50 or $37.49 (1,400); every tier earns 600+ relax credits a month and the first creation each day is free. The $5.99 AI Beginner tier no longer appears among the plan cards. Free users can still make unlimited base Stable Diffusion creations.",
+      source: "creator.nightcafe.studio/pricing",
+      date: "2026-10-17",
+    },
     {
       description:
         "March 2026 update retroactively expired previously earned credits and cut daily free rewards by 50%",
@@ -98,8 +98,9 @@ export const nightcafe: ToolReview = {
   verdict:
     "NightCafe is the most approachable AI art platform for beginners and hobbyists. The free credits, community features, and multi-model access give it real staying power. But the recent credit policy changes and reliability issues have shaken trust with longtime users. It's still a solid starting point for AI art, just don't build a production workflow on it.",
 
-  lastReviewedDate: "2026-04-02",
+  lastReviewedDate: "2026-10-17",
   dataSources: [
+    { name: "NightCafe pricing", url: "https://creator.nightcafe.studio/pricing", dateAccessed: "2026-10-17" },
     { name: "NightCafe official site", dateAccessed: "2026-04-02" },
     { name: "Capterra reviews", dateAccessed: "2026-04-02" },
     { name: "Trustpilot reviews", dateAccessed: "2026-04-02" },

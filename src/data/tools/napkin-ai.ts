@@ -20,19 +20,19 @@ export const napkinAi: ToolReview = {
     {
       plan: "Free",
       price: "$0",
-      features: ["500 AI credits/week", "Core visual styles", "Watermarked exports"],
+      features: ["500 AI credits/week (about 1 credit per word selected for generation)", "Core visual styles", "Watermarked exports"],
     },
     {
       plan: "Plus",
-      price: "$12",
-      period: "month",
-      features: ["More AI credits", "No watermark", "Custom branding", "Priority rendering"],
+      price: "$9",
+      period: "person/month (billed yearly)",
+      features: ["10,000 AI credits/month", "No watermark", "Custom branding", "Yearly billing saves 25% vs monthly"],
     },
     {
       plan: "Pro",
-      price: "$30",
-      period: "month",
-      features: ["Highest credit limit", "Advanced customization", "Team collaboration", "All export formats"],
+      price: "$22",
+      period: "person/month (billed yearly)",
+      features: ["30,000 AI credits/month", "Optional credit top-ups", "Advanced customization and team collaboration", "Yearly billing saves 25% vs monthly"],
     },
   ],
 
@@ -51,6 +51,11 @@ export const napkinAi: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "PRICING CHECK (2026-10-17): napkin.ai/pricing lists Plus at $9 and Pro at $22 per person per month on yearly billing (25% off monthly), with 10,000 and 30,000 AI credits per month; Free keeps 500 credits per week. Credits are charged at roughly 1 per word selected for generation. Paid teamspaces bill one seat per accepted member. No rename or ownership change.",
+      source: "napkin.ai/pricing",
+      date: "2026-10-17",
+    },
+    {
       description: "Exports copy as a flat image -- text inside diagrams isn't editable after export, which limits reuse",
       source: "G2 Reviews",
       date: "2026-01",
@@ -65,8 +70,9 @@ export const napkinAi: ToolReview = {
   notFor: "Anyone who needs precise control over diagram layouts, detailed data visualization, or team-based design workflows. Use Figma or Miro instead.",
   verdict: "Napkin AI does one thing and does it fast: turn text into a visual. It's genuinely useful for quick social posts and slide graphics, and the free tier is enough for casual use. But the lack of customization means power users will hit a ceiling quickly. Think of it as a visual shortcut, not a design tool.",
 
-  lastReviewedDate: "2026-04-02",
+  lastReviewedDate: "2026-10-17",
   dataSources: [
+    { name: "Napkin AI pricing", url: "https://www.napkin.ai/pricing", dateAccessed: "2026-10-17" },
     { name: "Napkin AI official site", dateAccessed: "2026-04-02" },
     { name: "G2 Reviews", dateAccessed: "2026-04-02" },
     { name: "Reddit r/productivity", dateAccessed: "2026-04-02" },

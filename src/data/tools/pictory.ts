@@ -19,37 +19,26 @@ export const pictory: ToolReview = {
   pricing: [
     {
       plan: "Starter",
-      price: "$19",
-      period: "month (billed annually)",
-      features: [
-        "30 videos/month",
-        "Royalty-free stock videos",
-        "AI voices",
-        "Music tracks",
-        "Free trial available",
-      ],
+      price: "$25",
+      period: "month (billed yearly; $29 monthly)",
+      features: ["1,200 AI credits/yr on yearly (100/month on monthly)", "Royalty-free stock videos, AI voices, music", "Free trial available"],
     },
     {
       plan: "Professional",
       price: "$35",
-      period: "month (billed annually)",
-      features: [
-        "60 videos/month",
-        "Hyper-realistic AI voices",
-        "Branded templates",
-        "Bulk video downloads",
-      ],
+      period: "month (billed yearly; $59 monthly)",
+      features: ["12,000 AI credits/yr on yearly (500/month on monthly)", "Hyper-realistic AI voices", "Branded templates"],
     },
     {
-      plan: "Teams",
-      price: "$99",
-      period: "month (billed annually)",
-      features: [
-        "90 videos/month",
-        "3 users included",
-        "Collaboration tools",
-        "180-min transcription per video",
-      ],
+      plan: "Team",
+      price: "$119",
+      period: "month (billed yearly; $199 monthly)",
+      features: ["28,800 AI credits/yr on yearly (2,400/month on monthly)", "Collaboration tools"],
+    },
+    {
+      plan: "Enterprise",
+      price: "Custom",
+      features: ["Custom AI credits for images, videos and avatars"],
     },
   ],
 
@@ -67,6 +56,11 @@ export const pictory: ToolReview = {
     "Customer support is hard to reach; refund requests go unanswered for weeks",
   ],
   knownIssues: [
+    {
+      description: "PRICING CHECK (2026-10-17): Pictory moved to AI-credit plans. Yearly: Starter $25/mo (1,200 credits/yr), Professional $35/mo (12,000/yr), Team $119/mo (28,800/yr); monthly: $29 (100/month), $59 (500/month), $199 (2,400/month); Enterprise custom. Yearly plans include a consultation with a video-creation expert (billed as a $210 value). The old per-video caps (30/60/90 videos a month) are no longer how plans are sold.",
+      source: "pictory.ai/pricing",
+      date: "2026-10-17",
+    },
     {
       description:
         "Downloaded videos frequently contain random blank screen segments, requiring re-rendering or manual editing",
@@ -93,8 +87,9 @@ export const pictory: ToolReview = {
   verdict:
     "Pictory solves a real problem -- turning text content into video is tedious, and the script-to-video pipeline genuinely works for basic social content. But the output needs babysitting. The AI picks wrong visuals constantly, rendering glitches waste time, and the voice options are stiff. Pictory 2.0 improved things with avatars and a timeline editor, but it's still a draft generator, not a finished-video machine. Worth the Starter plan if you're churning out social clips from blog posts.",
 
-  lastReviewedDate: "2026-04-02",
+  lastReviewedDate: "2026-10-17",
   dataSources: [
+    { name: "Pictory pricing", url: "https://pictory.ai/pricing", dateAccessed: "2026-10-17" },
     { name: "Pictory official site", dateAccessed: "2026-04-02" },
     { name: "Trustpilot reviews", dateAccessed: "2026-04-02" },
     { name: "Capterra reviews", dateAccessed: "2026-04-02" },
@@ -103,6 +98,5 @@ export const pictory: ToolReview = {
   affiliateUrl: "https://pictory.ai",
   status: "active",
   metaTitle: "Pictory Review 2026: Script-to-Video AI Worth It?",
-  metaDescription:
-    "Honest Pictory review. Auto-generate videos from articles starting at $19/mo. Fast but buggy output with wrong visuals. Full scores, pricing, and verdict.",
+  metaDescription: "Honest Pictory review. Auto-generate videos from articles and scripts, from $25/mo billed yearly ($29 monthly) on AI-credit plans. Fast but buggy output with wrong visuals. Full scores, pricing, and verdict.",
 };

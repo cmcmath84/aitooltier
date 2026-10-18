@@ -24,15 +24,21 @@ export const photoroom: ToolReview = {
     },
     {
       plan: "Pro",
-      price: "$13",
-      period: "month",
-      features: ["No watermark", "Batch editing", "AI product staging", "1,000+ templates", "High-res exports"],
+      price: "$7.50",
+      period: "month (billed yearly)",
+      features: ["8,000 AI credits/month", "1,000 exports/month", "Core tools (background remover, retouch, AI fill, expand, enhancer) with no credit cost", "API/MCP credit wallet worth the plan price"],
     },
     {
       plan: "Max",
-      price: "$35",
-      period: "month",
-      features: ["Advanced AI models", "Higher batch limits", "More AI credits", "Priority support", "Faster processing"],
+      price: "$20.99",
+      period: "month (billed yearly)",
+      features: ["25,000 AI credits/month", "3,000 exports/month", "Credit tools: Video Generator, Virtual Model, AI Backgrounds Studio, Edit with AI"],
+    },
+    {
+      plan: "Ultra",
+      price: "$82.50",
+      period: "month (billed yearly)",
+      features: ["75,000 AI credits/month", "10,000 exports/month", "Highest limits below Enterprise"],
     },
   ],
 
@@ -49,6 +55,11 @@ export const photoroom: ToolReview = {
     "Customer support relies heavily on bots and is slow to respond with actual human help",
   ],
   knownIssues: [
+    {
+      description: "PRICING CHECK (2026-10-17): photoroom.com/pricing now shows three paid plans plus Enterprise -- **Pro $7.50, Max $20.99 and a new Ultra tier at $82.50 per month, billed yearly** -- with monthly AI-credit pools (8,000 / 25,000 / 75,000) and export allowances (1,000 / 3,000 / 10,000). Core tools are uncapped on every paid plan; credit tools draw from the pool. Each paid plan includes an API/MCP credit wallet worth the plan's price, usable through the REST API or Photoroom's MCP server in tools like Claude. The free tier is not shown on the pricing page itself.",
+      source: "photoroom.com/pricing",
+      date: "2026-10-17",
+    },
     {
       description: "In November 2025, PhotoRoom changed terms for pre-paid customers, adding monthly image limits to plans that were sold as unlimited -- sparking backlash",
       source: "Medium",
@@ -69,8 +80,9 @@ export const photoroom: ToolReview = {
   notFor: "Photographers who need full creative editing control. PhotoRoom is a product photo factory, not a creative tool. Use Photoshop or Lightroom for actual photo editing.",
   verdict: "PhotoRoom is the best tool for high-volume product photo editing, period. Background removal is nearly flawless, batch mode is a genuine differentiator, and the mobile app means you can shoot and edit from anywhere. The free tier lets you kick the tires before committing. Just be aware that the company has a track record of changing plan terms on existing customers, so read the fine print on what you're actually getting.",
 
-  lastReviewedDate: "2026-04-02",
+  lastReviewedDate: "2026-10-17",
   dataSources: [
+    { name: "Photoroom pricing", url: "https://www.photoroom.com/pricing", dateAccessed: "2026-10-17" },
     { name: "PhotoRoom official site", dateAccessed: "2026-04-02" },
     { name: "Trustpilot reviews", dateAccessed: "2026-04-02" },
     { name: "Medium article on TOS changes", dateAccessed: "2026-04-02" },
