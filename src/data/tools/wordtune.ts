@@ -18,36 +18,34 @@ export const wordtune: ToolReview = {
   hasFreeTier: true,
   pricing: [
     {
-      plan: "Free",
+      plan: "Basic (Free)",
       price: "$0",
       features: [
-        "10 rewrites per day",
-        "3 AI prompts per day",
-        "Basic rewriting modes",
+        "10 rewrites/AI suggestions per day",
+        "3 AI summaries per month",
+        "Spelling and grammar checks",
         "Chrome extension",
       ],
     },
     {
-      plan: "Plus",
-      price: "$10",
-      period: "month",
+      plan: "Advanced",
+      price: "$4.89",
+      period: "month (billed yearly; $6.99 list)",
       features: [
-        "Unlimited rewrites",
-        "Unlimited AI prompts",
-        "Tone and length controls",
-        "Summarizer",
-        "Priority support",
+        "30 rewrites/AI suggestions per day",
+        "15 AI summaries per month",
+        "3-day free trial",
       ],
     },
     {
-      plan: "Business",
-      price: "$13.99",
-      period: "month",
+      plan: "Unlimited",
+      price: "$6.99",
+      period: "month (billed yearly; $9.99 list)",
       features: [
-        "All Plus features",
-        "Team management",
-        "Brand voice settings",
-        "SSO and admin controls",
+        "Unlimited rewrites and AI suggestions",
+        "Unlimited AI summaries",
+        "Premium support",
+        "3-day free trial",
       ],
     },
   ],
@@ -59,12 +57,17 @@ export const wordtune: ToolReview = {
     "Summarizer tool is surprisingly good for condensing long articles",
   ],
   cons: [
-    "10 rewrites per day on the free tier runs out fast if you're editing anything longer than a short email",
+    "10 rewrites per day on the free tier (and only 3 summaries a month) runs out fast if you're editing anything longer than a short email",
     "Feature set is narrower than Grammarly -- it's really just rewriting, not a full writing suite",
     "No desktop app -- you're stuck with the browser extension and web editor",
     "Doesn't work well with highly technical or domain-specific writing",
   ],
   knownIssues: [
+    {
+      description: "PRICING CHECK (2026-10-19): wordtune.com/plans now lists **Basic (free), Advanced and Unlimited** -- not the Free / Plus $10 / Business $13.99 lineup this page showed since April. Advanced is **$4.89/month billed annually** (shown against $6.99) with 30 rewrites a day and 15 summaries a month; Unlimited is **$6.99/month billed annually** (shown against $9.99) with no caps. Free stays at 10 rewrites a day and 3 summaries a month. Paid plans start with a 3-day free trial, and Wordtune states there are no refunds -- cancel before the trial or billing cycle ends. Business features (SAML SSO, centralized billing) are listed in the comparison table, but no Business price is published on the page.",
+      source: "wordtune.com/plans",
+      date: "2026-10-19",
+    },
     {
       description: "Chrome extension sometimes fails to load on certain websites, requiring a page refresh",
       source: "Chrome Web Store reviews",
@@ -78,10 +81,11 @@ export const wordtune: ToolReview = {
   ],
   bestFor: "Non-native English speakers and professionals who want their emails, docs, and messages to sound more polished and natural.",
   notFor: "Anyone who needs a comprehensive writing tool with grammar checking, plagiarism detection, and style guides. Grammarly covers more ground.",
-  verdict: "Wordtune does one thing and does it well: making your writing sound better. The rewrite suggestions are genuinely helpful and often better than what you'd get from QuillBot. But the narrow feature set means you'll likely still need Grammarly or another tool alongside it. At $10/mo for essentially a rewriting tool, it's a tougher sell unless rewriting is specifically what you need most.",
+  verdict: "Wordtune does one thing and does it well: making your writing sound better. The rewrite suggestions are genuinely helpful and often better than what you'd get from QuillBot. But the narrow feature set means you'll likely still need Grammarly or another tool alongside it. At $6.99/mo (billed yearly) for unlimited rewriting it is cheaper than it used to be, but it is still a tougher sell unless rewriting is specifically what you need most.",
 
-  lastReviewedDate: "2026-04-02",
+  lastReviewedDate: "2026-10-19",
   dataSources: [
+    { name: "Wordtune plans", url: "https://www.wordtune.com/plans", dateAccessed: "2026-10-19" },
     { name: "Wordtune official site", dateAccessed: "2026-04-02" },
     { name: "G2 Reviews", dateAccessed: "2026-04-02" },
     { name: "Chrome Web Store reviews", dateAccessed: "2026-04-02" },
@@ -90,5 +94,5 @@ export const wordtune: ToolReview = {
   affiliateUrl: "https://www.wordtune.com",
   status: "active",
   metaTitle: "Wordtune Review 2026: Better Rewriting Than QuillBot?",
-  metaDescription: "Honest Wordtune review with scores, pricing, pros and cons. How it compares to QuillBot and Grammarly for rewriting. Updated April 2026.",
+  metaDescription: "Honest Wordtune review with scores, pricing, pros and cons. Unlimited now $6.99/mo yearly. How it compares to QuillBot and Grammarly. Updated October 2026.",
 };
