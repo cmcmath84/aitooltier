@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const minimax: ToolReview = {
   slug: "minimax",
   name: "MiniMax M3",
-  tagline: "**MiniMax-H3's weights are public on Hugging Face (repo 2026-07-28, updated 2026-08-13) under a community licence whose open-weight grant is limited to the US, EU, UK and South Korea**, and **MiniMax Music 3 (2026-08-07)** ships open weights for five-minute full-song generation with a prominent-attribution commercial clause. MiniMax's coding/agent flagship -- M3 (June 1 2026): 1M-token context, MSA sparse attention (>15x decoding speedup at long context), SWE-Bench Pro 59.0%, Terminal-Bench 66.0%. OPEN WEIGHTS LIVE on HuggingFace since June 12 (~428B total / ~23B active, native multimodal, minimax-community license)",
+  tagline: "**MiniMax M3.1 Flash (2026-10-19) is a 428B-total, 23B-active multimodal MoE with a 1M-token context at $0.15 input / $0.60 output per 1M tokens ($0.015 cached) on the MiniMax API, M Plan and MiniMax Code. Its weights are now on Hugging Face under the minimax-community licence, which needs a visible Built with MiniMax M3.1-Flash notice for commercial use and written approval above $20M yearly revenue.** **MiniMax-H3's weights are public on Hugging Face (repo 2026-07-28, updated 2026-08-13) under a community licence whose open-weight grant is limited to the US, EU, UK and South Korea**, and **MiniMax Music 3 (2026-08-07)** ships open weights for five-minute full-song generation with a prominent-attribution commercial clause. MiniMax's coding/agent flagship -- M3 (June 1 2026): 1M-token context, MSA sparse attention (>15x decoding speedup at long context), SWE-Bench Pro 59.0%, Terminal-Bench 66.0%. OPEN WEIGHTS LIVE on HuggingFace since June 12 (~428B total / ~23B active, native multimodal, minimax-community license)",
   category: "ai-local-models",
   url: "https://www.minimax.io",
 
@@ -21,6 +21,17 @@ export const minimax: ToolReview = {
       plan: "Self-hosted (Free)",
       price: "$0",
       features: ["MIT license on M2 / M2.5", "M2.7 license listed as 'Other' on HuggingFace -- verify before commercial use", "Weights on Hugging Face (MiniMaxAI/MiniMax-M2.7)"],
+    },
+    {
+      plan: "API (MiniMax M3.1 Flash, 2026-10-19)",
+      price: "$0.15 / $0.60",
+      period: "per 1M tokens (input/output)",
+      features: ["Cached input $0.015 per 1M", "Also in M Plan and MiniMax Code", "About 428B total / 23B active, 1M context, text, image and video in", "MiniMax says usage costs drop 70% versus its predecessor"],
+    },
+    {
+      plan: "Self-hosted M3.1 Flash (minimax-community licence)",
+      price: "$0",
+      features: ["Weights public on Hugging Face (MiniMaxAI/MiniMax-M3.1-Flash, not gated)", "Free for non-commercial use; commercial use needs a prominent Built with MiniMax M3.1-Flash notice", "Written authorization required above $20M yearly revenue, otherwise a one-time notice", "No territorial limit, unlike the H3 licence"],
     },
     {
       plan: "API (M2 / M2.5 reference, MiniMax / OpenRouter)",
@@ -51,6 +62,11 @@ export const minimax: ToolReview = {
     "MiniMax as a lab is less well-known than Alibaba or DeepSeek -- some enterprise buyers hesitate",
   ],
   knownIssues: [
+    {
+      description: "MINIMAX M3.1 FLASH: NEW FAST FLAGSHIP AT $0.15 / $0.60, WEIGHTS ON HUGGING FACE (2026-10-19, vendor-primary): 'Today, we officially roll out MiniMax M3.1 Flash.' 'Flat pricing per 1M tokens: $0.15 input, $0.60 output, $0.015 cached input', on the MiniMax API, M Plan and MiniMax Code; an early version ran anonymously as 'Space Bunny'. The launch post said 'Model weights will be released later', but the Hugging Face repo is public and ungated (created 2026-10-17, first commit dated 2026-10-23, last modified 2026-10-26). **Model card:** about 428B total and 23B active parameters per token, up to 1,000,000 tokens of context, text, image and video input. **Licence:** license_name minimax-community; the grant covers non-commercial use, and commercial use requires prominently displaying 'Built with MiniMax M3.1-Flash' plus prior written authorization if the product earns more than $20 million a year (a one-time notice otherwise). **Vendor-reported:** 76.2 BankerToolBench, 73.7% DeepSWE v1.1, 61.7 OSWorld V2, 29.6 Agents' Last Exam, 82.2 CyberGym. Our older M2-era pricing rows below are kept for reference.",
+      source: "MiniMax blog: MiniMax M3.1 Flash (minimax.io/blog/minimax-m31f, JSON-LD 2026-10-19) + Hugging Face MiniMaxAI/MiniMax-M3.1-Flash (API metadata, commits, raw README.md and LICENSE), fetched 2026-10-29",
+      date: "2026-10-19",
+    },
     {
       description: "MINIMAX-H3 WEIGHTS ARE PUBLIC -- BUT THE OPEN-WEIGHT GRANT IS LIMITED TO THE US, EU, UK AND SOUTH KOREA, WHICH THE 7/31 ENTRY BELOW COULD NOT HAVE KNOWN (weights on Hugging Face; repo created 2026-07-28, last modified 2026-08-13; verified 2026-09-17): the MiniMaxAI/MiniMax-H3 repository carries **104 safetensors shards** and about 4.6M downloads, so the 'weights not released as of 8/03' caveat on this page is retired. **Licence: 'MiniMax H3 Community License Agreement' (HF front matter `license: other`), with an application form 'only for USA/EU/UK/South Korea'.** MiniMax's own Q&A explains why: video models face 'a more complex and rapidly evolving regulatory environment', the EU AI Act is in enforcement, and 'in the US... MiniMax is also involved in ongoing copyright-related legal proceedings specifically concerning generative video AI'; the company chose to 'release the model now with a transparent license scope' and calls the limitation 'not yet, not not ever'. **The hosted API is global** because MiniMax can enforce safeguards on its own infrastructure. Model card specifics: general-purpose omni-modal system, unified text/image/video/audio context, video with native stereo audio up to 2K and 15 seconds, task tags covering T2V, I2V, V2V, audio-to-audio-video and reference-to-audio-video, diffusers integration, plus official prompt-writing skills on GitHub. **Practical read:** H3 is now the only roster video model with published weights at this capability level, but 'open-weight' here carries a geography clause -- a licence class of its own, distinct from GLM-5.3's custom licence or Qwen's Apache 2.0, and one to state explicitly rather than summarise as 'open'.",
       source: "Hugging Face (huggingface.co/MiniMaxAI/MiniMax-H3 -- API metadata createdAt 2026-07-28, lastModified 2026-08-13, 104 .safetensors; raw README.md front matter license_name minimax-h3-community-license-agreement; docs/QA-about-License.md) -- all fetched 2026-09-17",
@@ -101,8 +117,10 @@ export const minimax: ToolReview = {
   notFor: "Teams that prioritize polished English writing (Mistral Large 3 or Claude are better), or anyone who needs the deepest ecosystem support (Llama is still that).",
   verdict: "MiniMax M2/M2.5 is the most cost-efficient frontier-tier open model in 2026. The 80.2% SWE-Bench Verified score is a genuine breakthrough -- matching Claude Opus 4.6 on real coding tasks at a tenth of the price. The sparse 10B-active MoE runs fast on moderate hardware. The main drawback is ecosystem: MiniMax has less Western infrastructure support than Alibaba or DeepSeek. If you're building an agentic product and want maximum value per token, M2.5 is an A-tier pick.",
 
-  lastReviewedDate: "2026-09-17",
+  lastReviewedDate: "2026-10-29",
   dataSources: [
+    { name: "MiniMax: MiniMax M3.1 Flash rollout, $0.15 / $0.60 / $0.015 (2026-10-19)", url: "https://www.minimax.io/blog/minimax-m31f", dateAccessed: "2026-10-29" },
+    { name: "Hugging Face: MiniMaxAI/MiniMax-M3.1-Flash model card and minimax-community licence", url: "https://huggingface.co/MiniMaxAI/MiniMax-M3.1-Flash", dateAccessed: "2026-10-29" },
     { name: "Hugging Face: MiniMaxAI/MiniMax-H3 model card -- MiniMax H3 Community License, territory-limited open-weight grant (repo 2026-07-28, verified 2026-09-17)", url: "https://huggingface.co/MiniMaxAI/MiniMax-H3", dateAccessed: "2026-09-17" },
     { name: "Hugging Face: MiniMaxAI/MiniMax-H3 docs/QA-about-License.md -- why open weights are limited to the EU, UK, South Korea and US", url: "https://huggingface.co/MiniMaxAI/MiniMax-H3/blob/main/docs/QA-about-License.md", dateAccessed: "2026-09-17" },
     { name: "Hugging Face: MiniMaxAI/MiniMax-Music3 model card -- 8B global + 0.6B local LLM, 5-minute songs, 32 kHz stereo (repo 2026-08-07)", url: "https://huggingface.co/MiniMaxAI/MiniMax-Music3", dateAccessed: "2026-09-17" },
@@ -150,6 +168,6 @@ export const minimax: ToolReview = {
     tone: "Expressive and media-rich. MiniMax's chat models lean into long, formatted responses and handle voice and image prompts more naturally than most pure-text peers.",
     quirks: "Strong multimodal story; text-only quality is good but not class-leading versus DeepSeek or Qwen. Like other Chinese models, careful on domestic political topics.",
   },
-  metaTitle: "MiniMax Review 2026: H3 Weights Public (Territory-Limited), Music 3 Open, M3 Coding Flagship",
-  metaDescription: "MiniMax review. H3 omni-modal video weights are on Hugging Face under a community licence limited to the US, EU, UK and South Korea; Music 3 (Aug 7, 2026) open-weights five-minute song generation. M3 coding flagship: 1M context, SWE-Bench Pro 59%, open weights since June 12. Licences and gates explained.",
+  metaTitle: "MiniMax Review 2026: M3.1 Flash at $0.15/$0.60 With Open Weights, H3, Music 3, M3",
+  metaDescription: "MiniMax review. M3.1 Flash (Oct 19, 2026) is a 428B-total, 23B-active multimodal MoE with 1M context at $0.15/$0.60 per 1M tokens, weights on Hugging Face under a community licence that needs attribution for commercial use. Plus H3 video weights, Music 3 and the M3 coding flagship.",
 };

@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const notionAi: ToolReview = {
   slug: "notion-ai",
   name: "Notion AI",
-  tagline: "**Notion's 2026-10-13 release lets Business and Enterprise members connect a ChatGPT Plus or Pro subscription to cover their Notion AI usage with no markup, adds a Skills API that syncs Skills to ChatGPT and Claude, column-level database permissions, admin controls for MCP-connected agents, rebuilt GitHub/Jira/Salesforce synced databases and seven new models including GPT-6.1 Sol and Opus 5.5.** **Notion 3.7 (2026-09-15)**: Agent skills for the whole team -- reusable instructions that teach Notion Agent how your team works, kept in a shared skills library and run with a slash command. **Model controls (2026-09-09)**: Business/Enterprise workspace owners can now pick which AI models Notion Agent and Custom Agents may use and set a default -- a cost and compliance lever the page lacked. Also new since July: suggest-edits mode (8/28), a model picker with scorecards (8/14), the Developer Portal in the sidebar (8/19), and AI Meeting Notes triggering Custom Agents (7/31). AI built into Notion -- Custom Agents exited beta 2026-05-04/05 with admin controls (per-agent spend caps, workspace caps, auto-pause on limit) and credit billing live at $10 / 1,000 credits (~$0.17-$0.33 per agent run) as an add-on to Business/Enterprise",
+  tagline: "**Notion changed how Notion AI is paid for on 2026-10-19: Business and Enterprise seats now include 1,500 Standard credits a month for work where Notion picks the model and 500 Select credits for picking a model or running Custom Agents, and extra Notion credits cost $10 per 1,000 monthly or $13 per 1,000 annual. New customers are on it now and existing workspaces move on 2026-11-02. Seat prices stay at $10 Plus and $20 Business per seat a month billed yearly ($12 and $24 billed monthly).** **Notion's 2026-10-13 release lets Business and Enterprise members connect a ChatGPT Plus or Pro subscription to cover their Notion AI usage with no markup, adds a Skills API that syncs Skills to ChatGPT and Claude, column-level database permissions, admin controls for MCP-connected agents, rebuilt GitHub/Jira/Salesforce synced databases and seven new models including GPT-6.1 Sol and Opus 5.5.** **Notion 3.7 (2026-09-15)**: Agent skills for the whole team -- reusable instructions that teach Notion Agent how your team works, kept in a shared skills library and run with a slash command. **Model controls (2026-09-09)**: Business/Enterprise workspace owners can now pick which AI models Notion Agent and Custom Agents may use and set a default -- a cost and compliance lever the page lacked. Also new since July: suggest-edits mode (8/28), a model picker with scorecards (8/14), the Developer Portal in the sidebar (8/19), and AI Meeting Notes triggering Custom Agents (7/31). AI built into Notion -- Custom Agents exited beta 2026-05-04/05 with admin controls (per-agent spend caps, workspace caps, auto-pause on limit) and credit billing live at $10 / 1,000 credits (~$0.17-$0.33 per agent run) as an add-on to Business/Enterprise",
   category: "ai-business-productivity",
   url: "https://notion.so",
 
@@ -17,39 +17,11 @@ export const notionAi: ToolReview = {
 
   hasFreeTier: false,
   pricing: [
-    {
-      plan: "Notion Free + AI",
-      price: "$10",
-      period: "month",
-      features: [
-        "AI add-on per member",
-        "Summarize pages",
-        "Draft content",
-        "Q&A across workspace",
-      ],
-    },
-    {
-      plan: "Notion Plus + AI",
-      price: "$18",
-      period: "month",
-      features: [
-        "Everything in Plus plan",
-        "AI included",
-        "Unlimited blocks",
-        "30-day page history",
-      ],
-    },
-    {
-      plan: "Notion Business + AI",
-      price: "$28",
-      period: "month",
-      features: [
-        "Everything in Business plan",
-        "AI included",
-        "SAML SSO",
-        "Advanced permissions",
-      ],
-    },
+    { plan: "Free", price: "$0", features: ["Limited trial of Notion AI", "Basic forms and sites", "Notion Calendar"] },
+    { plan: "Plus", price: "$10", period: "seat/month billed yearly ($12 monthly)", features: ["Limited trial of Notion AI (Standard credits)", "Custom forms and sites, charts", "Basic connections"] },
+    { plan: "Business", price: "$20", period: "seat/month billed yearly ($24 monthly)", features: ["Notion Agent, Custom Agents, AI Meeting Notes, Enterprise Search", "1,500 Standard and 500 Select credits per seat each month, no rollover or pooling (existing workspaces from 2026-11-02)", "SAML SSO, granular database permissions"] },
+    { plan: "Enterprise", price: "Custom", features: ["Custom credit amounts", "Zero data retention with LLM providers", "SCIM, audit log, DLP and SIEM connections", "Bring your own key (private alpha)"] },
+    { plan: "Notion credits (add-on)", price: "$10 / 1,000", period: "monthly credits ($13 / 1,000 annual)", features: ["Bought by admins for the workspace", "Covers usage past included Standard and Select credits, high credit consumption models such as Fable and Astra, and workspace-funded Custom Agents"] },
   ],
 
   pros: [
@@ -61,11 +33,16 @@ export const notionAi: ToolReview = {
   ],
   cons: [
     "The writing quality is generic ChatGPT-level output -- fine for first drafts but needs heavy editing",
-    "Pricing feels steep at $10/member/month on top of an already paid plan",
+    "Credits now gate everything: Business seats include 1,500 Standard and 500 Select credits a month that do not roll over or pool, picking Fable or Astra draws on paid workspace credits ($10 per 1,000), and AI Meeting Notes start using Standard credits on 2026-12-01",
     "External connectivity is young -- Database Sync, MCP connections, and External Agents (Notion 3.6) are new and still beta-grade in places",
     "Q&A sometimes confidently returns wrong answers based on outdated or irrelevant pages in your workspace",
   ],
   knownIssues: [
+    {
+      description: "NEW CREDIT SYSTEM, A CHEAPER AUTO ROUTER AND CHATGPT GO SUPPORT (2026-10-19, vendor-primary): 'Business and Enterprise seats come with 1,500 Standard credits per month, for work where Notion picks the model, and 500 Select credits per month, for work where you pick the model or to run your Custom Agents.' Credits are per member, reset monthly and do not roll over or pool. Workspace Notion credits ($10 per 1,000 monthly, $13 per 1,000 annual) cover usage beyond that, high credit consumption models such as Fable and Astra, and workspace-funded Custom Agents, when an admin turns this on. 'The new system is live today for new customers. Existing customers move over on November 2'; Custom Agents created before November 2 keep drawing on shared workspace credits, and AI Meeting Notes start using Standard credits on 2026-12-01 (about 10 per one-hour meeting). Notion says its Auto router matched Opus 5.5 and Astra on 20+ common tasks at about 90% lower average cost (its help page says 87%). Also: agents get their own computer and browser for long tasks (the release says up to 24 hours, the blog more than 24), ChatGPT Plus, Pro or Go accounts can power the personal Notion Agent (Go is new since 10/13; not Custom Agents), BYOK is in alpha for Enterprise, and an AI Command Center is coming. Seat prices are unchanged; our old 'Plus + AI $18' and 'Business + AI $28' add-on rows were out of date and are replaced.",
+      source: "Notion releases (notion.com/releases/2026-10-19) + Notion blog (notion.com/blog/notion-ai-more-for-less, datePublished 2026-10-19) + Notion help (what-are-notion-credits, manage-your-ai-credits, how-ai-credits-work-for-custom-agents, auto) + notion.com/pricing (curl yearly view, Firecrawl monthly view), all fetched 2026-10-29",
+      date: "2026-10-19",
+    },
     {
       description: "PAY FOR NOTION AI WITH YOUR CHATGPT PLAN, SKILLS API, COLUMN PERMISSIONS, MCP CONTROLS (2026-10-13 release, vendor-primary): Notion's 'all about context' release. **(1) ChatGPT subscription billing:** 'If you have ChatGPT Plus or Pro, your subscription can now cover your AI usage in Notion. Just connect your plan, pick a GPT model, and go. We don't add a markup.' **Available for Business and Enterprise plans.** This is the 'Sign in with ChatGPT' item earlier sweeps deferred; it changes the cost maths for heavy users who already pay OpenAI, but only for GPT models and only on the two top Notion tiers. **(2) Skills:** a new **Skills API** syncs Skills stored in Notion to ChatGPT, Claude 'and more' (it 'loads Skills from Notion into GitHub'). **(3) Agents from outside:** any MCP-compatible agent ('Claudes, Muses, GrokBots, Dots') can read and update the workspace; **Notion MCP controls** let admins see who connected each AI tool, when it was last used, and revoke one person's access; 150+ MCP connections feed Notion Agent and Custom Agents (HubSpot, Stripe, Cloudflare named). **(4) Column permissions** -- long-requested -- let database owners set which properties each person or agent can view or edit. **(5)** Upgraded version history with attribution for agent edits; rebuilt synced databases for GitHub, Jira and Salesforce with live health status; **seven new models including GPT-6.1 Sol, GPT-6 Luna, Opus 5.5 and Sonnet 5.5**; a public 'Knowledge Board' of model performance on knowledge work; redesigned Connections settings with admin allow-lists; Notion notifications in Microsoft Teams. No price change to Notion's own plans or credits was announced.",
       source: "Notion releases (notion.com/releases/2026-10-13) -- fetched 2026-10-15 via curl",
@@ -127,8 +104,12 @@ export const notionAi: ToolReview = {
   verdict:
     "Notion AI is convenient, not exceptional. If Notion is already your team's brain, the AI features add genuine value for summarization and workspace search. But the writing output is mediocre, the per-member pricing adds up fast, and you can get better AI writing from dedicated tools. It's a nice-to-have, not a must-have.",
 
-  lastReviewedDate: "2026-10-15",
+  lastReviewedDate: "2026-10-29",
   dataSources: [
+    { name: "Notion: More AI for less, new credit system (2026-10-19)", url: "https://www.notion.com/blog/notion-ai-more-for-less", dateAccessed: "2026-10-29" },
+    { name: "Notion releases: October 19, 2026", url: "https://www.notion.com/releases/2026-10-19", dateAccessed: "2026-10-29" },
+    { name: "Notion help: What are Notion credits ($10 per 1,000 monthly, $13 per 1,000 annual)", url: "https://www.notion.com/help/what-are-notion-credits", dateAccessed: "2026-10-29" },
+    { name: "Notion pricing: Plus $10 / Business $20 per seat billed yearly ($12 / $24 monthly)", url: "https://www.notion.com/pricing", dateAccessed: "2026-10-29" },
     { name: "Notion releases -- 2026-10-13: ChatGPT Plus/Pro covers Notion AI usage, Skills API, column permissions, MCP controls, seven new models", url: "https://www.notion.com/releases/2026-10-13", dateAccessed: "2026-10-15" },
     { name: "Notion releases: Notion 3.7 -- Agent skills for your whole team, skills library (2026-09-15)", url: "https://www.notion.com/releases/2026-09-15", dateAccessed: "2026-09-28" },
     { name: "Notion releases 2026-09-09 -- Control which AI models your agents can use (Business/Enterprise)", url: "https://www.notion.com/releases/2026-09-09", dateAccessed: "2026-09-14" },
@@ -144,6 +125,6 @@ export const notionAi: ToolReview = {
   ],
   affiliateUrl: "https://notion.so",
   status: "active",
-  metaTitle: "Notion AI Review 2026: Pay With Your ChatGPT Plan, Skills API, Column Permissions, Custom Agents",
-  metaDescription: "Notion AI review. Oct 13, 2026: Business and Enterprise members can cover Notion AI usage with a ChatGPT Plus or Pro plan (GPT models, no markup), a Skills API syncs Skills to ChatGPT and Claude, column permissions and MCP admin controls arrive, and GPT-6.1 Sol and Opus 5.5 join the picker. Custom Agents bill at $10 per 1,000 credits.",
+  metaTitle: "Notion AI Review 2026: New Credit System (1,500 Standard + 500 Select per Seat), ChatGPT Plans, Agents",
+  metaDescription: "Notion AI review. Since Oct 19, 2026 Business and Enterprise seats include 1,500 Standard and 500 Select AI credits a month, with extra credits at $10 per 1,000; existing workspaces switch Nov 2. Seats stay $10 Plus and $20 Business billed yearly. ChatGPT Plus, Pro or Go can power Notion Agent.",
 };

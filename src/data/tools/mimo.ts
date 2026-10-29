@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const mimo: ToolReview = {
   slug: "mimo",
   name: "MiMo (Xiaomi)",
-  tagline: "Xiaomi's MiMo-V2.5 family launched 2026-04-22 -- Pro (1T total / 42B active MoE, 1M context, native vision+audio reasoning), Multimodal base, TTS (3 sub-models: base, VoiceDesign, VoiceClone), and ASR (open-source, English + Chinese + major dialects). Full voice pipeline for the agent era. Extra-charge 1M-context tier removed at launch",
+  tagline: "Xiaomi's MiMo family. MiMo-V2.6 (2026-09-22) open-sources Pro (1.02T total / 42B active MoE) and Flash (309B / 15B active) under MIT, both natively omnimodal (text, image, video, audio) with 1M context. API prices unchanged from V2.5: Pro $0.435 input / $0.87 output per 1M tokens, Flash $0.14 / $0.28. MiMo-V2.5 TTS and open-source ASR round out the voice stack",
   category: "ai-llms",
   url: "https://mimo.xiaomi.com",
 
@@ -27,23 +27,36 @@ export const mimo: ToolReview = {
       ],
     },
     {
-      plan: "API (MiMo-V2.5-Pro)",
-      price: "Pay-as-you-go",
-      period: "per 1M tokens",
+      plan: "API (MiMo-V2.6-Pro)",
+      price: "$0.435 / $0.87",
+      period: "per 1M tokens (input / output)",
       features: [
-        "1T total / 42B active MoE",
-        "Native 1M context window with NO extra-charge tier (Xiaomi removed the surcharge for the full window at launch)",
-        "Native multimodal: vision and audio reasoning in one model",
+        "1.02T total / 42B active MoE; text, image, video and audio input; 1M context",
+        "Cache-hit input $0.0036 per 1M tokens; cache writes free for a limited time",
+        "One price across the full 1M context in Xiaomi's V2.6 price table",
+        "Pro-UltraSpeed mode: up to 20x output speed at $4.35 input / $8.7 output per 1M tokens",
         "OpenAI- and Anthropic-API-compatible endpoints (the standard pattern Chinese frontier models adopted in 2025-26)",
+        "Token Plan available for predictable high-volume use",
       ],
     },
     {
-      plan: "API (MiMo-V2.5 multimodal base)",
-      price: "Pay-as-you-go",
-      period: "per 1M tokens",
+      plan: "API (MiMo-V2.6-Flash)",
+      price: "$0.14 / $0.28",
+      period: "per 1M tokens (input / output)",
       features: [
-        "Image + audio + video + text in a single API call",
-        "Cheaper than Pro for workloads that don't need 1M context or 42B-active capacity",
+        "309B total / 15B active MoE with the same omnimodal input and 1M context as Pro",
+        "Cache-hit input $0.0028 per 1M tokens",
+        "About a third of Pro's price; vendor-reported DeepSWE v1.1 67.9 vs 71.9 for Pro",
+      ],
+    },
+    {
+      plan: "Self-hosted MiMo-V2.6 (MIT open weights)",
+      price: "$0 + GPU costs",
+      features: [
+        "Pro and Flash weights on Hugging Face and ModelScope, as RL and MOPD checkpoints",
+        "MOPD checkpoints (2026-09-27) mitigate tool-call repetition in agent loops",
+        "MiMo-V2.6-Distill-Qwen-9B: a 9B SFT checkpoint on Qwen3.5-9B for agentic RL research",
+        "Technical report, training environments and RL code released",
       ],
     },
     {
@@ -59,7 +72,7 @@ export const mimo: ToolReview = {
       plan: "MiMo-V2.5-ASR (open-source)",
       price: "$0 + GPU costs",
       features: [
-        "Open-source under a permissive license",
+        "Open-source under the MIT licence (Hugging Face, 2026-04-23)",
         "English + Mandarin Chinese + major Chinese dialects (Cantonese, Shanghainese, etc.)",
         "Self-hostable for privacy-sensitive transcription workloads",
       ],
@@ -67,19 +80,33 @@ export const mimo: ToolReview = {
   ],
 
   pros: [
+    "Open weights at the flagship tier: MiMo-V2.6-Pro and Flash ship under MIT on Hugging Face, with the technical report, training environments and RL code also released",
+    "Vendor-reported agent scores put V2.6-Pro close to closed frontier models: DeepSWE v1.1 71.9, Terminal Bench 2.1 89.9, OSWorld-Verified 82.0 and Toolathlon-Verified 76.9, against 74.0, 89.1, 83.4 and 80.6 for Claude Opus 5 in the same table",
     "Full voice pipeline shipped together: a frontier reasoning model (Pro), a multimodal base, a TTS family, and an open-source ASR -- Xiaomi positions MiMo-V2.5 as 'voice for the agent era,' which is rare in 2026 (most vendors ship one of these and integrate the others later)",
-    "Native multimodal in MiMo-V2.5-Pro is the differentiator -- vision and audio reasoning in one model, not bolted on after the fact. Closer to the Gemini 2.5 / GPT-5.5 design than to text-first models with separate vision adapters",
+    "Native omnimodal input in MiMo-V2.5-Pro and both V2.6 models is the differentiator: text, image, video and audio in one model, not bolted on after the fact. Closer to the Gemini 2.5 / GPT-5.5 design than to text-first models with separate vision adapters",
     "Removing the surcharge for the full 1M-context tier at launch is a real value move -- Alibaba, Anthropic, and OpenAI all charge meaningfully more per token for full-context windows. Xiaomi flattening this lowers the barrier to long-document and agentic workloads",
     "Open-source MiMo-V2.5-ASR is the practical takeaway for privacy-sensitive teams. Cohere Transcribe + Whisper had been the open-ASR options through 2025; MiMo-V2.5-ASR adds a Chinese-dialect-strong third entry",
-    "Listed on Artificial Analysis at launch -- third-party verification path is open, even if scores are still being filled in",
+    "Xiaomi cites an Artificial Analysis Intelligence Index score of 46.32 for MiMo-V2.6-Pro (v4.3, September 2026), which it calls the highest of any open-source model",
   ],
   cons: [
-    "Third-party benchmarks are still developing as of launch week -- Xiaomi's own published numbers are the dominant evidence, which warrants the usual self-reporting discount",
+    "Xiaomi's own table shows clear gaps on harder terminal and exploit tasks: Terminal Bench 4.0 34.9 and ExploitBench 47.9 for V2.6-Pro, against 49.0 and 70.0 for Claude Opus 5",
+    "Self-hosting Pro needs a large multi-GPU setup: Xiaomi's vLLM example uses 8-way tensor parallel and its SGLang example runs 2 nodes at 16-way. Flash is lighter, with 4-way (vLLM) and 8-way (SGLang) tensor-parallel examples. The cards do not state GPU models or VRAM",
+    "Most V2.6 benchmark numbers come from Xiaomi, and several are in-house suites (MiMo Code Bench, MiMo Visual Coding, MiMo Cyber Bench), which warrants the usual self-reporting discount",
     "PRC content filters apply on Pro and Multimodal -- the same regulated-topic refusals that Hy3, DeepSeek, and Qwen exhibit. ASR is less affected by content filtering since it's transcription, not generation",
     "English creative-writing polish lags Western frontier models -- pick MiMo for Chinese-language work, multimodal reasoning, or voice pipelines first, English prose second",
     "Geo-availability: API access for non-Chinese developers may require an Xiaomi developer account and KYC; check the docs before assuming OpenAI-style account-creation friction",
   ],
   knownIssues: [
+    {
+      description: "VERSION BUMP (2026-09-22): Xiaomi released and open-sourced the MiMo-V2.6 series under MIT (Hugging Face repos created 2026-09-21): Pro (1.02T total / 42B active MoE) and Flash (309B / 15B active), both natively omnimodal with 1M context. API pricing is unchanged from V2.5: Pro $0.435 input / $0.87 output, Flash $0.14 / $0.28 per 1M tokens, plus Pro-UltraSpeed at up to 20x output speed for $4.35 / $8.7. MiMo Desktop left early access with both models built in. Correction: this page previously called MiMo-V2.5-Pro API-only, but its weights have been on Hugging Face under MIT since 2026-04-27",
+      source: "Xiaomi MiMo blog (mimo.xiaomi.com/mimo-v2-6), Hugging Face XiaomiMiMo model cards and model list",
+      date: "2026-09-22",
+    },
+    {
+      description: "Tool-call repetition: Xiaomi says that after the V2.6 release, repeated identical or near-identical tool calls became one of the most noticeable issues in agentic use, consuming time and context without progress. The MiMo-V2.6-Pro-MOPD and Flash-MOPD checkpoints (2026-09-27) mitigate it, so self-hosters running agents should use them over the RL checkpoints",
+      source: "Hugging Face (XiaomiMiMo/MiMo-V2.6-Pro-MOPD card)",
+      date: "2026-09-27",
+    },
     {
       description: "OLDER SERIES RETIRED (2026-06-30): Xiaomi fully deprecated the prior **MiMo-V2 series** (V2-Pro / V2-Omni / V2-Flash) on 2026-06-30 -- migrate to the MiMo-V2.5 family this page covers, which is the designated replacement. If you pinned a `mimo-v2-*` model id, it's now failing; the V2.5 line is current. (Reinforces V2.5 as the live family; no change to our review scope.)",
       source: "Xiaomi MiMo docs (mimo.mi.com/docs updates), 36Kr, Hacker News",
@@ -117,14 +144,19 @@ export const mimo: ToolReview = {
     },
   ],
   bestFor:
-    "Teams building voice-first agentic products that need a coordinated reasoning + TTS + ASR stack from a single vendor. Also Chinese-market builders and developers who need strong multimodal (vision + audio) inputs in one API call without stitching three providers together. The no-surcharge 1M-context stance makes MiMo-V2.5-Pro especially attractive for long-document agentic workloads.",
+    "Teams building voice-first agentic products that need a coordinated reasoning + TTS + ASR stack from a single vendor. Also Chinese-market builders and developers who need strong multimodal (vision + audio) inputs in one API call without stitching three providers together. MiMo-V2.6-Pro's single price across 1M context suits long-document agentic workloads, and its MIT open weights suit teams that want to self-host a flagship-class omnimodal model.",
   notFor:
-    "English-first creative writing (Claude / GPT-5.5 still lead), regulated geographies that block Chinese AI APIs, or teams whose only voice need is English TTS (ElevenLabs is more mature). Also not the right fit if you need fully proven third-party benchmark verification today -- that takes weeks post-launch.",
+    "English-first creative writing (Claude / GPT-5.5 still lead), regulated geographies that block Chinese AI APIs, or teams whose only voice need is English TTS (ElevenLabs is more mature). Also not the right fit if you need independent benchmark verification, since most V2.6 numbers are Xiaomi's own.",
   verdict:
-    "MiMo-V2.5 is Xiaomi treating voice as a first-class agentic surface, not an after-the-fact integration. Shipping Pro + Multimodal + TTS + open-source ASR together -- with native vision and audio reasoning baked into the flagship and the 1M-context surcharge removed -- is the most coordinated voice-stack launch from a Chinese frontier vendor in 2026. The benchmark story will fill in over the next few weeks; for now, treat MiMo as a serious option for voice-pipeline builds, multimodal Chinese-language workloads, and self-hosted dialect-strong ASR. For text-only English-first work, Claude / GPT / Gemini still lead and DeepSeek is still the cheapest text-first frontier alternative.",
+    "MiMo is Xiaomi treating voice as a first-class agentic surface, not an after-the-fact integration. Shipping V2.5 Pro + Multimodal + TTS + open-source ASR together -- with native vision and audio reasoning baked into the flagship and the 1M-context surcharge removed -- is the most coordinated voice-stack launch from a Chinese frontier vendor in 2026. MiMo-V2.6 (September 2026) adds MIT open weights for Pro and Flash at unchanged API prices, and Xiaomi's own tables put V2.6-Pro near Claude Opus 5 on several agent benchmarks while trailing on Terminal Bench 4.0 and exploit tasks. Treat MiMo as a serious option for voice-pipeline builds, multimodal Chinese-language workloads, low-cost agentic API use, self-hosted open-weight deployments, and dialect-strong ASR. For text-only English-first work, Claude / GPT / Gemini still lead and DeepSeek is still the cheapest text-first frontier alternative.",
 
-  lastReviewedDate: "2026-07-04",
+  lastReviewedDate: "2026-10-29",
   dataSources: [
+    { name: "Xiaomi MiMo blog: Introducing MiMo-V2.6 series (2026-09-22)", url: "https://mimo.xiaomi.com/mimo-v2-6", dateAccessed: "2026-10-29" },
+    { name: "Hugging Face: XiaomiMiMo/MiMo-V2.6-Pro-RL", url: "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-RL", dateAccessed: "2026-10-29" },
+    { name: "Hugging Face: XiaomiMiMo/MiMo-V2.6-Flash-RL", url: "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Flash-RL", dateAccessed: "2026-10-29" },
+    { name: "Hugging Face: XiaomiMiMo/MiMo-V2.6-Pro-MOPD", url: "https://huggingface.co/XiaomiMiMo/MiMo-V2.6-Pro-MOPD", dateAccessed: "2026-10-29" },
+    { name: "Hugging Face: XiaomiMiMo models", url: "https://huggingface.co/XiaomiMiMo", dateAccessed: "2026-10-29" },
     { name: "Xiaomi MiMo docs: MiMo-V2 series deprecation (2026-06-30)", url: "https://mimo.mi.com/docs/en-US/updates/model", dateAccessed: "2026-07-04" },
     { name: "Xiaomi: MiMo-V2.5-Pro product page", url: "https://mimo.xiaomi.com/mimo-v2-5-pro", dateAccessed: "2026-04-25" },
     { name: "Gizmochina: Xiaomi introduces MiMo-V2.5 TTS and ASR full voice pipeline", url: "https://www.gizmochina.com/2026/04/24/xiaomi-introduces-mimo-v2-5-tts-and-asr-as-a-full-voice-pipeline-for-the-agent-era/", dateAccessed: "2026-04-25" },
@@ -136,16 +168,22 @@ export const mimo: ToolReview = {
 
   systemRequirements: [
     {
-      variant: "MiMo-V2.5-Pro (1T total, 42B active MoE)",
-      min: "API-only at launch -- weights not released for Pro",
-      max: "API-only -- weights not released",
-      notes: "API-only flagship pattern matches Qwen 3.6-Max-Preview and DeepSeek V4-Pro positioning. Xiaomi may or may not open Pro weights later",
+      variant: "MiMo-V2.6-Pro (1.02T total / 42B active MoE)",
+      min: "vLLM example: 8-way tensor parallel",
+      max: "SGLang example: 2 nodes, 16-way tensor parallel",
+      notes: "MIT open weights (RL and MOPD checkpoints). Text, image, video and audio input, 1M context. The card does not state GPU model or VRAM",
+    },
+    {
+      variant: "MiMo-V2.6-Flash (309B total / 15B active MoE)",
+      min: "vLLM example: 4-way tensor parallel",
+      max: "SGLang example: 8-way tensor parallel",
+      notes: "MIT open weights (RL and MOPD checkpoints). The card does not state GPU model or VRAM",
     },
     {
       variant: "MiMo-V2.5-ASR (open-source)",
       min: "8 GB VRAM (RTX 3060 tier) for English + standard Mandarin",
       max: "1× A100 40 GB for full dialect coverage at production throughput",
-      notes: "Open-source under a permissive license per Xiaomi's launch comms. Self-hostable for privacy-sensitive transcription. Strong specifically on Chinese dialects (Cantonese, Shanghainese)",
+      notes: "MIT licence on Hugging Face. Self-hostable for privacy-sensitive transcription. Strong specifically on Chinese dialects (Cantonese, Shanghainese)",
     },
   ],
 
@@ -154,6 +192,6 @@ export const mimo: ToolReview = {
     tone: "Direct, multimodal-aware. MiMo-V2.5-Pro is comfortable mixing image, audio, and text inputs in a single turn -- it's been trained for that, not retrofitted to it.",
     quirks: "Voice-pipeline orientation makes MiMo unusually expressive when audio is in the loop -- TTS variants (VoiceDesign, VoiceClone) and ASR are surfaced as first-class products, which most Chinese frontier vendors haven't done. PRC content filters apply on chat surfaces.",
   },
-  metaTitle: "Xiaomi MiMo-V2.5 Review 2026: 1T MoE + Native Voice + Open-Source ASR",
-  metaDescription: "Xiaomi MiMo-V2.5 review. Pro (1T/42B MoE, 1M context, native vision+audio) + TTS family + open-source ASR launched April 22 2026. No-surcharge 1M context. How it compares to DeepSeek V4 + Qwen.",
+  metaTitle: "Xiaomi MiMo-V2.6 Review 2026: Open-Weight Omnimodal MoE, 1M Context, Voice Stack",
+  metaDescription: "Xiaomi MiMo-V2.6 review. Pro (1.02T/42B MoE) and Flash (309B/15B) with MIT open weights, native text, image, video and audio, 1M context. API from $0.14/$0.28 per 1M tokens. Plus V2.5 TTS and open-source ASR.",
 };

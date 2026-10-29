@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const mistral: ToolReview = {
   slug: "mistral",
   name: "Mistral AI",
-  tagline: "**New 2026-10-15: Timestral, Mistral's first time-series forecasting family (5M, 28M, 123M and 209M parameters, weights on Hugging Face since 10/14 under a non-Apache licence), with the 209M model claimed first on GIFT-Eval, TIME and fev-bench and CPU inference in 10-140 ms.** **Mistral Large 4 ('le Chonk', ML4) entered public preview on 2026-10-06: a 1T-parameter natively multimodal MoE with roughly 50B active parameters, a 1M context window, callable today as mistral-large-4 at $1.36 / $0.14 cached / $4.18 per 1M tokens (batch at half price), open weights promised by the end of October, and vendor-claimed open-weight leads in cyber (Cybench 93%), coding (DeepSWE v1.1 61.7%) and agentic work (AutomationBench 59.9%).** **Mistral opened a Munich hub for Physics AI and Industrial AI on 2026-09-28**, confirming the May 2026 acquisition of Emmi AI (30+ physicists and engineers in computational fluid dynamics, structural mechanics and multi-physics simulation), naming BMW (crash simulation) and Siemens Energy as partners, and committing to **build one gigawatt of European compute capacity by 2030**. **Mistral now powers Firefox Smart Window (2026-09-16)** -- Mozilla's beta AI browsing assistant runs on Mistral models for France and North America, UK and Germany later this year, with zero data retention. **EUR 3B Series D at a EUR 21B+ post-money (9/08, Samsung-led)**; Cloudera partnership (9/10); Medium 3 retired 8/31 in favour of Medium 3.5.",
+  tagline: "**Mistral Large 4 ('Le Chonk') went open weight on 2026-10-29: the 1T-parameter multimodal MoE (49B active per token, 1M context) is on Hugging Face under the Mistral Ecosystem Open-Weight License, a modified MIT licence that allows commercial use except that Model-as-a-Service providers need a separate licence, and the API price dropped to $0.70 input / $0.07 cached / $2.10 output per 1M tokens, about half the preview rate. Earlier, on 2026-10-20: Voxtral 3, with Voxtral Mini Transcribe 3 at $0.0035 per minute, Voxtral Mini TTS 3 at $13 per 1M characters and a voice agent SDK.** **New 2026-10-15: Timestral, Mistral's first time-series forecasting family (5M, 28M, 123M and 209M parameters, weights on Hugging Face since 10/14 under a non-Apache licence), with the 209M model claimed first on GIFT-Eval, TIME and fev-bench and CPU inference in 10-140 ms.** **Mistral Large 4 ('le Chonk', ML4) entered public preview on 2026-10-06: a 1T-parameter natively multimodal MoE with roughly 50B active parameters, a 1M context window, callable as mistral-large-4 at a preview price of $1.36 / $0.14 cached / $4.18 per 1M tokens (batch at half price; cut to $0.70 / $0.07 / $2.10 on 10/29), with open weights then promised by the end of October, and vendor-claimed open-weight leads in cyber (Cybench 93%), coding (DeepSWE v1.1 61.7%) and agentic work (AutomationBench 59.9%).** **Mistral opened a Munich hub for Physics AI and Industrial AI on 2026-09-28**, confirming the May 2026 acquisition of Emmi AI (30+ physicists and engineers in computational fluid dynamics, structural mechanics and multi-physics simulation), naming BMW (crash simulation) and Siemens Energy as partners, and committing to **build one gigawatt of European compute capacity by 2030**. **Mistral now powers Firefox Smart Window (2026-09-16)** -- Mozilla's beta AI browsing assistant runs on Mistral models for France and North America, UK and Germany later this year, with zero data retention. **EUR 3B Series D at a EUR 21B+ post-money (9/08, Samsung-led)**; Cloudera partnership (9/10); Medium 3 retired 8/31 in favour of Medium 3.5.",
   category: "ai-local-models",
   url: "https://mistral.ai",
 
@@ -57,13 +57,15 @@ export const mistral: ToolReview = {
       ],
     },
     {
-      plan: "API (Mistral Large 4 -- public preview)",
-      price: "$1.36 / $4.18",
-      period: "per 1M tokens (input/output); cached input $0.14; batch $0.68 / $2.09",
+      plan: "API (Mistral Large 4, open weights since 2026-10-29)",
+      price: "$0.70 / $2.10",
+      period: "per 1M tokens (input/output); cached input $0.07",
       features: [
-        "Public preview from 2026-10-06 as mistral-large-4 (v26.10); weights promised by the end of October 2026",
-        "1T-class granular MoE, roughly 50B active, 1.6B vision encoder, 1M context, natively multimodal",
-        "Docs list the license only as 'Open' -- the exact weight license is not yet published",
+        "Price cut on 2026-10-29 from the preview rate of $1.36 / $0.14 / $4.18; the docs model page still labels mistral-large-4 (v26.10) Public Preview",
+        "About 1T total parameters, 49B active per token (52B with embeddings and output layers), 128 routed experts with 4 active, 1.6B vision encoder, 1M context",
+        "Three reasoning efforts: low, medium and high (default)",
+        "Weights on Hugging Face (mistralai/Mistral-Large-4-1T-A52B, plus an NVFP4 checkpoint) under the Mistral Ecosystem Open-Weight License: modified MIT, free for commercial use, but a Model-as-a-Service business needs a separate commercial licence",
+        "Also on OpenRouter, Microsoft Foundry and NVIDIA-hosted endpoints / NIM",
       ],
     },
     {
@@ -74,6 +76,18 @@ export const mistral: ToolReview = {
         "Flagship sparse MoE",
         "256K context",
         "MRL license (paid for commercial self-hosting)",
+      ],
+    },
+    {
+      plan: "API (Voxtral 3, 2026-10-20)",
+      price: "$0.0035 / min",
+      period: "Voxtral Mini Transcribe 3; Voxtral Mini TTS 3 at $13 per 1M characters",
+      features: [
+        "Voxtral Small Transcribe 3: diarization, context biasing and end-of-turn detection across 50 languages (vendor claims it beats Whisper, Scribe v2 and Gemini 3.5 Transcribe)",
+        "Voxtral Mini Transcribe 3: 4B parameters at $0.0035 per minute",
+        "Voxtral Mini TTS 3: 35+ languages and 50+ dialects, voices that adapt emotion and pace to context",
+        "Voice agent SDK (listen, reason, call tools, speak in one streaming pipeline) and Pro Voice adaptation from 30 minutes of audio",
+        "Mistral API on European, US and global endpoints, or self-deployment",
       ],
     },
     {
@@ -88,7 +102,8 @@ export const mistral: ToolReview = {
   ],
 
   pros: [
-    "Mistral Large 4 (public preview 2026-10-06) is the first Mistral flagship in the 1-trillion-parameter class and the first with a 1M context window; Mistral's own numbers put it ahead of DeepSeek V4 Pro 0813 and Qwen3.8 Max on its Coding Agent Index (49.8%) and claim the top score on the Artificial Analysis Cyber Index reproduce-and-patch test (82%) -- vendor-published, third-party verification pending",
+    "Mistral Large 4 is now a downloadable 1T-parameter model (2026-10-29) under a modified MIT licence, and the API price fell to $0.70 / $2.10 per 1M, so the biggest open-weight model from a Western lab is also one of the cheapest frontier-class APIs",
+    "Mistral Large 4 (public preview 2026-10-06) is the first Mistral flagship in the 1-trillion-parameter class and the first with a 1M context window; Mistral's own numbers put it ahead of DeepSeek V4 Pro 0813 and Qwen3.8 Max on its Coding Agent Index (49.8%) and claim the top score on the Artificial Analysis Cyber Index reproduce-and-patch test (82%) -- vendor-published preview-era figures from 2026-10-06; the 10/29 open-weight release quotes different measures (see the 2026-10-29 knownIssues entry), third-party verification pending",
     "Mistral Medium 3.5 (April 29 2026) is Mistral's first 'flagship merged' model -- 128B dense, 256k context, 77.6% on SWE-Bench Verified, in public preview at $1.5/$7.5 per million tokens. Closes most of the coding-benchmark gap to Claude Opus / GPT-5.5 at materially lower API cost",
     "Vibe Remote Agents (also 4/29) lets you launch cloud-based coding sessions that run asynchronously and in parallel via CLI or Le Chat -- file diffs, tool calls, and the ability to teleport a local session to the cloud while preserving history and approval state. Unique in the category as of today",
     "Le Chat Work Mode (4/29) is the first agentic mode shipped at the consumer-chat tier -- multi-step task completion, cross-tool workflows, research synthesis, inbox triage, with explicit approval gates for sensitive operations",
@@ -96,6 +111,7 @@ export const mistral: ToolReview = {
     "Extremely competitive API pricing remains the moat -- Small 4 at $0.20/1M tokens, Medium 3.5 at $1.5/$7.5 per million tokens, against frontier-class quality",
   ],
   cons: [
+    "The Large 4 licence is not plain MIT: running a Model-as-a-Service business on it needs a separate commercial licence from Mistral, and self-hosting needs a full 8-GPU node",
     "Le Chat web interface is bare-bones compared to ChatGPT or Claude",
     "Smaller ecosystem -- fewer integrations and community resources",
     "Less brand recognition means less community help when you get stuck",
@@ -103,12 +119,22 @@ export const mistral: ToolReview = {
   ],
   knownIssues: [
     {
-      description: "TIMESTRAL -- MISTRAL'S FIRST TIME-SERIES FOUNDATION MODELS, OPEN WEIGHTS BUT NOT APACHE (weights 2026-10-14, post 2026-10-15, vendor-primary): Mistral's RSS dates 'Introducing Timestral' Thu 15 Oct 2026 (the page's JSON-LD carries an older July date; the RSS and the Hugging Face upload times agree on this week). **What it is:** 'our first family of time-series foundation models' in four sizes -- **5M, 28M, 123M and 209M parameters** -- giving 'probabilistic, multivariate forecasts' with past-only and known-future covariates (including categorical ones) and full quantile outputs. **Claims (vendor-reported, submitted to the GIFT-Eval and TIME leaderboards):** the 209M model 'ranks first on all three of the field's main public benchmarks, GIFT-Eval, TIME, and fev-bench', from a single checkpoint without ensembling; the 28M model beats Chronos-2 (about four times larger) on GIFT-Eval and TIME; the 209M beats TimesFM-3 and Falcon-2.0 with fewer parameters; the Hugging Face card lists GIFT-Eval MASE 0.658 for the 209M. **No GPU needed:** on an 8-thread server CPU, a one-day-ahead forecast from three weeks of 15-minute history takes **10 ms (5M) to 140 ms (209M)**; the 123M is within 0.2% of the 209M at three quarters of its latency. Fine-tuning via Mistral Forge. **Licence:** all four repos (mistralai/Timestral-5M/28M/123M/209M, created 2026-10-14) declare `license: other` -- not Apache 2.0, so check terms before commercial use. No API price or La Plateforme model id announced. Relevance: this is an enterprise-analytics model (sensor telemetry, observability, supply chain, finance), not a chat model; Mistral pitches pairing it with its LLMs in agentic root-cause workflows. Large 4 weights (due end of October) were still not on Hugging Face on 10/15.",
+      description: "MISTRAL LARGE 4 WEIGHTS RELEASED, PRICE ROUGHLY HALVED, LICENCE NAMED (2026-10-29, vendor-primary): 'Today, we're releasing the weights of this improved Mistral Large 4.' Mistral says three more weeks of reinforcement learning since the 10/06 preview improved coding and defensive security. **Licence:** 'the Mistral Ecosystem Open-Weight license, a modified MIT license. The model is free to use, modify, fine-tune, and commercialize, with a single condition: businesses that operate a Model-as-a-Service offering must obtain a separate commercial license from Mistral.' The Hugging Face card tags it license: other. **Price:** 'Starting today, Mistral Large 4 is priced at $0.70 input / M, $0.07 cached input / M, and $2.10 output / M tokens' (was $1.36 / $0.14 / $4.18); the docs model page shows the same rates and still labels the model Public Preview. **Model card:** about 1T total and 49B active parameters per token (52B with embeddings and output layers), 128 routed experts with 4 active plus a shared expert, 1M context, reasoning effort low / medium / high, an embedded speculative-decoding draft head, an NVFP4 checkpoint for Blackwell; vLLM and SGLang examples run tensor parallel 8. **Vendor-reported results:** Artificial Analysis Coding Agent Index 48% ('effectively tied' with GLM-5.3 at 47% fewer tokens per task); Terminal-Bench 4.0 41% (+13 points over the preview); Cognition's FrontierCode 2.0 19.7%; Artificial Analysis Cyber Index 51%; 96.6% average refusal on malicious cyber prompts; Artificial Analysis Intelligence Index v5 26, 'the highest among western open-weight models' (the card concedes Chinese open models score higher overall). **Distribution:** Mistral Studio and API, OpenRouter, Microsoft Foundry ('the first cloud provider to bring Mistral Large 4 to customers'), NVIDIA-hosted endpoints and NIM.",
+      source: "Mistral: Mistral Large 4 (Le Chonk) is now open weight (mistral.ai/news/mistral-large-4-oss/, JSON-LD 2026-10-29, RSS pubDate Thu 29 Oct 2026) + Hugging Face mistralai/Mistral-Large-4-1T-A52B (API: public, not gated, lastModified 2026-10-29; raw README.md) + docs.mistral.ai/models/mistral-large-4-0 ($0.7 / $0.07 / $2.1, Mistral Ecosystem Open Weight License), all fetched 2026-10-29",
+      date: "2026-10-29",
+    },
+    {
+      description: "VOXTRAL 3: NEW SPEECH-TO-TEXT AND TTS MODELS PLUS A VOICE AGENT SDK (2026-10-20, vendor-primary): 'we introduce Voxtral 3: a new family of state-of-the-art speech-to-text and text-to-speech models, alongside a voice agent SDK'. Voxtral Small Transcribe 3 handles diarization, context biasing and end-of-turn detection across 50 languages (24 official EU languages plus low-resource Asian and Indic ones), and Mistral claims it outperforms Whisper, Scribe v2 and Gemini 3.5 Transcribe. Voxtral Mini Transcribe 3 is 4B parameters at $0.0035 per minute. Voxtral Mini TTS 3 covers 35+ languages and 50+ dialects at $13 per 1M characters, which Mistral says undercuts OpenAI TTS-1, Deepgram, ElevenLabs Flash and Gemini Flash. Pro Voice adapts a speaker's voice from 30 minutes of audio. Available on Mistral's European, US and global API endpoints or for self-deployment; no new Voxtral 3 weights had appeared on Mistral's Hugging Face org as of 2026-10-29. Date note: Mistral's RSS dates the post Tue 20 Oct 2026 while the page's JSON-LD says 2026-10-22; we use the RSS date, as on the Timestral entry. Separately (10/21) Mistral announced a Large 4-based engineering simulation collaboration with NVIDIA (partnership, no product change).",
+      source: "Mistral: Voxtral 3 (mistral.ai/news/voxtral-3/, RSS pubDate Tue 20 Oct 2026, JSON-LD 2026-10-22) + Hugging Face API author=mistralai search=voxtral (newest Voxtral repo 2026-10-08) + Mistral Advances AI for Engineering with NVIDIA (2026-10-21), fetched 2026-10-29",
+      date: "2026-10-20",
+    },
+    {
+      description: "TIMESTRAL -- MISTRAL'S FIRST TIME-SERIES FOUNDATION MODELS, OPEN WEIGHTS BUT NOT APACHE (weights 2026-10-14, post 2026-10-15, vendor-primary): Mistral's RSS dates 'Introducing Timestral' Thu 15 Oct 2026 (the page's JSON-LD carries an older July date; the RSS and the Hugging Face upload times agree on this week). **What it is:** 'our first family of time-series foundation models' in four sizes -- **5M, 28M, 123M and 209M parameters** -- giving 'probabilistic, multivariate forecasts' with past-only and known-future covariates (including categorical ones) and full quantile outputs. **Claims (vendor-reported, submitted to the GIFT-Eval and TIME leaderboards):** the 209M model 'ranks first on all three of the field's main public benchmarks, GIFT-Eval, TIME, and fev-bench', from a single checkpoint without ensembling; the 28M model beats Chronos-2 (about four times larger) on GIFT-Eval and TIME; the 209M beats TimesFM-3 and Falcon-2.0 with fewer parameters; the Hugging Face card lists GIFT-Eval MASE 0.658 for the 209M. **No GPU needed:** on an 8-thread server CPU, a one-day-ahead forecast from three weeks of 15-minute history takes **10 ms (5M) to 140 ms (209M)**; the 123M is within 0.2% of the 209M at three quarters of its latency. Fine-tuning via Mistral Forge. **Licence:** all four repos (mistralai/Timestral-5M/28M/123M/209M, created 2026-10-14) declare `license: other` -- not Apache 2.0, so check terms before commercial use. No API price or La Plateforme model id announced. Relevance: this is an enterprise-analytics model (sensor telemetry, observability, supply chain, finance), not a chat model; Mistral pitches pairing it with its LLMs in agentic root-cause workflows. Large 4 weights (due end of October) were still not on Hugging Face on 10/15; they were released on 2026-10-29.",
       source: "Mistral (mistral.ai/news/timestral/, RSS pubDate Thu 15 Oct 2026) + Hugging Face API (mistralai/Timestral-209M, createdAt 2026-10-14, license other; model card front matter) -- fetched 2026-10-15",
       date: "2026-10-15",
     },
     {
-      description: "VOXTRAL MINI 4B REALTIME ARABIC AND LIDSTRAL ARABIC -- TWO ARABIC-FOCUSED OPEN MODELS (Hugging Face repos created 2026-10-08, vendor-primary model cards): **Voxtral Mini 4B Realtime Arabic** is 'a streaming speech-to-text model for Arabic dialects and Modern Standard Arabic', fine-tuned from Voxtral-Mini-4B-Realtime-2602 (about 4.4B parameters, BF16), built for code-switching and live captions; Mistral reports **an average character error rate of 8.82% across seven Arabic benchmarks at a 480 ms transcription delay**, and the card tags Maghrebi, Gulf, Nile Valley, Levantine and other dialects. **LIDstral Arabic** is a fastText language and dialect classifier for Arabic-script text (Apache 2.0) that also separates non-Arabic languages written in the same script (Persian, Urdu, Pashto, Kurdish, Hausa, Malay in Jawi and others). No Mistral blog post accompanied either release; both appear only on Hugging Face. Mistral Large 4 weights are still due by 2026-10-31 and were not on the Hugging Face org as of 10/12.",
+      description: "VOXTRAL MINI 4B REALTIME ARABIC AND LIDSTRAL ARABIC -- TWO ARABIC-FOCUSED OPEN MODELS (Hugging Face repos created 2026-10-08, vendor-primary model cards): **Voxtral Mini 4B Realtime Arabic** is 'a streaming speech-to-text model for Arabic dialects and Modern Standard Arabic', fine-tuned from Voxtral-Mini-4B-Realtime-2602 (about 4.4B parameters, BF16), built for code-switching and live captions; Mistral reports **an average character error rate of 8.82% across seven Arabic benchmarks at a 480 ms transcription delay**, and the card tags Maghrebi, Gulf, Nile Valley, Levantine and other dialects. **LIDstral Arabic** is a fastText language and dialect classifier for Arabic-script text (Apache 2.0) that also separates non-Arabic languages written in the same script (Persian, Urdu, Pashto, Kurdish, Hausa, Malay in Jawi and others). No Mistral blog post accompanied either release; both appear only on Hugging Face. Mistral Large 4 weights were still due by 2026-10-31 and were not on the Hugging Face org as of 10/12 (they landed on 2026-10-29; see the newer entry).",
       source: "Hugging Face model cards mistralai/Voxtral-Mini-4B-Realtime-Arabic and mistralai/LIDstral-Arabic (raw README.md; createdAt 2026-10-08 from the HF API; no newer item in the mistral.ai RSS after 2026-10-06) -- fetched 2026-10-12",
       date: "2026-10-08",
     },
@@ -195,10 +221,14 @@ export const mistral: ToolReview = {
   ],
   bestFor: "Developers who want cheap, high-quality API access. Also strong for multilingual applications and European companies that prefer an EU-based AI provider for data residency.",
   notFor: "Non-technical users looking for a polished chat experience. ChatGPT and Claude are much better as consumer products.",
-  verdict: "Mistral is the scrappy underdog that keeps surprising people. Their models are impressively efficient -- you get frontier-adjacent quality at a fraction of the API cost, and Mistral Large 4 (public preview October 2026, open weights promised by the end of the month) puts a 1T-parameter flagship on that same cheap-and-open footing. But the consumer experience (Le Chat) is rough. This is primarily a developer's tool. If you're building AI applications on a budget, Mistral should be on your shortlist.",
+  verdict: "Mistral is the scrappy underdog that keeps surprising people. Their models are impressively efficient -- you get frontier-adjacent quality at a fraction of the API cost, and Mistral Large 4 (public preview October 6, 2026; open weights under a modified MIT licence and a halved API price on October 29) puts a 1T-parameter flagship on that same cheap-and-open footing. But the consumer experience (Le Chat) is rough. This is primarily a developer's tool. If you're building AI applications on a budget, Mistral should be on your shortlist.",
 
-  lastReviewedDate: "2026-10-15",
+  lastReviewedDate: "2026-10-29",
   dataSources: [
+    { name: "Mistral: Mistral Large 4 (Le Chonk) is now open weight, $0.70 / $0.07 / $2.10, Mistral Ecosystem Open-Weight License (2026-10-29)", url: "https://mistral.ai/news/mistral-large-4-oss/", dateAccessed: "2026-10-29" },
+    { name: "Hugging Face: mistralai/Mistral-Large-4-1T-A52B model card (1T / 49B active, 1M context, licence other)", url: "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B", dateAccessed: "2026-10-29" },
+    { name: "Mistral docs: Mistral Large 4 model page ($0.7 / $0.07 / $2.1, still labelled Public Preview, checked 2026-10-29)", url: "https://docs.mistral.ai/models/mistral-large-4-0", dateAccessed: "2026-10-29" },
+    { name: "Mistral: Voxtral 3, speech-to-text, TTS and voice agents (RSS 2026-10-20)", url: "https://mistral.ai/news/voxtral-3/", dateAccessed: "2026-10-29" },
     { name: "Mistral: Introducing Timestral (2026-10-15) -- time-series foundation models 5M-209M", url: "https://mistral.ai/news/timestral/", dateAccessed: "2026-10-15" },
     { name: "Hugging Face: mistralai/Timestral-209M model card (created 2026-10-14, license: other)", url: "https://huggingface.co/mistralai/Timestral-209M", dateAccessed: "2026-10-15" },
     { name: "Hugging Face: mistralai/Voxtral-Mini-4B-Realtime-Arabic (created 2026-10-08)", url: "https://huggingface.co/mistralai/Voxtral-Mini-4B-Realtime-Arabic", dateAccessed: "2026-10-12" },
@@ -255,9 +285,9 @@ export const mistral: ToolReview = {
       max: "2× A100 80 GB FP16",
     },
     {
-      variant: "Mistral Large 4 (1.05T total / roughly 50B active; weights due end of Oct 2026)",
-      min: "Multi-GPU node -- about 525 GB of weights at 4-bit for 1.05T parameters (arithmetic, not a vendor spec); not a single-card model",
-      max: "8x B200-class node at BF16; the API preview is the practical route until weights and license land",
+      variant: "Mistral Large 4 (about 1T total / 49B active; open weights 2026-10-29, Mistral Ecosystem Open-Weight License)",
+      min: "One 8-GPU data-center node: Mistral's vLLM and SGLang examples run tensor parallel 8, and the NVFP4 checkpoint cuts memory on Blackwell GPUs; not a single-card model",
+      max: "Full checkpoint across an 8-GPU Blackwell-class node; Mistral publishes no minimum GPU spec, so the API at $0.70 / $2.10 is the practical route for most teams",
     },
     {
       variant: "Mistral Large 3 (flagship)",
@@ -271,6 +301,6 @@ export const mistral: ToolReview = {
     tone: "Efficient, terse, and slightly blunt. Mistral answers in fewer words than Claude or ChatGPT, especially on factual questions, and rarely hedges or softens its take.",
     quirks: "Trained with less Anglocentric data than Llama, so it handles French, German, and Spanish notably better than US-origin models. Refusal rates are lower than ChatGPT or Gemini on most gray-area prompts.",
   },
-  metaTitle: "Mistral AI Review 2026: Mistral Large 4 Preview at $1.36/$4.18 -- 1T-Parameter Open-Weight Flagship",
-  metaDescription: "Mistral review. Mistral Large 4 ('le Chonk') entered public preview Oct 6, 2026: a 1T-parameter natively multimodal MoE with roughly 50B active parameters and 1M context, $1.36/$4.18 per 1M tokens on the API, open weights promised by end of October, with vendor-claimed open-weight leads in cyber, coding and agentic work. Also: Munich Physics AI hub, Firefox Smart Window, EUR 3B Series D at EUR 21B+, Vibe + Medium 3.5.",
+  metaTitle: "Mistral AI Review 2026: Mistral Large 4 Open Weights (Oct 29), Now $0.70/$2.10, Voxtral 3",
+  metaDescription: "Mistral review. Mistral Large 4 ('Le Chonk') went open weight on Oct 29, 2026 under a modified MIT licence (Model-as-a-Service providers need a commercial licence), and its API price fell to $0.70/$2.10 per 1M. 1T parameters, 49B active, 1M context. Plus Voxtral 3 speech models from $0.0035 per minute.",
 };

@@ -55,6 +55,7 @@ export const veo: ToolReview = {
       period: "per second of video",
       features: [
         "API access for developers",
+        "Gemini API preview IDs veo-3.1-generate-preview, -fast and -lite reached their 2026-10-22 shutdown date; on the Gemini API the replacement is gemini-omni-1.1-flash",
         "Veo upscaling capability",
         "Commercial use licensing",
       ],
@@ -74,6 +75,11 @@ export const veo: ToolReview = {
     "Google ecosystem lock-in remains -- your generations live inside Google Vids / Drive, and pulling them into Premiere or DaVinci workflows adds friction that Seedance + CapCut doesn't",
   ],
   knownIssues: [
+    {
+      description: "GEMINI API PREVIEW IDS FOR VEO 3.1 AND OMNI FLASH REACHED THEIR SHUTDOWN DATE (2026-10-22, vendor-primary): Google's deprecations table lists veo-3.1-generate-preview, veo-3.1-fast-generate-preview, veo-3.1-lite-generate-preview and gemini-omni-flash-preview with a shutdown date of October 22, 2026, and names gemini-omni-1.1-flash as the replacement for all four. This supersedes our 2026-06-30 advice below to migrate the old Veo 2.0 and 3.0 IDs onto the 3.1 preview IDs: on the Gemini API, use gemini-omni-1.1-flash, or the GA Veo models on the Gemini Enterprise Agent Platform. Consumer Veo 3.1 in the Gemini app and Omni 1.1 Flash in Google Vids and Flow are not affected.",
+      source: "Gemini API deprecations table (ai.google.dev/gemini-api/docs/deprecations, 'Last updated 2026-10-22 UTC', fetched 2026-10-29 via Firecrawl)",
+      date: "2026-10-22",
+    },
     {
       description: "OMNI 1.1 FLASH IN GOOGLE VIDS AT NO COST FOR ANY GOOGLE ACCOUNT, WITH 1080P, SCENE EXTENSION AND EXACT DURATIONS (2026-09-23, vendor-primary): 'We're bringing the magic of video creation to everyone by expanding access to Google Vids. Now anyone with a Google or Google Workspace account can generate high-quality videos at no cost using our latest Gemini Omni 1.1 Flash model and new creative controls.' Entry point: vids.new on desktop, then 'Create AI videos'. Controls: **extend scenes** with smooth transitions 'while keeping the visual context, lighting, characters' appearance, and the environment consistent'; **set super-specific durations** so a clip aligns with a voiceover; **generate in HD** -- 'brand-new AI video scenes in full 1080p HD, or upscale existing AI clips'; templates for product launches, promo videos from a few photos, landing-page and event-signage clips. Every generated clip includes an imperceptible SynthID watermark. What Google does not state: per-account generation limits for the free tier, whether the Omni output in Vids matches the Flow resolution ladder recorded on 8/27, or any change to Veo 3.1 Lite's role in Vids -- so the pricing rows below keep both models. Related the same day: Gemini 3.8 Flash-Lite TTS is rolling into Google Vids 'for everyone' for voiceover (see gemini.ts).",
       source: "Google (blog.google/products-and-platforms/products/workspace/gemini-omni-in-google-vids/, on-page 'Sep 23, 2026') -- fetched 2026-09-28 via curl with browser UA",
@@ -95,7 +101,7 @@ export const veo: ToolReview = {
       date: "2026-06-30",
     },
     {
-      description: "API MODEL-ID SHUTDOWN NOW IN EFFECT (2026-06-30): the older Veo API model IDs announced 6/15 have retired on schedule -- **Veo 2.0 and Veo 3.0 (`veo-2.0-generate-001`, `veo-3.0-generate-001`, `veo-3.0-fast-generate-001`) shut down 2026-06-30**. Pinned calls to these legacy endpoints are now failing; migrate to `veo-3.1-generate-preview` / `veo-3.1-fast-generate-preview` or the 3.1 GA models. Only affects direct API callers on the legacy 2.0/3.0 endpoints; consumer Veo 3.1 in Gemini / Google Vids is unaffected. (Separately, Google's older Imagen 4.0 image models shut down 2026-08-17.)",
+      description: "API MODEL-ID SHUTDOWN NOW IN EFFECT (2026-06-30): the older Veo API model IDs announced 6/15 have retired on schedule -- **Veo 2.0 and Veo 3.0 (`veo-2.0-generate-001`, `veo-3.0-generate-001`, `veo-3.0-fast-generate-001`) shut down 2026-06-30**. Pinned calls to these legacy endpoints are now failing; migrate to the 3.1 GA models (the `veo-3.1-generate-preview` / `veo-3.1-fast-generate-preview` IDs suggested at the time were themselves shut down on 2026-10-22; see the newer entry). Only affects direct API callers on the legacy 2.0/3.0 endpoints; consumer Veo 3.1 in Gemini / Google Vids is unaffected. (Separately, Google's older Imagen 4.0 image models shut down 2026-08-17.)",
       source: "Gemini API changelog + deprecations (ai.google.dev/gemini-api/docs/deprecations)",
       date: "2026-06-30",
     },
@@ -119,8 +125,9 @@ export const veo: ToolReview = {
   notFor: "High-volume TikTok / Reels creators where CapCut + Seedance 2.0 beats Veo on workflow friction. Also not ideal for anyone wanting strong stylistic control -- Veo's cinematic default is hard to escape.",
   verdict: "Veo 3.1 solidified Google's video lead after OpenAI shut down Sora in March 2026. Quality-wise it remains the benchmark -- 4K/60fps with synchronized audio, and the April 2026 free rollout to every Google account is a structural shift that puts best-in-class AI video in front of billions overnight. The remaining weaknesses are workflow friction (generation is slow, Google ecosystem lock-in) and stylistic narrowness. The honest read: for pure quality and accessibility, Veo 3.1 is the 2026 default. For short-form social workflows where speed matters more than peak quality, Seedance 2.0 inside CapCut is the more pragmatic choice.",
 
-  lastReviewedDate: "2026-09-28",
+  lastReviewedDate: "2026-10-29",
   dataSources: [
+    { name: "Gemini API deprecations table (last updated 2026-10-22): Veo 3.1 preview IDs and gemini-omni-flash-preview shutdown 2026-10-22, replacement gemini-omni-1.1-flash", url: "https://ai.google.dev/gemini-api/docs/deprecations", dateAccessed: "2026-10-29" },
     { name: "Google: Anyone can make stunning HD videos with Gemini Omni in Google Vids (2026-09-23) -- Omni 1.1 Flash free for any Google account, 1080p, scene extension, durations, SynthID", url: "https://blog.google/products-and-platforms/products/workspace/gemini-omni-in-google-vids/", dateAccessed: "2026-09-28" },
     { name: "Google Labs: 6 new Google Flow Tools built by industry creatives (2026-09-23) -- describe a workflow to build a tool; six creator-built tools", url: "https://blog.google/innovation-and-ai/models-and-research/google-labs/six-new-tools-built-by-creatives/", dateAccessed: "2026-09-28" },
     { name: "Google: Gemini Omni 1.1 Flash (2026-08-27)", url: "https://blog.google/innovation-and-ai/technology/developers-tools/build-with-gemini-omni-1-1-flash/", dateAccessed: "2026-08-28" },

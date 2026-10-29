@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const hubspotAi: ToolReview = {
   slug: "hubspot-ai",
   name: "HubSpot AI",
-  tagline: "AI baked into HubSpot's CRM and marketing suite -- write emails, score leads, and build reports with prompts",
+  tagline: "Agent Hub, HubSpot's home for AI agents, is included in Starter, Professional and Enterprise, and agents bill through HubSpot Credits. AI baked into HubSpot's CRM and marketing suite -- write emails, score leads, and build reports with prompts",
   category: "ai-marketing-tools",
   url: "https://hubspot.com",
 
@@ -30,12 +30,13 @@ export const hubspotAi: ToolReview = {
     {
       plan: "Marketing Hub Starter",
       price: "$20",
-      period: "month",
+      period: "seat/month",
       features: [
-        "Email marketing",
-        "AI content assistant",
-        "Landing pages",
-        "Forms",
+        "500 HubSpot Credits",
+        "1,000 marketing contacts",
+        "Agent Hub, Agent Builder and Data Agent",
+        "Email marketing, simple marketing automation, CRM segments, ad management",
+        "New customers: promotional price from $7 per seat per month (save up to 65%, limited time)",
       ],
     },
     {
@@ -43,31 +44,35 @@ export const hubspotAi: ToolReview = {
       price: "$890",
       period: "month",
       features: [
-        "Full AI features",
-        "Predictive lead scoring",
-        "AI-powered reporting",
-        "Campaign automation",
-        "SEO tools",
+        "Includes 3 Core Seats; additional Core Seats from $45/month",
+        "3,000 HubSpot Credits",
+        "2,000 marketing contacts",
+        "Content Agent, Nurture Agent, Marketing studio and AEO (all beta), social media, video",
+        "Lead scoring up to 5 scores (AI recommendations are Enterprise-only)",
+        "Shown with a lower $800 starting price on HubSpot's pricing page",
+        "Required one-time Professional Onboarding fee: $3,000",
       ],
     },
     {
-      plan: "Breeze Customer Agent (outcome-based, effective 2026-04-14)",
+      plan: "Customer Agent (HubSpot Credits)",
       price: "$0.50",
       period: "per resolved conversation",
       features: [
-        "Pay only when Breeze actually resolves a customer support ticket",
-        "Replaced prior per-conversation flat rate of $1.00",
-        "Part of HubSpot's 2026 pivot to outcome-based AI pricing",
+        "50 HubSpot Credits per resolved text conversation, at $0.010 per credit",
+        "Requires Professional or Enterprise",
+        "Voice: $0.50 per minute (50 credits per minute, beta)",
+        "Counts as resolved if not handed to a human rep for 72 hours, or if the agent qualifies a lead",
       ],
     },
     {
-      plan: "Breeze Prospecting Agent (outcome-based)",
+      plan: "Prospecting Agent (HubSpot Credits)",
       price: "$1",
-      period: "per qualified lead",
+      period: "per lead recommendation",
       features: [
-        "Pay only when Breeze produces a qualified lead matching your ICP",
-        "Replaced prior monthly per-contact model",
-        "Effective 2026-04-14",
+        "100 HubSpot Credits to recommend outreach for one lead, at $0.010 per credit",
+        "Charged per lead recommendation, not per qualified lead",
+        "Starter includes 500 credits, Professional 3,000 and Enterprise 5,000; extra credits via Pay-as-You-Go or capacity packs",
+        "Customers on flexible seats-and-credits pricing have different credit rates",
       ],
     },
   ],
@@ -79,12 +84,22 @@ export const hubspotAi: ToolReview = {
     "Content remix feature lets you turn a blog post into social posts, emails, and ads quickly",
   ],
   cons: [
-    "The pricing cliff from Starter ($20/mo) to Professional ($890/mo) is brutal -- most AI features live behind the expensive plans",
+    "The pricing cliff from Starter ($20 per seat per month) to Professional ($890 per month for 3 seats, plus a required $3,000 onboarding fee) is steep, and Customer Agent requires Professional or Enterprise",
     "AI-generated marketing copy is bland and generic without significant prompt engineering and editing",
     "You're locked into HubSpot's ecosystem -- the AI only works with HubSpot data and tools",
     "Setup and onboarding is complex even for experienced marketers -- this isn't a plug-and-play tool",
   ],
   knownIssues: [
+    {
+      description: "Credit-based agent pricing: HubSpot AI agents now bill through HubSpot Credits at $0.010 per credit. Customer Agent uses 50 credits ($0.50) per resolved text conversation and requires Professional or Enterprise. Prospecting Agent uses 100 credits ($1.00) per lead outreach recommendation, not per qualified lead. Starter includes 500 credits and Professional 3,000",
+      source: "HubSpot product and services catalog, Customer Agent page, Marketing Hub pricing",
+      date: "2026-10-29",
+    },
+    {
+      description: "Breeze branding replaced by Agent Hub: HubSpot's AI product page is now titled Agent Hub, which is included in all Starter, Professional and Enterprise editions, and custom agents built in Agent Builder consume HubSpot Credits. Marketing Hub Starter now lists at $20 per seat per month, with a new-customer promotion from $7",
+      source: "HubSpot Agent Hub page, Marketing Hub pricing",
+      date: "2026-10-29",
+    },
     {
       description:
         "AI content assistant sometimes ignores brand voice settings and reverts to generic corporate tone",
@@ -105,8 +120,12 @@ export const hubspotAi: ToolReview = {
   verdict:
     "HubSpot's AI features are genuinely useful if you're already paying for the Professional tier. The lead scoring and reporting AI are the real standouts. But the massive price jump to access most features, combined with mediocre content generation quality, makes this a tough sell unless HubSpot is already your marketing hub. The AI is a nice addition to HubSpot -- it's not a reason to buy HubSpot.",
 
-  lastReviewedDate: "2026-04-17",
+  lastReviewedDate: "2026-10-29",
   dataSources: [
+    { name: "HubSpot Marketing Hub pricing", url: "https://www.hubspot.com/pricing/marketing", dateAccessed: "2026-10-29" },
+    { name: "HubSpot Agent Hub (AI agents)", url: "https://www.hubspot.com/products/artificial-intelligence", dateAccessed: "2026-10-29" },
+    { name: "HubSpot Customer Agent", url: "https://www.hubspot.com/products/artificial-intelligence/ai-customer-service-agent", dateAccessed: "2026-10-29" },
+    { name: "HubSpot Product and Services Catalog (credit rates)", url: "https://legal.hubspot.com/hubspot-product-and-services-catalog", dateAccessed: "2026-10-29" },
     { name: "HubSpot official site", url: "https://hubspot.com", dateAccessed: "2026-04-17" },
     { name: "MarTech: HubSpot moves to outcome-based Breeze pricing", url: "https://martech.org/hubspot-moves-to-outcome-based-pricing-for-some-breeze-ai-agents/", dateAccessed: "2026-04-17" },
     { name: "G2 Reviews", dateAccessed: "2026-04-17" },
@@ -116,5 +135,5 @@ export const hubspotAi: ToolReview = {
   status: "active",
   metaTitle: "HubSpot AI Review 2026: Powerful Marketing AI With a Steep Price Tag",
   metaDescription:
-    "HubSpot AI review. Lead scoring, content generation, and reporting AI built into HubSpot CRM. Great features, but $890/mo to unlock them. March 2026.",
+    "HubSpot AI review. Agent Hub, credit-based AI agents, lead scoring and content tools in HubSpot CRM. Starter $20/seat/mo; Professional $890/mo plus $3,000 onboarding unlocks Customer Agent at $0.50 per resolution. October 2026.",
 };

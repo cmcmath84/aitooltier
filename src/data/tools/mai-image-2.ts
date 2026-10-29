@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const maiImage2: ToolReview = {
   slug: "mai-image-2",
   name: "Microsoft MAI-Image-2.6",
-  tagline: "Microsoft's in-house image model -- **MAI-Image-2.6 launched 2026-08-10: No. 2 on Arena text-to-image (+79 Elo over 2.5, text rendering +91), and as of 2026-09-04 back to **No. 2 on Arena image editing** as well, plus No. 2 text-to-image and No. 1 image editing on Artificial Analysis -- ahead of Google's Nano Banana family and Meta's Muse Image. **On 2026-09-04 it reached Microsoft Foundry for developers alongside a new MAI-Image-2.6-Flash** (2.8x faster than GPT-Image-2-Medium at 72% greater efficiency), both adding multi-image reference editing, web grounding and dynamic aspect ratios.** The prior MAI-Image-2.5 launched 2026-06-02 at Build (#2 image editing, #3 text-to-image on Arena, surpassing Nano Banana Pro's Arena score; +75 overall vs MAI-Image-2). Live in PowerPoint + OneDrive, on Azure Foundry, MAI Playground, and OpenRouter. Ultra-efficient MAI-Image-2.5-Flash now LIVE in Foundry ($1.75/$1.75/$19.50 per 1M). Original MAI-Image-2 shipped 2026-04-02",
+  tagline: "**MAI-Image-2.7 entered preview on 2026-10-27 as an image editing model, No. 3 on Arena Edit and No. 2 on Artificial Analysis image editing at launch (ranks as stated by Microsoft that day), on Arena, Artificial Analysis and MAI Playground, with text-to-image to follow. The same day Microsoft said MAI-Image-2.6 and 2.6 Flash are generally available in Foundry.** Rank history below is dated; read each rank as of its date. Microsoft's in-house image model -- **MAI-Image-2.6 launched 2026-08-10: No. 2 on Arena text-to-image (+79 Elo over 2.5, text rendering +91), and as of 2026-09-04 back to **No. 2 on Arena image editing** as well, plus No. 2 text-to-image and No. 1 image editing on Artificial Analysis -- ahead of Google's Nano Banana family and Meta's Muse Image. **On 2026-09-04 it reached Microsoft Foundry for developers alongside a new MAI-Image-2.6-Flash** (2.8x faster than GPT-Image-2-Medium at 72% greater efficiency), both adding multi-image reference editing, web grounding and dynamic aspect ratios.** The prior MAI-Image-2.5 launched 2026-06-02 at Build (#2 image editing, #3 text-to-image on Arena, surpassing Nano Banana Pro's Arena score; +75 overall vs MAI-Image-2). Live in PowerPoint + OneDrive, on Azure Foundry, MAI Playground, and OpenRouter. Ultra-efficient MAI-Image-2.5-Flash now LIVE in Foundry ($1.75/$1.75/$19.50 per 1M). Original MAI-Image-2 shipped 2026-04-02",
   category: "ai-image-generators",
   url: "https://ai.azure.com/catalog/models/MAI-Image-2",
 
@@ -18,14 +18,33 @@ export const maiImage2: ToolReview = {
   hasFreeTier: true,
   pricing: [
     {
-      plan: "MAI-Image-2.6 (2026-08-10) -- MAI Playground + PRIVATE PREVIEW on Foundry",
+      plan: "MAI-Image-2.7 (preview, 2026-10-27)",
+      price: "Not published",
+      features: [
+        "Image editing first; text-to-image 'coming soon'",
+        "Try it on Arena, Artificial Analysis and MAI Playground; no Foundry, Copilot or Bing availability stated",
+        "At launch: No. 3 on Arena Edit and No. 2 on Artificial Analysis image editing (Microsoft, 2026-10-27)",
+        "Beats 2.6 in all 10 use cases and all 7 editing actions in Microsoft's evaluation",
+      ],
+    },
+    {
+      plan: "MAI-Image-2.5-Pro (public preview, 2026-07-23)",
+      price: "$5 text / $8 image-in / $106 image-out",
+      period: "per 1M tokens",
+      features: [
+        "Microsoft's highest-fidelity image model at launch: hero imagery, detailed editing, in-image text",
+        "Listed on Azure's Foundry Models pricing page at the same rates",
+      ],
+    },
+    {
+      plan: "MAI-Image-2.6 (2026-08-10) -- GA in Foundry per Microsoft AI's 2026-10-27 update",
       price: "Not published",
       features: [
         "**Microsoft has published NO rate card for 2.6** -- the launch post states only 'available in MAI Playground and in Private Preview on Microsoft Foundry'. Do not assume it inherits 2.5's $5/$8/$47",
         "No. 2 on the Arena text-to-image leaderboard at launch; **+79 Elo over MAI-Image-2.5** overall, with gains in every text-to-image category",
         "**Text rendering +91 Elo** vs 2.5 -- the single largest category gain",
         "Update 2026-08-18: **No. 3 on Arena image editing**, up from No. 5, **+19 points** vs 2.5 -- biggest gains Text Rendering (+43) and Product, Branding & Commercial Design (+38)",
-        "Access is gated -- Private Preview means request-based, not self-serve",
+        "Status: Microsoft AI's 2.6 post was updated 2026-10-27 to say 2.6 and 2.6 Flash are generally available in Microsoft Foundry, but the Foundry catalog card still showed Lifecycle Preview on 2026-10-29 and Azure lists no 2.6 price",
       ],
     },
     {
@@ -80,9 +99,14 @@ export const maiImage2: ToolReview = {
     "Photorealism-first diffusion approach. **The 'Nano Banana wins on text rendering' line no longer holds as of MAI-Image-2.6 (2026-08-10): text rendering gained +91 Elo on text-to-image and +43 on editing, and Microsoft places 2.6 ahead of the Nano Banana family on the Arena editing board.** Midjourney still wins on stylized artistic output. Flux still wins on fine-grained open-source control",
     "Not yet available as a consumer web tool -- Bing Image Creator is the closest consumer surface but it has its own UX constraints and limits",
     "Azure Foundry token-based pricing ($33/M image output tokens) requires computing effective per-image cost at your resolution. Comparing directly to Nano Banana 2's $0.067/image at 1K is not one-to-one",
-    "Microsoft has not yet shipped an equivalent of Nano Banana 2's multi-image reference mode, which is the most-requested feature for brand-consistent commercial work",
+    "Multi-image reference editing only arrived with 2.6 on Foundry (2026-09-04), and the newest model (2.7) is editing-only and unpriced, so brand teams still cannot plan costs for Microsoft's best image model",
   ],
   knownIssues: [
+    {
+      description: "MAI-IMAGE-2.7 PREVIEW, 2.6 CALLED GA, AND A 2.5-PRO MODEL WE NEVER RECORDED (2026-10-27, with a 2026-07-23 catch-up, vendor-primary): **(1) 2.7 (10/27):** 'It launches in preview at No. 3 on Arena Edit, making Microsoft AI the No. 2 lab, and No. 2 on Artificial Analysis's image editing leaderboard.' Available to try on Arena, Artificial Analysis and MAI Playground; 'We're starting with editing, with text-to-image generation coming soon.' Microsoft says it beats 2.6 in all 10 use cases and all 7 editing actions. No price and no Foundry, Copilot or Bing availability. **(2) 2.6 status:** the August 2.6 post now carries 'Updated as of October 27th, 2026: MAI Image 2.6 and MAI Image 2.6 Flash are now generally available in Microsoft Foundry.' The Foundry catalog card still read Lifecycle Preview on 2026-10-29 and Azure's Foundry Models pricing page has no 2.6 rows, so the price remains unpublished. **(3) Rank decay:** 2.6's 'No. 2 image editing' (as of 2026-09-04) is a dated snapshot; with 2.7 at No. 3 on Arena Edit, treat 2.6's current editing rank as unknown. **(4) Catch-up, 2026-07-23:** MAI-Image-2.5-Pro entered public preview 'priced at $5 per 1M text input tokens, $8 per 1M image input tokens, and $106 per 1M image output tokens'; Azure lists MAI-Image-2.5 Pro Global at the same rates. Separately (10/27) Microsoft shipped MAI Cyber 1.1 Flash to verified customers through MDASH ('18% less per scan' than MAI Cyber 1 Flash, no price); we have no MAI-Cyber page.",
+      source: "Microsoft AI: MAI Image 2.7 debut (microsoft.ai/news/mai-image-2-7-debut/, JSON-LD 2026-10-27) + MAI-Image-2.6 post with the October 27 update + Introducing MAI-Image-2.5-Pro and MAI-Voice-2-Flash (JSON-LD 2026-07-23) + MAI Cyber 1.1 Flash (2026-10-27) + Azure Foundry Models pricing page, fetched 2026-10-29",
+      date: "2026-10-27",
+    },
     {
       description: "MAI-IMAGE-2.6 REACHES MICROSOFT FOUNDRY, AND A NEW MAI-IMAGE-2.6-FLASH JOINS IT (2026-09-04, vendor-primary): Microsoft published a **new, separately dated post** moving MAI-Image-2.6 out of the private preview this page recorded on 2026-08-10: '**Today, we're bringing it to developers in Microsoft Foundry and expanding the family with MAI-Image-2.6-Flash -- built to deliver that same level of quality for latency-sensitive, high-throughput production workloads.**' **This closes the 'no public rate card, private preview only' caveat that has sat on this page since August.** **NEW CAPABILITIES ON BOTH MODELS:** multi-image reference editing, web grounding, and dynamic aspect ratios. Microsoft frames the pair as a precision-versus-throughput choice: 'maximum precision with MAI-Image-2.6 and production speed with MAI-Image-2.6-Flash.' **MAI-IMAGE-2.6-FLASH PERFORMANCE, VENDOR-PUBLISHED:** '**2.8x faster than GPT-Image-2-Medium while delivering 72% greater efficiency**', at comparable quality. **THE RANK MOVED AGAIN, AND IT MOVED UP -- WHICH IS WHY THIS PAGE DATES ITS RANKS.** As of this post, MAI-Image-2.6 ranks **No. 2 on Arena for BOTH text-to-image and image editing** (as of 2026-09-04), and on **Artificial Analysis** it is **No. 2 for text-to-image and No. 1 for image editing**. **Track the editing rank across this page's own history, because it is a lesson in how fast these decay: 2.5 was No. 2 in June, had silently slipped to No. 5 by mid-August, 2.6 recovered it to No. 3 on 2026-08-18, and it is No. 2 as of 2026-09-04.** Treat every one of those as a dated snapshot, not a standing fact. Microsoft claims 'the best price-per-Elo performance in the world' -- a framing that is quality-per-dollar, not absolute quality, and should not be read as a claim to the top of either leaderboard. **A SOURCING NOTE FOR ANYONE RE-CHECKING THIS:** the URL that previously served the 2026-08-10 launch post now serves this 2026-09-04 post, with `datePublished` and `dateModified` both set to 2026-09-04 and no 'Updated as of' block. The August 18 editing-rank update recorded on this page is **no longer visible on the live page** -- it is preserved here rather than in Microsoft's copy.",
       source: "Microsoft AI (microsoft.ai/news/pushing-the-quality-cost-frontier-with-mai-image-2-6/, JSON-LD datePublished 2026-09-04) -- fetched 2026-09-05 via curl with browser UA; blog index enumerated via Firecrawl",
@@ -113,8 +137,11 @@ export const maiImage2: ToolReview = {
   notFor: "Text-heavy commercial design (use Nano Banana 2). Stylized artistic work (use Midjourney). Open-weight self-hosting requirements (use FLUX.2 [klein]). Consumer creators who want a simple web UI -- the Foundry workflow is developer-facing.",
   verdict: "MAI-Image-2.5 (2026-06-02) is the version bump that closes the gap. Where MAI-Image-2 debuted #3 on Arena as a surprise, 2.5 now ranks #2 for image editing and #3 for text-to-image, with an overall Arena score Microsoft says surpasses Nano Banana Pro -- and the +107-point text-rendering jump directly targets the one area where Nano Banana used to win. The new fine-grained localized editing and face/identity consistency make it genuinely competitive for commercial work, and being live in PowerPoint + OneDrive means most Microsoft 365 users already have it. For Azure customers this is now a first-tier image option, not just a no-OpenAI-dependency fallback. Midjourney still wins on stylized art and Flux on open-weight control, but the gap is much smaller than it was in April. The cheaper MAI-Image-2.5-Flash is now live in Foundry for high-volume use.",
 
-  lastReviewedDate: "2026-09-05",
+  lastReviewedDate: "2026-10-29",
   dataSources: [
+    { name: "Microsoft AI: MAI Image 2.7 debut, preview (2026-10-27)", url: "https://microsoft.ai/news/mai-image-2-7-debut/", dateAccessed: "2026-10-29" },
+    { name: "Microsoft AI: Introducing MAI-Image-2.5-Pro and MAI-Voice-2-Flash (2026-07-23)", url: "https://microsoft.ai/news/introducing-mai-image-2-5-pro-and-mai-voice-2-flash/", dateAccessed: "2026-10-29" },
+    { name: "Microsoft AI: MAI Cyber 1.1 Flash (2026-10-27)", url: "https://microsoft.ai/news/mai-cyber-1-1-flash/", dateAccessed: "2026-10-29" },
     { name: "Microsoft AI: Pushing the quality-cost frontier with MAI-Image-2.6 (2026-09-04) -- Foundry GA + MAI-Image-2.6-Flash, Arena No. 2 text-to-image and editing", url: "https://microsoft.ai/news/pushing-the-quality-cost-frontier-with-mai-image-2-6/", dateAccessed: "2026-09-05" },
     { name: "Microsoft AI: MAI-Image-2.6 launches at No. 2 on Arena, ahead of Google, Meta and xAI (2026-08-10, updated 2026-08-18)", url: "https://microsoft.ai/news/mai-image-2-6-launches-at-no-2-on-arena-ahead-of-google-meta-and-xai/", dateAccessed: "2026-08-20" },
     { name: "Microsoft AI: Introducing MAI-Image-2.5 (2026-06-02)", url: "https://microsoft.ai/news/introducing-mai-image-2-5/", dateAccessed: "2026-06-02" },
@@ -126,6 +153,6 @@ export const maiImage2: ToolReview = {
   ],
   affiliateUrl: "https://ai.azure.com/catalog/models/MAI-Image-2",
   status: "active",
-  metaTitle: "MAI-Image-2.6 Review 2026: No. 2 on Arena Text-to-Image, Ahead of Nano Banana",
-  metaDescription: "MAI-Image-2.6 review. Microsoft's image model (August 10, 2026): No. 2 on Arena text-to-image, +79 Elo over 2.5, text rendering +91; No. 3 image editing ahead of Nano Banana and Muse Image. MAI Playground + Foundry private preview, no published pricing. Plus MAI-Image-2.5 rates.",
+  metaTitle: "MAI-Image Review 2026: MAI-Image-2.7 Editing Preview, 2.6 GA in Foundry, 2.5-Pro at $106/M Output",
+  metaDescription: "Microsoft MAI-Image review. MAI-Image-2.7 entered preview Oct 27, 2026 as an editing model, No. 3 on Arena Edit and No. 2 on Artificial Analysis image editing at launch, with no price yet. Microsoft says 2.6 and 2.6 Flash are GA in Foundry; 2.5-Pro costs $5/$8/$106 per 1M tokens.",
 };

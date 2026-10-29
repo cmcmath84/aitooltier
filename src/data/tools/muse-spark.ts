@@ -17,7 +17,7 @@ export const museSpark: ToolReview = {
 
   hasFreeTier: true,
   pricing: [
-    { plan: "Muse app (Free)", price: "$0", features: ["Muse personal agent on iOS, Android, muse.ai and inside WhatsApp (US rollout from 2026-09-08)", "Powered by Muse Spark; usage-limited, refreshes when the limit resets", "Runs on Muse Secure VM with a separate Sentinel agent gating internet actions", "Meta AI in Facebook/Instagram/WhatsApp also stays free for everyday use"] },
+    { plan: "Muse app (Free)", price: "$0", features: ["Muse personal agent on iOS, Android, muse.ai and inside WhatsApp (US rollout from 2026-09-08; Singapore from 2026-10-28 on iOS, Android and muse.ai)", "Powered by Muse Spark; usage-limited, refreshes when the limit resets", "Runs on Muse Secure VM with a separate Sentinel agent gating internet actions", "Meta AI in Facebook/Instagram/WhatsApp also stays free for everyday use"] },
     { plan: "Muse Power", price: "$20", period: "month", features: ["500M Muse tokens per week", "Muse Wonder is coming to the Muse app for subscribers first (announced 2026-10-12)"] },
     { plan: "Muse Maximum", price: "$100", period: "month", features: ["3B Muse tokens per week", "Highest Muse app usage tier"] },
     { plan: "Meta Model API: Muse Wonder", price: "$4.00 / $20.00 per 1M tokens", features: ["muse-wonder-1.0, 1,048,576-token context, reasoning effort minimal to max", "Cached input $0.20 per 1M", "Standard mode only on pay-as-you-go (no Contributor discount)", "In preview; OpenAI-SDK compatible (base_url change)"] },
@@ -42,9 +42,14 @@ export const museSpark: ToolReview = {
     "Muse Code subscription prices are not printed in Meta's own docs (shown only at checkout); the $50/$200 figures are press-reported",
     "Muse Spark Open needs at least 700GB of VRAM at NVFP4 (2TB at BF16), and its Hugging Face repo is manually gated",
     "Muse Spark 1.3 does not fully support audio input yet -- Meta recommends 1.2 or Muse Voice Transcribe for audio",
-    "The Muse app launched US-only, and privacy concerns given Meta's data practices remain a real consideration",
+    "The Muse app launched US-only and has since added only Singapore (2026-10-28), and privacy concerns given Meta's data practices remain a real consideration",
   ],
   knownIssues: [
+    {
+      description: "MUSE APP EXPANDS TO SINGAPORE (2026-10-28, vendor-primary): 'Muse is available in Singapore from today', with local partners including Shopee, Grab, Singapore Airlines, Agoda, ShopBack, Klook, Trip.com and Lazada; 'available in Singapore on iOS, Android, and muse.ai, and coming soon to AI glasses. It's free for most of what people need, with subscription plans.' No Singapore prices were given and WhatsApp is not mentioned. Every Meta API price on this page (Muse Wonder $4 / $20, Muse Spark $1.25 / $4.25, Contributor mode $0.10 / $0.002 / $0.20, web search $2.50 per 1,000 queries) still matches dev.meta.ai/docs/pricing-rate-limits on 2026-10-29.",
+      source: "Meta newsroom: Muse Is Now Available in Singapore (about.fb.com, JSON-LD 2026-10-28) + dev.meta.ai/docs/pricing-rate-limits, fetched 2026-10-29",
+      date: "2026-10-28",
+    },
     {
       description: "MUSE SPARK OPEN (2026-10-15): open weights for Muse Spark -- 816B total / 42B active MoE (256 experts, 8 active), perception encoder, 1M context, input text + image + video + audio. Released under the **Muse Model License** (not Apache/MIT); the HF repo is gated with manual approval. Vendor card (xhigh effort): Artificial Analysis Intelligence Index 39, MCP-Atlas 89.2, OSWorld Verified 80.4, Toolathlon Verified 72.8, JobBench 61.8, HLE-Diamond (no tools) 26.1. Hosted on Baseten, Fireworks AI, Groq, Modal, Nebius, OpenRouter and Together AI; weights also in SageMaker, Vertex Model Garden and Microsoft Foundry. Meta's own deployment note: 700GB VRAM for NVFP4, 2TB for BF16, or two M5 Ultra Mac Studios (512GB each) over Thunderbolt 5 with MLX. NVIDIA published a DFlash2 draft model for it on 10/16",
       source: "research.meta.ai/blog/muse-spark-open, dev.meta.ai/resources/blog/build-with-muse-spark-open, huggingface.co/meta-models/Muse-Spark-Open-816B-A42B, huggingface.co/nvidia/Muse-Spark-Open-816B-A42B-DFlash2",
@@ -92,10 +97,10 @@ export const museSpark: ToolReview = {
     },
   ],
   bestFor: "Developers who want a cheap, capable agentic model (Muse Spark 1.3 on the Meta Model API), teams that want a frontier open-weight model they can self-host (Muse Spark Open), local-agent builders on one consumer GPU (Muse Glimmer), and US consumers who want an agent that actually does errands through the Muse app.",
-  notFor: "Anyone who needs Meta's very best model over an API (Wonder Full is subscription-only in Muse Code), anyone unwilling to opt out of Contributor mode training, and users outside the US who want the Muse app today.",
+  notFor: "Anyone who needs Meta's very best model over an API (Wonder Full is subscription-only in Muse Code), anyone unwilling to opt out of Contributor mode training, and users outside the US and Singapore who want the Muse app today.",
   verdict: "Six months ago Muse Spark was a free chatbot with no API. It is now a full Meta stack: a frontier model (Muse Wonder), a cheap agentic workhorse (Spark 1.3), the strongest US open-weight model at launch (Spark Open), an Apache-licensed local model (Glimmer), a terminal coding agent (Muse Code) and a consumer agent app (Muse). The pricing is aggressive and the open-weight releases are serious. The catches are that Meta's best model stays behind a Muse Code subscription, and that the cheapest prices come from letting Meta train on your content.",
 
-  lastReviewedDate: "2026-10-17",
+  lastReviewedDate: "2026-10-29",
   dataSources: [
     { name: "Meta AI Research: Introducing Muse Spark Open (2026-10-15)", url: "https://research.meta.ai/blog/muse-spark-open", dateAccessed: "2026-10-17" },
     { name: "Meta AI Developers: Build with Muse Spark Open (2026-10-15)", url: "https://dev.meta.ai/resources/blog/build-with-muse-spark-open", dateAccessed: "2026-10-17" },

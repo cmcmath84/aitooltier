@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const devin: ToolReview = {
   slug: "devin",
   name: "Devin",
-  tagline: "**Oct 16 release notes: /devin review and /devin prompts now work on GitLab merge requests, Devin Review shows Bitbucket Cloud merge readiness, Devin gained built-in git tools for issues, labels, assignees and branch protection plus PR search across GitHub, GitLab, Azure DevOps, Gerrit and Perforce Swarm, and queued messages stay editable while Devin is idle.** **Devin now has memory: the 2026-10-09 release notes add personal memory across sessions with a nightly 'dreaming' pass that refines what it keeps (admins can force it on or off), cut the session resume window from 30 to 14 days, load a repository's AGENTS.md on setup and open Devin Ultra to zero-data-retention enterprises; 10/07 added a notification inbox. Anthropic's Haiku 5.5 launch lists it as a Devin Fusion sidekick option.** **10/02 and 10/05 release notes: a Terminal tab in the session workspace, keyboard shortcuts and a command palette for everyone, Devin Review effort levels set per trigger with an enterprise default, single-code-scan fetch via API and MCP, Azure DevOps review summaries posted as closed threads, Perforce snapshot builds given three hours, and Microsoft Teams access settings now enforced.** **9/30 release notes: Devin Review now routes findings on a Devin-opened PR back to the session to fix first (only what it cannot fix gets posted), automations gain preflight scripts, and dropped-connection messages are no longer lost.** **Cognition crossed a one billion dollar run rate on 2026-09-25** -- '$1B in annualized revenue run rate', less than two years after Devin's GA, naming GE Aerospace, Rivian, Rohlik and Exa -- and opened a Sao Paulo hub on 9/22 with Itau (over 75% of its technology teams on Devin, 300,000+ repositories documented, .NET-to-Java migrations 6x faster), Nubank (a multi-million-line monolith migration 'from years to weeks' at over 20x lower cost), Santander, Natura and EBANX as customers. **Devin Fusion (9/11)** -- the lead/sidekick two-model harness measured at 23-46% lower cost per task -- and the 9/15 AWS multi-year agreement stand.",
+  tagline: "**Devin Security 2.0 (2026-10-26) runs deep scans on Claude Mythos and other frontier cyber models for enterprises, ranks findings against a threat model built with your team and fixes them in parallel sessions, and Cognition is putting hundreds of millions of dollars in Devin credits toward free scans and remediation. Devin Oncall opened to all organizations on 10/19, and Playbooks are becoming Skills (new accounts from 10/24 start with Skills). Current plans: Free, Pro $20, Max $200, Teams $80 plus $40 per dev seat, Enterprise.** **Oct 16 release notes: /devin review and /devin prompts now work on GitLab merge requests, Devin Review shows Bitbucket Cloud merge readiness, Devin gained built-in git tools for issues, labels, assignees and branch protection plus PR search across GitHub, GitLab, Azure DevOps, Gerrit and Perforce Swarm, and queued messages stay editable while Devin is idle.** **Devin now has memory: the 2026-10-09 release notes add personal memory across sessions with a nightly 'dreaming' pass that refines what it keeps (admins can force it on or off), cut the session resume window from 30 to 14 days, load a repository's AGENTS.md on setup and open Devin Ultra to zero-data-retention enterprises; 10/07 added a notification inbox. Anthropic's Haiku 5.5 launch lists it as a Devin Fusion sidekick option.** **10/02 and 10/05 release notes: a Terminal tab in the session workspace, keyboard shortcuts and a command palette for everyone, Devin Review effort levels set per trigger with an enterprise default, single-code-scan fetch via API and MCP, Azure DevOps review summaries posted as closed threads, Perforce snapshot builds given three hours, and Microsoft Teams access settings now enforced.** **9/30 release notes: Devin Review now routes findings on a Devin-opened PR back to the session to fix first (only what it cannot fix gets posted), automations gain preflight scripts, and dropped-connection messages are no longer lost.** **Cognition crossed a one billion dollar run rate on 2026-09-25** -- '$1B in annualized revenue run rate', less than two years after Devin's GA, naming GE Aerospace, Rivian, Rohlik and Exa -- and opened a Sao Paulo hub on 9/22 with Itau (over 75% of its technology teams on Devin, 300,000+ repositories documented, .NET-to-Java migrations 6x faster), Nubank (a multi-million-line monolith migration 'from years to weeks' at over 20x lower cost), Santander, Natura and EBANX as customers. **Devin Fusion (9/11)** -- the lead/sidekick two-model harness measured at 23-46% lower cost per task -- and the 9/15 AWS multi-year agreement stand.",
   category: "ai-code-assistants",
   url: "https://devin.ai",
 
@@ -15,20 +15,13 @@ export const devin: ToolReview = {
     overall: 7.4,
   },
 
-  hasFreeTier: false,
+  hasFreeTier: true,
   pricing: [
-    {
-      plan: "Core",
-      price: "$20",
-      period: "month",
-      features: ["250 ACUs included", "Full autonomous agent", "GitHub integration"],
-    },
-    {
-      plan: "Team",
-      price: "$40",
-      period: "month",
-      features: ["500 ACUs included", "Team management", "Priority support"],
-    },
+    { plan: "Free", price: "$0", features: ["Light quota to code with agents", "Limited model availability", "Unlimited inline edits and Tab completions"] },
+    { plan: "Pro", price: "$20", period: "month", features: ["Frontier models from OpenAI, Anthropic, Google and SpaceXAI plus open models", "Free use of SWE-2", "Cloud agents (Devin Cloud)", "Extra usage at API pricing"] },
+    { plan: "Max", price: "$200", period: "month", features: ["Everything in Pro", "Significantly higher quotas"] },
+    { plan: "Teams", price: "$80 + $40/seat", period: "month (team plan plus each full dev seat)", features: ["Up to 200 users", "Centralized billing and an admin dashboard with analytics", "Priority support"] },
+    { plan: "Enterprise", price: "Custom", features: ["SAML/OIDC SSO and enterprise admin controls", "Dedicated or VPC deployment", "Dedicated account management"] },
   ],
 
   pros: [
@@ -44,6 +37,21 @@ export const devin: ToolReview = {
     "ACU consumption is unpredictable -- a task you think is simple can eat through credits if Devin hits a snag",
   ],
   knownIssues: [
+    {
+      description: "DEVIN SECURITY 2.0 AND A CREDITS PROGRAM (2026-10-26, vendor-primary): 'Devin Security now offers deep scans powered by Claude Mythos and other frontier cyber models', which enterprises reach through Devin without separate model access. Devin builds a threat model with the customer's security and engineering teams, re-scores findings from its own scans and from other scanners, bug bounties and advisories by exploitability in that environment, and fixes them in parallel sessions that reproduce the issue, run tests and open a PR; it can relabel a finding with evidence (human approval required, KEV-listed issues never relabeled) or apply an infrastructure mitigation such as a WAF rule. Cognition is 'committing hundreds of millions of dollars in Devin credits': free scans for current and future enterprise customers and remediation credits for new customers, through sales. The Security 2.0 docs page replaces the Security Swarm guide. On 10/22 Cognition also released an open-source Vulnerability Fixes plugin for the PHP and Node.js security releases of 10/21, installable in Devin and in other agents such as Claude Code, Codex and Cursor.",
+      source: "Cognition (cognition.com/blog/devin-security, datePublished 2026-10-26); Devin blog (devin.ai/blog/devin-security-2, 2026-10-26; devin.ai/blog/vulnerability-fixes-plugin, 2026-10-22); docs.devin.ai/work-with-devin/security-2-0, fetched 2026-10-29",
+      date: "2026-10-26",
+    },
+    {
+      description: "DEVIN ONCALL FOR EVERYONE, EFFICIENCY-BASED COST CONTROLS, PLAYBOOKS BECOME SKILLS (2026-10-19 to 2026-10-28, vendor release notes and blog): **10/19:** 'Devin Oncall is now available to all organizations': responders watch Slack or Teams channels and PagerDuty incidents, triage alerts and support requests, and post a likely root cause and next steps (a Lite mode followed on 10/21). Three enterprise cost features shipped the same day: an Efficiency Score from 0 to 100, Devin Coach, which flags vague prompts and over-powered modes before a run, and approvals that raise limits automatically for engineers graded Healthy or Satisfactory up to an admin ceiling. Also: memory dreaming can be switched off, and CI status for commits, branches and tags. **10/21:** Devin Review supports Bitbucket Cloud and counts a finding as resolved only when it was fixed in code, so resolved numbers drop. **10/23:** Playbooks are moving to Skills one account at a time (existing playbooks keep working), 'New accounts created from October 24, 2026 start with Skills and have no Playbooks', plus a personal Default agent setting and SharePoint in the Microsoft 365 Files MCP. **10/26 and 10/28:** inline HTML artifacts in messages, a Terraform devin_oncall_responder resource, Azure DevOps PR feedback routed to the owning session, and session tabs reworked twice (Activity on 10/26, a single Progress tab with a live task drawer on 10/28; the published page carries a leftover merge marker between those entries). A Local Hands docs page (last modified 10/21, rolling out gradually) lets a cloud session run shell commands and edit files on your own machine through Devin Desktop or devin connect, with per-call approval.",
+      source: "Devin release notes (docs.devin.ai/release-notes/2026, headings October 19, 21, 23, 26 and 28, 2026) + devin.ai/blog/efficiency-based-cost-controls (2026-10-19) + docs.devin.ai/work-with-devin/local-hands, fetched 2026-10-29",
+      date: "2026-10-28",
+    },
+    {
+      description: "FRONTIERCODE 2.0 AND A PRICING CORRECTION (2026-10-27 and checked 2026-10-29, vendor-primary): Cognition's FrontierCode 2.0 draws tasks from 55% more repositories, including security patches and performance work, and grades whether a maintainer would merge the change; 'the top-performing model, Opus 5.5, scores only 45%' (45.5%), ahead of GPT-6 Astra 42.8%, Grok 4.7 28.6%, Gemini 4 Argon 26.3%, Muse Wonder 24.3% and Cognition's own SWE-2 23.9%. Cognition builds and grades this benchmark. **Pricing correction:** our page still listed Core $20 with 250 ACUs and Team $40 with 500 ACUs. devin.ai/pricing now shows Free $0, Pro $20 a month, Max $200 a month, Teams $80 a month plus $40 per full dev seat (up to 200 users) and Enterprise; a Wayback copy shows the same ladder on 2026-08-11, so the old rows were out of date for at least eleven weeks. hasFreeTier set to true.",
+      source: "Cognition (cognition.com/blog/frontier-code-2.0, datePublished 2026-10-27) + devin.ai/pricing (title 'Plans and Pricing | Devin') + Wayback devin.ai/pricing 2026-08-11, fetched 2026-10-29",
+      date: "2026-10-29",
+    },
     {
       description: "RELEASE NOTES (2026-10-16): /devin review and /devin <prompt> comments on **GitLab merge requests**; **Bitbucket Cloud merge readiness** in Devin Review (ready, or blocked by approvals, builds or requested changes); built-in **git tools** for issues (view, list, create, comment, edit), labels, PR assignees, repository info and branch protection on GitHub, with repo info and branch protection also on GitLab, Azure DevOps, Bitbucket and Gerrit; **list and search pull requests** by state, author, branch or title on GitHub, GitLab, Azure DevOps, Gerrit and Perforce Swarm; Bitbucket Data Center webhooks installed automatically; queued messages editable while Devin is idle or asleep; multiple side chats per message; archived sessions in Cmd+K; browser previews wake sleeping sessions; per-tenant personal Azure DevOps connections.",
       source: "docs.devin.ai/release-notes/2026",
@@ -139,8 +147,12 @@ export const devin: ToolReview = {
   notFor: "Developers who want fast inline suggestions while coding -- Cursor or Copilot are better for that. Also not ready for unsupervised work on critical production systems.",
   verdict: "Devin is the most ambitious AI coding tool available, and at $20/mo it's finally priced for experimentation. When it works, it's like having a junior developer who never sleeps. When it doesn't, it's like watching that junior dev spend three hours on something you could've done in twenty minutes. The key is task selection -- give it clear, bounded work and it impresses. Give it vague requirements and you'll burn credits watching it spin. It's a glimpse of the future, but today it's a supplemental tool, not a replacement for an IDE-integrated copilot.",
 
-  lastReviewedDate: "2026-10-17",
+  lastReviewedDate: "2026-10-29",
   dataSources: [
+    { name: "Cognition: Devin Security, deep scans on Claude Mythos and other frontier cyber models (2026-10-26)", url: "https://cognition.com/blog/devin-security", dateAccessed: "2026-10-29" },
+    { name: "Devin release notes 2026 (October 19 to October 28 headings)", url: "https://docs.devin.ai/release-notes/2026", dateAccessed: "2026-10-29" },
+    { name: "Cognition: FrontierCode 2.0 (2026-10-27)", url: "https://cognition.com/blog/frontier-code-2.0", dateAccessed: "2026-10-29" },
+    { name: "Devin: Plans and Pricing (Free, Pro $20, Max $200, Teams $80 + $40/seat)", url: "https://devin.ai/pricing", dateAccessed: "2026-10-29" },
     { name: "Devin release notes (2026-10-16)", url: "https://docs.devin.ai/release-notes/2026", dateAccessed: "2026-10-17" },
     { name: "Devin release notes 2026 -- October 7 and October 9 entries", url: "https://docs.devin.ai/release-notes/2026", dateAccessed: "2026-10-12" },
     { name: "Devin release notes 2026 -- 'October 5, 2026' and 'October 2, 2026' entries", url: "https://docs.devin.ai/release-notes/2026", dateAccessed: "2026-10-06" },
@@ -166,5 +178,5 @@ export const devin: ToolReview = {
   status: "active",
   poweredBy: "Cognition proprietary orchestration over Claude / GPT / Gemini + Devin's own tuned components",
   metaTitle: "Devin Review 2026: $1B Run Rate, Fusion Lead/Sidekick Harness Cuts Cost 23-46%, AWS Deal",
-  metaDescription: "Devin review. Cognition crossed a $1B annualized run rate on Sept 25, 2026 and opened a Sao Paulo hub with Itau (75% of tech teams on Devin) and Nubank as customers. Devin Fusion (Sept 11) pairs a frontier lead with a cheap SWE-2 sidekick at 23-46% lower cost per task; multi-year AWS agreement with Marketplace and single-tenant VPC. $20/mo Core, $40/mo Team.",
+  metaDescription: "Devin review. Devin Security 2.0 (Oct 26, 2026) scans with Claude Mythos and other frontier cyber models and fixes findings in parallel sessions; Devin Oncall opened to all organizations on Oct 19. Plans: Free, Pro $20, Max $200, Teams $80 plus $40 per seat. Cognition crossed a $1B run rate in September.",
 };
