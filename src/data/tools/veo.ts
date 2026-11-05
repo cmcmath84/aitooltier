@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const veo: ToolReview = {
   slug: "veo",
   name: "Google Veo 3.1",
-  tagline: "Google's AI video stack -- Veo 3.1 (native 4K at 60fps with synchronized audio) plus the newer Gemini Omni 1.1 Flash, which from **2026-09-23 generates free 1080p scenes for any Google account inside Google Vids** (extend scenes, set exact clip durations, upscale, templates, SynthID watermark) after landing in Google Flow on 8/27. Also 9/23: **Google Flow Tools** -- describe a workflow and Flow builds a reusable custom tool; six creator-built tools shipped (ambient sound and foley stems, multilingual captions, social thumbnails, architectural textures, animated collages, Swiss-style motion graphics), each duplicable and remixable.",
+  tagline: "**Gemini Omni 1.2 Flash went generally available on 2026-11-05, the first GA Omni model: native 15-second clips (up from 10), multi-turn conversational editing across the whole clip and up to six reference images, at about $0.07 per second of 720p video in the Gemini API, 30% below Omni 1.1 Flash. Calls to gemini-omni-1.1-flash route to 1.2 from 2026-12-03, and Google Vids makes 15-second clips at no extra cost.** Google's AI video stack -- Veo 3.1 (native 4K at 60fps with synchronized audio) plus the newer Gemini Omni 1.1 Flash, which from **2026-09-23 generates free 1080p scenes for any Google account inside Google Vids** (extend scenes, set exact clip durations, upscale, templates, SynthID watermark) after landing in Google Flow on 8/27. Also 9/23: **Google Flow Tools** -- describe a workflow and Flow builds a reusable custom tool; six creator-built tools shipped (ambient sound and foley stems, multilingual captions, social thumbnails, architectural textures, animated collages, Swiss-style motion graphics), each duplicable and remixable.",
   category: "ai-video-generators",
   url: "https://deepmind.google/technologies/veo",
 
@@ -50,12 +50,23 @@ export const veo: ToolReview = {
       ],
     },
     {
+      plan: "Gemini API (Gemini Omni 1.2 Flash)",
+      price: "$12 per 1M video tokens",
+      period: "about $0.07 per second at 720p",
+      features: [
+        "gemini-omni-1.2-flash, GA 2026-11-05 on the paid tier: $1.50 per 1M input tokens, $9.00 text output, $12.00 video output",
+        "Billed at 5,792 tokens per second of 720p: about $0.70 for a 10s clip and $1.04 for 15s; 360p $0.023/s, 1080p (upsampled) $0.104/s, 4K (upsampled) $0.209/s",
+        "Omni 1.1 Flash was $17.50 per 1M video tokens (about $0.10/s); its API calls route to 1.2 at 1.2 rates from 2026-12-03",
+        "Not available on the free tier; SynthID watermark on every output",
+      ],
+    },
+    {
       plan: "Vertex AI (Veo 3.1 Lite API)",
       price: "Usage-based",
       period: "per second of video",
       features: [
         "API access for developers",
-        "Gemini API preview IDs veo-3.1-generate-preview, -fast and -lite reached their 2026-10-22 shutdown date; on the Gemini API the replacement is gemini-omni-1.1-flash",
+        "Gemini API preview IDs veo-3.1-generate-preview, -fast and -lite reached their 2026-10-22 shutdown date; on the Gemini API the replacement is gemini-omni-1.1-flash, which itself routes to gemini-omni-1.2-flash from 2026-12-03",
         "Veo upscaling capability",
         "Commercial use licensing",
       ],
@@ -75,6 +86,11 @@ export const veo: ToolReview = {
     "Google ecosystem lock-in remains -- your generations live inside Google Vids / Drive, and pulling them into Premiere or DaVinci workflows adds friction that Seedance + CapCut doesn't",
   ],
   knownIssues: [
+    {
+      description: "GEMINI OMNI 1.2 FLASH IS GENERALLY AVAILABLE -- 15-SECOND CLIPS, MULTI-TURN EDITING, 30% CHEAPER, AND OMNI 1.1 AUTO-ROUTES TO IT ON DEC 3 (2026-11-05, vendor-primary): Google says it is 'making it generally available across the Gemini API and Gemini for business', and that 'for the first time, Gemini Omni is now generally available, backed by Google Cloud's enterprise-grade infrastructure and security', with Provisioned Throughput. **What changed:** native video 'up to 15 seconds long, up from 10 seconds with Omni 1.1', durations in one-second steps from 3 to 15; multi-turn conversational editing that 'works across full 15-second clips' (swap a product or background, change lighting or aspect ratio without regenerating); better reference adherence with up to six reference images plus short motion clips and audio cues; clearer multi-speaker lip-sync; fewer unwanted jump cuts on continuous camera moves. Per the API changelog, first-and-last-frame interpolation and per-turn extension stay at 3 to 10 seconds, with extension up to 30 seconds total. **Price (Gemini API rate card, checked 2026-11-05):** $1.50 per 1M input, $9.00 text output, **$12.00 per 1M video output tokens**, which Google converts at 5,792 tokens per second of 720p to about **$0.07/s** (~$0.70 per 10s, ~$1.04 per 15s); 360p $0.023/s, 1080p $0.104/s and 4K $0.209/s with upsampling. Omni 1.1 Flash is $17.50 per 1M (about $0.10/s), and 'effective December 3, 2026, all API requests to gemini-omni-1.1-flash automatically route to gemini-omni-1.2-flash' at 1.2 rates -- a price cut, not a rise, for anyone who does nothing. Paid-tier rate limits doubled. **Apps:** multi-turn edits in Flow, '15-second clips at no additional cost in Google Vids with a Google account or Google Workspace subscription', 15-second videos in the Gemini app 'rolling out to Google AI Ultra subscribers', and Google Ads. Google's own caveat: fast sports action, rapid script changes and complex physics are still being worked on.",
+      source: "Google (blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/, RSS pubDate Thu, 05 Nov 2026; ai.google.dev Gemini API changelog 'November 5, 2026' and pricing page, via Firecrawl) -- fetched 2026-11-05",
+      date: "2026-11-05",
+    },
     {
       description: "GEMINI API PREVIEW IDS FOR VEO 3.1 AND OMNI FLASH REACHED THEIR SHUTDOWN DATE (2026-10-22, vendor-primary): Google's deprecations table lists veo-3.1-generate-preview, veo-3.1-fast-generate-preview, veo-3.1-lite-generate-preview and gemini-omni-flash-preview with a shutdown date of October 22, 2026, and names gemini-omni-1.1-flash as the replacement for all four. This supersedes our 2026-06-30 advice below to migrate the old Veo 2.0 and 3.0 IDs onto the 3.1 preview IDs: on the Gemini API, use gemini-omni-1.1-flash, or the GA Veo models on the Gemini Enterprise Agent Platform. Consumer Veo 3.1 in the Gemini app and Omni 1.1 Flash in Google Vids and Flow are not affected.",
       source: "Gemini API deprecations table (ai.google.dev/gemini-api/docs/deprecations, 'Last updated 2026-10-22 UTC', fetched 2026-10-29 via Firecrawl)",
@@ -123,10 +139,13 @@ export const veo: ToolReview = {
   ],
   bestFor: "Creators who need the highest-quality AI video available and want free or low-cost access. The April 2026 free rollout to every Google account via Google Vids makes Veo 3.1 the new default starting point for anyone trying AI video seriously. Professional production teams benefit from Ultra's unlimited generations.",
   notFor: "High-volume TikTok / Reels creators where CapCut + Seedance 2.0 beats Veo on workflow friction. Also not ideal for anyone wanting strong stylistic control -- Veo's cinematic default is hard to escape.",
-  verdict: "Veo 3.1 solidified Google's video lead after OpenAI shut down Sora in March 2026. Quality-wise it remains the benchmark -- 4K/60fps with synchronized audio, and the April 2026 free rollout to every Google account is a structural shift that puts best-in-class AI video in front of billions overnight. The remaining weaknesses are workflow friction (generation is slow, Google ecosystem lock-in) and stylistic narrowness. The honest read: for pure quality and accessibility, Veo 3.1 is the 2026 default. For short-form social workflows where speed matters more than peak quality, Seedance 2.0 inside CapCut is the more pragmatic choice.",
+  verdict: "Update 2026-11-05: Gemini Omni 1.2 Flash (GA on Nov 5) is now the cheaper, more editable half of this stack -- 15-second clips you can revise turn by turn at about $0.07 per second in the API -- while Veo 3.1 remains the 4K/60fps quality option. Veo 3.1 solidified Google's video lead after OpenAI shut down Sora in March 2026. Quality-wise it remains the benchmark -- 4K/60fps with synchronized audio, and the April 2026 free rollout to every Google account is a structural shift that puts best-in-class AI video in front of billions overnight. The remaining weaknesses are workflow friction (generation is slow, Google ecosystem lock-in) and stylistic narrowness. The honest read: for pure quality and accessibility, Veo 3.1 is the 2026 default. For short-form social workflows where speed matters more than peak quality, Seedance 2.0 inside CapCut is the more pragmatic choice.",
 
-  lastReviewedDate: "2026-10-29",
+  lastReviewedDate: "2026-11-05",
   dataSources: [
+    { name: "Google: Gemini Omni 1.2 Flash -- 15-second video and lower pricing (2026-11-05)", url: "https://blog.google/innovation-and-ai/technology/developers-tools/introducing-gemini-omni-1-2-flash/", dateAccessed: "2026-11-05" },
+    { name: "Gemini API changelog (November 5, 2026): Omni 1.2 Flash GA, Omni 1.1 Flash routing from 2026-12-03", url: "https://ai.google.dev/gemini-api/docs/changelog", dateAccessed: "2026-11-05" },
+    { name: "Gemini Developer API pricing: Gemini Omni 1.2 Flash and 1.1 Flash rate cards", url: "https://ai.google.dev/gemini-api/docs/pricing", dateAccessed: "2026-11-05" },
     { name: "Gemini API deprecations table (last updated 2026-10-22): Veo 3.1 preview IDs and gemini-omni-flash-preview shutdown 2026-10-22, replacement gemini-omni-1.1-flash", url: "https://ai.google.dev/gemini-api/docs/deprecations", dateAccessed: "2026-10-29" },
     { name: "Google: Anyone can make stunning HD videos with Gemini Omni in Google Vids (2026-09-23) -- Omni 1.1 Flash free for any Google account, 1080p, scene extension, durations, SynthID", url: "https://blog.google/products-and-platforms/products/workspace/gemini-omni-in-google-vids/", dateAccessed: "2026-09-28" },
     { name: "Google Labs: 6 new Google Flow Tools built by industry creatives (2026-09-23) -- describe a workflow to build a tool; six creator-built tools", url: "https://blog.google/innovation-and-ai/models-and-research/google-labs/six-new-tools-built-by-creatives/", dateAccessed: "2026-09-28" },
@@ -142,6 +161,6 @@ export const veo: ToolReview = {
   ],
   affiliateUrl: "https://deepmind.google/technologies/veo",
   status: "active",
-  metaTitle: "Google Veo and Omni Review 2026: Free 1080p Omni 1.1 Video in Google Vids, Flow Tools",
-  metaDescription: "Google Veo 3.1 and Gemini Omni review. From Sept 23, 2026 anyone with a Google account can generate free 1080p video scenes with Omni 1.1 Flash in Google Vids -- scene extension, exact clip durations, upscaling, SynthID watermark. Google Flow Tools let you build a custom workflow by describing it, with six creator-built tools to remix. Veo 3.1 4K/60fps with native audio on Pro and Ultra, Vertex AI API.",
+  metaTitle: "Google Veo and Omni Review 2026: Omni 1.2 Flash GA, 15s Clips at $0.07/s, Free in Vids",
+  metaDescription: "Google Veo 3.1 and Gemini Omni review. Omni 1.2 Flash went GA on Nov 5, 2026: native 15-second clips, multi-turn editing, up to six reference images, about $0.07/s for 720p in the Gemini API (30% below Omni 1.1, which routes to 1.2 on Dec 3). 15-second clips at no extra cost in Google Vids, Flow and the Gemini app for AI Ultra. Veo 3.1 4K/60fps, pricing, limits.",
 };

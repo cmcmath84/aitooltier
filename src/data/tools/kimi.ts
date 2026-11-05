@@ -2,8 +2,8 @@ import { ToolReview } from "@/lib/types";
 
 export const kimi: ToolReview = {
   slug: "kimi",
-  name: "Kimi K3 (Moonshot)",
-  tagline: "Moonshot's 2.8T-parameter Kimi K3 (launched 2026-07-16/17) is the largest open-weight model ever released -- 1M context, multimodal, $3/$15 per 1M via API, ranked best-available on Arena.AI at launch. WEIGHTS SHIPPED ~2026-07-26/27 on Hugging Face (2.8T total / 104B activated, safetensors) under a custom Kimi K3 License, not the Modified MIT of the K2 line",
+  name: "Kimi K3.1 Pro / K3 (Moonshot)",
+  tagline: "**Kimi K3.1 Pro (launched 2026-10-24, weights on Hugging Face from 2026-11-02) is the new flagship: a post-trained K3 on the same 2.8T total / 104B active MoE with 1M context, shipped as quantization-aware MXFP4 weights under a new Kimi K3.1 Pro License, at $2 / $10 per 1M tokens on the Kimi API, a third below K3. A Highspeed variant runs 2-3x faster at $4 / $20. The K2 series closed to new API users on 2026-10-31 and is due to retire by the end of December.** Moonshot's 2.8T-parameter Kimi K3 (launched 2026-07-16/17) is the largest open-weight model ever released -- 1M context, multimodal, $3/$15 per 1M via API, ranked best-available on Arena.AI at launch. WEIGHTS SHIPPED ~2026-07-26/27 on Hugging Face (2.8T total / 104B activated, safetensors) under a custom Kimi K3 License, not the Modified MIT of the K2 line",
   category: "ai-local-models",
   url: "https://www.moonshot.cn",
 
@@ -18,29 +18,36 @@ export const kimi: ToolReview = {
   hasFreeTier: true,
   pricing: [
     {
+      plan: "API (Kimi K3.1 Pro)",
+      price: "$2 / $10",
+      period: "per 1M tokens (input/output)",
+      features: ["kimi-k3.1-pro (2026-10-24): $2.00 input, $10.00 output, $0.20 cached input per 1M; cache writes $2.00 (5 min) or $4.00 (1 hour)", "kimi-k3.1-pro-highspeed: $4.00 / $20.00 per 1M at 2-3x the speed of K3.1 Pro", "Batch API at 60% of the standard price (K3.1 Pro and K3)", "1,048,576-token context; reasoning_effort low, high or max (default max)", "Unlocked after a top-up of at least $1; Zero Data Retention available"],
+    },
+    {
       plan: "API (Kimi K3)",
       price: "$3 / $15",
       period: "per 1M tokens (input/output)",
-      features: ["K3 (launched 2026-07-16): 2.8T-param open-weight multimodal reasoning model", "1M token context window", "Reasoning effort currently supports only 'max'", "Live on kimi.com, Kimi app, Moonshot API, and OpenRouter; capacity-limited at launch (frequent 429s)"],
+      features: ["K3 (launched 2026-07-16): 2.8T-param open-weight multimodal reasoning model", "$0.30 cached input per 1M (rate card checked 2026-11-05)", "1M token context window", "Live on kimi.com, Kimi app and the Moonshot API"],
     },
     {
       plan: "Self-hosted (Free -- K2.6/K2.7 line)",
       price: "$0",
-      features: ["K3 WEIGHTS PUBLISHED ~2026-07-26/27 at huggingface.co/moonshotai/Kimi-K3 -- safetensors, 2.8T total params, 104B activated, 1,048,576-token context", "K3 ships under its own **Kimi K3 License**, NOT the Modified MIT used for K2 -- read the license terms before commercial use", "K2.6 + K2.7-Code weights remain on Hugging Face under Modified MIT", "Fine-tuning permitted"],
+      features: ["K3.1 PRO WEIGHTS on Hugging Face since 2026-11-02 at moonshotai/Kimi-K3.1-Pro -- 2.8T total / 104B activated, MXFP4 weights with MXFP8 activations from quantization-aware training, under the separate Kimi K3.1 Pro License; vLLM is the recommended engine", "K3 WEIGHTS PUBLISHED ~2026-07-26/27 at huggingface.co/moonshotai/Kimi-K3 -- safetensors, 2.8T total params, 104B activated, 1,048,576-token context", "K3 ships under its own **Kimi K3 License**, NOT the Modified MIT used for K2 -- read the license terms before commercial use", "K2.6 + K2.7-Code weights remain on Hugging Face under Modified MIT", "Fine-tuning permitted"],
     },
     {
-      plan: "API (Moonshot direct, K2.6)",
-      price: "$0.60",
+      plan: "API (Moonshot direct, K2 series -- retiring)",
+      price: "$0.95",
       period: "per 1M input tokens",
-      features: ["K2.6: $0.60 in / $2.50 out (Moonshot direct)", "256K context", "Native video input (mp4/mov/avi/webm)"],
+      features: ["K2.6: $0.95 in / $4.00 out / $0.16 cached per 1M; K2.7 Code $0.95 / $4.00, Highspeed $1.90 / $8.00 (rate card checked 2026-11-05; K2.6 was $0.60 / $2.50 in April)", "262,144-token context", "Closed to newly registered API users since 2026-10-31; Moonshot plans to retire all K2 models by the end of December 2026", "Native video input (mp4/mov/avi/webm)"],
     },
   ],
 
   pros: [
+    "K3.1 Pro posts a vendor-reported 65.7% on Terminal-Bench 4.0, within a point of Claude Opus 5.5 (66.4%) and ahead of GPT-6 Astra (58.2%), at $2 / $10 per 1M",
     "Frontier-tier performance -- Elo 1309 on GDPval-AA, behind only OpenAI and Anthropic flagships",
     "Beats Claude Opus 4.5 on several coding benchmarks per community testing",
     "Unified thinking + non-thinking modes in one model (no need to swap)",
-    "256K context window handles large codebases for agentic coding",
+    "1M-token context on the K3 line (the retiring K2 line stays at 256K)",
     "Weights are genuinely downloadable -- K2.6/K2.7-Code under Modified MIT, and K3 under its own Kimi K3 License (check its terms before commercial use)",
     "Native tool-use and agentic planning trained in -- not bolted on",
   ],
@@ -48,11 +55,22 @@ export const kimi: ToolReview = {
     "On 2026-09-30 OpenAI publicly attributed a core cluster of a reasoning-extraction (distillation) campaign against its models to 'individuals associated with Moonshot AI' -- OpenAI's claim, unanswered by Moonshot as of this review, but a reputational overhang for enterprise buyers",
     "Self-hosting is datacenter-only -- K3 is 2.8T params (104B activated) and even the older K2 line needs 4+ H100-class GPUs",
     "Moonshot is a smaller lab than DeepSeek/Alibaba -- less Western infrastructure support",
-    "API pricing ($0.60 in / $3.00 out) is higher than DeepSeek V3.2 ($0.28 in / $0.42 out)",
+    "The Highspeed variant doubles the K3.1 Pro price to $4 / $20 per 1M, and the API unlocks only after a top-up of at least $1",
+    "The K2 series closed to new API sign-ups on 2026-10-31 and is due to retire by the end of December 2026, so K2.6 and K2.7 Code integrations need a migration plan",
     "PRC content filters apply (Tiananmen, Taiwan, etc.)",
     "Documentation is heavily Chinese-first -- English docs trail releases",
   ],
   knownIssues: [
+    {
+      description: "KIMI K3.1 PRO -- A POST-TRAINED K3 AT TWO-THIRDS OF THE PRICE (launched 2026-10-24 per Moonshot's blog index; weights on Hugging Face from 2026-11-02; vendor-primary, recorded late because the first nine days were API-and-app only): Moonshot calls it 'our most capable 3T-class open-weight model to date', 'post-trained from Kimi K3 with large-scale joint reinforcement learning across hundreds of downstream domains'. **Architecture is K3's** -- 2.8T total / 104B activated MoE, 1,048,576-token context, text and image input -- with one change: the full-attention Gated MLA layers become Gated DeepSeek Sparse Attention (69 KDA + 24 Gated DSA layers), and the weights ship as MXFP4 with MXFP8 activations from quantization-aware training. **Where it runs:** Kimi.ai and the Kimi apps, Kimi Work (desktop 3.1.0 or later), Kimi Code (/model) and the Kimi API as `kimi-k3.1-pro`, plus `kimi-k3.1-pro-highspeed` at 2-3x the speed; Kimi Enterprise admins must switch it on (off by default). **Licence:** the Hugging Face card (`moonshotai/Kimi-K3.1-Pro`, created 2026-11-02, not gated) ships under a new **Kimi K3.1 Pro License** -- Moonshot's third licence after K2's Modified MIT and the Kimi K3 License, so do not assume K3 terms carry over. **Price (rate card checked 2026-11-05):** $2.00 in / $10.00 out / $0.20 cached per 1M, Highspeed $4.00 / $20.00, K3 unchanged at $3.00 / $15.00, batch at 60% of standard. **Vendor-reported benchmarks (reasoning effort max; coding rows run in the Claude Code harness; third-party verification pending):** Terminal-Bench 4.0 65.7 vs Claude Opus 5.5 66.4 and GPT-6 Astra 58.2; HLE-Full with tools 70.0; BrowseComp 92.1; GPQA-Diamond 94.2; OSWorld V2.1 79.6 vs Opus 5.5 81.8. It trails the proprietary leaders on HLE-Full without tools (51.1 vs Opus 5.5 59.8) and on ExploitBench (74.7 vs 91.0). **Cyber controls:** Moonshot says it 'identified and removed cyber-related data from both training stages' for the open-weight release; on its internal xdev-bench-hard an unmitigated checkpoint solved 90.5% at pass@3 and the shipped model 81.0%. **Distribution:** no GitHub Copilot changelog entry for K3.1 Pro as of 2026-11-05 -- K3 remains the Kimi model in Copilot.",
+      source: "Moonshot AI (huggingface.co/moonshotai/Kimi-K3.1-Pro model card + API createdAt 2026-11-02; kimi.ai/blog/kimi-k3-1-pro; kimi.ai/blog index dated 2026-10-24; platform.kimi.ai rate card) -- fetched 2026-11-05",
+      date: "2026-10-24",
+    },
+    {
+      description: "K2 SERIES CLOSES TO NEW API USERS (2026-10-31) AND RETIRES BY THE END OF DECEMBER 2026, AND ITS PRICE ROSE (vendor-primary, Kimi API rate card checked 2026-11-05): 'starting October 31, 2026, K2 series models will no longer be available to newly registered users; existing users are not affected. We plan to retire all K2 series models by the end of December 2026, please prepare your migration in advance.' The rate card now lists **K2.6 at $0.95 / $4.00 / $0.16 cached** per 1M and **K2.7 Code at $0.95 / $4.00 (Highspeed $1.90 / $8.00)**, both with a 262,144-token context -- above the $0.60 / $2.50 K2.6 rate this page recorded in April. Moonshot points migrations at the K3.1 Pro quickstart. The K2.6 and K2.7 Code weights stay on Hugging Face under Modified MIT, so self-hosters are not affected by the API retirement.",
+      source: "Kimi API Platform (platform.kimi.ai/docs/pricing/chat, rendered via Firecrawl 2026-11-05)",
+      date: "2026-10-31",
+    },
     {
       description: "OPENAI ATTRIBUTES A MODEL-DISTILLATION CAMPAIGN TO 'INDIVIDUALS ASSOCIATED WITH MOONSHOT AI', AND KIMI K2.7 CODE LEFT GITHUB COPILOT ON SCHEDULE (2026-09-30 and 2026-10-02; both vendor-primary, neither from Moonshot): **(1) The OpenAI claim (9/30):** OpenAI says it 'identified and disrupted a coordinated campaign designed to extract protected reasoning from our models', consistent with 'adversarial distillation'. Its attribution, quoted in full: **'It is unclear whether all operators we observed during the relevant time period originated from a single actor. However, we attribute a core cluster of the activity to individuals associated with Moonshot AI, the developer of Kimi.'** OpenAI's account of the mechanics: no encryption broken and no database or stored conversations accessed; operators 'manipulated model interactions so that protected reasoning could be reproduced in forms visible to the requester', including copying encrypted reasoning from one conversation into another and asking the model to decrypt and transcribe it; activity from July 1, spikes on July 24-25 (16,000 requests from 4,000+ users), a related cluster of more than 15,000 users disrupted by July 28. **This page records OpenAI's attribution as OpenAI's attribution.** No Moonshot statement was located on this sweep, OpenAI publishes no evidence linking the accounts to Moonshot, and the post does not claim any Kimi model was trained on the extracted reasoning. Readers evaluating Kimi K3 for regulated or enterprise use should expect this to come up in procurement and should watch for a Moonshot response. **(2) Copilot removal executed (10/02):** GitHub confirmed 'As of today, October 2, 2026, we have deprecated' **Kimi K2.7 Code** 'across all GitHub Copilot experiences', suggested alternative **Kimi K3** -- the 9/03 notice recorded below executed on its date. K3 stays in the Copilot picker (Fireworks-hosted) and in Perplexity.",
       source: "OpenAI (openai.com/index/disrupting-a-coordinated-model-distillation-campaign/, publicationDateText 'September 30, 2026') + GitHub Changelog (github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated/) -- both fetched 2026-10-02 via curl with browser UA; no Moonshot response located",
@@ -109,12 +127,16 @@ export const kimi: ToolReview = {
       date: "2026-03",
     },
   ],
-  bestFor: "Agentic coding workflows, tool-use agents, long-horizon repository work (1M context), and teams who want frontier-tier quality at a fraction of frontier pricing ($15/M output vs Fable 5's $50/M).",
+  bestFor: "Agentic coding workflows, tool-use agents, long-horizon repository work (1M context), and teams who want near-frontier quality at a fraction of frontier pricing -- K3.1 Pro is $10 per 1M output tokens.",
   notFor: "Solo developers or hobbyists who want to run models locally -- the K3 weights are public now, but 2.8T parameters is datacenter territory, far beyond consumer hardware. Use Qwen3-Coder-Next or DeepSeek for self-hosting today.",
-  verdict: "Kimi K3 (July 16-17, 2026) vaulted Moonshot from 'best open-weights value' to genuine frontier contention: 2.8T parameters, 1M context, multimodal, ranked best-available on Arena.AI at launch, and priced at $3/$15 per 1M -- a fifth of Anthropic's Fable 5 output rate. The launch rattled markets enough to be called a second DeepSeek shock. The open-weight promise has since been kept: the weights landed on Hugging Face around July 26-27 at 2.8T total / 104B activated, though under a bespoke Kimi K3 License rather than the Modified MIT of the K2 line, so read the terms before commercial use. Early August settled the distribution question too -- K3 is now selectable inside GitHub Copilot (hosted on Fireworks AI) and Perplexity (US-hosted), which lets Western teams use it without touching Moonshot's API. Remaining caveats: vendor benchmark claims still await third-party verification, the Moonshot API is visibly capacity-strained, and at 2.8T parameters self-hosting is datacenter work, not a laptop project. If you want maximum capability per dollar, K3 is the first model to test -- via Copilot or Perplexity if jurisdiction is a concern, via the Moonshot API if it isn't.",
+  verdict: "Update 2026-11-05: Kimi K3.1 Pro (API 2026-10-24, weights 2026-11-02) is now the Kimi model to evaluate -- the same 2.8T / 104B architecture, a third cheaper than K3 at $2 / $10, vendor-reported within a point of Claude Opus 5.5 on Terminal-Bench 4.0, and under its own Kimi K3.1 Pro License. Kimi K3 (July 16-17, 2026) vaulted Moonshot from 'best open-weights value' to genuine frontier contention: 2.8T parameters, 1M context, multimodal, ranked best-available on Arena.AI at launch, and priced at $3/$15 per 1M -- a fifth of Anthropic's Fable 5 output rate. The launch rattled markets enough to be called a second DeepSeek shock. The open-weight promise has since been kept: the weights landed on Hugging Face around July 26-27 at 2.8T total / 104B activated, though under a bespoke Kimi K3 License rather than the Modified MIT of the K2 line, so read the terms before commercial use. Early August settled the distribution question too -- K3 is now selectable inside GitHub Copilot (hosted on Fireworks AI) and Perplexity (US-hosted), which lets Western teams use it without touching Moonshot's API. Remaining caveats: vendor benchmark claims still await third-party verification, the Moonshot API is visibly capacity-strained, and at 2.8T parameters self-hosting is datacenter work, not a laptop project. If you want maximum capability per dollar, K3 is the first model to test -- via Copilot or Perplexity if jurisdiction is a concern, via the Moonshot API if it isn't.",
 
-  lastReviewedDate: "2026-10-02",
+  lastReviewedDate: "2026-11-05",
   dataSources: [
+    { name: "Hugging Face: moonshotai/Kimi-K3.1-Pro model card (repo created 2026-11-02; Kimi K3.1 Pro License, architecture, vendor benchmarks)", url: "https://huggingface.co/moonshotai/Kimi-K3.1-Pro", dateAccessed: "2026-11-05" },
+    { name: "Moonshot AI: Kimi K3.1 Pro Tech Blog (dated 2026-10-24 on the kimi.ai blog index)", url: "https://www.kimi.ai/blog/kimi-k3-1-pro", dateAccessed: "2026-11-05" },
+    { name: "Kimi API Platform: Model Inference Pricing -- K3.1 Pro $2/$10, Highspeed $4/$20, K3 $3/$15, K2 retirement notice", url: "https://platform.kimi.ai/docs/pricing/chat", dateAccessed: "2026-11-05" },
+    { name: "Kimi API Platform: Kimi K3.1 Pro quickstart", url: "https://platform.kimi.ai/docs/guide/kimi-k3-1-pro-quickstart", dateAccessed: "2026-11-05" },
     { name: "OpenAI: Disrupting a coordinated model-distillation campaign (2026-09-30) -- core cluster attributed to individuals associated with Moonshot AI", url: "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/", dateAccessed: "2026-10-02" },
     { name: "GitHub Changelog: Selected models in GitHub Copilot deprecated (2026-10-02) -- Kimi K2.7 Code removed, Kimi K3 suggested", url: "https://github.blog/changelog/2026-10-02-selected-models-in-github-copilot-deprecated/", dateAccessed: "2026-10-02" },
     { name: "GitHub Changelog: Kimi K2.7 Code deprecated from Copilot 2026-10-02, K3 the suggested alternative (2026-09-03)", url: "https://github.blog/changelog/2026-09-03-upcoming-deprecation-of-selected-github-copilot-models/", dateAccessed: "2026-09-05" },
@@ -134,15 +156,16 @@ export const kimi: ToolReview = {
   affiliateUrl: "https://www.moonshot.cn",
   status: "active",
   benchmarks: {
-    modelName: "Kimi K3 (2.8T, launched 2026-07-16) -- Arena.AI ranked it best-available at launch; vendor claims parity with Fable 5, third-party suites pending. Scores below are K2.6/K2.5-era baselines retained until K3 third-party runs publish",
+    modelName: "Kimi K3.1 Pro (launched 2026-10-24) -- vendor-reported scores from the Hugging Face model card at reasoning effort max; coding rows run in the Claude Code harness; third-party verification pending",
     scores: [
-      { name: "SWE-Bench Pro", score: 58.6, maxScore: 100, unit: "%" },
-      { name: "MMLU-Pro (K2.5 baseline)", score: 84.8, maxScore: 100, unit: "%" },
-      { name: "GPQA Diamond (K2.5 baseline)", score: 80.5, maxScore: 100, unit: "%" },
-      { name: "AIME 2025 (K2.5 baseline)", score: 91.2, maxScore: 100, unit: "%" },
-      { name: "LiveCodeBench (K2.5 baseline)", score: 74.1, maxScore: 100, unit: "%" },
+      { name: "Terminal-Bench 4.0", score: 65.7, maxScore: 100, unit: "%" },
+      { name: "DeepSWE v1.1", score: 75.5, maxScore: 100, unit: "%" },
+      { name: "HLE-Full (with tools)", score: 70.0, maxScore: 100, unit: "%" },
+      { name: "BrowseComp", score: 92.1, maxScore: 100, unit: "%" },
+      { name: "GPQA Diamond", score: 94.2, maxScore: 100, unit: "%" },
+      { name: "OSWorld V2.1", score: 79.6, maxScore: 100, unit: "%" },
     ],
-    lastUpdated: "2026-04-27",
+    lastUpdated: "2026-11-05",
   },
   systemRequirements: [
     {
@@ -158,6 +181,6 @@ export const kimi: ToolReview = {
     tone: "Careful and document-focused. Kimi K2.5 shines when you dump a long document in -- replies read as summary-and-citation rather than open chat, leaning on the source material rather than the model's opinions.",
     quirks: "Context handling is the whole pitch. Without a document to anchor to, replies feel plainer than Qwen or DeepSeek. Native Chinese quality is very strong; English is decent but not class-leading.",
   },
-  metaTitle: "Kimi K3 Review 2026: 2.8T Open Weights, Now in Copilot and Perplexity",
-  metaDescription: "Kimi K3 review. 2.8T parameters, 1M context, multimodal, $3/$15 per 1M. Weights shipped late July under the Kimi K3 License; K3 is selectable in GitHub Copilot and Perplexity, and K2.7 Code left Copilot on Oct 2, 2026. OpenAI's Sept 30 claim that a distillation campaign traces to individuals associated with Moonshot AI is recorded as OpenAI's attribution. Benchmarks, licence terms, caveats.",
+  metaTitle: "Kimi K3.1 Pro Review 2026: Open Weights, $2/$10 API, 1M Context, K2 Retiring",
+  metaDescription: "Kimi K3.1 Pro review. Moonshot's post-trained K3 launched Oct 24, 2026, with weights on Hugging Face from Nov 2 under the new Kimi K3.1 Pro License: 2.8T total / 104B active, 1M context, $2/$10 per 1M (Highspeed $4/$20). The K2 series closed to new users Oct 31 and retires by end of December. Vendor benchmarks, licence terms, Copilot and Perplexity status.",
 };

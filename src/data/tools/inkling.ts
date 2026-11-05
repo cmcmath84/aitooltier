@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const inkling: ToolReview = {
   slug: "inkling",
   name: "Inkling (Thinking Machines Lab)",
-  tagline: "Mira Murati's $12B lab ships its first model (2026-07-15): a 975B/41B-active open-weights MoE that reasons natively over text, images, and audio with a 1M-token context -- positioned not as the strongest model, but as the best starting point for fine-tuning via Tinker",
+  tagline: "**Inkling-Small (276B total / 12B active) was released as open weights on 2026-07-30 at $1.20 per 1M output tokens versus $4.05 for Inkling, and on 2026-11-04 Cognition shipped SWE-2 Flash, a Devin coding model post-trained from it.** Mira Murati's $12B lab ships its first model (2026-07-15): a 975B/41B-active open-weights MoE that reasons natively over text, images, and audio with a 1M-token context -- positioned not as the strongest model, but as the best starting point for fine-tuning via Tinker",
   category: "ai-local-models",
   url: "https://thinkingmachines.ai/inkling/",
 
@@ -23,7 +23,8 @@ export const inkling: ToolReview = {
       features: [
         "Full weights on Hugging Face -- original checkpoint plus an NVFP4 checkpoint for efficient inference on NVIDIA Blackwell",
         "Open weights; license terms per the model card (not spelled out in the launch post)",
-        "Inkling-Small (276B total / 12B active) available in preview",
+        "Inkling-Small (276B total / 12B active) released as open weights on 2026-07-30 -- same native audio and image reasoning, variable thinking effort and 1M context as Inkling",
+        "Output pricing per Thinking Machines: Inkling $4.05 per 1M tokens, Inkling-Small $1.20 per 1M",
       ],
     },
     {
@@ -59,6 +60,11 @@ export const inkling: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "INKLING-SMALL LEFT PREVIEW ON 2026-07-30, AND A DOWNSTREAM CODING MODEL NOW BUILDS ON IT (2026-07-30 and 2026-11-04, vendor-primary; this page still said 'preview' until 2026-11-05): Thinking Machines: 'Today, we are releasing Inkling-Small, an efficient open-weights model that achieves comparable performance to Inkling at a quarter of its size.' It is a 276B-total / 12B-active MoE trained on NVIDIA GB300 NVL72 systems, with Inkling's native audio and image reasoning, variable thinking effort and up to 1M context; the lab prices output at '$4.05 / 1M tokens' for Inkling and '$1.20 / 1M tokens' for Inkling-Small. **Downstream (11/04):** Cognition's SWE-2 Flash, now in Devin Desktop and CLI, is Inkling-Small with a large mid-training stage and reinforcement learning on top -- Cognition reports it lifted Terminal-Bench 4.0 from 0.9% (Inkling-Small) to 20.0%, which also tells you base Inkling-Small is not a strong agentic coder out of the box.",
+      source: "Thinking Machines Lab (thinkingmachines.ai/news/inkling-small/, on-page 'Jul 30, 2026'); Cognition (cognition.ai/blog/swe-2-flash, JSON-LD 2026-11-04) -- fetched 2026-11-05",
+      date: "2026-07-30",
+    },
+    {
       description: "LAUNCH (2026-07-15): Inkling is Thinking Machines Lab's first-ever model release -- open weights on Hugging Face (original + NVFP4 checkpoints), 975B total / 41B active MoE, native text+image+audio input, up to 1M context, pretrained on 45T tokens. **Inkling-Small** (276B total / 12B active) shipped alongside in preview, 'matching or exceeding its larger sibling on many benchmarks' per the vendor. Available on Tinker at launch (64K/256K context options, 50% launch discount) and via TogetherAI, Fireworks, Modal, Databricks, and Baseten. Strategy note: the company explicitly frames Inkling as a customization substrate monetized through Tinker fine-tuning, not a chatbot -- TechCrunch: revenue depends on the platform, not model distribution. Funding context: a reported ~$50B round was said to be coming together last November but had stalled by January (company declined comment)",
       source: "Thinking Machines Lab (thinkingmachines.ai/news/introducing-inkling/), TechCrunch (2026-07-15), Reuters, Axios",
       date: "2026-07-15",
@@ -73,8 +79,10 @@ export const inkling: ToolReview = {
   notFor: "Anyone who just wants the smartest chat model out of the box (use Claude, GPT-5.6, or Kimi K3), or solo self-hosters without multi-GPU hardware -- watch Inkling-Small instead.",
   verdict: "Inkling is the most interesting kind of debut: a $12B lab's first model that deliberately refuses the benchmark arms race. The specs are real -- 975B/41B MoE, native text+image+audio input, 1M context, full weights on Hugging Face -- but the point is the Tinker fine-tuning flywheel: Inkling is sold as a starting ingredient, not a finished assistant. That makes it the leading US open-weights play (a lane Meta has drifted out of) and a genuinely different bet from Kimi K3's 'biggest model wins' approach launched the same week. If you consume models via API, this changes little today. If you build models from open weights, Inkling plus Tinker is now the most credible US-based path.",
 
-  lastReviewedDate: "2026-07-18",
+  lastReviewedDate: "2026-11-05",
   dataSources: [
+    { name: "Thinking Machines Lab: Introducing Inkling-Small (2026-07-30)", url: "https://thinkingmachines.ai/news/inkling-small/", dateAccessed: "2026-11-05" },
+    { name: "Cognition: Introducing SWE-2 Flash -- post-trained from Inkling-Small (2026-11-04)", url: "https://cognition.ai/blog/swe-2-flash", dateAccessed: "2026-11-05" },
     { name: "Thinking Machines Lab: Introducing Inkling (2026-07-15)", url: "https://thinkingmachines.ai/news/introducing-inkling/", dateAccessed: "2026-07-18" },
     { name: "Thinking Machines Lab: Inkling product page", url: "https://thinkingmachines.ai/inkling/", dateAccessed: "2026-07-18" },
     { name: "TechCrunch: Thinking Machines amps up its bet against one-size-fits-all AI (2026-07-15)", url: "https://techcrunch.com/2026/07/15/thinking-machines-amps-up-its-bet-against-one-size-fits-all-ai-with-its-first-open-model-inkling/", dateAccessed: "2026-07-18" },
@@ -86,7 +94,7 @@ export const inkling: ToolReview = {
       variant: "Inkling (975B total / 41B active MoE)",
       min: "Multi-GPU server class -- 41B active parameters plus expert weights; NVFP4 checkpoint targets NVIDIA Blackwell systems",
       max: "Production-grade multi-node inference or hosted via Together/Fireworks/Modal/Databricks/Baseten",
-      notes: "Practically hosted-or-cluster for the full model; Inkling-Small (276B/12B active, preview) is the realistic self-host target",
+      notes: "Practically hosted-or-cluster for the full model; Inkling-Small (276B/12B active, released 2026-07-30) is the realistic self-host target",
     },
   ],
   metaTitle: "Inkling Review 2026: Thinking Machines Lab's First Open Model",
