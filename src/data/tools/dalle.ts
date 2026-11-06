@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const dalle: ToolReview = {
   slug: "dall-e",
   name: "DALL-E (Shut Down)",
-  tagline: "**Nov 2026: the migration targets moved again -- gpt-image-1 was shut down on 2026-10-23, and gpt-image-1.5 and gpt-image-1-mini (which this page used to recommend) are deprecated with removal on 2026-12-01; move to gpt-image-2.5-sunburst / gpt-image-2.5-flare or the new gpt-image-2.6-sunburst / gpt-image-2.6-flare (released 2026-11-04).** OpenAI's DALL-E 2 and DALL-E 3 -- SHUT DOWN. Both APIs were retired on 2026-05-12. Existing integrations now fail; the GPT Image request shape differs (not a drop-in swap). Tier-list alternatives: Nano Banana 2, Midjourney, FLUX.2 [klein], Ideogram",
+  tagline: "**Nov 2026: the migration targets moved again -- gpt-image-1 was shut down on 2026-10-23, and gpt-image-1.5 and gpt-image-1-mini (which this page used to recommend) are deprecated with removal on 2026-12-01; since 2026-11-05 OpenAI's deprecations table names the new gpt-image-2.6-sunburst / gpt-image-2.6-flare (released 2026-11-04) as the replacement, where it previously named the 2.5 pair.** OpenAI's DALL-E 2 and DALL-E 3 -- SHUT DOWN. Both APIs were retired on 2026-05-12. Existing integrations now fail; the GPT Image request shape differs (not a drop-in swap). Tier-list alternatives: Nano Banana 2, Midjourney, FLUX.2 [klein], Ideogram",
   category: "ai-image-generators",
   url: "https://openai.com/dall-e-3",
 
@@ -98,6 +98,7 @@ export const dalle: ToolReview = {
 
   lastReviewedDate: "2026-11-05",
   dataSources: [
+    { name: "OpenAI deprecations (Dec 1, 2026 image removals now point to gpt-image-2.6-sunburst / -flare)", url: "https://platform.openai.com/docs/deprecations", dateAccessed: "2026-11-05" },
     { name: "OpenAI API changelog (GPT Image 2 / 2.5 / 2.6 releases)", url: "https://developers.openai.com/api/docs/changelog", dateAccessed: "2026-11-05" },
     { name: "OpenAI API pricing (image generation models)", url: "https://developers.openai.com/api/docs/pricing", dateAccessed: "2026-11-05" },
     { name: "OpenAI image generation guide", url: "https://developers.openai.com/api/docs/guides/image-generation", dateAccessed: "2026-11-05" },

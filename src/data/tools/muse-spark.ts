@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const museSpark: ToolReview = {
   slug: "muse-spark",
   name: "Muse Spark + Muse Wonder (Meta)",
-  tagline: "Meta Superintelligence Labs' model family, now four lines deep: **Muse Wonder** (2026-10-12, frontier, $4/$20 per 1M on the Meta Model API; Wonder Full only in Muse Code subscriptions), **Muse Spark 1.3** (2026-09-02, $1.25/$4.25, or $0.10/$0.20 in Contributor mode if Meta may train on your content), **Muse Spark Open** (2026-10-15, 816B/42B-active open weights, 1M context, runs on two Mac Studios with M5 Ultra) and **Muse Glimmer** (2026-08-10, 30B, Apache 2.0, built for local agents). Consumers get it through **Muse**, Meta's personal-agent app (2026-09-08): free with limits, Power $20/mo, Maximum $100/mo",
+  tagline: "**Nov 5: the Muse app gained real-time voice conversations and expressive avatars (US first, on mobile, web and Mac, with hundreds of voices); voice is coming to Meta's AI Glasses and Muse Charm.** Meta Superintelligence Labs' model family, now four lines deep: **Muse Wonder** (2026-10-12, frontier, $4/$20 per 1M on the Meta Model API; Wonder Full only in Muse Code subscriptions), **Muse Spark 1.3** (2026-09-02, $1.25/$4.25, or $0.10/$0.20 in Contributor mode if Meta may train on your content), **Muse Spark Open** (2026-10-15, 816B/42B-active open weights, 1M context, runs on two Mac Studios with M5 Ultra) and **Muse Glimmer** (2026-08-10, 30B, Apache 2.0, built for local agents). Consumers get it through **Muse**, Meta's personal-agent app (2026-09-08): free with limits, Power $20/mo, Maximum $100/mo",
   category: "ai-llms",
   url: "https://dev.meta.ai",
 
@@ -45,6 +45,11 @@ export const museSpark: ToolReview = {
     "The Muse app launched US-only and has since added only Singapore (2026-10-28), and privacy concerns given Meta's data practices remain a real consideration",
   ],
   knownIssues: [
+    {
+      description: "VOICE AND EXPRESSIVE AVATARS IN THE MUSE APP (2026-11-05, vendor-primary): 'We're rolling out voice and expressive avatars in the Muse app, giving you a new, natural way to interact with your Muse.' Previewed at Connect 2026, real-time conversations now run in the Muse app 'on mobile, web and on Mac' (tap the phone icon), built on what Meta calls its Muse Realtime Voice and Muse Realtime Avatar technology: you can interrupt mid-answer, choose from 'hundreds of voices', and pick voice only, avatar beside the chat, or full screen. Meta says Muse keeps working in the background while you talk. **Availability:** 'rolling out now in the Muse app in the US to start'; voice conversations are 'coming soon to AI Glasses and Muse Charm'. No pricing change was announced, and the post does not say whether voice needs a paid Muse plan.",
+      source: "Meta newsroom: Give Your Muse a Voice (about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/, 'November 5, 2026') -- fetched 2026-11-05",
+      date: "2026-11-05",
+    },
     {
       description: "MUSE APP EXPANDS TO SINGAPORE (2026-10-28, vendor-primary): 'Muse is available in Singapore from today', with local partners including Shopee, Grab, Singapore Airlines, Agoda, ShopBack, Klook, Trip.com and Lazada; 'available in Singapore on iOS, Android, and muse.ai, and coming soon to AI glasses. It's free for most of what people need, with subscription plans.' No Singapore prices were given and WhatsApp is not mentioned. Every Meta API price on this page (Muse Wonder $4 / $20, Muse Spark $1.25 / $4.25, Contributor mode $0.10 / $0.002 / $0.20, web search $2.50 per 1,000 queries) still matches dev.meta.ai/docs/pricing-rate-limits on 2026-10-29.",
       source: "Meta newsroom: Muse Is Now Available in Singapore (about.fb.com, JSON-LD 2026-10-28) + dev.meta.ai/docs/pricing-rate-limits, fetched 2026-10-29",
@@ -100,8 +105,9 @@ export const museSpark: ToolReview = {
   notFor: "Anyone who needs Meta's very best model over an API (Wonder Full is subscription-only in Muse Code), anyone unwilling to opt out of Contributor mode training, and users outside the US and Singapore who want the Muse app today.",
   verdict: "Six months ago Muse Spark was a free chatbot with no API. It is now a full Meta stack: a frontier model (Muse Wonder), a cheap agentic workhorse (Spark 1.3), the strongest US open-weight model at launch (Spark Open), an Apache-licensed local model (Glimmer), a terminal coding agent (Muse Code) and a consumer agent app (Muse). The pricing is aggressive and the open-weight releases are serious. The catches are that Meta's best model stays behind a Muse Code subscription, and that the cheapest prices come from letting Meta train on your content.",
 
-  lastReviewedDate: "2026-10-29",
+  lastReviewedDate: "2026-11-05",
   dataSources: [
+    { name: "Meta: Give Your Muse a Voice -- voice and expressive avatars in the Muse app (2026-11-05)", url: "https://about.fb.com/news/2026/11/introducing-muse-ai-voice-expressive-avatars/", dateAccessed: "2026-11-05" },
     { name: "Meta AI Research: Introducing Muse Spark Open (2026-10-15)", url: "https://research.meta.ai/blog/muse-spark-open", dateAccessed: "2026-10-17" },
     { name: "Meta AI Developers: Build with Muse Spark Open (2026-10-15)", url: "https://dev.meta.ai/resources/blog/build-with-muse-spark-open", dateAccessed: "2026-10-17" },
     { name: "Hugging Face: Muse Spark Open model card", url: "https://huggingface.co/meta-models/Muse-Spark-Open-816B-A42B", dateAccessed: "2026-10-17" },
