@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const dalle: ToolReview = {
   slug: "dall-e",
   name: "DALL-E (Shut Down)",
-  tagline: "**Nov 2026: the migration targets moved again -- gpt-image-1 was shut down on 2026-10-23, and gpt-image-1.5 and gpt-image-1-mini (which this page used to recommend) are deprecated with removal on 2026-12-01; since 2026-11-05 OpenAI's deprecations table names the new gpt-image-2.6-sunburst / gpt-image-2.6-flare (released 2026-11-04) as the replacement, where it previously named the 2.5 pair.** OpenAI's DALL-E 2 and DALL-E 3 -- SHUT DOWN. Both APIs were retired on 2026-05-12. Existing integrations now fail; the GPT Image request shape differs (not a drop-in swap). Tier-list alternatives: Nano Banana 2, Midjourney, FLUX.2 [klein], Ideogram",
+  tagline: "**Nov 10: OpenAI deprecated gpt-image-2 itself -- the model its deprecations page lists first as the DALL-E replacement -- with removal from the API on February 10, 2027; the named successors are gpt-image-2.6-sunburst and gpt-image-2.6-flare.** **Nov 2026: the migration targets moved again --gpt-image-1 was shut down on 2026-10-23, and gpt-image-1.5 and gpt-image-1-mini (which this page used to recommend) are deprecated with removal on 2026-12-01; since 2026-11-05 OpenAI's deprecations table names the new gpt-image-2.6-sunburst / gpt-image-2.6-flare (released 2026-11-04) as the replacement, where it previously named the 2.5 pair.** OpenAI's DALL-E 2 and DALL-E 3 -- SHUT DOWN. Both APIs were retired on 2026-05-12. Existing integrations now fail; the GPT Image request shape differs (not a drop-in swap). Tier-list alternatives: Nano Banana 2, Midjourney, FLUX.2 [klein], Ideogram",
   category: "ai-image-generators",
   url: "https://openai.com/dall-e-3",
 
@@ -26,6 +26,7 @@ export const dalle: ToolReview = {
         "DALL-E 2 + DALL-E 3 API both shut down 2026-05-12",
         "Deprecation reminder posted 2026-04-09 by OpenAI",
         "Follow-on: gpt-image-1 shut down 2026-10-23; gpt-image-1.5, gpt-image-1-mini and chatgpt-image-latest deprecated 2026-06-02 with removal 2026-12-01",
+        "gpt-image-2 and gpt-image-2-2026-04-21 deprecated 2026-11-10 with removal 2027-02-10 (replacement: gpt-image-2.6-sunburst or gpt-image-2.6-flare)",
       ],
     },
     {
@@ -56,6 +57,11 @@ export const dalle: ToolReview = {
     "API users had to migrate before 2026-05-12 -- existing DALL-E integrations now fail hard, and anyone who moved to gpt-image-1.5 or gpt-image-1-mini has to migrate again before those are removed on 2026-12-01",
   ],
   knownIssues: [
+    {
+      description: "GPT IMAGE 2 DEPRECATED, REMOVAL 2027-02-10 -- THE LAST OF THE THREE ORIGINAL DALL-E REPLACEMENTS NOW HAS AN END DATE (2026-11-10, vendor-primary): OpenAI's deprecations page added a section headed '2026-11-10: GPT Image 2': 'The gpt-image-2 model and gpt-image-2-2026-04-21 snapshot are deprecated and will be removed from the API on February 10, 2027.' Recommended replacement: 'gpt-image-2.6-sunburst or gpt-image-2.6-flare'. That is three months of notice for a model released on 2026-04-21, and the same edit changed the page's notice policy to read 'Specialized variants of generally available models and image generation models: At least 3 months' -- image models are now on the short notice tier, not the 6-month one. For anyone who left DALL-E in May: OpenAI listed gpt-image-2, gpt-image-1 and gpt-image-1-mini as replacements; gpt-image-1 is gone (2026-10-23), gpt-image-1-mini goes 2026-12-01 and gpt-image-2 goes 2027-02-10. The only OpenAI image models without a removal date on the page are the 2.5 and 2.6 Sunburst / Flare pairs. One practical loss to check before migrating: an earlier entry on our ChatGPT page noted the Batch price table listed gpt-image-2 but not the 2.5 pair; we have not re-read Batch pricing for 2.6.",
+      source: "OpenAI API deprecations page (platform.openai.com/docs/deprecations.md, section '2026-11-10: GPT Image 2', diffed against the 2026-11-05 copy) -- fetched 2026-11-11",
+      date: "2026-11-10",
+    },
     {
       description: "CORRECTION (2026-11-05): from 2026-05-13 this page said 'Migration target per OpenAI is gpt-image-1.5 / gpt-image-1-mini' and attributed it to OpenAI's deprecations page. That page, and OpenAI's 2026-05-12 changelog entry, actually list the DALL-E replacements as '`gpt-image-2`, `gpt-image-1`, or `gpt-image-1-mini`'. The gpt-image-1.5 wording came from a 2026-04-09 community-forum reminder post ('explore gpt-image-1.5 or gpt-image-1- mini'). GPT Image 2 had been released on 2026-04-21, before our May review. Also removed: our claim that the 6-month notice window was the longest OpenAI had given for an image API -- the deprecations page states a standard minimum of 'At least 6 months' for generally available models.",
       source: "OpenAI deprecations page + API changelog (developers.openai.com/api/docs/deprecations, developers.openai.com/api/docs/changelog), community.openai.com/t/1378754 (vendor-primary)",
@@ -92,13 +98,13 @@ export const dalle: ToolReview = {
       date: "2026-03",
     },
   ],
-  bestFor: "Historical context only. If you still have a DALL-E integration, it is failing now -- migrate to OpenAI's gpt-image-2.5 or gpt-image-2.6 (Sunburst for editing precision, Flare for fast everyday generation), ChatGPT Images for consumer use, Nano Banana 2 (best text-in-image), Midjourney (best artistic), FLUX.2 [klein] (best open-weight), or Ideogram (strong text). Do not migrate to gpt-image-1.5 or gpt-image-1-mini -- OpenAI removes both on 2026-12-01.",
+  bestFor: "Historical context only. If you still have a DALL-E integration, it is failing now -- migrate to OpenAI's gpt-image-2.5 or gpt-image-2.6 (Sunburst for editing precision, Flare for fast everyday generation), ChatGPT Images for consumer use, Nano Banana 2 (best text-in-image), Midjourney (best artistic), FLUX.2 [klein] (best open-weight), or Ideogram (strong text). Do not migrate to gpt-image-1.5 or gpt-image-1-mini -- OpenAI removes both on 2026-12-01 -- or to gpt-image-2, which is removed on 2027-02-10.",
   notFor: "Any active production workload. The endpoints are dead. Existing API users have been forced to migrate; there is no path back.",
-  verdict: "DALL-E's shutdown on 2026-05-12 marks the end of the first wave of standalone AI image APIs. OpenAI quietly removed DALL-E 3 from ChatGPT in December 2025, moved image generation to its GPT Image models, and ended both DALL-E 2 and DALL-E 3 APIs on the scheduled date. For developers caught with live DALL-E integrations, the in-ecosystem path is now gpt-image-2.5 or gpt-image-2.6 (Sunburst or Flare) -- not gpt-image-1.5 / gpt-image-1-mini, which OpenAI removes on 2026-12-01, and not gpt-image-1, which was shut down on 2026-10-23. Nano Banana 2 (Google) and FLUX.2 [klein] (Black Forest Labs) remain better on specific axes -- text-in-image and open-weight self-hosting respectively. For most consumer use, ChatGPT Images inside ChatGPT is how OpenAI wants you to generate images.",
+  verdict: "DALL-E's shutdown on 2026-05-12 marks the end of the first wave of standalone AI image APIs. OpenAI quietly removed DALL-E 3 from ChatGPT in December 2025, moved image generation to its GPT Image models, and ended both DALL-E 2 and DALL-E 3 APIs on the scheduled date. For developers caught with live DALL-E integrations, the in-ecosystem path is now gpt-image-2.5 or gpt-image-2.6 (Sunburst or Flare) -- not gpt-image-1.5 / gpt-image-1-mini, which OpenAI removes on 2026-12-01, and not gpt-image-1, which was shut down on 2026-10-23, nor gpt-image-2, deprecated on 2026-11-10 with removal on 2027-02-10. Nano Banana 2 (Google) and FLUX.2 [klein] (Black Forest Labs) remain better on specific axes -- text-in-image and open-weight self-hosting respectively. For most consumer use, ChatGPT Images inside ChatGPT is how OpenAI wants you to generate images.",
 
-  lastReviewedDate: "2026-11-05",
+  lastReviewedDate: "2026-11-11",
   dataSources: [
-    { name: "OpenAI deprecations (Dec 1, 2026 image removals now point to gpt-image-2.6-sunburst / -flare)", url: "https://platform.openai.com/docs/deprecations", dateAccessed: "2026-11-05" },
+    { name: "OpenAI deprecations ('2026-11-10: GPT Image 2' -- gpt-image-2 removed 2027-02-10; Dec 1, 2026 image removals point to gpt-image-2.6-sunburst / -flare)", url: "https://platform.openai.com/docs/deprecations", dateAccessed: "2026-11-11" },
     { name: "OpenAI API changelog (GPT Image 2 / 2.5 / 2.6 releases)", url: "https://developers.openai.com/api/docs/changelog", dateAccessed: "2026-11-05" },
     { name: "OpenAI API pricing (image generation models)", url: "https://developers.openai.com/api/docs/pricing", dateAccessed: "2026-11-05" },
     { name: "OpenAI image generation guide", url: "https://developers.openai.com/api/docs/guides/image-generation", dateAccessed: "2026-11-05" },
@@ -111,5 +117,5 @@ export const dalle: ToolReview = {
   affiliateUrl: "https://openai.com/dall-e-3",
   status: "deprecated",
   metaTitle: "DALL-E Shutdown Complete (May 12 2026): APIs Retired + Best Alternatives",
-  metaDescription: "DALL-E shutdown complete. OpenAI retired DALL-E 2 + DALL-E 3 APIs on 2026-05-12. Migrate to gpt-image-2.5 / 2.6 (gpt-image-1.5 and 1-mini go on 2026-12-01), Nano Banana 2, Midjourney, FLUX.2 [klein], Ideogram.",
+  metaDescription: "DALL-E shutdown complete. OpenAI retired DALL-E 2 + DALL-E 3 APIs on 2026-05-12. Migrate to gpt-image-2.5 / 2.6 (1.5 and 1-mini go 2026-12-01, gpt-image-2 on 2027-02-10), Nano Banana 2, Midjourney, FLUX.2 [klein], Ideogram.",
 };

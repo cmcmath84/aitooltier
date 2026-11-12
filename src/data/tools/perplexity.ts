@@ -36,6 +36,11 @@ export const perplexity: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "AGENT API EFFORT LEVELS RETUNED -- EVERY LEVEL CHEAPER PER QUERY, NEW ULTRA LEVEL (2026-11-05, vendor-primary; developer-facing): 'Today, every effort level now costs less per query, with research quality that is higher or unchanged. A new ultra level is available for the most wide-reaching and comprehensive research. Any request that selects the level by name, such as effort=fast, gets the updated configuration automatically.' An effort level is 'a bundled configuration that defines the model, step budget, search settings, and tools for a specific task type'. Perplexity's figures: 'medium performance improved from 55% to 77% on BrowseComp and DSQA, while costs decreased almost 90%', and 'xhigh held its WANDR score at 76.5% while running at about 25% of the cost of the August 2026 configuration'. **Ultra** 'runs three agents on a task in parallel' with a fourth merging their findings, and 'On WANDR, ultra scores 85.9% at $21.71 per task', which the post calls 'the highest score among the tested configurations'. Also cited: Fast Search 'At $1.00 per 1K requests'. WANDR is Perplexity's own benchmark, so treat those numbers as first-party. Nothing here changes the consumer Pro or Max plans. Also in the window: 'Escaping SPACE: Part II' (11/11), a research post on model behaviour in sandbox red-teaming experiments, with no product change.",
+      source: "Perplexity (perplexity.ai/hub/blog/improvements-to-every-agent-api-effort-level, page date 2026-11-05; hub index 'Nov 5, 2026' and 'Nov 11, 2026') -- fetched 2026-11-11",
+      date: "2026-11-05",
+    },
+    {
       description: "TEAMMATES FOR MAX, AND WEB GROUNDING FOR THE DECISIONS API (2026-11-04, vendor-primary): **(1) Teammates** -- long-running personal agents inside Computer that own ongoing projects, remember past runs, follow up proactively and work in Slack; web first, iOS soon, **Perplexity Max only** at launch (details on the Perplexity Computer page). **(2) Decisions API web grounding** -- 'Starting today, Perplexity's Decisions API can now search the web before it answers.' Setting 'mode': 'web_grounding' runs one Perplexity Fast Search query per question and adds the results to the request state as evidence, and state can now be a URL. On PWS-Decisions, 'a public benchmark with 100 questions that depend on current web facts, accuracy rose from 51% to 86% with typical responses in under 400 ms' (Perplexity's own benchmark). No per-request price for grounding was stated in the post.",
       source: "Perplexity (perplexity.ai/hub/blog/teammates-are-agents-for-complex-ongoing-work and /hub/blog/web-grounding-for-the-decisions-api, both Nov 4, 2026 on the hub index) -- fetched 2026-11-05",
       date: "2026-11-04",
@@ -130,8 +135,10 @@ export const perplexity: ToolReview = {
   notFor: "Creative writing, brainstorming, or tasks where you need a conversational AI partner. Use Claude or ChatGPT for that.",
   verdict: "Perplexity is the best AI tool for research, period. The citation system means you can actually trust and verify answers instead of blindly hoping the AI didn't hallucinate. It's not trying to be ChatGPT -- it's trying to replace Google for research queries, and it's succeeding. If you do any kind of research work, the Pro plan is worth it.",
 
-  lastReviewedDate: "2026-11-05",
+  lastReviewedDate: "2026-11-11",
   dataSources: [
+    { name: "Perplexity: Improvements to every Agent API effort level (2026-11-05) -- lower cost per query, new ultra level", url: "https://www.perplexity.ai/hub/blog/improvements-to-every-agent-api-effort-level", dateAccessed: "2026-11-11" },
+    { name: "Perplexity blog index (Recently published, read 2026-11-11)", url: "https://www.perplexity.ai/hub/blog", dateAccessed: "2026-11-11" },
     { name: "Perplexity: Web grounding for the Decisions API (2026-11-04)", url: "https://www.perplexity.ai/hub/blog/web-grounding-for-the-decisions-api", dateAccessed: "2026-11-05" },
     { name: "Perplexity: Teammates are agents for complex, ongoing work (2026-11-04)", url: "https://www.perplexity.ai/hub/blog/teammates-are-agents-for-complex-ongoing-work", dateAccessed: "2026-11-05" },
     { name: "Perplexity: New FedRAMP certification brings Perplexity to more government workflows (2026-10-28)", url: "https://www.perplexity.ai/hub/blog/new-fedramp-certification-brings-perplexity-to-more-government-workflows", dateAccessed: "2026-10-29" },

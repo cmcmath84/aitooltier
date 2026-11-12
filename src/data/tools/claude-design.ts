@@ -29,10 +29,10 @@ export const claudeDesign: ToolReview = {
       features: ["Claude Design included alongside Claude chat and coding tools", "Higher usage than Free", "Design systems migrate with no confirmation step on individual plans"],
     },
     {
-      plan: "Claude Max (5x/20x)",
+      plan: "Claude Max / Ultra (Ultra was Max 20x until about 2026-10-30)",
       price: "$100-200",
       period: "month",
-      features: ["5x or 20x Pro usage", "Best for designers doing hundreds of variations"],
+      features: ["Max: 5x Pro usage; Ultra: 10x Pro usage every week", "Best for designers doing hundreds of variations"],
     },
     {
       plan: "Claude Team / Enterprise",
@@ -55,6 +55,11 @@ export const claudeDesign: ToolReview = {
   ],
   knownIssues: [
     {
+      description: "NEW SIBLING ARTIFACT TYPES -- CLAUDE SHEETS, WHITEBOARDS AND DATA -- AND DESIGN SYSTEMS NOW APPLY TO CLAUDE DATA (2026-11-10, vendor-primary): Anthropic launched Claude Whiteboards and Claude Sheets in beta and made Claude Dashboards generally available as Claude Data, 'available on all paid plans'. Its announcement says these 'work with its existing abilities to create documents, slide decks, and designs', and that 'since Claude carries the same context through every step, an idea can carry over from a whiteboard to a spreadsheet to a dashboard'; a whiteboard can be turned into a doc or deck. For design-system owners the relevant line is 'Design systems are now supported in Claude Data', so a migrated design system now styles dashboards as well as designs and slides. Nothing in the announcement changes Claude Design's own plan availability or the 2026-12-14 closing date of the standalone site. Claude Motion (beta on Team and Enterprise plans, on by default on Team and off by default on Enterprise) is referenced as the artifact type for short animations.",
+      source: "Anthropic (claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors and claude.com/resources/articles/sheets-whiteboards-data, JSON-LD datePublished 2026-11-10; support.claude.com/en/articles/17454997-get-started-with-claude-motion) -- fetched 2026-11-11",
+      date: "2026-11-10",
+    },
+    {
       description: "MOVING INTO CLAUDE (announced October 2026): **Claude Design now lives in Claude.** Anthropic's help center says the standalone Claude Design site (claude.ai/design) **will close on December 14, 2026** and stays usable until then; afterwards claude.ai/design redirects to Claude. New designs, design systems and slide decks started in Claude are created as **artifacts**. Claude Design is available on **Free, Pro, Max, Team and Enterprise** plans. Migration: open the Artifacts page, click 'Migrate team design systems' in the 'Claude Design lives here now' banner; one migration brings over every design system in the organization (anyone with Claude Design access can start it); owners and sharing carry over; empty systems and ones made from a built-in starter theme are not migrated; published non-private systems become visible to the whole organization. Projects need no action yet. Team/Enterprise owners should set a default design system and check that artifacts and design systems are on (off by default on Enterprise). Claude Code 2.1.302 (2026-10-16) added the same closure notice to /design-sync and /design-login.",
       source: "support.claude.com/en/articles/17440474-migrate-from-standalone-claude-design-to-claude, Claude Code CHANGELOG 2.1.302",
       date: "2026-10-17",
@@ -74,8 +79,11 @@ export const claudeDesign: ToolReview = {
   notFor: "Full production design workflows that end at Claude Design rather than continue in Figma or Canva. Also not ideal for heavily visual/illustrative work where Midjourney, Nano Banana 2, or a human illustrator will outperform on the image side. Use Gamma or Canva AI for pure slide generation if you do not already live in the Claude ecosystem.",
   verdict: "Claude Design is the most credible move into AI-native design tooling since Figma AI and Canva AI shipped in 2024. Launching the day after Opus 4.7, on the same Anthropic reasoning stack, gives it a quality foundation the pure-play AI design startups cannot match. The 'replaces the starting point, not the workflow' positioning is exactly right -- Anthropic is not trying to be your whole design stack, just the one that eliminates the blank canvas. For anyone already paying for Claude, it is essentially a free new capability worth trying in week one. For serious designers, expect this to become a routine ideation layer feeding into Figma, not a Figma replacement. Watch how Figma and Canva respond through Q2 2026.",
 
-  lastReviewedDate: "2026-10-17",
+  lastReviewedDate: "2026-11-11",
   dataSources: [
+    { name: "Claude: More ways to work with Claude -- Sheets, Whiteboards and interactive connectors (2026-11-10)", url: "https://claude.com/resources/articles/more-ways-to-work-with-claude-sheets-whiteboards-and-interactive-connectors", dateAccessed: "2026-11-11" },
+    { name: "Claude: Introducing Claude Whiteboards, Claude Sheets and Claude Data -- design systems supported in Claude Data (2026-11-10)", url: "https://claude.com/resources/articles/sheets-whiteboards-data", dateAccessed: "2026-11-11" },
+    { name: "Claude Help Center: Get started with Claude Motion (beta, Team and Enterprise)", url: "https://support.claude.com/en/articles/17454997-get-started-with-claude-motion", dateAccessed: "2026-11-11" },
     { name: "Claude Help Center: Migrate from standalone Claude Design to Claude", url: "https://support.claude.com/en/articles/17440474-migrate-from-standalone-claude-design-to-claude", dateAccessed: "2026-10-17" },
     { name: "Claude Code CHANGELOG (2.1.302 closure notice)", url: "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md", dateAccessed: "2026-10-17" },
     { name: "Anthropic: Claude Design launch", url: "https://www.anthropic.com/claude-design", dateAccessed: "2026-04-17" },

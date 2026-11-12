@@ -3,7 +3,7 @@ import { ToolReview } from "@/lib/types";
 export const elevenmusic: ToolReview = {
   slug: "elevenmusic",
   name: "ElevenMusic",
-  tagline: "**Nov 2026: Free now 25 songs a day with commercial use, and Pro is 1,000 songs a month.** ElevenLabs' standalone AI music app at elevenmusic.io (iOS + web, still no Android) -- Music v2.5 is the default model since 2026-09-11, with Composer section editing, Vocals, References and Sounds, and ElevenLabs signed a multi-year licensing deal with Universal Music Group on 2026-09-10. Pro $9.99/mo or $7.99/mo billed yearly",
+  tagline: "**Nov 6: original ElevenMusic tracks can now be published straight to a linked SoundCloud profile, and SoundCloud Artist Pro members get three months of ElevenMusic free before the $9.99 monthly price applies.** **Nov 2026: Free now 25 songs a day with commercial use, and Pro is 1,000 songs a month.**ElevenLabs' standalone AI music app at elevenmusic.io (iOS + web, still no Android) -- Music v2.5 is the default model since 2026-09-11, with Composer section editing, Vocals, References and Sounds, and ElevenLabs signed a multi-year licensing deal with Universal Music Group on 2026-09-10. Pro $9.99/mo or $7.99/mo billed yearly",
   category: "ai-music-generators",
   url: "https://elevenmusic.io",
 
@@ -37,6 +37,7 @@ export const elevenmusic: ToolReview = {
         "No credit needed; release original songs to Spotify and Apple Music",
         "Unlimited downloads; earn royalties from streams",
         "500 stem splits a month; 5 custom styles and vocals",
+        "SoundCloud Artist Pro members: three months of ElevenMusic free, then $9.99/mo unless cancelled (18+, offer ends 31 Oct 2027, terms apply)",
       ],
     },
     {
@@ -65,6 +66,11 @@ export const elevenmusic: ToolReview = {
     "Head-to-head quality against Suno has not been re-tested since Music v2.5 (2026-09-11); earlier testing found it behind on complex vocal-instrument layering",
   ],
   knownIssues: [
+    {
+      description: "SOUNDCLOUD INTEGRATION -- PUBLISH ORIGINAL TRACKS STRAIGHT FROM ELEVENMUSIC, PLUS A THREE-MONTH OFFER FOR ARTIST PRO MEMBERS (2026-11-06, vendor-primary): 'We've launched a new integration with SoundCloud to help get your music heard. You can now create your track in ElevenMusic, and publish it on SoundCloud in a few simple steps.' Setup: 'Open your profile settings and go to Linked Accounts, then connect your SoundCloud account', then open an original track, add a description, genre and tags, and click Save to SoundCloud; the track 'uploads straight to your SoundCloud profile'. The post covers original tracks you created in ElevenMusic and does not say which plans can use the integration. **Offer:** 'If you're a SoundCloud Artist Pro member, you can unlock three months of ElevenMusic free, on us. Then it's $9.99/mo unless you cancel. 18+, ends 31 Oct 2027, terms apply.' That is a trial that converts to the standard Pro price, so set a reminder if you take it.",
+      source: "ElevenLabs blog (elevenlabs.io/blog/soundcloud, RSS pubDate Fri, 06 Nov 2026) -- fetched 2026-11-11",
+      date: "2026-11-06",
+    },
     {
       description:
         "PRICING + LIMITS CHANGE (verified 2026-11-05, vendor-primary): elevenmusic.io/pricing now reads 'Free 25 songs a day.' with 'Commercial use with a “Made with ElevenMusic” credit', 5 downloads and 5 stem splits a day and 1 custom style or vocal. Pro is '$9.99 / month or $7.99/mo, billed yearly' with '1,000 songs a month', release to Spotify and Apple Music, unlimited downloads, royalties from streams, 500 stem splits a month and 5 custom styles and vocals. FAQ: 'Songs you make on Free can be used commercially with a “Made with ElevenMusic” credit.' The pricing page is undated; on 2026-09-11 ElevenLabs still described Pro as '400 lossless downloads per month', so the change landed after that. Android is still absent -- the site offers 'ElevenMusic for iPhone.'",
@@ -133,8 +139,9 @@ export const elevenmusic: ToolReview = {
   verdict:
     "ElevenMusic has become a much better deal since June. The free tier went from 7 songs a day for personal use to 25 songs a day with commercial use (with a 'Made with ElevenMusic' credit), and $9.99/mo Pro now covers 1,000 songs a month, streaming release and royalties. Music v2.5 is the default, Composer and Vocals make it a real editing tool rather than a one-shot generator, and the Universal Music Group deal strengthens the licensed-music pitch that is its main moat. Android is still missing, and businesses doing commercial content production are steered to ElevenCreative instead -- but for individual creators it is now one of the strongest-value AI music apps.",
 
-  lastReviewedDate: "2026-11-05",
+  lastReviewedDate: "2026-11-11",
   dataSources: [
+    { name: "ElevenLabs: Share your ElevenMusic creations directly to SoundCloud (2026-11-06)", url: "https://elevenlabs.io/blog/soundcloud", dateAccessed: "2026-11-11" },
     { name: "ElevenMusic official site", url: "https://elevenmusic.io", dateAccessed: "2026-11-05" },
     { name: "ElevenMusic pricing", url: "https://elevenmusic.io/pricing", dateAccessed: "2026-11-05" },
     { name: "ElevenLabs blog: Introducing Music v2.5 (2026-09-11)", url: "https://elevenlabs.io/blog/music-v2-5-model", dateAccessed: "2026-11-05" },
