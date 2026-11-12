@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# sweep scratch (vendor page caches; also keeps Tailwind from scanning them)
+/.sweep-tmp/
